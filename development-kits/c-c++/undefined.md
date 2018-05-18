@@ -15,6 +15,6 @@ Coolsms C SDK 입니다. SDK를 사용하면 문자전송, 전송내역관리, �
 10월 16일 이후로 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있습니다. 아래 관련링크를 참고 해주세요.
 
 * [발신번호 사전등록제 공지사항](https://www.coolsms.co.kr/index.php?mid=notice&document_srl=3070386)
-* [C SDK Example SenderID를 통해 발신번호 등록하기](undefined-1/undefined-3/)
+* [C SDK Example SenderID를 통해 발신번호 등록하기]()
 * [쿨에스엠에스 사이트에서 발신번호 등록하기](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigSenderNumbers)
 
