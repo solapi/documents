@@ -1,0 +1,26 @@
+{
+    "plugins": [ "theme-api","path-params-codetabs", "codetabs","alerts","collapsible-menu","indent-include","anchors"],
+    "pluginsConfig": {
+        "theme-api": {
+            "languages": [
+                {
+                    "lang": "curl",
+                    "name": "cURL",
+                    "default": true
+                },            
+                {
+                    "lang": "js",
+                    "name": "JavaScript"
+                },
+                {
+                    "lang": "python",
+                    "name": "Python"
+                },
+                {
+                    "lang": "php",
+                    "name": "PHP"
+                }
+            ]
+        }
+    }
+}

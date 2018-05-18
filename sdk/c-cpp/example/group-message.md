@@ -1,0 +1,1 @@
+{% include "../../fragments/example-group-message.md" %}
