@@ -1,6 +1,6 @@
 # 예약메시지 관리
 
-[심플메시지](undefined.md) 혹은 [그룹메시지](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/sdk/nodejs/user-guide/group-message.md)를 통해 예약한 메시지의 목록을 조회하고 취소 할 수 있습니다.
+[심플메시지](simple-message.md) 혹은 [그룹메시지](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/sdk/nodejs/user-guide/group-message.md)를 통해 예약한 메시지의 목록을 조회하고 취소 할 수 있습니다.
 
 ## 예약 목록
 

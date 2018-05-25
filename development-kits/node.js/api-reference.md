@@ -2,21 +2,21 @@
 
 ## Modules
 
-[coolsms-sdk](api.md#module_coolsms-sdk)
+[coolsms-sdk](api-reference.md#module_coolsms-sdk)
 
-Coolsms SDK for Javascript[Account](api.md#module_Account)
+Coolsms SDK for Javascript[Account](api-reference.md#module_Account)
 
-계정정보를 조회합니다. 현재는 잔액정보만 가져올 수 있습니다.[GroupMessage](api.md#module_GroupMessage)
+계정정보를 조회합니다. 현재는 잔액정보만 가져올 수 있습니다.[GroupMessage](api-reference.md#module_GroupMessage)
 
-그룹메시지 발송을 위해 그룹생성, 삭제, 정보보기, 목록보기 등의 API를 제공합니다.[Images](api.md#module_Images)
+그룹메시지 발송을 위해 그룹생성, 삭제, 정보보기, 목록보기 등의 API를 제공합니다.[Images](api-reference.md#module_Images)
 
-이미지를 등록, 조회, 삭제합니다.[MessageLog](api.md#module_MessageLog)
+이미지를 등록, 조회, 삭제합니다.[MessageLog](api-reference.md#module_MessageLog)
 
-메시지로그를 조회합니다.[RequestApi](api.md#module_RequestApi)
+메시지로그를 조회합니다.[RequestApi](api-reference.md#module_RequestApi)
 
-주어진 URL 로 요청하는 모듈입니다. 무조건 POST로 던집니다.[ScheduledMessage](api.md#module_ScheduledMessage)
+주어진 URL 로 요청하는 모듈입니다. 무조건 POST로 던집니다.[ScheduledMessage](api-reference.md#module_ScheduledMessage)
 
-예약된 메시지를 관리합니다.[SimpleMessage](api.md#module_SimpleMessage)
+예약된 메시지를 관리합니다.[SimpleMessage](api-reference.md#module_SimpleMessage)
 
 한번의 요청으로 메시지를 발송합니다.
 
@@ -24,66 +24,66 @@ Coolsms SDK for Javascript[Account](api.md#module_Account)
 
 Coolsms SDK for Javascript
 
-* [coolsms-sdk](api.md#module_coolsms-sdk)
-  * [.SimpleMessage\(\)](api.md#module_coolsms-sdk.SimpleMessage) ⇒ `SimpleMessage`
-  * [.GroupMessage\(\)](api.md#module_coolsms-sdk.GroupMessage) ⇒ `GroupMessage`
-  * [.Account\(\)](api.md#module_coolsms-sdk.Account) ⇒ `Account`
-  * [.MessageLog\(\)](api.md#module_coolsms-sdk.MessageLog) ⇒ `MessageLog`
-  * [.Images\(\)](api.md#module_coolsms-sdk.Images) ⇒ `Images`
-  * [.ScheduledMessage\(\)](api.md#module_coolsms-sdk.ScheduledMessage)
+* [coolsms-sdk](api-reference.md#module_coolsms-sdk)
+  * [.SimpleMessage\(\)](api-reference.md#module_coolsms-sdk.SimpleMessage) ⇒ `SimpleMessage`
+  * [.GroupMessage\(\)](api-reference.md#module_coolsms-sdk.GroupMessage) ⇒ `GroupMessage`
+  * [.Account\(\)](api-reference.md#module_coolsms-sdk.Account) ⇒ `Account`
+  * [.MessageLog\(\)](api-reference.md#module_coolsms-sdk.MessageLog) ⇒ `MessageLog`
+  * [.Images\(\)](api-reference.md#module_coolsms-sdk.Images) ⇒ `Images`
+  * [.ScheduledMessage\(\)](api-reference.md#module_coolsms-sdk.ScheduledMessage)
 
 ### coolsms-sdk.SimpleMessage\(\) ⇒ `SimpleMessage`
 
 심플메시지 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) **Returns**: `SimpleMessage` - 심플메시지 모듈 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) **Returns**: `SimpleMessage` - 심플메시지 모듈 
 
 ### coolsms-sdk.GroupMessage\(\) ⇒ `GroupMessage`
 
 그룹메시지 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) **Returns**: `GroupMessage` - 그룹메시지 모듈 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) **Returns**: `GroupMessage` - 그룹메시지 모듈 
 
 ### coolsms-sdk.Account\(\) ⇒ `Account`
 
 회원정보 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) **Returns**: `Account` - 회원정보 모듈 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) **Returns**: `Account` - 회원정보 모듈 
 
 ### coolsms-sdk.MessageLog\(\) ⇒ `MessageLog`
 
 메시지로그 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) **Returns**: `MessageLog` - 메시지로그 모듈 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) **Returns**: `MessageLog` - 메시지로그 모듈 
 
 ### coolsms-sdk.Images\(\) ⇒ `Images`
 
 이미지관리 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) **Returns**: `Images` - 이미지관리 모듈 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) **Returns**: `Images` - 이미지관리 모듈 
 
 ### coolsms-sdk.ScheduledMessage\(\)
 
 예약메시지관리 모듈을 리턴합니다.
 
-**Kind**: static method of [`coolsms-sdk`](api.md#module_coolsms-sdk) 
+**Kind**: static method of [`coolsms-sdk`](api-reference.md#module_coolsms-sdk) 
 
 ## Account
 
 계정정보를 조회합니다. 현재는 잔액정보만 가져올 수 있습니다.
 
-* [Account](api.md#module_Account)
+* [Account](api-reference.md#module_Account)
   * _static_
-    * [.setCredential\(apiKey, apiSecret\)](api.md#module_Account.setCredential)
-    * [.getBalance\(callback\)](api.md#module_Account.getBalance)
+    * [.setCredential\(apiKey, apiSecret\)](api-reference.md#module_Account.setCredential)
+    * [.getBalance\(callback\)](api-reference.md#module_Account.getBalance)
   * _inner_
-    * [~getBalanceCallback](api.md#module_Account..getBalanceCallback) : `function`
+    * [~getBalanceCallback](api-reference.md#module_Account..getBalanceCallback) : `function`
 
 ### Account.setCredential\(apiKey, apiSecret\)
 
 API Key 와 API Secret 을 설정한다.
 
-**Kind**: static method of [`Account`](api.md#module_Account)
+**Kind**: static method of [`Account`](api-reference.md#module_Account)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -94,7 +94,7 @@ API Key 와 API Secret 을 설정한다.
 
 잔액정보를 가져옵니다.
 
-**Kind**: static method of [`Account`](api.md#module_Account)
+**Kind**: static method of [`Account`](api-reference.md#module_Account)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -104,7 +104,7 @@ API Key 와 API Secret 을 설정한다.
 
 잔액정보를 가져온 뒤 호출되는 콜백 함수
 
-**Kind**: inner typedef of [`Account`](api.md#module_Account)
+**Kind**: inner typedef of [`Account`](api-reference.md#module_Account)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -115,31 +115,31 @@ API Key 와 API Secret 을 설정한다.
 
 그룹메시지 발송을 위해 그룹생성, 삭제, 정보보기, 목록보기 등의 API를 제공합니다.
 
-* [GroupMessage](api.md#module_GroupMessage)
+* [GroupMessage](api-reference.md#module_GroupMessage)
   * _static_
-    * [.setCredential](api.md#module_GroupMessage.setCredential)
-    * [.setDomainName\(domainName\)](api.md#module_GroupMessage.setDomainName)
-    * [.createGroup\(groupOptions, callback\)](api.md#module_GroupMessage.createGroup)
-    * [.addMessages\(groupId, messages\)](api.md#module_GroupMessage.addMessages)
-    * [.deleteMessages\(groupId, messages, callback\)](api.md#module_GroupMessage.deleteMessages)
-    * [.getGroupInfo\(groupId, callback\)](api.md#module_GroupMessage.getGroupInfo)
-    * [.getMessageList\(groupId, callback\)](api.md#module_GroupMessage.getMessageList)
-    * [.getGroupList\(callback\)](api.md#module_GroupMessage.getGroupList)
-    * [.deleteGroups\(groups, callback\)](api.md#module_GroupMessage.deleteGroups)
-    * [.sendMessages\(groupId, callback\)](api.md#module_GroupMessage.sendMessages)
+    * [.setCredential](api-reference.md#module_GroupMessage.setCredential)
+    * [.setDomainName\(domainName\)](api-reference.md#module_GroupMessage.setDomainName)
+    * [.createGroup\(groupOptions, callback\)](api-reference.md#module_GroupMessage.createGroup)
+    * [.addMessages\(groupId, messages\)](api-reference.md#module_GroupMessage.addMessages)
+    * [.deleteMessages\(groupId, messages, callback\)](api-reference.md#module_GroupMessage.deleteMessages)
+    * [.getGroupInfo\(groupId, callback\)](api-reference.md#module_GroupMessage.getGroupInfo)
+    * [.getMessageList\(groupId, callback\)](api-reference.md#module_GroupMessage.getMessageList)
+    * [.getGroupList\(callback\)](api-reference.md#module_GroupMessage.getGroupList)
+    * [.deleteGroups\(groups, callback\)](api-reference.md#module_GroupMessage.deleteGroups)
+    * [.sendMessages\(groupId, callback\)](api-reference.md#module_GroupMessage.sendMessages)
   * _inner_
-    * [~createGroupCallback](api.md#module_GroupMessage..createGroupCallback) : `function`
-    * [~addMessagesCallback](api.md#module_GroupMessage..addMessagesCallback) : `function`
-    * [~deleteMessagesCallback](api.md#module_GroupMessage..deleteMessagesCallback) : `function`
-    * [~getGroupInfoCallback](api.md#module_GroupMessage..getGroupInfoCallback) : `function`
-    * [~deleteGroupsCallback](api.md#module_GroupMessage..deleteGroupsCallback) : `function`
-    * [~sendMessagesCallback](api.md#module_GroupMessage..sendMessagesCallback) : `function`
+    * [~createGroupCallback](api-reference.md#module_GroupMessage..createGroupCallback) : `function`
+    * [~addMessagesCallback](api-reference.md#module_GroupMessage..addMessagesCallback) : `function`
+    * [~deleteMessagesCallback](api-reference.md#module_GroupMessage..deleteMessagesCallback) : `function`
+    * [~getGroupInfoCallback](api-reference.md#module_GroupMessage..getGroupInfoCallback) : `function`
+    * [~deleteGroupsCallback](api-reference.md#module_GroupMessage..deleteGroupsCallback) : `function`
+    * [~sendMessagesCallback](api-reference.md#module_GroupMessage..sendMessagesCallback) : `function`
 
 ### GroupMessage.setCredential
 
 API Key 및 API Secret 을 설정합니다.
 
-**Kind**: static property of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static property of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -150,7 +150,7 @@ API Key 및 API Secret 을 설정합니다.
 
 도메인이름을 설정합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹을 생성합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -171,7 +171,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹에 메시지를 추가합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -182,7 +182,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹메시지를 삭제합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹정보 가져오기
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -205,7 +205,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹메시지 목록을 가져옵니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -216,7 +216,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹목록을 가져옵니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -226,7 +226,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹을 삭제합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -237,7 +237,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹메시지를 발송합니다.
 
-**Kind**: static method of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: static method of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -248,7 +248,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹 생성 후 호출되는 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -259,7 +259,7 @@ API Key 및 API Secret 을 설정합니다.
 
 메시지 추가 후 결과를 받는 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -270,7 +270,7 @@ API Key 및 API Secret 을 설정합니다.
 
 메시지 삭제 후 결과를 받는 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -281,7 +281,7 @@ API Key 및 API Secret 을 설정합니다.
 
 그룹정보를 넘겨받을 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -292,7 +292,7 @@ API Key 및 API Secret 을 설정합니다.
 
 삭제 결과를 넘겨받을 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -303,7 +303,7 @@ API Key 및 API Secret 을 설정합니다.
 
 발송 후 결과를 리턴받는 콜백 함수
 
-**Kind**: inner typedef of [`GroupMessage`](api.md#module_GroupMessage)
+**Kind**: inner typedef of [`GroupMessage`](api-reference.md#module_GroupMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -314,23 +314,23 @@ API Key 및 API Secret 을 설정합니다.
 
 이미지를 등록, 조회, 삭제합니다.
 
-* [Images](api.md#module_Images)
+* [Images](api-reference.md#module_Images)
   * _static_
-    * [.setCredential](api.md#module_Images.setCredential)
-    * [.uploadImage\(imagePath, callback\)](api.md#module_Images.uploadImage)
-    * [.getImageList\(callback\)](api.md#module_Images.getImageList)
-    * [.getImageInfo\(imageId, callback\)](api.md#module_Images.getImageInfo)
-    * [.deleteImages\(images, callback\)](api.md#module_Images.deleteImages)
+    * [.setCredential](api-reference.md#module_Images.setCredential)
+    * [.uploadImage\(imagePath, callback\)](api-reference.md#module_Images.uploadImage)
+    * [.getImageList\(callback\)](api-reference.md#module_Images.getImageList)
+    * [.getImageInfo\(imageId, callback\)](api-reference.md#module_Images.getImageInfo)
+    * [.deleteImages\(images, callback\)](api-reference.md#module_Images.deleteImages)
   * _inner_
-    * [~uploadImageCallback](api.md#module_Images..uploadImageCallback) : `function`
-    * [~getImageInfoCallback](api.md#module_Images..getImageInfoCallback) : `function`
-    * [~deleteImagesCallback](api.md#module_Images..deleteImagesCallback) : `function`
+    * [~uploadImageCallback](api-reference.md#module_Images..uploadImageCallback) : `function`
+    * [~getImageInfoCallback](api-reference.md#module_Images..getImageInfoCallback) : `function`
+    * [~deleteImagesCallback](api-reference.md#module_Images..deleteImagesCallback) : `function`
 
 ### Images.setCredential
 
 API Key 및 API Secret 설정
 
-**Kind**: static property of [`Images`](api.md#module_Images)
+**Kind**: static property of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -341,7 +341,7 @@ API Key 및 API Secret 설정
 
 이미지 업로드
 
-**Kind**: static method of [`Images`](api.md#module_Images)
+**Kind**: static method of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -352,7 +352,7 @@ API Key 및 API Secret 설정
 
 이미지 목록을 리턴합니다.
 
-**Kind**: static method of [`Images`](api.md#module_Images)
+**Kind**: static method of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -362,7 +362,7 @@ API Key 및 API Secret 설정
 
 이미지 정보를 리턴합니다.
 
-**Kind**: static method of [`Images`](api.md#module_Images)
+**Kind**: static method of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -373,7 +373,7 @@ API Key 및 API Secret 설정
 
 이미지를 삭제합니다.
 
-**Kind**: static method of [`Images`](api.md#module_Images)
+**Kind**: static method of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -384,7 +384,7 @@ API Key 및 API Secret 설정
 
 이미지 업로드 결과를 넘겨받는 콜백 함수
 
-**Kind**: inner typedef of [`Images`](api.md#module_Images)
+**Kind**: inner typedef of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -395,7 +395,7 @@ API Key 및 API Secret 설정
 
 이미지 정보를 넘겨받는 콜백 함수
 
-**Kind**: inner typedef of [`Images`](api.md#module_Images)
+**Kind**: inner typedef of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -406,7 +406,7 @@ API Key 및 API Secret 설정
 
 삭제 결과를 넘겨받는 콜백 함수
 
-**Kind**: inner typedef of [`Images`](api.md#module_Images)
+**Kind**: inner typedef of [`Images`](api-reference.md#module_Images)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -417,18 +417,18 @@ API Key 및 API Secret 설정
 
 메시지로그를 조회합니다.
 
-* [MessageLog](api.md#module_MessageLog)
+* [MessageLog](api-reference.md#module_MessageLog)
   * _static_
-    * [.setCredential](api.md#module_MessageLog.setCredential)
-    * [.getSentMessages\(조회\)](api.md#module_MessageLog.getSentMessages)
+    * [.setCredential](api-reference.md#module_MessageLog.setCredential)
+    * [.getSentMessages\(조회\)](api-reference.md#module_MessageLog.getSentMessages)
   * _inner_
-    * [~getSentMessagesCallback](api.md#module_MessageLog..getSentMessagesCallback) : `function`
+    * [~getSentMessagesCallback](api-reference.md#module_MessageLog..getSentMessagesCallback) : `function`
 
 ### MessageLog.setCredential
 
 API Key 및 API Secret 설정
 
-**Kind**: static property of [`MessageLog`](api.md#module_MessageLog)
+**Kind**: static property of [`MessageLog`](api-reference.md#module_MessageLog)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -439,7 +439,7 @@ API Key 및 API Secret 설정
 
 발송된 메시지를 조회합니다.
 
-**Kind**: static method of [`MessageLog`](api.md#module_MessageLog)
+**Kind**: static method of [`MessageLog`](api-reference.md#module_MessageLog)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -449,7 +449,7 @@ API Key 및 API Secret 설정
 
 조회된 메시지 정보를 넘겨받을 콜백 함수
 
-**Kind**: inner typedef of [`MessageLog`](api.md#module_MessageLog)
+**Kind**: inner typedef of [`MessageLog`](api-reference.md#module_MessageLog)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -460,18 +460,18 @@ API Key 및 API Secret 설정
 
 주어진 URL 로 요청하는 모듈입니다. 무조건 POST로 던집니다.
 
-* [RequestApi](api.md#module_RequestApi)
+* [RequestApi](api-reference.md#module_RequestApi)
   * _static_
-    * [.request\(url, parameters, callback\)](api.md#module_RequestApi.request)
-    * [.setCredential\(apiKey, apiSecret\)](api.md#module_RequestApi.setCredential)
+    * [.request\(url, parameters, callback\)](api-reference.md#module_RequestApi.request)
+    * [.setCredential\(apiKey, apiSecret\)](api-reference.md#module_RequestApi.setCredential)
   * _inner_
-    * [~requestApiCallback](api.md#module_RequestApi..requestApiCallback) : `function`
+    * [~requestApiCallback](api-reference.md#module_RequestApi..requestApiCallback) : `function`
 
 ### RequestApi.request\(url, parameters, callback\)
 
 주어진 URL 로 POST 를 던집니다.
 
-**Kind**: static method of [`RequestApi`](api.md#module_RequestApi)
+**Kind**: static method of [`RequestApi`](api-reference.md#module_RequestApi)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -483,7 +483,7 @@ API Key 및 API Secret 설정
 
 Set api public and secret keys
 
-**Kind**: static method of [`RequestApi`](api.md#module_RequestApi)
+**Kind**: static method of [`RequestApi`](api-reference.md#module_RequestApi)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -494,7 +494,7 @@ Set api public and secret keys
 
 요청 후 결과 받는 콜백 함수
 
-**Kind**: inner typedef of [`RequestApi`](api.md#module_RequestApi)
+**Kind**: inner typedef of [`RequestApi`](api-reference.md#module_RequestApi)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -505,20 +505,20 @@ Set api public and secret keys
 
 예약된 메시지를 관리합니다.
 
-* [ScheduledMessage](api.md#module_ScheduledMessage)
+* [ScheduledMessage](api-reference.md#module_ScheduledMessage)
   * _static_
-    * [.setCredential](api.md#module_ScheduledMessage.setCredential)
-    * [.getScheduledMessages\(callback\)](api.md#module_ScheduledMessage.getScheduledMessages)
-    * [.cancelScheduledMessages\(messages, callback\)](api.md#module_ScheduledMessage.cancelScheduledMessages)
+    * [.setCredential](api-reference.md#module_ScheduledMessage.setCredential)
+    * [.getScheduledMessages\(callback\)](api-reference.md#module_ScheduledMessage.getScheduledMessages)
+    * [.cancelScheduledMessages\(messages, callback\)](api-reference.md#module_ScheduledMessage.cancelScheduledMessages)
   * _inner_
-    * [~getScheduledMessagesCallback](api.md#module_ScheduledMessage..getScheduledMessagesCallback) : `function`
-    * [~cancelScheduledMessagesCallback](api.md#module_ScheduledMessage..cancelScheduledMessagesCallback) : `function`
+    * [~getScheduledMessagesCallback](api-reference.md#module_ScheduledMessage..getScheduledMessagesCallback) : `function`
+    * [~cancelScheduledMessagesCallback](api-reference.md#module_ScheduledMessage..cancelScheduledMessagesCallback) : `function`
 
 ### ScheduledMessage.setCredential
 
 API Key 및 API Secret 설정
 
-**Kind**: static property of [`ScheduledMessage`](api.md#module_ScheduledMessage)
+**Kind**: static property of [`ScheduledMessage`](api-reference.md#module_ScheduledMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -529,7 +529,7 @@ API Key 및 API Secret 설정
 
 예약된 메시지 조회
 
-**Kind**: static method of [`ScheduledMessage`](api.md#module_ScheduledMessage)
+**Kind**: static method of [`ScheduledMessage`](api-reference.md#module_ScheduledMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -539,7 +539,7 @@ API Key 및 API Secret 설정
 
 예약메시지를 취소합니다.
 
-**Kind**: static method of [`ScheduledMessage`](api.md#module_ScheduledMessage)
+**Kind**: static method of [`ScheduledMessage`](api-reference.md#module_ScheduledMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -550,7 +550,7 @@ API Key 및 API Secret 설정
 
 조회결과를 넘겨받을 콜백 함수
 
-**Kind**: inner typedef of [`ScheduledMessage`](api.md#module_ScheduledMessage)
+**Kind**: inner typedef of [`ScheduledMessage`](api-reference.md#module_ScheduledMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -561,7 +561,7 @@ API Key 및 API Secret 설정
 
 취소 결과를 넘겨받을 콜백 함수
 
-**Kind**: inner typedef of [`ScheduledMessage`](api.md#module_ScheduledMessage)
+**Kind**: inner typedef of [`ScheduledMessage`](api-reference.md#module_ScheduledMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -572,15 +572,15 @@ API Key 및 API Secret 설정
 
 한번의 요청으로 메시지를 발송합니다.
 
-* [SimpleMessage](api.md#module_SimpleMessage)
-  * [.setCredential](api.md#module_SimpleMessage.setCredential)
-  * [.sendMessages\(params\)](api.md#module_SimpleMessage.sendMessages)
+* [SimpleMessage](api-reference.md#module_SimpleMessage)
+  * [.setCredential](api-reference.md#module_SimpleMessage.setCredential)
+  * [.sendMessages\(params\)](api-reference.md#module_SimpleMessage.sendMessages)
 
 ### SimpleMessage.setCredential
 
 API Key 및 API Secret 설정
 
-**Kind**: static property of [`SimpleMessage`](api.md#module_SimpleMessage)
+**Kind**: static property of [`SimpleMessage`](api-reference.md#module_SimpleMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -591,7 +591,7 @@ API Key 및 API Secret 설정
 
 한번의 요청으로 메시지를 발송합니다.
 
-**Kind**: static method of [`SimpleMessage`](api.md#module_SimpleMessage)
+**Kind**: static method of [`SimpleMessage`](api-reference.md#module_SimpleMessage)
 
 | Param | Type | Description |
 | --- | --- | --- |
