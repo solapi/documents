@@ -38,9 +38,10 @@ git clone https://github.com/coolsms/coolsms-sdk-js.git
 
 수신받을 전화번호를 recipient 에 입력하고 발송하려는 메시지를 text 에 입력하세요.
 
+{% code-tabs %}
+{% code-tabs-item title="example.js" %}
 ```javascript
-// example.js
-
+'use strict'
 const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
@@ -61,13 +62,13 @@ coolsms.sendSimpleMessages(
     ]
   },
   (error, result) => {
-    if (error) {
-      return console.log(error)
-    }
+    if (error) return console.log(error)
     console.log(result)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 입력을 마쳤으면 node 를 실행하여 실제 메시지를 발송합니다.
 
