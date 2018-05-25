@@ -129,4 +129,5 @@ $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://rest.coolsms.co.
 * `InvalidStatusCode(400)` - 접수가 실패한 경우입니다. 메시지의 아이디와 status code 가 반환됩니다.
 * `NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
 * `InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다.
+* 그룹 생성, 그룹 메시지 추가, 그룹 발송을 확인해주세요.
 
