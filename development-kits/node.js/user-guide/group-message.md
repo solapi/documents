@@ -40,7 +40,7 @@ coolsms.createGroup(
 ## 메시지 추가
 
 {% code-tabs %}
-{% code-tabs-item title="addMessages.js" %}
+{% code-tabs-item title="addGroupMessages.js" %}
 ```javascript
 'use strict'
 
@@ -74,6 +74,35 @@ coolsms.addGroupMessages(
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+## 메시지 목록 확인
+
+메시지 목록 확인 API 를 호출하여 그룹에 추가한 메시지 목록을 확인합니다.
+
+{% code-tabs %}
+{% code-tabs-item title="getMessageList.js" %}
+```javascript
+'use strict'
+
+const coolsms = require('coolsms-sdk')
+
+coolsms.setCredential({
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--iNPUT API SECRET--'
+})
+
+const groupId = '--INPUT GROUP-ID--'
+
+coolsms.getMessageList(
+  groupId,
+  function(error, result) {
+    if (error) console.log(error)
+    else console.log('Result:', result)
+  }
+)
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## 그룹 정보 확인
 
 그룹정보 API 를 호출하여 그룹의 정보와 지금까지 접수된 메시지 내역을 확인합니다.
@@ -85,7 +114,7 @@ coolsms.addGroupMessages(
 ```javascript
 'use strict'
 
-const coolsms = require('../..')
+const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
@@ -163,6 +192,8 @@ getMessageList 를 사용해 접수된 메시지 내용을 읽어와서 비교�
 
 리뷰 후 문제가 없다면 발송합니다.
 
+{% code-tabs %}
+{% code-tabs-item title="sendMessages.js" %}
 ```javascript
 'use strict'
 
@@ -178,14 +209,15 @@ const groupId = '--INPUT GROUP-ID--'
 coolsms.sendGroupMessages(
   groupId,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error) 
+    else console.log(result)
+
+
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 한 번 발송한 그룹메시지는 재사용이 불가합니다.
 
