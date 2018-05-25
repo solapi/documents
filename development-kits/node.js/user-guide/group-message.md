@@ -2,7 +2,7 @@
 
 그룹메시지는 대량메시지 뿐만 아니라 소량의 메시지도 안전하게 발송할 수 있는 메커니즘을 제공합니다.
 
-> 그룹생성 &gt; 메시지 추가 &gt; 리뷰 &gt; 발송
+> 그룹생성 &gt; 메시지 추가 &gt; 메시지 확인 &gt; 발송
 
 예로, 10,000 건의 메시지를 발송하는 과정에서 네트웍 오류 혹은 응용프로그램 내부 사정에 의한 오류로 발송 도중 멈추는 경우 어디까지 발송되었는지 확인 후 재발송 하는 등, 뒷처리 과정이 매우 복잡하게 됩니다.
 
@@ -12,6 +12,8 @@
 
 메시지를 담을 그룹을 생성합니다. 생성된 그룹은 24시 뒤에 자동 삭제됩니다.
 
+{% code-tabs %}
+{% code-tabs-item title="createGroup.js" %}
 ```javascript
 'use strict'
 
@@ -23,23 +25,22 @@ coolsms.setCredential({
 })
 
 coolsms.createGroup(
-  {
-    appVersion: 'JsExample v1'
-  },
+  { appVersion: 'JsExample v1' },
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log('Group ID:', result.groupId)
-    }
+    if (error) console.log(error)
+    else console.log('Group ID:', result.groupId)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 생성된 그룹의 ID 를 기록해 두었다가 메시지 추가, 리뷰, 발송 할 때 사용합니다.
 
 ## 메시지 추가
 
+{% code-tabs %}
+{% code-tabs-item title="addMessages.js" %}
 ```javascript
 'use strict'
 
@@ -65,19 +66,22 @@ coolsms.addGroupMessages(
   groupId,
   messages,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log('Result:', JSON.stringify(result, null, 2))
-    }
+    if (error) console.log(error)
+    else console.log('Result:', JSON.stringify(result, null, 2))
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-## 리뷰
+## 그룹 정보 확인
 
-그룹정보 API 를 호출하여 지금까지 접수된 메시지 내역을 확인합니다.
+그룹정보 API 를 호출하여 그룹의 정보와 지금까지 접수된 메시지 내역을 확인합니다.
 
+{% tabs %}
+{% tab title="Request" %}
+{% code-tabs %}
+{% code-tabs-item title="getGroupInfo.js" %}
 ```javascript
 'use strict'
 
@@ -93,14 +97,38 @@ const groupId = '--INPUT GROUP-ID--'
 coolsms.getGroupInfo(
   groupId,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endtab %}
+
+{% tab title="Response" %}
+```javascript
+'use strict'
+
+const coolsms = require('../..')
+
+coolsms.setCredential({
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--iNPUT API SECRET--'
+})
+
+const groupId = '--INPUT GROUP-ID--'
+
+coolsms.getGroupInfo(
+  groupId,
+  (error, result) => {
+    if (error) console.log(error)
+    else console.log(result)
+  }
+)
+```
+{% endtab %}
+{% endtabs %}
 
 ```javascript
 {
