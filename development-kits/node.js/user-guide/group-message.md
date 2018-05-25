@@ -243,8 +243,6 @@ coolsms.sendGroupMessages(
   (error, result) => {
     if (error) console.log(error) 
     else console.log(result)
-
-
   }
 )
 ```
