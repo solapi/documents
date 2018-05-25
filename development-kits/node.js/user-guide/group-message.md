@@ -107,29 +107,8 @@ coolsms.getGroupInfo(
 {% endtab %}
 
 {% tab title="Response" %}
-```javascript
-'use strict'
-
-const coolsms = require('../..')
-
-coolsms.setCredential({
-  apiKey: '--INPUT API KEY--',
-  apiSecret: '--iNPUT API SECRET--'
-})
-
-const groupId = '--INPUT GROUP-ID--'
-
-coolsms.getGroupInfo(
-  groupId,
-  (error, result) => {
-    if (error) console.log(error)
-    else console.log(result)
-  }
-)
-```
-{% endtab %}
-{% endtabs %}
-
+{% code-tabs %}
+{% code-tabs-item title="getGroupInfo.js result" %}
 ```javascript
 {
   groupId: 'G3V20170919153907PSHKLLP3LRQWGW2',
@@ -173,6 +152,10 @@ coolsms.getGroupInfo(
   ttl: 7080
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 getMessageList 를 사용해 접수된 메시지 내용을 읽어와서 비교해 볼 수도 있습니다.
 
