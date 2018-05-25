@@ -7,7 +7,7 @@
 ## Development SDK
 
 * [Node.js](development-kits/node.js/)
-  * [시작하기](development-kits/node.js/undefined.md)
+  * [시작하기](development-kits/node.js/getting-started.md)
   * [사용자 가이드](development-kits/node.js/undefined-1/)
     * [심플메시지](development-kits/node.js/undefined-1/undefined.md)
     * [그룹메시지](development-kits/node.js/undefined-1/undefined-1.md)

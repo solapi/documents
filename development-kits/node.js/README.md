@@ -1,6 +1,6 @@
 # Node.js
 
-* [시작하기](undefined.md)
+* [시작하기](getting-started.md)
 * [사용자 가이드](undefined-1/)
   * [심플메시지](undefined-1/undefined.md)
   * [그룹메시지](undefined-1/undefined-1.md)
