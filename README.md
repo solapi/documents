@@ -7,14 +7,14 @@
 ## Development SDK
 
 * [Node.js](development-kits/node.js/)
-  * [시작하기](development-kits/node.js/getting-started.md)
-  * [사용자 가이드](development-kits/node.js/user-guide/)
-    * [심플메시지](development-kits/node.js/user-guide/simple-message.md)
-    * [그룹메시지](development-kits/node.js/user-guide/group-message.md)
-    * [예약메시지 관리](development-kits/node.js/user-guide/scheduled-message.md)
-    * [메시지로그](development-kits/node.js/user-guide/message-log.md)
-    * [이미지 업로드](development-kits/node.js/user-guide/image.md)
-  * [API 레퍼런스](development-kits/node.js/api-reference.md)
+  * [시작하기](development-kits/node.js/undefined.md)
+  * [사용자 가이드](development-kits/node.js/undefined-1/)
+    * [심플메시지](development-kits/node.js/undefined-1/undefined.md)
+    * [그룹메시지](development-kits/node.js/undefined-1/undefined-1.md)
+    * [예약메시지 관리](development-kits/node.js/undefined-1/undefined-3.md)
+    * [메시지로그](development-kits/node.js/undefined-1/undefined-4.md)
+    * [이미지 업로드](development-kits/node.js/undefined-1/undefined-5.md)
+  * [API 레퍼런스](development-kits/node.js/api.md)
 * [Python](development-kits/python/)
   * [시작하기](development-kits/python/undefined.md)
   * [사용자 가이드](development-kits/python/undefined-1/)
@@ -191,7 +191,7 @@
 
 ## REST API Reference
 
-* [요청 인증](rest-api-reference/request-authentication.md)
+* [요청 인증](rest-api-reference/undefined.md)
 * [메시지 API]()
   * [심플메시지]()
   * [그룹메시지]()
@@ -213,7 +213,7 @@
     * [이미지 정보]()
     * [이미지 삭제]()
     * [이미지 목록]()
-* [잔액정보](rest-api-reference/undefined-1.md)
+* [잔액정보](rest-api-reference/undefined-2%20%281%29.md)
 * [API Key 관리](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys.md)
   * [생성](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/createCredential.md)
   * [삭제](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/deleteCredentials.md)
@@ -221,9 +221,9 @@
   * [목록](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/getCredentialList.md)
   * [Secret Key 재생성](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/regenerateSecretKey.md)
   * [상태 업데이트](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/updateCredentialStatus.md)
-* [용어사전](rest-api-reference/undefined-2.md)
-* [메시지상태코드](rest-api-reference/undefined-3.md)
-* [오류코드](rest-api-reference/undefined-4.md)
+* [용어사전](rest-api-reference/undefined-3.md)
+* [메시지상태코드](rest-api-reference/undefined-4.md)
+* [오류코드](rest-api-reference/undefined-5.md)
 
 ## Microservice API Reference\(Internal\)
 

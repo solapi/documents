@@ -8,10 +8,10 @@ Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한
 
 쿨에스엠에스 [API Key 관리](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigCredentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
 
-![Credential Information](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/images/credential_info.png)
+## Request
 
-## Request Syntax
-
+{% tabs %}
+{% tab title="Syntax" %}
 ```text
 {
   Authorization: <AuthenticationMethod> apiKey=<ApiKey>,
@@ -20,18 +20,14 @@ Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한
   signature=<Signature>
 }
 ```
+{% endtab %}
 
-## Request Sample
+{% tab title="Sample" %}
+$ curl -X POST  https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[ISO 8601 DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"
+{% endtab %}
+{% endtabs %}
 
-$ curl -X POST [https://solapi.com/MessageLog/3/getSentMessages](https://solapi.com/MessageLog/3/getSentMessages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[ISO 8601 DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"
-
-request\( { url: "[https://solapi.com/MessageLog/3/getSentMessages](https://solapi.com/MessageLog/3/getSentMessages)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: {} } \)
-
-conn = HTTPSConnection\('solapi.com', '443'\) conn.request\( "POST", "/MessageLog/3/getSentMessages", "", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
-
-&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://solapi.com/MessageLog/3/getSentMessages](https://solapi.com/MessageLog/3/getSentMessages)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\('Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATA\], Salt=\[SALT\], Signature=\[SIGNATURE\]\)'\); curl\_exec\($ch\); curl\_close\($ch\); ?&gt;
-
-* AuthenticationMethod  
+* AuthenticationMethod
   * Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
 * ApiKey  
   * 발급받은 API Key를 입력합니다.
@@ -70,4 +66,12 @@ Signature는 중복사용이 불가하며 15분 안에 전송되는 요청\(Requ
 * DuplicatedSignature  
   * 15분 안에 동일한 signature 값  
   * HTTP Status Code: 403
+
+## OAuth2 지원
+
+메시지 API v4.0 부터 OAuth2 를 통한 인증을 제공합니다.
+
+{% page-ref page="../oauth2.0/oauth2.md" %}
+
+
 
