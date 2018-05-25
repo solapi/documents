@@ -24,9 +24,15 @@ $ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send  --h
 
 ## Errors
 
-* `ValidationError(400)` - 요청시에 입력된 parameter 들이 정상적인 값이 아닐경우에 출력됩니다.
-* `NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
-* `Forbidden(403)` - 자신의 그룹이 아닌경우 출력됩니다.
-* `ResourceNotFound(404)` - 해당 그룹아이디가 존재하지 않는 경우 또는 해당 그룹에 메시지가 추가되지 않은 경우 출력됩니다.
+* `ValidationError(400)`- 요청시에 보낸 값이 잘못된 경우입니다.
+* `InvalidStatus(400)`- 해당 그룹의 status 가 PENDING 이 아닌 경우입니다.
+* `DeletedGroup(400)`- 해당 그룹이 삭제된 경우입니.
+* `FailedGroup(400)`- 해당 그룹이 생성시에 실패된 경우입니다.
+* `ScheduledGroup(400)`- 해당 그룹이 발송 대기상태인 경우입니다.
+* `AlreadySent(400)`- 해당 그룹이 이미 발송 처리가 된 경우입니다..
+* `InactiveApp(400)`- 해당 앱이 사용 불가능한 상태인 경우입니다.
+* `NotEnoughBalance(402)`- 보유 잔액이 메시지 발송 금액보다 적은 경우입니다
+* `ResourceNotFound(404)`- 자신의 그룹이 아니거나 그룹 아이디가 존재하지 않습니다.
+* `MessagesInProcessing(409)`- 해당 그룹이 이미 발송 처리가 된 경우입니다.
 * `InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다.
 
