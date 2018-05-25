@@ -87,7 +87,7 @@ const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
-  apiSecret: '--iNPUT API SECRET--'
+  apiSecret: '--INPUT API SECRET--'
 })
 
 const groupId = '--INPUT GROUP-ID--'
@@ -102,6 +102,38 @@ coolsms.getMessageList(
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+## 메시지 삭제
+
+메시지 삭제 API를 호출하여 그룹에 추가했던 메시지를 삭제합니다.
+
+```javascript
+'use strict'
+
+const coolsms = require('coolsms-sdk')
+
+coolsms.setCredential({
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--INPUT API SECRET--'
+})
+
+const groupId = '--INPUT GROUP-ID--'
+
+const messages = [
+  {
+    "messageId": "M4V20181129004741OKQHE7Z3VRJKLQL",
+  }
+]
+
+GroupMessage.deleteMessages(
+  groupId,
+  messages,
+  (error, result) => {
+    if (error) console.log(error)
+    else console.log('Result:', result)
+  }
+)
+```
 
 ## 그룹 정보 확인
 
@@ -118,7 +150,7 @@ const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
-  apiSecret: '--iNPUT API SECRET--'
+  apiSecret: '--INPUT API SECRET--'
 })
 
 const groupId = '--INPUT GROUP-ID--'
