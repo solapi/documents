@@ -57,7 +57,7 @@ coolsms.sendSimpleMessages(
           "recipient": "--- Input recipient's phone number ---"
         },
         "from": "--- Input sender's phone number ---",
-        "text": "--- Input text to send ---",
+        "text": "--- Input text to send ---"
       }
     ]
   },
@@ -76,7 +76,7 @@ coolsms.sendSimpleMessages(
 node example.js
 ```
 
-발송된 메시지는 메시지의 길이에 따라 SMS 혹은 LMS 가격이 적용되어 차감되며 실패 건에 대해서는 바로 재충전됩니다.
+발송된 메시지는 메시지의 길이에 따라 SMS 혹은 LMS 가격이 적용되어 차감되며 실패 건에 대해서는 즉 재충전됩니다.
 
 ## 예제
 
@@ -96,5 +96,5 @@ node example.js
 
 ## 라이선스
 
-Coolsms SDK for Javascript 의 소스 코드는 MIT License 를 따릅니다.
+Coolsms SDK for Javascript 의 소스 코드는 [MIT License](https://ko.wikipedia.org/wiki/MIT_%ED%97%88%EA%B0%80%EC%84%9C) 를 따릅니다.
 
