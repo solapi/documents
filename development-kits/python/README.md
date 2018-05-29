@@ -5,11 +5,9 @@
 [메뉴얼 바로가기](https://www.coolsms.co.kr/index.php?mid=SMS_API_v2)
 {% endhint %}
 
-{% page-ref page="../node.js/getting-started.md" %}
+{% page-ref page="getting-started.md" %}
 
-{% page-ref page="../node.js/user-guide/" %}
-
-{% page-ref page="../node.js/api-reference.md" %}
+{% page-ref page="user-guide/" %}
 
 
 
