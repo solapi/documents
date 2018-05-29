@@ -18,11 +18,8 @@ coolsms.setCredential({
 
 coolsms.getScheduledMessages(
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
@@ -48,10 +45,8 @@ const messagesToCancel = [
 coolsms.cancelScheduledMessages(
   messagesToCancel,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
+    if (error) console.log(error)
+     else console.log(result)
     }
   }
 )
