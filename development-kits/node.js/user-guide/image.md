@@ -115,8 +115,8 @@ const imagesToDelete = [
 ]
 
 coolsms.deleteImages(
-  imagesToDelete
-  , function(error, result) {
+  imagesToDelete,
+  function(error, result) {
     if (error) console.log(error)
     else console.log(result)
   }
