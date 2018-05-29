@@ -2,10 +2,12 @@
 
 발송처리된 메시지의 목록을 조회합니다. 예약으로 접수된 메시지는 [예약메시지 관리](scheduled-message.md) 에서 확인할 수 있습니다.
 
+{% code-tabs %}
+{% code-tabs-item title="getSentMessages.js" %}
 ```javascript
 'use strict'
 
-const coolsms = require('cooosms-sdk')
+const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
@@ -20,12 +22,11 @@ const params = {
 coolsms.getSentMessages(
   params,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
