@@ -46,13 +46,23 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 
 ## Request Sample
 
+{% tabs %}
+{% tab title="CURL" %}
 $ curl -X POST `https://rest.coolsms.co.kr/messages/v4/send`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'
+{% endtab %}
 
+{% tab title="NodeJS" %}
 request\( { url: "[https://rest.coolsms.co.kr/messages/v4/send](https://rest.coolsms.co.kr/messages/v4/send)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } } \)
+{% endtab %}
 
+{% tab title="Python" %}
 conn = HTTPSConnection\('rest.coolsms.co.kr', '443'\) conn.request\( "POST", "/messages/v4/send", json.dumps\( { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } \), {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+{% endtab %}
 
-&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://rest.coolsms.co.kr/messages/v4/send](https://rest.coolsms.co.kr/messages/v4/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, json\_encode\( '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }' \); curl\_exec\($ch\); curl\_close\($ch\); ?&gt;
+{% tab title="PHP" %}
+$ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://rest.coolsms.co.kr/messages/v4/send](https://rest.coolsms.co.kr/messages/v4/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, json\_encode\( '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }' \); curl\_exec\($ch\); curl\_close\($ch\);
+{% endtab %}
+{% endtabs %}
 
 ## Required Parameters
 
@@ -119,4 +129,5 @@ conn = HTTPSConnection\('rest.coolsms.co.kr', '443'\) conn.request\( "POST", "/m
 * `InvalidStatusCode(400)` - 접수가 실패한 경우입니다. 메시지의 아이디와 status code 가 반환됩니다.
 * `NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
 * `InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다.
+* 그룹 생성, 그룹 메시지 추가, 그룹 발송을 확인해주세요.
 

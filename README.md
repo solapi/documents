@@ -191,7 +191,7 @@
 
 ## REST API Reference
 
-* [요청 인증](rest-api-reference/undefined.md)
+* [요청 인증](rest-api-reference/request-authentication.md)
 * [메시지 API]()
   * [심플메시지]()
   * [그룹메시지]()
