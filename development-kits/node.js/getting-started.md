@@ -34,7 +34,7 @@ git clone https://github.com/coolsms/coolsms-sdk-js.git
 
 ## 발송
 
-준비과정에서 발급받은 API Key, API Secret 및 발신번호\(sender's phone number\) 를 예제에서 사용하세요. 등록된 발신번호 외에는 사용이 불가합니다.
+[준비과정](https://docs.coolsms.co.kr/~/edit/primary/development-kits/node.js/getting-started#undefined)에서 발급받은 API Key, API Secret 및 발신번호\(sender's phone number\) 를 예제에서 사용하세요. 등록된 발신번호 외에는 사용이 불가합니다.
 
 수신받을 전화번호를 recipient 에 입력하고 발송하려는 메시지를 text 에 입력하세요.
 

@@ -2,7 +2,7 @@
 
 그룹메시지는 대량메시지 뿐만 아니라 소량의 메시지도 안전하게 발송할 수 있는 메커니즘을 제공합니다.
 
-> 그룹생성 &gt; 메시지 추가 &gt; 메시지 확인 &gt; 발송
+> [그룹생성](https://docs.coolsms.co.kr/~/edit/primary/development-kits/node.js/user-guide/group-message#undefined) &gt; [메시지 추가](https://docs.coolsms.co.kr/~/edit/primary/development-kits/node.js/user-guide/group-message#undefined-1) &gt; [메시지 확인](https://docs.coolsms.co.kr/~/edit/primary/development-kits/node.js/user-guide/group-message#undefined-2) &gt; [발송](https://docs.coolsms.co.kr/~/edit/primary/development-kits/node.js/user-guide/group-message#undefined-6)
 
 예로, 10,000 건의 메시지를 발송하는 과정에서 네트웍 오류 혹은 응용프로그램 내부 사정에 의한 오류로 발송 도중 멈추는 경우 어디까지 발송되었는지 확인 후 재발송 하는 등, 뒷처리 과정이 매우 복잡하게 됩니다.
 
@@ -38,6 +38,8 @@ coolsms.createGroup(
 생성된 그룹의 ID 를 기록해 두었다가 메시지 추가, 리뷰, 발송 할 때 사용합니다.
 
 ## 메시지 추가
+
+생성한 그룹에 메세지를 추가합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="addGroupMessages.js" %}
@@ -107,6 +109,8 @@ coolsms.getMessageList(
 
 메시지 삭제 API를 호출하여 그룹에 추가했던 메시지를 삭제합니다.
 
+{% code-tabs %}
+{% code-tabs-item title="deleteMessages.js" %}
 ```javascript
 'use strict'
 
@@ -134,6 +138,8 @@ GroupMessage.deleteMessages(
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 그룹 정보 확인
 
@@ -219,6 +225,40 @@ coolsms.getGroupInfo(
 {% endtabs %}
 
 getMessageList 를 사용해 접수된 메시지 내용을 읽어와서 비교해 볼 수도 있습니다.
+
+## 그룹 삭제
+
+그룹 삭제 API를 호출하여 생성한 그룹을 삭제합니다.
+
+{% code-tabs %}
+{% code-tabs-item title="deleteGroups.js" %}
+```javascript
+'use strict'
+
+const coolsms = require('coolsms-sdk')
+
+coolsms.setCredential({
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--INPUT SERCRET KEY--'
+})
+
+const groups = [
+  {
+    "groupId": "--INPUT GROUP-ID--"
+  }
+]
+
+GroupMessage.deleteGroups(
+  groups,
+  (error, result) => {
+    if (error) console.log(error)
+    else console.log('Result:', result)
+    }
+  }
+)
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 발송
 

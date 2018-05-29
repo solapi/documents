@@ -172,7 +172,7 @@ coolsms.sendSimpleMessages(
 
 ## 메시지 예약
 
-scheduledDate 에 "YYYY-MM-DD HH:MI:SS" 형식의 값을 입력하여 정해진 시간에 메시지가 발송하도록 합니다.
+scheduledDate 에 _"YYYY-MM-DD HH:MI:SS"_ 형식의 값을 입력하여 정해진 시간에 메시지가 발송하도록 합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="scheduleMessages.js" %}
