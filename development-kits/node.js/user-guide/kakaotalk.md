@@ -6,6 +6,8 @@ type 을 ATA 로 입력하면 카카오톡의 알림톡, 친구톡을 발송 할
 
 이미 등록된 템플릿에 발송 문구가 일치해야 정상적으로 발송됩니다.
 
+{% code-tabs %}
+{% code-tabs-item title="sendAlimTalk.js" %}
 ```javascript
 'use strict'
 
@@ -41,23 +43,24 @@ const params = {
 coolsms.sendSimpleMessages(
   params,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 알림톡 버튼
 
 알림톡 템플릿에 버튼을 함께 등록한 경우 하단 버튼이 출력되는 형식의 알림톡을 발송 할 수 있습니다.
 
+{% code-tabs %}
+{% code-tabs-item title="sendAlimTalkWithButton.js" %}
 ```javascript
 'use strict'
 
-const coolsms = require('cooksms-sdk')
+const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
@@ -91,14 +94,13 @@ const params = {
 coolsms.sendSimpleMessages(
   params,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 친구톡
 
@@ -107,12 +109,11 @@ coolsms.sendSimpleMessages(
 ```javascript
 'use strict'
 
-const coolsms = require('../..')
-const config = require('../config.json')
+const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
-  apiKey: config.apiKey,
-  apiSecret: config.apiSecret
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--INPUT API SECRET--'
 })
 
 const params = {
@@ -141,11 +142,8 @@ const params = {
 coolsms.sendSimpleMessages(
   params,
   (error, result) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(result);
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
@@ -157,7 +155,7 @@ coolsms.sendSimpleMessages(
 ```javascript
 'use strict'
 
-const coolsms = require('cooksms-sdk')
+const coolsms = require('coolsms-sdk')
 
 coolsms.setCredential({
   apiKey: '--INPUT API KEY--',
@@ -190,11 +188,8 @@ const params = {
 coolsms.sendSimpleMessages(
   params,
   (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log(result)
-    }
+    if (error) console.log(error)
+    else console.log(result)
   }
 )
 ```
