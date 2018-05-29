@@ -9,6 +9,7 @@ description: MMS 발송에서 필요한 이미지를 관리합니다.
 
 ## 이미지 업로드
 
+MMS에 사용할 이미지를 업로드 합니다.  
 업로드된 이미지는 24시간 후 자동 삭제됩니다.
 
 {% code-tabs %}
@@ -36,7 +37,35 @@ coolsms.uploadImage(
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+## 이미지 목록
+
+이미지들의 목록을 확인합니다.
+
+{% code-tabs %}
+{% code-tabs-item title="getImageList.js" %}
+```javascript
+'use strict'
+
+const coolsms = require('coolsms-sdk')
+
+coolsms.setCredential({
+  apiKey: '--INPUT API KEY--',
+  apiSecret: '--INPUT API SECRET--'
+})
+
+coolsms.getImageList(
+  (error, result) => {
+    if (error) console.log(error)
+    else console.log(result)
+  }
+)
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## 이미지 정보
+
+이미지의 정보를 확인합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="getImageInfo.js" %}
@@ -63,31 +92,9 @@ coolsms.getImageInfo(
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## 이미지 목록
-
-{% code-tabs %}
-{% code-tabs-item title="getImageList.js" %}
-```javascript
-'use strict'
-
-const coolsms = require('coolsms-sdk')
-
-coolsms.setCredential({
-  apiKey: '--INPUT API KEY--',
-  apiSecret: '--INPUT API SECRET--'
-})
-
-coolsms.getImageList(
-  (error, result) => {
-    if (error) console.log(error)
-    else console.log(result)
-  }
-)
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
 ## 이미지 삭제
+
+이미지를 삭제합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="deleteImages.js" %}
