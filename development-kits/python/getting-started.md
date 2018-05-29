@@ -17,14 +17,14 @@ Coolsms Python SDK v2.0.1은 SMS API v2 를 이용 보다 빠르고 안전하게
 
 ## Step 4. 문자보내기
 
-* 이제 Python SDK를 사용할 준비가 되었습니다! [Example](undefined-1/)을 통해 사용 방법을 알아보세요.
+* 이제 Python SDK를 사용할 준비가 되었습니다! [Example](user-guide/)을 통해 사용 방법을 알아보세요.
 
 ### 참고사항
 
 10월 16일 이후로 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있습니다. 아래 관련링크를 참고 해주세요.
 
 * [발신번호 사전등록제 공지사항](https://www.coolsms.co.kr/index.php?mid=notice&document_srl=3070386)
-* [Python SDK 발신번호 등록 방법](undefined-1/undefined-3/)
+* [Python SDK 발신번호 등록 방법](user-guide/undefined-3/)
 * [웹 에서 발신번호 등록하기](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigSenderNumbers)
 
 ### System requirements
