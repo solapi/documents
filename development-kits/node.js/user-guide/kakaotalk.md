@@ -113,6 +113,8 @@ coolsms.sendSimpleMessages(
 
 플러스친구를 친구로 등록만 되어있다면 사전에 등록된 문구가 아니라 자유롭게 텍스트를 전송할 수 있습니다.
 
+{% code-tabs %}
+{% code-tabs-item title="sendChinguTalk.js" %}
 ```javascript
 'use strict'
 
@@ -154,11 +156,15 @@ coolsms.sendSimpleMessages(
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 친구톡 버튼
 
 자유로운 내용으로 하단 버튼 출력 형식의 친구톡을 발송 할 수 있습니다.
 
+{% code-tabs %}
+{% code-tabs-item title="sendChinguTalkWithButton.js" %}
 ```javascript
 'use strict'
 
@@ -200,4 +206,6 @@ coolsms.sendSimpleMessages(
   }
 )
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
