@@ -70,8 +70,7 @@ coolsms.sendSimpleMessages(
           "recipient": "01000000001"
         },
         "from": "0200000001",
-        "subject": "LMS 제목",
-        "text": "내용이 짧아도 LMS로 발송됩니다"
+        "text": "내용이 길다면 짤려서 전송됩니다."
       }
     ]
   },
