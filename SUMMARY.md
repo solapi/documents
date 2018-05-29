@@ -211,11 +211,10 @@
     * [그룹 메시지 삭제](rest-api-reference/api-4/undefine/undefined-9.md)
   * [메시지 조회](rest-api-reference/api-4/undefined-2.md)
   * [메시지 로그 조회](rest-api-reference/api-4/undefined-3.md)
-* [잔액정보](rest-api-reference/undefined-2%20%281%29.md)
-* [잔액정보](rest-api-reference/undefined-2%20%281%29.md)
-* [용어사전](rest-api-reference/undefined-3.md)
-* [메시지상태코드](rest-api-reference/undefined-4.md)
-* [오류코드](rest-api-reference/undefined-5.md)
+* [잔액정보](rest-api-reference/balance.md)
+* [용어사전](rest-api-reference/dictionary.md)
+* [메시지상태코드](rest-api-reference/message-code.md)
+* [오류코드](rest-api-reference/error-code.md)
 
 ## oAuth2.0 사용하기
 

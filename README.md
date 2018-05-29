@@ -213,7 +213,7 @@
     * [이미지 정보]()
     * [이미지 삭제]()
     * [이미지 목록]()
-* [잔액정보](rest-api-reference/undefined-2%20%281%29.md)
+* [잔액정보]()
 * [API Key 관리](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys.md)
   * [생성](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/createCredential.md)
   * [삭제](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/deleteCredentials.md)
@@ -221,9 +221,9 @@
   * [목록](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/getCredentialList.md)
   * [Secret Key 재생성](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/regenerateSecretKey.md)
   * [상태 업데이트](https://github.com/coolsms/documents/tree/7c909967934227b9d386a76b06c08bf448c91c98/rest/apikeys/updateCredentialStatus.md)
-* [용어사전](rest-api-reference/undefined-3.md)
-* [메시지상태코드](rest-api-reference/undefined-4.md)
-* [오류코드](rest-api-reference/undefined-5.md)
+* [용어사전](rest-api-reference/dictionary.md)
+* [메시지상태코드](rest-api-reference/message-code.md)
+* [오류코드](rest-api-reference/error-code.md)
 
 ## Microservice API Reference\(Internal\)
 
