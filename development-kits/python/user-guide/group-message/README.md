@@ -2,7 +2,7 @@
 
 {% page-ref page="create-group.md" %}
 
-{% page-ref page="../../../java/undefined-1/undefined-1/undefined-1.md" %}
+{% page-ref page="get-group-list.md" %}
 
 {% page-ref page="delete-group.md" %}
 
