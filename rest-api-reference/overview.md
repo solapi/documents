@@ -6,7 +6,7 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 쿨에스엠에스 SMS REST API 서버로 Request를 보내기 위해서 인증을 거쳐야 합니다.
 
-[요청 인증](request-authentication.md) 를 참고하세요.
+[요청 인증](undefined.md) 를 참고하세요.
 
 ## Resource URL 구성
 

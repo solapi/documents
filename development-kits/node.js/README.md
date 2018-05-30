@@ -1,12 +1,12 @@
 # Node.js
 
-* [시작하기](getting-started.md)
-* [사용자 가이드](user-guide/)
-  * [심플메시지](user-guide/simple-message.md)
-  * [그룹메시지](user-guide/group-message.md)
-  * [카카오톡](user-guide/kakaotalk.md)
-  * [예약메시지 관리](user-guide/scheduled-message.md)
-  * [메시지 로그](user-guide/message-log.md)
-  * [이미지 관리](user-guide/image.md)
-* [API 레퍼런스](api-reference.md)
+* [시작하기](undefined.md)
+* [사용자 가이드](undefined-1/)
+  * [심플메시지](undefined-1/undefined.md)
+  * [그룹메시지](undefined-1/undefined-1.md)
+  * [카카오톡](undefined-1/undefined-2.md)
+  * [예약메시지 관리](undefined-1/undefined-3.md)
+  * [메시지 로그](undefined-1/undefined-4.md)
+  * [이미지 관리](undefined-1/undefined-5.md)
+* [API 레퍼런스](api.md)
 

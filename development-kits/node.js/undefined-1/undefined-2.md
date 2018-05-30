@@ -1,7 +1,3 @@
----
-description: Type에 따라 카카오톡의 알림톡 또는 친구톡을 발송 할 수 있습니다.
----
-
 # 카카오톡
 
 | Input Type | Result Type |

@@ -10,13 +10,11 @@
 
 {% page-ref page="add-messages.md" %}
 
-{% page-ref page="add-meesages-json.md" %}
+{% page-ref page="add-messages-json.md" %}
 
 {% page-ref page="get-message-list.md" %}
 
-{% page-ref page="delete-message.md" %}
+{% page-ref page="delete-messages.md" %}
 
 {% page-ref page="send-message.md" %}
-
-
 

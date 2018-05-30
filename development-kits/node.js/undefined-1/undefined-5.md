@@ -1,7 +1,3 @@
----
-description: MMS 발송에서 필요한 이미지를 관리합니다.
----
-
 # 이미지 관리
 
 [MMS 타입](https://docs.coolsms.co.kr/development-kits/node.js/user-guide/simple-message#mms)으로 이미지를 휴대전화로 발송 할 수 있습니다.   

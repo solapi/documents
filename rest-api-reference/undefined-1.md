@@ -1,7 +1,3 @@
----
-description: 유저의 잔액정보를 가져옵니다.
----
-
 # 잔액정보
 
 이 API는 Authentication Info를 제외한 Parameters가 필요 없습니다.

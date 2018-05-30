@@ -1,9 +1,3 @@
----
-description: >-
-  Coolsms Python SDK v2.0.1은 SMS API v2 를 이용 보다 빠르고 안전하게 발송이 가능하도록 업데이트 되었으며 그룹
-  메시지를 통한 대용량 문자 메시지 발송 기능을 강화하였습니다.
----
-
 # 시작하기
 
 ## Step 1. Download SDK
