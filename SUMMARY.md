@@ -211,6 +211,7 @@
     * [그룹 메시지 삭제](rest-api-reference/api-4/undefined-1/undefined-9.md)
   * [메시지 조회](rest-api-reference/api-4/undefined-2.md)
   * 메시지 로그 조회
+* Cash API v1
 * [잔액정보](rest-api-reference/undefined-1.md)
 * [용어사전](rest-api-reference/undefined-2.md)
 * [메시지상태코드](rest-api-reference/undefined-3.md)
