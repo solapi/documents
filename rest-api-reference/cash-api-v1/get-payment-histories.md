@@ -41,7 +41,8 @@ Get Payment Histories
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="number" %}
-검색할 갯수 입니다.
+검색할 갯수 입니다.tj  
+{
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -49,26 +50,33 @@ Get Payment Histories
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+성공적으로 목록을 가져온 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "name": "Cake's name",
-    "recipe": "Cake's recipe name",
-    "cake": "Binary cake"
+    "result": [
+        {
+            "_id": "5b10e7af9c12c6375672540a",
+            "paymentId": "abc",
+            "amount": 12313,
+            "dateCreated": "2018-06-01T06:29:03.275Z"
+        },
+        ...
+    ]
 }
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+파라미터 오류
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "message": "Ain't no cake like that."
+    "errorCode": "ValidationError",
+    "errorMessage": "child \"query\" fails because [child \"paymentId\" fails because [\"paymentId\" is required]]"
 }
 ```
 {% endapi-method-response-example %}
