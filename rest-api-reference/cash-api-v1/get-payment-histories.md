@@ -16,24 +16,8 @@ Get Payment Histories
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter type="string" name="paymentId" required=true %}
-결제수단의 Id 입니다.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="startAmount" type="number" %}
-결제된 금액의 시작값 입니다.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="endAmount" type="number" required=false %}
-결제된 금액의 끝 값 입니다. 
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="startDate" type="string" required=false %}
-검색을 시작할 날짜 입니다.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="endDate" type="string" required=false %}
-검색을 마칠 날짜 입니다.
+{% api-method-parameter type="string" name="accountId" required=true %}
+조회할 계정의 accountId 입니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="offset" type="number" required=false %}
@@ -41,8 +25,7 @@ Get Payment Histories
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="number" %}
-검색할 갯수 입니다.tj  
-{
+검색할 갯수 입니다.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
