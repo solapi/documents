@@ -6,7 +6,7 @@ description: 등록된 결제 수단으로 결제된 목록을 조회합니다.
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-Get Payment Histories
+Get Payment List
 {% endapi-method-summary %}
 
 {% api-method-description %}
