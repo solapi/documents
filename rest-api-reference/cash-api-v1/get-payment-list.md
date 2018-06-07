@@ -21,11 +21,13 @@ Get Payment List
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="offset" type="number" required=false %}
-검색을 시작할 번호입니다.
+검색을 시작할 번호입니다.  
+default: 0
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="number" %}
-검색할 갯수 입니다.
+검색할 갯수 입니다.  
+default: 20
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
