@@ -212,6 +212,7 @@
   * [메시지 조회](rest-api-reference/api-4/undefined-2.md)
   * [메시지 로그 조회](rest-api-reference/api-4/undefined-3.md)
 * [Cash API v1](rest-api-reference/cash-api-v1/README.md)
+  * [결제 수단 등록](rest-api-reference/cash-api-v1/undefined.md)
   * [결제 수단 목록 조회](rest-api-reference/cash-api-v1/get-payment-list.md)
   * [결제 수단 삭제](rest-api-reference/cash-api-v1/delete-payment.md)
 * [잔액정보](rest-api-reference/undefined-1.md)
