@@ -42,7 +42,7 @@ Stripe 에서 발급받은 customer Id
 이미 등록된 카드인 경우
 {% endapi-method-response-example-description %}
 
-```
+```javascript
 {
     "errorCode": "CardAlreadyExists",
     "errorMessage": "중복된 별칭이 있거나 이미 등록된 카드입니다."
