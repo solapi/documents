@@ -216,7 +216,7 @@
   * [자동결제 우선순위 설정](rest-api-reference/cash-api-v1/set-payment-priority.md)
   * [결제 수단 목록 조회](rest-api-reference/cash-api-v1/get-payment-list.md)
   * [결제 수단 삭제](rest-api-reference/cash-api-v1/delete-payment.md)
-  * [결제](rest-api-reference/cash-api-v1/undefined-2.md)
+  * [결제](rest-api-reference/cash-api-v1/charge-balance.md)
 * [잔액정보](rest-api-reference/undefined-1.md)
 * [용어사전](rest-api-reference/undefined-2.md)
 * [메시지상태코드](rest-api-reference/undefined-3.md)

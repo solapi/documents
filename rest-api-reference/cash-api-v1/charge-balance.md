@@ -6,7 +6,7 @@ description: 등록된 결제 수단으로 결제를 요청합니다.
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
 {% api-method-summary %}
-
+Charge Balance
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -29,18 +29,17 @@ description: 등록된 결제 수단으로 결제를 요청합니다.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+정상적으로 결제가 된 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-}
+{}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-paymentId 가 유효하지 않은 경
+paymentId 가 유효하지 않은 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -53,7 +52,7 @@ paymentId 가 유효하지 않은 경
 
 {% api-method-response-example httpCode=402 %}
 {% api-method-response-example-description %}
-돈이 부족해 결제가 취소된 경
+돈이 부족해 결제가 취소된 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
