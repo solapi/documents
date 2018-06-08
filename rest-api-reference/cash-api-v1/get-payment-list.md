@@ -19,16 +19,6 @@ Get Payment List
 {% api-method-parameter type="string" name="accountId" required=true %}
 조회할 계정의 accountId 입니다.
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="offset" type="number" required=false %}
-검색을 시작할 번호입니다.  
-default: 0
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="limit" type="number" %}
-검색할 갯수 입니다.  
-default: 20
-{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -65,7 +55,7 @@ default: 20
 ```javascript
 {
     "errorCode": "ValidationError",
-    "errorMessage": "child \"query\" fails because [child \"paymentId\" fails because [\"paymentId\" is required]]"
+    "errorMessage": "child \"query\" fails because [child \"accountId\" fails because [\"accountId\" is required]]"
 }
 ```
 {% endapi-method-response-example %}
