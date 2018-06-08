@@ -6,7 +6,7 @@ description: 결제할 카드를 등록합니다.
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-
+Create Payment  
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -17,7 +17,7 @@ description: 결제할 카드를 등록합니다.
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="description" type="string" required=true %}
-해당 카드에 대한 설
+해당 카드에 대한 설명
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customerId" type="string" required=true %}
@@ -29,18 +29,17 @@ Stripe 에서 발급받은 customer Id
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-정상적으로 등록된 경
+정상적으로 등록된 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-}
+{}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=409 %}
 {% api-method-response-example-description %}
-이
+이미 등록된 카드인 경우
 {% endapi-method-response-example-description %}
 
 ```
