@@ -4,7 +4,7 @@ description: 등록된 결제 수단을 삭제합니다.
 
 # 결제 수단 삭제
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
+{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
 Delete Payment
 {% endapi-method-summary %}

@@ -6,7 +6,7 @@ description: 결제할 카드를 등록합니다.
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-Create Payment  
+Create Payment
 {% endapi-method-summary %}
 
 {% api-method-description %}
