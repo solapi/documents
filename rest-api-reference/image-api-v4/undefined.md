@@ -13,7 +13,7 @@
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="imageId" type="string" required=true %}
-이미지 아이
+이미지 아이디
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
