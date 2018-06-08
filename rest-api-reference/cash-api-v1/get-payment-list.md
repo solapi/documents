@@ -40,14 +40,18 @@ default: 20
 
 ```javascript
 {
-    "result": [
+    "_id": "xxxxxx",
+    "payments": [
         {
-            "_id": "5b10e7af9c12c6375672540a",
-            "paymentId": "abc",
-            "amount": 12313,
-            "dateCreated": "2018-06-01T06:29:03.275Z"
+            "autoRecharge": false,
+            "description": "월급 받는 카드 1",
+            "_id": "6010864779767788001528419340229"
         },
-        ...
+        {
+            "autoRecharge": false,
+            "description": "월급 받는 카드 1",
+            "_id": "6011201322422313001528419340229"
+        }
     ]
 }
 ```
