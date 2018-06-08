@@ -6,7 +6,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to get free cakes.
+이미지 아이디를 사용해 이미지 정보를 조회합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
