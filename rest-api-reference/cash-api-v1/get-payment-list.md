@@ -54,8 +54,8 @@ Get Payment List
 
 ```javascript
 {
-    "errorCode": "ValidationError",
-    "errorMessage": "child \"query\" fails because [child \"accountId\" fails because [\"accountId\" is required]]"
+    "errorCode": "InvalidAccountId",
+    "errorMessage": "Account ID가 유효하지 않습니다."
 }
 ```
 {% endapi-method-response-example %}
