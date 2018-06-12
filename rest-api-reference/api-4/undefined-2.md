@@ -23,7 +23,7 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.c
 * `from` - 조회하고 싶으신 발신번호를 입력하시면 됩니다.
 * `to` - 조회하고 싶으신 수신번호를 입력하시면 됩니다.
 * `type` - 조회하고 싶으신 메시지의 타입\(SMS, LMS, MMS, ATA, CTA, GCM, APN, PUSH, AUTO\)을 입력하시면 됩니다.
-* `carrierCode` - 조회하고 싶으신 수신받는 기기의 통신사\(SKT, KT, LGT, KTOlleh, LGUplus\)를 입력하시면 됩니다.
+* `networkCode` - 조회하고 싶으신 수신받는 기기의 통신사코드를 입력하시면 됩니다.
 * `statusCode` - 조회하고 싶으신 전송 상태값을 입력하시면 됩니다.
 * `resultCode` - 조회하고 싶으신 전송 결과값을 입력하시면 됩니다.
 * `offset` - 조회하고 싶으신 메시지의 시작 번호를 입력하시면 됩니다. \(0 &lt;= N\)

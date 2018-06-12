@@ -21,7 +21,7 @@
 * [그룹 정보](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/3.%20getGroupInfo.md)
 * [그룹 삭제](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/4.%20deleteGroups.md)
 * [그룹 메시지 추가](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/5.%20addGroupMessages.md)
-* [그룹 메시지 목록](https://docs.coolsms.co.kr/~/edit/primary/rest-api-reference/api-4/group/send) 
-* [그룹 메시지 발송](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/7.%20sendGroupMessages.md)
+* [그룹 메시지 목록](https://docs.coolsms.co.kr/rest-api-reference/api-4/group/list) 
+* [그룹 메시지 발송](https://docs.coolsms.co.kr/rest-api-reference/api-4/group/send)
 * [그룹 메시지 삭제](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/8.%20deleteGroupMessages.md)
 
