@@ -2,10 +2,6 @@
 
 * [Introduction](README.md)
 
-## Overview
-
-* [Introduction](overview/introduction.md)
-
 ## Development Kits
 
 * [Node.js](development-kits/node.js/README.md)
