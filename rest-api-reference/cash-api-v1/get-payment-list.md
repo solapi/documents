@@ -15,11 +15,11 @@ Get Payment List
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter type="string" name="accountId" required=true %}
-조회할 계정의 accountId 입니다.
+{% api-method-headers %}
+{% api-method-parameter name="X-Authenticated-Account-Id" type="string" required=true %}
+결제 수단 목록을 조회할 유저의 accountId 입니다.
 {% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
