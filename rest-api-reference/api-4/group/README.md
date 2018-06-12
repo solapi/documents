@@ -4,7 +4,9 @@
 
 ## 기존 API의 문제점
 
-대량의 메시지를 프로그램 내에서 루프를 돌며 서버에 발송 요청을 합니다. 이 과정에서 프로그램의 오류 혹은 일시적인 네트워크 오류로 메시지의 누락이 발생할 수 있습니다.
+대량의 메시지를 발송 요청하는 프로그램 내에서 루프를 돌며 서버에 발송 요청을 합니다.
+
+이 과정에서 프로그램의 오류 혹은 일시적인 네트워크 오류로 메시지의 누락이 발생할 수 있습니다.
 
 ## 쿨에스엠에스 그룹메시지의 개선된 기능
 
@@ -19,7 +21,7 @@
 * [그룹 정보](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/3.%20getGroupInfo.md)
 * [그룹 삭제](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/4.%20deleteGroups.md)
 * [그룹 메시지 추가](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/5.%20addGroupMessages.md)
-* [그룹 메시지 목록](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/6.%20getGroupMessageList.md) 
+* [그룹 메시지 목록](https://docs.coolsms.co.kr/~/edit/primary/rest-api-reference/api-4/group/send) 
 * [그룹 메시지 발송](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/7.%20sendGroupMessages.md)
 * [그룹 메시지 삭제](https://github.com/coolsms/documents/tree/3e25e2f0ec550ab91a6b2f5e2f285464dc36e170/3.%20ms/4.%20messages-v4/2.%20group-message/8.%20deleteGroupMessages.md)
 
