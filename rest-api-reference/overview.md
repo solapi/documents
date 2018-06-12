@@ -24,10 +24,6 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 * 필요시 특정 리소스 경로를 나타냅니다
 
-`<Action>`
-
-* 서비스 혹은 리소스의 액션을 나타냅니다
-
 ## Types
 
 이 문서에서 JSON 형식으로 구성된 Syntax를 설명할 때 사용되는 파라메터들의 형식을 아래와 같이 표기합니다.
