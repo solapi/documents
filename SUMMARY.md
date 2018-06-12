@@ -214,6 +214,7 @@
 * [Image API v4](rest-api-reference/image-api-v4/README.md)
   * [이미지 목록 조회](rest-api-reference/image-api-v4/list.md)
   * [이미지 정보 조회](rest-api-reference/image-api-v4/info.md)
+  * [이미지 삭제](rest-api-reference/image-api-v4/delete.md)
 * [Cash API v1](rest-api-reference/cash-api-v1/README.md)
   * [결제 수단 등록](rest-api-reference/cash-api-v1/create-payment.md)
   * [자동결제 우선순위 설정](rest-api-reference/cash-api-v1/set-payment-priority.md)

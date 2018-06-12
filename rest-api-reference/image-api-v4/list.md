@@ -6,11 +6,11 @@ description: 생성한 Image 목록을 조회합니다.
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images" %}
 {% api-method-summary %}
-Get Image List
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Request 시에 parameter가 필요하지 않습니다.
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
