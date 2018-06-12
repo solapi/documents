@@ -25,11 +25,81 @@ url -X GET https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorizatio
 
 {% tabs %}
 {% tab title="Syntax" %}
-{ "offset": Int, "limit": Int, "totalCount": Int, "groupList": { "String": { "agent": { "appId": "String", "appVersion": "String", "sdkVersion": "String", "osPlatform": "String" }, "count": { "sms": Int, "lms": Int, "mms": Int, "ata": Int, "cta": Int, "push": Int }, "log": Array, "groupId": "String", "status": "String", "accountId": "String", "apiVersion": "String", "\_id": "String" } } }
+```text
+{
+    "offset": Int, 
+    "limit": Int, 
+    "totalCount": Int, 
+    "groupList": { 
+        "String": { 
+            "agent": { 
+                "appId": "String", 
+                "appVersion": "String", 
+                "sdkVersion": "String", 
+                "osPlatform": "String" 
+            }, 
+            "count": { 
+                "sms": Int, 
+                "lms": Int, 
+                "mms": Int, 
+                "ata": Int, 
+                "cta": Int, 
+                "push": Int 
+            }, 
+            "log": Array, 
+            "groupId": "String", 
+            "status": "String", 
+            "accountId": "String", 
+            "apiVersion": "String", 
+            "_id": "String"
+        } 
+    }
+}
+```
 {% endtab %}
 
 {% tab title="Sample" %}
-{ "offset": 0, "limit": 20, "totalCount": 1, "groupList": { "G4V20180307105937H3PTASXMNJG2JID": { "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null }, "count": { "sms": 0, "lms": 0, "mms": 0, "ata": 0, "cta": 0 }, "log": \[ { "date": "2018-04-03 15:32:21", "message": "메시지 그룹 생성", "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null } } \], "groupId": "G4V20180307105937H3PTASXMNJG2JID", "status": "PENDING", "accountId": "12925149", "apiVersion": "4", "\_id": "G4V20180307105937H3PTASXMNJG2JID" } } }
+```text
+{ 
+    "offset": 0, 
+    "limit": 20, 
+    "totalCount": 1, 
+    "groupList": { 
+        "G4V20180307105937H3PTASXMNJG2JID": { 
+            "agent": { 
+                "appId": "MYAPPID", 
+                "appVersion": null, 
+                "sdkVersion": null, 
+                "osPlatform": null 
+            }, 
+            "count": { 
+                "sms": 0, 
+                "lms": 0, 
+                "mms": 0, 
+                "ata": 0, 
+                "cta": 0 
+            }, 
+            "log": [ 
+                { 
+                    "date": "2018-04-03 15:32:21", 
+                    "message": "메시지 그룹 생성", 
+                    "agent": { 
+                        "appId": "MYAPPID", 
+                        "appVersion": null, 
+                        "sdkVersion": null, 
+                        "osPlatform": null 
+                    }
+                } 
+            ], 
+            "groupId": "G4V20180307105937H3PTASXMNJG2JID", 
+            "status": "PENDING", 
+            "accountId": "12925149", 
+            "apiVersion": "4", 
+            "_id": "G4V20180307105937H3PTASXMNJG2JID" 
+        } 
+    } 
+}
+```
 {% endtab %}
 {% endtabs %}
 
