@@ -55,11 +55,12 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorizat
 {% tab title="Sample" %}
 ```javascript
 {
+
     "agent": {
         "appId": "MYAPPID",
-        "appVersion": null,
-        "sdkVersion": null,
-        "osPlatform": null
+        "appVersion": "MYAPPv1",
+        "sdkVersion": "NodeJSv1",
+        "osPlatform": "Linux"
     },
     "count": {
         "sms": 0,
@@ -67,18 +68,23 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorizat
         "mms": 0,
         "ata": 0,
         "cta": 0
-    }, "log": [
+    },
+    "log": [
         {
-            "date": "2018-04-03 15:32:21",
             "message": "메시지 그룹 생성",
-            "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null } 
+            "agent": {
+                "appId": "MYAPPID",
+                "appVersion": "MYAPPv1",
+                "sdkVersion": "NodeJSv1",
+                "osPlatform": "Linux"
+            }            
         }
     ],
     "groupId": "G4V20180403153221CKAFBUVJ51OF7AV",
     "status": "PENDING",
     "accountId": "12925149",
     "apiVersion": "4",
-    "_id": "G4V20180403153221CKAFBUVJ51OF7AV" 
+    "_id": "G4V20180403153221CKAFBUVJ51OF7AV"
 }
 ```
 {% endtab %}
