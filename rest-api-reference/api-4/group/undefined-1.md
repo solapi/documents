@@ -12,7 +12,7 @@ GET [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/m
 {% endtab %}
 
 {% tab title="Sample" %}
-url -X GET https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]"
+`url -X GET https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 
