@@ -26,17 +26,65 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorizat
 
 {% tabs %}
 {% tab title="Syntax" %}
-{ "agent": { "appId": "String", "appVersion": "String", "sdkVersion": "String", "osPlatform": "String" }, "count": { "sms": Int, "lms": Int, "mms": Int, "ata": Int, "cta": Int, "push": Int }, "log": Array, "groupId": "String", "status": "String", "accountId": "String", "apiVersion": "String", "\_id": "String" }
+```javascript
+{
+    "agent": {
+        "appId": "String",
+        "appVersion": "String",
+        "sdkVersion": "String",
+        "osPlatform": "String"
+    },
+    "count": {
+        "sms": Number,
+        "lms": Number,
+        "mms": Number,
+        "ata": Number,
+        "cta": Number,
+        "push": Number
+    },
+    "log": Array,
+    "groupId": "String",
+    "status": "String",
+    "accountId": "String",
+    "apiVersion": "String",
+    "_id": "String"
+}
+```
 {% endtab %}
 
 {% tab title="Sample" %}
-{ "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null }, "count": { "sms": 0, "lms": 0, "mms": 0, "ata": 0, "cta": 0 }, "log": \[ { "date": "2018-04-03 15:32:21", "message": "메시지 그룹 생성", "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null } } \], "groupId": "G4V20180403153221CKAFBUVJ51OF7AV", "status": "PENDING", "accountId": "12925149", "apiVersion": "4", "\_id": "G4V20180403153221CKAFBUVJ51OF7AV" }
+```javascript
+{
+    "agent": {
+        "appId": "MYAPPID",
+        "appVersion": null,
+        "sdkVersion": null,
+        "osPlatform": null
+    },
+    "count": {
+        "sms": 0,
+        "lms": 0,
+        "mms": 0,
+        "ata": 0,
+        "cta": 0
+    }, "log": [
+        {
+            "date": "2018-04-03 15:32:21",
+            "message": "메시지 그룹 생성",
+            "agent": { "appId": "MYAPPID", "appVersion": null, "sdkVersion": null, "osPlatform": null } 
+        }
+    ],
+    "groupId": "G4V20180403153221CKAFBUVJ51OF7AV",
+    "status": "PENDING",
+    "accountId": "12925149",
+    "apiVersion": "4",
+    "_id": "G4V20180403153221CKAFBUVJ51OF7AV" 
+}
+```
 {% endtab %}
 {% endtabs %}
 
-* `agent` - 사용자 agent 정보
-  * `appId` - 그룹 생성 시 함께 요청한 appId
-  * `appVersion` - 그룹 생성 시 함께 요청한 앱 버전
+* * `appVersion` - 그룹 생성 시 함께 요청한 앱 버전
   * `sdkVersion` - sdk를 이용하여 발송한 경우 해당 sdk의 버전
   * `osPlatform` - 그룹 생성 시 함께 요청한 운영체제 환경
 * `count` - 그룹에 등록되어 있는 문자메시지 수
