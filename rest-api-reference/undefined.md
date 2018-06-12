@@ -23,10 +23,7 @@ Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한
 {% endtab %}
 
 {% tab title="Sample" %}
-```text
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups \
-       --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
-```
+`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 
