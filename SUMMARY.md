@@ -4,6 +4,7 @@
 
 ## Authentication
 
+* [API Key 인증 방식](oauth2.0/undefined-1.md)
 * [OAuth2 시작하기](oauth2.0/oauth2.md)
 * [Scope 사용하기](oauth2.0/scope.md)
 * [권한 철회하기](oauth2.0/undefined.md)
@@ -21,7 +22,6 @@
 ## REST API Reference
 
 * [Overview](rest-api-reference/overview.md)
-* [요청 인증](rest-api-reference/undefined.md)
 * [메시지 API 4](rest-api-reference/api-4/README.md)
   * [심플 메시지 발송](rest-api-reference/api-4/undefined.md)
   * [그룹메시지](rest-api-reference/api-4/undefined-1/README.md)

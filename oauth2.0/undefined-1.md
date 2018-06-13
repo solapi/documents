@@ -1,4 +1,4 @@
-# 요청 인증
+# API Key 인증 방식
 
 REST API를 요청\(Request\)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증 받을 수 있습니다. API를 요청한 계정의 소유자를 확인하는데 필수적인 절차입니다.
 
@@ -71,7 +71,7 @@ Signature는 중복사용이 불가하며 15분 안에 전송되는 요청\(Requ
 
 메시지 API v4.0 부터 OAuth2 를 통한 인증을 제공합니다.
 
-{% page-ref page="../oauth2.0/oauth2.md" %}
+{% page-ref page="oauth2.md" %}
 
 
 
