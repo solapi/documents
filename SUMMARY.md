@@ -4,13 +4,13 @@
 
 ## Authentication
 
+* [Overview](oauth2.0/overview.md)
 * [API Key 인증 방식](oauth2.0/undefined-1.md)
 * [OAuth2 시작하기](oauth2.0/oauth2.md)
 * [OAuth2 Scope 사용하기](oauth2.0/scope.md)
 * [OAuth2 권한 철회하기](oauth2.0/undefined.md)
 * [OAuth2 Client 관리하기](oauth2.0/client.md)
 * [OAuth2 API References](oauth2.0/api-references.md)
-* [Overview](oauth2.0/overview.md)
 
 ## Development Kits
 
@@ -23,7 +23,7 @@
 ## REST API Reference
 
 * [Overview](rest-api-reference/overview.md)
-* [메시지 API 4](rest-api-reference/api-4/README.md)
+* [Message API v4](rest-api-reference/api-4/README.md)
   * [심플 메시지 발송](rest-api-reference/api-4/undefined.md)
   * [그룹메시지](rest-api-reference/api-4/undefined-1/README.md)
     * [그룹 생성](rest-api-reference/api-4/undefined-1/undefined.md)
