@@ -1,6 +1,6 @@
 # Overview
 
-Message v4 기반에서 제공되는 공식적인 SDK 는 현재까지 없습니다.
+Message API v4 기반에서 제공되는 공식적인 SDK 는 현재까지 없습니다.
 
 NodeJS 샘플코드를 아래 링크에서 확인하실 수 있습니다.
 
