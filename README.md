@@ -1,4 +1,4 @@
-# Documents for Message Version 4
+# Documents for Message V4
 
 ![coolsms](.gitbook/assets/logo%20%283%29.png)
 

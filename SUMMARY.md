@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Documents for Message Version 4](README.md)
+* [Documents for Message V4](README.md)
 
 ## Development Kits
 
