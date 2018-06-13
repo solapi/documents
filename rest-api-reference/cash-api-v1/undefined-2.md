@@ -1,7 +1,3 @@
----
-description: 등록된 결제 수단으로 결제된 목록을 조회합니다.
----
-
 # 결제 수단 목록 조회
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}

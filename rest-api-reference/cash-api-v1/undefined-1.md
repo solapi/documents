@@ -1,12 +1,8 @@
----
-description: 결제할 카드를 등록합니다.
----
+# 자동결제 우선순위 설정
 
-# 결제 수단 등록
-
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
+{% api-method method="put" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-Create Payment
+Set Payment Priority
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -16,12 +12,11 @@ Create Payment
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-{% api-method-parameter name="description" type="string" required=true %}
-해당 카드에 대한 설명
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="customerId" type="string" required=true %}
-Stripe 에서 발급받은 customer Id
+{% api-method-parameter name="paymentIds" type="array" required=true %}
+payment Id 가 담겨있는 배열입니다.  
+인덱스가 낮을수록 우선순위가 높습니다.  
+  
+index = 0 이면, 첫 번째로 결제를 시도합니다.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -29,7 +24,7 @@ Stripe 에서 발급받은 customer Id
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-정상적으로 등록된 경우
+
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -37,19 +32,21 @@ Stripe 에서 발급받은 customer Id
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=409 %}
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-이미 등록된 카드인 경우
+ValidationError \(paymentIds 에 중복된 값이 들어간 경우\)
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "errorCode": "CardAlreadyExists",
-    "errorMessage": "중복된 별칭이 있거나 이미 등록된 카드입니다."
+    "errorCode": "ValidationError",
+    "errorMessage": "상황에 따른 메시지"
 }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 

@@ -1,12 +1,8 @@
----
-description: 등록된 결제 수단을 삭제합니다.
----
+# 결제
 
-# 결제 수단 삭제
-
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
+{% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
 {% api-method-summary %}
-Delete Payment
+Charge Balance
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -15,15 +11,13 @@ Delete Payment
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Authenticated-Account-Id" type="string" required=true %}
-결제 수단을 삭제할 유저의 accountId 입니다.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-body-parameters %}
+{% api-method-parameter name="amount" type="number" required=true %}
+충전\(결제\)할 금액입니다.
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="paymentId" type="string" required=true %}
-등록되어있는 결제 수단의 id 입니다.
+사용할 결제 수단에 대한 유니크한 값 입니다.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -31,39 +25,36 @@ Delete Payment
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-성공적으로 삭제
+정상적으로 결제가 된 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-    "message": "성공적으로 삭제되었습니다.",
-    "paymentId": "9013662849992081001528356492111"
-}
+{}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-필수 파라미터 미입력
+paymentId 가 유효하지 않은 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "errorCode": "ValidationError",
-    "errorMessage": "child \"body\" fails because [child \"paymentId\" fails because [\"paymentId\" is required]]"
+    "errorCode": "InvalidPaymentId"
+    "errorMessage": "paymentId 가 유효하지 않습니다."
 }
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=402 %}
 {% api-method-response-example-description %}
-없는 paymentId 입력 시
+돈이 부족해 결제가 취소된 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "errorCode": "ResourceNotFound",
-    "errorMessage": "결제 수단을 찾지 못했습니다."
+    "errorCode": "BalanceInsufficient"
+    "errorMessage": "보유 잔액이 부족합니다."
 }
 ```
 {% endapi-method-response-example %}
