@@ -47,8 +47,8 @@
 ## oAuth2.0 사용하기
 
 * [OAuth2 시작하기](oauth2.0/oauth2.md)
-* [Scope 사용하기](oauth2.0/scope/README.md)
-  * [권한 철회하기](oauth2.0/scope/undefined.md)
+* [Scope 사용하기](oauth2.0/scope.md)
+* [권한 철회하기](oauth2.0/undefined.md)
 * [Client 관리하기](oauth2.0/client.md)
 * [API References](oauth2.0/api-references.md)
 
