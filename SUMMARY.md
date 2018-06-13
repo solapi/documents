@@ -2,6 +2,14 @@
 
 * [Documents for Message V4](README.md)
 
+## oAuth2.0 사용하기
+
+* [OAuth2 시작하기](oauth2.0/oauth2.md)
+* [Scope 사용하기](oauth2.0/scope.md)
+* [권한 철회하기](oauth2.0/undefined.md)
+* [Client 관리하기](oauth2.0/client.md)
+* [API References](oauth2.0/api-references.md)
+
 ## Development Kits
 
 * [Overview](development-kits/overview.md)
@@ -43,12 +51,4 @@
 * [용어사전](rest-api-reference/undefined-2.md)
 * [메시지상태코드](rest-api-reference/undefined-3.md)
 * [오류코드](rest-api-reference/undefined-4.md)
-
-## oAuth2.0 사용하기
-
-* [OAuth2 시작하기](oauth2.0/oauth2.md)
-* [Scope 사용하기](oauth2.0/scope.md)
-* [권한 철회하기](oauth2.0/undefined.md)
-* [Client 관리하기](oauth2.0/client.md)
-* [API References](oauth2.0/api-references.md)
 
