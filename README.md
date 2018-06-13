@@ -1,10 +1,10 @@
-# Documents for Message V4
+# Documents for Message API V4
 
 ![coolsms](.gitbook/assets/logo%20%283%29.png)
 
 
 
-2008년을 시작으로 10년간의 서비스 개발 및 운영 경험을 담은 새로운 메시지 발송 API 버전 4\(이하 Message v4\)에 대한 문서입니다.
+2008년을 시작으로 10년간의 서비스 개발 및 운영 경험을 담은 새로운 메시지 발송 API 버전 4\(이하 Message API v4\)에 대한 문서입니다.
 
 {% hint style="danger" %}
 현재 베타오픈 작업중에 있으므로 사용 불가합니다
