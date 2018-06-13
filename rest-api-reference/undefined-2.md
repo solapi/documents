@@ -3,7 +3,7 @@ weight: 100
 title: 용어사전
 ---
 
-# 용어사전
+# Terminology
 
 * [수신번호](undefined-2.md#수신번호)
 * [발신번호](undefined-2.md#발신번호)

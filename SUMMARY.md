@@ -49,7 +49,7 @@
   * [결제 수단 삭제](rest-api-reference/cash-api-v1/undefined-3.md)
   * [결제](rest-api-reference/cash-api-v1/undefined-4.md)
 * [잔액정보](rest-api-reference/undefined-1.md)
-* [용어사전](rest-api-reference/undefined-2.md)
-* [메시지상태코드](rest-api-reference/undefined-3.md)
-* [오류코드](rest-api-reference/undefined-4.md)
+* [Terminology](rest-api-reference/undefined-2.md)
+* [Message Status Codes](rest-api-reference/undefined-3.md)
+* [Errors](rest-api-reference/undefined-4.md)
 

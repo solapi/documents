@@ -1,4 +1,4 @@
-# 오류코드
+# Errors
 
 ## InternalError
 
