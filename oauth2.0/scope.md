@@ -1,4 +1,4 @@
-# Scope 사용하기
+# OAuth2 Scope 사용하기
 
 ## Index
 

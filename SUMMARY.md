@@ -6,10 +6,11 @@
 
 * [API Key 인증 방식](oauth2.0/undefined-1.md)
 * [OAuth2 시작하기](oauth2.0/oauth2.md)
-* [Scope 사용하기](oauth2.0/scope.md)
-* [권한 철회하기](oauth2.0/undefined.md)
-* [Client 관리하기](oauth2.0/client.md)
-* [API References](oauth2.0/api-references.md)
+* [OAuth2 Scope 사용하기](oauth2.0/scope.md)
+* [OAuth2 권한 철회하기](oauth2.0/undefined.md)
+* [OAuth2 Client 관리하기](oauth2.0/client.md)
+* [OAuth2 API References](oauth2.0/api-references.md)
+* [Overview](oauth2.0/overview.md)
 
 ## Development Kits
 

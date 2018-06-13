@@ -1,4 +1,4 @@
-# Client 관리하기
+# OAuth2 Client 관리하기
 
 ## Index
 
