@@ -2,7 +2,7 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-결제 수단 등
+결제 수단 등록
 {% endapi-method-summary %}
 
 {% api-method-description %}

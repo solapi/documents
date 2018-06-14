@@ -2,7 +2,7 @@
 
 {% api-method method="put" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-자동결제 우선순위 설
+자동결제 우선순위 설정
 {% endapi-method-summary %}
 
 {% api-method-description %}
