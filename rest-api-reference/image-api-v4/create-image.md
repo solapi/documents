@@ -13,13 +13,13 @@ Create Image
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="X-Authenticated-Account-Id" type="string" required=true %}
- 이미지를 생성할 유저의 accountId  
+이미지를 생성할 유저의 accountId  
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="imageId" type="string" required=true %}
+등록할 이미지 Id
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
