@@ -2,7 +2,7 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
 {% api-method-summary %}
-결
+결제
 {% endapi-method-summary %}
 
 {% api-method-description %}
