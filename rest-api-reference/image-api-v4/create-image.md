@@ -18,8 +18,8 @@ Create Image
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="imageId" type="string" required=true %}
-등록할 이미지 Id
+{% api-method-parameter name="image" type="string" required=true %}
+등록할 이미지 base64 endcoding 된 문자열
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
