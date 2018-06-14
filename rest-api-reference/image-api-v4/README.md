@@ -1,4 +1,4 @@
-# Image API v4
+# Image API
 
 MMS 발송을 위한 이미지 업로드 지원합니다.
 
