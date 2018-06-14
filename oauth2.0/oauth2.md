@@ -20,11 +20,11 @@ GET https://rest.coolsms.co.kr/oauth2/authorize
 
 필요한 GET 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
 
-* `client_id` - \*필수\*. 서비스 또는 웹 등록시 발급받은 클라이언트 아이디
-* `response_type` - \*필수\*. 값은 code 로 고정
-* `scope` - \*필수\*. 서비스에서 필요한 사용자의 권한목록&lt;권한목록 링크 추가&gt; 
-* `redirect_uri` - \*필수\*. 사용자 인증이 끝나면 돌아갈 url 주소
-* `state` - \*필수\*. 서비스에서 해당 요청에 대하여 알아볼수 있는 랜덤 값
+* `client_id` - **필수**. 서비스 또는 웹 등록시 발급받은 클라이언트 아이디
+* `response_type` - **필수**. 값은 code 로 고정
+* `scope` - **필수**. 서비스에서 필요한 사용자의 권한목록&lt;권한목록 링크 추가&gt; 
+* `redirect_uri` - **필수**. 사용자 인증이 끝나면 돌아갈 url 주소
+* `state` - **필수**. 서비스에서 해당 요청에 대하여 알아볼수 있는 랜덤 값
 
  **/oauth2/authorize**  에 대한 자세한 설명은 [여기에서 참고](https://docs.coolsms.co.kr/oauth2/api-reference.html#사용자-인-oauth2v1authorize)하세요.
 
