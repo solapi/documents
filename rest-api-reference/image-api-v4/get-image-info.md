@@ -2,11 +2,11 @@
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images/:imageId" %}
 {% api-method-summary %}
-
+이미지 정보 조회
 {% endapi-method-summary %}
 
 {% api-method-description %}
-이미지 아이디를 사용해 이미지 정보를 조회합니다.
+이미지 아이디를 사용해 이미지 정보를 조회합니.
 {% endapi-method-description %}
 
 {% api-method-spec %}
