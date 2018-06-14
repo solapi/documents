@@ -2,11 +2,11 @@
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images" %}
 {% api-method-summary %}
-
+이미지 목록 조회
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+자신이 등록한 이미지들의 목록을 불러올 수 있습니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
