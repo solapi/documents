@@ -2,11 +2,11 @@
 
 {% api-method method="put" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-Set Payment Priority
+자동결제 우선순위 설
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+자동 결제를 진행할 카드의 우선순위를 설정합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}

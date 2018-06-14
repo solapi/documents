@@ -2,11 +2,11 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/payment" %}
 {% api-method-summary %}
-Create Payment
+결제 수단 등
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+웹에서 발급받은 고객키를 등록합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}

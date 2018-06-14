@@ -2,11 +2,11 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
 {% api-method-summary %}
-Charge Balance
+결
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+paymentId 를 이용해 결제를 진행하고 금액을 충전합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
