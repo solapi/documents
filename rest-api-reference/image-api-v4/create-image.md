@@ -30,8 +30,10 @@ Create Image
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+    imageId: "imageIdExample"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
