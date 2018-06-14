@@ -101,7 +101,7 @@ curl -X GET https://rest.coolsms.co.kr/oauth2/userprofile
 
 ## Refresh token \(재사용 토큰\) 사용하기
 
-이미 발급받은 앣스 토큰에 대한 유효시간이 만료된 경우, 액세스 토큰과 같이 발급받았던 재사용 토큰을 사용하여 다시액세스 토큰을 발급받을 수 있습니다. 재사용 토큰을 사용하여 `/oauth2/v1/access_token` 에 아래와 같이 http request 요청합니다.
+이미 발급받은 엑세스 토큰에 대한 유효시간이 만료된 경우, 액세스 토큰과 같이 발급받았던 재사용 토큰을 사용하여 다시액세스 토큰을 발급받을 수 있습니다. 재사용 토큰을 사용하여 `/oauth2/v1/access_token` 에 아래와 같이 http request 요청합니다.
 
 ```text
 curl -X POST https://rest.coolsms.co.kr/oauth2/v1/access_token
