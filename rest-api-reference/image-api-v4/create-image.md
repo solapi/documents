@@ -2,21 +2,15 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/images/v4/images" %}
 {% api-method-summary %}
-Create Image
+이미지 생성
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+base64 로 인코딩 된 문자열을 이용해서 이미지 등록을 합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Authenticated-Account-Id" type="string" required=true %}
-이미지를 생성할 유저의 accountId  
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-body-parameters %}
 {% api-method-parameter name="image" type="string" required=true %}
 등록할 이미지 base64 endcoding 된 문자열
