@@ -1,12 +1,8 @@
 # 심플 메시지
 
-메시지를 발송할 때, 사용됩니다.
+여러 건을 한번에 발송 요청할 수 있는 그룹 메시지와 다르게 한 건의 메시지만 발송이 가능합니다.
 
-여러 건이 발송되는 그룹 메시지와 다르게 한 건의 메시지만 발송이 가능합니다.
-
-응답 코드가 200이 나와도 정상적으로 발송이 안되는 경우 응답받은 `result` 데이터의 `statusCode` 를 확인해주세요.
-
-메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [링크](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
+HTTP Status Code 가 200 이어도 Response 의 `statusCode` 값이 2000 이 아닌 경우 문제가 있는 것으로 [Message Status Codes](../undefined-3.md) 에서 상세한 설명을 참고하세요.
 
 ## Request
 
@@ -48,9 +44,7 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 {% endtab %}
 
 {% tab title="Sample" %}
-```bash
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/send  --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATRUE]"  -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'
-```
+`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/send --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATRUE]" -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'`
 {% endtab %}
 
 {% tab title="Description" %}
