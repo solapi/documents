@@ -24,8 +24,8 @@
 
 * [Overview](rest-api-reference/overview.md)
 * [Message API v4](rest-api-reference/api-4/README.md)
-  * [심플 메시지 발송](rest-api-reference/api-4/simple-message.md)
-  * [그룹메시지](rest-api-reference/api-4/group-message/README.md)
+  * [심플 메시지](rest-api-reference/api-4/simple-message.md)
+  * [그룹 메시지](rest-api-reference/api-4/group-message/README.md)
     * [그룹 생성](rest-api-reference/api-4/group-message/undefined.md)
     * [그룹 목록](rest-api-reference/api-4/group-message/undefined-1.md)
     * [그룹 정보](rest-api-reference/api-4/group-message/undefined-2.md)
