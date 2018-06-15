@@ -107,7 +107,7 @@ POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/
 * `apiVersion` - 요청에 사용된 api 버전 정보
 * `_id` - groupId와 동일한 그룹 고유 값
 
-### **Errors**
+## **Errors**
 
 `InvalidAppId(400)` - 유효하지 않은 앱 아이디 
 

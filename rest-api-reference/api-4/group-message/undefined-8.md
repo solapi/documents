@@ -26,9 +26,11 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule
 
 ## Errors
 
-* `ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
-* `InvalidStatus(400)` - 'SCHEDULED' 상태의 그룹만 예약 가능
-* `InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
+`ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
+
+`InvalidStatus(400)` - 'SCHEDULED' 상태의 그룹만 예약 가능
+
+`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
 
 
 

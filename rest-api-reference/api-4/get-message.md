@@ -33,11 +33,72 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.c
 
 {% tabs %}
 {% tab title="Syntax" %}
-{ \[ { "kakaoOptions": { "senderKey": String, "templateCode": String, "buttonName": String, "buttonUrl": String, "disableSms": Boolean }, "type": String, "customFields": Object, "country": String, "subject": String, "imageId": String, "dateReceived": String, "statusCode": String, "carrierCode": String, "log": Array, "messageId": String, "groupId": String, "text": String, "from": String, "to": String, "dateCreated": String } \] }
+```text
+{
+    [
+        {
+            "kakaoOptions": {
+                "senderKey": "String",
+                "templateCode": "String",
+                "buttonName": "String",
+                "buttonUrl": "String",
+                "disableSms": "Boolean"
+            },
+            "type": String,
+            "customFields": Object,
+            "country": "String",
+            "subject": "String",
+            "imageId": "String",
+            "dateReceived": "String",
+            "statusCode": "String",
+            "networkCode": "String",
+            "log": Array,
+            "messageId": "String",
+            "groupId": "String",
+            "text": "String",
+            "from": "String",
+            "to": "String",
+            "dateCreated": "String"
+        },
+        {...}
+    ]
+}
+
+```
 {% endtab %}
 
 {% tab title="Sample" %}
-{ \[ { "kakaoOptions": { "senderKey": null, "templateCode": null, "buttonName": null, "buttonUrl": null, "disableSms": false }, "type": "AUTO", "customFields": null, "country": "82", "subject": null, "imageId": null, "dateReceived": null, "statusCode": "2000", "carrierCode": "LGUplus", "log": \[\], "messageId": "M4V20180307110044DTYYJBBYLPQZIB1", "groupId": "G4V20180307105937H3PTASXMNJG2JI1", "text": "text", "from": "01000000000", "to": "01000000000", "dateCreated": "2018-03-23T00:37:25.305Z" } , ...\] }
+```text
+{
+    [
+        {
+            "kakaoOptions": {
+                "senderKey": null,
+                "templateCode": null,
+                "buttonName": null,
+                "buttonUrl": null,
+                "disableSms": false
+            },
+            "type": "AUTO",
+            "customFields": null,
+            "country": "82",
+            "subject": null,
+            "imageId": null,
+            "dateReceived": null, 
+            "statusCode": "2000",
+            "networkCode": "45005",
+            "log": Array,
+            "messageId": "M4V20180307110044DTYYJBBYLPQZIB1",
+            "groupId": "G4V20180307105937H3PTASXMNJG2JI1",
+            "text": "text",
+            "from": "01000000000",
+            "to": "01000000000",
+            "dateCreated": "2018-03-23T00:37:25.305Z"
+        },
+        {...}
+    ]
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -65,7 +126,9 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.c
 
 ## Errors
 
-* `ValidationError(400)` - 입력한 parameter 가 잘못된 경우
-* `Forbidden(403)` - 자신의 메시지아이디 또는 그룹아이디가 아닌데 조회하는 경우
-* `InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경
+`ValidationError(400)` - 입력한 parameter 가 잘못된 경우
+
+`Forbidden(403)` - 자신의 메시지아이디 또는 그룹아이디가 아닌데 조회하는 경우
+
+`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경
 

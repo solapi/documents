@@ -1,6 +1,6 @@
 # 이미지 정보 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images/:imageId" %}
+{% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images/{imageId}" %}
 {% api-method-summary %}
 이미지 정보 조회
 {% endapi-method-summary %}
@@ -50,7 +50,7 @@
 
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
-해당 이미지 아이디가 존재하지 않는 경
+해당 이미지 아이디가 존재하지 않는 경우
 {% endapi-method-response-example-description %}
 
 ```javascript

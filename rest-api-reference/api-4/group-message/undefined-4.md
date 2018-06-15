@@ -132,9 +132,13 @@ $ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages 
 
 ## Errors
 
-* `ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
-* `InvalidAccountId(400)` - 해당 AccountId가 없음
-* `InvalidUserId(400)` - 해당 유저 아이디가 없음
-* `InternalError(500)` - 서버 오류
-* `RecipientsTooMany(413)` -입력된 수신번호가 1000개를 넘음
+`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
+
+`InvalidAccountId(400)` - 해당 AccountId가 없음
+
+`InvalidUserId(400)` - 해당 유저 아이디가 없음
+
+`InternalError(500)` - 서버 오류
+
+`RecipientsTooMany(413)` -입력된 수신번호가 1000개를 넘음
 

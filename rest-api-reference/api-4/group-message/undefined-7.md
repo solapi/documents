@@ -32,18 +32,29 @@ curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](
 
 ## Errors
 
-* `ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
-* `ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
-* `MessagesInProcessing(409)` -이미 발송된 메시지
-* `DeletedGroup(400)` -삭제 처리된 그룹
-* `FailedGroup(400)` - 그룹 생성에 실패했던 그룹
-* `ScheduledGroup(409)` - 이미 발송 예약된 그룹
-* `InvalidStatus(400)` - 'PENDING' 상태의 그룹만 예약 가능
-* `MessagesNotFound(404)` - 해당 그룹에 메시지가 없음
-* `InvalidAppId(400)` - 유효하지 않은 앱 아이디
-* `InactiveApp(400)` - 현재 사용하는 앱의 상태가 비활성화
-* `InvalidScheduledDate(400)` - 잘못된 'scheduled
-* `InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
+`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
+
+`ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
+
+`MessagesInProcessing(409)` -이미 발송된 메시지
+
+`DeletedGroup(400)` -삭제 처리된 그룹
+
+`FailedGroup(400)` - 그룹 생성에 실패했던 그룹
+
+`ScheduledGroup(409)` - 이미 발송 예약된 그룹
+
+`InvalidStatus(400)` - 'PENDING' 상태의 그룹만 예약 가능
+
+`MessagesNotFound(404)` - 해당 그룹에 메시지가 없음
+
+`InvalidAppId(400)` - 유효하지 않은 앱 아이디
+
+`InactiveApp(400)` - 현재 사용하는 앱의 상태가 비활성화
+
+`InvalidScheduledDate(400)` - 잘못된 'scheduled
+
+`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
 
 
 

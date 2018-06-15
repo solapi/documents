@@ -10,7 +10,7 @@ DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}](https://rest.co
 {% endtab %}
 
 {% tab title="Sample" %}
-curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]"
+`curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO  --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 
@@ -22,119 +22,71 @@ curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3
 
 {% tabs %}
 {% tab title="Syntax" %}
+```javascript
 {
-
-"agent": {
-
-  "appId": "String",
-
-  "appVersion": "String",
-
-  "sdkVersion": "String",
-
-  "osPlatform": "String"
-
-},
-
-"count": {
-
-  "sms": Int,
-
-  "lms": Int,
-
-  "mms": Int,
-
-  "ata": Int,
-
-  "cta": Int,
-
-  "push": Int
-
-},
-
-"log": Array,
-
-"groupId": "String",
-
-"status": "String",
-
-"accountId": "String",
-
-"apiVersion": "String",
-
-"\_id": "String"
-
+  "agent": {
+    "appId": "String",
+    "appVersion": "String",
+    "sdkVersion": "String",
+    "osPlatform": "String"
+  },
+  "count": {
+    "sms": Number,
+    "lms": Number,
+    "mms": Number,
+    "ata": Number,
+    "cta": Number,
+    "push": Number
+  },
+  "log": Array,
+  "groupId": "String",
+  "status": "String",
+  "accountId": "String",
+  "apiVersion": "String",
+  "_id": "String"
 }
+```
 {% endtab %}
 
 {% tab title="Sample" %}
+```javascript
 {
-
-"agent": {
-
-  "appId": "MYAPPID",
-
-  "appVersion": null,
-
-  "sdkVersion": null,
-
-  "osPlatform": null
-
-},
-
-"count": {
-
-  "sms": 0,
-
-  "lms": 0,
-
-  "mms": 0,
-
-  "ata": 0,
-
-  "cta": 0
-
-},
-
-"log": \[
-
-  {
-
-```text
-"date": "2018-04-03 15:32:21",
-"message": "메시지 그룹 생성",
-"agent": {
-  "appId": "MYAPPID",
-  "appVersion": null,
-  "sdkVersion": null,
-  "osPlatform": null
-}
-```
-
+  "agent": {
+    "appId": "MYAPPID",
+    "appVersion": null,
+    "sdkVersion": null,
+    "osPlatform": null
   },
-
-  {
-
-```text
-"date": "2018-04-05 17:07:01",
-"message": "메시지 그룹 삭제"
-```
-
-  }
-
-\],
-
-"groupId": "G4V20180403153221CKAFBUVJ51OF7AV",
-
-"status": "PENDING",
-
-"accountId": "12925149",
-
-"apiVersion": "4",
-
-"\_id": "G4V20180403153221CKAFBUVJ51OF7AV"
-
+  "count": {
+    "sms": 0,
+    "lms": 0,
+    "mms": 0,
+    "ata": 0,
+    "cta": 0
+  },
+  "log": [
+    {
+      "date": "2018-04-03 15:32:21",
+      "message": "메시지 그룹 생성",
+      "agent": {
+        "appId": "MYAPPID",
+        "appVersion": null,
+        "sdkVersion": null,
+        "osPlatform": null
+      }
+    },
+    {
+      "date": "2018-04-05 17:07:01",
+      "message": "메시지 그룹 삭제"
+    }
+  ],
+  "groupId": "G4V20180403153221CKAFBUVJ51OF7AV",
+  "status": "PENDING",
+  "accountId": "12925149",
+  "apiVersion": "4",
+  "_id": "G4V20180403153221CKAFBUVJ51OF7AV"
 }
+```
 {% endtab %}
 {% endtabs %}
 
@@ -156,8 +108,9 @@ curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3
 * `apiVersion` - 요청에 사용된 api 버전 정보
 * `_id` - groupId와 동일한 그룹 고유 값
 
-  **Errors**
+## **Errors**
 
-* `ValidationError(400)` - 유효하지 않은 `groupId`
-* `ResourceNotFound(404)` - 존재하지 않는 그룹 삭제 시도 
+`ValidationError(400)` - 유효하지 않은 `groupId`
+
+`ResourceNotFound(404)` - 존재하지 않는 그룹 삭제 시도 
 

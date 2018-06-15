@@ -65,5 +65,5 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3P
 
 ## Errors
 
-* `Unauthorized(401)` - 권한 오류
+`Unauthorized(401)` - 권한 오류
 

@@ -1,8 +1,8 @@
 # 이미지 삭제
 
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/images/v4/images/:imageId" %}
+{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/images/v4/images/{imageId}" %}
 {% api-method-summary %}
-이미지 삭
+이미지 삭제
 {% endapi-method-summary %}
 
 {% api-method-description %}

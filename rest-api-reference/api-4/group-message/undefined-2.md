@@ -115,7 +115,7 @@ GET [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}](https://rest.cools
 * `FAILURE` - 그룹 생성 실패. 메시지 그룹 생성 중 문제가 발생하여 그룹 생성이 취소되거나, 실패함
 * `DELETED` - 삭제됨. 삭제된 그룹, 발송 불가
 
-### **Errors**
+## **Errors**
 
 `ValidationError(400)` - 유효하지 않은 `groupId`
 

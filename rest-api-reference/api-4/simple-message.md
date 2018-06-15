@@ -113,7 +113,7 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 {% endtab %}
 {% endtabs %}
 
-### Errors
+## Errors
 
 `ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
 
