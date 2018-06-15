@@ -27,9 +27,9 @@ GET [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/m
 {% tab title="Syntax" %}
 ```text
 {
-    "offset": Int, 
-    "limit": Int, 
-    "totalCount": Int, 
+    "offset": Number, 
+    "limit": Number, 
+    "totalCount": Number, 
     "groupList": { 
         "String": { 
             "agent": { 
@@ -39,12 +39,12 @@ GET [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/m
                 "osPlatform": "String" 
             }, 
             "count": { 
-                "sms": Int, 
-                "lms": Int, 
-                "mms": Int, 
-                "ata": Int, 
-                "cta": Int, 
-                "push": Int 
+                "sms": Number, 
+                "lms": Number, 
+                "mms": Number, 
+                "ata": Number, 
+                "cta": Number, 
+                "push": Number 
             }, 
             "log": Array, 
             "groupId": "String", 

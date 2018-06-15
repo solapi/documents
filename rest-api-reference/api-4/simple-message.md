@@ -18,7 +18,7 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
     "to": "String" /* required */,
     "from": "String", /* required */
     "text": "String", /* required */
-    "type": "String",
+    "type": "String", /* default 'AUTO' */
     "country": "String",
     "subject": "String",
     "imageId": "String",
@@ -58,7 +58,7 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 ## Optional Parameters
 
 * `message` - Object 형식의 메시지 발송 정보
-  * `type` - 메시지 타입 기본은 'SMS' Link
+  * `type` - 메시지 타입 기본은 'AUTO'
   * `country` - 국가번호 기본은 '82'
   * `subject` - 타입이 LMS, MMS일 때 제목
   * `imageid` - 이미지 ID Link
@@ -111,13 +111,15 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 }
 ```
 {% endtab %}
-
-{% tab title="Errors" %}
-* `ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
-* `InvalidStatusCode(400)` - 접수가 실패한 경우입니다. 메시지의 아이디와 status code 가 반환됩니다.
-* `NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
-* `InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다.
-* 그룹 생성, 그룹 메시지 추가, 그룹 발송을 확인해주세요.
-{% endtab %}
 {% endtabs %}
+
+### Errors
+
+`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
+
+`InvalidStatusCode(400)` - 접수가 실패한 경우입니다. 메시지의 아이디와 status code 가 반환됩니다.
+
+`NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
+
+`InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다. 그룹 생성, 그룹 메시지 추가, 그룹 발송을 확인해주세요.
 

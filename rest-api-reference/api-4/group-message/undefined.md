@@ -90,7 +90,8 @@ POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/
 {% endtab %}
 {% endtabs %}
 
-* * `appVersion` - 그룹 생성 시 함께 요청한 앱 버전
+* `agent`- 사용자 Agent 정보
+  * `appVersion` - 그룹 생성 시 함께 요청한 앱 버전
   * `sdkVersion` - sdk를 이용하여 발송한 경우 해당 sdk의 버전
   * `osPlatform` - 그룹 생성 시 함께 요청한 운영체제 환경
 * `count` - 그룹에 등록되어 있는 문자메시지 수
@@ -106,7 +107,7 @@ POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/
 * `apiVersion` - 요청에 사용된 api 버전 정보
 * `_id` - groupId와 동일한 그룹 고유 값
 
-  **Errors**
+### **Errors**
 
-* `InvalidAppId(400)` - 유효하지 않은 앱 아이디 
+`InvalidAppId(400)` - 유효하지 않은 앱 아이디 
 
