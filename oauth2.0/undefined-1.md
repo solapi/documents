@@ -6,7 +6,7 @@ _참고_
 
 Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한 수단으로 널리 사용되고 있습니다. [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) 을 참고하세요.
 
-쿨에스엠에스 [API Key 관리](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigCredentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
+쿨에스엠에스 [API Key 관리](https://www.coolsms.co.kr/credentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
 
 ## Request
 
@@ -23,22 +23,22 @@ Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한
 {% endtab %}
 
 {% tab title="Sample" %}
-`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"`
+`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups --header "Authorization : HMAC-SHA256 apiKey=[API_KEY], date=[ISO 8601 DATE], salt=[UNIQID], signature=[SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 
 * AuthenticationMethod
   * Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
-* ApiKey  
+* apiKey  
   * 발급받은 API Key를 입력합니다.
-* DateTime  
+* date
   * ISO 8601 규격의 날짜와 시간을 입력합니다.
-* Salt  
+* salt
   * 10 ~ 64바이트의 불규칙적이고 랜덤한 문자열을 생성하여 사용합니다.
-* Signature  
-  * DateTime와 Salt을 하나로 연결한 문자열을 데이터로 하고 API Secret을 Key로 만들어진 HMAC 해시코드
+* signature
+  * date와 salt을 하나로 연결한 문자열을 데이터로 하고 API Secret을 Key로 만들어진 HMAC 해시코드
 
-Signature의 재사용을 막기위해서 입력된 DateTime이 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
+Signature의 재사용을 막기위해서 입력된 date의 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
 
 _**참고**_
 
@@ -46,7 +46,7 @@ _**참고**_
 
 ## Signature 생성
 
-클라이언트에서 DateTime + Salt 를 데이터로, API Secret을 Key로 사용하여 HMAC\(Hash-based Message Authentication Code\)을 만들어진 Signature를 서버로 보내면, 서버 쪽에서도 동일한 방식으로 만들어 비교하게 됩니다. API Secret은 Signature를 생성할 때만 사용하고 외부에 노출되지 않도록 주의해야 합니다.
+클라이언트에서 Date + Salt 를 데이터로, API Secret을 Key로 사용하여 HMAC\(Hash-based Message Authentication Code\)을 만들어진 Signature를 서버로 보내면, 서버 쪽에서도 동일한 방식으로 만들어 비교하게 됩니다. API Secret은 Signature를 생성할 때만 사용하고 외부에 노출되지 않도록 주의해야 합니다.
 
 _**참고**_
 
