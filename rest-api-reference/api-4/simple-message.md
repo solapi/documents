@@ -14,7 +14,7 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 
 ## Request Syntax
 
-```text
+```javascript
 {
   "message": {
     "to": "String" /* required */,
