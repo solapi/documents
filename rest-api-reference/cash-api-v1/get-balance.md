@@ -28,7 +28,7 @@ description: 새로운 Micro Service Cash API 입니다.
 
 {% endapi-method-response-example-description %}
 
-```
+```javascript
 {
     "accountId": "4918201",
     "balance": 100,
@@ -48,7 +48,7 @@ description: 새로운 Micro Service Cash API 입니다.
 
 {% endapi-method-response-example-description %}
 
-```
+```javascript
 {
     "errorCode": "InvalidAccountId",
     "errorMessage": "accountId 가 유효하지 않습니다."
