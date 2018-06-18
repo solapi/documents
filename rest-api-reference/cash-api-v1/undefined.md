@@ -1,0 +1,95 @@
+# 충전/차감 내역 조회
+
+{% api-method method="get" host="https://rest.coolsms.co.kr" path="/v1/cash/balance/history" %}
+{% api-method-summary %}
+충전/차감 내역 조회
+{% endapi-method-summary %}
+
+{% api-method-description %}
+잔액의 충전/차감 내역을 조회할 수 있습니다.  
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="object" required=false %}
+인증정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="offset" type="integer" required=false %}
+지정된 수를 건너띄어 내역을 가져옵니다.  
+\(default: 0\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="limit" type="integer" required=false %}
+가져오는 내역의 수를 설정된 값 만큼 제한 합니다.  
+\(default: 20\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="startDate" type="string" required=false %}
+해당 날짜 이후의 내역만 가져옵니다.  
+\(형식: '2018-04-23 15:34:40\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="endDate" type="string" required=false %}
+해당 날짜 이전의 내역만 가져옵니다.  
+\(형식: '2018-05-23 10:00:00'\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="type" type="string" %}
+'RECHARGE', 'INIT', 'DEDUCT'로 구분되며 순서대로   
+'충전', 초기화',  '차감'을 뜻합니다.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupId" type="string" %}
+그룹아이디에 연결된 내역들을 가져옵니다.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "list": [
+        {
+            "accountId": "129251492",
+            "beforeBalance": 0,
+            "afterBalance": 100,
+            "amount": 100,
+            "type": "RECHARGE",
+            "dateCreated": "2018-03-01T09:00:00.000Z"
+        },
+        ...
+    ],
+    "totalCount": 15
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "errorCode": "InvalidAccountId",
+    "errorMessage": "accountId 가 유효하지 않습니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% hint style="info" %}
+인증정보는 [링크 페이지](https://docs.coolsms.co.kr/~/edit/drafts/-LFG1MaAu57rWJnisZpV/rest-api-reference/overview)를 참고해주세요
+{% endhint %}
+
