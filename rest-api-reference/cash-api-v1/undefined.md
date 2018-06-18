@@ -1,6 +1,6 @@
 # 충전/차감 내역 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/v1/cash/balance/history" %}
+{% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/balance/history" %}
 {% api-method-summary %}
 충전/차감 내역 조회
 {% endapi-method-summary %}
@@ -12,7 +12,7 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Authorization" type="object" required=false %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
 인증정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
@@ -40,7 +40,7 @@
 
 {% api-method-parameter name="type" type="string" %}
 'RECHARGE', 'INIT', 'DEDUCT'로 구분되며 순서대로   
-'충전', 초기화',  '차감'을 뜻합니다.
+'충전',  초기화',  '차감'을 뜻합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="string" %}
