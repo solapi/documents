@@ -32,11 +32,11 @@ description: 새로운 Micro Service Cash API 입니다.
 {
     "accountId": "4918201",
     "balance": 100,
-    "isRecharging":
-    "minimumCash":
-    "rechargeTo":
-    "rechargeTryCount":
-    "dateTriedRecharge": 
+    "isRecharging": false,
+    "minimumCash": 0,
+    "rechargeTo": 0,
+    "rechargeTryCount": 0,
+    "dateTriedRecharge": "2018-06-18T13:01:03.004Z",
     "dateCreated": "2018-06-18T13:01:03.004Z",
     "dateUpdated": "2018-06-20T14:04:05.030Z"
 }
