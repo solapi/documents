@@ -39,12 +39,12 @@
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="type" type="string" %}
-'RECHARGE', 'INIT', 'DEDUCT'로 구분되며 순서대로   
+'RECHARGE', 'SET', 'DEDUCT'로 구분되며 순서대로   
 '충전',  초기화',  '차감'을 뜻합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="string" %}
-그룹아이디에 연결된 내역들을 가져옵니다.
+해당 그룹아이디에 연결된 내역들을 가져옵니다.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
