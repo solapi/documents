@@ -18,12 +18,12 @@
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="offset" type="integer" required=false %}
+{% api-method-parameter name="offset" type="number" required=false %}
 설정된 값만큼를 건너띄어 내역을 가져옵니다.  
 \(default: 0\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="limit" type="integer" required=false %}
+{% api-method-parameter name="limit" type="number" required=false %}
 가져오는 내역의 수를 설정된 값 만큼 제한 합니다.  
 \(default: 20\)
 {% endapi-method-parameter %}
