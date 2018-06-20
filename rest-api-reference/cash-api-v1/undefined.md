@@ -62,7 +62,7 @@
         "beforeBalance": 0,
         "afterBalance": 100,
         "amount": 100,
-        "type": "RECHARGE",
+        "type": "RECHARGE", // 충전(RECHARGE), 차감(DEDUCT), 초기화(SET)
         "dateCreated": "2018-03-01T09:00:00.000Z"
     },
     ...
