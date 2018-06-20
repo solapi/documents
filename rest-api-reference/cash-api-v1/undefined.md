@@ -30,17 +30,17 @@
 
 {% api-method-parameter name="startDate" type="string" required=false %}
 해당 날짜 이후의 내역만 가져옵니다.  
-\(형식: '2018-04-23 15:34:40\)
+\(형식: ISO8601\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="endDate" type="string" required=false %}
 해당 날짜 이전의 내역만 가져옵니다.  
-\(형식: '2018-05-23 10:00:00'\)
+\(형식: ISO8601\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="type" type="string" %}
-'RECHARGE', 'SET', 'DEDUCT'로 구분되며 순서대로   
-'충전',  초기화',  '차감'을 뜻합니다.
+'RECHARGE', 'DEDUCT', 'SET'로 구분되며 순서대로   
+'충전',  '차감', '초기화'를 뜻합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="string" %}
