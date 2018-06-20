@@ -56,20 +56,17 @@
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-    "list": [
-        {
-            "accountId": "129251492",
-            "beforeBalance": 0,
-            "afterBalance": 100,
-            "amount": 100,
-            "type": "RECHARGE",
-            "dateCreated": "2018-03-01T09:00:00.000Z"
-        },
-        ...
-    ],
-    "totalCount": 15
-}
+[
+    {
+        "accountId": "129251492",
+        "beforeBalance": 0,
+        "afterBalance": 100,
+        "amount": 100,
+        "type": "RECHARGE",
+        "dateCreated": "2018-03-01T09:00:00.000Z"
+    },
+    ...
+]
 ```
 {% endapi-method-response-example %}
 
