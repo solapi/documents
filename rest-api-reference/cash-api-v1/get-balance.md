@@ -59,7 +59,3 @@ description: 새로운 Micro Service Cash API 입니다.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
-인증정보는 [링크 페이지](https://docs.coolsms.co.kr/~/edit/drafts/-LFG1MaAu57rWJnisZpV/rest-api-reference/overview)를 참고해주세요.
-{% endhint %}
-
