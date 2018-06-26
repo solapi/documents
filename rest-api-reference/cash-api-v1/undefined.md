@@ -30,12 +30,12 @@
 
 {% api-method-parameter name="startDate" type="string" required=false %}
 해당 날짜 이후의 내역만 가져옵니다.  
-\(형식: ISO8601\)
+\(type: ISO8601\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="endDate" type="string" required=false %}
 해당 날짜 이전의 내역만 가져옵니다.  
-\(형식: ISO8601\)
+\(type: ISO8601\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="type" type="string" %}
