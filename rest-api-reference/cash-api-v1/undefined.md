@@ -6,7 +6,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
-잔액의 충전/차감 내역을 조회할 수 있습니다.  
+잔액의 충전/차감 내역을 조회할 수 있습니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
