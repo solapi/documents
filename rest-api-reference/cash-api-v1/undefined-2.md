@@ -10,14 +10,15 @@ Set Low Balance Alert
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+특정 금액 이하일 때 알림을 받을 수 있는 잔액 소진 알림을 설정합니다.  
+최대 3개의 잔액 알림 금액을 설정할 수 있습니다. e.g\) 1000원, 2000원, 3000
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="x-authenticated-account-id" type="string" required=true %}
-사용자의 Account Id 입니다.
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -25,7 +26,7 @@ Set Low Balance Alert
 {% api-method-parameter name="balances" type="array" required=true %}
 알림을 받을 잔액을 설정합니다.  
 최대 3개까지 가능하고  
-각 최소 20원 이상이여야 합니다.ㅅ
+각 최소 20원 이상이여야 합니다.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -56,7 +57,7 @@ Set Low Balance Alert
 
 {
     "errorCode": "ValidationError",
-    "errorMessage": "가격은 최소 1개, 최대 3개 입력 가능합니다."
+    "errorMessage": "금액은 최소 1개, 최대 3개 입력 가능합니다."
 }
 
 {
