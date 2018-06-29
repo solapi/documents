@@ -1,5 +1,5 @@
 ---
-description: 본인의 잔액 소진 알림 설정 정보를 조회합니다.
+description: 잔액 소진 알림 설정 정보를 조회합니다.
 ---
 
 # 잔액 소진 알림 설정 정보 조회
@@ -17,7 +17,7 @@ Get Low Balance Alert
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="x-authenticated-account-id" type="string" required=true %}
-사용자의 Account Id 입니다.
+인증정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -31,26 +31,13 @@ Get Low Balance Alert
 ```javascript
 {
     "balances": [
-        "20",
-        "4000",
-        "60000"
+        20,
+        4000,
+        60000
     ],
     "_id": "12925149",
     "dateCreated": "2018-06-26T07:20:58.731Z",
     "dateUpdated": "2018-06-26T07:20:58.757Z"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-로그인을 하지 않은 경우
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "errorCode": "Forbidden",
-    "errorMessage": "잘못된 접근입니다."
 }
 ```
 {% endapi-method-response-example %}
