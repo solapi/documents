@@ -1,4 +1,4 @@
-# 결제
+# ㅇㅇ
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
 {% api-method-summary %}
@@ -61,4 +61,6 @@ paymentId 가 유효하지 않은 경우
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
