@@ -1,6 +1,6 @@
 # Documents for Message API V4
 
-![coolsms](.gitbook/assets/logo%20%283%29.png)
+>
 
 
 

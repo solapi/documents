@@ -13,7 +13,7 @@
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="groupId" type="string" required=true %}
-이미 만들어진 그룹의 아이
+이미 만들어진 그룹의 아이디
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
