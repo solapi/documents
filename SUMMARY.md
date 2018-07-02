@@ -50,6 +50,7 @@
   * [잔액 소진 알림 설정](rest-api-reference/cash-api-v1/undefined-2.md)
   * [잔액 소진 알림 설정 정보 조회](rest-api-reference/cash-api-v1/undefined-4.md)
   * [잔액 출금](rest-api-reference/cash-api-v1/withdraw.md)
+  * [결제](rest-api-reference/cash-api-v1/charge.md)
 * [Pricing](rest-api-reference/pricing/README.md)
   * [기본단가 조회](rest-api-reference/pricing/undefined.md)
   * [단가 리스트 조회](rest-api-reference/pricing/undefined-1.md)
