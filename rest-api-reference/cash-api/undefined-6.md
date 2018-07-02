@@ -11,6 +11,12 @@ paymentId 를 이용해 결제를 진행하고 금액을 충전합니다.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="amount" type="number" required=true %}
 충전\(결제\)할 금액입니다.
