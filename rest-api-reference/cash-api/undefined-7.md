@@ -11,6 +11,12 @@
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="paymentIds" type="array" required=true %}
 payment Id 가 담겨있는 배열입니다.  
