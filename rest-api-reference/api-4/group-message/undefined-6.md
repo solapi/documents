@@ -1,48 +1,125 @@
 # 그룹 메시지 발송
 
-그룹에 정상적으로 추가된 메시지들을 발송할 때 사용합니다.
+{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/send" %}
+{% api-method-summary %}
+그룹 메시지 발송
+{% endapi-method-summary %}
 
-## Request
+{% api-method-description %}
+이미 만들어진 그룹을  발송 요청할 수 있는 API 입니다.
+{% endapi-method-description %}
 
-{% tabs %}
-{% tab title="URI" %}
-POST `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send`
-{% endtab %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="string" required=true %}
+이미 만들어진 그룹의 아이
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-{% tab title="Sample" %}
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"
-{% endtab %}
-{% endtabs %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
 
-### Required path parameters
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+발송 요청이 성공한 경우
+{% endapi-method-response-example-description %}
 
-* `groupId` - 그룹 생성시에 발급받은 그룹 아이디입니다.
+```javascript
+{
+}
+```
+{% endapi-method-response-example %}
 
-### Response status code
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+서버에서 거절하는 경우
+{% endapi-method-response-example-description %}
 
-* `200` - 메시지 발송 접수가 성공적으로 완료된 경우입니다.
+```javascript
+{
+    "errorCode": "DeletedGroup",
+    "errorMessage": "삭제 처리된 그룹으로는 발송이 안됩니다."
+}
 
-## Errors
+{
+    "errorCode": "ValidationError",
+    "errorMessage": "groupId 의 형식이 잘못 된 경우"
+}
 
-`ValidationError(400)`- 요청시에 보낸 값이 잘못된 경우입니다.
+{
+    "errorCode": "FailedGroup",
+    "errorMessage": "그룹 생성에 실패했던 그룹입니다.\n그룹 로그를 확인해주세요."
+}
 
-`InvalidStatus(400)`- 해당 그룹의 status 가 PENDING 이 아닌 경우입니다.
+{
+    "errorCode": "InactiveApp",
+    "errorMessage": "현재 사용하시는 앱의 상태가 비활성화 상태입니다."
+}
 
-`DeletedGroup(400)`- 해당 그룹이 삭제된 경우입니.
+{
+    "errorCode": "InvalidStatus",
+    "errorMessage": "'PENDING' 상태의 그룹만 전송 가능합니다."
+}
+```
+{% endapi-method-response-example %}
 
-`FailedGroup(400)`- 해당 그룹이 생성시에 실패된 경우입니다.
+{% api-method-response-example httpCode=402 %}
+{% api-method-response-example-description %}
+발송을 위한 보유 액이 부족한 경우
+{% endapi-method-response-example-description %}
 
-`ScheduledGroup(400)`- 해당 그룹이 발송 대기상태인 경우입니다.
+```javascript
+{
+    "errorCode": "NotEnoughBalance",
+    "errorMessage": "현재보유 잔액이 부족합니다."
+}
+```
+{% endapi-method-response-example %}
 
-`AlreadySent(400)`- 해당 그룹이 이미 발송 처리가 된 경우입니다..
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+자신이 보유한 그룹이 아닌 경우
+{% endapi-method-response-example-description %}
 
-`InactiveApp(400)`- 해당 앱이 사용 불가능한 상태인 경우입니다.
+```javascript
+{
+    "errorCode": "ResourceNotFound",
+    "errorMessage": "해당 그룹아이디가 존재하지 않습니다."
+}
+```
+{% endapi-method-response-example %}
 
-`NotEnoughBalance(402)`- 보유 잔액이 메시지 발송 금액보다 적은 경우입니다
+{% api-method-response-example httpCode=409 %}
+{% api-method-response-example-description %}
+이미 발송 요청한 그룹인 경우
+{% endapi-method-response-example-description %}
 
-`ResourceNotFound(404)`- 자신의 그룹이 아니거나 그룹 아이디가 존재하지 않습니다.
+```javascript
+{
+    "errorCode": "GroupInProcessing",
+    "errorMessage": "이미 발송 요청된 그룹입니다."
+}
 
-`MessagesInProcessing(409)`- 해당 그룹이 이미 발송 처리가 된 경우입니다.
+{
+    "errorCode": "ScheduledGroup",
+    "errorMessage": "발송 예약된 그룹이므로 발송이 불가능합니다."
+}
 
-`InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다.
+{
+    "errorCode": "AlreadySent",
+    "errorMessage": "이미 발송이 완료된 그룹입니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
 
