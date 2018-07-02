@@ -2,7 +2,7 @@
 
 여러 건을 한번에 발송 요청할 수 있는 그룹 메시지와 다르게 한 건의 메시지만 발송이 가능합니다.
 
-HTTP Status Code 가 200 이어도 Response 의 `statusCode` 값이 2000 이 아닌 경우 문제가 있는 것으로 [Message Status Codes](../undefined-3.md) 에서 상세한 설명을 참고하세요.
+HTTP Status Code 가 200 이어도 Response 의 `statusCode` 값이 2000 이 아닌 경우 문제가 있는 것으로 [Message Status Codes](../message-status-codes.md) 에서 상세한 설명을 참고하세요.
 
 ## Request
 

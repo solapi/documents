@@ -2,8 +2,8 @@
 
 ### Index
 
-* [사용자 인증](api-references.md#사용자-인-oauth2v1authorize)
-* [토큰 발급받기](api-references.md#토큰발급받기-oauth2v1accesstoken)
+* [사용자 인증](oauth2-api-references.md#사용자-인-oauth2v1authorize)
+* [토큰 발급받기](oauth2-api-references.md#토큰발급받기-oauth2v1accesstoken)
 
 ## 사용자 인증 \(/oauth2/v1/authorize\)
 

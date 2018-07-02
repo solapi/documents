@@ -2,13 +2,13 @@
 
 ## Index
 
-* [Scope 사용방법](scope.md#scope-사용방법)
-* [Scope 에러처리하기](scope.md#scope-에러처리하기)
-* [Scope 목록](scope.md#scope-목록)
+* [Scope 사용방법](oauth2-scope.md#scope-사용방법)
+* [Scope 에러처리하기](oauth2-scope.md#scope-에러처리하기)
+* [Scope 목록](oauth2-scope.md#scope-목록)
 
 ## Scope 사용방법
 
-클라이언트에서 필요한 API 를 [Scope 목록](scope.md#scope-목록)에서 확인한 후, 해당 scope 들을 ' '\(공백\) 으로 붙여서 사용합니다. 예를 들어, 클라이언트에서 필요할 권한들이 `users:read`, `message:read`, `message:write` 라고 한다면 해당 권한들을 빈칸으로 붙여서 `users:read message:read message:write`로 만들어서 사용자 인증 요청\(/oauth2/v1/authorize\) 시에 `scope` 필드에 입력하면 됩니다.
+클라이언트에서 필요한 API 를 [Scope 목록](oauth2-scope.md#scope-목록)에서 확인한 후, 해당 scope 들을 ' '\(공백\) 으로 붙여서 사용합니다. 예를 들어, 클라이언트에서 필요할 권한들이 `users:read`, `message:read`, `message:write` 라고 한다면 해당 권한들을 빈칸으로 붙여서 `users:read message:read message:write`로 만들어서 사용자 인증 요청\(/oauth2/v1/authorize\) 시에 `scope` 필드에 입력하면 됩니다.
 
 ```text
 curl -X GET https://rest.coolsms.co.kr/oauth2/v1/authorize?scope=`users:read message:read message:write`&client_id......

@@ -2,9 +2,9 @@
 
 ## Index
 
-* [client 등록하기 / 정보 변경하기](client.md#client-등록하기)
-* [client 삭제하기](client.md#client-삭제하기)
-* [client secret key 재발급 받기](client.md#client-secret-key-재발급받기)
+* [client 등록하기 / 정보 변경하기](oauth2-client.md#client-등록하기)
+* [client 삭제하기](oauth2-client.md#client-삭제하기)
+* [client secret key 재발급 받기](oauth2-client.md#client-secret-key-재발급받기)
 
 ## Client 등록하기
 

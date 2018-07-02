@@ -1,7 +1,3 @@
----
-description: 잔액 소진 알림을 설정할 수 있습니다.
----
-
 # 잔액 소진 알림 설정
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/v1/balance/alert" %}

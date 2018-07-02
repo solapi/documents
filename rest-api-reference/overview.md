@@ -9,7 +9,7 @@
 _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격을 명확하게 정의되고 쉽게 구현 할 수 있습니다. [https://ko.wikipedia.org/wiki/REST](https://ko.wikipedia.org/wiki/REST)
 
 쿨에스엠에스 SMS REST API 서버로 Request를 보내기 위해서 인증을 거쳐야 합니다.  
-[API Key 를 이용한 방법](../oauth2.0/undefined-1.md)과 소셜로그인으로 불리우는 [OAuth 2.0](../oauth2.0/oauth2.md) 을 지원하고 있습니다.
+[API Key 를 이용한 방법](../authentication/api-key.md)과 소셜로그인으로 불리우는 [OAuth 2.0](../authentication/oauth2.md) 을 지원하고 있습니다.
 
 ## Resource URL 구성
 
@@ -17,8 +17,8 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 `<ServiceName>`
 
-* [Message API v4](api-4/)
-* [Image API](image-api-v4/)
+* [Message API v4](message-api-v4/)
+* [Image API](image-api/)
 
 `<Version>`
 

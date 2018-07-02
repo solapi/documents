@@ -5,13 +5,13 @@ title: 용어사전
 
 # Terminology
 
-* [수신번호](undefined-2.md#수신번호)
-* [발신번호](undefined-2.md#발신번호)
-* [발신번호 사전등록제](undefined-2.md#발신번호-사전등록제)
-* [메시지 아이디](undefined-2.md#메시지-아이디)
-* [이미지](undefined-2.md#이미지)
-* [알림톡](undefined-2.md#알림톡)
-* [친구톡](undefined-2.md#친구톡)
+* [수신번호](terminology.md#수신번호)
+* [발신번호](terminology.md#발신번호)
+* [발신번호 사전등록제](terminology.md#발신번호-사전등록제)
+* [메시지 아이디](terminology.md#메시지-아이디)
+* [이미지](terminology.md#이미지)
+* [알림톡](terminology.md#알림톡)
+* [친구톡](terminology.md#친구톡)
 
 ## 수신번호
 
