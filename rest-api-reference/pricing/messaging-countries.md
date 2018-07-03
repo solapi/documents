@@ -1,8 +1,8 @@
-# 단가 리스트 조회
+# 해외 단가 조회
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/pricing/v1/messaging/countries" %}
 {% api-method-summary %}
-단가 리스트 조회
+해외 단가 조회
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -22,12 +22,12 @@
 조회를 원하는 국가코드
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="offset" type="string" required=false %}
+{% api-method-parameter name="offset" type="number" required=false %}
 설정된 값만큼를 건너띄어 내역을 가져옵니다.  
 \(default: 0\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="limit" type="string" %}
+{% api-method-parameter name="limit" type="number" %}
 가져오는 내역의 수를 설정된 값 만큼 제한 합니다.  
 \(default: 20\)
 {% endapi-method-parameter %}
@@ -49,9 +49,7 @@
         "ata": 19,
         "cta": 13,
         "countryName": "Korea, South",
-        "countryId": "82",
-        "dateCreated": "2018-06-28T06:33:09.196Z",
-        "dateUpdated": "2018-06-28T06:33:09.222Z"
+        "countryId": "82"
     },
     ...
 ]

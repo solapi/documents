@@ -1,8 +1,8 @@
-# 기본단가 조회
+# 단가 조회
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/pricing/v1/messaging" %}
 {% api-method-summary %}
-기본단가 조회
+단가 조회
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -34,9 +34,7 @@
   "ata": 19,
   "cta": 13,
   "countryName": "Korea, South",
-  "countryId": "82",
-  "dateCreated": "2018-06-28T06:33:09.196Z",
-  "dateUpdated": "2018-06-28T06:33:09.222Z"
+  "countryId": "82"
 }
 ```
 {% endapi-method-response-example %}
