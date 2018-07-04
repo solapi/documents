@@ -107,44 +107,10 @@ createMessageGroup
 ### Request Sample
 
 {% tabs %}
-{% tab title="NodeJS" %}
-```javascript
-request({
-    url: 'https://rest.coolsms.co.kr/messages/v4/groups',
-    method: 'post',
-    headers: {
-        'Authorization': 'HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'
-    },
-    json: { appId: 'MYAPPID' }
-})
-```
-{% endtab %}
-
 {% tab title="CURL" %}
 ```bash
 curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
   --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]" \
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-conn = HTTPSConnection("rest.coolsms.co.kr")
-conn.request("POST", "/messages/v4/groups", "{appId:'MYAPPID'}", {"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"})
-conn.close()
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-```php
-<?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://rest.coolsms.co.kr/messages/v4/groups");
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-curl_setopt($ch, CURLOPT_POSTFIELDS, "{'appId':'MYAPPID'}");
-curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]' ));
-curl_exec($ch);
-curl_close($ch);
 ```
 {% endtab %}
 {% endtabs %}
