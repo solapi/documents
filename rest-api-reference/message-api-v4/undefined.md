@@ -1,86 +1,111 @@
 # 심플 메시지
 
-여러 건을 한번에 발송 요청할 수 있는 그룹 메시지와 다르게 한 건의 메시지만 발송이 가능합니다.
+{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/send" %}
+{% api-method-summary %}
+심플 메시지 발송
+{% endapi-method-summary %}
 
-HTTP Status Code 가 200 이어도 Response 의 `statusCode` 값이 2000 이 아닌 경우 문제가 있는 것으로 [Message Status Codes](../message-status-codes.md) 에서 상세한 설명을 참고하세요.
+{% api-method-description %}
+여러 건을 한 번에 발송 요청할 수 있는 그룹 메시지와 다르게 한 건의 메시지만 발송이 가능합니다.  
+  
+HTTP Status Code 가 200 이어도 Response 의 `statusCode` 값이 2000 이 아닌 경우 문제가 있는 것으로  
+Message Status Codes 에서 상세한 설명을 참고하세요.
+{% endapi-method-description %}
 
-## Request
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="message" type="object" required=true %}
+메시지 정보를 담은 객체
+{% endapi-method-parameter %}
 
-{% tabs %}
-{% tab title="URI" %}
-POST `https://rest.coolsms.co.kr/messages/v4/send`
-{% endtab %}
+{% api-method-parameter name="-to" type="string" required=true %}
+수신 번호
+{% endapi-method-parameter %}
 
-{% tab title="Syntax" %}
-```javascript
-{
-  "message": {
-    "to": "String" /* required */,
-    "from": "String", /* required */
-    "text": "String", /* required */
-    "type": "String", /* default 'AUTO' */
-    "country": "String",
-    "subject": "String",
-    "imageId": "String",
-    "kakaoOptions": {
-      "senderKey": "String",
-      "templateCode": "String",
-      "buttonName": "String",
-      "buttonUrl": "String",
-      "disableSms": "Boolean"
-    }
-    "customFields": {
-      ...
-    }
-  },
-  "agent": {
-    "appId": "String",
-    "appVersion": "String",
-    "osPlatform": "String",
-    "sdkVersion": "String"
-  }
-}
-```
-{% endtab %}
+{% api-method-parameter name="-from" type="string" required=true %}
+발신 번호
+{% endapi-method-parameter %}
 
-{% tab title="Sample" %}
-`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/send --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATRUE]" -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'`
-{% endtab %}
+{% api-method-parameter name="-text" type="string" required=true %}
+메시지 내용
+{% endapi-method-parameter %}
 
-{% tab title="Description" %}
-## Required Parameters
+{% api-method-parameter name="-type" type="string" required=false %}
+메시지 타입  
+SMS, LMS, MMS, CTA, ATA
+{% endapi-method-parameter %}
 
-* `message` - Object 형식의 메시지 발송 정보
-  * `to` - 수신번호 String 형식입니다.
-  * `from` - 발신번호입니다.
-  * `text` - 메시지 내용입니다.
+{% api-method-parameter name="-country" type="string" required=false %}
+국가 번호  
+한국 \(82\)
+{% endapi-method-parameter %}
 
-## Optional Parameters
+{% api-method-parameter name="-subject" type="string" required=false %}
+LMS, MMS 일 때 제목
+{% endapi-method-parameter %}
 
-* `message` - Object 형식의 메시지 발송 정보
-  * `type` - 메시지 타입 기본은 'AUTO'
-  * `country` - 국가번호 기본은 '82'
-  * `subject` - 타입이 LMS, MMS일 때 제목
-  * `imageid` - 이미지 ID Link
-  * `kakaoOptions` - 카카오톡 메시지 옵션
-    * `senderKey` - 센더 키
-    * `templateCode` - 템플릿 코드
-    * `buttonName` - 버튼 이름, 10자 제한
-    * `buttonUrl` - 버튼 URL, 100자 제한
-    * `disableSms` - 알림톡 및 친구톡 발송이 실패하여도 문자메시지로 대체하여 발송하지 않습니다.
-  * `customFilds` - 메시지 조회 시 사용할 수 있으며 필드명은 30자 값은 100자까지 가능합니다.
-* `agent` - 사용한 앱에 대한 정보입니다.
-  * `appId` - 앱 아이디
-  * `appVersion` - 사용하는 앱의 버전
-  * `osPlatform` - 앱 사용중인 운영체제 버전
-  * `sdkVersion` - 사용하는 sdk 버전
-{% endtab %}
-{% endtabs %}
+{% api-method-parameter name="-imageId" type="string" required=false %}
+MMS 일 때 이미지 아이디
+{% endapi-method-parameter %}
 
-## Response
+{% api-method-parameter name="-kakaoOptions" type="object" required=false %}
+CTA, ATA 일 때 사용
+{% endapi-method-parameter %}
 
-{% tabs %}
-{% tab title="Syntax" %}
+{% api-method-parameter name="--senderKey" type="string" required=false %}
+센더키
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--templateCode" type="string" required=false %}
+템플릿 코드
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--buttonName" type="string" required=false %}
+버튼 이름 10 자 제한
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--buttonUrl" type="string" required=false %}
+버튼 주소 100 자 제한
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--disableSms" type="boolean" required=false %}
+친구톡 및 알림톡 발송이 실패했을 경우  
+대체 문자를 발송안할 경우 true
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="-customFields" type="object" required=false %}
+사용자 정의 필드
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="-agent" type="object" required=false %}
+앱의 정보를 담은 객체
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--appId" type="string" required=false %}
+앱 아이디
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--appVersion" type="string" required=false %}
+앱 버전
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--osPlatform" type="string" required=false %}
+사용하는 OS 플랫폼
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="--sdkVersion" type="string" required=false %}
+사용하는 SDK 버
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```javascript
 {
     "groupId": String,
@@ -93,33 +118,40 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
     "customFields": Object
 }
 ```
-{% endtab %}
+{% endapi-method-response-example %}
 
-{% tab title="Sample" %}
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```javascript
 {
-    "groupId": "G4V20180411123353C7LRLQN8VBSWMCV",
-    "messageId": "M3V20170911164820TCBLKDEWPAO8VOK",
-    "statusCode": "2000",            
-    "statusMessage": "정상 접수(이통사로 접수 예정)",
-    "to": "01000000000",
-    "type": "SMS",
-    "from": "01000000000",
-    "customFields": {
-      "myCustomField": "Value"
-    }
+    "errorCode": "ValidationError",
+    "errorMessage": "상황에 따라 다릅니다."
+}
+
+
+{
+    "errorCode": "InvalidStatusCode",
+    "errorMessage": "{messageId} 의 statusCode({statusCode})"
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endapi-method-response-example %}
 
-## Errors
+{% api-method-response-example httpCode=402 %}
+{% api-method-response-example-description %}
 
-`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
+{% endapi-method-response-example-description %}
 
-`InvalidStatusCode(400)` - 접수가 실패한 경우입니다. 메시지의 아이디와 status code 가 반환됩니다.
-
-`NotEnoughBalance(402)` - 보유하고 있는 포인트와 캐쉬를 합한 값이 발송시에 드는 금액보다 더 낮은 경우에 출력됩니다.
-
-`InternalError(500)` - 일시적으로 처리량이 많아 처리되지 못한경우 출력입니다. 그룹 생성, 그룹 메시지 추가, 그룹 발송을 확인해주세요.
+```javascript
+{
+    "errorCode": "NotEnoughBalance",
+    "errorMessage": "보유 잔액이 부족합니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
