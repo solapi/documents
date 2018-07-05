@@ -89,7 +89,7 @@ createMessageGroup
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
- 유효하지 않은 앱 아이디
+유효하지 않은 앱 아이디
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -104,7 +104,7 @@ createMessageGroup
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Request Sample
+## Request Sample
 
 {% tabs %}
 {% tab title="CURL" %}
@@ -114,3 +114,4 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
 ```
 {% endtab %}
 {% endtabs %}
+

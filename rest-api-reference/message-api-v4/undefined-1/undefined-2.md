@@ -74,7 +74,7 @@ getMessageGroupInfo
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
- 유효하지 않은 groupId
+유효하지 않은 groupId
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -103,7 +103,7 @@ getMessageGroupInfo
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Group Status
+### Group Status
 
 * `PENDING` - 대기중 \(그룹 전송 준비\)
 * `SENDING` - 전송 요청됨
@@ -112,7 +112,7 @@ getMessageGroupInfo
 * `DELETED` - 삭제됨
 * `SCHEDULED` - 발송 예약 됨 \(예약 취소전까지 그룹 삭제 불가\)
 
-### Request Sample
+## Request Sample
 
 {% tabs %}
 {% tab title="CURL" %}

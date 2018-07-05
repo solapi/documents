@@ -23,7 +23,7 @@ getMessageGroupList
 {% api-method-query-parameters %}
 {% api-method-parameter name="criteria" type="string" required=false %}
 그룹 검색 기준 ,\(콤마\)로 구분하여 여러 검색 기준을 사용  
-사용 가능 값 : groupId, status, dateCreated, dateUpdated,  scheduledDate
+사용 가능 값 : groupId, status, dateCreated, dateUpdated, scheduledDate
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="cond" type="string" required=false %}
@@ -101,7 +101,7 @@ getMessageGroupList
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Search cond parameters 
+### Search cond parameters
 
 * `eq` - 같음 \(=\)
 * `ne` - 같지 않음 \(!=\)
@@ -110,7 +110,7 @@ getMessageGroupList
 * `lt` - 보다 작음 \(&lt;\)
 * `lte` - 보다 작거나 같음 \(&lt;=\)
 
-### Request Sample
+## Request Sample
 
 {% tabs %}
 {% tab title="CURL" %}
@@ -119,3 +119,4 @@ curl -X GET https://rest.coolsms.co.kr/messages/v4/groups --header "Authorizatio
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -108,7 +108,7 @@ deleteMessageGroup
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Sample
+## Request Sample
 
 {% tabs %}
 {% tab title="CURL" %}

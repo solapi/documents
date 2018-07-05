@@ -6,7 +6,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
-이미 만들어진 그룹을  발송 요청할 수 있는 API 입니다.
+그룹에 담겨져 있는 메시지 발송 요청합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
