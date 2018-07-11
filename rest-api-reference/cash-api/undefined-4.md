@@ -26,14 +26,14 @@ Get Low Balance Alert
 
 ```javascript
 {
-    "balances": [
-        20,
-        4000,
-        60000
+    "lastAlertBalance": 0,
+    "lowBalances": [
+        200,
+        30258
     ],
     "_id": "12925149",
-    "dateCreated": "2018-06-26T07:20:58.731Z",
-    "dateUpdated": "2018-06-26T07:20:58.757Z"
+    "dateCreated": "2018-07-11T05:18:23.380Z",
+    "dateUpdated": "2018-07-11T05:34:47.781Z"
 }
 ```
 {% endapi-method-response-example %}
