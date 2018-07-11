@@ -10,7 +10,6 @@ Set Low Balance Alert
 {% endapi-method-summary %}
 
 {% api-method-description %}
-특정 금액 이하일 때 알림을 받을 수 있는 잔액 소진 알림을 설정합니다.  
 최대 3개의 잔액 알림 금액을 설정할 수 있습니다. e.g\) 1000원, 2000원, 3000
 {% endapi-method-description %}
 
