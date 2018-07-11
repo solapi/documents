@@ -1,3 +1,7 @@
+---
+description: 특정 금액 이하일 때 알림을 받을 수 있는 잔액 소진 알림을 설정합니다.
+---
+
 # 잔액 소진 알림 설정
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/v1/balance/alert" %}
@@ -19,10 +23,10 @@ Set Low Balance Alert
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="balances" type="array" required=true %}
+{% api-method-parameter name="lowBalances" type="array" required=true %}
 알림을 받을 잔액을 설정합니다.  
 최대 3개까지 가능하고  
-각 최소 20원 이상이여야 합니다.
+각 최소 200원 이상이여야 합니다.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -35,7 +39,7 @@ Set Low Balance Alert
 
 ```javascript
 {
-    "message": "성공적으로 수정되었습니다."
+    "message": "성공적으로 등록되었습니다."
 }
 ```
 {% endapi-method-response-example %}
@@ -48,7 +52,7 @@ Set Low Balance Alert
 ```javascript
 {
     "errorCode": "ValidationError",
-    "errorMessage": "child \"body\" fails because [child \"balances\" fails because [\"balances\" is required]]"
+    "errorMessage": "child \"body\" fails because [child \"lowBalances\" fails because [\"lowBalances\" is required]]"
 }
 
 {
@@ -58,7 +62,7 @@ Set Low Balance Alert
 
 {
     "errorCode": "ValidationError",
-    "errorMessage": "설정 가능 최소 금액은 20원 입니다."
+    "errorMessage": "설정 가능 최소 금액은 200원 입니다."
 }
 ```
 {% endapi-method-response-example %}
