@@ -1,3 +1,7 @@
+---
+description: 잔액 소진 알림 설정 정보를 조회합니다.
+---
+
 # 잔액 소진 알림 설정 정보 조회
 
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/v1/balance/alert" %}
