@@ -24,7 +24,7 @@ Set Low Balance Alert
 {% api-method-body-parameters %}
 {% api-method-parameter name="alertType" type="array" required=true %}
 알림을 받을 수단을 선택합니다.  
-TextMessage, KakaoAlim, Email
+SMS, ATA, EMAIL
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="balances" type="array" required=true %}

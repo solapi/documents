@@ -36,7 +36,7 @@ Get Low Balance Alert
             200
         ],
         "type": [
-            "TextMessage"
+            "SMS"
         ],
         "enabled": true
     },
