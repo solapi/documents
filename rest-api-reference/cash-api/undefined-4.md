@@ -30,14 +30,19 @@ Get Low Balance Alert
 
 ```javascript
 {
-    "lastAlertBalance": 0,
-    "lowBalances": [
-        200,
-        30258
-    ],
+    "lowBalanceAlert": {
+        "lastBalance": 0,
+        "balances": [
+            200
+        ],
+        "type": [
+            "TextMessage"
+        ],
+        "enabled": true
+    },
     "_id": "12925149",
-    "dateCreated": "2018-07-11T05:18:23.380Z",
-    "dateUpdated": "2018-07-11T05:34:47.781Z"
+    "dateCreated": "2018-07-16T02:24:39.256Z",
+    "dateUpdated": "2018-07-16T02:24:39.314Z"
 }
 ```
 {% endapi-method-response-example %}
