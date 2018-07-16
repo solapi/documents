@@ -16,7 +16,7 @@ Get Low Balance Alert
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="x-authenticated-account-id" type="string" required=true %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
 인증정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
