@@ -22,7 +22,12 @@ Set Low Balance Alert
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="lowBalances" type="array" required=true %}
+{% api-method-parameter name="alertType" type="array" required=true %}
+알림을 받을 수단을 선택합니다.  
+TextMessage, KakaoAlim, Email
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="balances" type="array" required=true %}
 알림을 받을 잔액을 설정합니다.  
 최대 3개까지 가능하고  
 각 최소 200원 이상이여야 합니다.
