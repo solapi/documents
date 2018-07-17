@@ -37,7 +37,7 @@ true or false
 
 ```javascript
 {
-    "_id": "12925149",
+    "accountId": "12925149",
     "enabled": true
 }
 ```
