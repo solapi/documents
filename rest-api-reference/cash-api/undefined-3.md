@@ -56,11 +56,6 @@ SMS, ATA, EMAIL
 ```javascript
 {
     "errorCode": "ValidationError",
-    "errorMessage": "child \"body\" fails because [child \"lowBalances\" fails because [\"lowBalances\" is required]]"
-}
-
-{
-    "errorCode": "ValidationError",
     "errorMessage": "금액은 최소 1개, 최대 3개 입력 가능합니다."
 }
 
