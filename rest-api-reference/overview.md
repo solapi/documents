@@ -1,7 +1,9 @@
 # Overview
 
-{% hint style="danger" %}
-현재 베타오픈 작업중에 있으므로 사용 불가합니다
+
+
+{% hint style="warning" %}
+현재는 베타 버전으로 확인되지 않은 오류가 있을 수 있습니다. 관련하여 1:1 문의를 통해 남겨주시면 빠른 시일내에 개선될 수 있도록 하겠습니다.
 {% endhint %}
 
 쿨에스엠에스의 REST API Reference 내용을 담고 있습니다.
