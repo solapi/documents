@@ -10,11 +10,11 @@
 
 `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
 
-## Request Syntax
+## Request syntax
 
 {% tabs %}
 {% tab title="URI" %}
-POST`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
+PUT`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
 {% endtab %}
 
 {% tab title="Syntax" %}
@@ -26,6 +26,7 @@ POST`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
       "from": "String", /* required */
       "text": "String", /* required */
       "type": "String",
+      "autoTypeDetect": "Boolean",
       "country": "String",
       "subject": "String",
       "imageId": "String",
@@ -47,36 +48,38 @@ POST`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
 {% endtab %}
 
 {% tab title="Sample" %}
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }'
+curl -H "Content-Type: application/json” -H "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]" -d '{ "messages": "\[ { \"to\": \"01000000000\", \"from\": \"029302266\", \"text\": \"테스트 메시지\", \"type\":\"sms\", \"customFields\": { \"myCustomField\": \"Value\" } } \]" }' -X PUT https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages
 {% endtab %}
 {% endtabs %}
 
-### Required Parameters
+### Required parameter
 
-* `messages` - Array 형식의 메시지 발송 정보
-  * `to` - 수신번호 String이나 Array형식으로 받을 수 있으며 같은 문자내용으로 여러명에게 보낼때는 String형식으로 각각 다른 문자내용으로 보낼 때는 Array형식으로 보내는 것을 권장 합니다.
-  * `from` - 발신번호
-  * `text` - 메시지 내용, 완성형 한글 코드표에 나와있는 문자들만 지원하며 타입에 따라 제한길이가 다르며 한글은 2byte 띄어쓰기 및 줄내림은 1byte를 차지합니다.
+* `messages` - Array 형식의 메시지 발송 정보 \(JSON Object 형식의 데이터를 문자열로 만든 값 입니다.e.g { "key": "value } -&gt; "{ \"key\": \"value\" }"\)
+  * `to` - 수신번호 문자열 이나 배열  형식으로 보내실 수 있습니다.
+  * `from` - 발신번호를 문자열 형식으로 입력하시면 됩니다.
+  * `text` - 메시지 내용, 완성형 한글 코드표에 나와있는 문자들만 지원하며 타입에 따라 제한길이가 다르며 한글은 2byte 띄어쓰기 와 영어 및 줄내림은 1byte를 차지합니다.
     * SMS : 90byte 이하
     * LMS, MMS : 2000byte 이하
     * ATA, CTA: 한/영포함 1000자까지
 
-### Optional Parameters
+### Optional parameter
 
-* `messages` - Array 형식의 메시지 발송 정보
-  * `type` - 메시지 타입 기본은 'AUTO' \(타입이 'AUTO'일 경우 알아서 판단하여 들어간다.\)
-  * `country` - 국가번호 기본은 '82'
-  * `subject` - 타입이 LMS, MMS일 때 제목
-  * `imageid` - 이미지 ID
-  * `kakaoOptions` - 카카오톡 메시지 옵션
-    * `senderKey` - 카카오톡 센더 키
-    * `templateCode` - 템플릿 코드
-    * `buttonName` - 버튼 이름, 10자 제한
-    * `buttonUrl` - 버튼 URL, 100자 제한
-    * `disableSms` - 'true'로 하면 알림톡 및 친구톡 발송이 실패하여도 문자메시지로 대체하여 발송하지 않습니다. 기본은 'false'
+* `messages` - Array 형식의 메시지 발송 정보 \(JSON Object 형식의 데이터를 문자열로 만든 값 e.g { "key": "value } -&gt; "{ \"key\": \"value\" }"\)
+  * `type` - 발송하실 메시지의 타입 입니다. \(SMS, LMS, MMS, ATA, CTA\)
+  * `autoTypeDetect` - true 또는 값을 넣지 않으셔도 됩니다.
+    * `true`: type 값을 입력하지 않는 경우이며, 입력하신 값에 따라서 자동으로 SMS, LMS, MMS 또는 ATA, CTA 가 설정됩니다.
+  * `country` - 국가번호 입니다. 대한민국은 '82' 입니다.
+  * `subject` - `type` 이 `LMS`, `MMS`일 때 필수 입력이며, 문자메시지의 제목입니다.
+  * `imageId` - `MMS` 일 때 필수 입력이며, 이미지 등록시에 발급받은 imageId 를 입력하시면 됩니다.
+  * `kakaoOptions` - `type`이 `ATA`,`CTA` 일 때 필수 입니다.
+    * `senderKey` - 카카오톡 센더 키 입니다.
+    * `templateCode` - 템플릿 코드입 니다.
+    * `buttonName` - 버튼 이름, 10자 제한입니다.
+    * `buttonUrl` - 버튼 URL, 100자 제한입니다.
+    * `disableSms` - `true`로 하면 알림톡 및 친구톡 발송이 실패하여도 문자메시지로 대체하여 발송하지 않습니다. 기본은 `false` 입니다.
   * `customFilds` - 메시지 조회 시 사용할 수 있으며 필드명은 30자 설정값은 100자까지 가능합니다.
 
-### Limits
+## 제한 사항
 
 그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.
 
@@ -84,7 +87,7 @@ $ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages 
 * 한번의 요청\(Request\)에 대해 수신번호는 10,000 개를 넘을 수 없습니다.
 * 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
 
-## Response
+## Response data
 
 {% tabs %}
 {% tab title="Syntax" %}
@@ -130,7 +133,7 @@ $ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages 
 {% endtab %}
 {% endtabs %}
 
-## Errors
+## 에러 코드
 
 `ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
 
