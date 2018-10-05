@@ -49,40 +49,81 @@ createMessageGroup
 
 ```javascript
 {
-  "agent": { // 사용자 agent 정보
-    "appId": null, // 그룹 생성 시 함께 요청한 appId
-    "appVersion": "2.0", // 그룹 생성 시 함께 요청한 앱 버전
-    "sdkVersion": "1.0", // sdk를 이용하여 발송한 경우 해당 sdk의 버전
-    "osPlatform": "win" // 그룹 생성 시 함께 요청한 운영체제 환경
+  "count":{
+    "total":0, // 추가된 총 메시지의 개수
+    "sentTotal":0, // 발송 시도된 총 메시지의 개수
+    "sentFailed":0, // 발송 실패한 메시지의 개수
+    "sentSuccess":0, // 발송 성공한 메시지의 개수
+    "sentPending":0, // 발송 중인 메시지의 개수
+    "sentReplacement":0, // 대체 발송 메시지의 개수
+    "refund":0, // 환급된 메시지의 개수
+    "registeredFailed":0, // 등록 실패한 메시지의 개수
+    "registeredSuccess":0 // 등록 성공한 메시지의 개수
   },
-  "count": {
-    "total": 0, // 등록된 총 메시지 수
-    "sentTotal": 0, // 전송 시도 메시지 수
-    "sentFailed": 0, // 전송 실패 메시지 수
-    "sentSuccess": 0, // 전송 완료 메시지 수
-    "sentPending": 0, // 전송중 메시지 수
-    "registeredFailed": 0, // 접수 실패 메시지 수
-    "registeredSuccess": 0, // 접수 성공 메시지 수
-    "sms": 0, // 그룹에 등록된 sms 수
-    "lms": 0,
-    "mms": 0,
-    "ata": 0,
-    "cta": 0
+  "countForCharge":{ // 차감할 타입/국가별 문자 카운트
+    "sms":{ // { 국가코드: 카운트 } 형식으로 돼있습니다.
+
+    },
+    "lms":{
+
+    },
+    "mms":{
+
+    },
+    "ata":{
+
+    },
+    "cta":{
+
+    }
   },
-  "log": [ // 그룹 이력
+  "balance":{
+    "requested":0, // 발송시 차감 금액
+    "replacement":0, // 대체발송 차감 금액
+    "refund":0, // 환급으로 인해 충전된 금액
+    "sum":0 // 실제로 차감된 금액
+  },
+  "point":{
+    "requested":0, // 발송시 차감 포인트
+    "replacement":0, // 대체발송 차감 포인트
+    "refund":0, // 환급으로 인해 충전된 포인트
+    "sum":0 // 실제로 차감된 포인트
+  },
+  "app":{
+    "profit":{
+      "sms":0, // 타입별 앱에 설정된 수익금
+      "lms":0,
+      "mms":0,
+      "ata":0,
+      "cta":0
+    },
+    // 앱 정보
+    "appId":null,
+    "version":null
+  },
+  "sdkVersion":"1.0",
+  "osPlatform":"win",
+  "log":[
     {
-      "message": "메시지 그룹이 생성되었습니다.",
-      "createAt": "2018-06-27T09:56:22.556Z"
+      "message":"메시지 그룹이 생성되었습니다.",
+      "createAt":"2018-10-05T07:25:02.493Z"
     }
   ],
-  "status": "PENDING", // 해당 메시지 그룹의 상태 정보. (자세한 사항은 '그룹정보' 문서 참조)
-  "scheduledDate": null, // 예약 발송일
-  "accountId": "12925149", // 그룹 생성자 계정 고유번호
-  "apiVersion": "4", // 사용된 api 버전
-  "groupId": "G4V20180627185622HOXPCZNCRJ0U0TV", // 그룹 고유값
-  "dateCreated": "2018-06-27T09:56:22.558Z", // 그룹 생성시각
-  "dateUpdated": "2018-06-27T09:56:22.558Z", // 마지막 그룹 수정시각
-  "_id": "G4V20180627185622HOXPCZNCRJ0U0TV"
+  "status":"PENDING",
+  "scheduledDate":null,
+  "dateSent":null, // 발송 요청 시각
+  "dateCompleted":null, // 그룹 발송이 완료된 시각
+  "isRefunded":false, // 환급 여부
+  "flagUpdated":false,
+  "accountId":"12925149",
+  "apiVersion":"4",
+  "groupId":"G4V20181005162502HEA0ZB9AQOUMSE1",
+  "price":{ // 그룹에 사용된 국가별 가격
+// 82: { sms: 10, ... }, ...
+  },
+  "dateCreated":"2018-10-05T07:25:02.496Z",
+  "dateUpdated":"2018-10-05T07:25:02.496Z",
+  "_id":"G4V20181005162502HEA0ZB9AQOUMSE1"
 }
 ```
 {% endapi-method-response-example %}
