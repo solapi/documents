@@ -6,6 +6,14 @@
 
 메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
 
+## 제한 사항
+
+그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.
+
+* 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.
+* 한번의 요청\(Request\)에 대해 수신번호는 10,000 개를 넘을 수 없습니다.
+* 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
+
 ## Resource URL
 
 `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
@@ -78,14 +86,6 @@ curl -H "Content-Type: application/json” -H "Authorization : HMAC-SHA256 ApiKe
     * `buttonUrl` - 버튼 URL, 100자 제한입니다.
     * `disableSms` - `true`로 하면 알림톡 및 친구톡 발송이 실패하여도 문자메시지로 대체하여 발송하지 않습니다. 기본은 `false` 입니다.
   * `customFilds` - 메시지 조회 시 사용할 수 있으며 필드명은 30자 설정값은 100자까지 가능합니다.
-
-## 제한 사항
-
-그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.
-
-* 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.
-* 한번의 요청\(Request\)에 대해 수신번호는 10,000 개를 넘을 수 없습니다.
-* 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
 
 ## Response data
 
