@@ -31,8 +31,7 @@
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-}
+"Success"
 ```
 {% endapi-method-response-example %}
 
