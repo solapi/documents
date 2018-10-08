@@ -14,6 +14,12 @@ Message Status Codes 에서 상세한 설명을 참고하세요.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+쿨에스엠에스 인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="message" type="object" required=true %}
 메시지 정보를 담은 객체  

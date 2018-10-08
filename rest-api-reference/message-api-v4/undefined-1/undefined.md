@@ -1,28 +1,23 @@
 # 그룹 생성
 
-메시지 그룹 생성 API 사용방법을 기술합니다.
-
-메시지 그룹은 메시지를 담는 그릇이 됩니다.  
-한번의 요청으로 대량의 메시지를 관리/발송하기 위해서 발송 전 메시지 그룹을 생성해야 합니다.
-
-그룹 생성 후 메시지를 등록하여 전송이 가능합니다. 모든 전송 요청은 그룹 단위로 진행되어, 해당 그룹에 등록된 모든 메시지는 일괄적으로 발송됩니다.
-
-이미 발송에 사용된 메시지 그룹은 더 이상 발송할 수 없습니다.
-
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups" %}
 {% api-method-summary %}
 createMessageGroup
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+메시지 대량 발송을 위한 그룹 생성 API 입니다.  
+메시지 그룹은 메시지를 담는 그릇이 됩니다.  
+  
+한 건의 요청으로 하나의 메시지를 보낼 수 있는 심플 메시지와는 달리 그룹을 사용한다면,  
+한 번의 요청으로 많은 메시지를 보낼 수 있습니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-쿨에스엠에스 인증정보
+쿨에스엠에스 인증 정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -135,9 +130,23 @@ createMessageGroup
 
 ```javascript
 {
-    "statusCode": "400",
     "errorCode": "InvalidAppId",
     "errorMessage": "유효하지 않은 앱 아이디"
+}
+
+{
+    "errorCode": "BlockedApp",
+    "errorMessage": "차단 처리된 앱으로 사용이 불가능합니다."
+}
+
+{
+    "errorCode": "InDevelopment",
+    "errorMessage": "개발단계의 앱으로 아직 출시되지 않았습니다."
+}
+
+{
+    "errorCode": "InvalidAppId",
+    "errorMessage": "유효하지 않은 AppId"
 }
 ```
 {% endapi-method-response-example %}

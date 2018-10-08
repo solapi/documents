@@ -16,23 +16,24 @@ getMessageGroupList
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-쿨에스엠에스 인증정보
+쿨에스엠에스 인증 정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="criteria" type="string" required=false %}
-그룹 검색 기준 ,\(콤마\)로 구분하여 여러 검색 기준을 사용  
-사용 가능 값 : groupId, status, dateCreated, dateUpdated, scheduledDate
+그룹 검색 조건에 사용되는 key 의 값 입니다. \(e.g status, groupId\)  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="cond" type="string" required=false %}
-그룹 검색 조건에 사용되는 연산자 ,\(콤마\)로 구분하여 여러 조건 사용  
-사용 가능 값: eq, ne, gt, gte, lt, lte
+그룹 검색 조건에 사용되는 연산자 입니다.  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="value" type="string" required=false %}
-검색 값 \(날짜 검색의 경우 ISO8601 표준을 이용합니다.\)
+검색 값 입니다.  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="offset" type="number" required=false %}
@@ -101,7 +102,23 @@ getMessageGroupList
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Search cond parameters
+## Body parameter 설명
+
+### criteria
+
+criteria 의 값은 "key1,key2,key3" 과 같이 ,\(콤마\) 로 구분되며 `cond`, `value` 와 함께 사용됩니다.
+
+* `status` - 그룹의 상태 입니다.
+* `groupId` - 그룹 아이디 입니다.
+* `dateCreated` - 그룹 생성일 입니다.
+* `dateUpdated` - 그룹 정보를 변경한 마지막 시각 입니다.
+* `scheduledDate` - 발송이 시작 될 날 입니다.\(예약\)
+* `count.total` - 총 문자메시지의 개수 입니다.
+* `count.sentTotal` - 발송된 문자메시지의 개수 입니다.
+
+### cond
+
+criteria 와 같이 "cond1,cond2" 와 같이 ,\(콤마\)로 구분되며, `criteria`,`value` 와 함께 사용됩니다.
 
 * `eq` - 같음 \(=\)
 * `ne` - 같지 않음 \(!=\)
@@ -109,6 +126,18 @@ getMessageGroupList
 * `gte` - 보다 크거나 같음 \(&gt;=\)
 * `lt` - 보다 작음 \(&lt;\)
 * `lte` - 보다 작거나 같음 \(&lt;=\)
+
+### value
+
+`criteria` , `cond` 값에 대응하는 value 입니다.
+
+criteria="groupId,status"
+
+cond="eq,eq"
+
+일 경우 groupId 에 대응하는 value 값을 찾고 status 에 대응하는 값을 찾는 조건 입니다.
+
+e.g - value="그룹아이디,PENDING"
 
 ## Request Sample
 
