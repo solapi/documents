@@ -1,8 +1,5 @@
 # 그룹 목록
 
-메시지 그룹 목록 조회 API 사용방법을 기술합니다.  
-이전에 삭제 되었거나, 생성 실패된 메시지 그룹 등을 포함한 생성되었던 모든 그룹 조회가 가능합니다.
-
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/messages/v4/groups" %}
 {% api-method-summary %}
 getMessageGroupList

@@ -31,7 +31,6 @@
     * [그룹 정보](rest-api-reference/message-api-v4/undefined-1/undefined-2.md)
     * [그룹 삭제](rest-api-reference/message-api-v4/undefined-1/undefined-3.md)
     * [그룹 메시지 추가](rest-api-reference/message-api-v4/undefined-1/undefined-4.md)
-    * [그룹 메시지 목록](rest-api-reference/message-api-v4/undefined-1/undefined-5.md)
     * [그룹 메시지 발송](rest-api-reference/message-api-v4/undefined-1/undefined-6.md)
     * [그룹 메시지 예약 접수](rest-api-reference/message-api-v4/undefined-1/undefined-7.md)
     * [그룹 메시지 예약 취소](rest-api-reference/message-api-v4/undefined-1/undefined-8.md)

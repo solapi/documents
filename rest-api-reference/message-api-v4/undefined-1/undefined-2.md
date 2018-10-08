@@ -1,7 +1,5 @@
 # 그룹 정보
 
-메시지 그룹 정보 조회 API 사용방법을 기술합니다.
-
 {% api-method method="get" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/{groupId}" %}
 {% api-method-summary %}
 getMessageGroupInfo
