@@ -1,60 +1,91 @@
 # 그룹 메시지 예약 접수
 
-그룹 메시지를 예약 접수 합니다.
+{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/schedule" %}
+{% api-method-summary %}
+scheduleGroupMessage
+{% endapi-method-summary %}
 
-최대 6개월까지 접수 가능하며 **발송시에 잔액이 차감되니 주의** 부탁드립니다.
+{% api-method-description %}
+그룹 메시지를 예약 접수 합니다.  
+최대 6개월까지 접수 가능하며 **발송시**에 **잔액이 차감**되니 주의 부탁드립니다.  
+\(**발송 시점에 잔액이 없을 경우 발송 실패\)**
+{% endapi-method-description %}
 
-**\(발송 시점에 잔액이 없을 경우 발송 실패 처리\)**
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="string" required=true %}
+그룹 아이디
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-## Request
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+쿨에스엠에스 인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
-{% tabs %}
-{% tab title="URI" %}
-POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule)
-{% endtab %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="scheduledDate" type="string" required=true %}
+ISO 8601 형식의 발송될 시
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% tab title="Sample" %}
-curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule) --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{ "scheduledDate": "2019-01-01 00:00:00"}
-{% endtab %}
-{% endtabs %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
-### Required query parameters
+{% endapi-method-response-example-description %}
 
-* `groupId` - 예약 접수할 그룹 아이디.
+```
+"Success"
+```
+{% endapi-method-response-example %}
 
-### Required body parameters
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
 
-* `scheduledDate` - 예약 날짜,  최대 6개월까지 설정 가능합니다.
+{% endapi-method-response-example-description %}
 
-### Response status code
+```javascript
+{
+    errorCode: "BlockedApp",
+    errorMessage: "차단 처리된 앱으로 사용이 불가능합니다."
+}
 
-* `200` - 그룹 예약 접수가 성공적으로 완료된 경우 입니다.
+{
+    errorCode: "InDevelopment",
+    errorMessage: "개발단계의 앱으로 아직 출시되지 않았습니다."
+}
 
-## Errors
+{
+    errorCode: "InvalidScheduledDate",
+    errorMessage: "예약시간은 현재시간보다 늦게 설정 가능합니다."
+}
 
-`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
+{
+    errorCode: "InvalidScheduledDate",
+    errorMessage: "발송 예정일이 6개월을 초과하여 발송 예약에 실패하였습니다."
+}
+```
+{% endapi-method-response-example %}
 
-`ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
 
-`MessagesInProcessing(409)` -이미 발송된 메시지
+{% endapi-method-response-example-description %}
 
-`DeletedGroup(400)` -삭제 처리된 그룹
-
-`FailedGroup(400)` - 그룹 생성에 실패했던 그룹
-
-`ScheduledGroup(409)` - 이미 발송 예약된 그룹
-
-`InvalidStatus(400)` - 'PENDING' 상태의 그룹만 예약 가능
-
-`MessagesNotFound(404)` - 해당 그룹에 메시지가 없음
-
-`InvalidAppId(400)` - 유효하지 않은 앱 아이디
-
-`InactiveApp(400)` - 현재 사용하는 앱의 상태가 비활성화
-
-`InvalidScheduledDate(400)` - 잘못된 'scheduled
-
-`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
+```javascript
+{
+    errorCode: "ResourceNotFound",
+    errorMessage: "해당 그룹아이디가 존재하지 않습니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 ## 예제 코드
 

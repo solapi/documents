@@ -1,36 +1,68 @@
 # 그룹 메시지 예약 취소
 
-예약된 그룹 메시지를 예약 취소 합니다.
+{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/schedule" %}
+{% api-method-summary %}
+cancelScheduledGroupMessage
+{% endapi-method-summary %}
 
-취소 처리된 그룹은 '대기중\(PENDING\)'상태로 돌아가게 되며, 기존 그룹과 마찬가지로 '수정', '삭제', '발송' 등이 가능합니다.
+{% api-method-description %}
 
-## Request
+{% endapi-method-description %}
 
-{% tabs %}
-{% tab title="URI" %}
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule)
-{% endtab %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="string" required=true %}
+그룹 아이디
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-{% tab title="Sample" %}
-curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule) --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]" 
-{% endtab %}
-{% endtabs %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+쿨에스엠에스 인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
 
-### Required query parameters
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
-* `groupId` - 예약 접수할 그룹 아이디.
+{% endapi-method-response-example-description %}
 
-### Response status code
+```
+"Success"
+```
+{% endapi-method-response-example %}
 
-* `200` - 그룹 예약 접수가 성공적으로 완료된 경우 입니다.
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
 
-## Errors
+{% endapi-method-response-example-description %}
 
-`ResourceNotFound(404)` - 그룹 아이디가 존재하지 않는 경우
+```javascript
+{
+    errorCode: "InvalidStatus",
+    errorMessage: "'SCHEDULED' 상태의 그룹만 취소가 가능합니다."
+}
+```
+{% endapi-method-response-example %}
 
-`InvalidStatus(400)` - 'SCHEDULED' 상태의 그룹만 예약 가능
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
 
-`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    errorCode: "ResourceNotFound",
+    errorMessage: "해당 그룹아이디가 존재하지 않습니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 ## 예제 코드
 

@@ -1,49 +1,67 @@
 # 그룹 메시지 삭제
 
-## 그룹 메시지 삭제
+{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/messages" %}
+{% api-method-summary %}
+deleteGroupMessages
+{% endapi-method-summary %}
 
-그룹에 추가된 문자메시지를 삭제합니다.
+{% api-method-description %}
 
-## Request
+{% endapi-method-description %}
 
-{% tabs %}
-{% tab title="URI" %}
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages)
-{% endtab %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="string" required=true %}
+그룹 아이
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-{% tab title="Sample" %}
-curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{"messageIds":\["M4V20180308120044DTYYJBBYLPQZIB1", "M4V20180309120044DTYYJBBYLPQZIB1"\]}'
-{% endtab %}
-{% endtabs %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="messageIds" type="array" required=false %}
+메시지 아이디를 담은 배열입니다.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-#### Required Path Parameters
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
-* `groupId` - 삭제할 메시지가 있는 그룹의 아이디
+{% endapi-method-response-example-description %}
 
-#### Required Body Parameters
+```javascript
+{
+  groupId: 'G4V20180307105937H3PTASXMNJG2JIB',
+  errorCount: 0,
+  resultList: [{
+    messageId: 'M4V20200308120044DTYYJBBYLPQZIB1',
+    resultCode: 'Success'
+  }]
+}
+```
+{% endapi-method-response-example %}
 
-* `messageIds` - 배열 형태인 삭제할 메시지의 아이디들
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
 
-## Response
+{% endapi-method-response-example-description %}
 
-{% tabs %}
-{% tab title="Syntax" %}
-{ "errorCount": Number, "resultList": \[ { "messageId": "String", "resultCode": "String" } \] }
-{% endtab %}
+```javascript
+{
+    errorCode: "InvalidGroupId",
+    errorMessage: "자신이 보유하고 있는 Group Id 만 수정할 수 있습니다."
+}
 
-{% tab title="Sample" %}
-{ "errorCount": 0, "resultList": \[ { "messageId": "MID1234567890", "resultCode": "Success" } \] }
-{% endtab %}
-{% endtabs %}
-
-* `errorCount` - 오류 카운트
-* `resultList` - 요청한 건수만큼 결과를 반환합니다. 
-  * `messageId` - 삭제하려는 메시지의 아이디
-  * `resultCode` - 삭제 성공 여부 \(Success, MessageNotFound, InternalError\)
-
-## Errors
-
-`Unauthorized(401)` - 권한 오류
+{
+    errorCode: "InvalidGroupStatus",
+    errorMessage: "처리가 가능한 그룹이 아닙니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 ## 예제 코드
 

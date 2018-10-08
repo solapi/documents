@@ -36,7 +36,6 @@
     * [그룹 메시지 예약 취소](rest-api-reference/message-api-v4/undefined-1/undefined-8.md)
     * [그룹 메시지 삭제](rest-api-reference/message-api-v4/undefined-1/undefined-9.md)
   * [메시지 조회](rest-api-reference/message-api-v4/undefined-2.md)
-  * [메시지 로그 조회](rest-api-reference/message-api-v4/undefined-3.md)
 * [Image API](rest-api-reference/image-api/README.md)
   * [이미지 생성](rest-api-reference/image-api/undefined.md)
   * [이미지 목록 조회](rest-api-reference/image-api/undefined-1.md)
