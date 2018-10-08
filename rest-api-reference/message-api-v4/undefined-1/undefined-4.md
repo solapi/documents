@@ -1,10 +1,171 @@
 # 그룹 메시지 추가
 
-그룹에 발송할 메시지를 추가 합니다.
+{% api-method method="put" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/messages" %}
+{% api-method-summary %}
+addGroupMessages
+{% endapi-method-summary %}
 
-실패된 건들도 그룹에 저장이 되나, 발송은 하지 않습니다.
+{% api-method-description %}
+여러 건의 메시지를 발송하기 위한 그룹에 메시지를 추가합니다.  
+실패된 건들도 그룹에 저장이 되나, 발송은 하지 않습니다.  
+메시지 추가 실패 시 사유는 상태코드표를 확인 부탁드립니다.
+{% endapi-method-description %}
 
-메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="string" required=true %}
+추가를 원하는 그룹 아이디
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+쿨에스엠에스 인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="messages" type="string" required=true %}
+message 를 messages 배열에 넣고 stringify 한 값 입니다.  
+e.g \) "\[message, message, message\]"  
+  
+message 객체는 하단을 참고해주세요.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    errorCount: 0,
+    resultList: [{
+       to: '01000000001',
+       from: '029302266',
+       type: 'SMS',
+       statusMessage: '정상 접수(이통사로 접수 예정) ',
+       country: '82',
+       messageId: 'M4V20181008113012XDVBONQ3TDLO2LM',
+       statusCode: '2000',
+       accountId: '12925149'
+    }]
+}
+
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    errorCode: "ValidationError"
+    errorMessage: "messages 의 데이터 타입은 배열이어야 됩니다."
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=413 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    errorCode: "RecipientsTooMany",
+    errorMessage: "한 번에 추가할 수 있는 수신번호는 최대 10000건 입니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+## Body Parameters 설명
+
+### message 는 JSON Object 형식 입니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Key</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">to</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[required] 수신 받는 번호입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">from</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[required] 해당 계정에 등록된 발신 번호 입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">text</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[required] 메시지의 내용입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">type</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] SMS, LMS, MMS, ATA, CTA 중 한 가지를 입력하시면 됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">country</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] 기본으로 설정되는 값은 <code>82</code> 이며, 발송하실 국가에 맞게 입력하시면 됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">subject</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] <code>LMS</code>,<code>MMS</code> 로 발송하게 되는 경우 입력되는 제목입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">imageId</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] <code>MMS</code> 일 때, 첨부되는 이미지의 고유 번호이며, Image API 를 참고 해주세요.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">kakaoOptions</td>
+      <td style="text-align:left">Object</td>
+      <td style="text-align:left">[optional] <code>ATA</code>, <code>CTA</code> 일 때, 입력이 필요한 값 입니다. 하단의 설명을
+        참고해주세요.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">customFields</td>
+      <td style="text-align:left">Object</td>
+      <td style="text-align:left">
+        <p>[optional] 회원님의 메모 용도로 사용하실 객체입니다.</p>
+        <p>필드 명은 30 자, 값은 100</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">autoTypeDetect</td>
+      <td style="text-align:left">Boolean</td>
+      <td style="text-align:left">[optional] 기본 값은 <code>false</code> 이며, <code>true</code> 를 하게 되면 입력값에 맞는
+        적절한 <code>type</code> 이 설정됩니다.</td>
+    </tr>
+  </tbody>
+</table>### kakaoOptions
+
+| Key | Type | Value |
+| :--- | :--- | :--- |
+| senderKey | String | \[required\] 센더키 입니다. |
+| templateCode | String | \[optional\] 템플릿 코드입니다. |
+| buttonName | String | \[optional\] 버튼 이름이며, 최대 10 자 입력 가능합니다. |
+| buttonUrl | String | \[optional\] 버튼 URL 이며, 최대 100 자 입력 가능합니다. |
+| disableSms | Boolean | \[optional\] `true` 로 설정해서 보내게 되면, 발송 실패시 문자 메시지를 대체 발송하지 않습니다. 기본값은 `false` 입니다. |
 
 ## 제한 사항
 
@@ -14,134 +175,7 @@
 * 한번의 요청\(Request\)에 대해 수신번호는 10,000 개를 넘을 수 없습니다.
 * 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
 
-## Resource URL
+## 상태코드
 
-`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
-
-## Request syntax
-
-{% tabs %}
-{% tab title="URI" %}
-PUT`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
-{% endtab %}
-
-{% tab title="Syntax" %}
-```text
-{
-  "messages": [
-    {
-      "to": "String" or Array /* required */,
-      "from": "String", /* required */
-      "text": "String", /* required */
-      "type": "String",
-      "autoTypeDetect": "Boolean",
-      "country": "String",
-      "subject": "String",
-      "imageId": "String",
-      "kakaoOptions": {
-        "senderKey": "String",
-        "templateCode": "String",
-        "buttonName": "String",
-        "buttonUrl": "String",
-        "disableSms": "Boolean"
-      }
-      "customFields": {
-        ...
-      }
-    },
-    ...
-  ],
-}
-```
-{% endtab %}
-
-{% tab title="Sample" %}
-curl -H "Content-Type: application/json” -H "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]" -d '{ "messages": "\[ { \"to\": \"01000000000\", \"from\": \"029302266\", \"text\": \"테스트 메시지\", \"type\":\"sms\", \"customFields\": { \"myCustomField\": \"Value\" } } \]" }' -X PUT https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages
-{% endtab %}
-{% endtabs %}
-
-### Required parameter
-
-* `messages` - Array 형식의 메시지 발송 정보 \(JSON Object 형식의 데이터를 문자열로 만든 값 입니다.e.g { "key": "value } -&gt; "{ \"key\": \"value\" }"\)
-  * `to` - 수신번호 문자열 이나 배열  형식으로 보내실 수 있습니다.
-  * `from` - 발신번호를 문자열 형식으로 입력하시면 됩니다.
-  * `text` - 메시지 내용, 완성형 한글 코드표에 나와있는 문자들만 지원하며 타입에 따라 제한길이가 다르며 한글은 2byte 띄어쓰기 와 영어 및 줄내림은 1byte를 차지합니다.
-    * SMS : 90byte 이하
-    * LMS, MMS : 2000byte 이하
-    * ATA, CTA: 한/영포함 1000자까지
-
-### Optional parameter
-
-* `messages` - Array 형식의 메시지 발송 정보 \(JSON Object 형식의 데이터를 문자열로 만든 값 e.g { "key": "value } -&gt; "{ \"key\": \"value\" }"\)
-  * `type` - 발송하실 메시지의 타입 입니다. \(SMS, LMS, MMS, ATA, CTA\)
-  * `autoTypeDetect` - true 또는 값을 넣지 않으셔도 됩니다.
-    * `true`: type 값을 입력하지 않는 경우이며, 입력하신 값에 따라서 자동으로 SMS, LMS, MMS 또는 ATA, CTA 가 설정됩니다.
-  * `country` - 국가번호 입니다. 대한민국은 '82' 입니다.
-  * `subject` - `type` 이 `LMS`, `MMS`일 때 필수 입력이며, 문자메시지의 제목입니다.
-  * `imageId` - `MMS` 일 때 필수 입력이며, 이미지 등록시에 발급받은 imageId 를 입력하시면 됩니다.
-  * `kakaoOptions` - `type`이 `ATA`,`CTA` 일 때 필수 입니다.
-    * `senderKey` - 카카오톡 센더 키 입니다.
-    * `templateCode` - 템플릿 코드입 니다.
-    * `buttonName` - 버튼 이름, 10자 제한입니다.
-    * `buttonUrl` - 버튼 URL, 100자 제한입니다.
-    * `disableSms` - `true`로 하면 알림톡 및 친구톡 발송이 실패하여도 문자메시지로 대체하여 발송하지 않습니다. 기본은 `false` 입니다.
-  * `customFilds` - 메시지 조회 시 사용할 수 있으며 필드명은 30자 설정값은 100자까지 가능합니다.
-
-## Response data
-
-{% tabs %}
-{% tab title="Syntax" %}
-```text
-{
-  "errorCount": Number,
-  "resultList": [
-    {
-      "to": "String",
-      "from": "String",     
-      "type": "String",
-      "statusCode": "String",
-      "statusMessage": "String",
-      "messageId": "String",
-      "customFields": {
-        ...
-      },      
-    }
-  ],
-}
-```
-{% endtab %}
-
-{% tab title="Sample" %}
-```javascript
-{
-    "errorCount": 0,
-    "resultList": [
-        {
-            "to": "01000000001",
-            "from": "029302266",
-            "type": "SMS",            
-            "statusCode": "2000",
-            "statusMessage": "정상 접수(이통사로 접수 예정)"
-            "messageId": "M3V20170911164820TCBLKDEWPAO8VOK",
-            "customFields": {
-              "myCustomField": "Value"
-            }
-        }
-    ]
-}
-```
-{% endtab %}
-{% endtabs %}
-
-## 에러 코드
-
-`ValidationError(400)` - 정해진 형식에 맞게 Parameter를 입력 안할 시
-
-`InvalidAccountId(400)` - 해당 AccountId가 없음
-
-`InvalidUserId(400)` - 해당 유저 아이디가 없음
-
-`InternalError(500)` - 서버 오류
-
-`RecipientsTooMany(413)` -입력된 수신번호가 1000개를 넘음
+[확인 하기](../../message-status-codes.md#undefined)
 

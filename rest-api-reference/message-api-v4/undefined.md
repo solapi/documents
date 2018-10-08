@@ -2,7 +2,7 @@
 
 {% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/send" %}
 {% api-method-summary %}
-심플 메시지 발송
+sendSimpleMessage
 {% endapi-method-summary %}
 
 {% api-method-description %}
