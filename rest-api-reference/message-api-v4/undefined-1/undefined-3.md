@@ -120,28 +120,49 @@ deleteMessageGroup
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-유효하지 않은 groupId
+
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "statusCode": "400",
     "errorCode": "ValidationError",
     "errorMessage": "유효하지 않은 groupId"
+}
+
+{
+    "errorCode": "NotOperationalStatus",
+    "errorMessage": "PENDING 상태의 그룹만 삭제할 수 있습니다. 현재 상태는 {status} 입니다."
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "errorCode": "Forbidde",
+    "errorMessage": "해당계정의 그룹만 삭제 가능합니다."
 }
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
-존재하지 않는 메시지 그룹
+
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "statusCode": "404",
     "errorCode": "ResourceNotFound",
-    "errorMessage": "존재하지 않는 그룹 삭제 시도"
+    "errorMessage": "요청하신 Resource를 찾을수 없습니다."
+}
+
+{
+    "errorCode": "ResourceNotFound",
+    "errorMessage": "해당 메시지 그룹을 찾을 수 없습니다."
 }
 ```
 {% endapi-method-response-example %}
