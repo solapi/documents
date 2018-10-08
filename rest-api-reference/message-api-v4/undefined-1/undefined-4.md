@@ -179,3 +179,15 @@ message 객체는 하단을 참고해주세요.
 
 [확인 하기](../../message-status-codes.md#undefined)
 
+## 예제 코드
+
+[\[JavaScript\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/javascript/add_group_message.js)
+
+[\[Python\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/python/add_group_message.py)
+
+[\[Java\] add\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/java/add_group_message.java)
+
+[\[PHP\] add\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/php/add_group_message.php)
+
+[\[Ruby\] add\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/add_group_message.rb)
+

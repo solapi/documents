@@ -165,3 +165,15 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
 {% endtab %}
 {% endtabs %}
 
+## 예제 코드
+
+[\[Javascript\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/javascript/create_group.js)
+
+[\[Python\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/python/create_group.py)
+
+[\[Java\] create\_group.java](https://github.com/coolsms/coolsms-v4-examples/java/create_group.java)
+
+[\[PHP\] create\_group.php](https://github.com/coolsms/coolsms-v4-examples/php/create_group.php)
+
+[\[Ruby\] create\_group.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/create_group.rb)
+

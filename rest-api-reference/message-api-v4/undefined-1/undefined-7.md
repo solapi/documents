@@ -56,5 +56,15 @@ curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](
 
 `InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
 
+## 예제 코드
 
+[\[JavaScript\] add\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/javascript/add_scheduledDate.js)
+
+[\[Python\] add\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/python/add_scheduledDate.py)
+
+[\[Java\] add\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/java/add_scheduledDate.java)
+
+[\[PHP\] add\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/php/add_scheduledDate.php)
+
+[\[Ruby\] add\_scheduledDate.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/add_scheduledDate.rb)
 

@@ -32,5 +32,15 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule
 
 `InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경우
 
+## 예제 코드
 
+[\[JavaScript\] cancel\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/javascript/cancel_scheduledDate.js)
+
+[\[Python\] cancel\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/python/cancel_scheduledDate.py)
+
+[\[Java\] cancel\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/java/cancel_scheduledDate.java)
+
+[\[PHP\] cancel\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/php/cancel_scheduledDate.php)
+
+[\[Ruby\] cancel\_scheduledDate.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/cancel_scheduledDate.rb)
 

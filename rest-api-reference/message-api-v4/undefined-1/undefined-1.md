@@ -146,3 +146,15 @@ curl -X GET https://rest.coolsms.co.kr/messages/v4/groups --header "Authorizatio
 {% endtab %}
 {% endtabs %}
 
+## 예제 코드
+
+[\[Javascript\] get\_group\_list.js](https://github.com/coolsms/coolsms-v4-examples/javascript/get_group_list.js)
+
+[\[Python\] get\_group\_list.py](https://github.com/coolsms/coolsms-v4-examples/python/get_group_list.py)
+
+[\[Java\] get\_group\_list.java](https://github.com/coolsms/coolsms-v4-examples/java/get_group_list.java)
+
+[\[PHP\] get\_group\_list.php](https://github.com/coolsms/coolsms-v4-examples/php/get_group_list.php)
+
+[\[Ruby\] get\_group\_list.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/get_group_list.rb)
+

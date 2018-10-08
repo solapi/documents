@@ -155,3 +155,15 @@ cond="eq,eq"
 
 e.g - value="메시지아이디,2000"
 
+## 예제 코드
+
+[\[JavaScript\] get\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/javascript/get_group_message.js)
+
+[\[Python\] get\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/python/get_group_message.py)
+
+[\[Java\] get\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/java/get_group_message.java)
+
+[\[PHP\] get\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/php/get_group_message.php)
+
+[\[Ruby\] get\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/get_group_message.rb)
+
