@@ -1,134 +1,157 @@
 # 메시지 조회
 
-원하는 검색 조건으로 메시지를 조회합니다.
+{% api-method method="get" host="https://rest.coolsms.co.kr" path="/messages/v4/list" %}
+{% api-method-summary %}
+getMessageList
+{% endapi-method-summary %}
 
-## Request
+{% api-method-description %}
 
-{% tabs %}
-{% tab title="URI" %}
-GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)
-{% endtab %}
+{% endapi-method-description %}
 
-{% tab title="Sample" %}
-curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"
-{% endtab %}
-{% endtabs %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+쿨에스엠에스 인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
-### Optional query parameters
+{% api-method-query-parameters %}
+{% api-method-parameter name="criteria" type="string" required=false %}
+메시지 검색 조건에 사용되는 key 의 값 입니다. \(e.g messageId, statusCode\)  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
+{% endapi-method-parameter %}
 
-* `groupId` - 그룹에 포함된 메시지를 조회하고 싶으시다면, 그룹 아이디를 조건으로 입력하시면 됩니다.
-* `messageId` - 해당 메시지만 조회하고 싶으시다면, 메시지 아이디를 조건으로 입력하시면 됩니다.
-* `startDate` - 조회하고 싶으신 기간의 시작 시각을 입력하시면 됩니다.
-* `endDate` - 조회하고 싶으신 기간의 종료 시각을 입력하시면 됩니다.
-* `from` - 조회하고 싶으신 발신번호를 입력하시면 됩니다.
-* `to` - 조회하고 싶으신 수신번호를 입력하시면 됩니다.
-* `type` - 조회하고 싶으신 메시지의 타입\(SMS, LMS, MMS, ATA, CTA, GCM, APN, PUSH, AUTO\)을 입력하시면 됩니다.
-* `networkCode` - 조회하고 싶으신 수신받는 기기의 통신사코드를 입력하시면 됩니다.
-* `statusCode` - 조회하고 싶으신 전송 상태값을 입력하시면 됩니다.
-* `resultCode` - 조회하고 싶으신 전송 결과값을 입력하시면 됩니다.
-* `offset` - 조회하고 싶으신 메시지의 시작 번호를 입력하시면 됩니다. \(0 &lt;= N\)
-* `limit` - 조회하고 싶으신 메시지의 최대값을 입력하시면 됩니다. \(0 &lt; N &lt;= 500\)
+{% api-method-parameter name="cond" type="string" required=false %}
+메시지 검색 조건에 사용되는 연산자 입니다.  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
+{% endapi-method-parameter %}
 
-## Response
+{% api-method-parameter name="value" type="string" required=false %}
+검색 값 입니다.  
+자세한 사용 방법은 하단의 설명을 참고해주세요.
+{% endapi-method-parameter %}
 
-{% tabs %}
-{% tab title="Syntax" %}
-```text
+{% api-method-parameter name="offset" type="number" required=false %}
+데이터 조회 시작점
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="limit" type="number" required=false %}
+조회할 데이터 수
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
 {
-    [
-        {
-            "kakaoOptions": {
-                "senderKey": "String",
-                "templateCode": "String",
-                "buttonName": "String",
-                "buttonUrl": "String",
-                "disableSms": "Boolean"
-            },
-            "type": String,
-            "customFields": Object,
-            "country": "String",
-            "subject": "String",
-            "imageId": "String",
-            "dateReceived": "String",
-            "statusCode": "String",
-            "networkCode": "String",
-            "log": Array,
-            "messageId": "String",
-            "groupId": "String",
-            "text": "String",
-            "from": "String",
-            "to": "String",
-            "dateCreated": "String"
-        },
-        {...}
-    ]
-}
-
-```
-{% endtab %}
-
-{% tab title="Sample" %}
-```text
-{
-    [
-        {
-            "kakaoOptions": {
-                "senderKey": null,
-                "templateCode": null,
-                "buttonName": null,
-                "buttonUrl": null,
-                "disableSms": false
-            },
-            "type": "AUTO",
-            "customFields": null,
-            "country": "82",
-            "subject": null,
-            "imageId": null,
-            "dateReceived": null, 
-            "statusCode": "2000",
-            "networkCode": "45005",
-            "log": Array,
-            "messageId": "M4V20180307110044DTYYJBBYLPQZIB1",
-            "groupId": "G4V20180307105937H3PTASXMNJG2JI1",
-            "text": "text",
-            "from": "01000000000",
-            "to": "01000000000",
-            "dateCreated": "2018-03-23T00:37:25.305Z"
-        },
-        {...}
-    ]
+  offset: 0,
+  limit: 20,
+  messageList: {
+    M4V20180307110044DTYYJBBYLPQZIB1: {
+      _id: 'M4V20180307110044DTYYJBBYLPQZIB1',
+      kakaoOptions: [Object],
+      type: null,
+      country: '82',
+      subject: null,
+      imageId: null,
+      dateProcessed: null,
+      dateReported: null,
+      dateReceived: null,
+      statusCode: 'TEST1000',
+      networkCode: null,
+      log: [],
+      replacement: false,
+      autoTypeDetect: true,
+      messageId: 'M4V20180307110044DTYYJBBYLPQZIB1',
+      groupId: 'G4V20180307105937H3PTASXMNJG2JIO',
+      accountId: '12925149',
+      text: 'text',
+      from: '01000000000',
+      to: '01000000000',
+      customFields: { },
+      dateCreated: '2018-10-08T03:13:07.256Z',
+      dateUpdated: '2018-10-08T03:13:07.256Z',
+      reason: null,
+      networkName: 'ETC'
+    }
+  },
+  hasNext: 0
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endapi-method-response-example %}
 
-* `kakaoOptions` - 카카오톡 메시지 옵션
-  * `senderKey` - 알림톡 Sender Key
-  * `templateCode` - 알림톡 Template Code
-  * `buttonName` - 카카오톡 버튼 이름, 10 자 제한
-  * `buttonUrl` - 카카오톡 버튼 URL, 100 자 제한
-  * `disableSms` - 알림톡 및 친구톡 발송에 실패하여도 문자메시지로 대체하여 발송하지 않습니다.
-* `type` - 메시지 타입
-* `customFields` - 사용자 정의 필드
-* `country` - 국가 코드
-* `subject` - 메시지 제목
-* `imageId` - 메시지에 첨부된 이미지아이디
-* `dateReceived` - 수신자가 수신한 시각
-* `statusCode` - 메시지 상태 코드
-* `carrierCode` - 수신자의 통신사
-* `log` - 메시지에 대한 로그
-* `messageId` - 메시지 아이디
-* `groupId` - 메시지 그룹 아이디
-* `text` - 메시지 내용
-* `to` - 수신번호
-* `from` - 발신번호
-* `dateCreated` - 메시지가 생성된 시각
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
 
-## Errors
+{% endapi-method-response-example-description %}
 
-`ValidationError(400)` - 입력한 parameter 가 잘못된 경우
+```javascript
+{
+    errorCode: "ValidationError",
+    errorMessage: 상황마다 다른 메시지가 출력됩니다.
+}
+```
+{% endapi-method-response-example %}
 
-`Forbidden(403)` - 자신의 메시지아이디 또는 그룹아이디가 아닌데 조회하는 경우
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
 
-`InternalError(500)` - 서버에 일시적으로 처리량이 많아 지연되는 경
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    errorCode: "Forbidden",
+    errorMessage: "잘못된 접근입니다."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+## Body parameter 설명
+
+### criteria
+
+criteria 의 값은 "key1,key2,key3" 과 같이 ,\(콤마\) 로 구분되며 `cond`, `value` 와 함께 사용됩니다.
+
+* `messageId` - 메시지 아이디 입니다.
+* `groupId` - 그룹 아이디 입니다.
+* `to` - 수신 번호 입니다.
+* `from` - 발신 번호 입니다.
+* `type` - 문자 메시지의 타입 입니다.  \(`SMS`, `LMS`, `MMS`, `ATA`, `CTA`\)
+* `dateCreated` - 그룹 생성일 입니다.
+* `dateUpdated` - 그룹 정보를 변경한 마지막 시각 입니다.
+* `replacement` - 대체 발송 여부 입니다. \(`true`, `false`\)
+* `statusCode` - 문자 메시지의 상태 코드 입니다.
+
+### cond
+
+criteria 와 같이 "cond1,cond2" 와 같이 ,\(콤마\)로 구분되며, `criteria`,`value` 와 함께 사용됩니다.
+
+* `eq` - 같음 \(=\)
+* `ne` - 같지 않음 \(!=\)
+* `gt` - 보다 큼 \(&gt;\)
+* `gte` - 보다 크거나 같음 \(&gt;=\)
+* `lt` - 보다 작음 \(&lt;\)
+* `lte` - 보다 작거나 같음 \(&lt;=\)
+
+### value
+
+`criteria` , `cond` 값에 대응하는 value 입니다.
+
+criteria="messageId,statusCode"
+
+cond="eq,eq"
+
+일 경우 groupId 에 대응하는 value 값을 찾고 status 에 대응하는 값을 찾는 조건 입니다.
+
+e.g - value="메시지아이디,2000"
 
