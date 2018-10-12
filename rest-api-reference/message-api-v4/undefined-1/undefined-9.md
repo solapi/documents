@@ -49,8 +49,8 @@ deleteGroupMessages
 
 ```javascript
 {
-    errorCode: "InvalidGroupId",
-    errorMessage: "자신이 보유하고 있는 Group Id 만 수정할 수 있습니다."
+    errorCode: "ResourceNotFound",
+    errorMessage: "그룹 아이디를 다시 확인해주세요."
 }
 
 {
