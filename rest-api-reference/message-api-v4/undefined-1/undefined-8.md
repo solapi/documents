@@ -30,8 +30,11 @@ cancelScheduledGroupMessage
 
 {% endapi-method-response-example-description %}
 
-```
-"Success"
+```javascript
+{
+    createAt: "2018-10-15T06:45:33.353Z",
+    message: "메시지 예약이 성공적으로 취소됐습니다."
+}
 ```
 {% endapi-method-response-example %}
 

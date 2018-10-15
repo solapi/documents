@@ -31,7 +31,15 @@
 {% endapi-method-response-example-description %}
 
 ```javascript
-"Success"
+{
+    createAt: "2018-10-15T07:18:11.597Z",
+    message: "메시지를 발송했습니다.",
+    oldBalance: 99920,
+    newBalance: 99900,
+    oldPoint: 0,
+    newPoint: 0,
+    totalPrice: 20
+}
 ```
 {% endapi-method-response-example %}
 

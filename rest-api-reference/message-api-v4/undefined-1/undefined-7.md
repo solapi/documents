@@ -38,8 +38,22 @@ ISO 8601 형식의 발송될 시
 
 {% endapi-method-response-example-description %}
 
-```
-"Success"
+```javascript
+{
+    createAt: "2018-10-15T06:45:06.809Z",
+    message: "메시지 예약이 성공적으로 접수됐습니다.",
+    messageCount: {
+        total: 2,
+        sentTotal: 0,
+        sentFailed: 0,
+        sentSuccess: 0,
+        sentPending: 0,
+        sentReplacement: 0,
+        refund: 0,
+        registeredFailed: 1,
+        registeredSuccess: 1
+    }
+}
 ```
 {% endapi-method-response-example %}
 
