@@ -105,9 +105,9 @@ ISO 8601 형식의 발송될 시
 
 [\[JavaScript\] add\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/add_scheduledDate.js)
 
-[\[Python\] add\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/add_scheduledDate.py)
+[\[Python\] add\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] add\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/add_scheduledDate.java)
+[\[Java\] add\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] add\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/add_scheduledDate.php)
 

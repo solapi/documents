@@ -185,9 +185,9 @@ curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3
 
 [\[JavaScript\] delete\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/delete_group.js)
 
-[\[Python\] delete\_group.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/delete_group.py)
+[\[Python\] delete\_group.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] delete\_group.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/delete_group.java)
+[\[Java\] delete\_group.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] delete\_group.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/delete_group.php)
 

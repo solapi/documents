@@ -168,9 +168,9 @@ Message Status Codes 에서 상세한 설명을 참고하세요.
 
 [\[JavaScript\] send\_simple\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/send_simple_message.js)
 
-[\[Python\] send\_simple\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.py)
+[\[Python\] send\_simple\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/simple/simple_message.py)
 
-[\[Java\] send\_simple\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.java)
+[\[Java\] send\_simple\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] send\_simple\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.php)
 

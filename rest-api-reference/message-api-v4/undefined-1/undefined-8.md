@@ -71,9 +71,9 @@ cancelScheduledGroupMessage
 
 [\[JavaScript\] cancel\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/cancel_scheduledDate.js)
 
-[\[Python\] cancel\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/cancel_scheduledDate.py)
+[\[Python\] cancel\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] cancel\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/cancel_scheduledDate.java)
+[\[Java\] cancel\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] cancel\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/cancel_scheduledDate.php)
 

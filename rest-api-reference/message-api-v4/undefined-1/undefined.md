@@ -169,9 +169,9 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
 
 [\[Javascript\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/create_group.js)
 
-[\[Python\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/create_group.py)
+[\[Python\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] create\_group.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/create_group.java)
+[\[Java\] create\_group.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] create\_group.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/create_group.php)
 

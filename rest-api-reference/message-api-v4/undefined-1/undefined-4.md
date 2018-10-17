@@ -183,9 +183,9 @@ message 객체는 하단을 참고해주세요.
 
 [\[JavaScript\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/add_group_message.js)
 
-[\[Python\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/add_group_message.py)
+[\[Python\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] add\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/add_group_message.java)
+[\[Java\] add\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] add\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/add_group_message.php)
 

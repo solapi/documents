@@ -67,9 +67,9 @@ deleteGroupMessages
 
 [\[JavaScript\] delete\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/delete_group_message.js)
 
-[\[Python\] delete\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/delete_group_message.py)
+[\[Python\] delete\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
-[\[Java\] delete\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/delete_group_message.java)
+[\[Java\] delete\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
 
 [\[PHP\] delete\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/delete_group_message.php)
 
