@@ -166,13 +166,13 @@ Message Status Codes 에서 상세한 설명을 참고하세요.
 
 ### 예제 코드
 
-[\[JavaScript\] send\_simple\_message.js](https://github.com/coolsms/coolsms-v4-examples/javascript/send_simple_message.js)
+[\[JavaScript\] send\_simple\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/send_simple_message.js)
 
-[\[Python\] send\_simple\_message.py](https://github.com/coolsms/coolsms-v4-examples/python/send_simple_message.py)
+[\[Python\] send\_simple\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.py)
 
-[\[Java\] send\_simple\_message.java](https://github.com/coolsms/coolsms-v4-examples/java/send_simple_message.java)
+[\[Java\] send\_simple\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.java)
 
-[\[PHP\] send\_simple\_message.php](https://github.com/coolsms/coolsms-v4-examples/php/send_simple_message.php)
+[\[PHP\] send\_simple\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.php)
 
-[\[Ruby\] send\_simple\_message.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/send_simple_message.rb)
+[\[Ruby\] send\_simple\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/send_simple_message.rb)
 

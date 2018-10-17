@@ -130,13 +130,13 @@
 
 ## 예제 코드
 
-[\[JavaScript\] send\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/javascript/send_group_message.js)
+[\[JavaScript\] send\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/send_group_message.js)
 
-[\[Python\] send\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/python/send_group_message.py)
+[\[Python\] send\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/send_group_message.py)
 
-[\[Java\] send\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/java/send_group_message.java)
+[\[Java\] send\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/send_group_message.java)
 
-[\[PHP\] send\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/php/send_group_message.php)
+[\[PHP\] send\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_group_message.php)
 
-[\[Ruby\] send\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/send_group_message.rb)
+[\[Ruby\] send\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/send_group_message.rb)
 

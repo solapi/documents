@@ -65,13 +65,13 @@ deleteGroupMessages
 
 ## 예제 코드
 
-[\[JavaScript\] delete\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/javascript/delete_group_message.js)
+[\[JavaScript\] delete\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/delete_group_message.js)
 
-[\[Python\] delete\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/python/delete_group_message.py)
+[\[Python\] delete\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/delete_group_message.py)
 
-[\[Java\] delete\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/java/delete_group_message.java)
+[\[Java\] delete\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/blob/master/java/delete_group_message.java)
 
-[\[PHP\] delete\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/php/delete_group_message.php)
+[\[PHP\] delete\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/delete_group_message.php)
 
-[\[Ruby\] delete\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/ruby/delete_group_message.rb)
+[\[Ruby\] delete\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/delete_group_message.rb)
 
