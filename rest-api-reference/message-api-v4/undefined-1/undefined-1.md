@@ -148,7 +148,7 @@ curl -X GET https://rest.coolsms.co.kr/messages/v4/groups --header "Authorizatio
 
 ## 예제 코드
 
-[\[Javascript\] get\_group\_list.js](https://github.com/coolsms/coolsms-v4-examples/javascript/get_group_list.js)
+[\[Javascript\] get\_group\_list.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/get_group_list.js)
 
 [\[Python\] get\_group\_list.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
 
