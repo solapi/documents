@@ -32,13 +32,91 @@
 
 ```javascript
 {
-    createAt: "2018-10-15T07:18:11.597Z",
-    message: "메시지를 발송했습니다.",
-    oldBalance: 99920,
-    newBalance: 99900,
-    oldPoint: 0,
-    newPoint: 0,
-    totalPrice: 20
+    _id: 'G4V20181019142110RCZZBOHIUJD4OUE',
+    count: {
+        total: 3,
+        sentTotal: 0,
+        sentFailed: 0,
+        sentSuccess: 0,
+        sentPending: 0,
+        sentReplacement: 0,
+        refund: 0,
+        registeredFailed: 2,
+        registeredSuccess: 1
+    },
+    countForCharge: {
+        sms: {'82': 1},
+        lms: {},
+        mms: {},
+        ata: {},
+        cta: {}
+    },
+    balance: {
+        requested: 0,
+        replacement: 0,
+        refund: 0,
+        sum: 0
+    },
+    point: {
+        requested: 20,
+        replacement: 0,
+        refund: 0,
+        sum: 0
+    },
+    app: {
+        profit: {
+            sms: 0, 
+            lms: 0,
+            mms: 0,
+            ata: 0,
+            cta: 0
+        },
+        appId: None,
+        version: None
+    },
+    sdkVersion: None,
+    osPlatform: None,
+    log: [
+        {
+            message: '메시지 그룹이 생성되었습니다.',
+            createAt: '2018-10-19T05:21:10.192Z'
+        },
+        {
+            createAt: '2018-10-19T05:22:53.156Z',
+            message: '국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.'
+        }, 
+        {
+            createAt: '2018-10-19T05:25:06.930Z', 
+            message: '메시지를 발송했습니다.', 
+            oldBalance: 0, 
+            newBalance: 0, 
+            oldPoint: 21312241, 
+            newPoint: 21312221, 
+            totalPrice: 20
+        }
+    ], 
+    status: 'SENDING', 
+    scheduledDate: None, 
+    dateSent: '2018-10-19T05:25:06.930Z', 
+    dateCompleted: None, 
+    isRefunded: False, 
+    flagUpdated: False, 
+    accountId: '12062181', 
+    apiVersion: '4', 
+    groupId: 'G4V20181019142110RCZZBOHIUJD4OUE', 
+    price: {
+        '82': {
+            sms: 20, 
+            lms: 50, 
+            mms: 200, 
+            ata: 19, 
+            cta: 13, 
+            dateCreated: '2018-10-18T23:59:22.967Z', 
+            dateUpdated: '2018-10-18T23:59:22.967Z'
+        }
+    }, 
+    dateCreated: '2018-10-19T05:21:10.205Z', 
+    dateUpdated: '2018-10-19T05:25:06.931Z'
 }
 ```
 {% endapi-method-response-example %}
