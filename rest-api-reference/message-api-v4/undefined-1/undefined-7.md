@@ -40,19 +40,87 @@ ISO 8601 형식의 발송될 시
 
 ```javascript
 {
-    createAt: "2018-10-15T06:45:06.809Z",
-    message: "메시지 예약이 성공적으로 접수됐습니다.",
-    messageCount: {
-        total: 2,
+    _id: 'G4V20181019090749JPZH8HEYXURHFQ6', 
+    count: {
+        total: 1,
         sentTotal: 0,
         sentFailed: 0,
         sentSuccess: 0,
         sentPending: 0,
         sentReplacement: 0,
         refund: 0,
-        registeredFailed: 1,
+        registeredFailed: 0,
         registeredSuccess: 1
-    }
+    },
+    countForCharge: {
+        sms: {'82': 1},
+        lms: {},
+        mms: {},
+        ata: {},
+        cta: {}
+    },
+    balance: {
+        requested: 0,
+        replacement: 0,
+        refund: 0,
+        sum: 0
+    },
+    point: {
+        requested: 0,
+        replacement: 0,
+        refund: 0,
+        sum: 0
+    },
+    app: {
+        profit: {
+            sms: 0,
+            lms: 0,
+            mms: 0,
+            ata: 0,
+            cta: 0
+        },
+        appId: None,
+        version: None
+    },
+    sdkVersion: None,
+    osPlatform: None,
+    log: [
+        {
+            message: '메시지 그룹이 생성되었습니다.',
+            createAt: '2018-10-19T00:07:49.822Z'
+        },
+        {
+            createAt: '2018-10-19T00:08:02.671Z', 
+            message: '국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.'
+        },
+        {
+            createAt: '2018-10-19T00:09:12.062Z',
+            message: '메시지 예약이 성공적으로 접수됐습니다.',
+            messageCount: {
+                total: 1,
+                sentTotal: 0,
+                sentFailed: 0,
+                sentSuccess: 0,
+                sentPending: 0,
+                sentReplacement: 0,
+                refund: 0,
+                registeredFailed: 0,
+                registeredSuccess: 1
+            }
+        }
+    ],
+    status: 'PENDING',
+    scheduledDate: None,
+    dateSent: None,
+    dateCompleted: None,
+    isRefunded: False,
+    flagUpdated: False,
+    accountId: '12062181',
+    apiVersion: '4',
+    groupId: 'G4V20181019090749JPZH8HEYXURHFQ6',
+    price: {},
+    dateCreated: '2018-10-19T00:07:49.835Z',
+    dateUpdated: '2018-10-19T00:14:20.301Z'
 }
 ```
 {% endapi-method-response-example %}
