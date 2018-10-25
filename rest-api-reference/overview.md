@@ -2,10 +2,6 @@
 
 
 
-{% hint style="warning" %}
-현재는 베타 버전으로 확인되지 않은 오류가 있을 수 있습니다. 관련하여 1:1 문의를 통해 남겨주시면 빠른 시일내에 개선될 수 있도록 하겠습니다.
-{% endhint %}
-
 쿨에스엠에스의 REST API Reference 내용을 담고 있습니다.
 
 _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격을 명확하게 정의되고 쉽게 구현 할 수 있습니다. [https://ko.wikipedia.org/wiki/REST](https://ko.wikipedia.org/wiki/REST)
