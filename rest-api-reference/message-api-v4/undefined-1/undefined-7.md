@@ -27,7 +27,7 @@ scheduleGroupMessage
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="scheduledDate" type="string" required=true %}
-ISO 8601 형식의 발송될 시
+ISO 8601 형식의 발송될 시각
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
