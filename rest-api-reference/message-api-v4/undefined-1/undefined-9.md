@@ -13,7 +13,7 @@ deleteGroupMessages
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="groupId" type="string" required=true %}
-그룹 아이
+그룹 아이디
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
