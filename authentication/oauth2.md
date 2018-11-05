@@ -15,7 +15,7 @@ oAuth2.0 은 개발자가 새롭게 만든 서비스나 웹 사이트에 기존 
 개발하신 웹사이트 또는 서비스에서 아래의 링크와 쿼리 값을 추가하여 리다이렉트하여야 합니다.
 
 ```text
-GET https://rest.coolsms.co.kr/oauth2/authorize
+GET https://rest.coolsms.co.kr/oauth2/v1/authorize
 ```
 
 필요한 GET 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
@@ -48,7 +48,7 @@ GET https://rest.coolsms.co.kr/oauth2/authorize
 사용자 인증이 정상적으로 완료후에 발급받은후에 발급받은 `code`를 사용하여 액세스 토큰을 발급받을 수 있습니다. 우선 토큰을 발급받기 위해서는 아래의 링크로 요청을 하여야 합니다.
 
 ```text
-POST https://rest.coolsms.co.kr/oauth2/access_token
+POST https://rest.coolsms.co.kr/oauth2/v1/access_token
 ```
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
@@ -84,7 +84,7 @@ curl -X (GET|POST) https://rest.coolsms.co.kr/<접근하려는 API url>
 위의 나타난 방법처럼 요청하려는 http request 의 header 에 authorization 에 액세스 토큰값을 넣어서 요청합니다. 예를 들어 요청하려는 API 가 userprofile API 라고 한다면 아래와 같이 합니다.
 
 ```text
-curl -X GET https://rest.coolsms.co.kr/oauth2/userprofile
+curl -X GET https://rest.coolsms.co.kr/oauth2/v1/userprofile
 -H 'authorization: bearer eyGciOiNiIsIkpXVCJ9.eyJ0NTY3ODkwIiwibWRtaW4iOnRydWV9.TJVHrcEfxjoYZgeFONFh7HgQ'
 ```
 
