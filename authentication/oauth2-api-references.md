@@ -13,7 +13,7 @@ oAuth2.0 의 인증을 시작하는 API 로써 사용자에 대한 로그인 확
 
 GET https://rest.coolsms.co.kr/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}
 
-curl https://rest.coolsms.co.kr/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read users.profile:write}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
+curl https://rest.coolsms.co.kr/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
 
  **Required query parameters** 
 
