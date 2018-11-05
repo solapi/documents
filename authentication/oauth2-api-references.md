@@ -11,9 +11,9 @@ oAuth2.0 의 인증을 시작하는 API 로써 사용자에 대한 로그인 확
 
 #### Request
 
-GET [http://ms.coolsms.co.kr/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}](http://ms.coolsms.co.kr/oauth2/v1/authorize?{client_id}&{scope}&{state}&{redirect_uri}&{response_type})
+GET https://rest.coolsms.co.kr/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}
 
-curl [http://ms.coolsms.co.kr/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read](http://ms.coolsms.co.kr/oauth2/v1/authorize?client_id={K00002ACVCC}&scope={users.profile:read) users.profile:write}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
+curl https://rest.coolsms.co.kr/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read users.profile:write}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
 
  **Required query parameters** 
 
@@ -49,9 +49,9 @@ oAuth2.0 인증 과정에서 토큰 발급을 담당하는 API 로써 `grant_typ
 
 #### Request
 
-POST [http://ms.coolsms.co.kr/oauth2/v1/access\_token](http://ms.coolsms.co.kr/oauth2/v1/access_token)
+POST https://rest.coolsms.co.kr/oauth2/v1/access\_token
 
-curl -X POST [http://ms.coolsms.co.kr/oauth2/v1/access\_token](http://ms.coolsms.co.kr/oauth2/v1/access_token) -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "[https://mytestapp.co.kr/callback](https://mytestapp.co.kr/callback)", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
+curl -X POST https://rest.coolsms.co.kr/oauth2/v1/access\_token -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "https://mytestapp.co.kr/callback", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
 
  **Required body parameters** 
 
