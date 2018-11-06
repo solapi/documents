@@ -30,4 +30,20 @@ oAuth2.0 인증시 클라이언트에서 요구하는 권한과 실제로 사용
 | :--- | :--- | :--- |
 | users:read | 캐쉬 정보를 포함한 사용자의 정보를 가져옵니다. | userinfo |
 | users.profile:read | 사용자의 간단한 프로필 정보를 가져옵니다. | userprofile |
+| senderid:read | 발신번호 조회 | senderid |
+| senderid:write | 발신번호 등록 / 갱신 / 삭제 | senderid |
+| message:write | 메시지 발송 | messages |
+| message:read | 메시지 상태 및 통계 조회 | messages |
+| cash:read | 신용카드 정보, 출금 계좌, 잔액 조회 | cash |
+| cash:write | 신용카드 등록, 출금 계좌 등록, 충전 | cash |
+| appstore:read | 앱 조회 | appstore |
+| appstore:write | 앱 등록 / 수정 / 삭제 | appstore |
+| pricing:read | 계정 단가 조회 | pricing |
+| credentials:read | API Key 정보 조회 | credentials |
+| credentials:write | API Key 신규 발급 | credentials |
+| oauth2:read | Client 정보 조회 | oauth2 |
+| oauth2:write | Redirect URI 등 Client 정보 업데이트 | oauth2 |
+| notification:read | 알림 내역 조회 | notification |
+| notification:write | 알림 차단 | notification |
+|  |  |  |
 
