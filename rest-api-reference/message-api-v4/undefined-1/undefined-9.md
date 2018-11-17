@@ -17,6 +17,12 @@ deleteGroupMessages
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="messageIds" type="array" required=true %}
 메시지 아이디를 담은 배열입니다.

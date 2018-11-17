@@ -11,6 +11,12 @@
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}

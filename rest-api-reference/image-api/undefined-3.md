@@ -16,6 +16,12 @@
 이미지마다 가지고 있는 고유한 아이디입니다.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorizatioj" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}

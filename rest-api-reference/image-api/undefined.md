@@ -11,6 +11,12 @@ base64 로 인코딩 된 문자열을 이용해서 이미지 등록을 합니다
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+인증 정보
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="image" type="string" required=true %}
 등록할 이미지 base64 endcoding 된 문자열
