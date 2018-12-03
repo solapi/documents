@@ -34,6 +34,7 @@ Cake successfully retrieved.
   "senderIds": [
     {
       "unlockDuplicate": {
+        "duplicateId": null,
         "reason": null,
         "reasonForRequested": null,
         "name": null,

@@ -51,13 +51,13 @@ Cake successfully retrieved.
   "senderIds": [
     {
       "unlockDuplicate": {
+        "duplicateId": "DUP20181120161327RIBHFBFB2X4BJJL",
         "reason": null,
         "reasonForRequested": "부서에 따른 아이디 할당을 위해 필요",
         "name": "홍길동",
         "status": "PENDING",
         "dateCreated": "2018-11-20T07:13:27.531Z",
-        "dateUpdated": "2018-11-20T07:13:27.531Z",
-        "duplicateId": "DUP20181120161327RIBHFBFB2X4BJJL"
+        "dateUpdated": "2018-11-20T07:13:27.531Z"        
       },
       "status": "ACTIVE",
       "expireAt": null,

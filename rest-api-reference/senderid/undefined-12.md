@@ -38,7 +38,9 @@ Cake successfully retrieved.
     "name": "hPrnmUR6UNE3fS6.png",
     "url": "https://coolsms-sender-id-test.s3.ap-northeast-2.amazonaws.com/temp/hPrnmUR6UNE3fS6.png",
     "originalName": "hPrnmUR6UNE3fS6.png",
-    "dateCreated": "2018-11-20T07:36:51.859Z"
+    "dateCreated": "2018-11-20T07:36:51.859Z",
+    "category": "SENDERID_APPROVAL",
+    "use": false
   },
   {
     "documentId": "DOC20181030105615MMXDST163SYMMX5",
@@ -46,7 +48,9 @@ Cake successfully retrieved.
     "name": "kcIkooNqo52MUnl.png",
     "url": "https://coolsms-sender-id-test.s3.ap-northeast-2.amazonaws.com/temp/kcIkooNqo52MUnl.png",
     "originalName": "kcIkooNqo52MUnl.png",
-    "dateCreated": "2018-11-20T07:36:51.865Z"
+    "dateCreated": "2018-11-20T07:36:51.865Z",
+    "category": "SENDERID_APPROVAL",
+    "use": false
   }
 ]
 ```

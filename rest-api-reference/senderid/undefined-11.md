@@ -31,7 +31,9 @@ Cake successfully retrieved.
   "name": "hprnmur6une3fs6.png",
   "url": "https://coolsms-sender-id-test.s3.ap-northeast-2.amazonaws.com/temp/hprnmur6une3fs6.png",
   "originalname": "hprnmur6une3fs6.png",
-  "datecreated": "2018-11-20t07:36:51.859z"
+  "datecreated": "2018-11-20t07:36:51.859z",
+  "category": "SENDERID_APPROVAL",
+  "use": false
 }
 ```
 {% endapi-method-response-example %}
