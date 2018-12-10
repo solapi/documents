@@ -129,7 +129,7 @@ message 객체는 하단을 참고해주세요.
     <tr>
       <td style="text-align:left">subject</td>
       <td style="text-align:left">String</td>
-      <td style="text-align:left">[optional] <code>LMS</code>,<code>MMS</code> 로 발송하게 되는 경우 입력되는 제목입니다.</td>
+      <td style="text-align:left">[optional] <code>LMS</code>,<code>MMS</code> 로 발송하게 되는 경우 필수로 입력되는 제목입니다.</td>
     </tr>
     <tr>
       <td style="text-align:left">imageId</td>
