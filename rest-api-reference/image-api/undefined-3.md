@@ -18,7 +18,7 @@
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
-{% api-method-parameter name="Authorizatioj" type="string" required=true %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
 인증 정보
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
