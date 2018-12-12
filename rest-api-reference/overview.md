@@ -26,51 +26,17 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 * 필요시 특정 리소스 경로를 나타냅니다
 
-## Types
+## API 요청
 
-이 문서에서 JSON 형식으로 구성된 Syntax를 설명할 때 사용되는 파라메터들의 형식을 아래와 같이 표기합니다.
+API Request 시 파라메터 값과 Response 의 데이터 값은 JSON 형식으로 합니다. 모든 Request 에 Content-type 을 application/json 으로 설정하여 주세요.
 
-`{Map}` - Key: Value 형식의 데이터를 담을 수 있습니다.
+## 오류 핸들링
 
-```javascript
-{
-  "key1": "value1",
-  ...
-}
-```
+Response 의 HTTP Status Code 값이 200 일 때 API 는 정상적으로 호출되었고 Response 의 Body 에 적절한 데이터가 리턴됩니다.
 
-`[Array]` - 배열 형식으로 같은 형식의 데이터를 담는 역할을 합니다.
+HTTP Status Code 200 이외의 값의 경우 오류로써 보통의 경우 errorCode 와 errorMessage 이 함께 리턴됩니다. 각 API 마다 정의된 오류코드는 다르지만 공통적으로 리턴될 수 있는 코드는 [Message Status Codes](message-status-codes.md) 를 참고하 세요.
 
-```javascript
-[
-  "value1",
-  "value2",
-  ...
-]
-```
 
-`"String"` - 문자열의 파라메터를 표현합니다.
 
-```javascript
-  "value"
-```
 
-`"Date"` - 날짜형식의 문자열을 표현합니다.
-
-```javascript
-  "2017-06-06 16:49:02"
-```
-
-`Number` - 숫자를 나타냅니다.
-
-```javascript
-  369
-```
-
-`"Boolean"` - 참, 거짓값을 문자열로 표현합니다.
-
-```javascript
-  "true"
-  "false"
-```
 
