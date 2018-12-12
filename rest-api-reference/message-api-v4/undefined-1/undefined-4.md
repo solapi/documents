@@ -26,11 +26,10 @@ addGroupMessages
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="messages" type="string" required=true %}
-message 를 messages 배열에 넣고 stringify 한 값 입니다.  
-e.g \) "\[message, message, message\]"  
+{% api-method-parameter name="messages" type="array" required=true %}
+message 객체를 담고 있는 array 형식으로 입력합니다.  
   
-message 객체는 하단을 참고해주세요.
+message 객체는 아래를 참고하세요.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -90,7 +89,7 @@ message 객체는 하단을 참고해주세요.
 
 ## Body Parameters 설명
 
-### message 는 JSON Object 형식 입니다.
+### message
 
 <table>
   <thead>
@@ -139,7 +138,7 @@ message 객체는 하단을 참고해주세요.
     <tr>
       <td style="text-align:left">kakaoOptions</td>
       <td style="text-align:left">Object</td>
-      <td style="text-align:left">[optional] <code>ATA</code>, <code>CTA</code> 일 때, 입력이 필요한 값 입니다. 하단의 설명을
+      <td style="text-align:left">[optional] <code>ATA</code>, <code>CTA</code> 일 때, 입력이 필요한 값 입니다. 아래의 설명을
         참고해주세요.</td>
     </tr>
     <tr>
