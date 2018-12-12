@@ -34,7 +34,7 @@ API Request 시 파라메터 값과 Response 의 데이터 값은 JSON 형식으
 
 Response 의 HTTP Status Code 값이 200 일 때 API 는 정상적으로 호출되었고 Response 의 Body 에 적절한 데이터가 리턴됩니다.
 
-HTTP Status Code 200 이외의 값의 경우 오류로써 보통의 경우 errorCode 와 errorMessage 이 함께 리턴됩니다. 각 API 마다 정의된 오류코드는 다르지만 공통적으로 리턴될 수 있는 코드는 [Message Status Codes](message-status-codes.md) 를 참고하 세요.
+HTTP Status Code 200 이외의 값의 경우 오류로써 보통의 경우 errorCode 와 errorMessage 이 함께 리턴됩니다. 각 API 마다 정의된 오류코드는 다르지만 공통적으로 리턴될 수 있는 코드는 [Message Status Codes](message-status-codes.md) 를 참고하세요.
 
 
 
