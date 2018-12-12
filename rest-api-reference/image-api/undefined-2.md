@@ -43,7 +43,7 @@
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-해당 이미지가 자신의 것이 아닌 경
+해당 이미지가 자신의 것이 아닌 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
