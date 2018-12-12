@@ -27,7 +27,7 @@
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-삭제가 성공한 경
+삭제가 성공한 경우
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -39,7 +39,7 @@
 
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
-이미지를 찾지 못한경
+이미지를 찾지 못한경우
 {% endapi-method-response-example-description %}
 
 ```javascript
