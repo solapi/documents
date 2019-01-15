@@ -33,7 +33,7 @@ getMessageList
 자세한 사용 방법은 하단의 설명을 참고해주세요.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="offset" type="number" required=false %}
+{% api-method-parameter name="startKey" type="number" required=false %}
 데이터 조회 시작점
 {% endapi-method-parameter %}
 
@@ -51,7 +51,7 @@ getMessageList
 
 ```javascript
 {
-  offset: 0,
+  nextKey: 0,
   limit: 20,
   messageList: {
     M4V20180307110044DTYYJBBYLPQZIB1: {
