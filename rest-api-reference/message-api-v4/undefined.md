@@ -25,6 +25,10 @@ Message Status Codes 에서 상세한 설명을 참고하세요.
 메시지 정보를 담은 객체  
 하단의 설명을 참고해주세요.
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="agent" type="object" required=false %}
+rappId, osPlatform, sdkVersion을 담을 수 있는 개체 하단의 설명을 참고해주세요.
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -162,7 +166,99 @@ Message Status Codes 에서 상세한 설명을 참고하세요.
 | buttonUrl | String | \[optional\] 버튼 URL 이며, 최대 100 자 입력 가능합니다. |
 | disableSms | Boolean | \[optional\] `true` 로 설정해서 보내게 되면, 발송 실패시 문자 메시지를 대체 발송하지 않습니다. 기본값은 `false` 입니다. |
 
-### 
+### agent
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Key</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">appId</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">
+        <p>[optional] 쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우,</p>
+        <p>해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">owPlatform</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] 발송 운영체제 환경</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">sdkVersion</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">[optional] SDK를 이용하여 발송하 경우, 해당 SDK의 정보 및 버전</td>
+    </tr>
+  </tbody>
+</table>{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="appId" type="string" required=false %}
+쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="appId" type="string" required=false %}
+쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.쿨에스엠에스 앱스토어에 앱이 등록되어 있는 경우, 해당 앱의 아이디를 이용하여 발송 시 수익을 공유 받습니다.
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 ### 예제 코드
 

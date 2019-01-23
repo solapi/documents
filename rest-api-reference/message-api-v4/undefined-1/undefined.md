@@ -26,8 +26,8 @@ createMessageGroup
 발송 운영체제 환경
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="appVersion" type="string" required=false %}
-발송하는 앱의 버전
+{% api-method-parameter name="sdkVersion" type="string" required=false %}
+SDK를 이용하여 발송하는 경우, 해당 SDK의 정보 및 버전
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appId" type="string" required=false %}

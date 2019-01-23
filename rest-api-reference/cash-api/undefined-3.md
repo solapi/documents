@@ -38,7 +38,7 @@ SMS, ATA, EMAIL
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
- 성공적으로 등록
+성공적으로 등록
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -81,6 +81,4 @@ SMS, ATA, EMAIL
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

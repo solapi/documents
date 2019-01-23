@@ -50,5 +50,3 @@ Get Low Balance Alert
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-

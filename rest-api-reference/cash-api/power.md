@@ -59,5 +59,3 @@ true or false
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
