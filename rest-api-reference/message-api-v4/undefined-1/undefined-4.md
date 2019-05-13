@@ -172,11 +172,21 @@ message 객체는 아래를 참고하세요.
 
 | Key | Type | Value |
 | :--- | :--- | :--- |
-| senderKey | String | \[required\] 센더키 입니다. |
-| templateCode | String | \[optional\] 템플릿 코드입니다. |
-| buttonName | String | \[optional\] 버튼 이름이며, 최대 10 자 입력 가능합니다. |
-| buttonUrl | String | \[optional\] 버튼 URL 이며, 최대 100 자 입력 가능합니다. |
+| pfId | String | \[required\] 플러스친구 연동 아이디 |
+| templateId | String | \[optional\] 템플릿 아이디 \(알림톡 발송시 필수\) |
+| buttons | Array | \[optional\] 아래 설명된 button 객체를 Array 형식에 담습니다. |
 | disableSms | Boolean | \[optional\] `true` 로 설정해서 보내게 되면, 발송 실패시 문자 메시지를 대체 발송하지 않습니다. 기본값은 `false` 입니다. |
+
+### button
+
+| Key | Type | Value |
+| :--- | :--- | :--- |
+| buttonType | String | \[required\] DS:배송조회, WL:웹링크, AL:앱링크, BK:봇키워드 MD: 메시지전달 |
+| buttonName | String | \[required\] 버튼 이름 |
+| linkMo | String | \[optional\] 모바일 웹 링크 주소, WL 사용시 필수 |
+| linkPc | String | \[optional\] PC 웹 링크 주소, WL 사용시 선택 |
+| linkIos | String | \[optional\] Android 앱 링크 주소, AL 사용시 필수 |
+| linkAnd | String | \[optional\] IOS 앱 링크 주소, AL 사용시 필수 |
 
 ## 제한 사항
 
