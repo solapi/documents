@@ -53,7 +53,7 @@ POST https://rest.coolsms.co.kr/oauth2/v1/access_token
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
 
-* `grant_type` - 해당 필드는 인증서버에서 인증방법을 구분하는 필드로서 'token' 값을 넣어야 합니다.
+* `grant_type` - 해당 필드는 인증서버에서 인증방법을 구분하는 필드로서 'authorization\_code' 값을 넣어야 합니다.
 * `code` - Step 1 사용자 인증 후에 발급받은 `code` 값을 입력하면 됩니다.
 * `client_id` - 서비스 또는 앱 등록시 발급받은 클라이언트 아이디
 * `client_secret` - 서비스 또는 앱 등록시 발급받은 클라이언트 비밀번호
