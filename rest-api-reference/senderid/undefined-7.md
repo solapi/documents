@@ -1,6 +1,6 @@
 # 발신번호 개수 증가 요청
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/senderid/v1/papers/limitation" %}
+{% api-method method="post" host="https://api.solapi.com" path="/senderid/v1/papers/limitation" %}
 {% api-method-summary %}
 발신번호 개수 증가 요청
 {% endapi-method-summary %}

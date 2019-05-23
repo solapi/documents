@@ -8,11 +8,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages)
+DELETE [https://api.solapi.com/messages/v4/groups/{groupId}/messages](https://api.solapi.com/messages/v4/groups/{groupId}/messages)
 {% endtab %}
 
 {% tab title="Sample" %}
-curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{"messageIds":\["M4V20180308120044DTYYJBBYLPQZIB1", "M4V20180309120044DTYYJBBYLPQZIB1"\]}'
+curl -X DELETE [https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{"messageIds":\["M4V20180308120044DTYYJBBYLPQZIB1", "M4V20180309120044DTYYJBBYLPQZIB1"\]}'
 {% endtab %}
 {% endtabs %}
 

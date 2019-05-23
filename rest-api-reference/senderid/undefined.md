@@ -1,6 +1,6 @@
 # 발신번호 생성
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/senderid/v1/numbers" %}
+{% api-method method="post" host="https://api.solapi.com" path="/senderid/v1/numbers" %}
 {% api-method-summary %}
 발신번호 생성
 {% endapi-method-summary %}

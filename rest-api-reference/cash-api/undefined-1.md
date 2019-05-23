@@ -1,6 +1,6 @@
 # 충전/차감 내역 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/balance/history" %}
+{% api-method method="get" host="https://api.solapi.com" path="/cash/v1/balance/history" %}
 {% api-method-summary %}
 충전/차감 내역 조회
 {% endapi-method-summary %}

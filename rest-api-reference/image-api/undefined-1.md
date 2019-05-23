@@ -1,6 +1,6 @@
 # 이미지 목록 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/images/v4/images" %}
+{% api-method method="get" host="https://api.solapi.com" path="/images/v4/images" %}
 {% api-method-summary %}
 이미지 목록 조회
 {% endapi-method-summary %}

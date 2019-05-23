@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.image import Image
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to upload image through CoolSMS Rest API
 if __name__ == "__main__":
@@ -20,7 +20,7 @@ if __name__ == "__main__":
         response = cool.upload_image(image)
         print("Image ID : %s" % response['image_id'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

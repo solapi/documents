@@ -6,9 +6,9 @@
 
 ## Request
 
-GET [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}](https://rest.coolsms.co.kr/messages/v4/groups/{groupId})
+GET [https://api.solapi.com/messages/v4/groups/{groupId}](https://api.solapi.com/messages/v4/groups/{groupId})
 
-curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
+curl -X GET [https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
 
 ### Required Path Parameters
 
@@ -20,7 +20,7 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PT
 
   {
 
-    url: "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)",
+    url: "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)",
 
     method: 'get',
 
@@ -36,7 +36,7 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PT
 
   \)
 
-  conn = HTTPSConnection\('rest.coolsms.co.kr'\)
+  conn = HTTPSConnection\('api.solapi.com'\)
 
   conn.request\(
 
@@ -52,7 +52,7 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PT
 
   $ch = curl\_init\(\);
 
-  curl\_setopt\($ch, CURLOPT\_URL, "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)"\);
+  curl\_setopt\($ch, CURLOPT\_URL, "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)"\);
 
   curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\(
 

@@ -1,6 +1,6 @@
 # 발신번호 중복 해제 요청
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/senderid/v1/papers/duplicate/{phoneNumber}" %}
+{% api-method method="post" host="https://api.solapi.com" path="/senderid/v1/papers/duplicate/{phoneNumber}" %}
 {% api-method-summary %}
 중복 발신번호 해제 요청
 {% endapi-method-summary %}

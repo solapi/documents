@@ -4,17 +4,17 @@
 
 ## Resource URL
 
-POST `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send`
+POST `https://api.solapi.com/messages/v4/groups/{groupId}/send`
 
 ## Request Sample
 
-$ curl -X POST `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"
+$ curl -X POST `https://api.solapi.com/messages/v4/groups/{groupId}/send`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"
 
-request\( { url: "[https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` } \)
+request\( { url: "[https://api.solapi.com/messages/v4/groups/{groupId}/send](https://api.solapi.com/messages/v4/groups/{groupId}/send)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` } \)
 
-conn = HTTPSConnection\('rest.coolsms.co.kr', '443'\) conn.request\( "POST", "/messages/v4/groups/{groupId}/send", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+conn = HTTPSConnection\('api.solapi.com', '443'\) conn.request\( "POST", "/messages/v4/groups/{groupId}/send", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
 
-&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\); ?&gt;
+&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://api.solapi.com/messages/v4/groups/{groupId}/send](https://api.solapi.com/messages/v4/groups/{groupId}/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\); ?&gt;
 
 ## Required path parameters
 

@@ -1,6 +1,6 @@
 # 문서 업로드
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/senderid/v1/documents" %}
+{% api-method method="post" host="https://api.solapi.com" path="/senderid/v1/documents" %}
 {% api-method-summary %}
 문서 업로드
 {% endapi-method-summary %}

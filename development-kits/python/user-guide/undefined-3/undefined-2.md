@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.sender_id import SenderID 
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to check sender number list through CoolSMS Rest API
 if __name__ == "__main__":
@@ -27,7 +27,7 @@ if __name__ == "__main__":
             print("Updatetime : %s" % data['updatetime'])
             print("Regdate : %s" % data['regdate'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

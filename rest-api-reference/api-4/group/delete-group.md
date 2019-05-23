@@ -4,9 +4,9 @@
 
 ## Request
 
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}](https://rest.coolsms.co.kr/messages/v4/groups/{groupId})
+DELETE [https://api.solapi.com/messages/v4/groups/{groupId}](https://api.solapi.com/messages/v4/groups/{groupId})
 
-curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
+curl -X DELETE [https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
 
 ### Required Path Parameters
 
@@ -18,7 +18,7 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H
 
   {
 
-    url: "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)",
+    url: "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)",
 
     method: 'delete',
 
@@ -34,7 +34,7 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H
 
   \)
 
-  conn = HTTPSConnection\('rest.coolsms.co.kr'\)
+  conn = HTTPSConnection\('api.solapi.com'\)
 
   conn.request\(
 
@@ -50,7 +50,7 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H
 
   $ch = curl\_init\(\);
 
-  curl\_setopt\($ch, CURLOPT\_URL, "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)"\);
+  curl\_setopt\($ch, CURLOPT\_URL, "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO)"\);
 
   curl\_setopt\($ch, CURLOPT\_CUSTOMREQUEST, "DELETE"\);
 

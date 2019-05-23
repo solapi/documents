@@ -4,7 +4,7 @@ description: 특정 금액 이하일 때 알림을 받을 수 있는 잔액 소�
 
 # 잔액 소진 알림 설정
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/v1/balance/alert" %}
+{% api-method method="post" host="https://api.solapi.com" path="/v1/balance/alert" %}
 {% api-method-summary %}
 Set Low Balance Alert
 {% endapi-method-summary %}

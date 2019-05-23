@@ -1,6 +1,6 @@
 # 증빙자료 인증 요청
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/senderid/v1/papers/approval/{phoneNumber}" %}
+{% api-method method="post" host="https://api.solapi.com" path="/senderid/v1/papers/approval/{phoneNumber}" %}
 {% api-method-summary %}
 증빙자료 인증 요청
 {% endapi-method-summary %}

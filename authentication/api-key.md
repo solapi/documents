@@ -6,7 +6,7 @@ _참고_
 
 Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한 수단으로 널리 사용되고 있습니다. [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) 을 참고하세요.
 
-쿨에스엠에스 [API Key 관리](https://www.coolsms.co.kr/credentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
+쿨에스엠에스 [API Key 관리](https://solapi.com/credentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
 
 ## Request
 
@@ -23,7 +23,7 @@ Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한
 {% endtab %}
 
 {% tab title="Sample" %}
-`$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups --header "Authorization : HMAC-SHA256 apiKey=[API_KEY], date=[ISO 8601 DATE], salt=[UNIQID], signature=[SIGNATURE]"`
+`$ curl -X POST https://api.solapi.com/messages/v4/groups --header "Authorization : HMAC-SHA256 apiKey=[API_KEY], date=[ISO 8601 DATE], salt=[UNIQID], signature=[SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 

@@ -1,6 +1,6 @@
 # 그룹 메시지 삭제
 
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/messages" %}
+{% api-method method="delete" host="https://api.solapi.com" path="/messages/v4/groups/:groupId/messages" %}
 {% api-method-summary %}
 deleteGroupMessages
 {% endapi-method-summary %}
@@ -71,13 +71,13 @@ deleteGroupMessages
 
 ## 예제 코드
 
-[\[JavaScript\] delete\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/delete_group_messages.js)
+[\[JavaScript\] delete\_group\_message.js](https://github.com/solapi/examples/blob/master/javascript/delete_group_messages.js)
 
-[\[Python\] delete\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] delete\_group\_message.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] delete\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] delete\_group\_message.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] delete\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/delete_group_messages.php)
+[\[PHP\] delete\_group\_message.php](https://github.com/solapi/examples/blob/master/php/delete_group_messages.php)
 
-[\[Ruby\] delete\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/delete_group_messages.rb)
+[\[Ruby\] delete\_group\_message.rb](https://github.com/solapi/examples/blob/master/ruby/delete_group_messages.rb)
 

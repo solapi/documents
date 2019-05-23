@@ -6,11 +6,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-POST `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send`
+POST `https://api.solapi.com/messages/v4/groups/{groupId}/send`
 {% endtab %}
 
 {% tab title="Sample" %}
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/send  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"
+$ curl -X POST https://api.solapi.com/messages/v4/groups/{groupId}/send  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"
 {% endtab %}
 {% endtabs %}
 

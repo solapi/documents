@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.group_message import GroupMessage
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate check message list through CoolSMS Rest API
 if __name__ == "__main__":
@@ -27,7 +27,7 @@ if __name__ == "__main__":
         print("Offset : %s" % response['offset'])
         print("List : %s" % response['list'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

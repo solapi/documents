@@ -1,6 +1,6 @@
 # 발신번호 업데이트
 
-{% api-method method="put" host="https://rest.coolsms.co.kr" path="/senderid/v1/numbers/{phoneNumber}" %}
+{% api-method method="put" host="https://api.solapi.com" path="/senderid/v1/numbers/{phoneNumber}" %}
 {% api-method-summary %}
 발신번호 업데이트
 {% endapi-method-summary %}

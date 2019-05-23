@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.message import Message
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to check sms result through CoolSMS Rest API
 if __name__ == "__main__":
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             print("Carrier : %s" % data['carrier'])
             print("Scheduled_time : %s" % data['scheduled_time'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

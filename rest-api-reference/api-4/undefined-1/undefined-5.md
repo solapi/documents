@@ -6,11 +6,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-GET [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages)
+GET [https://api.solapi.com/messages/v4/groups/{groupId}/messages](https://api.solapi.com/messages/v4/groups/{groupId}/messages)
 {% endtab %}
 
 {% tab title="Sample" %}
-curl -X GET [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"
+curl -X GET [https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"
 {% endtab %}
 {% endtabs %}
 

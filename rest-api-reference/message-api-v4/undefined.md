@@ -1,6 +1,6 @@
 # 심플 메시지
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/send" %}
+{% api-method method="post" host="https://api.solapi.com" path="/messages/v4/send" %}
 {% api-method-summary %}
 sendSimpleMessage
 {% endapi-method-summary %}
@@ -224,13 +224,13 @@ rappId, osPlatform, sdkVersion을 담을 수 있는 개체 하단의 설명을 �
   </tbody>
 </table>### 예제 코드
 
-[\[JavaScript\] send\_simple\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/send_simple_message.js)
+[\[JavaScript\] send\_simple\_message.js](https://github.com/solapi/examples/blob/master/javascript/send_simple_message.js)
 
-[\[Python\] send\_simple\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/simple/simple_message.py)
+[\[Python\] send\_simple\_message.py](https://github.com/solapi/examples/blob/master/python/simple/simple_message.py)
 
-[\[Java\] send\_simple\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] send\_simple\_message.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] send\_simple\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_simple_message.php)
+[\[PHP\] send\_simple\_message.php](https://github.com/solapi/examples/blob/master/php/send_simple_message.php)
 
-[\[Ruby\] send\_simple\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/send_simple_message.rb)
+[\[Ruby\] send\_simple\_message.rb](https://github.com/solapi/examples/blob/master/ruby/send_simple_message.rb)
 

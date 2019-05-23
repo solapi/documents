@@ -4,7 +4,7 @@ description: 새로운 Micro Service Cash API 입니다.
 
 # 잔액정보 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
+{% api-method method="get" host="https://api.solapi.com" path="/cash/v1/balance" %}
 {% api-method-summary %}
  잔액정보 조회
 {% endapi-method-summary %}

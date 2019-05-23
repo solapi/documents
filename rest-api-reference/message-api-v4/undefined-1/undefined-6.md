@@ -1,6 +1,6 @@
 # 그룹 메시지 발송
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/send" %}
+{% api-method method="post" host="https://api.solapi.com" path="/messages/v4/groups/:groupId/send" %}
 {% api-method-summary %}
 그룹 메시지 발송
 {% endapi-method-summary %}
@@ -208,13 +208,13 @@
 
 ## 예제 코드
 
-[\[JavaScript\] send\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/send_group_message.js)
+[\[JavaScript\] send\_group\_message.js](https://github.com/solapi/examples/blob/master/javascript/send_group_message.js)
 
-[\[Python\] send\_group\_message.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] send\_group\_message.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] send\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] send\_group\_message.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] send\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/send_group_message.php)
+[\[PHP\] send\_group\_message.php](https://github.com/solapi/examples/blob/master/php/send_group_message.php)
 
-[\[Ruby\] send\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/send_group_message.rb)
+[\[Ruby\] send\_group\_message.rb](https://github.com/solapi/examples/blob/master/ruby/send_group_message.rb)
 

@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.group_message import GroupMessage
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to check group info through CoolSMS Rest API
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         print("Group ID : %s" % response['group_id'])
         print("Message Count : %s" % response['message_count'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

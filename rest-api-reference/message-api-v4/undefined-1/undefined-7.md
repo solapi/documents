@@ -1,6 +1,6 @@
 # 그룹 메시지 예약 접수
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/schedule" %}
+{% api-method method="post" host="https://api.solapi.com" path="/messages/v4/groups/:groupId/schedule" %}
 {% api-method-summary %}
 scheduleGroupMessage
 {% endapi-method-summary %}
@@ -171,13 +171,13 @@ ISO 8601 형식의 발송될 시각
 
 ## 예제 코드
 
-[\[JavaScript\] add\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/add_scheduledDate.js)
+[\[JavaScript\] add\_scheduledDate.js](https://github.com/solapi/examples/blob/master/javascript/add_scheduledDate.js)
 
-[\[Python\] add\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] add\_scheduledDate.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] add\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] add\_scheduledDate.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] add\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/add_scheduledDate.php)
+[\[PHP\] add\_scheduledDate.php](https://github.com/solapi/examples/blob/master/php/add_scheduledDate.php)
 
-[\[Ruby\] add\_scheduledDate.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/add_scheduledDate.rb)
+[\[Ruby\] add\_scheduledDate.rb](https://github.com/solapi/examples/blob/master/ruby/add_scheduledDate.rb)
 

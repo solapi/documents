@@ -11,17 +11,17 @@ oAuth2.0 의 인증을 시작하는 API 로써 사용자에 대한 로그인 확
 
 #### Request
 
-GET https://rest.coolsms.co.kr/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}
+GET https://api.solapi.com/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}
 
-curl https://rest.coolsms.co.kr/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
+curl https://api.solapi.com/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
 
  **Required query parameters** 
 
 * `client_id` - client 등록시에 발급받은 `client_id`
-* `state` - client 에서 `/oauth2/v1/authorize` 요청에 대한 `redirect_uri` 에서 구분을 할 수 있는 random string 값 \([자세히 알아보기](https://docs.coolsms.co.kr/oauth2/getting-started.html#state-값에-대한-사용방법)\)
+* `state` - client 에서 `/oauth2/v1/authorize` 요청에 대한 `redirect_uri` 에서 구분을 할 수 있는 random string 값 \([자세히 알아보기](https://docs.solapi.com/oauth2/getting-started.html#state-값에-대한-사용방법)\)
 * `redirect_uri` - 인증과 인가가 끝난후에 결과값인 `code` 와 `state` 를 받을 client의 callback uri
 * `response_type` - `code` 값을 입력하면 됩니다. 
-* `scope` - access token 으로 사용할 권한들 \([자세히 알아보기](https://docs.coolsms.co.kr/oauth2/how-to-use-scope.html)\)
+* `scope` - access token 으로 사용할 권한들 \([자세히 알아보기](https://docs.solapi.com/oauth2/how-to-use-scope.html)\)
 
 #### Redirect
 
@@ -49,9 +49,9 @@ oAuth2.0 인증 과정에서 토큰 발급을 담당하는 API 로써 `grant_typ
 
 #### Request
 
-POST https://rest.coolsms.co.kr/oauth2/v1/access\_token
+POST https://api.solapi.com/oauth2/v1/access\_token
 
-curl -X POST https://rest.coolsms.co.kr/oauth2/v1/access\_token -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "https://mytestapp.co.kr/callback", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
+curl -X POST https://api.solapi.com/oauth2/v1/access\_token -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "https://mytestapp.co.kr/callback", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
 
  **Required body parameters** 
 

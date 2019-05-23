@@ -4,11 +4,11 @@
 
 실패된 건들도 그룹에 저장이 되나, 발송은 하지 않습니다.
 
-메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
+메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.solapi.com/3.%20rest/messageStatusCode.html)
 
 ## Resource URL
 
-`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
+`https://api.solapi.com/messages/v4/groups/{groupId}/messages`
 
 ## Request Syntax
 
@@ -41,11 +41,11 @@
 
 ## Request Sample
 
-$ curl -X POST `https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }'
+$ curl -X POST `https://api.solapi.com/messages/v4/groups/{groupId}/messages`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }'
 
-request\( { url: "[https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messagess](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messagess)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: { "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] } } \)
+request\( { url: "[https://api.solapi.com/messages/v4/groups/{groupId}/messagess](https://api.solapi.com/messages/v4/groups/{groupId}/messagess)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: { "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] } } \)
 
-conn = HTTPSConnection\('rest.coolsms.co.kr', '443'\) conn.request\( "POST", "/messages/v4/groups/{groupId}/messages", json.dumps\( { "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] } \), {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+conn = HTTPSConnection\('api.solapi.com', '443'\) conn.request\( "POST", "/messages/v4/groups/{groupId}/messages", json.dumps\( { "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] } \), {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
 
 &lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://solapi.com/GroupMessage/3/group/\[GROUP\_ID\]/addMessages](https://solapi.com/GroupMessage/3/group/[GROUP_ID]/addMessages)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, json\_encode\( '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }' \); curl\_exec\($ch\); curl\_close\($ch\); ?&gt;
 

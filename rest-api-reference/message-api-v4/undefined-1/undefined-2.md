@@ -1,6 +1,6 @@
 # 그룹 정보
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/{groupId}" %}
+{% api-method method="get" host="https://api.solapi.com" path="/messages/v4/groups/{groupId}" %}
 {% api-method-summary %}
 getMessageGroupInfo
 {% endapi-method-summary %}
@@ -156,7 +156,7 @@ getMessageGroupInfo
 {% tabs %}
 {% tab title="CURL" %}
 ```bash
-curl -X GET https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
+curl -X GET https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
   --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]" \
 ```
 {% endtab %}
@@ -164,13 +164,13 @@ curl -X GET https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTA
 
 ## 예제 코드
 
-[\[JavaScript\] get\_group\_info.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/get_group_info.js)
+[\[JavaScript\] get\_group\_info.js](https://github.com/solapi/examples/blob/master/javascript/get_group_info.js)
 
-[\[Python\] get\_group\_info.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] get\_group\_info.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] get\_group\_info.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] get\_group\_info.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] get\_group\_info.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/get_group_info.php)
+[\[PHP\] get\_group\_info.php](https://github.com/solapi/examples/blob/master/php/get_group_info.php)
 
-[\[Ruby\] get\_group\_info.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/get_group_info.rb)
+[\[Ruby\] get\_group\_info.rb](https://github.com/solapi/examples/blob/master/ruby/get_group_info.rb)
 

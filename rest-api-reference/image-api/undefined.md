@@ -1,6 +1,6 @@
 # 이미지 생성
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/images/v4/images" %}
+{% api-method method="post" host="https://api.solapi.com" path="/images/v4/images" %}
 {% api-method-summary %}
 이미지 생성
 {% endapi-method-summary %}

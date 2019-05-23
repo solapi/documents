@@ -10,11 +10,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule)
+POST [https://api.solapi.com/messages/v4/groups/{groupId}/schedule](https://api.solapi.com/messages/v4/groups/{groupId}/schedule)
 {% endtab %}
 
 {% tab title="Sample" %}
-curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/schedule) --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{ "scheduledDate": "2019-01-01 00:00:00"}
+curl -X POST [https://api.solapi.com/messages/v4/groups/{groupId}/schedule](https://api.solapi.com/messages/v4/groups/{groupId}/schedule) --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{ "scheduledDate": "2019-01-01 00:00:00"}
 {% endtab %}
 {% endtabs %}
 

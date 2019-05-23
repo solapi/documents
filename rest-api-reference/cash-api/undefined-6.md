@@ -1,6 +1,6 @@
 # 결제
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/cash/v1/balance" %}
+{% api-method method="post" host="https://api.solapi.com" path="/cash/v1/balance" %}
 {% api-method-summary %}
 결제
 {% endapi-method-summary %}

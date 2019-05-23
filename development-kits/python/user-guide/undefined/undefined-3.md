@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.message import Message
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to check cash & point balance through CoolSMS Rest API
 if __name__ == "__main__":
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         print("Cash : %s" % response['cash']) # 남은 캐쉬
         print("Point : %s" % response['point']) # 남은 포인트
         print("Deferred Payment: %s" % response['deferred_payment']) # 후불회원인지 확인
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

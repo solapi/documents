@@ -8,5 +8,5 @@
 [예약문자 발송](message/reserve-message.md) | 예약해둔 날짜에 문자 메시지를 보낼 수 있습니다.
 [알림톡 발송](message/alim-talk.md) | 친구 추가 없이 카카오톡으로 메시지를 바로 보낼 수 있습니다.
 [예약문자 취소](message/delete-reserve-message.md) | 아직 발송되지 않은 예약문자를 취소 할 수 있습니다.
-[잔액정보 확인](message/balance.md) | Coolsms 잔액정보를 확인 할 수 있습니다.
+[잔액정보 확인](message/balance.md) | Solapi 잔액정보를 확인 할 수 있습니다.
 [메시지내역 보기](message/message-log.md) | 발송 한 메시지 내역을 확인 할 수 있습니다.
