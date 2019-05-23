@@ -15,7 +15,7 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 `<ServiceName>`
 
-* [Message API v4](message-api-v4/)
+* [SOLAPI API](message-api-v4/)
 * [Image API](image-api/)
 
 `<Version>`
