@@ -1,6 +1,6 @@
 # 문서 삭제
 
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/senderid/v1/documents" %}
+{% api-method method="delete" host="https://api.solapi.com" path="/senderid/v1/documents" %}
 {% api-method-summary %}
 문서 삭제
 {% endapi-method-summary %}

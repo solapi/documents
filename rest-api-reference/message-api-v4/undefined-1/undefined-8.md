@@ -1,6 +1,6 @@
 # 그룹 메시지 예약 취소
 
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/schedule" %}
+{% api-method method="delete" host="https://api.solapi.com" path="/messages/v4/groups/:groupId/schedule" %}
 {% api-method-summary %}
 cancelScheduledGroupMessage
 {% endapi-method-summary %}
@@ -152,13 +152,13 @@ cancelScheduledGroupMessage
 
 ## 예제 코드
 
-[\[JavaScript\] cancel\_scheduledDate.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/cancel_scheduledDate.js)
+[\[JavaScript\] cancel\_scheduledDate.js](https://github.com/solapi/examples/blob/master/javascript/cancel_scheduledDate.js)
 
-[\[Python\] cancel\_scheduledDate.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] cancel\_scheduledDate.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] cancel\_scheduledDate.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] cancel\_scheduledDate.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] cancel\_scheduledDate.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/cancel_scheduledDate.php)
+[\[PHP\] cancel\_scheduledDate.php](https://github.com/solapi/examples/blob/master/php/cancel_scheduledDate.php)
 
-[\[Ruby\] cancel\_scheduledDate.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/cancel_scheduledDate.rb)
+[\[Ruby\] cancel\_scheduledDate.rb](https://github.com/solapi/examples/blob/master/ruby/cancel_scheduledDate.rb)
 

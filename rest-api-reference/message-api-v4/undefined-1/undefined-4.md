@@ -1,6 +1,6 @@
 # 그룹 메시지 추가
 
-{% api-method method="put" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/:groupId/messages" %}
+{% api-method method="put" host="https://api.solapi.com" path="/messages/v4/groups/:groupId/messages" %}
 {% api-method-summary %}
 addGroupMessages
 {% endapi-method-summary %}
@@ -202,13 +202,13 @@ message 객체는 아래를 참고하세요.
 
 ## 예제 코드
 
-[\[JavaScript\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/add_group_message.js)
+[\[JavaScript\] add\_group\_message.js](https://github.com/solapi/examples/blob/master/javascript/add_group_message.js)
 
-[\[Python\] add\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] add\_group\_message.js](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] add\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] add\_group\_message.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] add\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/add_group_message.php)
+[\[PHP\] add\_group\_message.php](https://github.com/solapi/examples/blob/master/php/add_group_message.php)
 
-[\[Ruby\] add\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/add_group_message.rb)
+[\[Ruby\] add\_group\_message.rb](https://github.com/solapi/examples/blob/master/ruby/add_group_message.rb)
 

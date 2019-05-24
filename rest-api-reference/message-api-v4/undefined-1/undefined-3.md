@@ -3,7 +3,7 @@
 메시지 그룹 삭제 API 사용방법을 기술합니다.  
 그룹 삭제 후 발송 및 복구가 불가합니다.
 
-{% api-method method="delete" host="https://rest.coolsms.co.kr" path="/messages/v4/groups/{groupId}" %}
+{% api-method method="delete" host="https://api.solapi.com" path="/messages/v4/groups/{groupId}" %}
 {% api-method-summary %}
 deleteMessageGroup
 {% endapi-method-summary %}
@@ -175,7 +175,7 @@ deleteMessageGroup
 {% tabs %}
 {% tab title="CURL" %}
 ```bash
-curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
+curl -X DELETE https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
   --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]" \
 ```
 {% endtab %}
@@ -183,15 +183,15 @@ curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3
 
 ## 예제 코드
 
-[\[JavaScript\] delete\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/delete_group.js)
+[\[JavaScript\] delete\_group.js](https://github.com/solapi/examples/blob/master/javascript/delete_group.js)
 
-[\[Python\] delete\_group.py](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] delete\_group.py](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] delete\_group.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] delete\_group.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] delete\_group.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/delete_group.php)
+[\[PHP\] delete\_group.php](https://github.com/solapi/examples/blob/master/php/delete_group.php)
 
-[\[Ruby\] delete\_group.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/delete_group.rb)
+[\[Ruby\] delete\_group.rb](https://github.com/solapi/examples/blob/master/ruby/delete_group.rb)
 
 
 

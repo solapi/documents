@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.image import Image
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to delete images through CoolSMS Rest API
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         print("Error Count : %s" % response['error_count'])
         print("Error List : %s" % response['error_list'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

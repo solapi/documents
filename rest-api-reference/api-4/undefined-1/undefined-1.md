@@ -8,11 +8,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-GET [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/messages/v4/groups)
+GET [https://api.solapi.com/messages/v4/groups](https://api.solapi.com/messages/v4/groups)
 {% endtab %}
 
 {% tab title="Sample" %}
-`url -X GET https://rest.coolsms.co.kr/messages/v4/groups  --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]"`
+`url -X GET https://api.solapi.com/messages/v4/groups  --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]"`
 {% endtab %}
 {% endtabs %}
 

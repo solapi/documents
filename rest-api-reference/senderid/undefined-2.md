@@ -1,6 +1,6 @@
 # 발신번호 인증
 
-{% api-method method="put" host="https://rest.coolsms.co.kr" path="/senderid/v1/numbers/{phoneNumber}/authenticate" %}
+{% api-method method="put" host="https://api.solapi.com" path="/senderid/v1/numbers/{phoneNumber}/authenticate" %}
 {% api-method-summary %}
 발신번호 인증
 {% endapi-method-summary %}

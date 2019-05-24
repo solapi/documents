@@ -4,7 +4,7 @@ description: 잔액 소진 알림의 on/off 를 설정합니다.
 
 # 잔액 소진 알림 on/off 설정
 
-{% api-method method="put" host="https://rest.coolsms.co.kr" path="/cash/v1/balance/alert/power" %}
+{% api-method method="put" host="https://api.solapi.com" path="/cash/v1/balance/alert/power" %}
 {% api-method-summary %}
 Set Low Balance Alert Power
 {% endapi-method-summary %}

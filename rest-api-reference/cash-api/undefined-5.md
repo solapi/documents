@@ -1,6 +1,6 @@
 # 잔액 출금
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/cash/v1/withdraw" %}
+{% api-method method="get" host="https://api.solapi.com" path="/cash/v1/withdraw" %}
 {% api-method-summary %}
 잔액 출금
 {% endapi-method-summary %}

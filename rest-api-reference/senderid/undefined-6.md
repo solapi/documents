@@ -1,6 +1,6 @@
 # 활성화된 발신번호 목록 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/senderid/v1/numbers/active" %}
+{% api-method method="get" host="https://api.solapi.com" path="/senderid/v1/numbers/active" %}
 {% api-method-summary %}
 활성화된 발신번호 목록 조회
 {% endapi-method-summary %}

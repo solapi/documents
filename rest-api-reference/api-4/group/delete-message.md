@@ -6,9 +6,9 @@
 
 ### Request
 
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages)
+DELETE [https://api.solapi.com/messages/v4/groups/{groupId}/messages](https://api.solapi.com/messages/v4/groups/{groupId}/messages)
 
-curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{"messageIds":\["M4V20180308120044DTYYJBBYLPQZIB1", "M4V20180309120044DTYYJBBYLPQZIB1"\]}'
+curl -X DELETE [https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages](https://api.solapi.com/messages/v4/groups/{G4V20180307105937H3PTASXMNJG2JIO}/messages)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"  -d '{"messageIds":\["M4V20180308120044DTYYJBBYLPQZIB1", "M4V20180309120044DTYYJBBYLPQZIB1"\]}'
 
 #### Required Path Parameters
 
@@ -20,11 +20,11 @@ curl -X DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{G4V20180307105937
 
 #### Sample Code
 
-request\( { url: "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages)", method: 'delete', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]` }, json: { messageIds: \[ 'M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1' \] } } \)
+request\( { url: "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages)", method: 'delete', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]` }, json: { messageIds: \[ 'M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1' \] } } \)
 
-conn = HTTPSConnection\('rest.coolsms.co.kr'\) conn.request\( "DELETE", "/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages","{messageIds:\['M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1'\]}", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+conn = HTTPSConnection\('api.solapi.com'\) conn.request\( "DELETE", "/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages","{messageIds:\['M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1'\]}", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
 
-&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL, "[https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages](https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages)"\); curl\_setopt\($ch, CURLOPT\_CUSTOMREQUEST, "DELETE"\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, "{'messageIds':\['M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1'\]}"\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\);
+&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL, "[https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages](https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages)"\); curl\_setopt\($ch, CURLOPT\_CUSTOMREQUEST, "DELETE"\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, "{'messageIds':\['M4V20180308120044DTYYJBBYLPQZIB1', 'M4V20180309120044DTYYJBBYLPQZIB1'\]}"\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\);
 
 ### Response
 

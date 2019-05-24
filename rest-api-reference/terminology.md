@@ -21,7 +21,7 @@ title: 용어사전
 
 ## 발신번호
 
-2015년 10월 16일부터 시행된 [발신번호 사전등록제 공지사항](https://www.coolsms.co.kr/notice/3070386) 에 의해 반드시 등록된 번호만 허용됩니다.
+2015년 10월 16일부터 시행된 [발신번호 사전등록제 공지사항](https://solapi.com/notice/3070386) 에 의해 반드시 등록된 번호만 허용됩니다.
 
 발신번호는 \(-\) 등 기호를 제외한 번호만 입력합니다.
 
@@ -76,11 +76,11 @@ MMS에 이미지를 포함한 메시지를 발송할 수 있는데 이미지의 
 
 핸드폰 전화번호를 기반으로 친구추가 없이 고객에게 바로 보낼 수 있는 정보성 카카오톡 알림 메시지
 
-[https://www.coolsms.co.kr/kakao](https://www.coolsms.co.kr/kakao)
+[https://solapi.com/kakao](https://solapi.com/kakao)
 
 ## 친구톡
 
 알림톡으로 보낼 수 없는 광고, 일반공지, 업무알림등의 내용을 카카오 친구로 등록된 고객들에게 보낼 수 있는 카카오톡 알림 메시지
 
-[https://www.coolsms.co.kr/kakao](https://www.coolsms.co.kr/kakao)
+[https://solapi.com/kakao](https://solapi.com/kakao)
 

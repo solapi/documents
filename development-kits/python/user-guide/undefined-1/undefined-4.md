@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.group_message import GroupMessage
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to add messages into group through CoolSMS Rest API
 if __name__ == "__main__":
@@ -27,8 +27,8 @@ if __name__ == "__main__":
     # params["datetime"] = "20140106153000" # Format must be(YYYYMMDDHHMISS) 2014 01 06 15 30 00 (2014 Jan 06th 3pm 30 00)
     # params["subject"] = "Message Title" # set msg title for LMS and MMS
     # params["delay"] = "10") # '0~20' delay messages
-    # params["sender_key"] = "5554025sa8e61072frrrd5d4cc2rrrr65e15bb64" # 알림톡 사용을 위해 필요합니다. 신청방법 : http://www.coolsms.co.kr/AboutAlimTalk
-    # params["template_code"] = "C004" # 알림톡 template code 입니다. 자세한 설명은 http://www.coolsms.co.kr/AboutAlimTalk을 참조해주세요.
+    # params["sender_key"] = "5554025sa8e61072frrrd5d4cc2rrrr65e15bb64" # 알림톡 사용을 위해 필요합니다. 신청방법 : http://solapi.com/AboutAlimTalk
+    # params["template_code"] = "C004" # 알림톡 template code 입니다. 자세한 설명은 http://solapi.com/AboutAlimTalk을 참조해주세요.
 
     cool = GroupMessage(api_key, api_secret)
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         if "error_list" in response:
             print("Error List : %s" % response['error_list'])
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

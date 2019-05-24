@@ -1,6 +1,6 @@
 # 그룹 생성
 
-{% api-method method="post" host="https://rest.coolsms.co.kr" path="/messages/v4/groups" %}
+{% api-method method="post" host="https://api.solapi.com" path="/messages/v4/groups" %}
 {% api-method-summary %}
 createMessageGroup
 {% endapi-method-summary %}
@@ -159,7 +159,7 @@ SDK를 이용하여 발송하는 경우, 해당 SDK의 정보 및 버전
 {% tabs %}
 {% tab title="CURL" %}
 ```bash
-curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
+curl -X POST https://api.solapi.com/messages/v4/groups
   --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature= [SIGNATURE]" \
 ```
 {% endtab %}
@@ -167,13 +167,13 @@ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups
 
 ## 예제 코드
 
-[\[Javascript\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/create_group.js)
+[\[Javascript\] create\_group.js](https://github.com/solapi/examples/blob/master/javascript/create_group.js)
 
-[\[Python\] create\_group.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/python/group/)
+[\[Python\] create\_group.js](https://github.com/solapi/examples/blob/master/python/group/)
 
-[\[Java\] create\_group.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] create\_group.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] create\_group.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/create_group.php)
+[\[PHP\] create\_group.php](https://github.com/solapi/examples/blob/master/php/create_group.php)
 
-[\[Ruby\] create\_group.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/create_group.rb)
+[\[Ruby\] create\_group.rb](https://github.com/solapi/examples/blob/master/ruby/create_group.rb)
 

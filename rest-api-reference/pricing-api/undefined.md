@@ -1,6 +1,6 @@
 # 단가 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/pricing/v1/messaging" %}
+{% api-method method="get" host="https://api.solapi.com" path="/pricing/v1/messaging" %}
 {% api-method-summary %}
 단가 조회
 {% endapi-method-summary %}

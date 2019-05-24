@@ -4,9 +4,9 @@
 
 ## Request
 
-GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)
+GET [https://api.solapi.com/messages/v4/list](https://api.solapi.com/messages/v4/list)
 
-curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]" \
+curl -X GET [https://api.solapi.com/messages/v4/list](https://api.solapi.com/messages/v4/list)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]" \
 
 ### Optional query parameters
 
@@ -25,11 +25,11 @@ curl -X GET [https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.c
 
 ### Sample code
 
-request\( { url: "[https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)", method: 'get', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]` } } \)
+request\( { url: "[https://api.solapi.com/messages/v4/list](https://api.solapi.com/messages/v4/list)", method: 'get', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]` } } \)
 
-conn = HTTPSConnection\('rest.coolsms.co.kr'\) conn.request\( "GET", "/messages/v4/list", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+conn = HTTPSConnection\('api.solapi.com'\) conn.request\( "GET", "/messages/v4/list", {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
 
-&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL, "[https://rest.coolsms.co.kr/messages/v4/list](https://rest.coolsms.co.kr/messages/v4/list)"\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\);
+&lt;?php $ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL, "[https://api.solapi.com/messages/v4/list](https://api.solapi.com/messages/v4/list)"\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]' \)\); curl\_exec\($ch\); curl\_close\($ch\);
 
 ## Response
 

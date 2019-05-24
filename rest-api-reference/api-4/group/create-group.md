@@ -6,9 +6,9 @@
 
 ## Request
 
-POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/messages/v4/groups)
+POST [https://api.solapi.com/messages/v4/groups](https://api.solapi.com/messages/v4/groups)
 
-curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsms.co.kr/messages/v4/groups)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
+curl -X POST [https://api.solapi.com/messages/v4/groups](https://api.solapi.com/messages/v4/groups)  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]" \
 
 ### Optional Body Parameters
 
@@ -22,21 +22,21 @@ curl -X POST [https://rest.coolsms.co.kr/messages/v4/groups](https://rest.coolsm
 {% tab title="NodeJS" %}
 ```text
 request({ url: "
-https://rest.coolsms.co.kr/messages/v4/groups
+https://api.solapi.com/messages/v4/groups
 ",method: 'post', headers: { 'Authorization': HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE] }, json: { appId: 'MYAPPID' } } )
 ```
 {% endtab %}
 
 {% tab title="Python" %}
 ```text
-conn = HTTPSConnection('rest.coolsms.co.kr') conn.request( "POST", "/messages/v4/groups","{appId:'MYAPPID'}", {"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"}) conn.close()
+conn = HTTPSConnection('api.solapi.com') conn.request( "POST", "/messages/v4/groups","{appId:'MYAPPID'}", {"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"}) conn.close()
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 ```text
 <?php $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, "
-https://rest.coolsms.co.kr/messages/v4/groups
+https://api.solapi.com/messages/v4/groups
 "); curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST"); curl_setopt($ch, CURLOPT_POSTFIELDS, "{'appId':'MYAPPID'}"); curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]' )); curl_exec($ch); curl_close($ch);
 ```
 {% endtab %}

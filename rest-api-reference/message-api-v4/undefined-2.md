@@ -1,6 +1,6 @@
 # 메시지 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/messages/v4/list" %}
+{% api-method method="get" host="https://api.solapi.com" path="/messages/v4/list" %}
 {% api-method-summary %}
 getMessageList
 {% endapi-method-summary %}
@@ -157,13 +157,13 @@ e.g - value="메시지아이디,2000"
 
 ## 예제 코드
 
-[\[JavaScript\] get\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/blob/master/javascript/get_group_message.js)
+[\[JavaScript\] get\_group\_message.js](https://github.com/solapi/examples/blob/master/javascript/get_group_message.js)
 
-[\[Python\] get\_group\_message.js](https://github.com/coolsms/coolsms-v4-examples/tree/master/python/group)
+[\[Python\] get\_group\_message.js](https://github.com/solapi/examples/tree/master/python/group)
 
-[\[Java\] get\_group\_message.java](https://github.com/coolsms/coolsms-v4-examples/tree/master/java)
+[\[Java\] get\_group\_message.java](https://github.com/solapi/examples/tree/master/java)
 
-[\[PHP\] get\_group\_message.php](https://github.com/coolsms/coolsms-v4-examples/blob/master/php/get_group_messages.php)
+[\[PHP\] get\_group\_message.php](https://github.com/solapi/examples/blob/master/php/get_group_messages.php)
 
-[\[Ruby\] get\_group\_message.rb](https://github.com/coolsms/coolsms-v4-examples/blob/master/ruby/get_group_messages.rb)
+[\[Ruby\] get\_group\_message.rb](https://github.com/solapi/examples/blob/master/ruby/get_group_messages.rb)
 

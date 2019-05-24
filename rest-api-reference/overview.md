@@ -11,11 +11,11 @@ _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격�
 
 ## Resource URL 구성
 
-`https://rest.coolsms.co.kr/<ServiceName>/<Version>/<ResourcePath>`
+`https://api.solapi.com/<ServiceName>/<Version>/<ResourcePath>`
 
 `<ServiceName>`
 
-* [Message API v4](message-api-v4/)
+* [SOLAPI API](message-api-v4/)
 * [Image API](image-api/)
 
 `<Version>`

@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.message import Message
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to cancel reserved sms through CoolSMS Rest API
 if __name__ == "__main__":
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     try:
         response = cool.cancel(params)
         print("Response : %s" % response)
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

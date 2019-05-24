@@ -4,17 +4,17 @@
 
 실패된 건들도 그룹에 저장이 되나, 발송은 하지 않습니다.
 
-메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
+메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [상태코드표 보기](https://docs.solapi.com/3.%20rest/messageStatusCode.html)
 
 ## Resource URL
 
-`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
+`https://api.solapi.com/messages/v4/groups/{groupId}/messages`
 
 ## Request Syntax
 
 {% tabs %}
 {% tab title="URI" %}
-POST`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
+POST`https://api.solapi.com/messages/v4/groups/{groupId}/messages`
 {% endtab %}
 
 {% tab title="Syntax" %}
@@ -47,7 +47,7 @@ POST`https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages`
 {% endtab %}
 
 {% tab title="Sample" %}
-$ curl -X POST https://rest.coolsms.co.kr/messages/v4/groups/{groupId}/messages  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }'
+$ curl -X POST https://api.solapi.com/messages/v4/groups/{groupId}/messages  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "messages": \[ { "to": "01000000000" or \[ "01000000000", "01000000001" \], "from": "029302266", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } \] }'
 {% endtab %}
 {% endtabs %}
 

@@ -15,7 +15,7 @@ oAuth2.0 은 개발자가 새롭게 만든 서비스나 웹 사이트에 기존 
 개발하신 웹사이트 또는 서비스에서 아래의 링크와 쿼리 값을 추가하여 리다이렉트하여야 합니다.
 
 ```text
-GET https://rest.coolsms.co.kr/oauth2/v1/authorize
+GET https://api.solapi.com/oauth2/v1/authorize
 ```
 
 필요한 GET 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
@@ -26,9 +26,9 @@ GET https://rest.coolsms.co.kr/oauth2/v1/authorize
 * `redirect_uri` - **필수**. 사용자 인증이 끝나면 돌아갈 url 주소
 * `state` - **필수**. 서비스에서 해당 요청에 대하여 알아볼수 있는 랜덤 값
 
- **/oauth2/authorize**  에 대한 자세한 설명은 [여기에서 참고](https://docs.coolsms.co.kr/oauth2/api-reference.html#사용자-인-oauth2v1authorize)하세요.
+ **/oauth2/authorize**  에 대한 자세한 설명은 [여기에서 참고](https://docs.solapi.com/oauth2/api-reference.html#사용자-인-oauth2v1authorize)하세요.
 
-`scope` 필드는 [권한 목록](https://docs.coolsms.co.kr/oauth2/how-to-use-scope.html#scope-목)을 참고하신후 빈칸으로 연결하여 사용하세요. 만약에 필요한 권한들이 `users:read` 와 `users.profile:read` 이라면 `users:read users.profile:read` 처럼 공백으로 연결하여 요청하시면 됩니다. [scope 에 관하여 자세히 알아보기](https://docs.coolsms.co.kr/oauth2/how-to-use-scope.html)
+`scope` 필드는 [권한 목록](https://docs.solapi.com/oauth2/how-to-use-scope.html#scope-목)을 참고하신후 빈칸으로 연결하여 사용하세요. 만약에 필요한 권한들이 `users:read` 와 `users.profile:read` 이라면 `users:read users.profile:read` 처럼 공백으로 연결하여 요청하시면 됩니다. [scope 에 관하여 자세히 알아보기](https://docs.solapi.com/oauth2/how-to-use-scope.html)
 
 `state` 필드 값은 사용자 요청에서 정상적으로 사용자의 인증이 끝난후에 `redirect_uri`서 돌아가는 부분에서 악의적인 다른 접근을 차단하는 역활을 하는 값입니다. `redirect_uri`가 만약에 비어있다면, 서비스 등록시 입력한 `callback_uri` 로 대체됩니다.
 
@@ -48,7 +48,7 @@ GET https://rest.coolsms.co.kr/oauth2/v1/authorize
 사용자 인증이 정상적으로 완료후에 발급받은후에 발급받은 `code`를 사용하여 액세스 토큰을 발급받을 수 있습니다. 우선 토큰을 발급받기 위해서는 아래의 링크로 요청을 하여야 합니다.
 
 ```text
-POST https://rest.coolsms.co.kr/oauth2/v1/access_token
+POST https://api.solapi.com/oauth2/v1/access_token
 ```
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
@@ -77,14 +77,14 @@ Step 1 의 사용자 인증 Step 2 의 클라이언트를 정상적으로 인증
 Step 1 과 Step 2 를 마친 후에 발급받은 access token 을 사용하여 쿨에스엠에스 API 를 이용할 수 있습니다.
 
 ```text
-curl -X (GET|POST) https://rest.coolsms.co.kr/<접근하려는 API url>
+curl -X (GET|POST) https://api.solapi.com/<접근하려는 API url>
 -H 'Authorization: bearer <Access Token>'
 ```
 
 위의 나타난 방법처럼 요청하려는 http request 의 header 에 authorization 에 액세스 토큰값을 넣어서 요청합니다. 예를 들어 요청하려는 API 가 userprofile API 라고 한다면 아래와 같이 합니다.
 
 ```text
-curl -X GET https://rest.coolsms.co.kr/oauth2/v1/userprofile
+curl -X GET https://api.solapi.com/oauth2/v1/userprofile
 -H 'authorization: bearer eyGciOiNiIsIkpXVCJ9.eyJ0NTY3ODkwIiwibWRtaW4iOnRydWV9.TJVHrcEfxjoYZgeFONFh7HgQ'
 ```
 
@@ -104,7 +104,7 @@ curl -X GET https://rest.coolsms.co.kr/oauth2/v1/userprofile
 이미 발급받은 엑세스 토큰에 대한 유효시간이 만료된 경우, 액세스 토큰과 같이 발급받았던 재사용 토큰을 사용하여 다시액세스 토큰을 발급받을 수 있습니다. 재사용 토큰을 사용하여 `/oauth2/v1/access_token` 에 아래와 같이 http request 요청합니다.
 
 ```text
-curl -X POST https://rest.coolsms.co.kr/oauth2/v1/access_token
+curl -X POST https://api.solapi.com/oauth2/v1/access_token
 -H 'Content-Type: application/json'
 -d '{
     'grant_type': 'refresh_token',

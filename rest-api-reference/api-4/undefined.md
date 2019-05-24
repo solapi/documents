@@ -6,11 +6,11 @@
 
 응답 코드가 200이 나와도 정상적으로 발송이 안되는 경우 응답받은 `result` 데이터의 `statusCode` 를 확인해주세요.
 
-메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [링크](https://docs.coolsms.co.kr/3.%20rest/messageStatusCode.html)
+메시지 추가 실패시 사유는 상태코드표를 확인 부탁드립니다. [링크](https://docs.solapi.com/3.%20rest/messageStatusCode.html)
 
 ## Resource URL
 
-POST `https://rest.coolsms.co.kr/messages/v4/send`
+POST `https://api.solapi.com/messages/v4/send`
 
 ## Request Syntax
 
@@ -48,19 +48,19 @@ POST `https://rest.coolsms.co.kr/messages/v4/send`
 
 {% tabs %}
 {% tab title="CURL" %}
-$ curl -X POST `https://rest.coolsms.co.kr/messages/v4/send`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'
+$ curl -X POST `https://api.solapi.com/messages/v4/send`  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATRUE\]"  -d '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }'
 {% endtab %}
 
 {% tab title="NodeJS" %}
-request\( { url: "[https://rest.coolsms.co.kr/messages/v4/send](https://rest.coolsms.co.kr/messages/v4/send)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } } \)
+request\( { url: "[https://api.solapi.com/messages/v4/send](https://api.solapi.com/messages/v4/send)", method: 'post', headers: { 'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]` }, json: { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } } \)
 {% endtab %}
 
 {% tab title="Python" %}
-conn = HTTPSConnection\('rest.coolsms.co.kr', '443'\) conn.request\( "POST", "/messages/v4/send", json.dumps\( { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } \), {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
+conn = HTTPSConnection\('api.solapi.com', '443'\) conn.request\( "POST", "/messages/v4/send", json.dumps\( { "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } } \), {"Authorization":"HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature=\[SIGNATURE\]"}\) conn.close\(\)
 {% endtab %}
 
 {% tab title="PHP" %}
-$ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://rest.coolsms.co.kr/messages/v4/send](https://rest.coolsms.co.kr/messages/v4/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, json\_encode\( '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }' \); curl\_exec\($ch\); curl\_close\($ch\);
+$ch = curl\_init\(\); curl\_setopt\($ch, CURLOPT\_URL,"[https://api.solapi.com/messages/v4/send](https://api.solapi.com/messages/v4/send)"\); curl\_setopt\($ch, CURLOPT\_POST, 1\); curl\_setopt\($ch, CURLOPT\_HTTPHEADER, array\( 'Authorization: HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[SALT\], Signature=\[SIGNATURE\]' \)\); curl\_setopt\($ch, CURLOPT\_POSTFIELDS, json\_encode\( '{ "message": { { "to": "01000000000", "from": "021231234", "text": "테스트 메시지", "type":"sms", "customFields": { "myCustomField": "Value" } } } }' \); curl\_exec\($ch\); curl\_close\($ch\);
 {% endtab %}
 {% endtabs %}
 

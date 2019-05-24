@@ -6,11 +6,11 @@
 
 {% tabs %}
 {% tab title="URI" %}
-DELETE [https://rest.coolsms.co.kr/messages/v4/groups/{groupId}](https://rest.coolsms.co.kr/messages/v4/groups/{groupId})
+DELETE [https://api.solapi.com/messages/v4/groups/{groupId}](https://api.solapi.com/messages/v4/groups/{groupId})
 {% endtab %}
 
 {% tab title="Sample" %}
-curl -X DELETE https://rest.coolsms.co.kr/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]"
+curl -X DELETE https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO  --header "Authorization : HMAC-SHA256 ApiKey=\[API\_KEY\], Date=\[DATE\], Salt=\[UNIQID\], Signature= \[SIGNATURE\]"
 {% endtab %}
 {% endtabs %}
 

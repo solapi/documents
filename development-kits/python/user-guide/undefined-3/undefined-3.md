@@ -3,7 +3,7 @@
 ```python
 import sys
 from sdk.api.sender_id import SenderID 
-from sdk.exceptions import CoolsmsException
+from sdk.exceptions import SolapiException
 
 ##  @brief This sample code demonstrate how to delete sender number through CoolSMS Rest API
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         if response == None:
             print("Register Success")
 
-    except CoolsmsException as e:
+    except SolapiException as e:
         print("Error Code : %s" % e.code)
         print("Error Message : %s" % e.msg)
 

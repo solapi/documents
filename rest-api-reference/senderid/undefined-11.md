@@ -1,6 +1,6 @@
 # 문서 정보 조회
 
-{% api-method method="get" host="https://rest.coolsms.co.kr" path="/senderid/v1/documents/{documentId}" %}
+{% api-method method="get" host="https://api.solapi.com" path="/senderid/v1/documents/{documentId}" %}
 {% api-method-summary %}
 문서 정보 조회
 {% endapi-method-summary %}
