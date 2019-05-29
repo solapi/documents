@@ -40,8 +40,6 @@ index.js 파일을 만들고 간단하게 서버를 구현해봅니다.
 
 서버의 port는 8080으로 하였습니다.
 
-{% embed url="https://gist.github.com/KimGenius/19cc93827f2973fc94224b3d7767fd4a" %}
-
 이제 서버를 직접 실행해봐야 합니다.
 
 코드가 수정될 때마다 서버를 재시작 해야하는 귀찮은 점을 방지하고자 [nodemon](https://nodemon.io)도 사용해줍니다.
@@ -88,11 +86,7 @@ $ npm i --save ejs
 
 먼저 views/index.ejs 파일을 하나 만들고
 
-{% embed url="https://gist.github.com/KimGenius/7188e17731a660b685f54f18277965a8" %}
-
 index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
-
-{% embed url="https://gist.github.com/KimGenius/deb45bdb1db2a58f4f2597094168e7de" %}
 
 저장 후 성공적으로 반영 되었다면 [http://localhost:8080](http://localhost:8080) 로 접속 시 다음과 같은 페이지가 출력됩니다.
 
@@ -111,8 +105,6 @@ index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
 더 많은 기능을 사용하기 위해서는 [다른 권한 목록 링크](https://docs.solapi.com/authentication/oauth2-scope)를 참고하여 추가로 입력해 주시기 바랍니다.
 
 ![](../.gitbook/assets/_2019-05-20__4.56.44.png)
-
-{% embed url="https://gist.github.com/KimGenius/195873b8721d06702d8788b1099df1b8" %}
 
 저장 후 다시 솔라피 로그인 버튼을 누르면 이렇게 로그인 페이지가 나옵니다.  
 만약 이미 로그인이 되어 있다면 로그인은 생략됩니다.
@@ -136,8 +128,6 @@ index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
 /authorize 에서는 넘겨받은 authorizationCode로 accessToken을 발급 받는 작업을 합니다.  
 [관련 문서 바로가기](https://docs.solapi.com/authentication/oauth2#step-2)
 
-{% embed url="https://gist.github.com/KimGenius/7f2ce5c8aa384e31e0d475dc2ecd5ba4" %}
-
 먼저 API Request를 하기 위해 [request](https://github.com/request/request)와 [request-promise](https://github.com/request/request-promise)를 설치합니다
 
 ```text
@@ -154,13 +144,9 @@ code의 경우는 redirect 될 시에 query 값으로 넘어오기 때문에 req
 
 ![](../.gitbook/assets/2019-05-29-8.52.45.png)
 
-{% embed url="https://gist.github.com/KimGenius/16f15a89712af4c3f81c07ebb387c8ec" %}
-
 result를 console.log 로 값을 확인해봅니다.
 
 성공 시 result 값은 다음과 같습니다.
-
-{% embed url="https://gist.github.com/KimGenius/5a309cbdca5dd4a7fa24ebe9c85e65cd" %}
 
 이제 이 access\_token을 저장하여\(쿠키나 SessionStorage 등\) 후에 솔라피 API들에 요청을 보낼 때에 토큰을 헤더에 실어서 보내면 정상적으로 API 인증처리가 완료됩니다.
 
@@ -172,23 +158,13 @@ npm i --save cookie-parser
 
 설치 후에 사용은 다음과 같이 합니다.
 
-{% embed url="https://gist.github.com/KimGenius/c46c6231fa88caf15c0d757b087f6e47" %}
-
 이제 받아온 access\_token을 쿠키에 저장합시다.
 
 쿠키 이름은 APP\_COOKIE로 하였으나 원하는 이름으로 지정할 수 있습니다.
 
-{% embed url="https://gist.github.com/KimGenius/6b16b950ce3e57ea3a909df657362b52" %}
-
 이제 토큰을 받았으니 토큰을 이용해서 발송을 하는 페이지로 이동해 줍니다.
 
-{% embed url="https://gist.github.com/KimGenius/8ea21a02262274dcaf1ba88be0b0d35e" %}
-
 send 라우트에서는 문자 발송 기능을 담당합니다.
-
-{% embed url="https://gist.github.com/KimGenius/58787481824bfa2192d23f1bae238901" %}
-
-{% embed url="https://gist.github.com/KimGenius/b8349076b30e1fd07863577d9744c7be" %}
 
 ![](../.gitbook/assets/_2019-05-17__6.41.46.png)
 
@@ -198,15 +174,11 @@ express의 post 요청에서 body 값을 가져오려면 [bodyParser](https://gi
 $ npm i --save body-parser
 ```
 
-{% embed url="https://gist.github.com/KimGenius/d586e1034b1ed854acf6a3c385ca6ac6" %}
-
 post의 /send에서는 문자를 발송하는 요청을 할 것입니다.
 
 from, to, text는 form에서 보내주어 req.boby에서 가져오고,
 
 header에 토큰 정보가 들어가야 하기 때문에 req.cookies에서 토큰 정보인 APP\_COOKIE를 가져옵니다.
-
-{% embed url="https://gist.github.com/KimGenius/53a65ff181f5c618d7d48ae4e88409f1" %}
 
 {% hint style="info" %}
 특히 요청을 보낼때에 body 부분에 앱 아이디를 필수로 입력하셔야 메시지 발송 시 수익이 발생하게 됩니다.

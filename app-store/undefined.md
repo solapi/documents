@@ -86,15 +86,5 @@ LIVE 상태가 아닐 때에는 수익금 설정이 자유로우나 LIVE 전환 
 
 앱을 등록하고 등록한 앱과 연동하여 수익을 발생 시키려면 위에서 발급받은 앱 아이디를 입력해주세요.
 
-{% tabs %}
-{% tab title="등록한 앱을 연동하여 발송" %}
-{% embed url="https://gist.github.com/KimGenius/d89c97a4339e35ca87c9ef55013324f6" %}
-{% endtab %}
-
-{% tab title="심플 메시지 발송" %}
-{% embed url="https://gist.github.com/KimGenius/62df46b0ba6578f12bed88bcfc95d6af" %}
-{% endtab %}
-{% endtabs %}
-
 ### 실제로 [적용한 사례](https://sendsms.kr)를 체험해보세요!
 
