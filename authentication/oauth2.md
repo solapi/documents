@@ -8,7 +8,7 @@ oAuth2.0 은 개발자가 새롭게 만든 서비스나 웹 사이트에 기존 
 
 ## 인증 흐름 알아보기
 
-![](../.gitbook/assets/flow1%20%281%29.jpg)
+![](../.gitbook/assets/flow1-1.jpg)
 
 ## Step 1. 사용자 인증하기
 
@@ -26,7 +26,7 @@ GET https://api.solapi.com/oauth2/v1/authorize
 * `redirect_uri` - **필수**. 사용자 인증이 끝나면 돌아갈 url 주소
 * `state` - **필수**. 서비스에서 해당 요청에 대하여 알아볼수 있는 랜덤 값
 
- **/oauth2/authorize**  에 대한 자세한 설명은 [여기에서 참고](https://docs.solapi.com/oauth2/api-reference.html#사용자-인-oauth2v1authorize)하세요.
+  **/oauth2/authorize** 에 대한 자세한 설명은 [여기에서 참고](https://docs.solapi.com/oauth2/api-reference.html#사용자-인-oauth2v1authorize)하세요.
 
 `scope` 필드는 [권한 목록](https://docs.solapi.com/oauth2/how-to-use-scope.html#scope-목)을 참고하신후 빈칸으로 연결하여 사용하세요. 만약에 필요한 권한들이 `users:read` 와 `users.profile:read` 이라면 `users:read users.profile:read` 처럼 공백으로 연결하여 요청하시면 됩니다. [scope 에 관하여 자세히 알아보기](https://docs.solapi.com/oauth2/how-to-use-scope.html)
 
@@ -53,7 +53,7 @@ POST https://api.solapi.com/oauth2/v1/access_token
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
 
-* `grant_type` - 해당 필드는 인증서버에서 인증방법을 구분하는 필드로서 'authorization\_code' 값을 넣어야 합니다.
+* `grant_type` - 해당 필드는 인증서버에서 인증방법을 구분하는 필드로서 `authorization_code` 값을 넣어야 합니다.
 * `code` - Step 1 사용자 인증 후에 발급받은 `code` 값을 입력하면 됩니다.
 * `client_id` - 서비스 또는 앱 등록시 발급받은 클라이언트 아이디
 * `client_secret` - 서비스 또는 앱 등록시 발급받은 클라이언트 비밀번호
@@ -118,7 +118,7 @@ curl -X POST https://api.solapi.com/oauth2/v1/access_token
 ## State 값에 대한 사용방법
 
 사용자 인증시 입력하는 `state` 는 [CSRF 공격](https://en.wikipedia.org/wiki/Cross-site_request_forgery)에 대해 방지할수 있습니다.  
- `state` 값은 인증과정에서 `nonce` 역할을 합니다.   
- `nonce` 란 어떤 요청 중에 일시적인 `key` 역할을 하는 단어를 말합니다.   
- 아래의 이미지에서는 `state`값에 대한 역할을 보여주고 있습니다. ![state&#xC5ED;&#xD560;](../.gitbook/assets/state-flow.png)
+`state` 값은 인증과정에서 `nonce` 역할을 합니다.  
+`nonce` 란 어떤 요청 중에 일시적인 `key` 역할을 하는 단어를 말합니다.  
+아래의 이미지에서는 `state`값에 대한 역할을 보여주고 있습니다. ![state&#xC5ED;&#xD560;](../.gitbook/assets/state-flow.png)
 

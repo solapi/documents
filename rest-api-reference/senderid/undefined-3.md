@@ -84,7 +84,6 @@ Could not find a cake matching this query.
     "errorCode": "InvalidSenderId",
     "errorMessage": "등록된 발신번호 정보를 찾을 수 없습니다."
 }
-
 ```
 {% endapi-method-response-example %}
 
@@ -103,6 +102,4 @@ Could not find a cake matching this query.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

@@ -11,11 +11,11 @@ oAuth2.0 의 인증을 시작하는 API 로써 사용자에 대한 로그인 확
 
 #### Request
 
-GET https://api.solapi.com/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}
+GET [https://api.solapi.com/oauth2/v1/authorize?{client\_id}&{scope}&{state}&{redirect\_uri}&{response\_type}](https://api.solapi.com/oauth2/v1/authorize?{client_id}&{scope}&{state}&{redirect_uri}&{response_type})
 
-curl https://api.solapi.com/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}
+curl [https://api.solapi.com/oauth2/v1/authorize?client\_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect\_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response\_type={code}](https://api.solapi.com/oauth2/v1/authorize?client_id={K00002ACVCC}&scope={users.profile:read}&state={kl3j81881929cvk}&redirect_uri={https%3A%2F%2Fmytestapp.co.kr%2Fcallback}&response_type={code})
 
- **Required query parameters** 
+**Required query parameters**
 
 * `client_id` - client 등록시에 발급받은 `client_id`
 * `state` - client 에서 `/oauth2/v1/authorize` 요청에 대한 `redirect_uri` 에서 구분을 할 수 있는 random string 값 \([자세히 알아보기](https://docs.solapi.com/oauth2/getting-started.html#state-값에-대한-사용방법)\)
@@ -49,15 +49,15 @@ oAuth2.0 인증 과정에서 토큰 발급을 담당하는 API 로써 `grant_typ
 
 #### Request
 
-POST https://api.solapi.com/oauth2/v1/access\_token
+POST [https://api.solapi.com/oauth2/v1/access\_token](https://api.solapi.com/oauth2/v1/access_token)
 
-curl -X POST https://api.solapi.com/oauth2/v1/access\_token -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "https://mytestapp.co.kr/callback", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
+curl -X POST [https://api.solapi.com/oauth2/v1/access\_token](https://api.solapi.com/oauth2/v1/access_token) -H "Content-Type: application/json" -d '{"client\_id": "K0000DAV49C", "client\_secret": "skjf8190221lcmzza18j9woiq0", "redirect\_uri": "[https://mytestapp.co.kr/callback](https://mytestapp.co.kr/callback)", "grant\_type": "authorization\_code", "code": "SAMPLECODE" }'
 
- **Required body parameters** 
+**Required body parameters**
 
 * `grant_type` - `access_token`발급을 위한 인증 방식. \(유효 값: `authorization_code`, `refresh_token`, `client_credentials`\)
 
- **Conditional required body parameters** 
+  **Conditional required body parameters**
 
 * `client_id` - client 등록시에 발급받은 `client_id` \(header `Authorization`에 클라이언트 정보가 없는경우 필수\)
 * `client_secret` - client 등록시에 발급받은 `client_secret` \(header `Authorization`에 클라이언트 정보가 없는경우 필수\)

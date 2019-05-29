@@ -70,5 +70,3 @@
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-

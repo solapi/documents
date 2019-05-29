@@ -78,5 +78,3 @@ ISO 8601 형식의 검색 마지막 날짜
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-

@@ -6,9 +6,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
-쿨에스엠에스에서 설정해둔 region을 바탕으로 메시지 단가를 조회합니다.  
-  
-\(현재는 '82' 한국으로 고정되어 었습니다.\)
+쿨에스엠에스에서 설정해둔 region을 바탕으로 메시지 단가를 조회합니다.\(현재는 '82' 한국으로 고정되어 었습니다.\)
 {% endapi-method-description %}
 
 {% api-method-spec %}

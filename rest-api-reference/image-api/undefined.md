@@ -40,5 +40,3 @@ base64 로 인코딩 된 문자열을 이용해서 이미지를 등록합니다.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-

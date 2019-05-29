@@ -73,5 +73,3 @@ Signature는 중복사용이 불가하며 15분 안에 전송되는 요청\(Requ
 
 {% page-ref page="oauth2.md" %}
 
-
-

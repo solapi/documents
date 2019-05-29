@@ -1,7 +1,5 @@
 # Overview
 
-
-
 쿨에스엠에스의 REST API Reference 내용을 담고 있습니다.
 
 _참고_ REST는 Representational State Transfer의 약자로 API 연동 규격을 명확하게 정의되고 쉽게 구현 할 수 있습니다. [https://ko.wikipedia.org/wiki/REST](https://ko.wikipedia.org/wiki/REST)
@@ -35,8 +33,4 @@ API Request 시 파라메터 값과 Response 의 데이터 값은 JSON 형식으
 Response 의 HTTP Status Code 값이 200 일 때 API 는 정상적으로 호출되었고 Response 의 Body 에 적절한 데이터가 리턴됩니다.
 
 HTTP Status Code 200 이외의 값의 경우 오류로써 보통의 경우 errorCode 와 errorMessage 이 함께 리턴됩니다. 각 API 마다 정의된 오류코드는 다르지만 공통적으로 리턴될 수 있는 코드는 [Message Status Codes](message-status-codes.md) 를 참고하세요.
-
-
-
-
 

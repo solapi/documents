@@ -6,7 +6,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
-인증,  발신번호 개수 증가, 중복해제 요청을 위한 문서를 업로드 합니다.
+인증, 발신번호 개수 증가, 중복해제 요청을 위한 문서를 업로드 합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -81,6 +81,4 @@ Could not find a cake matching this query.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

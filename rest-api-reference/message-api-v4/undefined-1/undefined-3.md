@@ -193,5 +193,3 @@ curl -X DELETE https://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTAS
 
 [\[Ruby\] delete\_group.rb](https://github.com/solapi/examples/blob/master/ruby/delete_group.rb)
 
-
-
