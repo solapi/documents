@@ -1,8 +1,4 @@
----
-description: 솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기
----
-
-# Sol
+# 솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기
 
 ### 앱 소개
 
@@ -13,10 +9,6 @@ description: 솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들�
 ### OAuth 2란
 
 다양한 서비스들에서 네이버 로그인, 구글 로그인, 페이스북 로그인, 카카오 로그인 등등 SNS나 다른 서비스를 이용한 소셜 로그인을 하는 것을 보셨을겁니다.
-
-![&#xAD50;&#xBCF4;&#xBB38;&#xACE0; &#xB85C;&#xADF8;&#xC778;](../.gitbook/assets/_2019-05-20__12.50.26.png)
-
-![&#xBC30;&#xD2C0;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xB85C;&#xADF8;&#xC778;](../.gitbook/assets/_2019-05-20__12.33.11.png)
 
 이러한 소셜 로그인을 지원하는 이유는 서비스 운영면에서 보았을 때 계정 관리를 신뢰할 수 있는 외부 서비스에 맡길 수 있다는 점에서 관리가 줄어들고 보안적으로도 더 안전해집니다.
 
@@ -72,8 +64,6 @@ $ npm run start
 
 성공적으로 실행이 되었다면 console에 다음과 같이 출력됩니다.
 
-![](../.gitbook/assets/_2019-05-28__2.50.10.png)
-
 ### OAuth 2 로그인 버튼 제작하기
 
 {% hint style="warning" %}
@@ -94,8 +84,6 @@ index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
 
 저장 후 성공적으로 반영 되었다면 [http://localhost:8080](http://localhost:8080) 로 접속 시 다음과 같은 페이지가 출력됩니다.
 
-![](../.gitbook/assets/_2019-05-17__3.22.49.png)
-
 현재 상태에서 버튼을 누르면 아직 form action에 해당되는 /login 라우트를 잡아주지 않았기 때문에 오류가 발생할 것 입니다.
 
 이제 /login 라우트를 잡아줍니다.
@@ -108,12 +96,8 @@ index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
 
 더 많은 기능을 사용하기 위해서는 [다른 권한 목록 링크](https://docs.solapi.com/authentication/oauth2-scope)를 참고하여 추가로 입력해 주시기 바랍니다.
 
-![](../.gitbook/assets/_2019-05-20__4.56.44.png)
-
 저장 후 다시 솔라피 로그인 버튼을 누르면 이렇게 로그인 페이지가 나옵니다.  
 만약 이미 로그인이 되어 있다면 로그인은 생략됩니다.
-
-![](../.gitbook/assets/_.png)
 
 로그인에 성공하면 다음과 같이 권한 요청 페이지가 나옵니다.
 
@@ -121,13 +105,9 @@ index.js에서 view engine을 설정하고 라우팅을 잡아줍니다.
 
 아까 말한 것처럼 메시지 발송만 하는 앱 이기에 scope는 message:write 만 사용할 것 입니다.
 
-![](../.gitbook/assets/_2019-05-20__5.18.51.png)
-
 승인을 하면 설정한 redirectUri로 code가 발급됩니다.
 
 하지만 마찬가지로 아직 라우트를 잡아주지 않았기 때문에 아래와 같은 에러가 발생합니다.
-
-![](../.gitbook/assets/_2019-05-28__3.15.11.png)
 
 /authorize 에서는 넘겨받은 authorizationCode로 accessToken을 발급 받는 작업을 합니다.  
 [관련 문서 바로가기](https://docs.solapi.com/authentication/oauth2#step-2)
@@ -170,8 +150,6 @@ $ npm i --save cookie-parser
 
 send 라우트에서는 문자 발송 기능을 담당합니다.
 
-![](../.gitbook/assets/_2019-05-17__6.41.46.png)
-
 express의 post 요청에서 body 값을 가져오려면 [bodyParser](https://github.com/expressjs/body-parser) 미들웨어를 설치하고 적용해야 합니다.
 
 ```text
@@ -196,13 +174,9 @@ agent: {
 
 이제 [http://localhost:8080/](http://localhost:8080/send) 로 가서 순서대로 로그인부터 발송까지 진행해 보시면 아래와 같은 결과값을 보실 수 있습니다.
 
-![](../.gitbook/assets/_2019-05-17__6.54.36.png)
-
 솔라피 [문자 발송 내역](https://solapi.com/message-log)에서도 확인이 가능합니다.
 
 특히 앱 아이디를 넣은 경우는 발송 내역에도 앱 아이디가 나오므로 정상적으로 들어갔는지 확인하시면 됩니다.
-
-![](../.gitbook/assets/_2019-05-21__1.10.34.png)
 
 이렇게 솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기가 완료되었습니다.
 
@@ -216,31 +190,17 @@ agent: {
 
 정산은 매달 10일 오전 11시에 이루어지며, 정산된 금액은 언제든지 계좌로 출금이 가능합니다.
 
-![](../.gitbook/assets/_2019-05-23__12.26.16.png)
-
 ### 수익금 출금
 
 실제로 한달 뒤 10일에 메일로 정산 알림이 와서 솔라피 사이트의 [잔액 사용 내역](https://solapi.com/balance/history)으로 들어가보니 수익금이 들어온 것을 확인할 수 있었습니다.
-
-![](../.gitbook/assets/_2019-05-23__2.23.06.png)
-
-![](../.gitbook/assets/_2019-05-23__11.21.34.png)
 
 정산된 수익금은 위에서 언급한대로 자유롭게 출금이 가능하기 때문에 [출금 요청 내역](https://solapi.com/withdrawal/history)으로 가서 제 계좌로 출금을 해보았습니다.
 
 계좌 등록 후 출금할 금액을 입력하고 예상 출금 금액을 확인한 뒤 출금 요청 버튼을 누릅니다.
 
-![](../.gitbook/assets/_2019-05-23__11.21.56.png)
-
 요청이 완료 되었으면 이렇게 대기중으로 표시됩니다.
-
-![](../.gitbook/assets/_2019-05-23__11.23.27.png)
 
 몇일 후 메일을 확인해보니 이렇게 출금 처리 알림 메일이 도착하였습니다.
 
-![](../.gitbook/assets/_2019-05-23__12.22.33.png)
-
 실제로 은행 어플에서 확인해보니 수수료를 제외한 금액이 입금 된 것을 확인할 수 있었습니다.
-
-![](../.gitbook/assets/kakaotalk_photo_2019-05-23-10-55-59.png)
 
