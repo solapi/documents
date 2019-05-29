@@ -153,7 +153,7 @@ result를 console.log 로 값을 확인해봅니다.
 이 예제에서는 [express cookie](https://github.com/expressjs/cookie-parser)를 사용하도록 하겠습니다.
 
 ```text
-npm i --save cookie-parser
+$ npm i --save cookie-parser
 ```
 
 설치 후에 사용은 다음과 같이 합니다.
