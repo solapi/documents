@@ -1,7 +1,3 @@
----
-description: test
----
-
 # 솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기
 
 ### 앱 소개
