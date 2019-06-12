@@ -1,2 +1,0 @@
-# example-table.md
-

@@ -1,2 +1,0 @@
-# resultCode.md
-

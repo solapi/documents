@@ -1,2 +1,0 @@
-# scheduledDate.md
-
