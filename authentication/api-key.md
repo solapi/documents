@@ -71,5 +71,5 @@ Signature는 중복사용이 불가하며 15분 안에 전송되는 요청\(Requ
 
 메시지 API v4.0 부터 OAuth2 를 통한 인증을 제공합니다.
 
-{% page-ref page="oauth2.md" %}
+{% page-ref page="oauth2-3/oauth2.md" %}
 

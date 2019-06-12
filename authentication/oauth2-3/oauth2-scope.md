@@ -1,4 +1,4 @@
-# OAuth2 Scope 사용하기
+# 권한\(Scope\) 사용하기
 
 ## Index
 

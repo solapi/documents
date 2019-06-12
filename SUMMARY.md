@@ -6,11 +6,13 @@
 
 * [Overview](authentication/overview.md)
 * [API Key 인증 방식](authentication/api-key.md)
-* [OAuth2 시작하기](authentication/oauth2.md)
-* [OAuth2 Scope 사용하기](authentication/oauth2-scope.md)
-* [OAuth2 권한 철회하기](authentication/oauth2-1.md)
-* [OAuth2 Client 관리하기](authentication/oauth2-client.md)
-* [OAuth2 API References](authentication/oauth2-api-references.md)
+* [OAuth2 인증 방식](authentication/oauth2-3/README.md)
+  * [시작하기](authentication/oauth2-3/oauth2.md)
+  * [권한\(Scope\) 사용하기](authentication/oauth2-3/oauth2-scope.md)
+  * [권한\(Scope\) 철회하기](authentication/oauth2-3/oauth2-1.md)
+  * [Client 관리하기](authentication/oauth2-3/oauth2-client.md)
+  * [OAuth2 API References](authentication/oauth2-3/oauth2-api-references.md)
+  * [권한\(Scope\) 목록](authentication/oauth2-3/scope.md)
 
 ## Development Kits
 
