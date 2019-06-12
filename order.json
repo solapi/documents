@@ -1,9 +1,22 @@
 {
   "README.md": {},
-  "authentication": {},
+  "authentication": {
+    "overview": true,
+    "api-key": true
+  },
   "development-kits": {},
   "app-store": {},
-  "api-reference": {},
+  "api-reference": {
+    "overview": true,
+    "message-api-v4": {},
+    "image-api": {},
+    "cash-api": {},
+    "kakao": {},
+    "pricing-api": {},
+    "senderid-api": {},
+    "message-status-codes": true,
+    "terminology": true
+  },
   "assets": false,
   "images": false,
   "package.json": false,
