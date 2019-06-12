@@ -1,0 +1,2 @@
+# messageLogType.md
+
