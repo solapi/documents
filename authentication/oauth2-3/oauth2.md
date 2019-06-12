@@ -8,7 +8,7 @@ OAuth 2는 개발자가 새롭게 만든 어플리케이션 이나 웹 사이트
 
 실제로 솔라피의 OAuth2를 사용하여 웹 어플리케이션을 개발한 예가 있으니 아래 링크를 참고하시면 보다 쉽게 OAuth2를 적용하실 수 있으실 겁니다.
 
-- [OAuth2를 이용한 웹 어플리케이션 제작 바로가기](https://medium.com/nurigo/%EC%86%94%EB%9D%BC%ED%94%BC-oauth2-%EC%97%B0%EB%8F%99-node-express%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-ca02dc2f4231)
+* [OAuth2를 이용한 웹 어플리케이션 제작 바로가기](https://medium.com/nurigo/솔라피-oauth2-연동-node-express를-이용하여-앱-만들기-ca02dc2f4231)
 
 ## 인증 흐름 알아보기
 
@@ -26,66 +26,53 @@ GET https://api.solapi.com/oauth2/v1/authorize
 
 필요한 GET 쿼리 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션 항목들이 있습니다.
 
+| Name | Type | Required | Desc |
+| :--- | :--- | :--- | :--- |
+
+
+| client\_id | String | true | 앱 생성시 발급받은 Client Id |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Name</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Desc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">client_id</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
-        Id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">response_type</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">
+      <th style="text-align:left">response_type</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">true</th>
+      <th style="text-align:left">
         <p>Access Token &#xAC12;&#xC744; &#xBC14;&#xB85C; &#xBC1C;&#xAE09;&#xBC1B;&#xC744;
           &#xC218; &#xC788;&#xB294; &apos;token&apos;</p>
         <p>Authorization Code &#xAC12;&#xC744; &#xBC1C;&#xAE09;&#xBC1B;&#xC744; &#xC218;
           &#xC788;&#xB294; &apos;code&apos;</p>
         <p>&#xAC12;&#xC774; &#xC788;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">scope</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">
+      <th style="text-align:left">scope</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">true</th>
+      <th style="text-align:left">
         <p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC81C;&#xACF5;&#xBC1B;&#xC744;
           <a
           href="https://app.gitbook.com/@nurigo/s/solapi/~/edit/drafts/-Lh8IzjauZYlQiuTgfb3/authentication/oauth2-3/scope">&#xAD8C;&#xD55C;&#xBAA9;&#xB85D;</a>
         </p>
         <p>ex) &apos;users:read user:write&apos;</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">redirect_uri</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xB85C;&#xADF8;&#xC778; &#xBC0F; &#xAD8C;&#xD55C;
-        &#xC2B9;&#xC778; &#xD6C4; response_type&#xAC12;&#xC5D0; &#xB530;&#xB77C;&#xC11C;
-        &#xBC1B;&#xC740; Authorization Code&#xB098; Access Token&#xAC12;&#xC744;
-        &#xBC1B;&#xC744; Callback URI</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">state</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">OAuth2 &#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xC694;&#xCCAD;&#xC5D0;
-        &#xB300;&#xD558;&#xC5EC; &#xC54C;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xB294;
-        &#xB79C;&#xB364;</td>
-    </tr>
-  </tbody>
-</table>정상적으로 사용자의 로그인 및 권한승인이 끝났다면, 아래와 같은 JSON 형식의  데이터를 `redirect_uri` 에서 받을 수 있습니다.
+  </thead>
+  <tbody></tbody>
+</table>| redirect\_uri | String | true | 사용자 로그인 및 권한 승인 후 response\_type값에 따라서 받은 Authorization Code나 Access Token값을 받을 Callback URI |
+| :--- | :--- | :--- | :--- |
+
+
+| state | String | true | OAuth2 서버에서 해당 요청에 대하여 알아볼 수 있는 랜덤 |
+| :--- | :--- | :--- | :--- |
+
 
 ```text
 // rseponse_type이 code일 경우
@@ -116,91 +103,102 @@ POST https://api.solapi.com/oauth2/v1/access_token
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
 
+| Name | Type | Required | Desc |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Name</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Desc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">grant_type</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">
+      <th style="text-align:left">grant_type</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">true</th>
+      <th style="text-align:left">
         <p>&apos;authorization_code&apos;, &apos;refresh_token&apos; &#xAC12;&#xC774;
           &#xC788;&#xC73C;&#xBA70;</p>
         <p>&#xD1A0;&#xD070;&#xC744; &#xBC1C;&#xAE09;&#xBC1B;&#xC744; &#xBC29;&#xBC95;&#xC5D0;
           &#xB9DE;&#xAC8C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">code</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">false</td>
-      <td style="text-align:left">
+      <th style="text-align:left">code</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">false</th>
+      <th style="text-align:left">
         <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
           &#xAC12;&#xC73C;&#xB85C;</p>
         <p>&apos;Step 1&apos;&#xC5D0;&#xC11C; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; &#xAC12;&#xC744;
           &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">client_id</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">false</td>
-      <td style="text-align:left">
+      <th style="text-align:left">client_id</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">false</th>
+      <th style="text-align:left">
         <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
           &#xAC12;&#xC73C;&#xB85C;</p>
         <p>&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
           Id</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">client_secret</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">false</td>
-      <td style="text-align:left">
+      <th style="text-align:left">client_secret</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">false</th>
+      <th style="text-align:left">
         <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
           &#xAC12;&#xC73C;&#xB85C;</p>
         <p>&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
           Secret</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">redirect_uri</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">false</td>
-      <td style="text-align:left">
+      <th style="text-align:left">redirect_uri</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">false</th>
+      <th style="text-align:left">
         <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
           &#xAC12;&#xC73C;&#xB85C;</p>
         <p>&apos;authorization_cde&apos;&#xBC1C;&#xAE09; &#xC2DC; &#xC785;&#xB825;&#xD558;&#xC600;&#xB358;
           redirect_uri&#xB97C;</p>
         <p>&#xADF8;&#xB300;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">refresh_token</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">false</td>
-      <td style="text-align:left">
+      <th style="text-align:left">refresh_token</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">false</th>
+      <th style="text-align:left">
         <p>grant_type&#xC774; &apos;refresh_token&apos;&#xC77C; &#xACBD;&#xC6B0;
           &#xBC1B;&#xB294; &#xAC12;&#xC73C;&#xB85C;</p>
         <p>&#xCC98;&#xC74C;&#xC5D0; Access Token &#xBC1C;&#xAE09; &#xC2DC; &#xAC12;&#xC744;
           &#xD655;&#xC778; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
+  </thead>
+  <tbody></tbody>
 </table>```text
-{
-    access_token: 'eyGciOiNiIsIkpXVCJ9.eyJ0NTY3ODkwIiwibWRtaW4iOnRydWV9.TJVHrcEfxjoYZgeFONFh7HgQ',
-    refresh_token: 'ciOiJIUzI1NkpXVCJ9.dWIiOiIxMjM0Y3ODIiwibmFtZSIkpv4gR.HrHDcEfxjoYZgeFONFh7HgQ'
-}
-```
-
 발급받은 엑세스 토큰으로 이제 솔라피의 API를 호출할 수 있으며, 해당 사용자가 승인한 권한에 따라 호출 가능한 API가 달라지게 됩니다.
 
 또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
@@ -253,7 +251,7 @@ curl -X POST https://api.solapi.com/oauth2/v1/access_token
 사용자 인증시 입력하는 `state` 는 [CSRF 공격](https://en.wikipedia.org/wiki/Cross-site_request_forgery)에 대해 방지할수 있습니다.  
 `state` 값은 인증과정에서 `nonce` 역할을 합니다.  
 `nonce` 란 어떤 요청 중에 일시적인 `key` 역할을 하는 단어를 말합니다.  
-아래의 이미지에서는 `state`값에 대한 역할을 보여주고 있습니다. 
+아래의 이미지에서는 `state`값에 대한 역할을 보여주고 있습니다.
 
 ![state&#xC5ED;&#xD560;](../../.gitbook/assets/state-flow.png)
 
