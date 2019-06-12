@@ -14,7 +14,7 @@ OAuth 2는 개발자가 새롭게 만든 어플리케이션 이나 웹 사이트
 
 개발하신 웹 사이트 또는 어플리케이션 에서 솔라피 로그인을 호출하기 위해 아래의 링크와 쿼리 파라미터 값을 추가하여 호출해주셔야 합니다.
 
-보다 자세한 API References는 OAuth2 API Document 를 참고 부탁드립니다.
+보다 자세한 API References는 [OAuth2 API Document](https://docs.solapi.com/rest-api-reference/oauth2-api) 를 참고 부탁드립니다.
 
 ```text
 GET https://api.solapi.com/oauth2/v1/authorize

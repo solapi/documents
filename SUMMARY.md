@@ -8,7 +8,6 @@
 * [API Key 인증 방식](authentication/api-key.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
-  * [OAuth2 API References](authentication/oauth2-3/oauth2-api-references.md)
   * [권한\(Scope\) 목록](authentication/oauth2-3/scope.md)
 
 ## Development Kits
