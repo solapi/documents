@@ -13,7 +13,7 @@
     "cash-api": {},
     "kakao": {},
     "pricing-api": {},
-    "senderid-api": {},
+    "senderid": {},
     "message-status-codes.md": true,
     "terminology.md": true
   },
