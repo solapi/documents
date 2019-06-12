@@ -3,7 +3,7 @@
   "authentication": {},
   "development-kits": {},
   "app-store": {},
-  "rest-api-reference": {},
+  "api-reference": {},
   "assets": false,
   "images": false,
   "package.json": false,
