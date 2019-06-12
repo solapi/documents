@@ -18,7 +18,6 @@
 
 ## App Store
 
-* [Profit Sharing](app-store/profit-sharing.md)
 * [솔라피 앱 스토어에 내가 만든 앱 등록하기](app-store/undefined.md)
 * [솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기](app-store/oauth2-node-and-express.md)
 
@@ -55,7 +54,7 @@
 * [Pricing API](rest-api-reference/pricing-api/README.md)
   * [단가 조회](rest-api-reference/pricing-api/undefined.md)
   * [해외 단가 조회](rest-api-reference/pricing-api/undefined-1.md)
-* [SenderId](rest-api-reference/senderid/README.md)
+* [SenderId API](rest-api-reference/senderid/README.md)
   * [발신번호 생성](rest-api-reference/senderid/undefined.md)
   * [증빙자료 인증 요청](rest-api-reference/senderid/undefined-1.md)
   * [발신번호 인증](rest-api-reference/senderid/undefined-2.md)
@@ -71,5 +70,4 @@
   * [문서 삭제](rest-api-reference/senderid/undefined-12.md)
 * [Terminology](rest-api-reference/terminology.md)
 * [Message Status Codes](rest-api-reference/message-status-codes.md)
-* [Errors](rest-api-reference/errors.md)
 
