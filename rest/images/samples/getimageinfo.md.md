@@ -1,2 +1,0 @@
-# getImageInfo.md
-

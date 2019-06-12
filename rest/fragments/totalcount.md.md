@@ -1,2 +1,0 @@
-# totalCount.md
-

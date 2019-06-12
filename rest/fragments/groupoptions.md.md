@@ -1,2 +1,0 @@
-# groupOptions.md
-

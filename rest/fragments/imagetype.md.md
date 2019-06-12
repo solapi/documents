@@ -1,2 +1,0 @@
-# imageType.md
-

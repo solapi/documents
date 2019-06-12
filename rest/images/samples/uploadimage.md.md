@@ -1,2 +1,0 @@
-# uploadImage.md
-

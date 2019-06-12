@@ -1,2 +1,0 @@
-# deleteMessageReusltList.md
-
