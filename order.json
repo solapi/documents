@@ -1,21 +1,21 @@
 {
-  "README.md": {},
+  "README.md": true,
   "authentication": {
-    "overview": true,
-    "api-key": true
+    "overview.md": true,
+    "api-key": {}
   },
   "development-kits": {},
   "app-store": {},
   "api-reference": {
-    "overview": true,
+    "overview.md": true,
     "message-api-v4": {},
     "image-api": {},
     "cash-api": {},
     "kakao": {},
     "pricing-api": {},
     "senderid-api": {},
-    "message-status-codes": true,
-    "terminology": true
+    "message-status-codes.md": true,
+    "terminology.md": true
   },
   "assets": false,
   "images": false,
