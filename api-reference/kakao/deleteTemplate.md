@@ -23,12 +23,12 @@ DELETE https://api.solapi.com/kakao/v1/templates/:templateId
 {
     "status": "DELETED",
     "accountId": "12925149",
-    "templateId": "KA01TP1906120709591341rexL5GUGmq",
+    "templateId": "KA01TP190612085958165E3qE8qf6U66",
     "name": "A0",
-    "pfId": "PF01ID190612070959128JbQ7kvmhEJ0",
+    "pfId": "PF01ID1906120859581603NFBZJ8Uvgn",
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-06-12T06:09:59.493Z",
-    "dateUpdated": "2019-06-12T06:09:59.493Z",
+    "dateCreated": "2019-06-12T07:59:58.526Z",
+    "dateUpdated": "2019-06-12T07:59:58.526Z",
     "buttons": [],
     "comments": []
 }
@@ -49,7 +49,7 @@ var options = {
   },
   method: 'DELETE',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66'
 };
 
 request(options, function(error, response, body) {
@@ -69,7 +69,7 @@ var options = {
   },
   method: 'DELETE',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66'
 };
 
 $.ajax(options).done(function(response) {
@@ -82,7 +82,7 @@ $.ajax(options).done(function(response) {
 {% tab title="PHP" %}
 
 ```php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66";
 $data = array();
 
 $options = array(
@@ -105,7 +105,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 
 response = requests.delete(url, headers=headers)
@@ -120,7 +120,7 @@ print(response.text)
 ```curl
 curl -X DELETE \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq
+	http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66
 ```
 {% endtab %}
 
@@ -131,7 +131,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 http = Net::HTTP.new(uri.host, uri.port)
@@ -157,7 +157,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66"
 
   req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
@@ -190,7 +190,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120709591341rexL5GUGmq";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP190612085958165E3qE8qf6U66";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

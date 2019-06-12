@@ -44,12 +44,12 @@ POST https://api.solapi.com/kakao/v1/plus-friends
 
 ```json
 {
-    "pfId": "KA01PF190612070959947NEcjslrM6x1",
+    "pfId": "KA01PF190612085958950Q8xMsd2Ovug",
     "searchId": "NURIGO",
     "accountId": "19301859371938",
     "phoneNumber": "01055555555",
-    "dateCreated": "2019-06-12T06:09:59.951Z",
-    "dateUpdated": "2019-06-12T06:09:59.951Z"
+    "dateCreated": "2019-06-12T07:59:58.953Z",
+    "dateUpdated": "2019-06-12T07:59:58.953Z"
 }
 ```
 

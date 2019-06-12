@@ -39,40 +39,40 @@ GET https://api.solapi.com/kakao/v1/plus-friends
             "searchId": "LG",
             "accountId": "19301859371111",
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-06-12T06:09:59.733Z",
-            "dateUpdated": "2019-06-12T06:09:59.733Z"
+            "dateCreated": "2019-06-12T07:59:58.749Z",
+            "dateUpdated": "2019-06-12T07:59:58.749Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
             "searchId": "AMD",
             "accountId": "19301859371111",
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-06-12T06:09:59.736Z",
-            "dateUpdated": "2019-06-12T06:09:59.736Z"
+            "dateCreated": "2019-06-12T07:59:58.752Z",
+            "dateUpdated": "2019-06-12T07:59:58.752Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
             "searchId": "SAMSUMG",
             "accountId": "19301859371111",
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-06-12T06:09:59.731Z",
-            "dateUpdated": "2019-06-12T06:09:59.731Z"
+            "dateCreated": "2019-06-12T07:59:58.747Z",
+            "dateUpdated": "2019-06-12T07:59:58.747Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
             "searchId": "NURIGO",
             "accountId": "19301859371111",
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-06-12T06:09:59.729Z",
-            "dateUpdated": "2019-06-12T06:09:59.729Z"
+            "dateCreated": "2019-06-12T07:59:58.746Z",
+            "dateUpdated": "2019-06-12T07:59:58.746Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
             "searchId": "INTEL",
             "accountId": "19301859371111",
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-06-12T06:09:59.734Z",
-            "dateUpdated": "2019-06-12T06:09:59.734Z"
+            "dateCreated": "2019-06-12T07:59:58.750Z",
+            "dateUpdated": "2019-06-12T07:59:58.750Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",
