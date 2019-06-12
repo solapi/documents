@@ -1,0 +1,12 @@
+{
+  "README.md": {},
+  "authentication": {},
+  "development-kits": {},
+  "app-store": {},
+  "rest-api-reference": {},
+  "assets": false,
+  "images": false,
+  "package.json": false,
+  "package-lock.json": false,
+  "node_modules": false
+}
