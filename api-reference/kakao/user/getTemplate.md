@@ -23,12 +23,12 @@ GET https://api.solapi.com/kakao/v1/templates/:templateId
 {
     "status": "APPROVED",
     "accountId": "12925149",
-    "templateId": "TP01ID190612073327095eqaxORzXQtS",
+    "templateId": "TP01ID190612075323935Foukc9r7dMX",
     "name": "A10",
-    "pfId": "PF01ID190612073327095TjZfKYGMNuL",
+    "pfId": "PF01ID1906120753239355OmV8Q8QBHf",
     "content": "testMessage",
-    "dateCreated": "2019-06-12T06:33:27.095Z",
-    "dateUpdated": "2019-06-12T06:33:27.095Z",
+    "dateCreated": "2019-06-12T06:53:23.936Z",
+    "dateUpdated": "2019-06-12T06:53:23.936Z",
     "buttons": [],
     "comments": []
 }
@@ -49,7 +49,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX'
 };
 
 request(options, function(error, response, body) {
@@ -69,7 +69,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX'
 };
 
 $.ajax(options).done(function(response) {
@@ -82,7 +82,7 @@ $.ajax(options).done(function(response) {
 {% tab title="PHP" %}
 
 ```php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX";
 $data = array();
 
 $options = array(
@@ -105,7 +105,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 
 response = requests.get(url, headers=headers)
@@ -120,7 +120,7 @@ print(response.text)
 ```curl
 curl -X GET \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS
+	http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX
 ```
 {% endtab %}
 
@@ -131,7 +131,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 http = Net::HTTP.new(uri.host, uri.port)
@@ -157,7 +157,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -190,7 +190,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327095eqaxORzXQtS";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323935Foukc9r7dMX";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

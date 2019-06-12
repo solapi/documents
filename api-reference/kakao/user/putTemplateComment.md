@@ -37,17 +37,17 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/comment
 {
     "status": "REJECTED",
     "accountId": "12925149",
-    "templateId": "TP01ID190612073327111eqMgnT6fdQN",
+    "templateId": "TP01ID190612075323947zNsSsXKUOj8",
     "name": "A10",
-    "pfId": "PF01ID19061207332711150E5fcALzIo",
+    "pfId": "PF01ID190612075323946LgEOB5OHSlt",
     "content": "testMessage",
-    "dateCreated": "2019-06-12T06:33:27.111Z",
-    "dateUpdated": "2019-06-12T06:33:28.492Z",
+    "dateCreated": "2019-06-12T06:53:23.947Z",
+    "dateUpdated": "2019-06-12T06:53:25.084Z",
     "buttons": [],
     "comments": [
         {
             "isAdmin": false,
-            "dateCreated": "2019-06-12T06:33:28.492Z",
+            "dateCreated": "2019-06-12T06:53:25.085Z",
             "memberId": "18010100001000",
             "content": "템플릿 등록 문의드립니다."
         }
@@ -73,7 +73,7 @@ var options = {
   },
   method: 'POST',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment'
 };
 
 request(options, function(error, response, body) {
@@ -96,7 +96,7 @@ var options = {
   },
   method: 'POST',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment'
 };
 
 $.ajax(options).done(function(response) {
@@ -109,7 +109,7 @@ $.ajax(options).done(function(response) {
 {% tab title="PHP" %}
 
 ```php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment";
 $data = array("comment" => "템플릿 등록 문의드립니다.");
 
 $options = array(
@@ -132,7 +132,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 data = {"comment":"템플릿 등록 문의드립니다."}
 
@@ -149,7 +149,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
 	-d comment=템플릿 등록 문의드립니다. \
-	http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment
+	http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment
 ```
 {% endtab %}
 
@@ -160,7 +160,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 data = {"comment":"템플릿 등록 문의드립니다."}
@@ -188,7 +188,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment"
   data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
@@ -222,7 +222,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612073327111eqMgnT6fdQN/comment";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612075323947zNsSsXKUOj8/comment";
     String parameters = "comment=템플릿 등록 문의드립니다.";
 
     URL url = new URL(targetUrl);
