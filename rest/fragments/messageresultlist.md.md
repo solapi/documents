@@ -1,2 +1,0 @@
-# messageResultList.md
-
