@@ -24,8 +24,8 @@ GET https://api.solapi.com/kakao/v1/plus-friends/:pfId
     "pfId": "KA01PF190227072057634pRBhbpAw1w1",
     "searchId": "NURIGO",
     "accountId": "19301859371111",
-    "dateCreated": "2019-06-12T06:33:27.743Z",
-    "dateUpdated": "2019-06-12T06:33:27.743Z"
+    "dateCreated": "2019-06-12T07:09:36.982Z",
+    "dateUpdated": "2019-06-12T07:09:36.982Z"
 }
 ```
 

@@ -62,12 +62,12 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 {
     "status": "PENDING",
     "accountId": "12925149",
-    "templateId": "KA01TP190612073327114yaBDU387OxO",
+    "templateId": "KA01TP1906120809361994Vv7M9rneAU",
     "name": "A0",
-    "pfId": "PF01ID190612073327114JcCbhYjb8LH",
+    "pfId": "PF01ID190612080936199RAUEt2hkbKO",
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-06-12T06:33:28.521Z",
-    "dateUpdated": "2019-06-12T06:33:28.541Z",
+    "dateCreated": "2019-06-12T07:09:37.771Z",
+    "dateUpdated": "2019-06-12T07:09:37.790Z",
     "buttons": [],
     "comments": []
 }
@@ -91,7 +91,7 @@ var options = {
   },
   method: 'PUT',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU'
 };
 
 request(options, function(error, response, body) {
@@ -114,7 +114,7 @@ var options = {
   },
   method: 'PUT',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU'
 };
 
 $.ajax(options).done(function(response) {
@@ -127,7 +127,7 @@ $.ajax(options).done(function(response) {
 {% tab title="PHP" %}
 
 ```php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU";
 $data = array("content" => "#{홍길동}님 회원가입을 환영 합니다.");
 
 $options = array(
@@ -150,7 +150,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 data = {"content":"#{홍길동}님 회원가입을 환영 합니다."}
 
@@ -167,7 +167,7 @@ print(response.text)
 curl -X PUT \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
 	-d content=#{홍길동}님 회원가입을 환영 합니다. \
-	http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO
+	http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU
 ```
 {% endtab %}
 
@@ -178,7 +178,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 data = {"content":"#{홍길동}님 회원가입을 환영 합니다."}
@@ -206,7 +206,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU"
   data := strings.NewReader(`{"content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("PUT", uri, data)
@@ -240,7 +240,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP190612073327114yaBDU387OxO";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP1906120809361994Vv7M9rneAU";
     String parameters = "content=#{홍길동}님 회원가입을 환영 합니다.";
 
     URL url = new URL(targetUrl);
