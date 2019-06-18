@@ -1,53 +1,63 @@
-# 친구톡 이미지 목록 조회
+# 템플릿 댓글 추가
 
-#### Request
-```
-GET https://api.solapi.com/kakao/v1/images
+## Request
+
+```text
+POST https://api.solapi.com/kakao/v1/templates/:templateId/comment
 ```
 
 **Authorization 인증 필요**
 
-친구톡 이미지 목록을 조회합니다.
+템플릿에 댓글을 추가합니다.
 
-#### Query Params
-| Name | Type | Required | Allowed Operator |Description |
-| :--- | :--: | :------: | :--------------: |:---------- |
-| imageId | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 이미지 아이디 |
-| imageUrl | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 이미지 주소 |
-| title | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 제목 |
-| startKey | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | GT, LT, LTE, GTE, NE, LIKE | 한 페이지에 불러옥 목록 개수 |
-| dateCreated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
-| dateUpdated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
-
----
-
-#### Sample Request
-
-```json
-{}
-```
-
-#### Sample Response
-
-```json
+```javascript
 {
-    "imageId": "KA01IM190612085958686I3pEZkzgUwh",
-    "accountId": "19020720648888",
-    "title": "012345678901234567890123456789012345678901234567890123456789",
-    "link": "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234",
-    "imageUrl": "http://mud-kage.kakao.com/dn/gtM0a/btqtfj5pQ92/meXjtBKhjbdKSh2aK8Wu3k/img_l.png",
-    "dateCreated": "2019-06-12T07:59:58.689Z",
-    "dateUpdated": "2019-06-12T07:59:58.689Z"
+    "comment": "string"
 }
 ```
 
-#### Sample Code
+## Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| comment | `string` | O | 템플릿에 다는 댓글 |
+
+## Sample Request
+
+```javascript
+{
+    "comment": "템플릿 등록 문의드립니다."
+}
+```
+
+## Sample Response
+
+```javascript
+{
+    "status": "REJECTED",
+    "accountId": "12925149",
+    "templateId": "TP01ID190612085958183XzDRn3s7Cth",
+    "name": "A10",
+    "pfId": "PF01ID190612085958183vCMyw4euwOn",
+    "content": "testMessage",
+    "dateCreated": "2019-06-12T07:59:58.183Z",
+    "dateUpdated": "2019-06-12T07:59:59.290Z",
+    "buttons": [],
+    "comments": [
+        {
+            "isAdmin": false,
+            "dateCreated": "2019-06-12T07:59:59.291Z",
+            "memberId": "18010100001000",
+            "content": "템플릿 등록 문의드립니다."
+        }
+    ]
+}
+```
+
+## Sample Code
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -56,50 +66,44 @@ var options = {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
   body: {
-    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...',
-    title: '012345678901234567890123456...',
-    link: '012345678901234567890123456...'
+    comment: '템플릿 등록 문의드립니다.'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/kakao/v1/images'
+  url:
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
   body: {
-    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...',
-    title: '012345678901234567890123456...',
-    link: '012345678901234567890123456...'
+    comment: '템플릿 등록 문의드립니다.'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/kakao/v1/images'
+  url:
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
-$url = "http://api.solapi.com/kakao/v1/images";
-$data = array("image" => "iVBORw0KGgoAAAANSUhEUgAAAyA...", "title" => "012345678901234567890123456...", "link" => "012345678901234567890123456...");
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment";
+$data = array("comment" => "템플릿 등록 문의드립니다.");
 
 $options = array(
     'http' => array(
@@ -112,49 +116,42 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/images"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
-data = {"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}
+data = {"comment":"템플릿 등록 문의드립니다."}
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	-d image=iVBORw0KGgoAAAANSUhEUgAAAyA... \
-	-d title=012345678901234567890123456... \
-	-d link=012345678901234567890123456... \
-	http://api.solapi.com/kakao/v1/images
+    -H 'Authorization: Bearer eyJhbGciOiJI...' \
+    -d comment=템플릿 등록 문의드립니다. \
+    http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/images")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
-data = {"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}
+data = {"comment":"템플릿 등록 문의드립니다."}
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
 request.body = data.to_json
@@ -162,12 +159,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -179,8 +174,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/images"
-  data := strings.NewReader(`{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}`)
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment"
+  data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -196,12 +191,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -213,8 +206,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/images";
-    String parameters = "image=iVBORw0KGgoAAAANSUhEUgAAAyA...&title=012345678901234567890123456...&link=012345678901234567890123456...";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958183XzDRn3s7Cth/comment";
+    String parameters = "comment=템플릿 등록 문의드립니다.";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -242,11 +235,7 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 

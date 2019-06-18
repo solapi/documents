@@ -138,11 +138,7 @@ rappId, osPlatform, sdkVersion을 담을 수 있는 개체 하단의 설명을 �
     </tr>
   </thead>
   <tbody></tbody>
-</table>| autoTypeDetect | Boolean | \[optional\] 기본 값은 `false` 이며, `true` 를 하게 되면 입력값에 맞는 적절한 `type` 이 설정됩니다. |
-| :--- | :--- | :--- |
-
-
-| Key | Type | Value |
+</table>| Key | Type | Value |
 | :--- | :--- | :--- |
 | pfId | String | \[required\] 플러스친구 연동 아이디 |
 | templateId | String | \[optional\] 템플릿 아이디 \(알림톡 발송시 필수\) |
@@ -180,11 +176,7 @@ rappId, osPlatform, sdkVersion을 담을 수 있는 개체 하단의 설명을 �
     </tr>
   </thead>
   <tbody></tbody>
-</table>| osPlatform | String | \[optional\] 발송 운영체제 환경 |
-| :--- | :--- | :--- |
-
-
-| sdkVersion | String | \[optional\] SDK를 이용하여 발송하 경우, 해당 SDK의 정보 및 버전 |
+</table>| sdkVersion | String | \[optional\] SDK를 이용하여 발송하 경우, 해당 SDK의 정보 및 버전 |
 | :--- | :--- | :--- |
 
 

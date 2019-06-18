@@ -1,7 +1,8 @@
 # 템플릿 목록 조회
 
-#### Request
-```
+## Request
+
+```text
 GET https://api.solapi.com/kakao/v1/templates
 ```
 
@@ -9,9 +10,10 @@ GET https://api.solapi.com/kakao/v1/templates
 
 템플릿의 목록을 조회합니다.
 
-#### Query Params
-| Name | Type | Required | Allowed Operator |Description |
-| :--- | :--: | :------: | :--------------: |:---------- |
+## Query Params
+
+| Name | Type | Required | Allowed Operator | Description |
+| :--- | :---: | :---: | :---: | :--- |
 | name | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 이름 |
 | pfId | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 플러스 친구 고유 아이디 |
 | templateId | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 템플릿 고유 아이디 |
@@ -21,17 +23,15 @@ GET https://api.solapi.com/kakao/v1/templates
 | dateCreated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
 | dateUpdated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
 
----
+## Sample Request
 
-#### Sample Request
-
-```json
+```javascript
 {}
 ```
 
-#### Sample Response
+## Sample Response
 
-```json
+```javascript
 {
     "limit": 20,
     "templateList": [
@@ -281,12 +281,10 @@ GET https://api.solapi.com/kakao/v1/templates
 }
 ```
 
-#### Sample Code
+## Sample Code
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -302,12 +300,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
@@ -320,12 +316,10 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $url = "http://api.solapi.com/kakao/v1/templates";
 $data = array();
@@ -341,12 +335,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -356,21 +348,18 @@ headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 curl -X GET \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/kakao/v1/templates
+    -H 'Authorization: Bearer eyJhbGciOiJI...' \
+    http://api.solapi.com/kakao/v1/templates
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -385,12 +374,10 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -418,12 +405,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -463,11 +448,7 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 

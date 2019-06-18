@@ -66,11 +66,7 @@ GET https://api.solapi.com/oauth2/v1/authorize
     </tr>
   </thead>
   <tbody></tbody>
-</table>| redirect\_uri | String | true | 사용자 로그인 및 권한 승인 후 response\_type값에 따라서 받은 Authorization Code나 Access Token값을 받을 Callback URI |
-| :--- | :--- | :--- | :--- |
-
-
-| state | String | true | OAuth2 서버에서 해당 요청에 대하여 알아볼 수 있는 랜덤 |
+</table>| state | String | true | OAuth2 서버에서 해당 요청에 대하여 알아볼 수 있는 랜덤 |
 | :--- | :--- | :--- | :--- |
 
 
@@ -198,10 +194,7 @@ POST https://api.solapi.com/oauth2/v1/access_token
     </tr>
   </thead>
   <tbody></tbody>
-</table>```text
-발급받은 엑세스 토큰으로 이제 솔라피의 API를 호출할 수 있으며, 해당 사용자가 승인한 권한에 따라 호출 가능한 API가 달라지게 됩니다.
-
-또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
+</table>또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
 Refresh Token의 경우 만료기한이 없으며, 가장 처음 엑세스 토큰을 발급받을 때만 볼 수 있으니 이 점 유의 부탁드립니다.
 
 ## Step 3. 엑세스 토큰을 사용하여 API 접근하기

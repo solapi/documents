@@ -137,11 +137,7 @@ message 객체를 담고 있는 array 형식으로 입력합니다.message 객�
     </tr>
   </thead>
   <tbody></tbody>
-</table>| autoTypeDetect | Boolean | \[optional\] 기본 값은 `false` 이며, `true` 를 하게 되면 입력값에 맞는 적절한 `type` 이 설정됩니다. |
-| :--- | :--- | :--- |
-
-
-| Key | Type | Value |
+</table>| Key | Type | Value |
 | :--- | :--- | :--- |
 | pfId | String | \[required\] 플러스친구 연동 아이디 |
 | templateId | String | \[optional\] 템플릿 아이디 \(알림톡 발송시 필수\) |

@@ -1,7 +1,8 @@
 # 친구톡 이미지 업로드
 
-#### Request
-```
+## Request
+
+```text
 POST https://api.solapi.com/kakao/v1/images
 ```
 
@@ -9,7 +10,7 @@ POST https://api.solapi.com/kakao/v1/images
 
 친구톡 이미지를 업로드합니다.
 
-```json
+```javascript
 {
     "image": "string",
     "title": "string",
@@ -17,19 +18,17 @@ POST https://api.solapi.com/kakao/v1/images
 }
 ```
 
-#### Body Params
+## Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
+| :--- | :---: | :---: | :--- |
 | image | `string` | O | 이미지 |
 | title | `string` | O | 제목 |
 | link | `string` | O | 주소 |
 
+## Sample Request
 
----
-
-#### Sample Request
-
-```json
+```javascript
 {
     "image": "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",
     "title": "012345678901234567890123456789012345678901234567890123456789",
@@ -37,9 +36,9 @@ POST https://api.solapi.com/kakao/v1/images
 }
 ```
 
-#### Sample Response
+## Sample Response
 
-```json
+```javascript
 {
     "imageId": "KA01IM19061208595891998YPdfWg4Bc",
     "accountId": "19020720648888",
@@ -51,12 +50,10 @@ POST https://api.solapi.com/kakao/v1/images
 }
 ```
 
-#### Sample Code
+## Sample Code
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -77,12 +74,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
@@ -100,12 +95,10 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $url = "http://api.solapi.com/kakao/v1/images";
 $data = array("image" => "iVBORw0KGgoAAAANSUhEUgAAAyA...", "title" => "012345678901234567890123456...", "link" => "012345678901234567890123456...");
@@ -121,12 +114,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -137,24 +128,21 @@ data = {"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"0123456789012345678901
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	-d image=iVBORw0KGgoAAAANSUhEUgAAAyA... \
-	-d title=012345678901234567890123456... \
-	-d link=012345678901234567890123456... \
-	http://api.solapi.com/kakao/v1/images
+    -H 'Authorization: Bearer eyJhbGciOiJI...' \
+    -d image=iVBORw0KGgoAAAANSUhEUgAAAyA... \
+    -d title=012345678901234567890123456... \
+    -d link=012345678901234567890123456... \
+    http://api.solapi.com/kakao/v1/images
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -171,12 +159,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -205,12 +191,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -251,11 +235,7 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 

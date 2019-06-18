@@ -1,40 +1,42 @@
-# 플러스 친구 조회
+# 템플릿 정보 조회
 
-#### Request
-```
-GET https://api.solapi.com/kakao/v1/plus-friends/:pfId
+## Request
+
+```text
+GET https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
 **Authorization 인증 필요**
 
-플러스 친구의 아이디로 플러스 친구의 정보를 불러옵니다.
+템플릿의 아이디로 템플릿 정보를 조회합니다.
 
----
+## Sample Request
 
-#### Sample Request
-
-```json
+```javascript
 {}
 ```
 
-#### Sample Response
+## Sample Response
 
-```json
+```javascript
 {
-    "pfId": "KA01PF190227072057634pRBhbpAw1w1",
-    "searchId": "NURIGO",
-    "accountId": "19301859371111",
-    "dateCreated": "2019-06-12T07:59:58.724Z",
-    "dateUpdated": "2019-06-12T07:59:58.724Z"
+    "status": "APPROVED",
+    "accountId": "12925149",
+    "templateId": "TP01ID190612085958172bYBzUbXyRXq",
+    "name": "A10",
+    "pfId": "PF01ID190612085958172MdEkdmdqY8k",
+    "content": "testMessage",
+    "dateCreated": "2019-06-12T07:59:58.172Z",
+    "dateUpdated": "2019-06-12T07:59:58.172Z",
+    "buttons": [],
+    "comments": []
 }
 ```
 
-#### Sample Code
+## Sample Code
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -44,19 +46,17 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
@@ -64,20 +64,18 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
-$url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq";
 $data = array();
 
 $options = array(
@@ -91,42 +89,37 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq"
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 curl -X GET \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1
+    -H 'Authorization: Bearer eyJhbGciOiJI...' \
+    http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq")
 
 headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
 http = Net::HTTP.new(uri.host, uri.port)
@@ -135,12 +128,10 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -152,7 +143,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -168,12 +159,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -185,7 +174,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190612085958172bYBzUbXyRXq";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -213,11 +202,7 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
