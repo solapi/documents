@@ -35,7 +35,7 @@ ISO 8601 규격의 날짜와 시간을 입력합니다.
 **&lt;Signature&gt;**  
 &lt;Date Time&gt;과 &lt;Salt&gt;를 하나로 연결한 문자열을 데이터로 하고 API Secret을 Key로 만들어진 HMAC 해시코드
 
-Signature의 재사용을 막기위해서 입력된 date의 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
+Signature의 재사용을 막기위해서 입력된 &lt;Date Time&gt;의 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
 
 _**참고**_
 
