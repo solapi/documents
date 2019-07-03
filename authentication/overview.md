@@ -1,20 +1,50 @@
-# Overview
+# Authorization
 
-Message V4 에서는 [API Key 인증방식](api-key.md) 과 [OAuth2 인증방식](oauth2-3/oauth2.md) 두가지 인증방식을 제공합니다.
+### Authorization?
 
-HTTP 헤더에 Authorization 을 추가하여 인증정보를 서버에 전달 할 수 있습니다.
+SOLAPI에서는 공식 사이트\([https://solapi.com](https://solapi.com)\) 이외에도 사용자\(혹은 개발자\)가 서비스를 이용할 수 있도록 API를 제공하고 있습니다. 제공된 API를 사용하기 위해서는 자신이 누구인지\(SOLAPI 앱의 경우에는 앱 사용자를 대신해서\) 알리기 위해서 몇가지 인증방식을 사용하여 정보를 제공해야 됩니다. 그 과정을 Authorization이라고 합니다.
 
-아래는 API Key 인증방식과 OAuth2 인증방식의 예입니다.
+Authorization은 인증 방식을 통합적으로 나타내는 말입니다. SOLAPI에서는 API Key 인증방식과 OAuth2 인증방식, 총 두 가지 인증방식을 제공합니다.
 
-## API Key 인증방식
+### API 사용 조건
 
-```text
-Authorization : HMAC-SHA256 apiKey=NCSGX2TG8G6ONABL, date=2018-07-04T00:06:38Z, salt=jqskl8jj6d3xwj, signature=7ceff00b74f9c242e8593c3be851d3431a00739c61d53f45e23e38d5fa6aa70e
-```
+인증을 통해 SOLAPI가 제공하는 API를 사용하는 경우 서버는 5가지의 조건을 따지게 됩니다. 조건은 아래와 같습니다.
 
-## OAuth2 인증방식
+#### 계정 권한
 
-```text
-Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXCVJ9.eyJhY2NvdW40SWQiOiI0ODYiLCJjbGllbnTJZCI6IkNJRE5VUklHT0NPT0xTTVMiLCJzY29wZSI6InVzZXBzlnByb2ZpbGU6cmVhCZIsImlhdCI6MTUzDMU5NTYxMywiZXhwIjoxNTMwNjgyMDEzfQ.1BKMHPzyyw_Lt0Hh7GoeGh0pyz4muFRfLnTX6d2bB
-```
+> [APP STORE](https://solapi.com/apps) 앱 개발자에게만 해당되는 내용입니다.
+>
+> SOLAPI는 정식 서비스 이외에도 **문자서비스를 제공하는 앱\(이하 서드파티 앱\)**을 만들 수 있도록 설계되어 있습니다. 서드파티앱은 [누구나 개발이 가능](https://docs.solapi.com/app-store/oauth2-node-and-express)하며 개발자가 원한다면 [누구나 사용](https://docs.solapi.com/app-store/undefined)할 수 있습니다. 또한 개발자는 SOLAPI와 수익을 공유하게 됩니다.
+
+서드파티앱을 만들 경우 개발자는 앱 사용자로부터 사용자 대신 **사용자의 정보\(예: 캐쉬 정보\)**를 얻을 수 있는 권한이나 **계정을 활용\(예: 문자 보내기\)** 할 수 있는 권한을 요청할 수 있습니다. 각각의 API는 필요로 하는 권한이 있으며 앱 개발자가 사용자에게 **요청을 하지 않은 경우** 혹은 요청을 했지만 **허용하지 않은 경우** 사용이 불가합니다. 권한을 많이 요청할 수록 SOLAPI가 제공하는 많은 기능과 API들을 활용할 수 있지만 무분별한 권한 요청은 오히러 사용자가 앱 사용을 꺼려할 수 있습니다. 자세한 내용은 [권한 목록](https://docs.solapi.com/authentication/oauth2-3/scope)을 참고 해주세요.
+
+#### 회원 권한
+
+SOLAPI 서비스는 계정과 회원이 존재하며 계정은 마치 그룹과 같아 여러 회원들이 속해 있을 수 있습니다. 그리고 계정에 속한 회원들은 각자의 역할을 가지며 그 역할에 따라 계정에 영향을 미칠 수 있는 정도가 나뉩니다. 역할은 크게 `OWNER`, `DEVELOPER`, `MEMBER` 총 3개로 나뉩니다. 만약 사용자가 계정을 사용할 때 **충분한 권한이 없다면 사용이 제한**됩니다. 자세한 내용은 [회원 권한 목록](https://docs.solapi.com/authentication/undefined)을 참고 해주세요.
+
+#### 계정 상태
+
+SOLAPI의 계정은 여러 가지의 상태를 가질 수 있습니다. 상태는 `ACTIVE`, `INACTIVE`, `DELETED`가 존재합니다.
+
+**ACTIVE**: 사용 가능 상태. 대부분의 계정은 `ACTIVE` 상태를 유지합니다.
+
+**INACTIVE**: 휴면 계정 상태. 1년 동안 사용 기록이 없는 계정은 이용약관에 따라 휴면 상태가 됩니다. 이때는 계정에 속한 회원이 인증을 통해 다시 `ACTIVE` 상태로 돌릴 수 있습니다.
+
+**DELETED**: 삭제된 계정. 계정의 `OWNER` 혹은 관리자에 의해서 삭제된 계정입니다. 복구가 불가능하며 모든 서비스를 이용할 수 없습니다.
+
+#### 회원 상태
+
+계정에 속한 회원은 여러 가지의 상태를 가질 수 있습니다. 상태는 `UNVERIFIED`, `ACTIVE`, `INACTIVE`, `DELETED`가 존재합니다.
+
+**UNVERIFIED**: 아직 EMAIL 인증이 안된 회원입니다.
+
+**ACTIVE**: 사용 가능 상태. 대부분의 회원 `ACTIVE` 상태를 유지합니다.
+
+**INACTIVE**: 휴면 회원 상태. 1년 동안 사용 기록이 없는 회원은 이용약관에 따라 휴면 상태가 됩니다. 인증을 통해 다시 `ACTIVE` 상태로 돌릴 수 있습니다.
+
+**DELETED**: 삭제된 회원. 본인 혹은 관리자에 의해서 삭제된 계정입니다. 복구가 불가능하며 모든 서비스를 이용할 수 없습니다.
+
+#### 계정 인증
+
+회원은 계정을 사용하기 전 계정을 누가 사용하는지 증명해야 됩니다. 인증은 `개인 인증`, `사업자 인증` 총 2가지가 존재합니다. 계정 인증을 마치지 않은 회원은 API 사용에 제한이 있을 수 있습니다.
 

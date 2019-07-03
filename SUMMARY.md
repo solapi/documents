@@ -4,7 +4,7 @@
 
 ## AUTHENTICATION
 
-* [Overview](authentication/overview.md)
+* [Authorization](authentication/overview.md)
 * [API Key 인증 방식](authentication/api-key.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
