@@ -2,9 +2,9 @@
 
 ### Authorization?
 
-SOLAPI에서는 공식 사이트\([https://solapi.com](https://solapi.com)\) 이외에도 사용자\(혹은 개발자\)가 서비스를 이용할 수 있도록 API를 제공하고 있습니다. 제공된 API를 사용하기 위해서는 자신이 누구인지\(SOLAPI 앱의 경우에는 앱 사용자를 대신해서\) 알리기 위해서 몇가지 인증방식을 사용하여 정보를 제공해야 됩니다. 그 과정을 Authorization이라고 합니다.
+SOLAPI에서는 공식 사이트\([https://solapi.com](https://solapi.com)\) 이외에도 사용자\(혹은 개발자\)가 서비스를 이용할 수 있도록 API를 제공하고 있습니다. 제공된 API를 사용하기 위해서는 자신이 누구인지\(SOLAPI 앱의 경우에는 앱 사용자를 대신해서\) 알리기 위해서 몇 가지 인증 방식을 사용하여 정보를 제공해야 됩니다. 그 과정을 Authorization이라고 합니다.
 
-Authorization은 인증 방식을 통합적으로 나타내는 말입니다. SOLAPI에서는 API Key 인증방식과 OAuth2 인증방식, 총 두 가지 인증방식을 제공합니다.
+Authorization은 인증 방식을 통합적으로 나타내는 말이기도 합니다.. SOLAPI에서는 API Key 인증 방식과 OAuth2 인증 방식, 총 두 가지 인증 방식을 제공합니다.
 
 ### API 사용 조건
 
@@ -14,7 +14,7 @@ Authorization은 인증 방식을 통합적으로 나타내는 말입니다. SOL
 
 > [APP STORE](https://solapi.com/apps) 앱 개발자에게만 해당되는 내용입니다.
 >
-> SOLAPI는 정식 서비스 이외에도 **문자서비스를 제공하는 앱\(이하 서드파티 앱\)**을 만들 수 있도록 설계되어 있습니다. 서드파티앱은 [누구나 개발이 가능](https://docs.solapi.com/app-store/oauth2-node-and-express)하며 개발자가 원한다면 [누구나 사용](https://docs.solapi.com/app-store/undefined)할 수 있습니다. 또한 개발자는 SOLAPI와 수익을 공유하게 됩니다.
+> SOLAPI는 정식 서비스 이외에도 **문자 서비스를 제공하는 앱\(이하 서드파티 앱\)**을 만들 수 있도록 설계되어 있습니다. 서드파티앱은 [누구나 개발이 가능](https://docs.solapi.com/app-store/oauth2-node-and-express)하며 개발자가 원한다면 [누구나 사용](https://docs.solapi.com/app-store/undefined)할 수 있습니다. 또한 개발자는 SOLAPI와 수익을 공유하게 됩니다.
 
 서드파티앱을 만들 경우 개발자는 앱 사용자로부터 사용자 대신 **사용자의 정보\(예: 캐쉬 정보\)**를 얻을 수 있는 권한이나 **계정을 활용\(예: 문자 보내기\)** 할 수 있는 권한을 요청할 수 있습니다. 각각의 API는 필요로 하는 권한이 있으며 앱 개발자가 사용자에게 **요청을 하지 않은 경우** 혹은 요청을 했지만 **허용하지 않은 경우** 사용이 불가합니다. 권한을 많이 요청할 수록 SOLAPI가 제공하는 많은 기능과 API들을 활용할 수 있지만 무분별한 권한 요청은 오히러 사용자가 앱 사용을 꺼려할 수 있습니다. 자세한 내용은 [권한 목록](https://docs.solapi.com/authentication/oauth2-3/scope)을 참고 해주세요.
 
