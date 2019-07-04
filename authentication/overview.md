@@ -4,7 +4,7 @@
 
 SOLAPI에서는 공식 사이트\([https://solapi.com](https://solapi.com)\) 이외에도 사용자\(혹은 개발자\)가 서비스를 이용할 수 있도록 API를 제공하고 있습니다. 제공된 API를 사용하기 위해서는 자신이 누구인지\(SOLAPI 앱의 경우에는 앱 사용자를 대신해서\) 알리기 위해서 몇 가지 인증 방식을 사용하여 정보를 제공해야 됩니다. 그 과정을 Authorization이라고 합니다.
 
-Authorization은 인증 방식을 통합적으로 나타내는 말이기도 합니다.. SOLAPI에서는 API Key 인증 방식과 OAuth2 인증 방식, 총 두 가지 인증 방식을 제공합니다.
+Authorization은 인증 방식을 통합적으로 나타내는 말이기도 합니다. SOLAPI에서는 [API Key 인증 방식](https://docs.solapi.com/authentication/api-key)과 [OAuth2 인증 방식](https://docs.solapi.com/authentication/oauth2-3/oauth2), 총 두 가지 인증 방식을 제공합니다.
 
 ### API 사용 조건
 
