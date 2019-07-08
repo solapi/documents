@@ -23,7 +23,6 @@
 ## API-REFERENCE
 
 * [Overview](api-reference/overview.md)
-* [Operator](api-reference/operator.md)
 * [Message API v4](api-reference/message-api-v4/README.md)
   * [그룹 메시지](api-reference/message-api-v4/undefined-1/README.md)
     * [그룹 목록](api-reference/message-api-v4/undefined-1/undefined-1.md)
