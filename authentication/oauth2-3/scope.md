@@ -41,4 +41,8 @@
 | role-images:read | 이미지 조회\(멤버권한\) | images |  |
 | images:write | 이미지 업로드 | images | O |
 | role-images:write | 이미지 업로드\(멤버권한\) | images |  |
+| kakao:read | 카카오톡 정보 조회 | kakao | O |
+| kakao:write | 카카오톡 정보 추가 및 수정 | kakao | O |
+| role-kakao:read | 카카오톡 정보 조회\(멤버권한\) | kakao |  |
+| role-kakao:write | 카카오톡 정보 추가 및 수정\(멤버권한\) | kakao |  |
 
