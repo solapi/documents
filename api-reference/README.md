@@ -5,12 +5,14 @@ order:
   - kakao  
   - cash
   - images
-  - pricing-api
   - senderid
+  - users
+  - pricing
   - message-status-codes.md
   - message-api-v4: false
   - cash-api: false
   - image-api: false
+  - pricing-api: false
 ---
 
 # Overview
