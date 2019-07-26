@@ -8,6 +8,8 @@ order:
   - senderid
   - users
   - pricing
+  - appstore
+  - storage
   - message-status-codes.md
   - message-api-v4: false
   - cash-api: false
