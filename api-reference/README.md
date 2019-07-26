@@ -2,13 +2,14 @@
 order:
   - README.md
   - messages
-  - cash-api
+  - cash
   - image-api
   - kakao
   - pricing-api
   - senderid
   - message-status-codes.md
   - message-api-v4: false
+  - cash-api: false
 ---
 
 # Overview
