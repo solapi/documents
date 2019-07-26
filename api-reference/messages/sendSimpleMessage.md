@@ -26,15 +26,10 @@ POST https://api.solapi.com/messages/v4/send
         "imageId": "string",
         "kakaoOptions": {
             "pfId": "string",
-            "senderKey": "string",
             "templateId": "string",
-            "templateCode": "string",
-            "buttonName": "string",
-            "buttonUrl": "string",
             "disableSms": "boolean",
             "buttons": [
                 {
-                    "buttonName": "string",
                     "buttonType": "string",
                     "linkMo": "string",
                     "linkPc": "string",
@@ -72,19 +67,15 @@ POST https://api.solapi.com/messages/v4/send
 | subject | `string` |  | 제목 |
 | imageId | `string` |  | 이미지 아이디 |
 | [kakaoOptions](#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
-| [customFields](#body-message-customfields) | `object` |  | 사용자가 보낼 수 있는 값. 제한 없음 |
-| autoTypeDetect | `boolean` |  | type이 없을 경우 자동으로 찾는지의 대한 여부 |
+| [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
 
 ##### Body / message / kakaoOptions
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
-| senderKey | `string` |  | 센더키 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
-| templateCode | `string` |  | 템플릿 코드 |
-| buttonName | `string` |  | 버튼 이름 |
-| buttonUrl | `string` |  | 버튼에 연동된 URL |
 | disableSms | `boolean` |  | 대체 발송 여부 |
 | [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
@@ -93,12 +84,11 @@ POST https://api.solapi.com/messages/v4/send
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| buttonName | `string` | O | 버튼 이름 |
-| buttonType | `string` | O | 버튼 종류 |
-| linkMo | `string` |  | 모바일 링크 |
-| linkPc | `string` |  | 웹 링크 |
-| linkAnd | `string` |  | 안드로이드 링크 |
-| linkIos | `string` |  | IOS 링크 |
+| buttonType | `string` | O | 설명 없음 |
+| linkMo | `string` |  | 설명 없음 |
+| linkPc | `string` |  | 설명 없음 |
+| linkAnd | `string` |  | 설명 없음 |
+| linkIos | `string` |  | 설명 없음 |
 
 ##### Body / message / customFields
 
@@ -136,13 +126,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20190725154714N9RBFTRZKPXZV9I",
+    "groupId": "G4V20190726124550RBUVB00YXRCVERY",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190725154714F40TYK4P5WJEXX0",
+    "messageId": "M4V20190726124550RL3ZFE4CBTXVWDU",
     "statusCode": "2000",
     "accountId": "12925149"
 }

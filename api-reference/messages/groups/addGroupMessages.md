@@ -5,7 +5,7 @@
 PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
-만들어진 그룹에 메시지를 추가합니다.
+그룹에 메시지를 추가합니다. 접수 실패건은 저장되지만 발송은 되지 않습니다.<br>그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.<br>- 하나의 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.<br>- 하나의 요청에 수신번호는 10,000 개를 넘을 수 없습니다.<br>- 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 제한입니다.
 
 ##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
@@ -22,14 +22,81 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 ##### Request Structure
 ```json
 {
-    "messages": "String | Array"
+    "messages": [
+        {
+            "to": "string",
+            "from": "string",
+            "text": "string",
+            "type": "string",
+            "country": "string",
+            "subject": "string",
+            "imageId": "string",
+            "kakaoOptions": {
+                "pfId": "string",
+                "templateId": "string",
+                "disableSms": "boolean",
+                "buttons": [
+                    {
+                        "buttonType": "string",
+                        "linkMo": "string",
+                        "linkPc": "string",
+                        "linkAnd": "string",
+                        "linkIos": "string"
+                    }
+                ]
+            },
+            "customFields": {},
+            "autoTypeDetect": "boolean"
+        }
+    ]
 }
 ```
 
 ##### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| messages | `String | Array` |  | 발송할 메시지 내용 |
+| [messages](#body-messages) | `Array` |  | 발송할 메시지 내용 |
+
+
+##### Body / messages
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| to | `string` | O | 받는 이 |
+| from | `string` | O | 보내는 이 |
+| text | `string` | O | 내용 |
+| type | `string` |  | 타입 |
+| country | `string` |  | 국가 |
+| subject | `string` |  | 제목 |
+| imageId | `string` |  | 이미지 아이디 |
+| [kakaoOptions](#body-messages-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
+| [customFields](#body-messages-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
+
+##### Body / messages / kakaoOptions
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
+| templateId | `string` |  | 알림톡 템플릿 아이디 |
+| disableSms | `boolean` |  | 대체 발송 여부 |
+| [buttons](#body-messages-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
+
+
+##### Body / messages / kakaoOptions / buttons
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| buttonType | `string` | O | 설명 없음 |
+| linkMo | `string` |  | 설명 없음 |
+| linkPc | `string` |  | 설명 없음 |
+| linkAnd | `string` |  | 설명 없음 |
+| linkIos | `string` |  | 설명 없음 |
+
+##### Body / messages / customFields
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
 
 
 ---
@@ -65,7 +132,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154711SCGPJOW1TYDDERX",
+            "messageId": "M4V201907261245488Q9FD34MSLW9G3O",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -345,7 +412,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154711TQO8ZWT04LKBBOR",
+            "messageId": "M4V20190726124548CTD3FXGXPAKGOMX",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -629,7 +696,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154711S7XJJNH1LRRKMBI",
+            "messageId": "M4V20190726124548YA4VVV221L6OAS0",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -943,7 +1010,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154712OOIZ54T04YF4JKF",
+            "messageId": "M4V20190726124548UQKKIAVH6PRM4OY",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1314,7 +1381,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154712ATCXH8AO5BQUSF5",
+            "messageId": "M4V20190726124549JHYUFK9KP7EGYZX",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1602,7 +1669,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154712KQDQY333WLJCVX0",
+            "messageId": "M4V20190726124549PPSWLG0HTMB2OB5",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1884,7 +1951,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V201907251547125NO6SSCW5SLFU49",
+            "messageId": "M4V20190726124549JQQVDSGFLRJM6YZ",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -1894,7 +1961,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154712AGCGG8KLGWIPH94",
+            "messageId": "M4V20190726124549LTCL2MBAY1ER9B8",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2185,7 +2252,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190725154713AENPEJJUFFRYXM4",
+            "messageId": "M4V20190726124549MFROV49Q5JRBJYO",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2195,7 +2262,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V2019072515471351KBBOLW5JF4CPM",
+            "messageId": "M4V20190726124549LX4JCE5XBHFIKA3",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2205,7 +2272,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V20190725154713TL4UBDQ97W01UBF",
+            "messageId": "M4V20190726124549GXZIEOBN2URVADY",
             "statusCode": "1026",
             "accountId": "12925149"
         }

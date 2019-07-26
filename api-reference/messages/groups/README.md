@@ -1,6 +1,7 @@
 ---
 order:
   - createMessageGroup.md
+  - deleteGroupMessages.md
   - getMessageGroupList.md
   - getMessageGroupInfo.md
   - deleteMessageGroup.md
@@ -9,7 +10,6 @@ order:
   - sendGroupMessage.md
   - scheduleGroupMessage.md
   - cancelScheduledGroupMessage.md
-  - deleteGroupMessages.md
 ---
 
 # 그룹 메시지

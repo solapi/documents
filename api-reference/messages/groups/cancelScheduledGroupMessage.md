@@ -1,11 +1,11 @@
-# 예약 그룹 취소
+# 예약 취소
 
 #### Request
 ```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 ```
 
-예약된 그룹을 취소 처리하고 'PENDING'상태로 변경합니다.
+예약된 그룹을 취소 처리하고 'PENDING'상태로 변경합니다. 예약 취소된 그룹은 다시 예약하거나 발송 요청하지 않는 한 발송 처리되지 않습니다.
 
 ##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
@@ -74,11 +74,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-07-25T06:47:11.117Z",
+            "createAt": "2019-07-26T03:45:48.295Z",
             "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2019-07-25T06:47:15.456Z",
+            "createAt": "2019-07-26T03:45:51.276Z",
             "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
@@ -101,8 +101,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-07-25T06:47:11.119Z",
-    "dateUpdated": "2019-07-25T06:47:15.456Z"
+    "dateCreated": "2019-07-26T03:45:48.297Z",
+    "dateUpdated": "2019-07-26T03:45:51.276Z"
 }
 ```
 

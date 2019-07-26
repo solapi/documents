@@ -5,7 +5,7 @@
 DELETE https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
-메시지 그룹을 삭제합니다.
+메시지 그룹을 삭제합니다. 삭제 후 발송 및 복구가 불가합니다.
 
 ##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
@@ -74,14 +74,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-07-25T06:47:11.110Z"
+            "createAt": "2019-07-26T03:45:48.288Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-07-25T06:47:11.110Z"
+            "createAt": "2019-07-26T03:45:48.288Z"
         },
         {
-            "createAt": "2019-07-25T06:47:14.840Z",
+            "createAt": "2019-07-26T03:45:50.897Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -91,12 +91,12 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-07-25T06:47:15.095Z"
+            "createAt": "2019-07-26T03:45:51.071Z"
         }
     ],
     "status": "DELETED",
     "scheduledDate": null,
-    "dateSent": "2019-07-25T06:47:14.840Z",
+    "dateSent": "2019-07-26T03:45:50.897Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -122,8 +122,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-07-25T06:47:11.112Z",
-    "dateUpdated": "2019-07-25T06:47:15.114Z"
+    "dateCreated": "2019-07-26T03:45:48.290Z",
+    "dateUpdated": "2019-07-26T03:45:51.074Z"
 }
 ```
 

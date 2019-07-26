@@ -51,6 +51,25 @@ GET https://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
+        "date": "2019-07-03T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
         "date": "2019-07-02T15:00:00.000Z",
         "count": {
             "4000": {
@@ -390,29 +409,10 @@ GET https://api.solapi.com/messages/v4/statistics/daily
         "balance": 10,
         "point": 100,
         "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-06-14T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-06-13T15:00:00.000Z",
+        "date": "2019-06-14T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
