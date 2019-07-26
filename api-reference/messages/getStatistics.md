@@ -48,7 +48,7 @@ GET https://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-07-26T03:45:51.402Z",
+                    "_id": "2019-07-26T05:33:09.381Z",
                     "month": "2019/07",
                     "date": "2019/07/26",
                     "balance": 1,
@@ -132,7 +132,7 @@ GET https://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-07-26T03:45:51.402Z",
+            "_id": "2019-07-26T05:33:09.381Z",
             "month": "2019/07",
             "date": "2019/07/26",
             "balance": 1,

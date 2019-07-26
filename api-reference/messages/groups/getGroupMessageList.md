@@ -76,8 +76,8 @@ GET https://api.solapi.com/messages/v4/groups/:groupId/messages
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-07-26T03:45:48.332Z",
-            "dateUpdated": "2019-07-26T03:45:48.332Z",
+            "dateCreated": "2019-07-26T05:32:59.828Z",
+            "dateUpdated": "2019-07-26T05:32:59.828Z",
             "reason": null,
             "networkName": "ETC"
         }

@@ -74,11 +74,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-07-26T03:45:48.295Z",
+            "createAt": "2019-07-26T05:32:59.726Z",
             "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2019-07-26T03:45:51.276Z",
+            "createAt": "2019-07-26T05:33:08.798Z",
             "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
@@ -101,8 +101,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-07-26T03:45:48.297Z",
-    "dateUpdated": "2019-07-26T03:45:51.276Z"
+    "dateCreated": "2019-07-26T05:32:59.731Z",
+    "dateUpdated": "2019-07-26T05:33:08.798Z"
 }
 ```
 

@@ -30,6 +30,7 @@ POST https://api.solapi.com/messages/v4/send
             "disableSms": "boolean",
             "buttons": [
                 {
+                    "buttonName": "string",
                     "buttonType": "string",
                     "linkMo": "string",
                     "linkPc": "string",
@@ -59,14 +60,14 @@ POST https://api.solapi.com/messages/v4/send
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| to | `string` | O | 받는 이 |
-| from | `string` | O | 보내는 이 |
-| text | `string` | O | 내용 |
-| type | `string` |  | 타입 |
-| country | `string` |  | 국가 |
-| subject | `string` |  | 제목 |
+| to | `string` | O | 수신번호 |
+| from | `string` | O | 발신번호 |
+| text | `string` | O | 메시지 내용 |
+| type | `string` |  | 메시지 타입 |
+| country | `string` |  | 국가번호 |
+| subject | `string` |  | 메시지 제목 |
 | imageId | `string` |  | 이미지 아이디 |
-| [kakaoOptions](#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
+| [kakaoOptions](#body-message-kakaooptions) | `object` |  | 설명 없음 |
 | [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
 | autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
 
@@ -84,11 +85,12 @@ POST https://api.solapi.com/messages/v4/send
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| buttonType | `string` | O | 설명 없음 |
-| linkMo | `string` |  | 설명 없음 |
-| linkPc | `string` |  | 설명 없음 |
-| linkAnd | `string` |  | 설명 없음 |
-| linkIos | `string` |  | 설명 없음 |
+| buttonName | `string` | O | 버튼 이름 |
+| buttonType | `string` | O | 버튼 종류 |
+| linkMo | `string` |  | 모바일 링크 |
+| linkPc | `string` |  | 웹 링크 |
+| linkAnd | `string` |  | 안드로이드 링크 |
+| linkIos | `string` |  | IOS 링크 |
 
 ##### Body / message / customFields
 
@@ -126,13 +128,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20190726124550RBUVB00YXRCVERY",
+    "groupId": "G4V20190726143306FLFTAJXKSTLFUA1",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190726124550RL3ZFE4CBTXVWDU",
+    "messageId": "M4V20190726143306SEJOB007MSPFTWS",
     "statusCode": "2000",
     "accountId": "12925149"
 }

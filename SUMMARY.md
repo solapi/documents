@@ -4,8 +4,7 @@
 
 ## AUTHENTICATION
 
-* [Authentication](authentication/README.md)
-* [Authorization](authentication/overview.md)
+* [Overview](authentication/README.md)
 * [API Key 인증 방식](authentication/api-key.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
@@ -23,8 +22,7 @@
 
 ## API-REFERENCE
 
-* [API Reference](api-reference/README.md)
-* [Overview](api-reference/overview.md)
+* [Overview](api-reference/README.md)
 * [메시지](api-reference/messages/README.md)
   * [단일 메시지](api-reference/messages/sendSimpleMessage.md)
   * [그룹 메시지](api-reference/messages/groups/README.md)
@@ -88,4 +86,5 @@
   * [문서 업로드](api-reference/senderid/undefined-9.md)
   * [발신번호 삭제](api-reference/senderid/undefined-4.md)
 * [Message Status Codes](api-reference/message-status-codes.md)
+* [Overview](api-reference/overview.md)
 * [Terminology](api-reference/terminology.md)

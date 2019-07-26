@@ -75,14 +75,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-07-26T03:45:48.288Z"
+            "createAt": "2019-07-26T05:32:59.707Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-07-26T03:45:48.288Z"
+            "createAt": "2019-07-26T05:32:59.707Z"
         },
         {
-            "createAt": "2019-07-26T03:45:50.897Z",
+            "createAt": "2019-07-26T05:33:07.478Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -93,7 +93,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     ],
     "status": "SENDING",
     "scheduledDate": null,
-    "dateSent": "2019-07-26T03:45:50.897Z",
+    "dateSent": "2019-07-26T05:33:07.478Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -118,8 +118,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
             "cta": 13
         }
     },
-    "dateCreated": "2019-07-26T03:45:48.290Z",
-    "dateUpdated": "2019-07-26T03:45:50.897Z"
+    "dateCreated": "2019-07-26T05:32:59.709Z",
+    "dateUpdated": "2019-07-26T05:33:07.478Z"
 }
 ```
 
