@@ -1,14 +1,14 @@
 ---
 order:
   - overview.md
-  - message-api-v4
+  - messages
   - cash-api
   - image-api
   - kakao
   - pricing-api
   - senderid
   - message-status-codes.md
-  - messages: false
+  - message-api-v4: false
 ---
 
 # API Reference
