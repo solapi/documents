@@ -9,6 +9,7 @@ order:
   - senderid
   - message-status-codes.md
   - message-api-v4: false
+  - README.md: false
 ---
 
 # API Reference
