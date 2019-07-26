@@ -11,6 +11,7 @@ order:
   - appstore
   - storage
   - message-status-codes.md
+  - terminology.md
   - message-api-v4: false
   - cash-api: false
   - image-api: false
