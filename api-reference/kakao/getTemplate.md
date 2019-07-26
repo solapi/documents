@@ -1,37 +1,59 @@
-# 플러스 친구 조회
+# 템플릿 정보 조회
 
-## Request
-
-```text
-GET https://api.solapi.com/kakao/v1/plus-friends/:pfId
+#### Request
+```
+GET https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
-**Authorization 인증 필요**
+템플릿의 아이디로 템플릿 정보를 조회합니다.
 
-플러스 친구의 아이디로 플러스 친구의 정보를 불러옵니다.
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
-## Sample Request
+| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
+| :- | :- | :- | :- | :-: |
+| `kakao:read` | `role-kakao:read` |  |  |  |
 
-```javascript
+##### Path Parameters
+
+| Name | Description |
+| :--: | :---------: |
+| :templateId | 템플릿 고유 아이디 |
+
+---
+
+#### Samples
+
+##### 정상
+
+> **Sample Request**
+
+```
 {}
 ```
 
-## Sample Response
+> **Sample Response**
 
-```javascript
+```json
 {
-    "pfId": "KA01PF190227072057634pRBhbpAw1w1",
-    "searchId": "NURIGO",
-    "accountId": "19301859371111",
-    "dateCreated": "2019-06-12T07:59:58.724Z",
-    "dateUpdated": "2019-06-12T07:59:58.724Z"
+    "status": "APPROVED",
+    "accountId": "12925149",
+    "templateId": "TP01ID190726074551007EC8q0iRWAyB",
+    "name": "A10",
+    "pfId": "PF01ID190726074551007hHnFRDM7rVu",
+    "content": "testMessage",
+    "dateCreated": "2019-07-26T06:45:51.008Z",
+    "dateUpdated": "2019-07-26T06:45:51.008Z",
+    "buttons": [],
+    "comments": []
 }
 ```
 
-## Sample Code
+> **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -40,18 +62,21 @@ var options = {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
   method: 'GET',
+  json: true,
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -59,74 +84,88 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
-$url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1";
-$data = array();
+<?php
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
-        'method'  => 'GET',
-        'content' => http_build_query($data)
+        'method'  => 'GET'
     )
 );
+
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1"
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB"
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
+#!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB")
 
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -138,7 +177,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -154,10 +193,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -169,14 +210,14 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190726074551007EC8q0iRWAyB";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("x-is-admin", "true");
+    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -197,7 +238,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

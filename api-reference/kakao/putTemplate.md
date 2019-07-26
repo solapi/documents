@@ -1,16 +1,20 @@
 # 템플릿 추가
 
-## Request
-
-```text
+#### Request
+```
 POST https://api.solapi.com/kakao/v1/templates
 ```
 
-**Authorization 인증 필요**
-
 템플릿을 추가합니다.
 
-```javascript
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+
+| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
+| :- | :- | :- | :- | :-: |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
+
+##### Request Structure
+```json
 {
     "pfId": "string",
     "name": "string",
@@ -19,79 +23,90 @@ POST https://api.solapi.com/kakao/v1/templates
         {
             "buttonType": "string",
             "buttonName": "string",
-            "linkMo": "alternatives",
-            "linkPc": "alternatives",
-            "linkAnd": "alternatives",
-            "linkIos": "alternatives"
+            "linkMo": "string",
+            "linkPc": "string",
+            "linkAnd": "string",
+            "linkIos": "string"
         }
     ]
 }
 ```
 
-## Body Params
-
+##### Body Params
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | pfId | `string` | O | 플러스 친구 고유 아이디 |
 | name | `string` | O | 이름 |
 | content | `string` | O | 템플릿 내용 |
-| [buttons](puttemplate.md#body-params-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
+| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
 
-### Body Params - buttons
+
+##### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | buttonType | `string` | O | 설명 없음 |
 | buttonName | `string` | O | 설명 없음 |
-| linkMo | `alternatives` |  | 설명 없음 |
-| linkPc | `alternatives` |  | 설명 없음 |
-| linkAnd | `alternatives` |  | 설명 없음 |
-| linkIos | `alternatives` |  | 설명 없음 |
+| linkMo | `string` |  | Mobile 주소 |
+| linkPc | `string` |  | PC 주소 |
+| linkAnd | `string` |  | Android 주소 |
+| linkIos | `string` |  | IOS 주소 |
 
-## Sample Request
 
-```javascript
+---
+
+#### Samples
+
+##### 정상 - 버튼없이
+
+> **Sample Request**
+
+```json
 {
-    "pfId": "PF01ID190612085958181ajQJqWNpgDw",
+    "pfId": "PF01ID1907260745510232iEvHhCovS4",
     "name": "회원가입",
     "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
 ```
 
-## Sample Response
+> **Sample Response**
 
-```javascript
+```json
 {
     "status": "PENDING",
     "accountId": "12925149",
     "name": "회원가입",
-    "pfId": "PF01ID190612085958181ajQJqWNpgDw",
+    "pfId": "PF01ID1907260745510232iEvHhCovS4",
     "buttons": [],
     "comments": [],
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-06-12T07:59:59.196Z",
-    "dateUpdated": "2019-06-12T07:59:59.196Z",
-    "templateId": "KA01TP190612085959195cPjqyoDt8Hh"
+    "dateCreated": "2019-07-26T06:45:51.889Z",
+    "dateUpdated": "2019-07-26T06:45:51.889Z",
+    "templateId": "KA01TP190726074551888rPUWCAEjXnF"
 }
 ```
 
-## Sample Code
+> **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization: 'Bearer eyJhbGciOiJI...',
+    'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID190612085958181ajQJqW...',
+    pfId: 'PF01ID1907260745510232iEvHh...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
   method: 'POST',
+  json: true,
   url: 'http://api.solapi.com/kakao/v1/templates'
 };
 
@@ -99,17 +114,20 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization: 'Bearer eyJhbGciOiJI...',
+    'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID190612085958181ajQJqW...',
+    pfId: 'PF01ID1907260745510232iEvHh...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
@@ -120,54 +138,66 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
+<?php
 $url = "http://api.solapi.com/kakao/v1/templates";
-$data = array("pfId" => "PF01ID190612085958181ajQJqW...", "name" => "회원가입", "content" => "#{홍길동}님 회원가입을 환영 합니다.");
+$data = '{"pfId":"PF01ID1907260745510232iEvHh...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
-        'method'  => 'GET',
-        'content' => http_build_query($data)
+        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
+        'method'  => 'POST'
     )
 );
+
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/kakao/v1/templates"
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
-data = {"pfId":"PF01ID190612085958181ajQJqW...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Content-Type": "application/json"
+}
+data = '{"pfId":"PF01ID1907260745510232iEvHh...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
+#!/bin/bash
 curl -X POST \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -d pfId=PF01ID190612085958181ajQJqW... \
-    -d name=회원가입 \
-    -d content=#{홍길동}님 회원가입을 환영 합니다. \
-    http://api.solapi.com/kakao/v1/templates
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Content-Type: application/json' \
+	-d '{"pfId":"PF01ID1907260745510232iEvHh...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	http://api.solapi.com/kakao/v1/templates
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -175,8 +205,15 @@ require 'json'
 
 uri = URI.parse("http://api.solapi.com/kakao/v1/templates")
 
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
-data = {"pfId":"PF01ID190612085958181ajQJqW...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Content-Type": "application/json"
+}
+data = {
+  "pfId": "PF01ID1907260745510232iEvHh...",
+  "name": "회원가입",
+  "content": "#{홍길동}님 회원가입을 환영 합니다."
+}
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
 request.body = data.to_json
@@ -184,10 +221,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -200,12 +239,13 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/kakao/v1/templates"
-  data := strings.NewReader(`{"pfId":"PF01ID190612085958181ajQJqW...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
+  data := strings.NewReader(`{"pfId":"PF01ID1907260745510232iEvHh...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -216,10 +256,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -232,14 +274,15 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/kakao/v1/templates";
-    String parameters = "pfId=PF01ID190612085958181ajQJqW...&name=회원가입&content=#{홍길동}님 회원가입을 환영 합니다.";
+    String parameters = "{\"pfId\":\"PF01ID1907260745510232iEvHh...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("x-is-admin", "true");
+    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -260,7 +303,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

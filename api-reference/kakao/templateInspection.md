@@ -1,44 +1,59 @@
-# 플러스 친구 삭제
+# 템플릿 검수 요청
 
-## Request
-
-```text
-DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
+#### Request
+```
+PUT https://api.solapi.com/kakao/v1/templates/:templateId/inspection
 ```
 
-**Authorization 인증 필요**
+템플릿을 검수 요청합니다.
 
-SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 플러스 친구가 삭제되지는 않습니다.
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
-## Sample Request
+| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
+| :- | :- | :- | :- | :-: |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-```javascript
+##### Path Parameters
+
+| Name | Description |
+| :--: | :---------: |
+| :templateId | 템플릿 고유 아이디 |
+
+---
+
+#### Samples
+
+##### REJECTED 상태 검수 요청
+
+> **Sample Request**
+
+```
 {}
 ```
 
-## Sample Response
+> **Sample Response**
 
-```javascript
+```json
 {
-    "pfId": "KA01PF190227072057634pRBhbpAE93j",
-    "searchId": "NURIGO",
-    "accountId": "19032634567892",
-    "phoneNumber": "010-5555-5555",
-    "senderKeys": [
-        {
-            "service": "daou",
-            "key": "123456789"
-        }
-    ],
-    "dateCreated": "2019-06-12T07:59:58.486Z",
-    "dateUpdated": "2019-06-12T07:59:58.486Z"
+    "status": "INSPECTING",
+    "accountId": "12925149",
+    "templateId": "KA01TP190726074552183JNfSmggywcp",
+    "name": "A2",
+    "pfId": "PF01ID190726074551033K7cibxpXdQI",
+    "content": "testMessage",
+    "dateCreated": "2019-07-26T06:45:52.183Z",
+    "dateUpdated": "2019-07-26T06:45:52.207Z",
+    "buttons": [],
+    "comments": []
 }
 ```
 
-## Sample Code
+> **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -46,94 +61,111 @@ var options = {
   headers: {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
-  method: 'DELETE',
+  method: 'PUT',
+  json: true,
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
-  method: 'DELETE',
+  method: 'PUT',
   url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
-$url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j";
-$data = array();
+<?php
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
-        'method'  => 'GET',
-        'content' => http_build_query($data)
+        'method'  => 'PUT'
     )
 );
+
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j"
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection"
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 
-response = requests.delete(url, headers=headers)
+response = requests.put(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
-curl -X DELETE \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j
+
+```curl
+#!/bin/bash
+curl -X PUT \
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection")
 
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -145,9 +177,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection"
 
-  req, err := http.NewRequest("DELETE", uri, nil)
+  req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
@@ -161,10 +193,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -176,14 +210,14 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP190726074552183JNfSmggywcp/inspection";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("PUT");
 
-    con.setRequestProperty("x-is-admin", "true");
+    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -204,7 +238,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

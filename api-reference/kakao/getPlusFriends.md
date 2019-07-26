@@ -1,78 +1,86 @@
 # 플러스 친구 목록 조회
 
-## Request
-
-```text
+#### Request
+```
 GET https://api.solapi.com/kakao/v1/plus-friends
 ```
 
-**Authorization 인증 필요**
-
 플러스 친구의 목록을 조회합니다.
 
-## Query Params
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
 
-| Name | Type | Required | Allowed Operator | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| pfId | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 플러스 친구 고유 아이디 |
-| searchId | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 플러스 친구 검색용 아이디 |
-| phoneNumber | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 핸드폰 번호 |
-| dateCreated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
-| dateUpdated | `date` |  | GT, LT, LTE, GTE, NE, LIKE | 최초 생성 날짜 |
-| startKey | `string` |  | GT, LT, LTE, GTE, NE, LIKE | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | GT, LT, LTE, GTE, NE, LIKE | 한 페이지에 불러옥 목록 개수 |
+| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
+| :- | :- | :- | :- | :-: |
+| `kakao:read` | `role-kakao:read` |  |  |  |
 
-## Sample Request
+##### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
+| pfId | `string` |  | eq | 플러스 친구 고유 아이디 |
+| searchId | `string` |  | eq, ne, like | 플러스 친구 검색용 아이디 |
+| phoneNumber | `string` |  | eq, ne, like | 핸드폰 번호 |
+| dateCreated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
+| dateUpdated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
+| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
+| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
-```javascript
+---
+
+#### Samples
+
+##### 정상
+
+> **Sample Request**
+
+```
 {}
 ```
 
-## Sample Response
+> **Sample Response**
 
-```javascript
+```json
 {
     "limit": 20,
     "friends": [
         {
             "pfId": "KA01PF190227072057634pRBhbpAweee",
-            "searchId": "LG",
+            "searchId": "COMPANY3",
             "accountId": "19301859371111",
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-06-12T07:59:58.749Z",
-            "dateUpdated": "2019-06-12T07:59:58.749Z"
+            "dateCreated": "2019-07-26T06:45:51.477Z",
+            "dateUpdated": "2019-07-26T06:45:51.477Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
-            "searchId": "AMD",
+            "searchId": "COMPANY5",
             "accountId": "19301859371111",
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-06-12T07:59:58.752Z",
-            "dateUpdated": "2019-06-12T07:59:58.752Z"
+            "dateCreated": "2019-07-26T06:45:51.480Z",
+            "dateUpdated": "2019-07-26T06:45:51.480Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
-            "searchId": "SAMSUMG",
+            "searchId": "COMPANY2",
             "accountId": "19301859371111",
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-06-12T07:59:58.747Z",
-            "dateUpdated": "2019-06-12T07:59:58.747Z"
+            "dateCreated": "2019-07-26T06:45:51.476Z",
+            "dateUpdated": "2019-07-26T06:45:51.476Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
-            "searchId": "NURIGO",
+            "searchId": "COMPANY1",
             "accountId": "19301859371111",
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-06-12T07:59:58.746Z",
-            "dateUpdated": "2019-06-12T07:59:58.746Z"
+            "dateCreated": "2019-07-26T06:45:51.474Z",
+            "dateUpdated": "2019-07-26T06:45:51.474Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
-            "searchId": "INTEL",
+            "searchId": "COMPANY4",
             "accountId": "19301859371111",
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-06-12T07:59:58.750Z",
-            "dateUpdated": "2019-06-12T07:59:58.750Z"
+            "dateCreated": "2019-07-26T06:45:51.479Z",
+            "dateUpdated": "2019-07-26T06:45:51.479Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",
@@ -80,10 +88,12 @@ GET https://api.solapi.com/kakao/v1/plus-friends
 }
 ```
 
-## Sample Code
+> **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -92,6 +102,7 @@ var options = {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
   method: 'GET',
+  json: true,
   url: 'http://api.solapi.com/kakao/v1/plus-friends?'
 };
 
@@ -99,10 +110,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -115,50 +128,60 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
+<?php
 $url = "http://api.solapi.com/kakao/v1/plus-friends?";
-$data = array();
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
-        'method'  => 'GET',
-        'content' => http_build_query($data)
+        'method'  => 'GET'
     )
 );
+
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/kakao/v1/plus-friends?"
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
+#!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/kakao/v1/plus-friends?
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/kakao/v1/plus-friends?
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -166,17 +189,21 @@ require 'json'
 
 uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends?")
 
-headers = {"Authorization":"Bearer eyJhbGciOiJI..."}
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI..."
+}
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -204,10 +231,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -226,7 +255,7 @@ public class Request {
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("x-is-admin", "true");
+    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -247,7 +276,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
