@@ -11,7 +11,7 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `users:write` | `role-users:write` |  | `ACTIVE` |  |
+| `users:write` |  |  | `ACTIVE` |  |
 
 ##### 2차 인증 필요
 
@@ -56,8 +56,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-07-26T07:51:01.726Z",
-    "dateUpdated": "2019-07-26T07:51:01.730Z",
+    "dateCreated": "2019-07-30T02:38:40.642Z",
+    "dateUpdated": "2019-07-30T02:38:40.649Z",
     "loginSessions": []
 }
 ```

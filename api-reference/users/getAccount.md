@@ -36,19 +36,19 @@ GET https://api.solapi.com/users/v1/accounts/:accountId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19072660652681",
+    "accountId": "19073041912531",
     "name": "steven님의 계정",
     "members": [
         {
-            "dateCreated": "2019-07-26T07:50:51.567Z",
-            "dateUpdated": "2019-07-26T07:50:51.567Z",
-            "memberId": "MEMnsAZ2c62xns",
+            "dateCreated": "2019-07-30T02:38:30.878Z",
+            "dateUpdated": "2019-07-30T02:38:30.878Z",
+            "memberId": "MEMNtZ5oH2Za_X",
             "role": "OWNER",
             "name": "steven"
         }
     ],
-    "dateCreated": "2019-07-26T07:50:53.001Z",
-    "dateUpdated": "2019-07-26T07:50:53.001Z"
+    "dateCreated": "2019-07-30T02:38:32.426Z",
+    "dateUpdated": "2019-07-30T02:38:32.426Z"
 }
 ```
 
@@ -67,7 +67,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19072660652681'
+  url: 'http://api.solapi.com/users/v1/accounts/19073041912531'
 };
 
 request(options, function(error, response, body) {
@@ -86,7 +86,7 @@ var options = {
     Authorization: 'Bearer eyJhbGciOiJI...'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/users/v1/accounts/19072660652681'
+  url: 'http://api.solapi.com/users/v1/accounts/19073041912531'
 };
 
 $.ajax(options).done(function(response) {
@@ -100,7 +100,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19072660652681";
+$url = "http://api.solapi.com/users/v1/accounts/19073041912531";
 
 $options = array(
     'http' => array(
@@ -122,7 +122,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19072660652681"
+url = "http://api.solapi.com/users/v1/accounts/19073041912531"
 headers = {
   "Authorization": "Bearer eyJhbGciOiJI..."
 }
@@ -140,7 +140,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/users/v1/accounts/19072660652681
+	http://api.solapi.com/users/v1/accounts/19073041912531
 ```
 {% endtab %}
 
@@ -151,7 +151,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19072660652681")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/19073041912531")
 
 headers = {
   "Authorization": "Bearer eyJhbGciOiJI..."
@@ -179,7 +179,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19072660652681"
+  uri := "http://api.solapi.com/users/v1/accounts/19073041912531"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -212,7 +212,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19072660652681";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/19073041912531";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

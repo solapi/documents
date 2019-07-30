@@ -40,8 +40,8 @@ GET https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
     "role": "OWNER",
     "name": "testName 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-07-26T07:50:52.193Z",
-    "dateUpdated": "2019-07-26T07:50:52.193Z"
+    "dateCreated": "2019-07-30T02:38:31.621Z",
+    "dateUpdated": "2019-07-30T02:38:31.621Z"
 }
 ```
 

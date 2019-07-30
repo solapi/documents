@@ -11,7 +11,7 @@ GET https://api.solapi.com/users/v1/invitations
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `users:read` | `role-users:read` |  | `ACTIVE` `UNVERIFIED` |  |
+| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
 ---
 
@@ -33,52 +33,52 @@ GET https://api.solapi.com/users/v1/invitations
         "email": "testOrigin@test.net",
         "invitationId": "iqPkNRHy4atyQeepjeXDO",
         "role": "MEMBER",
-        "dateCreated": "2019-07-26T07:51:01.624Z",
-        "dateUpdated": "2019-07-26T07:51:01.624Z",
+        "dateCreated": "2019-07-30T02:38:40.552Z",
+        "dateUpdated": "2019-07-30T02:38:40.552Z",
         "owner": {
             "name": "test1",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19072660661928",
+            "selectedAccountId": "19073041920411",
             "isAdmin": false,
-            "memberId": "MEMQVBW8A_GCiE",
+            "memberId": "MEMrAaBs6_HCLT",
             "email": "test1@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-07-26T07:51:01.611Z",
-            "dateUpdated": "2019-07-26T07:51:01.614Z"
+            "dateCreated": "2019-07-30T02:38:40.543Z",
+            "dateUpdated": "2019-07-30T02:38:40.545Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19072660661928",
+            "accountId": "19073041920411",
             "name": "test1님의 계정",
-            "dateCreated": "2019-07-26T07:51:01.617Z",
-            "dateUpdated": "2019-07-26T07:51:01.617Z"
+            "dateCreated": "2019-07-30T02:38:40.547Z",
+            "dateUpdated": "2019-07-30T02:38:40.547Z"
         }
     },
     {
         "email": "testOrigin@test.net",
         "invitationId": "UVyI3y01aLn_VU9FFSNEp",
         "role": "DEVELOPER",
-        "dateCreated": "2019-07-26T07:51:01.625Z",
-        "dateUpdated": "2019-07-26T07:51:01.625Z",
+        "dateCreated": "2019-07-30T02:38:40.554Z",
+        "dateUpdated": "2019-07-30T02:38:40.554Z",
         "owner": {
             "name": "test2",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19072660661768",
+            "selectedAccountId": "19073041920142",
             "isAdmin": false,
-            "memberId": "MEMPFFTdzIC2_j",
+            "memberId": "MEMItbE5h9vJO4",
             "email": "test2@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-07-26T07:51:01.613Z",
-            "dateUpdated": "2019-07-26T07:51:01.619Z"
+            "dateCreated": "2019-07-30T02:38:40.544Z",
+            "dateUpdated": "2019-07-30T02:38:40.549Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19072660661768",
+            "accountId": "19073041920142",
             "name": "test2님의 계정",
-            "dateCreated": "2019-07-26T07:51:01.622Z",
-            "dateUpdated": "2019-07-26T07:51:01.622Z"
+            "dateCreated": "2019-07-30T02:38:40.550Z",
+            "dateUpdated": "2019-07-30T02:38:40.550Z"
         }
     }
 ]

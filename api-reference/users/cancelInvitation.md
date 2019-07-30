@@ -36,12 +36,12 @@ DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 ```json
 {
     "invitationId": "CTbhz0F_j9_OWAVcrA3Gm",
-    "accountId": "19072660660946",
-    "memberId": "MEMmGQekFQ0tLi",
+    "accountId": "19073041920999",
+    "memberId": "MEMyXQnFy6d9BT",
     "email": "test1@test.com",
     "role": "MEMBER",
-    "dateCreated": "2019-07-26T07:51:00.996Z",
-    "dateUpdated": "2019-07-26T07:51:00.996Z"
+    "dateCreated": "2019-07-30T02:38:40.217Z",
+    "dateUpdated": "2019-07-30T02:38:40.217Z"
 }
 ```
 

@@ -32,25 +32,25 @@ GET https://api.solapi.com/users/v1/invitations/:invitationId
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-07-26T07:51:13.234Z",
-    "dateUpdated": "2019-07-26T07:51:13.234Z",
+    "dateCreated": "2019-07-30T02:38:51.980Z",
+    "dateUpdated": "2019-07-30T02:38:51.980Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19072660673938",
+        "accountId": "19073041931735",
         "name": "test님의 계정",
-        "dateCreated": "2019-07-26T07:51:13.233Z",
-        "dateUpdated": "2019-07-26T07:51:13.233Z"
+        "dateCreated": "2019-07-30T02:38:51.979Z",
+        "dateUpdated": "2019-07-30T02:38:51.979Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19072660673938",
-        "memberId": "MEMk18W3iRELed",
+        "selectedAccountId": "19073041931735",
+        "memberId": "MEM2lqy1MLRX76",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-07-26T07:51:13.229Z",
-        "dateUpdated": "2019-07-26T07:51:13.231Z"
+        "dateCreated": "2019-07-30T02:38:51.976Z",
+        "dateUpdated": "2019-07-30T02:38:51.978Z"
     }
 }
 ```

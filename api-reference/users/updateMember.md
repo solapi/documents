@@ -52,11 +52,11 @@ PUT https://api.solapi.com/users/v1/member
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMVx4Xp_SwFa9",
+    "memberId": "MEMJtnlgcjYFXy",
     "email": "test1@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-07-26T07:50:52.716Z",
-    "dateUpdated": "2019-07-26T07:50:52.722Z"
+    "dateCreated": "2019-07-30T02:38:32.143Z",
+    "dateUpdated": "2019-07-30T02:38:32.149Z"
 }
 ```
 
