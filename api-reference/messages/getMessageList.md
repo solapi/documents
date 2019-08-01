@@ -73,8 +73,8 @@ GET https://api.solapi.com/messages/v4/list
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-07-26T05:32:59.828Z",
-            "dateUpdated": "2019-07-26T05:32:59.828Z",
+            "dateCreated": "2019-08-01T23:00:35.844Z",
+            "dateUpdated": "2019-08-01T23:00:35.844Z",
             "reason": null,
             "networkName": "ETC"
         }

@@ -74,11 +74,11 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-07-26T05:32:59.707Z"
+            "createAt": "2019-08-01T23:00:35.792Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-07-26T05:32:59.707Z"
+            "createAt": "2019-08-01T23:00:35.792Z"
         }
     ],
     "status": "PENDING",
@@ -101,8 +101,8 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-07-26T05:32:59.709Z",
-    "dateUpdated": "2019-07-26T05:32:59.709Z"
+    "dateCreated": "2019-08-01T23:00:35.795Z",
+    "dateUpdated": "2019-08-01T23:00:35.795Z"
 }
 ```
 
