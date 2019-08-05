@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-05
+
 # 그룹 삭제
 
 #### Request
@@ -7,7 +9,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
 
 메시지 그룹을 삭제합니다. 삭제 후 발송 및 복구가 불가합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -27,7 +29,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
 
 > **Sample Request**
 
-```
+```json
 {}
 ```
 
@@ -74,14 +76,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-01T23:00:35.792Z"
+            "createAt": "2019-08-05T00:25:19.916Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-01T23:00:35.792Z"
+            "createAt": "2019-08-05T00:25:19.916Z"
         },
         {
-            "createAt": "2019-08-01T23:00:40.496Z",
+            "createAt": "2019-08-05T00:25:23.719Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -91,12 +93,12 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-08-01T23:00:40.795Z"
+            "createAt": "2019-08-05T00:25:23.909Z"
         }
     ],
     "status": "DELETED",
     "scheduledDate": null,
-    "dateSent": "2019-08-01T23:00:40.496Z",
+    "dateSent": "2019-08-05T00:25:23.719Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -122,8 +124,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-08-01T23:00:35.795Z",
-    "dateUpdated": "2019-08-01T23:00:40.799Z"
+    "dateCreated": "2019-08-05T00:25:19.918Z",
+    "dateUpdated": "2019-08-05T00:25:23.913Z"
 }
 ```
 

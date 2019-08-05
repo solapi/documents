@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-05
+
 # 그룹 정보 조회
 
 #### Request
@@ -7,7 +9,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 메시지 그룹의 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -21,6 +23,217 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 ---
 
+#### Response
+
+##### Response Structure
+```json
+{
+    "count": {
+        "total": "number",
+        "sentTotal": "number",
+        "sentFailed": "number",
+        "sentSuccess": "number",
+        "sentPending": "number",
+        "sentReplacement": "number",
+        "refund": "number",
+        "registeredFailed": "number",
+        "registeredSuccess": "number"
+    },
+    "balance": {
+        "requested": "number",
+        "replacement": "number",
+        "refund": "number",
+        "sum": "number"
+    },
+    "point": {
+        "requested": "number",
+        "replacement": "number",
+        "refund": "number",
+        "sum": "number"
+    },
+    "app": {
+        "profit": {
+            "sms": "number",
+            "lms": "number",
+            "mms": "number",
+            "ata": "number",
+            "cta": "number"
+        },
+        "appId": "string",
+        "version": "string"
+    },
+    "sdkVersion": "string",
+    "osPlatform": "string",
+    "log": [
+        {
+            "message": "object",
+            "createAt": "date"
+        }
+    ],
+    "status": "string",
+    "scheduledDate": "date",
+    "dateSent": "date",
+    "dateCompleted": "date",
+    "isRefunded": "boolean",
+    "flagUpdated": "boolean",
+    "groupId": "string",
+    "accountId": "string",
+    "apiVersion": "string",
+    "countForCharge": {
+        "sms": {
+            "country": "number"
+        },
+        "lms": {
+            "country": "number"
+        },
+        "mms": {
+            "country": "number"
+        },
+        "ata": {
+            "country": "number"
+        },
+        "cta": {
+            "country": "number"
+        }
+    },
+    "price": {},
+    "dateCreated": "date",
+    "dateUpdated": "date"
+}
+```
+
+##### Response Description
+##### Response / 
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| [count](#response-count) | `object` |  | 카운트 |
+| [balance](#response-balance) | `number` |  | 잔액 |
+| [point](#response-point) | `number` |  | 포인트 |
+| [app](#response-app) | `object` |  | 앱 정보 |
+| sdkVersion | `string` |  | SDK 버전 |
+| osPlatform | `string` |  | OS / Platform |
+| [log](#response-log) | `Array` |  | 로그 |
+| status | `string` |  | 그룹 상태<br>PENDING - 대기중<br>SENDING - 이미 발송 요청된 그룹<br>DELETED - 삭제 처리된 그룹<br>FAILED - 실패 처리된 그룹<br>SCHEDULED - 발송 예약된 그룹<br>COMPLETE - 발송 완료된 그룹 |
+| scheduledDate | `date` |  | 예약 일시 |
+| dateSent | `date` |  | 발송 일시 |
+| dateCompleted | `date` |  | 완료 일시 |
+| isRefunded | `boolean` |  | 환급 여부 |
+| flagUpdated | `boolean` |  | 업데이트 여부 |
+| groupId | `string` |  | 그룹 아이디 |
+| accountId | `string` |  | 계정 고유 번호 |
+| apiVersion | `string` |  | API 버전 |
+| [countForCharge](#response-countforcharge) | `object` |  | 차감 카운트 |
+| [price](#response-price) | `object` |  | 단가 |
+| dateCreated | `date` |  | 생성 일시 |
+| dateUpdated | `date` |  | 업데이트 일시 |
+
+##### Response / count
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| total | `number` |  | 토탈 |
+| sentTotal | `number` |  | 전체 발송 건수 |
+| sentFailed | `number` |  | 발송 실패 건수 |
+| sentSuccess | `number` |  | 발송 성공 건수 |
+| sentPending | `number` |  | 대기 건수 |
+| sentReplacement | `number` |  | 대체 발송 건수 |
+| refund | `number` |  | 환급 건수 |
+| registeredFailed | `number` |  | 접수 실패 건수 |
+| registeredSuccess | `number` |  | 접수 성공 건수 |
+
+##### Response / balance
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| requested | `number` |  | 차감 금액 |
+| replacement | `number` |  | 대체 발송 금액 |
+| refund | `number` |  | 환급 금액 |
+| sum | `number` |  | 합계 금액 |
+
+##### Response / point
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| requested | `number` |  | 차감 포인트 |
+| replacement | `number` |  | 대체 발송 포인트 |
+| refund | `number` |  | 환급 포인트 |
+| sum | `number` |  | 합계 포인트 |
+
+##### Response / app
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| [profit](#response-app-profit) | `object` |  | 앱 사용 요금 |
+| appId | `string` |  | 앱 아이디 |
+| version | `string` |  | 설명 없음 |
+
+##### Response / app / profit
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| sms | `number` |  | SMS 사용 요금 |
+| lms | `number` |  | LMS 사용 요금 |
+| mms | `number` |  | MMS 사용 요금 |
+| ata | `number` |  | 알림톡 사용 요금 |
+| cta | `number` |  | 친구톡 사용 요금 |
+
+
+##### Response / log
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| message | `object` |  | 로그 메시지 |
+| createAt | `date` |  | 로그 기록 일시 |
+
+##### Response / countForCharge
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| [sms](#response-countforcharge-sms) | `object` |  | SMS 차감 금액 |
+| [lms](#response-countforcharge-lms) | `object` |  | LMS 차감 금액 |
+| [mms](#response-countforcharge-mms) | `object` |  | MMS 차감 금액 |
+| [ata](#response-countforcharge-ata) | `object` |  | 알림톡 차감 금액 |
+| [cta](#response-countforcharge-cta) | `object` |  | 친구톡 차감 금액 |
+
+##### Response / countForCharge / sms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 SMS 차감 금액 |
+
+##### Response / countForCharge / lms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 LMS 차감 금액 |
+
+##### Response / countForCharge / mms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 MMS 차감 금액 |
+
+##### Response / countForCharge / ata
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 알림톡 차감 금액 |
+
+##### Response / countForCharge / cta
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 친구톡 차감 금액 |
+
+##### Response / price
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+
+
+---
+
 #### Samples
 
 ##### 그룹 정보 가져오기 성공
@@ -28,7 +241,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 > **Sample Request**
 
 ```
-{}
+http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
 ```
 
 > **Sample Response**
@@ -74,11 +287,11 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-01T23:00:35.792Z"
+            "createAt": "2019-08-05T00:25:19.916Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-01T23:00:35.792Z"
+            "createAt": "2019-08-05T00:25:19.916Z"
         }
     ],
     "status": "PENDING",
@@ -101,8 +314,8 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-01T23:00:35.795Z",
-    "dateUpdated": "2019-08-01T23:00:35.795Z"
+    "dateCreated": "2019-08-05T00:25:19.918Z",
+    "dateUpdated": "2019-08-05T00:25:19.918Z"
 }
 ```
 

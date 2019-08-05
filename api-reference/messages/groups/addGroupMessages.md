@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-05
+
 # 그룹 메시지 추가
 
 #### Request
@@ -7,7 +9,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 그룹에 메시지를 추가합니다. 접수 실패건은 저장되지만 발송은 되지 않습니다.<br>그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.<br>- 하나의 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.<br>- 하나의 요청에 수신번호는 10,000 개를 넘을 수 없습니다.<br>- 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 제한입니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -22,34 +24,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 ##### Request Structure
 ```json
 {
-    "messages": [
-        {
-            "to": "string",
-            "from": "string",
-            "text": "string",
-            "type": "string",
-            "country": "string",
-            "subject": "string",
-            "imageId": "string",
-            "kakaoOptions": {
-                "pfId": "string",
-                "templateId": "string",
-                "disableSms": "boolean",
-                "buttons": [
-                    {
-                        "buttonName": "string",
-                        "buttonType": "string",
-                        "linkMo": "string",
-                        "linkPc": "string",
-                        "linkAnd": "string",
-                        "linkIos": "string"
-                    }
-                ]
-            },
-            "customFields": {},
-            "autoTypeDetect": "boolean"
-        }
-    ]
+    "messages": "Array"
 }
 ```
 
@@ -64,11 +39,11 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 |
-| text | `string` | O | 메시지 내용 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
+| text | `string` | O | 메시지 내용<br>한글 1,000자, 영문 2,000자 제한 |
 | type | `string` |  | 메시지 타입 |
-| country | `string` |  | 국가번호 |
-| subject | `string` |  | 메시지 제목 |
+| country | `string` |  | 국가번호 (현재 미지원) |
+| subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
 | imageId | `string` |  | 이미지 아이디 |
 | [kakaoOptions](#body-messages-kakaooptions) | `object` |  | 설명 없음 |
 | [customFields](#body-messages-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
@@ -99,6 +74,52 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
+
+
+---
+
+#### Response
+
+##### Response Structure
+```json
+{
+    "errorCount": "number",
+    "resultList": [
+        {
+            "to": "string",
+            "from": "string",
+            "type": "string",
+            "country": "string",
+            "messageId": "string",
+            "statusCode": "string",
+            "statusMessage": "string",
+            "accountId": "string"
+        }
+    ]
+}
+```
+
+##### Response Description
+##### Response / 
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| errorCount | `number` |  | 접수 실패 카운트 |
+| [resultList](#response-resultlist) | `array` |  | 모든 메시지의 접수 결과 목록 |
+
+
+##### Response / resultList
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| to | `string` | O | 수신번호 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
+| type | `string` | O | 메시지 타입 |
+| country | `string` | O | 국가번호 (현재 미지원) |
+| messageId | `string` | O | 메시지 아이디 |
+| statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
+| statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
+| accountId | `string` | O | 계정 고유 아이디 |
 
 
 ---
@@ -134,7 +155,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080036HLETTORLYAENBOA",
+            "messageId": "M4V201908050925205N8XOT2UMHCV0LN",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -414,7 +435,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080037QUJU8DY3EXWWS07",
+            "messageId": "M4V20190805092520MKN2JCACRRNYWNX",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -698,7 +719,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V201908020800374RYZDAVSQHIB2PR",
+            "messageId": "M4V20190805092520BGIWJ80AYU9TMJ3",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -954,7 +975,7 @@ public class Request {
 
 ---
 
-##### 정상
+##### 알림톡(ATA) 추가
 
 > **Sample Request**
 
@@ -1012,7 +1033,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080037XAX0SM2LDXVD6JW",
+            "messageId": "M4V20190805092520ZSMGQB3YBLXFWML",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1383,7 +1404,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080037BTVYOGKKXLSVI41",
+            "messageId": "M4V20190805092520ZKUVDOPFYWKAXCT",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1642,6 +1663,322 @@ public class Request {
 
 ---
 
+##### 커스텀 필드 사용
+
+> **Sample Request**
+
+```json
+{
+    "messages": [
+        {
+            "to": "01000000004",
+            "from": "029302266",
+            "text": "cta test message",
+            "type": "CTA",
+            "kakaoOptions": {
+                "pfId": "KA01PF190227072057634pRBhbpAw1w1"
+            },
+            "customFields": {
+                "customerId": "ID-123456789",
+                "customerName": "홍길동",
+                "customMsgId": "MSG-ID-123456"
+            }
+        }
+    ]
+}
+```
+
+> **Sample Response**
+
+```json
+{
+    "errorCount": 0,
+    "resultList": [
+        {
+            "to": "01000000004",
+            "from": "029302266",
+            "type": "CTA",
+            "statusMessage": "정상 접수(이통사로 접수 예정) ",
+            "country": "82",
+            "messageId": "M4V20190805092520WMXXXXFOQZ82YZX",
+            "statusCode": "2000",
+            "accountId": "12925149",
+            "customFields": {
+                "customerId": "ID-123456789",
+                "customerName": "홍길동",
+                "customMsgId": "MSG-ID-123456"
+            }
+        }
+    ]
+}
+```
+
+> **Sample Code**
+
+{% tabs %}
+
+{% tab title="NODE" %}
+
+```javascript
+var request = require('request');
+
+var options = {
+  headers: {
+    Authorization: 'Bearer eyJhbGciOiJI...',
+    'Content-Type': 'application/json'
+  },
+  body: {
+    messages: [
+      {
+        to: '01000000004',
+        from: '029302266',
+        text: 'cta test message',
+        type: 'CTA',
+        kakaoOptions: {
+          pfId: 'KA01PF190227072057634pRBhbpAw1w1'
+        },
+        customFields: {
+          customerId: 'ID-123456789',
+          customerName: '홍길동',
+          customMsgId: 'MSG-ID-123456'
+        }
+      }
+    ]
+  },
+  method: 'PUT',
+  json: true,
+  url:
+    'http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages'
+};
+
+request(options, function(error, response, body) {
+  if (error) throw error;
+  console.log('result :', body);
+});
+
+```
+{% endtab %}
+
+{% tab title="JQUERY" %}
+
+```javascript
+var options = {
+  headers: {
+    Authorization: 'Bearer eyJhbGciOiJI...',
+    'Content-Type': 'application/json'
+  },
+  body: {
+    messages: [
+      {
+        to: '01000000004',
+        from: '029302266',
+        text: 'cta test message',
+        type: 'CTA',
+        kakaoOptions: {
+          pfId: 'KA01PF190227072057634pRBhbpAw1w1'
+        },
+        customFields: {
+          customerId: 'ID-123456789',
+          customerName: '홍길동',
+          customMsgId: 'MSG-ID-123456'
+        }
+      }
+    ]
+  },
+  method: 'PUT',
+  url:
+    'http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages'
+};
+
+$.ajax(options).done(function(response) {
+  console.log(response);
+});
+
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+<?php
+$url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages";
+$data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}';
+
+$options = array(
+    'http' => array(
+        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
+        'method'  => 'PUT'
+    )
+);
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+var_dump($result);
+
+```
+{% endtab %}
+
+{% tab title="PYTHON" %}
+
+```python
+import requests
+
+url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Content-Type": "application/json"
+}
+data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}'
+
+response = requests.put(url, headers=headers, data=data)
+print(response.status_code)
+print(response.text)
+
+```
+{% endtab %}
+
+{% tab title="CURL" %}
+
+```curl
+#!/bin/bash
+curl -X PUT \
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}' \
+	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
+```
+{% endtab %}
+
+{% tab title="RUBY" %}
+
+```ruby
+require 'net/http'
+require 'uri'
+require 'json'
+
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
+
+headers = {
+  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Content-Type": "application/json"
+}
+data = {
+  "messages": [
+    {
+      "to": "01000000004",
+      "from": "029302266",
+      "text": "cta test message",
+      "type": "CTA",
+      "kakaoOptions": {
+        "pfId": "KA01PF190227072057634pRBhbpAw1w1"
+      },
+      "customFields": {
+        "customerId": "ID-123456789",
+        "customerName": "홍길동",
+        "customMsgId": "MSG-ID-123456"
+      }
+    }
+  ]
+}
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
+request.body = data.to_json
+
+response = http.request(request)
+puts response.code
+puts response.body
+
+```
+{% endtab %}
+
+{% tab title="GO" %}
+
+```go
+package main
+
+import (
+  "fmt"
+  "io/ioutil"
+  "net/http"
+  "strings"
+)
+
+func main() {
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
+  data := strings.NewReader(`{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}`)
+
+  req, err := http.NewRequest("PUT", uri, data)
+  if err != nil { panic(err) }
+
+  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Content-Type", "application/json")
+
+  client := &http.Client{}
+  resp, err := client.Do(req)
+  if err != nil { panic(err) }
+  defer resp.Body.Close()
+
+  bytes, _ := ioutil.ReadAll(resp.Body)
+  str := string(bytes)
+  fmt.Println(str)
+}
+
+```
+{% endtab %}
+
+{% tab title="JAVA" %}
+
+```java
+package solapi;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Request {
+  public static void main(String[] args) throws Exception {
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages";
+    String parameters = "{\"messages\":[{\"to\":\"01000000004\",\"from\":\"029302266\",\"text\":\"cta test message\",\"type\":\"CTA\",\"kakaoOptions\":{\"pfId\":\"KA01PF190227072057634pRBhbpAw1w1\"},\"customFields\":{\"customerId\":\"ID-123456789\",\"customerName\":\"홍길동\",\"customMsgId\":\"MSG-ID-123456\"}}]}";
+
+    URL url = new URL(targetUrl);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+    con.setRequestMethod("PUT");
+
+    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Content-Type", "application/json");
+
+    con.setDoOutput(true);
+    DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+    wr.writeBytes(parameters);
+    wr.flush();
+    wr.close();
+
+    int responseCode = con.getResponseCode();
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String line;
+    StringBuffer response = new StringBuffer();
+    while ((line = in.readLine()) != null) {
+      response.append(line);
+    }
+    in.close();
+
+    System.out.println("HTTP response code : " + responseCode);
+    System.out.println("HTTP body : " + response.toString());
+  }
+}
+
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
 ##### to가 String일 경우
 
 > **Sample Request**
@@ -1671,7 +2008,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080037BJPEK4GJTF2OF6K",
+            "messageId": "M4V20190805092520DKBSJSY9ZR5KH4Z",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1953,7 +2290,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080038VNECPT0IAXSQXIB",
+            "messageId": "M4V20190805092521IKLXUMJEXXQWHV0",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -1963,7 +2300,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080038FMMCBQ6OKYAXF7U",
+            "messageId": "M4V20190805092521R4MPIUWTDUXUNYZ",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2254,7 +2591,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080039HZWTKXTCN5IGOK4",
+            "messageId": "M4V20190805092522KXQML03NMYQGN6F",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2264,7 +2601,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190802080039EHMGLZUMJKTR1BY",
+            "messageId": "M4V201908050925220X1D7V1F9F76H4T",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2274,7 +2611,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V20190802080039U4Y1VEDPCGACVEY",
+            "messageId": "M4V20190805092522LYFCXNHZYNX8L8Y",
             "statusCode": "1026",
             "accountId": "12925149"
         }

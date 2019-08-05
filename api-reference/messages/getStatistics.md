@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-05
+
 # 통계 조회
 
 #### Request
@@ -7,14 +9,14 @@ GET https://api.solapi.com/messages/v4/statistics
 
 통계를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
 ##### Query Params
-| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | startDate | `date` |  | eq | 검색 시작 날짜 |
 | endDate | `date` |  | eq | 검색 끝 날짜 |
@@ -28,7 +30,7 @@ GET https://api.solapi.com/messages/v4/statistics
 > **Sample Request**
 
 ```
-{}
+http://api.solapi.com/messages/v4/statistics
 ```
 
 > **Sample Response**
@@ -48,9 +50,9 @@ GET https://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-08-01T23:00:41.305Z",
+                    "_id": "2019-08-05T00:25:24.331Z",
                     "month": "2019/08",
-                    "date": "2019/08/02",
+                    "date": "2019/08/05",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -132,9 +134,9 @@ GET https://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-08-01T23:00:41.305Z",
+            "_id": "2019-08-05T00:25:24.331Z",
             "month": "2019/08",
-            "date": "2019/08/02",
+            "date": "2019/08/05",
             "balance": 1,
             "point": 1,
             "statusCode": {

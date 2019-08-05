@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-05
+
 # 단일 메시지
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/messages/v4/send
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -16,37 +18,8 @@ POST https://api.solapi.com/messages/v4/send
 ##### Request Structure
 ```json
 {
-    "message": {
-        "to": "string",
-        "from": "string",
-        "text": "string",
-        "type": "string",
-        "country": "string",
-        "subject": "string",
-        "imageId": "string",
-        "kakaoOptions": {
-            "pfId": "string",
-            "templateId": "string",
-            "disableSms": "boolean",
-            "buttons": [
-                {
-                    "buttonName": "string",
-                    "buttonType": "string",
-                    "linkMo": "string",
-                    "linkPc": "string",
-                    "linkAnd": "string",
-                    "linkIos": "string"
-                }
-            ]
-        },
-        "customFields": {},
-        "autoTypeDetect": "boolean"
-    },
-    "agent": {
-        "appId": "string",
-        "osPlatform": "string",
-        "sdkVersion": "string"
-    }
+    "message": "object",
+    "agent": "object"
 }
 ```
 
@@ -61,11 +34,11 @@ POST https://api.solapi.com/messages/v4/send
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 |
-| text | `string` | O | 메시지 내용 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
+| text | `string` | O | 메시지 내용<br>한글 1,000자, 영문 2,000자 제한 |
 | type | `string` |  | 메시지 타입 |
-| country | `string` |  | 국가번호 |
-| subject | `string` |  | 메시지 제목 |
+| country | `string` |  | 국가번호 (현재 미지원) |
+| subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
 | imageId | `string` |  | 이미지 아이디 |
 | [kakaoOptions](#body-message-kakaooptions) | `object` |  | 설명 없음 |
 | [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
@@ -128,13 +101,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V201908020800405F4VDCZXHKWBGO0",
+    "groupId": "G4V20190805092523803KEDYBDMDH3FY",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190802080040F29OQZDO5PRMT89",
+    "messageId": "M4V20190805092523MN3T5OMH3XHMSZM",
     "statusCode": "2000",
     "accountId": "12925149"
 }
