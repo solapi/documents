@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-05
+> 문서 생성일 : 2019-08-06
 
 # 그룹 메시지 목록 조회
 
@@ -78,8 +78,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-05T00:25:19.967Z",
-            "dateUpdated": "2019-08-05T00:25:19.967Z",
+            "dateCreated": "2019-08-06T11:51:21.576Z",
+            "dateUpdated": "2019-08-06T11:51:21.576Z",
             "reason": null,
             "networkName": "ETC"
         }

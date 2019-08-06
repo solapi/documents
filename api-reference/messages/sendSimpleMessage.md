@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-05
+> 문서 생성일 : 2019-08-06
 
 # 단일 메시지
 
@@ -101,13 +101,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20190805092523803KEDYBDMDH3FY",
+    "groupId": "G4V20190806205127VYBWAH2QQUGSTXX",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190805092523MN3T5OMH3XHMSZM",
+    "messageId": "M4V20190806205127Z7IDEJDLOWSGGHO",
     "statusCode": "2000",
     "accountId": "12925149"
 }

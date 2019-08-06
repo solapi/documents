@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-05
+> 문서 생성일 : 2019-08-06
 
 # 메시지 조회
 
@@ -75,8 +75,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-05T00:25:19.967Z",
-            "dateUpdated": "2019-08-05T00:25:19.967Z",
+            "dateCreated": "2019-08-06T11:51:21.576Z",
+            "dateUpdated": "2019-08-06T11:51:21.576Z",
             "reason": null,
             "networkName": "ETC"
         }
