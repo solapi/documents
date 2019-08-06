@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 등록된 계좌 정보 삭제
 
 #### Request
@@ -7,7 +9,7 @@ DELETE https://api.solapi.com/cash/v1/bank/accounts
 
 등록된 계좌 정보를 삭제합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -27,7 +29,7 @@ DELETE https://api.solapi.com/cash/v1/bank/accounts
 
 > **Sample Request**
 
-```
+```json
 {}
 ```
 

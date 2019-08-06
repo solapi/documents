@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 출금 신청
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/cash/v1/withdraw
 
 출금 신청을 합니다. 출금 신청한 금액에서 5%가 수수료로 차감됩니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -63,10 +65,10 @@ POST https://api.solapi.com/cash/v1/withdraw
     "amount": 18500,
     "fee": 1500,
     "totalAmount": 20000,
-    "withdrawId": "1564122328174902409938287571100",
-    "dateConfirmed": "2019-07-26T06:25:28.000Z",
-    "dateCreated": "2019-07-26T06:25:28.175Z",
-    "dateUpdated": "2019-07-26T06:25:28.175Z"
+    "withdrawId": "1565071723939536502572557317300",
+    "dateConfirmed": "2019-08-06T06:08:43.000Z",
+    "dateCreated": "2019-08-06T06:08:43.942Z",
+    "dateUpdated": "2019-08-06T06:08:43.942Z"
 }
 ```
 
@@ -316,10 +318,10 @@ public class Request {
     "amount": 9000,
     "fee": 1000,
     "totalAmount": 10000,
-    "withdrawId": "1564122328210958138403103536600",
-    "dateConfirmed": "2019-07-26T06:25:28.000Z",
-    "dateCreated": "2019-07-26T06:25:28.210Z",
-    "dateUpdated": "2019-07-26T06:25:28.210Z"
+    "withdrawId": "1565071724090772810099432856400",
+    "dateConfirmed": "2019-08-06T06:08:44.000Z",
+    "dateCreated": "2019-08-06T06:08:44.090Z",
+    "dateUpdated": "2019-08-06T06:08:44.090Z"
 }
 ```
 

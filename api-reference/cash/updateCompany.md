@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 사업자 정보 업데이트
 
 #### Request
@@ -7,7 +9,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 사업자 정보를 업데이트 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -22,13 +24,7 @@ PUT https://api.solapi.com/cash/v1/company
     "businessNumber": "string",
     "businessType": "string",
     "businessItems": "string",
-    "contacts": [
-        {
-            "name": "string",
-            "email": "email",
-            "phone": "string"
-        }
-    ],
+    "contacts": "array",
     "newDoc": "string"
 }
 ```
@@ -85,7 +81,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "1674090450548954001564122327704"
+    "companyId": "15441761589114540001565071722583"
 }
 ```
 

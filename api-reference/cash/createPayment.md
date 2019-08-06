@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 결제수단 등록
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/cash/v1/payment
 
 결제수단을 등록합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -63,7 +65,7 @@ POST https://api.solapi.com/cash/v1/payment
 {
     "description": "[VISA] est1 01/19",
     "expDate": "2019/01",
-    "paymentId": "5010323547266063001564122325918"
+    "paymentId": "3286262784720680001565071718811"
 }
 ```
 

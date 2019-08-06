@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 은행 계좌 등록
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/cash/v1/bank/accounts
 
 수익금 및 잔액을 출금 받기 위한 계좌를 등록 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |

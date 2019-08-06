@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 결제수단 목록 조회
 
 #### Request
@@ -7,14 +9,14 @@ GET https://api.solapi.com/cash/v1/payment
 
 결제수단 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
 
 ##### Query Params
-| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | accountId | `string` |  | eq | 계정 고유 아이디 |
 | offset | `number` |  | eq | 검색 시작 지점 |
@@ -29,7 +31,7 @@ GET https://api.solapi.com/cash/v1/payment
 > **Sample Request**
 
 ```
-{}
+http://api.solapi.com/cash/v1/payment
 ```
 
 > **Sample Response**
@@ -40,7 +42,7 @@ GET https://api.solapi.com/cash/v1/payment
         {
             "autoRecharge": 0,
             "expDate": "2019/01",
-            "_id": "5126619076618322001564122325925",
+            "_id": "3645523244945846001565071718829",
             "description": "h"
         }
     ]

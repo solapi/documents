@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 결제 수단 제거
 
 #### Request
@@ -7,7 +9,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 결제 수단을 제거 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -42,7 +44,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ```json
 {
-    "paymentId": "7993470030684564001564122326108"
+    "paymentId": "10076966945155812001565071719240"
 }
 ```
 
@@ -50,7 +52,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ```json
 {
-    "paymentId": "7993470030684564001564122326108",
+    "paymentId": "10076966945155812001565071719240",
     "message": "성공적으로 삭제되었습니다."
 }
 ```
@@ -70,7 +72,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '799347003068456400156412232...'
+    paymentId: '100769669451558120015650717...'
   },
   method: 'DELETE',
   json: true,
@@ -94,7 +96,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '799347003068456400156412232...'
+    paymentId: '100769669451558120015650717...'
   },
   method: 'DELETE',
   url: 'http://api.solapi.com/cash/v1/payment'
@@ -112,7 +114,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentId":"799347003068456400156412232..."}';
+$data = '{"paymentId":"100769669451558120015650717..."}';
 
 $options = array(
     'http' => array(
@@ -140,7 +142,7 @@ headers = {
   "Authorization": "Bearer eyJhbGciOiJI...",
   "Content-Type": "application/json"
 }
-data = '{"paymentId":"799347003068456400156412232..."}'
+data = '{"paymentId":"100769669451558120015650717..."}'
 
 response = requests.delete(url, headers=headers, data=data)
 print(response.status_code)
@@ -156,7 +158,7 @@ print(response.text)
 curl -X DELETE \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentId":"799347003068456400156412232..."}' \
+	-d '{"paymentId":"100769669451558120015650717..."}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -175,7 +177,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentId": "799347003068456400156412232..."
+  "paymentId": "100769669451558120015650717..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -202,7 +204,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentId":"799347003068456400156412232..."}`)
+  data := strings.NewReader(`{"paymentId":"100769669451558120015650717..."}`)
 
   req, err := http.NewRequest("DELETE", uri, data)
   if err != nil { panic(err) }
@@ -237,7 +239,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentId\":\"799347003068456400156412232...\"}";
+    String parameters = "{\"paymentId\":\"100769669451558120015650717...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

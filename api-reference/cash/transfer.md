@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 잔액이전
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/cash/v1/transfer
 
 잔액을 다른 계정에 이전합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |

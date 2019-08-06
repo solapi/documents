@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 등록된 결제수단의 우선순위를 변경
 
 #### Request
@@ -7,7 +9,7 @@ PUT https://api.solapi.com/cash/v1/payment
 
 등록된 결제수단의 우선순위를 변경합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -16,9 +18,7 @@ PUT https://api.solapi.com/cash/v1/payment
 ##### Request Structure
 ```json
 {
-    "paymentIds": [
-        "string"
-    ],
+    "paymentIds": "array",
     "minimumCash": "number",
     "rechargeTo": "number"
 }
@@ -44,8 +44,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "7343657161927503001564122326067",
-        "7347421754106775001564122326067"
+        "9363447617941632001565071719195",
+        "9367610646111823001565071719195"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -57,8 +57,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "7343657161927503001564122326067",
-        "7347421754106775001564122326067"
+        "9363447617941632001565071719195",
+        "9367610646111823001565071719195"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -80,7 +80,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '734365716192750300156412232...',
+    paymentIds: '936344761794163200156507171...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -106,7 +106,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '734365716192750300156412232...',
+    paymentIds: '936344761794163200156507171...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -126,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"734365716192750300156412232...","minimumCash":1000,"rechargeTo":100000}';
+$data = '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}';
 
 $options = array(
     'http' => array(
@@ -154,7 +154,7 @@ headers = {
   "Authorization": "Bearer eyJhbGciOiJI...",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"734365716192750300156412232...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
@@ -170,7 +170,7 @@ print(response.text)
 curl -X PUT \
 	-H 'Authorization: Bearer eyJhbGciOiJI...' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentIds":"734365716192750300156412232...","minimumCash":1000,"rechargeTo":100000}' \
+	-d '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -189,7 +189,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "734365716192750300156412232...",
+  "paymentIds": "936344761794163200156507171...",
   "minimumCash": 1000,
   "rechargeTo": 100000
 }
@@ -218,7 +218,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"734365716192750300156412232...","minimumCash":1000,"rechargeTo":100000}`)
+  data := strings.NewReader(`{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -253,7 +253,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"734365716192750300156412232...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String parameters = "{\"paymentIds\":\"936344761794163200156507171...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

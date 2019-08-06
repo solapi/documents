@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-06
+
 # 사업자 정보 등록
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/cash/v1/company
 
 사업자 정보를 등록합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -22,13 +24,7 @@ POST https://api.solapi.com/cash/v1/company
     "businessNumber": "string",
     "businessType": "string",
     "businessItems": "string",
-    "contacts": [
-        {
-            "name": "string",
-            "email": "email",
-            "phone": "string"
-        }
-    ]
+    "contacts": "array"
 }
 ```
 
@@ -83,7 +79,7 @@ POST https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "15040163630135936001564122327559"
+    "companyId": "13330998749380506001565071722448"
 }
 ```
 
