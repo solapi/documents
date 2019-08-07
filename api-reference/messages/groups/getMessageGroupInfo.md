@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-06
+> 문서 생성일 : 2019-08-07
 
 # 그룹 정보 조회
 
@@ -287,11 +287,11 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-06T11:51:21.478Z"
+            "createAt": "2019-08-07T06:59:13.052Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-06T11:51:21.478Z"
+            "createAt": "2019-08-07T06:59:13.052Z"
         }
     ],
     "status": "PENDING",
@@ -314,8 +314,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-06T11:51:21.481Z",
-    "dateUpdated": "2019-08-06T11:51:21.481Z"
+    "dateCreated": "2019-08-07T06:59:13.055Z",
+    "dateUpdated": "2019-08-07T06:59:13.055Z"
 }
 ```
 

@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-06
+> 문서 생성일 : 2019-08-07
 
 # 통계 조회
 
@@ -50,9 +50,9 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-08-06T11:51:27.887Z",
+                    "_id": "2019-08-07T06:59:20.079Z",
                     "month": "2019/08",
-                    "date": "2019/08/06",
+                    "date": "2019/08/07",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -134,9 +134,9 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-08-06T11:51:27.887Z",
+            "_id": "2019-08-07T06:59:20.079Z",
             "month": "2019/08",
-            "date": "2019/08/06",
+            "date": "2019/08/07",
             "balance": 1,
             "point": 1,
             "statusCode": {

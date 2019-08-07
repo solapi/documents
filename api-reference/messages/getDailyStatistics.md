@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-06
+> 문서 생성일 : 2019-08-07
 
 # 일별 통계 내역 조회
 
@@ -41,6 +41,25 @@ http://api.solapi.com/messages/v4/statistics/daily
 
 ```json
 [
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-07-15T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
     {
         "refund": {
             "balance": 0,
@@ -392,29 +411,10 @@ http://api.solapi.com/messages/v4/statistics/daily
         "balance": 10,
         "point": 100,
         "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-06-26T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-06-25T15:00:00.000Z",
+        "date": "2019-06-26T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10

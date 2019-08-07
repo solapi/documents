@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-06
+> 문서 생성일 : 2019-08-07
 
 # 그룹 메시지 추가
 
@@ -155,7 +155,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205122QPX9MYAJJDTUAXZ",
+            "messageId": "M4V201908071559140LFXLQZIFQDMRXF",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -435,7 +435,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205122ZCNP9OZBX6TPOM9",
+            "messageId": "M4V20190807155914QHYDBWSCXNHAABJ",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -719,7 +719,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205123AKI5MGWITPFBWQ8",
+            "messageId": "M4V20190807155914LIYXQHOQ562UJWP",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1033,7 +1033,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205123LCNX1MN13CK9DBH",
+            "messageId": "M4V20190807155914OKBTD86IRLEKXFK",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1404,7 +1404,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205123HLP9MT95YIGCEMO",
+            "messageId": "M4V20190807155914S87Z7EKFXIZ7J1D",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1700,7 +1700,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205123FHTPXOS388Q9JTO",
+            "messageId": "M4V20190807155914IOCKIIVINIVK0LX",
             "statusCode": "2000",
             "accountId": "12925149",
             "customFields": {
@@ -2008,7 +2008,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205123EMH0B8YPWY0CHDN",
+            "messageId": "M4V20190807155914URXGGDY1QZ9ZTIP",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2290,7 +2290,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205124QFQWW88HYNAEUSS",
+            "messageId": "M4V20190807155915EUYIWPE02H9WOLI",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2300,7 +2300,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205124MYASDCEHV6NEIFG",
+            "messageId": "M4V20190807155915UDUYXUHV575RQNE",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2591,7 +2591,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205125S15Z3V2MDHQLGFW",
+            "messageId": "M4V201908071559161T2BZXXXEVNYT8T",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2601,7 +2601,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190806205125ALZSAI7TRJ9KGLS",
+            "messageId": "M4V201908071559165SRXXLP1YYXJSXO",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2611,7 +2611,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V20190806205125OTW3G48KI26WACN",
+            "messageId": "M4V20190807155916DKU8WOVEST2JISN",
             "statusCode": "1026",
             "accountId": "12925149"
         }
