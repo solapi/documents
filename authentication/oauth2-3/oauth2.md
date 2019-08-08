@@ -26,51 +26,43 @@ GET https://api.solapi.com/oauth2/v1/authorize
 
 필요한 GET 쿼리 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션 항목들이 있습니다.
 
-| Name | Type | Required | Desc |
-| :--- | :--- | :--- | :--- |
-
-
-| client\_id | String | true | 앱 생성시 발급받은 Client Id |
-| :--- | :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">response_type</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">true</th>
-      <th style="text-align:left">
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Required</th>
+      <th style="text-align:left">Desc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">client_id</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
+        ID</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">response_type</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">
         <p>Access Token &#xAC12;&#xC744; &#xBC14;&#xB85C; &#xBC1C;&#xAE09;&#xBC1B;&#xC744;
           &#xC218; &#xC788;&#xB294; &apos;token&apos;</p>
         <p>Authorization Code &#xAC12;&#xC744; &#xBC1C;&#xAE09;&#xBC1B;&#xC744; &#xC218;
           &#xC788;&#xB294; &apos;code&apos;</p>
-        <p>&#xAC12;&#xC774; &#xC788;&#xB2E4;.</p>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">scope</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">true</th>
-      <th style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC81C;&#xACF5;&#xBC1B;&#xC744;
-          <a
-          href="https://app.gitbook.com/@nurigo/s/solapi/~/edit/drafts/-Lh8IzjauZYlQiuTgfb3/authentication/oauth2-3/scope">&#xAD8C;&#xD55C;&#xBAA9;&#xB85D;</a>
-        </p>
-        <p>ex) &apos;users:read user:write&apos;</p>
-      </th>
+      <td style="text-align:left">state</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">OAuth2 &#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xAC01;&#xAC01;&#xC758; &#xC694;&#xCCAD;&#xC744;
+        &#xAD6C;&#xBD84;&#xC9D3;&#xB294; &#xAD6C;&#xBCC4; &#xD0A4;</td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table>| state | String | true | OAuth2 서버에서 해당 요청에 대하여 알아볼 수 있는 랜덤 |
-| :--- | :--- | :--- | :--- |
-
-
-```text
+  </tbody>
+</table>```text
 // rseponse_type이 code일 경우
 {
     code: 'ADFKVJCK19JDFKL2KFJLS3388',
@@ -99,103 +91,81 @@ POST https://api.solapi.com/oauth2/v1/access_token
 
 필요한 POST body 파라미터는 아래와 같으며 필드에 따라서 필수항목과 옵션항목들이 있습니다.
 
-| Name | Type | Required | Desc |
-| :--- | :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">grant_type</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">true</th>
-      <th style="text-align:left">
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Required</th>
+      <th style="text-align:left">Desc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">grant_type</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">
         <p>&apos;authorization_code&apos;, &apos;refresh_token&apos; &#xAC12;&#xC774;
           &#xC788;&#xC73C;&#xBA70;</p>
         <p>&#xD1A0;&#xD070;&#xC744; &#xBC1C;&#xAE09;&#xBC1B;&#xC744; &#xBC29;&#xBC95;&#xC5D0;
-          &#xB9DE;&#xAC8C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </th>
+          &#xB9DE;&#xAC8C; &#xC124;&#xC815;&#xAC00;&#xB2A5;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">code</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">false</th>
-      <th style="text-align:left">
-        <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C;</p>
-        <p>&apos;Step 1&apos;&#xC5D0;&#xC11C; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; &#xAC12;&#xC744;
-          &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-      </th>
+      <td style="text-align:left">code</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">
+        <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xD544;&#xC218;&#xAC12;&#xC73C;&#xB85C;</p>
+        <p>Step 1&#xC5D0;&#xC11C; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; authorization_code
+          &#xAC12;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">client_id</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">false</th>
-      <th style="text-align:left">
-        <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C;</p>
+      <td style="text-align:left">client_id</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">
+        <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xD544;&#xC218;&#xAC12;&#xC73C;&#xB85C;</p>
         <p>&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
-          Id</p>
-      </th>
+          ID &#xAC12;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">client_secret</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">false</th>
-      <th style="text-align:left">
-        <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C;</p>
+      <td style="text-align:left">client_secret</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">
+        <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xD544;&#xC218;&#xAC12;&#xC73C;&#xB85C;</p>
         <p>&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xBC1C;&#xAE09;&#xBC1B;&#xC740; Client
-          Secret</p>
-      </th>
+          Secret &#xAC12;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">redirect_uri</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">false</th>
-      <th style="text-align:left">
-        <p>gran_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xBC1B;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C;</p>
-        <p>&apos;authorization_cde&apos;&#xBC1C;&#xAE09; &#xC2DC; &#xC785;&#xB825;&#xD558;&#xC600;&#xB358;
-          redirect_uri&#xB97C;</p>
-        <p>&#xADF8;&#xB300;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-      </th>
+      <td style="text-align:left">redirect_uri</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">
+        <p>grant_type&#xC774; &apos;authorization_code&apos;&#xC77C; &#xB54C; &#xD544;&#xC218;&#xAC12;&#xC73C;&#xB85C;</p>
+        <p>&#xC571; &#xC0DD;&#xC131;&#xC2DC; &#xC785;&#xB825;&#xD558;&#xC600;&#xB358;
+          Redirect URI &#xAC12;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
     <tr>
-      <th style="text-align:left">refresh_token</th>
-      <th style="text-align:left">String</th>
-      <th style="text-align:left">false</th>
-      <th style="text-align:left">
+      <td style="text-align:left">refresh_token</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">
         <p>grant_type&#xC774; &apos;refresh_token&apos;&#xC77C; &#xACBD;&#xC6B0;
-          &#xBC1B;&#xB294; &#xAC12;&#xC73C;&#xB85C;</p>
-        <p>&#xCC98;&#xC74C;&#xC5D0; Access Token &#xBC1C;&#xAE09; &#xC2DC; &#xAC12;&#xC744;
-          &#xD655;&#xC778; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </th>
+          &#xD544;&#xC218;&#xAC12;&#xC73C;&#xB85C;</p>
+        <p>&#xCCAB; Access Token &#xBC1C;&#xAE09; &#xC2DC; &#xBC1B;&#xC558;&#xB358;
+          &#xAC12;</p>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
+  </tbody>
 </table>또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
-Refresh Token의 경우 만료기한이 없으며, 가장 처음 엑세스 토큰을 발급받을 때만 볼 수 있으니 이 점 유의 부탁드립니다.
+Refresh Token의 경우 만료기한이 없으며, **가장 처음 엑세스 토큰을 발급받을 때만 볼 수 있으니 이 점 유의 부탁드립니다.**
 
 ## Step 3. 엑세스 토큰을 사용하여 API 접근하기
 
