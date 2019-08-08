@@ -1,6 +1,6 @@
 ---
 order:
-  - README.md
+  - README.md: true
   - authentication
   - development-kits
   - app-store
