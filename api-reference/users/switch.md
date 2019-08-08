@@ -1,39 +1,38 @@
 # 계정 전환
 
-#### Request
-```
+## Request
+
+```text
 POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 ```
 
 계정 전환합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
+| :--- | :--- | :--- | :--- | :---: |
 | `users:write` |  |  | `ACTIVE` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
-| :--: | :---------: |
+| :---: | :---: |
 | :accountId | 계정 고유 아이디 |
 
----
+## Samples
 
-#### Samples
-
-##### 토큰발급
+### 토큰발급
 
 > **Sample Request**
 
-```
+```text
 {}
 ```
 
 > **Sample Response**
 
-```json
+```javascript
 {
     "success": true
 }
@@ -42,9 +41,7 @@ POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -61,12 +58,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
@@ -79,12 +74,10 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
@@ -100,12 +93,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -117,22 +108,19 @@ headers = {
 response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
-	http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    -H 'Authorization: Bearer eyJhbGciOiJI...' \
+    http://api.solapi.com/users/v1/accounts/19021254859648/switch
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -149,12 +137,10 @@ request = Net::HTTP::Post.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -182,12 +168,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -227,11 +211,7 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
