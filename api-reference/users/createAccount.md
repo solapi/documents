@@ -45,19 +45,19 @@ POST https://api.solapi.com/users/v1/accounts
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19080975245821",
+    "accountId": "19080978269042",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-09T11:54:02.799Z",
-            "dateUpdated": "2019-08-09T11:54:02.799Z",
-            "memberId": "MEMHRIrAeJtOM6",
+            "dateCreated": "2019-08-09T12:44:26.629Z",
+            "dateUpdated": "2019-08-09T12:44:26.629Z",
+            "memberId": "MEMXwyJKin2_ot",
             "role": "OWNER",
             "name": "test1"
         }
     ],
-    "dateCreated": "2019-08-09T11:54:05.119Z",
-    "dateUpdated": "2019-08-09T11:54:05.119Z"
+    "dateCreated": "2019-08-09T12:44:29.309Z",
+    "dateUpdated": "2019-08-09T12:44:29.309Z"
 }
 ```
 

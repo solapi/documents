@@ -35,52 +35,52 @@ http://api.solapi.com/users/v1/invitations
         "email": "testOrigin@test.net",
         "invitationId": "iqPkNRHy4atyQeepjeXDO",
         "role": "MEMBER",
-        "dateCreated": "2019-08-09T11:54:14.972Z",
-        "dateUpdated": "2019-08-09T11:54:14.972Z",
+        "dateCreated": "2019-08-09T12:44:38.830Z",
+        "dateUpdated": "2019-08-09T12:44:38.830Z",
         "owner": {
             "name": "test1",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19080975254586",
+            "selectedAccountId": "19080978278370",
             "isAdmin": false,
-            "memberId": "MEMlXLyrcrf7At",
+            "memberId": "MEMH1XJP1EhbaE",
             "email": "test1@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-08-09T11:54:14.955Z",
-            "dateUpdated": "2019-08-09T11:54:14.959Z"
+            "dateCreated": "2019-08-09T12:44:38.793Z",
+            "dateUpdated": "2019-08-09T12:44:38.812Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19080975254586",
+            "accountId": "19080978278370",
             "name": "test1님의 계정",
-            "dateCreated": "2019-08-09T11:54:14.961Z",
-            "dateUpdated": "2019-08-09T11:54:14.961Z"
+            "dateCreated": "2019-08-09T12:44:38.814Z",
+            "dateUpdated": "2019-08-09T12:44:38.814Z"
         }
     },
     {
         "email": "testOrigin@test.net",
         "invitationId": "UVyI3y01aLn_VU9FFSNEp",
         "role": "DEVELOPER",
-        "dateCreated": "2019-08-09T11:54:14.975Z",
-        "dateUpdated": "2019-08-09T11:54:14.975Z",
+        "dateCreated": "2019-08-09T12:44:38.833Z",
+        "dateUpdated": "2019-08-09T12:44:38.833Z",
         "owner": {
             "name": "test2",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19080975254261",
+            "selectedAccountId": "19080978278627",
             "isAdmin": false,
-            "memberId": "MEMznrkosUujSS",
+            "memberId": "MEMSRhPo-dbZkB",
             "email": "test2@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-08-09T11:54:14.958Z",
-            "dateUpdated": "2019-08-09T11:54:14.968Z"
+            "dateCreated": "2019-08-09T12:44:38.797Z",
+            "dateUpdated": "2019-08-09T12:44:38.817Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19080975254261",
+            "accountId": "19080978278627",
             "name": "test2님의 계정",
-            "dateCreated": "2019-08-09T11:54:14.970Z",
-            "dateUpdated": "2019-08-09T11:54:14.970Z"
+            "dateCreated": "2019-08-09T12:44:38.822Z",
+            "dateUpdated": "2019-08-09T12:44:38.822Z"
         }
     }
 ]

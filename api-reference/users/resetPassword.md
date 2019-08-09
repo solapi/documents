@@ -53,11 +53,11 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMve33isiwZ7O",
+    "memberId": "MEMiYZdc6EmJUL",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T11:54:26.577Z",
-    "dateUpdated": "2019-08-09T11:54:26.585Z"
+    "dateCreated": "2019-08-09T12:44:50.420Z",
+    "dateUpdated": "2019-08-09T12:44:50.428Z"
 }
 ```
 

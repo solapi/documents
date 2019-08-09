@@ -41,11 +41,11 @@ PUT https://api.solapi.com/users/v1/member/activate
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMZJLON5AxKNz",
+    "memberId": "MEM7LgkrL21vxA",
     "email": "test1@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T11:54:14.457Z",
-    "dateUpdated": "2019-08-09T11:54:14.469Z"
+    "dateCreated": "2019-08-09T12:44:38.264Z",
+    "dateUpdated": "2019-08-09T12:44:38.273Z"
 }
 ```
 

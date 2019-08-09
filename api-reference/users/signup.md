@@ -53,30 +53,30 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 {
     "account": {
         "status": "ACTIVE",
-        "accountId": "19080975244782",
+        "accountId": "19080978268966",
         "name": "test1님의 계정",
         "members": [
             {
-                "dateCreated": "2019-08-09T11:54:02.799Z",
-                "dateUpdated": "2019-08-09T11:54:02.799Z",
-                "memberId": "MEMp0XVAt4AGJ3",
+                "dateCreated": "2019-08-09T12:44:26.629Z",
+                "dateUpdated": "2019-08-09T12:44:26.629Z",
+                "memberId": "MEMp8spvDWGJuz",
                 "role": "OWNER",
                 "name": "test1"
             }
         ],
-        "dateCreated": "2019-08-09T11:54:04.810Z",
-        "dateUpdated": "2019-08-09T11:54:04.810Z"
+        "dateCreated": "2019-08-09T12:44:28.984Z",
+        "dateUpdated": "2019-08-09T12:44:28.984Z"
     },
     "member": {
         "name": "test1",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19080975244782",
-        "memberId": "MEMp0XVAt4AGJ3",
+        "selectedAccountId": "19080978268966",
+        "memberId": "MEMp8spvDWGJuz",
         "email": "test1@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-08-09T11:54:04.779Z",
-        "dateUpdated": "2019-08-09T11:54:04.802Z"
+        "dateCreated": "2019-08-09T12:44:28.967Z",
+        "dateUpdated": "2019-08-09T12:44:28.981Z"
     }
 }
 ```

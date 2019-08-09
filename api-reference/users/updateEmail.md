@@ -56,11 +56,11 @@ PUT https://api.solapi.com/users/v1/member/email
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMBh_G-YCMY_W",
+    "memberId": "MEMZ9YS2OdrDS7",
     "email": "newMail@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T11:54:26.763Z",
-    "dateUpdated": "2019-08-09T11:54:26.768Z"
+    "dateCreated": "2019-08-09T12:44:52.013Z",
+    "dateUpdated": "2019-08-09T12:44:52.024Z"
 }
 ```
 

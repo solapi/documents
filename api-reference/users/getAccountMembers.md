@@ -55,8 +55,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 3",
             "email": "test3@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-09T11:54:03.545Z",
-            "dateUpdated": "2019-08-09T11:54:03.545Z"
+            "dateCreated": "2019-08-09T12:44:27.779Z",
+            "dateUpdated": "2019-08-09T12:44:27.779Z"
         },
         {
             "memberId": "18010100001002",
@@ -64,8 +64,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 2",
             "email": "test2@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-09T11:54:03.545Z",
-            "dateUpdated": "2019-08-09T11:54:03.545Z"
+            "dateCreated": "2019-08-09T12:44:27.779Z",
+            "dateUpdated": "2019-08-09T12:44:27.779Z"
         },
         {
             "memberId": "18010100001001",
@@ -73,8 +73,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 1",
             "email": "test1@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-09T11:54:03.545Z",
-            "dateUpdated": "2019-08-09T11:54:03.545Z"
+            "dateCreated": "2019-08-09T12:44:27.779Z",
+            "dateUpdated": "2019-08-09T12:44:27.779Z"
         },
         {
             "memberId": "18010100001000",
@@ -82,8 +82,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 0",
             "email": "test0@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-09T11:54:03.545Z",
-            "dateUpdated": "2019-08-09T11:54:03.545Z"
+            "dateCreated": "2019-08-09T12:44:27.779Z",
+            "dateUpdated": "2019-08-09T12:44:27.779Z"
         }
     ],
     "nextKey": null

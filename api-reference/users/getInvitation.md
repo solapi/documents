@@ -34,25 +34,25 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-08-09T11:54:26.634Z",
-    "dateUpdated": "2019-08-09T11:54:26.634Z",
+    "dateCreated": "2019-08-09T12:44:50.473Z",
+    "dateUpdated": "2019-08-09T12:44:50.473Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19080975266944",
+        "accountId": "19080978290587",
         "name": "test님의 계정",
-        "dateCreated": "2019-08-09T11:54:26.632Z",
-        "dateUpdated": "2019-08-09T11:54:26.632Z"
+        "dateCreated": "2019-08-09T12:44:50.472Z",
+        "dateUpdated": "2019-08-09T12:44:50.472Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19080975266944",
-        "memberId": "MEMT5zCI6m6W40",
+        "selectedAccountId": "19080978290587",
+        "memberId": "MEMgWgz2vs4xrO",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-08-09T11:54:26.627Z",
-        "dateUpdated": "2019-08-09T11:54:26.630Z"
+        "dateCreated": "2019-08-09T12:44:50.468Z",
+        "dateUpdated": "2019-08-09T12:44:50.470Z"
     }
 }
 ```

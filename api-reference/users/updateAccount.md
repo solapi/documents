@@ -57,22 +57,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-08-09T11:54:14.209Z",
-            "dateUpdated": "2019-08-09T11:54:14.209Z",
+            "dateCreated": "2019-08-09T12:44:38.027Z",
+            "dateUpdated": "2019-08-09T12:44:38.027Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-08-09T11:54:14.209Z",
-            "dateUpdated": "2019-08-09T11:54:14.209Z",
+            "dateCreated": "2019-08-09T12:44:38.027Z",
+            "dateUpdated": "2019-08-09T12:44:38.027Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-08-09T11:54:14.210Z",
-    "dateUpdated": "2019-08-09T11:54:14.222Z"
+    "dateCreated": "2019-08-09T12:44:38.029Z",
+    "dateUpdated": "2019-08-09T12:44:38.059Z"
 }
 ```
 

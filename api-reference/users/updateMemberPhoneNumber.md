@@ -58,8 +58,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-08-09T11:54:15.169Z",
-    "dateUpdated": "2019-08-09T11:54:15.173Z",
+    "dateCreated": "2019-08-09T12:44:39.060Z",
+    "dateUpdated": "2019-08-09T12:44:39.068Z",
     "loginSessions": []
 }
 ```
