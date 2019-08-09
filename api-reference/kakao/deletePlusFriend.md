@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-09
+
 # 플러스 친구 삭제
 
 #### Request
@@ -7,7 +9,7 @@ DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
 
 SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 플러스 친구가 삭제되지는 않습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -27,7 +29,7 @@ SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI�
 
 > **Sample Request**
 
-```
+```json
 {}
 ```
 
@@ -45,8 +47,8 @@ SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI�
             "key": "123456789"
         }
     ],
-    "dateCreated": "2019-07-26T06:45:51.211Z",
-    "dateUpdated": "2019-07-26T06:45:51.211Z"
+    "dateCreated": "2019-08-09T04:30:32.116Z",
+    "dateUpdated": "2019-08-09T04:30:32.116Z"
 }
 ```
 
@@ -61,7 +63,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   json: true,
@@ -82,7 +85,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   url:
@@ -104,7 +108,7 @@ $url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpA
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'DELETE'
     )
 );
@@ -124,7 +128,7 @@ import requests
 
 url = "http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.delete(url, headers=headers)
@@ -139,7 +143,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X DELETE \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j
 ```
 {% endtab %}
@@ -154,7 +158,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -184,7 +188,7 @@ func main() {
   req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -219,7 +223,7 @@ public class Request {
 
     con.setRequestMethod("DELETE");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

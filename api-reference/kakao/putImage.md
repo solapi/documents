@@ -1,3 +1,5 @@
+> 문서 생성일 : 2019-08-09
+
 # 친구톡 이미지 업로드
 
 #### Request
@@ -7,7 +9,7 @@ POST https://api.solapi.com/kakao/v1/images
 
 친구톡 이미지를 업로드합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -50,13 +52,13 @@ POST https://api.solapi.com/kakao/v1/images
 
 ```json
 {
-    "imageId": "KA01IM1907260745516362vYuCHSpPME",
+    "imageId": "KA01IM190809053032531kSpctfh6F5e",
     "accountId": "19020720648888",
     "title": "012345678901234567890123456789012345678901234567890123456789",
     "link": "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234",
     "imageUrl": "http://mud-kage.kakao.com/dn/gtM0a/btqtfj5pQ92/meXjtBKhjbdKSh2aK8Wu3k/img_l.png",
-    "dateCreated": "2019-07-26T06:45:51.638Z",
-    "dateUpdated": "2019-07-26T06:45:51.638Z"
+    "dateCreated": "2019-08-09T04:30:32.533Z",
+    "dateUpdated": "2019-08-09T04:30:32.533Z"
 }
 ```
 
@@ -71,7 +73,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -97,7 +100,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -125,7 +129,7 @@ $data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"01234567890123456789
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'POST'
     )
@@ -146,7 +150,7 @@ import requests
 
 url = "http://api.solapi.com/kakao/v1/images"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}'
@@ -163,7 +167,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}' \
 	http://api.solapi.com/kakao/v1/images
@@ -180,7 +184,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/kakao/v1/images")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -218,7 +222,7 @@ func main() {
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -255,7 +259,7 @@ public class Request {
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);

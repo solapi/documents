@@ -1,23 +1,23 @@
+> 문서 생성일 : 2019-08-09
+
 # 플러스 친구 목록 조회
 
-## Request
-
-```text
+#### Request
+```
 GET https://api.solapi.com/kakao/v1/plus-friends
 ```
 
 플러스 친구의 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `kakao:read` | `role-kakao:read` |  |  |  |
 
-### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/overview#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+##### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | pfId | `string` |  | eq | 플러스 친구 고유 아이디 |
 | searchId | `string` |  | eq, ne, like | 플러스 친구 검색용 아이디 |
 | phoneNumber | `string` |  | eq, ne, like | 핸드폰 번호 |
@@ -26,19 +26,21 @@ GET https://api.solapi.com/kakao/v1/plus-friends
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
-## Samples
+---
 
-### 정상
+#### Samples
+
+##### 정상
 
 > **Sample Request**
 
-```text
-{}
+```
+http://api.solapi.com/kakao/v1/plus-friends?
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "limit": 20,
     "friends": [
@@ -47,40 +49,40 @@ GET https://api.solapi.com/kakao/v1/plus-friends
             "searchId": "COMPANY3",
             "accountId": "19301859371111",
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-07-26T06:45:51.477Z",
-            "dateUpdated": "2019-07-26T06:45:51.477Z"
+            "dateCreated": "2019-08-09T04:30:32.370Z",
+            "dateUpdated": "2019-08-09T04:30:32.370Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
             "searchId": "COMPANY5",
             "accountId": "19301859371111",
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-07-26T06:45:51.480Z",
-            "dateUpdated": "2019-07-26T06:45:51.480Z"
+            "dateCreated": "2019-08-09T04:30:32.373Z",
+            "dateUpdated": "2019-08-09T04:30:32.373Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
             "searchId": "COMPANY2",
             "accountId": "19301859371111",
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-07-26T06:45:51.476Z",
-            "dateUpdated": "2019-07-26T06:45:51.476Z"
+            "dateCreated": "2019-08-09T04:30:32.369Z",
+            "dateUpdated": "2019-08-09T04:30:32.369Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
             "searchId": "COMPANY1",
             "accountId": "19301859371111",
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-07-26T06:45:51.474Z",
-            "dateUpdated": "2019-07-26T06:45:51.474Z"
+            "dateCreated": "2019-08-09T04:30:32.367Z",
+            "dateUpdated": "2019-08-09T04:30:32.367Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
             "searchId": "COMPANY4",
             "accountId": "19301859371111",
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-07-26T06:45:51.479Z",
-            "dateUpdated": "2019-07-26T06:45:51.479Z"
+            "dateCreated": "2019-08-09T04:30:32.372Z",
+            "dateUpdated": "2019-08-09T04:30:32.372Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",
@@ -91,13 +93,16 @@ GET https://api.solapi.com/kakao/v1/plus-friends
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   json: true,
@@ -108,14 +113,17 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   url: 'http://api.solapi.com/kakao/v1/plus-friends?'
@@ -124,17 +132,19 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/kakao/v1/plus-friends?";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'GET'
     )
 );
@@ -143,34 +153,39 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/kakao/v1/plus-friends?"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/kakao/v1/plus-friends?
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/kakao/v1/plus-friends?
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -179,7 +194,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends?")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
@@ -187,10 +202,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -207,7 +224,7 @@ func main() {
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -218,10 +235,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -240,7 +259,7 @@ public class Request {
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -261,7 +280,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

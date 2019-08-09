@@ -1,129 +1,124 @@
-# 플러스 친구를 추가
+> 문서 생성일 : 2019-08-09
 
-## Request
+# 플러스 친구 연동 토큰 신청
 
-```text
-POST https://api.solapi.com/kakao/v1/plus-friends
+#### Request
+```
+POST https://api.solapi.com/kakao/v1/plus-friends/token
 ```
 
-기존에 등록된 플러스 친구를 SOLAPI에 연동합니다.
+플러스 친구 연동을 위해 카카오톡으로 토큰을 발급 받을 수 있도록 요청합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-### Request Structure
-
-```javascript
+##### Request Structure
+```json
 {
     "searchId": "string",
-    "phoneNumber": "string",
-    "categoryCode": "string",
-    "token": "string"
+    "phoneNumber": "string"
 }
 ```
 
-### Body Params
-
+##### Body Params
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | searchId | `string` | O | 플러스 친구 검색용 아이디 |
 | phoneNumber | `string` | O | 핸드폰 번호 |
-| categoryCode | `string` | O | 플러스 친구 카테고리 코드 |
-| token | `string` | O | 연동 시 카카오톡으로 사용자에게 오는 토큰 |
 
-## Samples
 
-### 정상
+---
+
+#### Samples
+
+##### 정상
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "searchId": "NURIGO",
-    "phoneNumber": "01055555555",
-    "categoryCode": "02536589547",
-    "token": "123456789"
+    "phoneNumber": "01055555555"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "pfId": "KA01PF1907260745516663IBSWH6YiBw",
-    "searchId": "NURIGO",
-    "accountId": "19301859371938",
-    "phoneNumber": "01055555555",
-    "dateCreated": "2019-07-26T06:45:51.670Z",
-    "dateUpdated": "2019-07-26T06:45:51.670Z"
+    "success": true
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
     searchId: 'NURIGO',
-    phoneNumber: '01055555555',
-    categoryCode: '02536589547',
-    token: '123456789'
+    phoneNumber: '01055555555'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/kakao/v1/plus-friends'
+  url: 'http://api.solapi.com/kakao/v1/plus-friends/token'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
     searchId: 'NURIGO',
-    phoneNumber: '01055555555',
-    categoryCode: '02536589547',
-    token: '123456789'
+    phoneNumber: '01055555555'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/kakao/v1/plus-friends'
+  url: 'http://api.solapi.com/kakao/v1/plus-friends/token'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/plus-friends";
-$data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}';
+$url = "http://api.solapi.com/kakao/v1/plus-friends/token";
+$data = '{"searchId":"NURIGO","phoneNumber":"01055555555"}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'POST'
     )
@@ -133,54 +128,57 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends"
+url = "http://api.solapi.com/kakao/v1/plus-friends/token"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}'
+data = '{"searchId":"NURIGO","phoneNumber":"01055555555"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -H 'Content-Type: application/json' \
-    -d '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}' \
-    http://api.solapi.com/kakao/v1/plus-friends
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"searchId":"NURIGO","phoneNumber":"01055555555"}' \
+	http://api.solapi.com/kakao/v1/plus-friends/token
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends")
+uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/token")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
   "searchId": "NURIGO",
-  "phoneNumber": "01055555555",
-  "categoryCode": "02536589547",
-  "token": "123456789"
+  "phoneNumber": "01055555555"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -189,10 +187,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -204,13 +204,13 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends"
-  data := strings.NewReader(`{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}`)
+  uri := "http://api.solapi.com/kakao/v1/plus-friends/token"
+  data := strings.NewReader(`{"searchId":"NURIGO","phoneNumber":"01055555555"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -222,10 +222,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -237,15 +239,15 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends";
-    String parameters = "{\"searchId\":\"NURIGO\",\"phoneNumber\":\"01055555555\",\"categoryCode\":\"02536589547\",\"token\":\"123456789\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/token";
+    String parameters = "{\"searchId\":\"NURIGO\",\"phoneNumber\":\"01055555555\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -267,7 +269,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
