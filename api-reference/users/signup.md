@@ -1,16 +1,16 @@
+> 문서 생성일 : 2019-08-09
+
 # 회원가입
 
-## Request
-
-```text
+#### Request
+```
 POST https://api.solapi.com/users/v1/signup
 ```
 
 ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
-### Request Structure
-
-```javascript
+##### Request Structure
+```json
 {
     "email": "email",
     "password": "string",
@@ -20,23 +20,25 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 }
 ```
 
-### Body Params
-
+##### Body Params
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
 | captcha | `string` | O | ReCAPTCHA 인증 코드 |
 | name | `string` |  | 이름 |
 
-## Samples
 
-### 회원가입
+---
+
+#### Samples
+
+##### 회원가입
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "email": "test1@nurigo.net",
     "password": "asd123!",
@@ -47,34 +49,34 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "account": {
         "status": "ACTIVE",
-        "accountId": "19073041911451",
+        "accountId": "19080975244782",
         "name": "test1님의 계정",
         "members": [
             {
-                "dateCreated": "2019-07-30T02:38:30.878Z",
-                "dateUpdated": "2019-07-30T02:38:30.878Z",
-                "memberId": "MEMFVfo-Rj5q7-",
+                "dateCreated": "2019-08-09T11:54:02.799Z",
+                "dateUpdated": "2019-08-09T11:54:02.799Z",
+                "memberId": "MEMp0XVAt4AGJ3",
                 "role": "OWNER",
                 "name": "test1"
             }
         ],
-        "dateCreated": "2019-07-30T02:38:31.926Z",
-        "dateUpdated": "2019-07-30T02:38:31.926Z"
+        "dateCreated": "2019-08-09T11:54:04.810Z",
+        "dateUpdated": "2019-08-09T11:54:04.810Z"
     },
     "member": {
         "name": "test1",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19073041911451",
-        "memberId": "MEMFVfo-Rj5q7-",
+        "selectedAccountId": "19080975244782",
+        "memberId": "MEMp0XVAt4AGJ3",
         "email": "test1@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-07-30T02:38:31.919Z",
-        "dateUpdated": "2019-07-30T02:38:31.924Z"
+        "dateCreated": "2019-08-09T11:54:04.779Z",
+        "dateUpdated": "2019-08-09T11:54:04.802Z"
     }
 }
 ```
@@ -82,7 +84,9 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -105,10 +109,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -127,10 +133,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/signup";
@@ -148,10 +156,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -164,20 +174,23 @@ data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Content-Type: application/json' \
-    -d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
-    http://api.solapi.com/users/v1/signup
+	-H 'Content-Type: application/json' \
+	-d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
+	http://api.solapi.com/users/v1/signup
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -201,10 +214,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -233,10 +248,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -277,7 +294,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

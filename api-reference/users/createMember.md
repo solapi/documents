@@ -1,42 +1,44 @@
-# 초대 수락\(비회원\)
+> 문서 생성일 : 2019-08-09
 
-## Request
+# 초대 수락(비회원)
 
-```text
+#### Request
+```
 POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
 기존에 SOLAPI를 사용하지 않았던 사용자가 초대로 인해 SOLAPI에 가입되고 초대된 계정에 들어가게 됩니다.
 
-### Path Parameters
+##### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :invitationId | 설명 없음 |
 
-### Request Structure
-
-```javascript
+##### Request Structure
+```json
 {
     "password": "string",
     "passwordConfirmation": "string"
 }
 ```
 
-### Body Params
-
+##### Body Params
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
 
-## Samples
 
-### 정상
+---
+
+#### Samples
+
+##### 정상
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "password": "asd123!",
     "passwordConfirmation": "asd123!"
@@ -45,36 +47,38 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "status": "ACTIVE",
-    "accountId": "19073041912975",
+    "accountId": "19080975245601",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-07-30T02:38:30.878Z",
-            "dateUpdated": "2019-07-30T02:38:30.878Z",
-            "memberId": "MEMP5TxKo1KhYM",
+            "dateCreated": "2019-08-09T11:54:02.799Z",
+            "dateUpdated": "2019-08-09T11:54:02.799Z",
+            "memberId": "MEMPsOLMriMj4f",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-07-30T02:38:30.878Z",
-            "dateUpdated": "2019-07-30T02:38:30.878Z",
-            "memberId": "MEMcdmfQ6KYK5U",
+            "dateCreated": "2019-08-09T11:54:02.799Z",
+            "dateUpdated": "2019-08-09T11:54:02.799Z",
+            "memberId": "MEMQRub6nNQLbb",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-07-30T02:38:32.089Z",
-    "dateUpdated": "2019-07-30T02:38:32.099Z"
+    "dateCreated": "2019-08-09T11:54:05.169Z",
+    "dateUpdated": "2019-08-09T11:54:05.204Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -95,10 +99,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -115,10 +121,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
@@ -136,10 +144,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -152,20 +162,23 @@ data = '{"password":"asd123!","passwordConfirmation":"asd123!"}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Content-Type: application/json' \
-    -d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
-    http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
+	-H 'Content-Type: application/json' \
+	-d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
+	http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -187,10 +200,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -219,10 +234,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -263,7 +280,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

@@ -1,92 +1,88 @@
-# 내 정보 조회
+> 문서 생성일 : 2019-08-09
 
-## Request
+# 메일 중복 검사
 
-```text
-GET https://api.solapi.com/users/v1/member
+#### Request
+```
+GET https://api.solapi.com/users/v1/existence/email/:email
 ```
 
-내 사용자 정보를 조회합니다.
+특정 메일을 사용하고 있는 사용자가 있는지 확인합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
+##### Path Parameters
 
-| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
+| Name | Description |
+| :--: | :---------: |
+| :email | 이메일 |
 
-## Samples
+---
 
-### 정상
+#### Samples
+
+##### 정상
 
 > **Sample Request**
 
-```text
-{}
+```
+http://api.solapi.com/users/v1/existence/email/test@test.net
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "name": "steven",
-    "phoneNumber": null,
-    "status": "UNVERIFIED",
-    "selectedAccountId": "19073041912668",
-    "memberId": "MEMsQggq2uGJ_b",
-    "email": "steven@nurigo.net",
-    "loginSessions": [],
-    "dateCreated": "2019-07-30T02:38:32.130Z",
-    "dateUpdated": "2019-07-30T02:38:32.132Z"
+    "email": "test@test.net",
+    "result": true
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
-  headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
-  },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/member'
+  url: 'http://api.solapi.com/users/v1/existence/email/test@test.net'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
-  headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
-  },
   method: 'GET',
-  url: 'http://api.solapi.com/users/v1/member'
+  url: 'http://api.solapi.com/users/v1/existence/email/test@test.net'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/member";
+$url = "http://api.solapi.com/users/v1/existence/email/test@test.net";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => ,
         'method'  => 'GET'
     )
 );
@@ -95,54 +91,54 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/member"
-headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
-}
+url = "http://api.solapi.com/users/v1/existence/email/test@test.net"
 
-response = requests.get(url, headers=headers)
+response = requests.get(url)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/users/v1/member
+	http://api.solapi.com/users/v1/existence/email/test@test.net
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/member")
+uri = URI.parse("http://api.solapi.com/users/v1/existence/email/test@test.net")
 
-headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
-}
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, )
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -154,12 +150,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/member"
+  uri := "http://api.solapi.com/users/v1/existence/email/test@test.net"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
-
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -170,10 +164,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -185,14 +181,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/member";
+    String targetUrl = "http://api.solapi.com/users/v1/existence/email/test@test.net";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -213,7 +208,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
