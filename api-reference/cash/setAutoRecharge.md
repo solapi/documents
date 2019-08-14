@@ -1,26 +1,22 @@
+> 문서 생성일 : 2019-08-14
+
 # 등록된 결제수단의 우선순위를 변경
 
-> 문서 생성일 : 2019-08-06
-
-## 등록된 결제수단의 우선순위를 변경
-
-### Request
-
-```text
+#### Request
+```
 PUT https://api.solapi.com/cash/v1/payment
 ```
 
 등록된 결제수단의 우선순위를 변경합니다.
 
-#### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-#### Request Structure
-
-```javascript
+##### Request Structure
+```json
 {
     "paymentIds": "array",
     "minimumCash": "number",
@@ -28,25 +24,28 @@ PUT https://api.solapi.com/cash/v1/payment
 }
 ```
 
-#### Body Params
-
+##### Body Params
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | paymentIds | `array` | O | 결제 ID |
 | minimumCash | `number` | O | 충전 기준 금액 |
 | rechargeTo | `number` | O | 충전 목표 금액 |
 
-### Samples
 
-#### 우선순위 변경 \(정상\)
+
+---
+
+#### Samples
+
+##### 우선순위 변경 (정상)
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "paymentIds": [
-        "9363447617941632001565071719195",
-        "9367610646111823001565071719195"
+        "5368568351334320001565773627958",
+        "5364615258313551001565773627958"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -55,11 +54,11 @@ PUT https://api.solapi.com/cash/v1/payment
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "paymentIds": [
-        "9363447617941632001565071719195",
-        "9367610646111823001565071719195"
+        "5368568351334320001565773627958",
+        "5364615258313551001565773627958"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -69,17 +68,20 @@ PUT https://api.solapi.com/cash/v1/payment
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '936344761794163200156507171...',
+    paymentIds: '536856835133432000156577362...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -92,18 +94,21 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '936344761794163200156507171...',
+    paymentIds: '536856835133432000156577362...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -114,18 +119,20 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}';
+$data = '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -135,38 +142,43 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/cash/v1/payment"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -H 'Content-Type: application/json' \
-    -d '{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}' \
-    http://api.solapi.com/cash/v1/payment
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}' \
+	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -175,11 +187,11 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/cash/v1/payment")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "936344761794163200156507171...",
+  "paymentIds": "536856835133432000156577362...",
   "minimumCash": 1000,
   "rechargeTo": 100000
 }
@@ -190,10 +202,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -206,12 +220,12 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"936344761794163200156507171...","minimumCash":1000,"rechargeTo":100000}`)
+  data := strings.NewReader(`{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -223,10 +237,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -239,14 +255,14 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"936344761794163200156507171...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String parameters = "{\"paymentIds\":\"536856835133432000156577362...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -268,7 +284,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

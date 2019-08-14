@@ -1,13 +1,13 @@
 > 문서 생성일 : 2019-08-14
 
-# 잔액이전
+# 자동 충전 on/off
 
 #### Request
 ```
-POST https://api.solapi.com/cash/v1/transfer
+PUT https://api.solapi.com/cash/v1/recharge
 ```
 
-잔액을 다른 계정에 이전합니다.
+자동 충전을 on/off 합니다.
 
 ##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
@@ -21,42 +21,24 @@ POST https://api.solapi.com/cash/v1/transfer
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
-```json
-{
-    "targetAccountId": "string",
-    "amount": "number",
-    "accountId": "string"
-}
-```
-
-##### Body Params
-| Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| targetAccountId | `string` | O | 잔액 이전을 받을 계정 ID |
-| amount | `number` | O | 합계 금액 |
-| accountId | `string` |  | 계정 고유 아이디 |
-
-
 ---
 
 #### Samples
 
-##### 캐쉬 이전
+##### 자동 충전 토글
 
 > **Sample Request**
 
 ```json
-{
-    "amount": 1000,
-    "targetAccountId": "214727"
-}
+{}
 ```
 
 > **Sample Response**
 
 ```json
-"Success"
+{
+    "autoRecharge": false
+}
 ```
 
 > **Sample Code**
@@ -71,16 +53,11 @@ var request = require('request');
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  body: {
-    amount: 1000,
-    targetAccountId: '214727'
-  },
-  method: 'POST',
+  method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/transfer'
+  url: 'http://api.solapi.com/cash/v1/recharge'
 };
 
 request(options, function(error, response, body) {
@@ -97,15 +74,10 @@ request(options, function(error, response, body) {
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  body: {
-    amount: 1000,
-    targetAccountId: '214727'
-  },
-  method: 'POST',
-  url: 'http://api.solapi.com/cash/v1/transfer'
+  method: 'PUT',
+  url: 'http://api.solapi.com/cash/v1/recharge'
 };
 
 $.ajax(options).done(function(response) {
@@ -119,14 +91,12 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/transfer";
-$data = '{"amount":1000,"targetAccountId":"214727"}';
+$url = "http://api.solapi.com/cash/v1/recharge";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
-        'content' => $data,
-        'method'  => 'POST'
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
+        'method'  => 'PUT'
     )
 );
 
@@ -143,14 +113,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/transfer"
+url = "http://api.solapi.com/cash/v1/recharge"
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
-data = '{"amount":1000,"targetAccountId":"214727"}'
 
-response = requests.post(url, headers=headers, data=data)
+response = requests.put(url, headers=headers)
 print(response.status_code)
 print(response.text)
 
@@ -161,11 +129,9 @@ print(response.text)
 
 ```curl
 #!/bin/bash
-curl -X POST \
+curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"amount":1000,"targetAccountId":"214727"}' \
-	http://api.solapi.com/cash/v1/transfer
+	http://api.solapi.com/cash/v1/recharge
 ```
 {% endtab %}
 
@@ -176,19 +142,13 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/transfer")
+uri = URI.parse("http://api.solapi.com/cash/v1/recharge")
 
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
-}
-data = {
-  "amount": 1000,
-  "targetAccountId": "214727"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
-request.body = data.to_json
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
@@ -210,14 +170,12 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/transfer"
-  data := strings.NewReader(`{"amount":1000,"targetAccountId":"214727"}`)
+  uri := "http://api.solapi.com/cash/v1/recharge"
 
-  req, err := http.NewRequest("POST", uri, data)
+  req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
-  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -245,16 +203,14 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/transfer";
-    String parameters = "{\"amount\":1000,\"targetAccountId\":\"214727\"}";
+    String targetUrl = "http://api.solapi.com/cash/v1/recharge";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
-    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

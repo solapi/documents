@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-06
+> 문서 생성일 : 2019-08-14
 
 # 세금계산서 목록 조회
 
@@ -63,7 +63,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.749Z"
+        "dateUpdated": "2019-08-14T09:07:09.422Z"
     },
     {
         "taxType": "tax",
@@ -84,7 +84,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.749Z"
+        "dateUpdated": "2019-08-14T09:07:09.422Z"
     },
     {
         "taxType": "tax",
@@ -105,7 +105,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.422Z"
     },
     {
         "taxType": "tax",
@@ -126,7 +126,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -147,7 +147,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -168,7 +168,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -189,7 +189,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -210,7 +210,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -231,7 +231,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.750Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -252,7 +252,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -273,7 +273,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.423Z"
     },
     {
         "taxType": "tax",
@@ -294,7 +294,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.424Z"
     },
     {
         "taxType": "tax",
@@ -315,7 +315,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.424Z"
     },
     {
         "taxType": "tax",
@@ -336,7 +336,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.424Z"
     },
     {
         "taxType": "tax",
@@ -357,7 +357,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-08-06T06:08:42.751Z"
+        "dateUpdated": "2019-08-14T09:07:09.424Z"
     }
 ]
 ```
@@ -373,7 +373,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   json: true,
@@ -393,7 +394,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   url: 'http://api.solapi.com/cash/v1/taxinvoice'
@@ -414,7 +416,7 @@ $url = "http://api.solapi.com/cash/v1/taxinvoice";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'GET'
     )
 );
@@ -434,7 +436,7 @@ import requests
 
 url = "http://api.solapi.com/cash/v1/taxinvoice"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.get(url, headers=headers)
@@ -449,7 +451,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X GET \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/cash/v1/taxinvoice
 ```
 {% endtab %}
@@ -464,7 +466,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/cash/v1/taxinvoice")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
@@ -494,7 +496,7 @@ func main() {
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -529,7 +531,7 @@ public class Request {
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

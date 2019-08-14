@@ -1,13 +1,13 @@
 > 문서 생성일 : 2019-08-14
 
-# 사업자 정보 등록
+# 결제수단 등록
 
 #### Request
 ```
-POST https://api.solapi.com/cash/v1/company
+POST https://api.solapi.com/cash/v1/payment
 ```
 
-사업자 정보를 등록합니다.
+결제수단을 등록합니다.
 
 ##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
@@ -15,63 +15,47 @@ POST https://api.solapi.com/cash/v1/company
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
+##### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  | O |
+
 ##### Request Structure
 ```json
 {
-    "name": "string",
-    "owner": "string",
-    "address": "string",
-    "businessNumber": "string",
-    "businessType": "string",
-    "businessItems": "string",
-    "contacts": "array"
+    "cardNumber": "string",
+    "cvc": "string",
+    "expYear": "number",
+    "expMonth": "number",
+    "description": "string"
 }
 ```
 
 ##### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| name | `string` | O | 회사명 |
-| owner | `string` | O | 대표자 |
-| address | `string` | O | 사업장 주소  |
-| businessNumber | `string` | O | 사업자 번호 |
-| businessType | `string` | O | 사업자 형태 (개인 | 법인) |
-| businessItems | `string` | O | 업종 (업태 + 종목) |
-| [contacts](#body-contacts) | `array` | O | 담당자 |
-
-
-##### Body / contacts
-
-| Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| name | `string` |  | 회사명 |
-| email | `email` |  | 이메일 |
-| phone | `string` |  | 연락처 |
+| cardNumber | `string` | O | 카드 번호 |
+| cvc | `string` | O | CVC |
+| expYear | `number` | O | 유효기간(년) |
+| expMonth | `number` | O | 유효기간(월) |
+| description | `string` |  | 설명 |
 
 
 ---
 
 #### Samples
 
-##### 사업자 정보 등록 (정상)
+##### 카드 등록 (정상 description 이 없는 경우)
 
 > **Sample Request**
 
 ```json
 {
-    "name": "회사이름",
-    "owner": "대표자이름",
-    "address": "회사주소",
-    "businessNumber": "사업자정보",
-    "businessType": "업태",
-    "businessItems": "종목",
-    "contacts": [
-        {
-            "name": "contact name",
-            "email": "contact@email.com",
-            "phone": "contact phone"
-        }
-    ]
+    "cardNumber": "test1",
+    "cvc": "123",
+    "expYear": 19,
+    "expMonth": "01"
 }
 ```
 
@@ -79,7 +63,9 @@ POST https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "10807172388470480001565773629306"
+    "description": "[VISA] est1 01/19",
+    "expDate": "2019/01",
+    "paymentId": "2887561472539033001565773627800"
 }
 ```
 
@@ -99,23 +85,14 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    name: '회사이름',
-    owner: '대표자이름',
-    address: '회사주소',
-    businessNumber: '사업자정보',
-    businessType: '업태',
-    businessItems: '종목',
-    contacts: [
-      {
-        name: 'contact name',
-        email: 'contact@email.com',
-        phone: 'contact phone'
-      }
-    ]
+    cardNumber: 'test1',
+    cvc: '123',
+    expYear: 19,
+    expMonth: '01'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/company'
+  url: 'http://api.solapi.com/cash/v1/payment'
 };
 
 request(options, function(error, response, body) {
@@ -136,22 +113,13 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    name: '회사이름',
-    owner: '대표자이름',
-    address: '회사주소',
-    businessNumber: '사업자정보',
-    businessType: '업태',
-    businessItems: '종목',
-    contacts: [
-      {
-        name: 'contact name',
-        email: 'contact@email.com',
-        phone: 'contact phone'
-      }
-    ]
+    cardNumber: 'test1',
+    cvc: '123',
+    expYear: 19,
+    expMonth: '01'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/cash/v1/company'
+  url: 'http://api.solapi.com/cash/v1/payment'
 };
 
 $.ajax(options).done(function(response) {
@@ -165,8 +133,8 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/company";
-$data = '{"name":"회사이름","owner":"대표자이름","address":"회사주소","businessNumber":"사업자정보","businessType":"업태","businessItems":"종목","contacts":[{"name":"contact name","email":"contact@email.com","phone":"contact phone"}]}';
+$url = "http://api.solapi.com/cash/v1/payment";
+$data = '{"cardNumber":"test1","cvc":"123","expYear":19,"expMonth":"01"}';
 
 $options = array(
     'http' => array(
@@ -189,12 +157,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/company"
+url = "http://api.solapi.com/cash/v1/payment"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"name":"회사이름","owner":"대표자이름","address":"회사주소","businessNumber":"사업자정보","businessType":"업태","businessItems":"종목","contacts":[{"name":"contact name","email":"contact@email.com","phone":"contact phone"}]}'
+data = '{"cardNumber":"test1","cvc":"123","expYear":19,"expMonth":"01"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -210,8 +178,8 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"name":"회사이름","owner":"대표자이름","address":"회사주소","businessNumber":"사업자정보","businessType":"업태","businessItems":"종목","contacts":[{"name":"contact name","email":"contact@email.com","phone":"contact phone"}]}' \
-	http://api.solapi.com/cash/v1/company
+	-d '{"cardNumber":"test1","cvc":"123","expYear":19,"expMonth":"01"}' \
+	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
 
@@ -222,26 +190,17 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/company")
+uri = URI.parse("http://api.solapi.com/cash/v1/payment")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "name": "회사이름",
-  "owner": "대표자이름",
-  "address": "회사주소",
-  "businessNumber": "사업자정보",
-  "businessType": "업태",
-  "businessItems": "종목",
-  "contacts": [
-    {
-      "name": "contact name",
-      "email": "contact@email.com",
-      "phone": "contact phone"
-    }
-  ]
+  "cardNumber": "test1",
+  "cvc": "123",
+  "expYear": 19,
+  "expMonth": "01"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -267,8 +226,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/company"
-  data := strings.NewReader(`{"name":"회사이름","owner":"대표자이름","address":"회사주소","businessNumber":"사업자정보","businessType":"업태","businessItems":"종목","contacts":[{"name":"contact name","email":"contact@email.com","phone":"contact phone"}]}`)
+  uri := "http://api.solapi.com/cash/v1/payment"
+  data := strings.NewReader(`{"cardNumber":"test1","cvc":"123","expYear":19,"expMonth":"01"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -302,8 +261,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/company";
-    String parameters = "{\"name\":\"회사이름\",\"owner\":\"대표자이름\",\"address\":\"회사주소\",\"businessNumber\":\"사업자정보\",\"businessType\":\"업태\",\"businessItems\":\"종목\",\"contacts\":[{\"name\":\"contact name\",\"email\":\"contact@email.com\",\"phone\":\"contact phone\"}]}";
+    String targetUrl = "http://api.solapi.com/cash/v1/payment";
+    String parameters = "{\"cardNumber\":\"test1\",\"cvc\":\"123\",\"expYear\":19,\"expMonth\":\"01\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
