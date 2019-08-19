@@ -1,6 +1,6 @@
 ---
 order:
-  - README.md:false
+  - README.md: false
   - overview.md
   - messages
   - kakao  
