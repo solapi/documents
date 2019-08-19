@@ -22,6 +22,7 @@
 
 ## API-REFERENCE
 
+* [Overview](api-reference/overview.md)
 * [메시지](api-reference/messages/README.md)
   * [단일 메시지](api-reference/messages/sendSimpleMessage.md)
   * [그룹 메시지](api-reference/messages/groups/README.md)
@@ -137,4 +138,3 @@
 * [스토리지](api-reference/storage/README.md)
 * [Message Status Codes](api-reference/message-status-codes.md)
 * [Terminology](api-reference/terminology.md)
-* [Overview](api-reference/over.md)
