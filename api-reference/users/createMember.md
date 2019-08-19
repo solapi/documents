@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 초대 수락(비회원)
 
@@ -50,26 +50,26 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19080978269081",
+    "accountId": "19081942570686",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-09T12:44:26.629Z",
-            "dateUpdated": "2019-08-09T12:44:26.629Z",
-            "memberId": "MEMfs8BkLjz1tb",
+            "dateCreated": "2019-08-19T02:49:29.030Z",
+            "dateUpdated": "2019-08-19T02:49:29.030Z",
+            "memberId": "MEMNZeKuLT8Z7n",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-08-09T12:44:26.629Z",
-            "dateUpdated": "2019-08-09T12:44:26.629Z",
-            "memberId": "MEMSS2_0BZfi7s",
+            "dateCreated": "2019-08-19T02:49:29.030Z",
+            "dateUpdated": "2019-08-19T02:49:29.030Z",
+            "memberId": "MEMkBQ7s0QURXn",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-08-09T12:44:29.427Z",
-    "dateUpdated": "2019-08-09T12:44:29.447Z"
+    "dateCreated": "2019-08-19T02:49:30.566Z",
+    "dateUpdated": "2019-08-19T02:49:30.579Z"
 }
 ```
 

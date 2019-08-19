@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 계정 생성
 
@@ -45,19 +45,19 @@ POST https://api.solapi.com/users/v1/accounts
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19080978269042",
+    "accountId": "19081942570919",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-09T12:44:26.629Z",
-            "dateUpdated": "2019-08-09T12:44:26.629Z",
-            "memberId": "MEMXwyJKin2_ot",
+            "dateCreated": "2019-08-19T02:49:29.030Z",
+            "dateUpdated": "2019-08-19T02:49:29.030Z",
+            "memberId": "MEMBRdiKAlIGOG",
             "role": "OWNER",
             "name": "test1"
         }
     ],
-    "dateCreated": "2019-08-09T12:44:29.309Z",
-    "dateUpdated": "2019-08-09T12:44:29.309Z"
+    "dateCreated": "2019-08-19T02:49:30.543Z",
+    "dateUpdated": "2019-08-19T02:49:30.543Z"
 }
 ```
 

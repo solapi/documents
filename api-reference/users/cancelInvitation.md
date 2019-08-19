@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 초대 취소
 
@@ -38,12 +38,12 @@ DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 ```json
 {
     "invitationId": "CTbhz0F_j9_OWAVcrA3Gm",
-    "accountId": "19080978277336",
-    "memberId": "MEMzmojWZsBuDj",
+    "accountId": "19081942578339",
+    "memberId": "MEMct-zEsfRnma",
     "email": "test1@test.com",
     "role": "MEMBER",
-    "dateCreated": "2019-08-09T12:44:37.981Z",
-    "dateUpdated": "2019-08-09T12:44:37.981Z"
+    "dateCreated": "2019-08-19T02:49:38.740Z",
+    "dateUpdated": "2019-08-19T02:49:38.740Z"
 }
 ```
 

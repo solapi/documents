@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 회원 정보 수정
 
@@ -55,8 +55,8 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 
 ```json
 {
-    "dateCreated": "2019-08-09T12:44:28.465Z",
-    "dateUpdated": "2019-08-09T12:44:28.520Z",
+    "dateCreated": "2019-08-19T02:49:30.087Z",
+    "dateUpdated": "2019-08-19T02:49:30.109Z",
     "memberId": "18010100001001",
     "role": "MEMBER",
     "name": "Member"

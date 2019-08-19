@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 사용자 정보 수정
 
@@ -54,11 +54,11 @@ PUT https://api.solapi.com/users/v1/member
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMPLpeV_GBJJ_",
+    "memberId": "MEMxKmorOEo8cr",
     "email": "test1@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T12:44:29.546Z",
-    "dateUpdated": "2019-08-09T12:44:29.558Z"
+    "dateCreated": "2019-08-19T02:49:30.636Z",
+    "dateUpdated": "2019-08-19T02:49:30.644Z"
 }
 ```
 

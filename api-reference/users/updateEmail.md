@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 이메일 변경
 
@@ -56,11 +56,11 @@ PUT https://api.solapi.com/users/v1/member/email
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMZ9YS2OdrDS7",
+    "memberId": "MEMywtMrPqSvqM",
     "email": "newMail@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T12:44:52.013Z",
-    "dateUpdated": "2019-08-09T12:44:52.024Z"
+    "dateCreated": "2019-08-19T02:49:51.011Z",
+    "dateUpdated": "2019-08-19T02:49:51.016Z"
 }
 ```
 

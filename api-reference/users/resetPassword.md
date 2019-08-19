@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 비밀번호 초기화
 
@@ -53,11 +53,11 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMiYZdc6EmJUL",
+    "memberId": "MEMTmJ6K8LDRTk",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T12:44:50.420Z",
-    "dateUpdated": "2019-08-09T12:44:50.428Z"
+    "dateCreated": "2019-08-19T02:49:50.837Z",
+    "dateUpdated": "2019-08-19T02:49:50.846Z"
 }
 ```
 

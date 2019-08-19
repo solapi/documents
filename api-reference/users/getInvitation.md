@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 초대 조회
 
@@ -34,25 +34,25 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-08-09T12:44:50.473Z",
-    "dateUpdated": "2019-08-09T12:44:50.473Z",
+    "dateCreated": "2019-08-19T02:49:50.901Z",
+    "dateUpdated": "2019-08-19T02:49:50.901Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19080978290587",
+        "accountId": "19081942590221",
         "name": "test님의 계정",
-        "dateCreated": "2019-08-09T12:44:50.472Z",
-        "dateUpdated": "2019-08-09T12:44:50.472Z"
+        "dateCreated": "2019-08-19T02:49:50.899Z",
+        "dateUpdated": "2019-08-19T02:49:50.899Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19080978290587",
-        "memberId": "MEMgWgz2vs4xrO",
+        "selectedAccountId": "19081942590221",
+        "memberId": "MEMZJYT3nd4-0N",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-08-09T12:44:50.468Z",
-        "dateUpdated": "2019-08-09T12:44:50.470Z"
+        "dateCreated": "2019-08-19T02:49:50.895Z",
+        "dateUpdated": "2019-08-19T02:49:50.897Z"
     }
 }
 ```

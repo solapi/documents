@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 초대장 목록 조회
 
@@ -50,8 +50,8 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
         "invitationId": "WPmPyDzXjOleECwgK3ER6",
         "email": "test1@test.com",
         "role": "MEMBER",
-        "dateCreated": "2019-08-19T12:44:27.349Z",
-        "dateUpdated": "2019-08-19T12:44:27.349Z",
+        "dateCreated": "2019-08-29T02:49:29.394Z",
+        "dateUpdated": "2019-08-29T02:49:29.394Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -67,23 +67,23 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-08-09T12:44:38.915Z",
-            "dateUpdated": "2019-08-09T12:44:38.915Z"
+            "dateCreated": "2019-08-19T02:49:39.249Z",
+            "dateUpdated": "2019-08-19T02:49:39.249Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-08-09T12:44:38.891Z",
-            "dateUpdated": "2019-08-09T12:44:38.891Z"
+            "dateCreated": "2019-08-19T02:49:39.220Z",
+            "dateUpdated": "2019-08-19T02:49:39.220Z"
         }
     },
     {
         "invitationId": "A_k48AZnpzaTCSH45gVOO",
         "email": "test2@test.com",
         "role": "DEVELOPER",
-        "dateUpdated": "2019-08-09T12:44:38.875Z",
-        "dateCreated": "2019-08-09T12:44:38.875Z",
+        "dateUpdated": "2019-08-19T02:49:39.219Z",
+        "dateCreated": "2019-08-19T02:49:39.219Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -99,15 +99,15 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-08-09T12:44:38.916Z",
-            "dateUpdated": "2019-08-09T12:44:38.916Z"
+            "dateCreated": "2019-08-19T02:49:39.249Z",
+            "dateUpdated": "2019-08-19T02:49:39.249Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-08-09T12:44:38.891Z",
-            "dateUpdated": "2019-08-09T12:44:38.891Z"
+            "dateCreated": "2019-08-19T02:49:39.220Z",
+            "dateUpdated": "2019-08-19T02:49:39.220Z"
         }
     }
 ]

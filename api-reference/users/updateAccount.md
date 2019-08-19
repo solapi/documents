@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 계정 정보 수정
 
@@ -57,22 +57,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-08-09T12:44:38.027Z",
-            "dateUpdated": "2019-08-09T12:44:38.027Z",
+            "dateCreated": "2019-08-19T02:49:38.759Z",
+            "dateUpdated": "2019-08-19T02:49:38.759Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-08-09T12:44:38.027Z",
-            "dateUpdated": "2019-08-09T12:44:38.027Z",
+            "dateCreated": "2019-08-19T02:49:38.759Z",
+            "dateUpdated": "2019-08-19T02:49:38.759Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-08-09T12:44:38.029Z",
-    "dateUpdated": "2019-08-09T12:44:38.059Z"
+    "dateCreated": "2019-08-19T02:49:38.760Z",
+    "dateUpdated": "2019-08-19T02:49:38.772Z"
 }
 ```
 

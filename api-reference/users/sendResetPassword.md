@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 비밀번호 초기화 요청
 
@@ -45,17 +45,17 @@ POST https://api.solapi.com/users/v1/member/password/reset
             "i@nter.net"
         ],
         "rejected": [],
-        "envelopeTime": 811,
-        "messageTime": 595,
+        "envelopeTime": 846,
+        "messageTime": 596,
         "messageSize": 927,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXU1qulBauSvHv6I5AAAeV2oJiwiC7PZBO.OAzpQl0eE]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXVoOR4f74VUAfZk1AAAeXPcILP-dnti7pXRuUXchlCo]",
         "envelope": {
             "from": "support@coolsms.zendesk.com",
             "to": [
                 "i@nter.net"
             ]
         },
-        "messageId": "<91842405-29ce-0f26-9c25-1ab2fc232695@coolsms.zendesk.com>"
+        "messageId": "<0036a42f-d115-9441-5b0b-dc768320019b@coolsms.zendesk.com>"
     }
 }
 ```

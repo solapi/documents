@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 휴면 회원 활성화
 
@@ -41,11 +41,11 @@ PUT https://api.solapi.com/users/v1/member/activate
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEM7LgkrL21vxA",
+    "memberId": "MEMx1kDbSWOvJy",
     "email": "test1@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T12:44:38.264Z",
-    "dateUpdated": "2019-08-09T12:44:38.273Z"
+    "dateCreated": "2019-08-19T02:49:38.862Z",
+    "dateUpdated": "2019-08-19T02:49:38.868Z"
 }
 ```
 

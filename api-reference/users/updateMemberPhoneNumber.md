@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 사용자 전화번호 수정
 
@@ -58,8 +58,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-08-09T12:44:39.060Z",
-    "dateUpdated": "2019-08-09T12:44:39.068Z",
+    "dateCreated": "2019-08-19T02:49:39.331Z",
+    "dateUpdated": "2019-08-19T02:49:39.336Z",
     "loginSessions": []
 }
 ```

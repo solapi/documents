@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 휴면 계정 활성화
 
@@ -48,22 +48,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-08-09T12:44:38.145Z",
-            "dateUpdated": "2019-08-09T12:44:38.145Z",
+            "dateCreated": "2019-08-19T02:49:38.811Z",
+            "dateUpdated": "2019-08-19T02:49:38.811Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-08-09T12:44:38.145Z",
-            "dateUpdated": "2019-08-09T12:44:38.145Z",
+            "dateCreated": "2019-08-19T02:49:38.811Z",
+            "dateUpdated": "2019-08-19T02:49:38.811Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-08-09T12:44:38.153Z",
-    "dateUpdated": "2019-08-09T12:44:38.214Z"
+    "dateCreated": "2019-08-19T02:49:38.814Z",
+    "dateUpdated": "2019-08-19T02:49:38.844Z"
 }
 ```
 

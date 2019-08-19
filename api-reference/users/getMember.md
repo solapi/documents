@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 내 정보 조회
 
@@ -34,12 +34,12 @@ http://api.solapi.com/users/v1/member
     "name": "steven",
     "phoneNumber": null,
     "status": "UNVERIFIED",
-    "selectedAccountId": "19080978269972",
-    "memberId": "MEMR3FHSvnfXmA",
+    "selectedAccountId": "19081942570218",
+    "memberId": "MEMSLQXDIGXEDW",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-09T12:44:29.518Z",
-    "dateUpdated": "2019-08-09T12:44:29.523Z"
+    "dateCreated": "2019-08-19T02:49:30.621Z",
+    "dateUpdated": "2019-08-19T02:49:30.623Z"
 }
 ```
 

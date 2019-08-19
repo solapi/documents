@@ -1,4 +1,4 @@
-> 문서 생성일 : 2019-08-09
+> 문서 생성일 : 2019-08-19
 
 # 내 회원 정보 조회
 
@@ -41,8 +41,8 @@ http://api.solapi.com/users/v1/accounts/12925149/me
     "role": "OWNER",
     "name": "toss 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-08-09T12:44:38.361Z",
-    "dateUpdated": "2019-08-09T12:44:38.361Z"
+    "dateCreated": "2019-08-19T02:49:38.918Z",
+    "dateUpdated": "2019-08-19T02:49:38.918Z"
 }
 ```
 
