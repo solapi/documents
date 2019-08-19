@@ -261,7 +261,7 @@ GET https://api.solapi.com/messages/v4/groups
 
 #### Samples
 
-##### 그룹목록 조회 startKey 미입력
+##### 메시지 그룹 목록 get /messages/v4/groups
 
 > **Sample Request**
 
@@ -316,7 +316,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:14.259Z",
+                    "createAt": "2019-08-19T07:33:08.190Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -339,11 +339,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.268Z",
-            "dateUpdated": "2019-08-19T05:55:14.268Z"
+            "dateCreated": "2019-08-19T07:33:08.200Z",
+            "dateUpdated": "2019-08-19T07:33:08.200Z"
         },
-        "G4V20190819145515VSFM7CRZIMG7GRK": {
-            "_id": "G4V20190819145515VSFM7CRZIMG7GRK",
+        "G4V20190819163309UVYBHYDQRINXOYT": {
+            "_id": "G4V20190819163309UVYBHYDQRINXOYT",
             "count": {
                 "total": 0,
                 "sentTotal": 0,
@@ -389,7 +389,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": "win",
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:15.302Z",
+                    "createAt": "2019-08-19T07:33:09.192Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -401,13 +401,13 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "flagUpdated": false,
             "accountId": "12925149",
             "apiVersion": "4",
-            "groupId": "G4V20190819145515VSFM7CRZIMG7GRK",
+            "groupId": "G4V20190819163309UVYBHYDQRINXOYT",
             "price": {},
-            "dateCreated": "2019-08-19T05:55:15.304Z",
-            "dateUpdated": "2019-08-19T05:55:15.304Z"
+            "dateCreated": "2019-08-19T07:33:09.194Z",
+            "dateUpdated": "2019-08-19T07:33:09.194Z"
         },
-        "G4V20190819145515DNYEC647FY5NI7Y": {
-            "_id": "G4V20190819145515DNYEC647FY5NI7Y",
+        "G4V20190819163309JC1SEAX1KHDT2AA": {
+            "_id": "G4V20190819163309JC1SEAX1KHDT2AA",
             "count": {
                 "total": 0,
                 "sentTotal": 0,
@@ -454,7 +454,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "유효하지 않은 AppId",
-                    "createAt": "2019-08-19T05:55:15.229Z"
+                    "createAt": "2019-08-19T07:33:09.146Z"
                 }
             ],
             "status": "FAILED",
@@ -465,13 +465,13 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "flagUpdated": false,
             "accountId": "12925149",
             "apiVersion": "4",
-            "groupId": "G4V20190819145515DNYEC647FY5NI7Y",
+            "groupId": "G4V20190819163309JC1SEAX1KHDT2AA",
             "price": {},
-            "dateCreated": "2019-08-19T05:55:15.233Z",
-            "dateUpdated": "2019-08-19T05:55:15.233Z"
+            "dateCreated": "2019-08-19T07:33:09.149Z",
+            "dateUpdated": "2019-08-19T07:33:09.149Z"
         },
-        "G4V20190819145515C5BL2IKLE0SVMCN": {
-            "_id": "G4V20190819145515C5BL2IKLE0SVMCN",
+        "G4V20190819163309BCK9L0OFNH3CSUV": {
+            "_id": "G4V20190819163309BCK9L0OFNH3CSUV",
             "count": {
                 "total": 0,
                 "sentTotal": 0,
@@ -517,7 +517,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:15.266Z",
+                    "createAt": "2019-08-19T07:33:09.161Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -529,10 +529,10 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "flagUpdated": false,
             "accountId": "12925149",
             "apiVersion": "4",
-            "groupId": "G4V20190819145515C5BL2IKLE0SVMCN",
+            "groupId": "G4V20190819163309BCK9L0OFNH3CSUV",
             "price": {},
-            "dateCreated": "2019-08-19T05:55:15.276Z",
-            "dateUpdated": "2019-08-19T05:55:15.276Z"
+            "dateCreated": "2019-08-19T07:33:09.164Z",
+            "dateUpdated": "2019-08-19T07:33:09.164Z"
         },
         "G4V20190607105937H3PTASXMNJG2JID": {
             "_id": "G4V20190607105937H3PTASXMNJG2JID",
@@ -574,7 +574,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:14.243Z",
+                    "createAt": "2019-08-19T07:33:08.160Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -597,8 +597,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.245Z",
-            "dateUpdated": "2019-08-19T05:55:14.245Z"
+            "dateCreated": "2019-08-19T07:33:08.164Z",
+            "dateUpdated": "2019-08-19T07:33:08.164Z"
         },
         "G4V20190607105937H3PFASXMNJG2JID": {
             "_id": "G4V20190607105937H3PFASXMNJG2JID",
@@ -640,7 +640,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:14.247Z",
+                    "createAt": "2019-08-19T07:33:08.172Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -663,8 +663,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.250Z",
-            "dateUpdated": "2019-08-19T05:55:14.250Z"
+            "dateCreated": "2019-08-19T07:33:08.174Z",
+            "dateUpdated": "2019-08-19T07:33:08.174Z"
         },
         "G4V20180307105937H3PTASXMNJG2JIO": {
             "_id": "G4V20180307105937H3PTASXMNJG2JIO",
@@ -707,11 +707,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "메시지 그룹이 생성되었습니다.",
-                    "createAt": "2019-08-19T05:55:14.119Z"
+                    "createAt": "2019-08-19T07:33:08.065Z"
                 },
                 {
                     "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-                    "createAt": "2019-08-19T05:55:14.119Z"
+                    "createAt": "2019-08-19T07:33:08.065Z"
                 }
             ],
             "status": "PENDING",
@@ -733,8 +733,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.124Z",
-            "dateUpdated": "2019-08-19T05:55:14.124Z"
+            "dateCreated": "2019-08-19T07:33:08.076Z",
+            "dateUpdated": "2019-08-19T07:33:08.076Z"
         },
         "G4V20180307105937H3PTASXMNJG2JID": {
             "_id": "G4V20180307105937H3PTASXMNJG2JID",
@@ -776,7 +776,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:14.076Z",
+                    "createAt": "2019-08-19T07:33:08.029Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -799,8 +799,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.088Z",
-            "dateUpdated": "2019-08-19T05:55:14.088Z"
+            "dateCreated": "2019-08-19T07:33:08.039Z",
+            "dateUpdated": "2019-08-19T07:33:08.039Z"
         },
         "G4V20180307105937H3PTASXMNJG2JI1": {
             "_id": "G4V20180307105937H3PTASXMNJG2JI1",
@@ -843,11 +843,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "메시지 그룹이 생성되었습니다.",
-                    "createAt": "2019-08-19T05:55:14.091Z"
+                    "createAt": "2019-08-19T07:33:08.042Z"
                 },
                 {
                     "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-                    "createAt": "2019-08-19T05:55:14.091Z"
+                    "createAt": "2019-08-19T07:33:08.042Z"
                 }
             ],
             "status": "PENDING",
@@ -869,8 +869,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.093Z",
-            "dateUpdated": "2019-08-19T05:55:14.093Z"
+            "dateCreated": "2019-08-19T07:33:08.045Z",
+            "dateUpdated": "2019-08-19T07:33:08.045Z"
         },
         "G4V20180307105937CANCELSCHEDULQ5": {
             "_id": "G4V20180307105937CANCELSCHEDULQ5",
@@ -912,7 +912,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T05:55:14.169Z",
+                    "createAt": "2019-08-19T07:33:08.089Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -935,8 +935,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T05:55:14.180Z",
-            "dateUpdated": "2019-08-19T05:55:14.180Z"
+            "dateCreated": "2019-08-19T07:33:08.095Z",
+            "dateUpdated": "2019-08-19T07:33:08.095Z"
         }
     },
     "nextKey": "G4V20180307105937CANCELSCHEDULED"
@@ -954,7 +954,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   json: true,
@@ -974,7 +975,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   url: 'http://api.solapi.com/messages/v4/groups?limit=10'
@@ -995,7 +997,7 @@ $url = "http://api.solapi.com/messages/v4/groups?limit=10";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'GET'
     )
 );
@@ -1015,7 +1017,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups?limit=10"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.get(url, headers=headers)
@@ -1030,7 +1032,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X GET \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/messages/v4/groups?limit=10
 ```
 {% endtab %}
@@ -1045,7 +1047,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups?limit=10")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
@@ -1075,7 +1077,7 @@ func main() {
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -1110,7 +1112,7 @@ public class Request {
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

@@ -25,7 +25,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
 
 #### Samples
 
-##### 발송
+##### sendGroupMessage
 
 > **Sample Request**
 
@@ -77,14 +77,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-19T05:55:14.119Z"
+            "createAt": "2019-08-19T07:33:08.065Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-19T05:55:14.119Z"
+            "createAt": "2019-08-19T07:33:08.065Z"
         },
         {
-            "createAt": "2019-08-19T05:55:20.860Z",
+            "createAt": "2019-08-19T07:33:14.508Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -95,7 +95,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     ],
     "status": "SENDING",
     "scheduledDate": null,
-    "dateSent": "2019-08-19T05:55:20.860Z",
+    "dateSent": "2019-08-19T07:33:14.508Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -120,8 +120,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
             "cta": 13
         }
     },
-    "dateCreated": "2019-08-19T05:55:14.124Z",
-    "dateUpdated": "2019-08-19T05:55:20.861Z"
+    "dateCreated": "2019-08-19T07:33:08.076Z",
+    "dateUpdated": "2019-08-19T07:33:14.508Z"
 }
 ```
 
@@ -136,7 +136,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'POST',
   json: true,
@@ -157,7 +158,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'POST',
   url:
@@ -179,7 +181,7 @@ $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JI
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'POST'
     )
 );
@@ -199,7 +201,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.post(url, headers=headers)
@@ -214,7 +216,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send
 ```
 {% endtab %}
@@ -229,7 +231,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -259,7 +261,7 @@ func main() {
   req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -294,7 +296,7 @@ public class Request {
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

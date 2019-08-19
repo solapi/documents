@@ -25,7 +25,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 
 #### Samples
 
-##### 예약 취소
+##### cancelScheduledGroupMessage
 
 > **Sample Request**
 
@@ -76,11 +76,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-08-19T05:55:14.155Z",
+            "createAt": "2019-08-19T07:33:08.084Z",
             "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2019-08-19T05:55:21.726Z",
+            "createAt": "2019-08-19T07:33:15.422Z",
             "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
@@ -103,8 +103,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-19T05:55:14.158Z",
-    "dateUpdated": "2019-08-19T05:55:21.726Z"
+    "dateCreated": "2019-08-19T07:33:08.086Z",
+    "dateUpdated": "2019-08-19T07:33:15.422Z"
 }
 ```
 
@@ -119,7 +119,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   json: true,
@@ -140,7 +141,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   url:
@@ -162,7 +164,7 @@ $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULE
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'DELETE'
     )
 );
@@ -182,7 +184,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.delete(url, headers=headers)
@@ -197,7 +199,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X DELETE \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule
 ```
 {% endtab %}
@@ -212,7 +214,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -242,7 +244,7 @@ func main() {
   req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -277,7 +279,7 @@ public class Request {
 
     con.setRequestMethod("DELETE");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

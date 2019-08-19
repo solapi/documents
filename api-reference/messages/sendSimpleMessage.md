@@ -83,7 +83,7 @@ POST https://api.solapi.com/messages/v4/send
 
 #### Samples
 
-##### 메시지 발송
+##### sendSimpleMessage
 
 > **Sample Request**
 
@@ -101,13 +101,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20190819145520R7C4DMA8KIKFEYK",
+    "groupId": "G4V201908191633143DPVA5VRUP8MDSI",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V201908191455203AJSCLKQ6LQFNZX",
+    "messageId": "M4V20190819163314SLJYITMINYHH0II",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -124,7 +124,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -152,7 +153,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -182,7 +184,7 @@ $data = '{"message":{"to":"01000000001","from":"029302266","text":"test message"
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'POST'
     )
@@ -203,7 +205,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/send"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"message":{"to":"01000000001","from":"029302266","text":"test message"}}'
@@ -220,7 +222,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"message":{"to":"01000000001","from":"029302266","text":"test message"}}' \
 	http://api.solapi.com/messages/v4/send
@@ -237,7 +239,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/send")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -277,7 +279,7 @@ func main() {
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -314,7 +316,7 @@ public class Request {
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);

@@ -36,7 +36,7 @@ POST https://api.solapi.com/messages/v4/groups/
 
 #### Samples
 
-##### 그룹 생성
+##### 메시지 그룹 생성 POST /messages/v4/groups
 
 > **Sample Request**
 
@@ -93,7 +93,7 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-08-19T05:55:15.266Z",
+            "createAt": "2019-08-19T07:33:09.161Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -105,11 +105,11 @@ POST https://api.solapi.com/messages/v4/groups/
     "flagUpdated": false,
     "accountId": "12925149",
     "apiVersion": "4",
-    "groupId": "G4V20190819145515C5BL2IKLE0SVMCN",
+    "groupId": "G4V20190819163309BCK9L0OFNH3CSUV",
     "price": {},
-    "dateCreated": "2019-08-19T05:55:15.276Z",
-    "dateUpdated": "2019-08-19T05:55:15.276Z",
-    "_id": "G4V20190819145515C5BL2IKLE0SVMCN"
+    "dateCreated": "2019-08-19T07:33:09.164Z",
+    "dateUpdated": "2019-08-19T07:33:09.164Z",
+    "_id": "G4V20190819163309BCK9L0OFNH3CSUV"
 }
 ```
 
@@ -124,7 +124,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'POST',
   json: true,
@@ -144,7 +145,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'POST',
   url: 'http://api.solapi.com/messages/v4/groups'
@@ -165,7 +167,7 @@ $url = "http://api.solapi.com/messages/v4/groups";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'POST'
     )
 );
@@ -185,7 +187,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.post(url, headers=headers)
@@ -200,7 +202,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/messages/v4/groups
 ```
 {% endtab %}
@@ -215,7 +217,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -245,7 +247,7 @@ func main() {
   req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -280,7 +282,7 @@ public class Request {
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

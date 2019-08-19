@@ -155,7 +155,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145515T71DXOQMOQICTOM",
+            "messageId": "M4V20190819163310S6TKUKDE8NMGIDR",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -174,7 +174,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -206,7 +207,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -240,7 +242,7 @@ $data = '{"messages":[{"to":"01000000001","from":"029302266","text":"test messag
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -261,7 +263,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":"01000000001","from":"029302266","text":"test message","type":"SMS"}]}'
@@ -278,7 +280,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"test message","type":"SMS"}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -295,7 +297,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -338,7 +340,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -375,7 +377,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -435,7 +437,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516GCMQ47C2UV41YSG",
+            "messageId": "M4V20190819163310KRROPYYBGKD2I8W",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -454,7 +456,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -487,7 +490,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -522,7 +526,7 @@ $data = '{"messages":[{"subject":"testSubject","to":"01000000001","from":"029302
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -543,7 +547,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"subject":"testSubject","to":"01000000001","from":"029302266","text":"lms test message","type":"LMS"}]}'
@@ -560,7 +564,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"subject":"testSubject","to":"01000000001","from":"029302266","text":"lms test message","type":"LMS"}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -577,7 +581,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -621,7 +625,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -658,7 +662,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -719,7 +723,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516X6BBOIQ0D5OOI4V",
+            "messageId": "M4V20190819163310BJLG1WKQJGMUVNP",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -738,7 +742,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -772,7 +777,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -808,7 +814,7 @@ $data = '{"messages":[{"subject":"testSubject","to":"01000000002","from":"029302
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -829,7 +835,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"subject":"testSubject","to":"01000000002","from":"029302266","text":"mms test message","type":"MMS","imageId":"TESTIMAGEID"}]}'
@@ -846,7 +852,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"subject":"testSubject","to":"01000000002","from":"029302266","text":"mms test message","type":"MMS","imageId":"TESTIMAGEID"}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -863,7 +869,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -908,7 +914,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -945,7 +951,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -1033,7 +1039,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516AVQRN5U1VQUDFFH",
+            "messageId": "M4V20190819163310LBUPPGLPZOE0AUM",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1052,7 +1058,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1114,7 +1121,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1178,7 +1186,7 @@ $data = '{"messages":[{"to":"01000000003","from":"029302266","text":"#{홍길동
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -1199,7 +1207,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":"01000000003","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다.\n\n#{입금정보}\n\n관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다.\n\n감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488006","buttons":[{"buttonName":"앱 링크","buttonType":"AL","linkIos":"https://#{url}","linkAnd":"http://#{url}"},{"buttonName":"웹 링크","buttonType":"WL","linkMo":"https://www.coolsms.co.kr"},{"buttonName":"배송조회","buttonType":"DS"},{"buttonName":"키워드","buttonType":"BK"},{"buttonName":"전달","buttonType":"MD"}]}}]}'
@@ -1216,7 +1224,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":"01000000003","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다.\n\n#{입금정보}\n\n관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다.\n\n감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488006","buttons":[{"buttonName":"앱 링크","buttonType":"AL","linkIos":"https://#{url}","linkAnd":"http://#{url}"},{"buttonName":"웹 링크","buttonType":"WL","linkMo":"https://www.coolsms.co.kr"},{"buttonName":"배송조회","buttonType":"DS"},{"buttonName":"키워드","buttonType":"BK"},{"buttonName":"전달","buttonType":"MD"}]}}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -1233,7 +1241,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -1305,7 +1313,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -1342,7 +1350,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -1404,7 +1412,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516DTQGNTJHI3URG6K",
+            "messageId": "M4V201908191633104PUBABV4ZCBL9UU",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1423,7 +1431,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1458,7 +1467,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1495,7 +1505,7 @@ $data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test me
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -1516,7 +1526,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}]}'
@@ -1533,7 +1543,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -1550,7 +1560,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -1596,7 +1606,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -1633,7 +1643,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -1700,7 +1710,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516O6CACR9GXBUD1UF",
+            "messageId": "M4V20190819163310RYOTPHB8EJY7LOF",
             "statusCode": "2000",
             "accountId": "12925149",
             "customFields": {
@@ -1724,7 +1734,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1764,7 +1775,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -1806,7 +1818,7 @@ $data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test me
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -1827,7 +1839,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}'
@@ -1844,7 +1856,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"},"customFields":{"customerId":"ID-123456789","customerName":"홍길동","customMsgId":"MSG-ID-123456"}}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
@@ -1861,7 +1873,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -1912,7 +1924,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -1949,7 +1961,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -2008,7 +2020,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145516NWMVOGA6M8JJ9QD",
+            "messageId": "M4V20190819163310W7YXNHW2T0YF4UA",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2027,7 +2039,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2059,7 +2072,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2093,7 +2107,7 @@ $data = '{"messages":[{"to":"01000000001","from":"029302266","text":"test messag
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -2114,7 +2128,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":"01000000001","from":"029302266","text":"test message","autoTypeDetect":true}]}'
@@ -2131,7 +2145,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"test message","autoTypeDetect":true}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages
@@ -2148,7 +2162,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -2191,7 +2205,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -2228,7 +2242,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -2290,7 +2304,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145517JTSQUO0PD3FHXLG",
+            "messageId": "M4V20190819163311OB7GBMGOMTWOT3Y",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2300,7 +2314,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145517KD3PKH7NK5F87YT",
+            "messageId": "M4V20190819163311UL7SQYKBXLTW9S1",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2319,7 +2333,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2351,7 +2366,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2385,7 +2401,7 @@ $data = '{"messages":[{"to":["01000000001","01000000002"],"from":"029302266","te
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -2406,7 +2422,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":[{"to":["01000000001","01000000002"],"from":"029302266","text":"test message","autoTypeDetect":true}]}'
@@ -2423,7 +2439,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":[{"to":["01000000001","01000000002"],"from":"029302266","text":"test message","autoTypeDetect":true}]}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages
@@ -2440,7 +2456,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -2486,7 +2502,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -2523,7 +2539,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -2591,7 +2607,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145518RRID1YCGGYLRRMT",
+            "messageId": "M4V20190819163312YUNEDNGYB91HGEJ",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2601,7 +2617,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20190819145518A0RKKUKMC9LMCHR",
+            "messageId": "M4V20190819163312UOSCYJ3N6JD0AM7",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2611,7 +2627,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V201908191455180KOBRSN4LF89OFT",
+            "messageId": "M4V20190819163312YRFZVNFXVGSJ3TO",
             "statusCode": "1026",
             "accountId": "12925149"
         }
@@ -2630,7 +2646,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2655,7 +2672,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -2682,7 +2700,7 @@ $data = '{"messages":"[object Object],[object Obj..."}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'PUT'
     )
@@ -2703,7 +2721,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messages":"[object Object],[object Obj..."}'
@@ -2720,7 +2738,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messages":"[object Object],[object Obj..."}' \
 	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages
@@ -2737,7 +2755,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PTASXMNJG2JID/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -2773,7 +2791,7 @@ func main() {
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -2810,7 +2828,7 @@ public class Request {
 
     con.setRequestMethod("PUT");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);

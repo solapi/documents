@@ -39,7 +39,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 #### Samples
 
-##### 메시지 삭제
+##### DELETE /messages/v4/groups/{groupId}/messages
 
 > **Sample Request**
 
@@ -77,7 +77,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -102,7 +103,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -129,7 +131,7 @@ $data = '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'DELETE'
     )
@@ -150,7 +152,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}'
@@ -167,7 +169,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X DELETE \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}' \
 	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages
@@ -184,7 +186,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -220,7 +222,7 @@ func main() {
   req, err := http.NewRequest("DELETE", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -257,7 +259,7 @@ public class Request {
 
     con.setRequestMethod("DELETE");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);

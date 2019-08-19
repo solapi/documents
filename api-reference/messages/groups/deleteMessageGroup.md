@@ -25,7 +25,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
 
 #### Samples
 
-##### 그룹 삭제
+##### 메시지 그룹 삭제 DELETE /messages/v4/groups
 
 > **Sample Request**
 
@@ -76,14 +76,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-19T05:55:14.119Z"
+            "createAt": "2019-08-19T07:33:08.065Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-19T05:55:14.119Z"
+            "createAt": "2019-08-19T07:33:08.065Z"
         },
         {
-            "createAt": "2019-08-19T05:55:20.860Z",
+            "createAt": "2019-08-19T07:33:14.508Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -93,12 +93,12 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-08-19T05:55:21.366Z"
+            "createAt": "2019-08-19T07:33:14.742Z"
         }
     ],
     "status": "DELETED",
     "scheduledDate": null,
-    "dateSent": "2019-08-19T05:55:20.860Z",
+    "dateSent": "2019-08-19T07:33:14.508Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -124,8 +124,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-08-19T05:55:14.124Z",
-    "dateUpdated": "2019-08-19T05:55:21.371Z"
+    "dateCreated": "2019-08-19T07:33:08.076Z",
+    "dateUpdated": "2019-08-19T07:33:14.746Z"
 }
 ```
 
@@ -140,7 +140,8 @@ var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   json: true,
@@ -161,7 +162,8 @@ request(options, function(error, response, body) {
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'DELETE',
   url:
@@ -183,7 +185,7 @@ $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JI
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'DELETE'
     )
 );
@@ -203,7 +205,7 @@ import requests
 
 url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.delete(url, headers=headers)
@@ -218,7 +220,7 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X DELETE \
-	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
 ```
 {% endtab %}
@@ -233,7 +235,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -263,7 +265,7 @@ func main() {
   req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -298,7 +300,7 @@ public class Request {
 
     con.setRequestMethod("DELETE");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
