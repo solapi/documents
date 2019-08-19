@@ -316,7 +316,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:50.958Z",
+                    "createAt": "2019-08-19T05:55:14.259Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -339,75 +339,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.961Z",
-            "dateUpdated": "2019-08-19T04:02:50.961Z"
+            "dateCreated": "2019-08-19T05:55:14.268Z",
+            "dateUpdated": "2019-08-19T05:55:14.268Z"
         },
-        "G4V20190819130251XM0YP9GSORKYCP8": {
-            "_id": "G4V20190819130251XM0YP9GSORKYCP8",
-            "count": {
-                "total": 0,
-                "sentTotal": 0,
-                "sentFailed": 0,
-                "sentSuccess": 0,
-                "sentPending": 0,
-                "sentReplacement": 0,
-                "refund": 0,
-                "registeredFailed": 0,
-                "registeredSuccess": 0
-            },
-            "countForCharge": {
-                "sms": {},
-                "lms": {},
-                "mms": {},
-                "ata": {},
-                "cta": {}
-            },
-            "balance": {
-                "requested": 0,
-                "replacement": 0,
-                "refund": 0,
-                "sum": 0
-            },
-            "point": {
-                "requested": 0,
-                "replacement": 0,
-                "refund": 0,
-                "sum": 0
-            },
-            "app": {
-                "profit": {
-                    "sms": 0,
-                    "lms": 0,
-                    "mms": 0,
-                    "ata": 0,
-                    "cta": 0
-                },
-                "appId": null,
-                "version": null
-            },
-            "sdkVersion": null,
-            "osPlatform": null,
-            "log": [
-                {
-                    "createAt": "2019-08-19T04:02:51.506Z",
-                    "message": "메시지 그룹이 생성되었습니다."
-                }
-            ],
-            "status": "PENDING",
-            "scheduledDate": null,
-            "dateSent": null,
-            "dateCompleted": null,
-            "isRefunded": false,
-            "flagUpdated": false,
-            "accountId": "12925149",
-            "apiVersion": "4",
-            "groupId": "G4V20190819130251XM0YP9GSORKYCP8",
-            "price": {},
-            "dateCreated": "2019-08-19T04:02:51.509Z",
-            "dateUpdated": "2019-08-19T04:02:51.509Z"
-        },
-        "G4V20190819130251KDHPUXZTMZVGCNG": {
-            "_id": "G4V20190819130251KDHPUXZTMZVGCNG",
+        "G4V20190819145515VSFM7CRZIMG7GRK": {
+            "_id": "G4V20190819145515VSFM7CRZIMG7GRK",
             "count": {
                 "total": 0,
                 "sentTotal": 0,
@@ -453,7 +389,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": "win",
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:51.524Z",
+                    "createAt": "2019-08-19T05:55:15.302Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -465,13 +401,13 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "flagUpdated": false,
             "accountId": "12925149",
             "apiVersion": "4",
-            "groupId": "G4V20190819130251KDHPUXZTMZVGCNG",
+            "groupId": "G4V20190819145515VSFM7CRZIMG7GRK",
             "price": {},
-            "dateCreated": "2019-08-19T04:02:51.528Z",
-            "dateUpdated": "2019-08-19T04:02:51.528Z"
+            "dateCreated": "2019-08-19T05:55:15.304Z",
+            "dateUpdated": "2019-08-19T05:55:15.304Z"
         },
-        "G4V20190819130251HCPKRBESYKOXLS3": {
-            "_id": "G4V20190819130251HCPKRBESYKOXLS3",
+        "G4V20190819145515DNYEC647FY5NI7Y": {
+            "_id": "G4V20190819145515DNYEC647FY5NI7Y",
             "count": {
                 "total": 0,
                 "sentTotal": 0,
@@ -518,7 +454,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "유효하지 않은 AppId",
-                    "createAt": "2019-08-19T04:02:51.492Z"
+                    "createAt": "2019-08-19T05:55:15.229Z"
                 }
             ],
             "status": "FAILED",
@@ -529,10 +465,74 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "flagUpdated": false,
             "accountId": "12925149",
             "apiVersion": "4",
-            "groupId": "G4V20190819130251HCPKRBESYKOXLS3",
+            "groupId": "G4V20190819145515DNYEC647FY5NI7Y",
             "price": {},
-            "dateCreated": "2019-08-19T04:02:51.495Z",
-            "dateUpdated": "2019-08-19T04:02:51.495Z"
+            "dateCreated": "2019-08-19T05:55:15.233Z",
+            "dateUpdated": "2019-08-19T05:55:15.233Z"
+        },
+        "G4V20190819145515C5BL2IKLE0SVMCN": {
+            "_id": "G4V20190819145515C5BL2IKLE0SVMCN",
+            "count": {
+                "total": 0,
+                "sentTotal": 0,
+                "sentFailed": 0,
+                "sentSuccess": 0,
+                "sentPending": 0,
+                "sentReplacement": 0,
+                "refund": 0,
+                "registeredFailed": 0,
+                "registeredSuccess": 0
+            },
+            "countForCharge": {
+                "sms": {},
+                "lms": {},
+                "mms": {},
+                "ata": {},
+                "cta": {}
+            },
+            "balance": {
+                "requested": 0,
+                "replacement": 0,
+                "refund": 0,
+                "sum": 0
+            },
+            "point": {
+                "requested": 0,
+                "replacement": 0,
+                "refund": 0,
+                "sum": 0
+            },
+            "app": {
+                "profit": {
+                    "sms": 0,
+                    "lms": 0,
+                    "mms": 0,
+                    "ata": 0,
+                    "cta": 0
+                },
+                "appId": null,
+                "version": null
+            },
+            "sdkVersion": null,
+            "osPlatform": null,
+            "log": [
+                {
+                    "createAt": "2019-08-19T05:55:15.266Z",
+                    "message": "메시지 그룹이 생성되었습니다."
+                }
+            ],
+            "status": "PENDING",
+            "scheduledDate": null,
+            "dateSent": null,
+            "dateCompleted": null,
+            "isRefunded": false,
+            "flagUpdated": false,
+            "accountId": "12925149",
+            "apiVersion": "4",
+            "groupId": "G4V20190819145515C5BL2IKLE0SVMCN",
+            "price": {},
+            "dateCreated": "2019-08-19T05:55:15.276Z",
+            "dateUpdated": "2019-08-19T05:55:15.276Z"
         },
         "G4V20190607105937H3PTASXMNJG2JID": {
             "_id": "G4V20190607105937H3PTASXMNJG2JID",
@@ -574,7 +574,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:50.942Z",
+                    "createAt": "2019-08-19T05:55:14.243Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -597,8 +597,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.944Z",
-            "dateUpdated": "2019-08-19T04:02:50.944Z"
+            "dateCreated": "2019-08-19T05:55:14.245Z",
+            "dateUpdated": "2019-08-19T05:55:14.245Z"
         },
         "G4V20190607105937H3PFASXMNJG2JID": {
             "_id": "G4V20190607105937H3PFASXMNJG2JID",
@@ -640,7 +640,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:50.946Z",
+                    "createAt": "2019-08-19T05:55:14.247Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -663,8 +663,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.949Z",
-            "dateUpdated": "2019-08-19T04:02:50.949Z"
+            "dateCreated": "2019-08-19T05:55:14.250Z",
+            "dateUpdated": "2019-08-19T05:55:14.250Z"
         },
         "G4V20180307105937H3PTASXMNJG2JIO": {
             "_id": "G4V20180307105937H3PTASXMNJG2JIO",
@@ -707,11 +707,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "메시지 그룹이 생성되었습니다.",
-                    "createAt": "2019-08-19T04:02:50.894Z"
+                    "createAt": "2019-08-19T05:55:14.119Z"
                 },
                 {
                     "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-                    "createAt": "2019-08-19T04:02:50.894Z"
+                    "createAt": "2019-08-19T05:55:14.119Z"
                 }
             ],
             "status": "PENDING",
@@ -733,8 +733,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.899Z",
-            "dateUpdated": "2019-08-19T04:02:50.899Z"
+            "dateCreated": "2019-08-19T05:55:14.124Z",
+            "dateUpdated": "2019-08-19T05:55:14.124Z"
         },
         "G4V20180307105937H3PTASXMNJG2JID": {
             "_id": "G4V20180307105937H3PTASXMNJG2JID",
@@ -776,7 +776,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:50.879Z",
+                    "createAt": "2019-08-19T05:55:14.076Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -799,8 +799,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.882Z",
-            "dateUpdated": "2019-08-19T04:02:50.882Z"
+            "dateCreated": "2019-08-19T05:55:14.088Z",
+            "dateUpdated": "2019-08-19T05:55:14.088Z"
         },
         "G4V20180307105937H3PTASXMNJG2JI1": {
             "_id": "G4V20180307105937H3PTASXMNJG2JI1",
@@ -843,11 +843,11 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "log": [
                 {
                     "message": "메시지 그룹이 생성되었습니다.",
-                    "createAt": "2019-08-19T04:02:50.884Z"
+                    "createAt": "2019-08-19T05:55:14.091Z"
                 },
                 {
                     "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-                    "createAt": "2019-08-19T04:02:50.884Z"
+                    "createAt": "2019-08-19T05:55:14.091Z"
                 }
             ],
             "status": "PENDING",
@@ -869,8 +869,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.887Z",
-            "dateUpdated": "2019-08-19T04:02:50.887Z"
+            "dateCreated": "2019-08-19T05:55:14.093Z",
+            "dateUpdated": "2019-08-19T05:55:14.093Z"
         },
         "G4V20180307105937CANCELSCHEDULQ5": {
             "_id": "G4V20180307105937CANCELSCHEDULQ5",
@@ -912,7 +912,7 @@ http://api.solapi.com/messages/v4/groups?limit=10
             "osPlatform": null,
             "log": [
                 {
-                    "createAt": "2019-08-19T04:02:50.909Z",
+                    "createAt": "2019-08-19T05:55:14.169Z",
                     "message": "메시지 그룹이 생성되었습니다."
                 }
             ],
@@ -935,8 +935,8 @@ http://api.solapi.com/messages/v4/groups?limit=10
                 "cta": {}
             },
             "price": {},
-            "dateCreated": "2019-08-19T04:02:50.912Z",
-            "dateUpdated": "2019-08-19T04:02:50.912Z"
+            "dateCreated": "2019-08-19T05:55:14.180Z",
+            "dateUpdated": "2019-08-19T05:55:14.180Z"
         }
     },
     "nextKey": "G4V20180307105937CANCELSCHEDULED"

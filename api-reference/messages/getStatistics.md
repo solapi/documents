@@ -50,7 +50,7 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-08-19T04:02:55.610Z",
+                    "_id": "2019-08-19T05:55:21.922Z",
                     "month": "2019/08",
                     "date": "2019/08/19",
                     "balance": 1,
@@ -134,7 +134,7 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-08-19T04:02:55.610Z",
+            "_id": "2019-08-19T05:55:21.922Z",
             "month": "2019/08",
             "date": "2019/08/19",
             "balance": 1,

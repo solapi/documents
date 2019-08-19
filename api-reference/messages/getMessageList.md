@@ -75,8 +75,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-19T04:02:50.970Z",
-            "dateUpdated": "2019-08-19T04:02:50.970Z",
+            "dateCreated": "2019-08-19T05:55:14.279Z",
+            "dateUpdated": "2019-08-19T05:55:14.279Z",
             "reason": null,
             "networkName": "ETC"
         }
