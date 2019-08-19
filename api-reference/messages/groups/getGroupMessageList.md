@@ -1,46 +1,47 @@
-# 메시지 조회
+> 문서 생성일 : 2019-08-19
 
-> 문서 생성일 : 2019-08-07
+# 그룹 메시지 목록 조회
 
-## 메시지 조회
-
-### Request
-
-```text
-GET https://api.solapi.com/messages/v4/list
+#### Request
+```
+GET https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
-메시지의 목록을 조회합니다.
+그룹에 속한 메시지들을 조회합니다.
 
-#### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
-#### Query Params
+##### Path Parameters
 
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| criteria | `string` |  | eq | 검색 조건에 사용되는 필드명 criteria 의 값은 'key1,key2,key3' 과 같이 ,\(콤마\) 로 구분되며 cond, value 와 함께 사용됩니다. - messageId - 메시지 아이디 입니다. - groupId - 그룹 아이디 입니다. - to - 수신 번호 입니다. - from - 발신 번호 입니다. - type - 문자 메시지의 타입 입니다.  \(SMS, LMS, MMS, ATA, CTA\) - dateCreated - 그룹 생성일 입니다. - dateUpdated - 그룹 정보를 변경한 마지막 시각 입니다. - replacement - 대체 발송 여부 입니다. \(true, false\) - statusCode - 문자 메시지의 상태 코드 입니다. |
-| cond | `string` |  | eq | 검색 조건에 사용되는 연산자 criteria 와 같이 'cond1,cond2' 와 같이 ,\(콤마\)로 구분되며, criteria,value 와 함께 사용됩니다. - eq - 같음 \(=\) - ne - 같지 않음 \(!=\) - gt - 보다 큼 \(&gt;\) - gte - 보다 크거나 같음 \(&gt;=\) - lt - 보다 작음 \(&lt;\) - lte - 보다 작거나 같음 \(&lt;=\) |
-| value | `string` |  | eq | 검색 값 criteria , cond 값에 대응하는 value 입니다. criteria='messageId,statusCode' cond='eq,eq' 일 경우 groupId 에 대응하는 value 값을 찾고 status 에 대응하는 값을 찾는 조건 입니다. e.g - value='메시지아이디,2000' |
+| Name | Description |
+| :--: | :---------: |
+| :groupId | 설명 없음 |
+
+##### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
-### Samples
+---
 
-#### 메시지 아이디로 조회하기
+#### Samples
+
+##### 필수 요소만 있는 목록 가져오기
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq
+```
+http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "startKey": null,
     "limit": 20,
@@ -77,8 +78,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-07T06:59:13.250Z",
-            "dateUpdated": "2019-08-07T06:59:13.250Z",
+            "dateCreated": "2019-08-19T03:16:22.764Z",
+            "dateUpdated": "2019-08-19T03:16:22.764Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -89,7 +90,9 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -100,17 +103,19 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq'
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -118,19 +123,21 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq'
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq";
+$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages";
 
 $options = array(
     'http' => array(
@@ -143,14 +150,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq"
+url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages"
 headers = {
   "Authorization": "Bearer eyJhbGciOiJI..."
 }
@@ -158,25 +167,28 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages")
 
 headers = {
   "Authorization": "Bearer eyJhbGciOiJI..."
@@ -187,10 +199,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -202,7 +216,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq"
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -218,10 +232,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -233,7 +249,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V20180307110044DTYYJBBYLPQZIB1&cond=eq";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -261,7 +277,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

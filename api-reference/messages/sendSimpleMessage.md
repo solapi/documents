@@ -1,67 +1,63 @@
+> 문서 생성일 : 2019-08-19
+
 # 단일 메시지
 
-> 문서 생성일 : 2019-08-07
-
-## 단일 메시지
-
-### Request
-
-```text
+#### Request
+```
 POST https://api.solapi.com/messages/v4/send
 ```
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-#### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-#### Request Structure
-
-```javascript
+##### Request Structure
+```json
 {
     "message": "object",
     "agent": "object"
 }
 ```
 
-#### Body Params
+##### Body Params
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| [message](#body-message) | `object` | O | 메시지에 대한 정보 |
+| [agent](#body-agent) | `object` |  | 에이전트 |
+
+##### Body / message
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| [message](sendsimplemessage.md#body-message) | `object` | O | 메시지에 대한 정보 |
-| [agent](sendsimplemessage.md#body-agent) | `object` |  | 에이전트 |
-
-#### Body / message
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 사전 등록된 전화번호만 사용 가능 |
-| text | `string` | O | 메시지 내용 한글 1,000자, 영문 2,000자 제한 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
+| text | `string` | O | 메시지 내용<br>한글 1,000자, 영문 2,000자 제한 |
 | type | `string` |  | 메시지 타입 |
-| country | `string` |  | 국가번호 \(현재 미지원\) |
-| subject | `string` |  | 메시지 제목 한글 20자, 영문 40자 제한 |
+| country | `string` |  | 국가번호 (현재 미지원) |
+| subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
 | imageId | `string` |  | 이미지 아이디 |
-| [kakaoOptions](sendsimplemessage.md#body-message-kakaooptions) | `object` |  | 설명 없음 |
-| [customFields](sendsimplemessage.md#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [kakaoOptions](#body-message-kakaooptions) | `object` |  | 설명 없음 |
+| [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
 | autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
 
-#### Body / message / kakaoOptions
+##### Body / message / kakaoOptions
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
-| [buttons](sendsimplemessage.md#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
+| [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
-#### Body / message / kakaoOptions / buttons
+
+##### Body / message / kakaoOptions / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | buttonName | `string` | O | 버튼 이름 |
 | buttonType | `string` | O | 버튼 종류 |
 | linkMo | `string` |  | 모바일 링크 |
@@ -69,27 +65,29 @@ POST https://api.solapi.com/messages/v4/send
 | linkAnd | `string` |  | 안드로이드 링크 |
 | linkIos | `string` |  | IOS 링크 |
 
-#### Body / message / customFields
+##### Body / message / customFields
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 
-
-#### Body / agent
+##### Body / agent
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
 | osPlatform | `string` |  | OS 플렛폼 |
 | sdkVersion | `string` |  | SDK 버전 |
 
-### Samples
 
-#### 메시지 발송
+---
+
+#### Samples
+
+##### 메시지 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -101,15 +99,15 @@ POST https://api.solapi.com/messages/v4/send
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20190807155918EUHXIDKRGNQAOPW",
+    "groupId": "G4V20190819121625DM3RQ5WDMZKSR3V",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190807155918UEBNKEYK8DRBIS8",
+    "messageId": "M4V20190819121625IYMTHQVLLX1WESW",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -118,7 +116,9 @@ POST https://api.solapi.com/messages/v4/send
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -143,10 +143,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -167,10 +169,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -188,10 +192,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -205,21 +211,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"test message"}
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"test message"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"test message"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -245,10 +254,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -278,10 +289,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -323,7 +336,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

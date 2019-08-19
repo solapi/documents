@@ -4,14 +4,12 @@
 
 ## AUTHENTICATION
 
-* [Authentication](authentication/README.md)
 * [Overview](authentication/overview.md)
 * [API Key 인증 방식](authentication/api-key.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
   * [권한\(Scope\) 목록](authentication/oauth2-3/scope.md)
 * [멤버 권한 목록](authentication/undefined.md)
-* [Authentication](authentication/authentication.md)
 
 ## DEVELOPMENT-KITS
 
@@ -24,23 +22,21 @@
 
 ## API-REFERENCE
 
-* [API Reference](api-reference/README.md)
 * [메시지](api-reference/messages/README.md)
+  * [단일 메시지](api-reference/messages/sendSimpleMessage.md)
   * [그룹 메시지](api-reference/messages/groups/README.md)
-    * [발송 요청](api-reference/messages/groups/sendgroupmessage.md)
-    * [예약 취소](api-reference/messages/groups/cancelscheduledgroupmessage.md)
-    * [그룹 생성](api-reference/messages/groups/createmessagegroup.md)
-    * [그룹 메시지 삭제](api-reference/messages/groups/deletegroupmessages.md)
-    * [그룹 메시지 추가](api-reference/messages/groups/addgroupmessages.md)
-    * [그룹 메시지 목록 조회](api-reference/messages/groups/getgroupmessagelist.md)
-    * [그룹 정보 조회](api-reference/messages/groups/getmessagegroupinfo.md)
-    * [그룹 목록 조회](api-reference/messages/groups/getmessagegrouplist.md)
-    * [발송 예약](api-reference/messages/groups/schedulegroupmessage.md)
-    * [그룹 삭제](api-reference/messages/groups/deletemessagegroup.md)
-  * [메시지 조회](api-reference/messages/getmessagelist.md)
-  * [통계 조회](api-reference/messages/getstatistics.md)
-  * [단일 메시지](api-reference/messages/sendsimplemessage.md)
-* [카카오톡](api-reference/kakao/README.md)
+    * [그룹 생성](api-reference/messages/groups/createMessageGroup.md)
+    * [그룹 메시지 삭제](api-reference/messages/groups/deleteGroupMessages.md)
+    * [그룹 목록 조회](api-reference/messages/groups/getMessageGroupList.md)
+    * [그룹 정보 조회](api-reference/messages/groups/getMessageGroupInfo.md)
+    * [그룹 삭제](api-reference/messages/groups/deleteMessageGroup.md)
+    * [그룹 메시지 추가](api-reference/messages/groups/addGroupMessages.md)
+    * [그룹 메시지 목록 조회](api-reference/messages/groups/getGroupMessageList.md)
+    * [발송 요청](api-reference/messages/groups/sendGroupMessage.md)
+    * [발송 예약](api-reference/messages/groups/scheduleGroupMessage.md)
+    * [예약 취소](api-reference/messages/groups/cancelScheduledGroupMessage.md)
+  * [메시지 조회](api-reference/messages/getMessageList.md)
+  * [통계 조회](api-reference/messages/getStatistics.md)
   * [플러스 친구 연동 토큰 신청](api-reference/kakao/requestPlusFriendToken.md)
   * [플러스 친구 추가](api-reference/kakao/putPlusFriend.md)
   * [플러스 친구 조회](api-reference/kakao/getPlusFriend.md)
@@ -53,7 +49,6 @@
   * [템플릿 댓글 추가](api-reference/kakao/putTemplateComment.md)
   * [템플릿 검수 요청](api-reference/kakao/templateInspection.md)
   * [템플릿을 삭제](api-reference/kakao/deleteTemplate.md)
-* [잔액](api-reference/cash/README.md)
   * [잔액조회](api-reference/cash/getBalance.md)
   * [잔액 변동내역 조회](api-reference/cash/getBalanceHistory.md)
   * [결제수단 등록](api-reference/cash/createPayment.md)
@@ -142,5 +137,4 @@
 * [스토리지](api-reference/storage/README.md)
 * [Message Status Codes](api-reference/message-status-codes.md)
 * [Terminology](api-reference/terminology.md)
-* [API Reference](api-reference/api-reference.md)
 * [Overview](api-reference/over.md)

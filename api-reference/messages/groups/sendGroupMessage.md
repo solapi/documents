@@ -1,60 +1,43 @@
-# 발송 예약
+> 문서 생성일 : 2019-08-19
 
-> 문서 생성일 : 2019-08-07
+# 발송 요청
 
-## 발송 예약
-
-### Request
-
-```text
-POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
+#### Request
+```
+POST https://api.solapi.com/messages/v4/groups/:groupId/send
 ```
 
-그룹 메시지를 에약 처리합니다. 예약 상태에서 그룹내 메시지 추가 및 삭제가 불가합니다. 최대 6개월까지 접수 가능하며 발송 시점에 잔액이 차감되며 잔액이 없을 경우 발송 실패 처리됩니다.
+그룹 메시지 발송을 요청합니다. 정상 접수된 메시지만 발송을 시도합니다.
 
-#### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-#### Path Parameters
+##### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 설명 없음 |
 
-#### Request Structure
+---
 
-```javascript
-{
-    "scheduledDate": "date"
-}
-```
+#### Samples
 
-#### Body Params
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| scheduledDate | `date` | O | 설명 없음 |
-
-### Samples
-
-#### 예약 발송
+##### 발송
 
 > **Sample Request**
 
-```javascript
-{
-    "scheduledDate": "2019-08-07T07:02:12.498Z"
-}
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "_id": "G4V20180307105937AAAAAASCHEDULED",
+    "_id": "G4V20180307105937H3PTASXMNJG2JIO",
     "count": {
         "total": 0,
         "sentTotal": 0,
@@ -73,7 +56,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "sum": 0
     },
     "point": {
-        "requested": 0,
+        "requested": 50,
         "replacement": 0,
         "refund": 0,
         "sum": 0
@@ -94,43 +77,29 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-07T06:59:13.076Z"
+            "createAt": "2019-08-19T03:16:22.669Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-07T06:59:13.076Z"
+            "createAt": "2019-08-19T03:16:22.669Z"
         },
         {
-            "createAt": "2019-08-07T06:59:19.629Z",
-            "message": "예약시간은 현재시간보다 늦게 설정 가능합니다."
-        },
-        {
-            "createAt": "2019-08-07T06:59:19.654Z",
-            "message": "발송 예정일이 6개월을 초과하여 발송 예약에 실패하였습니다."
-        },
-        {
-            "createAt": "2019-08-07T06:59:19.668Z",
-            "message": "메시지 예약이 성공적으로 접수됐습니다.",
-            "messageCount": {
-                "total": 0,
-                "sentTotal": 0,
-                "sentFailed": 0,
-                "sentSuccess": 0,
-                "sentPending": 0,
-                "sentReplacement": 0,
-                "refund": 0,
-                "registeredFailed": 0,
-                "registeredSuccess": 1
-            }
+            "createAt": "2019-08-19T03:16:25.865Z",
+            "message": "메시지를 발송했습니다.",
+            "oldBalance": 100,
+            "newBalance": 100,
+            "oldPoint": 100,
+            "newPoint": 50,
+            "totalPrice": 20
         }
     ],
-    "status": "SCHEDULED",
-    "scheduledDate": "2019-08-07T07:02:12.498Z",
-    "dateSent": null,
+    "status": "SENDING",
+    "scheduledDate": null,
+    "dateSent": "2019-08-19T03:16:25.865Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
-    "groupId": "G4V20180307105937AAAAAASCHEDULED",
+    "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
     "accountId": "12925149",
     "apiVersion": "4",
     "countForCharge": {
@@ -142,71 +111,75 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "ata": {},
         "cta": {}
     },
-    "price": {},
-    "dateCreated": "2019-08-07T06:59:13.079Z",
-    "dateUpdated": "2019-08-07T06:59:19.668Z"
+    "price": {
+        "82": {
+            "sms": 20,
+            "lms": 50,
+            "mms": 200,
+            "ata": 19,
+            "cta": 13
+        }
+    },
+    "dateCreated": "2019-08-19T03:16:22.674Z",
+    "dateUpdated": "2019-08-19T03:16:25.866Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    scheduledDate: '2019-08-07T07:02:12.498Z'
+    Authorization: 'Bearer eyJhbGciOiJI...'
   },
   method: 'POST',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule'
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    scheduledDate: '2019-08-07T07:02:12.498Z'
+    Authorization: 'Bearer eyJhbGciOiJI...'
   },
   method: 'POST',
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule'
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule";
-$data = '{"scheduledDate":"2019-08-07T07:02:12.498Z"}';
+$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
-        'content' => $data,
+        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
         'method'  => 'POST'
     )
 );
@@ -215,63 +188,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule"
+url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
-  "Content-Type": "application/json"
+  "Authorization": "Bearer eyJhbGciOiJI..."
 }
-data = '{"scheduledDate":"2019-08-07T07:02:12.498Z"}'
 
-response = requests.post(url, headers=headers, data=data)
+response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -H 'Content-Type: application/json' \
-    -d '{"scheduledDate":"2019-08-07T07:02:12.498Z"}' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
-  "Content-Type": "application/json"
-}
-data = {
-  "scheduledDate": "2019-08-07T07:02:12.498Z"
+  "Authorization": "Bearer eyJhbGciOiJI..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
-request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -283,14 +254,12 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule"
-  data := strings.NewReader(`{"scheduledDate":"2019-08-07T07:02:12.498Z"}`)
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send"
 
-  req, err := http.NewRequest("POST", uri, data)
+  req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
-  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -301,10 +270,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -316,8 +287,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule";
-    String parameters = "{\"scheduledDate\":\"2019-08-07T07:02:12.498Z\"}";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/send";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -325,7 +295,6 @@ public class Request {
     con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
-    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -346,7 +315,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 

@@ -1,42 +1,41 @@
+> 문서 생성일 : 2019-08-19
+
 # 예약 취소
 
-> 문서 생성일 : 2019-08-07
-
-## 예약 취소
-
-### Request
-
-```text
+#### Request
+```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 ```
 
 예약된 그룹을 취소 처리하고 'PENDING'상태로 변경합니다. 예약 취소된 그룹은 다시 예약하거나 발송 요청하지 않는 한 발송 처리되지 않습니다.
 
-#### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-#### Path Parameters
+##### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 설명 없음 |
 
-### Samples
+---
 
-#### 예약 취소
+#### Samples
+
+##### 예약 취소
 
 > **Sample Request**
 
-```javascript
+```json
 {}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "_id": "G4V20180307105937CANCELSCHEDULED",
     "count": {
@@ -77,11 +76,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-08-07T06:59:13.092Z",
+            "createAt": "2019-08-19T03:16:22.682Z",
             "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2019-08-07T06:59:19.838Z",
+            "createAt": "2019-08-19T03:16:26.314Z",
             "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
@@ -104,15 +103,17 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-07T06:59:13.095Z",
-    "dateUpdated": "2019-08-07T06:59:19.838Z"
+    "dateCreated": "2019-08-19T03:16:22.685Z",
+    "dateUpdated": "2019-08-19T03:16:26.314Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -130,10 +131,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -147,10 +150,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule";
@@ -166,10 +171,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -181,19 +188,22 @@ headers = {
 response = requests.delete(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X DELETE \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule
+	-H 'Authorization: Bearer eyJhbGciOiJI...' \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -210,10 +220,12 @@ request = Net::HTTP::Delete.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -241,10 +253,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -284,7 +298,11 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
