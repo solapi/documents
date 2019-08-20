@@ -23,7 +23,7 @@
 
 ## API-REFERENCE
 
-* [APIasd](api-reference/README.md)
+* [Api Reference](api-reference/README.md)
 * [Overview](api-reference/overview.md)
 * [메시지](api-reference/messages/README.md)
   * [단일 메시지](api-reference/messages/sendSimpleMessage.md)
