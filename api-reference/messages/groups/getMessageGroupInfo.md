@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 그룹 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
 메시지 그룹의 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 ---
 
-#### Response
+## Response
 
-##### Response Structure
+### Response Structure
 ```json
 {
     "count": {
@@ -102,7 +100,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 }
 ```
 
-##### Response Description
+### Response Description
 ##### Response / 
 
 | Name | Type | Should Return | Description |
@@ -234,9 +232,9 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 ---
 
-#### Samples
+## Samples
 
-##### 메시지 그룹 정보 get /messages/v4/groups/:groupId
+### 메시지 그룹 정보 get /messages/v4/groups/:groupId
 
 > **Sample Request**
 
@@ -287,11 +285,11 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         }
     ],
     "status": "PENDING",
@@ -314,8 +312,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-19T07:33:08.076Z",
-    "dateUpdated": "2019-08-19T07:33:08.076Z"
+    "dateCreated": "2019-08-20T02:13:42.787Z",
+    "dateUpdated": "2019-08-20T02:13:42.787Z"
 }
 ```
 
@@ -518,4 +516,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

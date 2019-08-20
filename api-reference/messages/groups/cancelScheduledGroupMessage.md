@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 예약 취소
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 ```
 
 예약된 그룹을 취소 처리하고 'PENDING'상태로 변경합니다. 예약 취소된 그룹은 다시 예약하거나 발송 요청하지 않는 한 발송 처리되지 않습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 
 ---
 
-#### Samples
+## Samples
 
-##### cancelScheduledGroupMessage
+### cancelScheduledGroupMessage
 
 > **Sample Request**
 
@@ -76,11 +74,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-08-19T07:33:08.084Z",
+            "createAt": "2019-08-20T02:13:42.794Z",
             "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2019-08-19T07:33:15.422Z",
+            "createAt": "2019-08-20T02:13:47.624Z",
             "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
@@ -103,8 +101,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-08-19T07:33:08.086Z",
-    "dateUpdated": "2019-08-19T07:33:15.422Z"
+    "dateCreated": "2019-08-20T02:13:42.796Z",
+    "dateUpdated": "2019-08-20T02:13:47.625Z"
 }
 ```
 
@@ -307,4 +305,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

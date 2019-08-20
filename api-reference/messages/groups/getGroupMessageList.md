@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-19
-
 # 그룹 메시지 목록 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
 그룹에 속한 메시지들을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :groupId | 설명 없음 |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
@@ -29,9 +27,9 @@ GET https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 ---
 
-#### Samples
+## Samples
 
-##### GET /messages/v4/groups/{groupId}/messages
+### GET /messages/v4/groups/{groupId}/messages
 
 > **Sample Request**
 
@@ -78,8 +76,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-19T07:33:08.234Z",
-            "dateUpdated": "2019-08-19T07:33:08.234Z",
+            "dateCreated": "2019-08-20T02:13:42.857Z",
+            "dateUpdated": "2019-08-20T02:13:42.857Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -286,4 +284,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

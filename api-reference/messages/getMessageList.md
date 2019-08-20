@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 메시지 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/messages/v4/list
 ```
 
 메시지의 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | criteria | `string` |  | eq | 검색 조건에 사용되는 필드명<br>criteria 의 값은 'key1,key2,key3' 과 같이 ,(콤마) 로 구분되며 cond, value 와 함께 사용됩니다.<br>- messageId - 메시지 아이디 입니다.<br>- groupId - 그룹 아이디 입니다.<br>- to - 수신 번호 입니다.<br>- from - 발신 번호 입니다.<br>- type - 문자 메시지의 타입 입니다.  (SMS, LMS, MMS, ATA, CTA)<br>- dateCreated - 그룹 생성일 입니다.<br>- dateUpdated - 그룹 정보를 변경한 마지막 시각 입니다.<br>- replacement - 대체 발송 여부 입니다. (true, false)<br>- statusCode - 문자 메시지의 상태 코드 입니다. |
@@ -26,9 +24,9 @@ GET https://api.solapi.com/messages/v4/list
 
 ---
 
-#### Samples
+## Samples
 
-##### https://rest.coolsms.co.kr/messages/v4/list (메시지 조회)
+### https://rest.coolsms.co.kr/messages/v4/list (메시지 조회)
 
 > **Sample Request**
 
@@ -75,8 +73,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-19T07:33:08.234Z",
-            "dateUpdated": "2019-08-19T07:33:08.234Z",
+            "dateCreated": "2019-08-20T02:13:42.857Z",
+            "dateUpdated": "2019-08-20T02:13:42.857Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -283,4 +281,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

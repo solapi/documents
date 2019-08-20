@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-19
-
 # 그룹 메시지 삭제
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
 그룹에 속한 메시지 일부분을 삭제합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :groupId | 설명 없음 |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "messageIds": "array"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | messageIds | `array` | O | 메시지 아이디 목록 |
@@ -37,9 +35,9 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 ---
 
-#### Samples
+## Samples
 
-##### DELETE /messages/v4/groups/{groupId}/messages
+### DELETE /messages/v4/groups/{groupId}/messages
 
 > **Sample Request**
 
@@ -288,4 +286,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

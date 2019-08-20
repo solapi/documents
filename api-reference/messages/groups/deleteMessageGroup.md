@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 그룹 삭제
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
 메시지 그룹을 삭제합니다. 삭제 후 발송 및 복구가 불가합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
 
 ---
 
-#### Samples
+## Samples
 
-##### 메시지 그룹 삭제 DELETE /messages/v4/groups
+### 메시지 그룹 삭제 DELETE /messages/v4/groups
 
 > **Sample Request**
 
@@ -76,14 +74,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         },
         {
-            "createAt": "2019-08-19T07:33:14.508Z",
+            "createAt": "2019-08-20T02:13:47.065Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -93,12 +91,12 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-08-19T07:33:14.742Z"
+            "createAt": "2019-08-20T02:13:47.330Z"
         }
     ],
     "status": "DELETED",
     "scheduledDate": null,
-    "dateSent": "2019-08-19T07:33:14.508Z",
+    "dateSent": "2019-08-20T02:13:47.065Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -124,8 +122,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-08-19T07:33:08.076Z",
-    "dateUpdated": "2019-08-19T07:33:14.746Z"
+    "dateCreated": "2019-08-20T02:13:42.787Z",
+    "dateUpdated": "2019-08-20T02:13:47.334Z"
 }
 ```
 
@@ -328,4 +326,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

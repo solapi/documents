@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 그룹 생성
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/messages/v4/groups/
 ```
 
 메시지 그룹을 생성합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "appId": "string",
@@ -24,7 +22,7 @@ POST https://api.solapi.com/messages/v4/groups/
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
@@ -34,9 +32,9 @@ POST https://api.solapi.com/messages/v4/groups/
 
 ---
 
-#### Samples
+## Samples
 
-##### 메시지 그룹 생성 POST /messages/v4/groups
+### 메시지 그룹 생성 POST /messages/v4/groups
 
 > **Sample Request**
 
@@ -93,7 +91,7 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-08-19T07:33:09.161Z",
+            "createAt": "2019-08-20T02:13:43.426Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -105,11 +103,11 @@ POST https://api.solapi.com/messages/v4/groups/
     "flagUpdated": false,
     "accountId": "12925149",
     "apiVersion": "4",
-    "groupId": "G4V20190819163309BCK9L0OFNH3CSUV",
+    "groupId": "G4V20190820111343Z7PGSXFYJB4GMN3",
     "price": {},
-    "dateCreated": "2019-08-19T07:33:09.164Z",
-    "dateUpdated": "2019-08-19T07:33:09.164Z",
-    "_id": "G4V20190819163309BCK9L0OFNH3CSUV"
+    "dateCreated": "2019-08-20T02:13:43.429Z",
+    "dateUpdated": "2019-08-20T02:13:43.429Z",
+    "_id": "G4V20190820111343Z7PGSXFYJB4GMN3"
 }
 ```
 
@@ -310,4 +308,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

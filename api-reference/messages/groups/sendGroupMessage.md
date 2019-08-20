@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 발송 요청
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/messages/v4/groups/:groupId/send
 ```
 
 그룹 메시지 발송을 요청합니다. 정상 접수된 메시지만 발송을 시도합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
 
 ---
 
-#### Samples
+## Samples
 
-##### sendGroupMessage
+### sendGroupMessage
 
 > **Sample Request**
 
@@ -77,14 +75,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-08-19T07:33:08.065Z"
+            "createAt": "2019-08-20T02:13:42.782Z"
         },
         {
-            "createAt": "2019-08-19T07:33:14.508Z",
+            "createAt": "2019-08-20T02:13:47.065Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -95,7 +93,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
     ],
     "status": "SENDING",
     "scheduledDate": null,
-    "dateSent": "2019-08-19T07:33:14.508Z",
+    "dateSent": "2019-08-20T02:13:47.065Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -120,8 +118,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/send
             "cta": 13
         }
     },
-    "dateCreated": "2019-08-19T07:33:08.076Z",
-    "dateUpdated": "2019-08-19T07:33:14.508Z"
+    "dateCreated": "2019-08-20T02:13:42.787Z",
+    "dateUpdated": "2019-08-20T02:13:47.065Z"
 }
 ```
 
@@ -324,4 +322,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 단일 메시지
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/messages/v4/send
 ```
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "message": "object",
@@ -23,7 +21,7 @@ POST https://api.solapi.com/messages/v4/send
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | [message](#body-message) | `object` | O | 메시지에 대한 정보 |
@@ -81,9 +79,9 @@ POST https://api.solapi.com/messages/v4/send
 
 ---
 
-#### Samples
+## Samples
 
-##### sendSimpleMessage
+### sendSimpleMessage
 
 > **Sample Request**
 
@@ -101,13 +99,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V201908191633143DPVA5VRUP8MDSI",
+    "groupId": "G4V20190820111346SZWWLCTNE2CFGTP",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190819163314SLJYITMINYHH0II",
+    "messageId": "M4V20190820111346KXEELJVNPFKSEXJ",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -345,4 +343,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

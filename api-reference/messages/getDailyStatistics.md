@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 일별 통계 내역 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/messages/v4/statistics/daily
 ```
 
 일별 통계 내역을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | offset | `number` |  | eq | 검색 시작점 |
@@ -27,9 +25,9 @@ GET https://api.solapi.com/messages/v4/statistics/daily
 
 ---
 
-#### Samples
+## Samples
 
-##### getDailyStatistics.spec.js
+### getDailyStatistics.spec.js
 
 > **Sample Request**
 
@@ -41,6 +39,25 @@ http://api.solapi.com/messages/v4/statistics/daily
 
 ```json
 [
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-07-28T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
     {
         "refund": {
             "balance": 0,
@@ -392,29 +409,10 @@ http://api.solapi.com/messages/v4/statistics/daily
         "balance": 10,
         "point": 100,
         "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-07-09T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-07-08T15:00:00.000Z",
+        "date": "2019-07-09T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -621,4 +619,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 
