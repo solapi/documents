@@ -21,7 +21,7 @@
 * [솔라피 OAuth2 연동 Node & Express를 이용하여 앱 만들기](app-store/oauth2-node-and-express.md)
 * [솔라피 앱 스토어에 내가 만든 앱 등록하기](app-store/undefined.md)
 
-## APIASD
+## API-REFERENCE
 
 * [APIasd](api-reference/README.md)
 * [Overview](api-reference/overview.md)
