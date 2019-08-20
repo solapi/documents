@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-14
-
 # 사용자 충전
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/cash/v1/balance
 ```
 
 사용자가 결제를 해 충전을 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "amount": "number",
@@ -29,7 +27,7 @@ POST https://api.solapi.com/cash/v1/balance
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | amount | `number` | O | 합계 금액 |
@@ -38,16 +36,16 @@ POST https://api.solapi.com/cash/v1/balance
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### 일반 유저가 잔액을 충전하는 경우
 
 > **Sample Request**
 
 ```json
 {
     "amount": 10000,
-    "paymentId": "2045087311207428801565773627746"
+    "paymentId": "6211407645950715001566273410147"
 }
 ```
 
@@ -63,7 +61,7 @@ POST https://api.solapi.com/cash/v1/balance
     "balanceAmount": 10000,
     "pointAmount": 0,
     "type": "RECHARGE",
-    "historyId": "5d53cf3bec977d76a228b7f0"
+    "historyId": "5d5b6f82df165029999e91c3"
 }
 ```
 
@@ -84,7 +82,7 @@ var options = {
   },
   body: {
     amount: 10000,
-    paymentId: '204508731120742880156577362...'
+    paymentId: '621140764595071500156627341...'
   },
   method: 'POST',
   json: true,
@@ -110,7 +108,7 @@ var options = {
   },
   body: {
     amount: 10000,
-    paymentId: '204508731120742880156577362...'
+    paymentId: '621140764595071500156627341...'
   },
   method: 'POST',
   url: 'http://api.solapi.com/cash/v1/balance'
@@ -128,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/balance";
-$data = '{"amount":10000,"paymentId":"204508731120742880156577362..."}';
+$data = '{"amount":10000,"paymentId":"621140764595071500156627341..."}';
 
 $options = array(
     'http' => array(
@@ -156,7 +154,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"amount":10000,"paymentId":"204508731120742880156577362..."}'
+data = '{"amount":10000,"paymentId":"621140764595071500156627341..."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -172,7 +170,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"amount":10000,"paymentId":"204508731120742880156577362..."}' \
+	-d '{"amount":10000,"paymentId":"621140764595071500156627341..."}' \
 	http://api.solapi.com/cash/v1/balance
 ```
 {% endtab %}
@@ -192,7 +190,7 @@ headers = {
 }
 data = {
   "amount": 10000,
-  "paymentId": "204508731120742880156577362..."
+  "paymentId": "621140764595071500156627341..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -219,7 +217,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/balance"
-  data := strings.NewReader(`{"amount":10000,"paymentId":"204508731120742880156577362..."}`)
+  data := strings.NewReader(`{"amount":10000,"paymentId":"621140764595071500156627341..."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -254,7 +252,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/balance";
-    String parameters = "{\"amount\":10000,\"paymentId\":\"204508731120742880156577362...\"}";
+    String parameters = "{\"amount\":10000,\"paymentId\":\"621140764595071500156627341...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -290,4 +288,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

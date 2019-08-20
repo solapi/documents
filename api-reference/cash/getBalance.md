@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-14
-
 # 잔액조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/balance
 ```
 
 남은 잔액을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/cash/v1/balance
 
 ---
 
-#### Samples
+## Samples
 
-##### 잔액 정보 조회
+### getBalance.spec.js
 
 > **Sample Request**
 
@@ -248,4 +246,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

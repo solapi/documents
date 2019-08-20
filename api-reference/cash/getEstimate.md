@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-14
-
 # 견적서 발급
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/estimate
 ```
 
 문자 혹은 알림톡, 친구톡의 견적서를 발급받습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | qty | `array` |  | eq | 문자 샤용량 |
@@ -25,9 +23,9 @@ GET https://api.solapi.com/cash/v1/estimate
 
 ---
 
-#### Samples
+## Samples
 
-##### 견적서 발행 요청 성공
+### 견적서 발행
 
 > **Sample Request**
 
@@ -238,4 +236,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

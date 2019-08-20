@@ -51,6 +51,7 @@
   * [템플릿 댓글 추가](api-reference/kakao/putTemplateComment.md)
   * [템플릿 검수 요청](api-reference/kakao/templateInspection.md)
   * [템플릿을 삭제](api-reference/kakao/deleteTemplate.md)
+* [잔액](api-reference/cash/README.md)
   * [잔액조회](api-reference/cash/getBalance.md)
   * [잔액 변동내역 조회](api-reference/cash/getBalanceHistory.md)
   * [결제수단 등록](api-reference/cash/createPayment.md)

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-14
-
 # 등록된 계좌 정보 삭제
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/cash/v1/bank/accounts
 ```
 
 등록된 계좌 정보를 삭제합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
@@ -23,9 +21,9 @@ DELETE https://api.solapi.com/cash/v1/bank/accounts
 
 ---
 
-#### Samples
+## Samples
 
-##### 자신의 계좌 초기화 (있음)
+### deleteBankAccount.spec.js
 
 > **Sample Request**
 
@@ -238,4 +236,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

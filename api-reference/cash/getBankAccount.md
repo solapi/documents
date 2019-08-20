@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-14
-
 # 계좌 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/bank/accounts
 ```
 
 계좌 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/cash/v1/bank/accounts
 
 ---
 
-#### Samples
+## Samples
 
-##### 없는 경우
+### BankAccount.spec.js
 
 > **Sample Request**
 
@@ -230,4 +228,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

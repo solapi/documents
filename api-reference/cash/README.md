@@ -1,6 +1,6 @@
 ---
 order:
-  - README.md: false
+  - README.md
   - getBalance.md
   - getBalanceHistory.md
   - createPayment.md

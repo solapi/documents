@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-14
-
 # 사업자 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/company
 ```
 
 사업자 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/cash/v1/company
 
 ---
 
-#### Samples
+## Samples
 
-##### 사업자 정보 등록 (정상)
+### getCompany.spec.js
 
 > **Sample Request**
 
@@ -31,7 +29,7 @@ http://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "11528423855452120001565773629352"
+    "companyId": "7476577564443319001566273412228"
 }
 ```
 
@@ -291,4 +289,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

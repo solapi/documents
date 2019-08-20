@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-14
-
 # 잔액 소진 알림 설정
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/cash/v1/balance/alert
 ```
 
 잔액 소진 알림을 설정합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "balances": "array",
@@ -29,7 +27,7 @@ PUT https://api.solapi.com/cash/v1/balance/alert
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | balances | `array` | O | 잔액 소진 알림 기준 금액 |
@@ -40,9 +38,9 @@ PUT https://api.solapi.com/cash/v1/balance/alert
 
 ---
 
-#### Samples
+## Samples
 
-##### 성공적으로 알림 잔액 설정 완료
+### 잔액 소진 알림 설정
 
 > **Sample Request**
 
@@ -292,4 +290,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

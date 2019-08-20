@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-14
-
 # 잔액이전
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/cash/v1/transfer
 ```
 
 잔액을 다른 계정에 이전합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "targetAccountId": "string",
@@ -30,7 +28,7 @@ POST https://api.solapi.com/cash/v1/transfer
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | targetAccountId | `string` | O | 잔액 이전을 받을 계정 ID |
@@ -40,9 +38,9 @@ POST https://api.solapi.com/cash/v1/transfer
 
 ---
 
-#### Samples
+## Samples
 
-##### 캐쉬 이전
+### transfer.spec.js
 
 > **Sample Request**
 
@@ -282,4 +280,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

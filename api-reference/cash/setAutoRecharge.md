@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-14
-
 # 등록된 결제수단의 우선순위를 변경
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/cash/v1/payment
 ```
 
 등록된 결제수단의 우선순위를 변경합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "paymentIds": "array",
@@ -24,7 +22,7 @@ PUT https://api.solapi.com/cash/v1/payment
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | paymentIds | `array` | O | 결제 ID |
@@ -35,17 +33,17 @@ PUT https://api.solapi.com/cash/v1/payment
 
 ---
 
-#### Samples
+## Samples
 
-##### 우선순위 변경 (정상)
+### setAutoRecharge.spec.spec.js
 
 > **Sample Request**
 
 ```json
 {
     "paymentIds": [
-        "5368568351334320001565773627958",
-        "5364615258313551001565773627958"
+        "10765667499297307001566273410438",
+        "10761156068009948001566273410437"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -57,8 +55,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "5368568351334320001565773627958",
-        "5364615258313551001565773627958"
+        "10765667499297307001566273410438",
+        "10761156068009948001566273410437"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -81,7 +79,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '536856835133432000156577362...',
+    paymentIds: '107656674992973070015662734...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -108,7 +106,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '536856835133432000156577362...',
+    paymentIds: '107656674992973070015662734...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -128,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}';
+$data = '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}';
 
 $options = array(
     'http' => array(
@@ -156,7 +154,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
@@ -172,7 +170,7 @@ print(response.text)
 curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}' \
+	-d '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -191,7 +189,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "536856835133432000156577362...",
+  "paymentIds": "107656674992973070015662734...",
   "minimumCash": 1000,
   "rechargeTo": 100000
 }
@@ -220,7 +218,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"536856835133432000156577362...","minimumCash":1000,"rechargeTo":100000}`)
+  data := strings.NewReader(`{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -255,7 +253,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"536856835133432000156577362...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String parameters = "{\"paymentIds\":\"107656674992973070015662734...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -291,4 +289,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

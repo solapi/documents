@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-14
-
 # 출금 신청
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/cash/v1/withdraw
 ```
 
 출금 신청을 합니다. 출금 신청한 금액에서 5%가 수수료로 차감됩니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "amount": "number"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | amount | `number` | O | 합계 금액 |
@@ -36,9 +34,9 @@ POST https://api.solapi.com/cash/v1/withdraw
 
 ---
 
-#### Samples
+## Samples
 
-##### 출금 후 예상 잔액이 자동충전 목표금액보다 클 때
+### 자동충전 설정되어 있을 때
 
 > **Sample Request**
 
@@ -65,10 +63,10 @@ POST https://api.solapi.com/cash/v1/withdraw
     "amount": 18500,
     "fee": 1500,
     "totalAmount": 20000,
-    "withdrawId": "1565773629859382248743162054340",
-    "dateConfirmed": "2019-08-14T09:07:09.000Z",
-    "dateCreated": "2019-08-14T09:07:09.860Z",
-    "dateUpdated": "2019-08-14T09:07:09.860Z"
+    "withdrawId": "1566273412861173254331279783500",
+    "dateConfirmed": "2019-08-20T03:56:52.000Z",
+    "dateCreated": "2019-08-20T03:56:52.861Z",
+    "dateUpdated": "2019-08-20T03:56:52.861Z"
 }
 ```
 
@@ -293,7 +291,7 @@ public class Request {
 
 ---
 
-##### (amount = 10000)
+### amount 를 변경하는 경우
 
 > **Sample Request**
 
@@ -320,10 +318,10 @@ public class Request {
     "amount": 9000,
     "fee": 1000,
     "totalAmount": 10000,
-    "withdrawId": "1565773629888427671864356110300",
-    "dateConfirmed": "2019-08-14T09:07:09.000Z",
-    "dateCreated": "2019-08-14T09:07:09.889Z",
-    "dateUpdated": "2019-08-14T09:07:09.889Z"
+    "withdrawId": "1566273412909248652487346458200",
+    "dateConfirmed": "2019-08-20T03:56:52.000Z",
+    "dateCreated": "2019-08-20T03:56:52.909Z",
+    "dateUpdated": "2019-08-20T03:56:52.909Z"
 }
 ```
 
@@ -547,4 +545,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

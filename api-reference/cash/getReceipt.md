@@ -1,35 +1,33 @@
-> 문서 생성일 : 2019-08-14
-
 # 거래명세서 발급
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/receipt
 ```
 
 거래명세서를 발급 받습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | historyId | `string` | O | eq | 충전/차감 내역 ID |
 
 ---
 
-#### Samples
+## Samples
 
-##### 거래명세서 발행 요청 성공
+### 거래명세서 발행
 
 > **Sample Request**
 
 ```
-http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830
+http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203
 ```
 
 > **Sample Response**
@@ -55,7 +53,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830'
+    'http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203'
 };
 
 request(options, function(error, response, body) {
@@ -76,7 +74,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830'
+    'http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203'
 };
 
 $.ajax(options).done(function(response) {
@@ -90,7 +88,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830";
+$url = "http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203";
 
 $options = array(
     'http' => array(
@@ -112,7 +110,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830"
+url = "http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -130,7 +128,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830
+	http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203
 ```
 {% endtab %}
 
@@ -141,7 +139,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830")
+uri = URI.parse("http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -169,7 +167,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830"
+  uri := "http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -202,7 +200,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/receipt?historyId=5d53cf3dec977d76a228b830";
+    String targetUrl = "http://api.solapi.com/cash/v1/receipt?historyId=5d5b6f84df165029999e9203";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -237,4 +235,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-14
-
 # 사업자 정보 업데이트
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/cash/v1/company
 ```
 
 사업자 정보를 업데이트 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "name": "string",
@@ -29,7 +27,7 @@ PUT https://api.solapi.com/cash/v1/company
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | name | `string` | O | 회사명 |
@@ -53,9 +51,9 @@ PUT https://api.solapi.com/cash/v1/company
 
 ---
 
-#### Samples
+## Samples
 
-##### 사업자 정보 등록 (정상)
+### updateCompany.spec.js
 
 > **Sample Request**
 
@@ -81,7 +79,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "11825206695820147001565773629371"
+    "companyId": "7844903563557645001566273412251"
 }
 ```
 
@@ -341,4 +339,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-14
-
 # 은행 계좌 등록
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/cash/v1/bank/accounts
 ```
 
 수익금 및 잔액을 출금 받기 위한 계좌를 등록 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "accountNumber": "number",
@@ -32,7 +30,7 @@ POST https://api.solapi.com/cash/v1/bank/accounts
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | accountNumber | `number` |  | 계좌번호 |
@@ -44,9 +42,9 @@ POST https://api.solapi.com/cash/v1/bank/accounts
 
 ---
 
-#### Samples
+## Samples
 
-##### 계좌 등록
+### 성공하는 경우
 
 > **Sample Request**
 
@@ -295,4 +293,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

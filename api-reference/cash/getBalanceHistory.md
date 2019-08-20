@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-14
-
 # 잔액 변동내역 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/balance/history
 ```
 
 메시지 발송, 출금등으로 변동 된 잔액 내역을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | offset | `number` |  | eq | 검색 시작 지점 |
@@ -34,9 +32,9 @@ GET https://api.solapi.com/cash/v1/balance/history
 
 ---
 
-#### Samples
+## Samples
 
-##### 충전/차감 내역 가져오기
+### getBalanceHistory.spec.js
 
 > **Sample Request**
 
@@ -64,7 +62,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 100,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T10:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b7ff"
+        "historyId": "5d5b6f83df165029999e91d2"
     },
     {
         "balanceAmount": 0,
@@ -82,7 +80,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 100,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T10:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b7f7"
+        "historyId": "5d5b6f83df165029999e91ca"
     },
     {
         "balanceAmount": 0,
@@ -100,7 +98,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 100,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T10:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b7f9"
+        "historyId": "5d5b6f83df165029999e91cc"
     },
     {
         "balanceAmount": 0,
@@ -118,7 +116,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 100,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T10:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b7fb"
+        "historyId": "5d5b6f83df165029999e91ce"
     },
     {
         "balanceAmount": 0,
@@ -136,7 +134,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 100,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T10:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b7fd"
+        "historyId": "5d5b6f83df165029999e91d0"
     },
     {
         "balanceAmount": 100,
@@ -154,7 +152,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T09:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b816"
+        "historyId": "5d5b6f83df165029999e91ef"
     },
     {
         "balanceAmount": 100,
@@ -172,7 +170,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T09:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b819"
+        "historyId": "5d5b6f83df165029999e91f7"
     },
     {
         "balanceAmount": 100,
@@ -190,7 +188,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T09:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b820"
+        "historyId": "5d5b6f83df165029999e91ec"
     },
     {
         "balanceAmount": 100,
@@ -208,7 +206,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T09:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b824"
+        "historyId": "5d5b6f83df165029999e91e9"
     },
     {
         "balanceAmount": 100,
@@ -226,7 +224,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T09:00:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b81c"
+        "historyId": "5d5b6f83df165029999e91f3"
     },
     {
         "balanceAmount": 0,
@@ -244,7 +242,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b823"
+        "historyId": "5d5b6f83df165029999e91eb"
     },
     {
         "balanceAmount": 0,
@@ -262,7 +260,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b81b"
+        "historyId": "5d5b6f83df165029999e91f2"
     },
     {
         "balanceAmount": 0,
@@ -280,7 +278,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b815"
+        "historyId": "5d5b6f83df165029999e91e8"
     },
     {
         "balanceAmount": 0,
@@ -298,7 +296,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b81f"
+        "historyId": "5d5b6f83df165029999e91ee"
     },
     {
         "balanceAmount": 0,
@@ -316,7 +314,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b80d"
+        "historyId": "5d5b6f83df165029999e91e0"
     },
     {
         "balanceAmount": 0,
@@ -334,7 +332,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b80b"
+        "historyId": "5d5b6f83df165029999e91de"
     },
     {
         "balanceAmount": 0,
@@ -352,7 +350,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b80f"
+        "historyId": "5d5b6f83df165029999e91e2"
     },
     {
         "balanceAmount": 0,
@@ -370,7 +368,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b813"
+        "historyId": "5d5b6f83df165029999e91e6"
     },
     {
         "balanceAmount": 0,
@@ -388,7 +386,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b811"
+        "historyId": "5d5b6f83df165029999e91e4"
     },
     {
         "balanceAmount": 0,
@@ -406,7 +404,7 @@ http://api.solapi.com/cash/v1/balance/history
         "newPoint": 200,
         "type": "MANUAL",
         "dateCreated": "2018-04-01T08:30:00.000Z",
-        "historyId": "5d53cf3dec977d76a228b818"
+        "historyId": "5d5b6f83df165029999e91f6"
     }
 ]
 ```
@@ -608,4 +606,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

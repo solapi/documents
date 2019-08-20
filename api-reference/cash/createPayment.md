@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-14
-
 # 결제수단 등록
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/cash/v1/payment
 ```
 
 결제수단을 등록합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "cardNumber": "string",
@@ -32,7 +30,7 @@ POST https://api.solapi.com/cash/v1/payment
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | cardNumber | `string` | O | 카드 번호 |
@@ -44,9 +42,9 @@ POST https://api.solapi.com/cash/v1/payment
 
 ---
 
-#### Samples
+## Samples
 
-##### 카드 등록 (정상 description 이 없는 경우)
+### createPayment.spec.js
 
 > **Sample Request**
 
@@ -65,7 +63,7 @@ POST https://api.solapi.com/cash/v1/payment
 {
     "description": "[VISA] est1 01/19",
     "expDate": "2019/01",
-    "paymentId": "2887561472539033001565773627800"
+    "paymentId": "7251138262622190001566273410213"
 }
 ```
 
@@ -298,4 +296,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

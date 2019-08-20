@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-14
-
 # 결제 수단 제거
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/cash/v1/payment
 ```
 
 결제 수단을 제거 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "paymentId": "string"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | paymentId | `string` | O | 결제 ID |
@@ -36,15 +34,15 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ---
 
-#### Samples
+## Samples
 
-##### 첫번째 카드 정상 삭제
+### 결제 수단 삭제
 
 > **Sample Request**
 
 ```json
 {
-    "paymentId": "5981297409574606001565773627997"
+    "paymentId": "11768323077717074001566273410502"
 }
 ```
 
@@ -52,7 +50,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ```json
 {
-    "paymentId": "5981297409574606001565773627997",
+    "paymentId": "11768323077717074001566273410502",
     "message": "성공적으로 삭제되었습니다."
 }
 ```
@@ -73,7 +71,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '598129740957460600156577362...'
+    paymentId: '117683230777170740015662734...'
   },
   method: 'DELETE',
   json: true,
@@ -98,7 +96,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '598129740957460600156577362...'
+    paymentId: '117683230777170740015662734...'
   },
   method: 'DELETE',
   url: 'http://api.solapi.com/cash/v1/payment'
@@ -116,7 +114,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentId":"598129740957460600156577362..."}';
+$data = '{"paymentId":"117683230777170740015662734..."}';
 
 $options = array(
     'http' => array(
@@ -144,7 +142,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentId":"598129740957460600156577362..."}'
+data = '{"paymentId":"117683230777170740015662734..."}'
 
 response = requests.delete(url, headers=headers, data=data)
 print(response.status_code)
@@ -160,7 +158,7 @@ print(response.text)
 curl -X DELETE \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentId":"598129740957460600156577362..."}' \
+	-d '{"paymentId":"117683230777170740015662734..."}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -179,7 +177,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentId": "598129740957460600156577362..."
+  "paymentId": "117683230777170740015662734..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -206,7 +204,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentId":"598129740957460600156577362..."}`)
+  data := strings.NewReader(`{"paymentId":"117683230777170740015662734..."}`)
 
   req, err := http.NewRequest("DELETE", uri, data)
   if err != nil { panic(err) }
@@ -241,7 +239,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentId\":\"598129740957460600156577362...\"}";
+    String parameters = "{\"paymentId\":\"117683230777170740015662734...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -277,4 +275,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

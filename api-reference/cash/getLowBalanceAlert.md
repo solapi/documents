@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-14
-
 # 알림 설정 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/cash/v1/balance/alert
 ```
 
 잔액 소진 알림 설정 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/cash/v1/balance/alert
 
 ---
 
-#### Samples
+## Samples
 
-##### 성공적으로 가져옴
+### 잔액 소진 알림 설정 가져오기
 
 > **Sample Request**
 
@@ -43,8 +41,8 @@ http://api.solapi.com/cash/v1/balance/alert
         "enabled": true
     },
     "_id": "19041920726336",
-    "dateCreated": "2019-08-14T09:07:08.982Z",
-    "dateUpdated": "2019-08-14T09:07:08.982Z"
+    "dateCreated": "2019-08-20T03:56:51.801Z",
+    "dateUpdated": "2019-08-20T03:56:51.801Z"
 }
 ```
 
@@ -245,4 +243,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 
