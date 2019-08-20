@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 내 계정 목록
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/accounts
 ```
 
 내가 소속된 계정들의 목록을 불러옵니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
@@ -23,9 +21,9 @@ GET https://api.solapi.com/users/v1/accounts
 
 ---
 
-#### Samples
+## Samples
 
-##### 목록 3개만 블러오기
+### getAccountList.spec.js
 
 > **Sample Request**
 
@@ -41,34 +39,34 @@ http://api.solapi.com/users/v1/accounts?limit=3
     "accountList": [
         {
             "status": "ACTIVE",
-            "accountId": "19081942570768",
+            "accountId": "19082040455933",
             "name": "test5님의 계정",
-            "dateCreated": "2019-08-19T02:49:30.722Z",
-            "dateUpdated": "2019-08-19T02:49:30.722Z",
+            "dateCreated": "2019-08-20T02:14:15.895Z",
+            "dateUpdated": "2019-08-20T02:14:15.895Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19081942570643",
+            "accountId": "19082040455744",
             "name": "test5님의 계정",
-            "dateCreated": "2019-08-19T02:49:30.698Z",
-            "dateUpdated": "2019-08-19T02:49:30.698Z",
+            "dateCreated": "2019-08-20T02:14:15.949Z",
+            "dateUpdated": "2019-08-20T02:14:15.949Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19081942570620",
+            "accountId": "19082040455566",
             "name": "test5님의 계정",
-            "dateCreated": "2019-08-19T02:49:30.701Z",
-            "dateUpdated": "2019-08-19T02:49:30.701Z",
+            "dateCreated": "2019-08-20T02:14:15.864Z",
+            "dateUpdated": "2019-08-20T02:14:15.864Z",
             "myRole": "OWNER",
             "myName": "test5"
         }
     ],
-    "startKey": "19081942570768",
-    "nextKey": "19081942570487"
+    "startKey": "19082040455933",
+    "nextKey": "19082040455550"
 }
 ```
 
@@ -269,4 +267,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

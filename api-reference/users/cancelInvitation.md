@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대 취소
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
 관리자(OWNER)가 자신의 계정의 초대를 취소합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상 삭제
+### cancelInvitation.spec.js
 
 > **Sample Request**
 
@@ -38,12 +36,12 @@ DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 ```json
 {
     "invitationId": "CTbhz0F_j9_OWAVcrA3Gm",
-    "accountId": "19081942578339",
-    "memberId": "MEMct-zEsfRnma",
+    "accountId": "19082040464586",
+    "memberId": "MEMgXv1EOv93U0",
     "email": "test1@test.com",
     "role": "MEMBER",
-    "dateCreated": "2019-08-19T02:49:38.740Z",
-    "dateUpdated": "2019-08-19T02:49:38.740Z"
+    "dateCreated": "2019-08-20T02:14:24.937Z",
+    "dateUpdated": "2019-08-20T02:14:24.937Z"
 }
 ```
 
@@ -244,4 +242,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

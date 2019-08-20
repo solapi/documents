@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-19
-
 # 휴면 계정 활성화
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
 ```
 
 휴면 처리된 계정을 활성화합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `INACTIVE` | `ACTIVE` |  |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -29,9 +27,9 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
 
 ---
 
-#### Samples
+## Samples
 
-##### 어카운트가 INACTIVE 상태일때 ACTIVATE 요청
+### activateAccount.spec.js
 
 > **Sample Request**
 
@@ -48,22 +46,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:38.811Z",
-            "dateUpdated": "2019-08-19T02:49:38.811Z",
+            "dateCreated": "2019-08-20T02:14:25.016Z",
+            "dateUpdated": "2019-08-20T02:14:25.016Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-08-19T02:49:38.811Z",
-            "dateUpdated": "2019-08-19T02:49:38.811Z",
+            "dateCreated": "2019-08-20T02:14:25.016Z",
+            "dateUpdated": "2019-08-20T02:14:25.016Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:38.814Z",
-    "dateUpdated": "2019-08-19T02:49:38.844Z"
+    "dateCreated": "2019-08-20T02:14:25.019Z",
+    "dateUpdated": "2019-08-20T02:14:25.129Z"
 }
 ```
 
@@ -264,4 +262,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 메일 중복 검사
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/existence/email/:email
 ```
 
 특정 메일을 사용하고 있는 사용자가 있는지 확인합니다.
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/users/v1/existence/email/:email
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### existenceEmail.spec.js
 
 > **Sample Request**
 
@@ -215,4 +213,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 계정 전환
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 ```
 
 계정 전환합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 
 ---
 
-#### Samples
+## Samples
 
-##### 토큰발급
+### signup.spec.js
 
 > **Sample Request**
 
@@ -238,4 +236,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대 수락(비회원)
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
 기존에 SOLAPI를 사용하지 않았던 사용자가 초대로 인해 SOLAPI에 가입되고 초대된 계정에 들어가게 됩니다.
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :invitationId | 설명 없음 |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "password": "string",
@@ -23,7 +21,7 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | password | `string` | O | 비밀번호 |
@@ -32,9 +30,9 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### createMember.spec.js
 
 > **Sample Request**
 
@@ -50,26 +48,26 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19081942570686",
+    "accountId": "19082040455005",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEMNZeKuLT8Z7n",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMPke1WOCzPpK",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEMkBQ7s0QURXn",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMpXVfYTcnK2s",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:30.566Z",
-    "dateUpdated": "2019-08-19T02:49:30.579Z"
+    "dateCreated": "2019-08-20T02:14:15.347Z",
+    "dateUpdated": "2019-08-20T02:14:15.368Z"
 }
 ```
 
@@ -287,4 +285,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

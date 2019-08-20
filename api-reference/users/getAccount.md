@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 내 계정 정보
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/accounts/:accountId
 ```
 
 내가 소속된 특정 계정에 대한 정보를 얻습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,14 +21,14 @@ GET https://api.solapi.com/users/v1/accounts/:accountId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getAccount.spec.js
 
 > **Sample Request**
 
 ```
-http://api.solapi.com/users/v1/accounts/19081942570369
+http://api.solapi.com/users/v1/accounts/19082040456831
 ```
 
 > **Sample Response**
@@ -38,19 +36,19 @@ http://api.solapi.com/users/v1/accounts/19081942570369
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19081942570369",
+    "accountId": "19082040456831",
     "name": "steven님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEM0HpNFxVmznt",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMKOGW6mvT7GX",
             "role": "OWNER",
             "name": "steven"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:30.977Z",
-    "dateUpdated": "2019-08-19T02:49:30.977Z"
+    "dateCreated": "2019-08-20T02:14:16.495Z",
+    "dateUpdated": "2019-08-20T02:14:16.495Z"
 }
 ```
 
@@ -70,7 +68,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19081942570369'
+  url: 'http://api.solapi.com/users/v1/accounts/19082040456831'
 };
 
 request(options, function(error, response, body) {
@@ -90,7 +88,7 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/users/v1/accounts/19081942570369'
+  url: 'http://api.solapi.com/users/v1/accounts/19082040456831'
 };
 
 $.ajax(options).done(function(response) {
@@ -104,7 +102,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19081942570369";
+$url = "http://api.solapi.com/users/v1/accounts/19082040456831";
 
 $options = array(
     'http' => array(
@@ -126,7 +124,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19081942570369"
+url = "http://api.solapi.com/users/v1/accounts/19082040456831"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -144,7 +142,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/users/v1/accounts/19081942570369
+	http://api.solapi.com/users/v1/accounts/19082040456831
 ```
 {% endtab %}
 
@@ -155,7 +153,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19081942570369")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/19082040456831")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -183,7 +181,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19081942570369"
+  uri := "http://api.solapi.com/users/v1/accounts/19082040456831"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -216,7 +214,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19081942570369";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/19082040456831";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -251,4 +249,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

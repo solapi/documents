@@ -1,22 +1,20 @@
-> 문서 생성일 : 2019-08-19
-
 # 비밀번호 초기화 요청
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/member/password/reset
 ```
 
 비밀번호 초기화 요청 메일을 보냅니다.
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "email": "email"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
@@ -24,9 +22,9 @@ POST https://api.solapi.com/users/v1/member/password/reset
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### sendResetPassword.spec.js
 
 > **Sample Request**
 
@@ -45,17 +43,17 @@ POST https://api.solapi.com/users/v1/member/password/reset
             "i@nter.net"
         ],
         "rejected": [],
-        "envelopeTime": 846,
-        "messageTime": 596,
+        "envelopeTime": 815,
+        "messageTime": 642,
         "messageSize": 927,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXVoOR4f74VUAfZk1AAAeXPcILP-dnti7pXRuUXchlCo]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXVtXhSAaGyvGnq68AAAeZh-gOfpA0atdDFgkpN7UOjg]",
         "envelope": {
             "from": "support@coolsms.zendesk.com",
             "to": [
                 "i@nter.net"
             ]
         },
-        "messageId": "<0036a42f-d115-9441-5b0b-dc768320019b@coolsms.zendesk.com>"
+        "messageId": "<6163585b-6781-0c77-1bd2-e0cd8d97a381@coolsms.zendesk.com>"
     }
 }
 ```
@@ -271,4 +269,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

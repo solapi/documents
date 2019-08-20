@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-19
-
 # 계정 회원 목록 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/accounts/:accountId/members
 ```
 
 회원 혹은 관리자(OWNER)가 자신이 속해있는 계정의 맴버 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:read` | `role-accounts:read` | `ACTIVE` | `ACTIVE` `UNVERIFIED` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :accountId | 계정 고유 아이디 |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | memberId | `string` |  | eq | 회원 고유 아이디 |
@@ -34,9 +32,9 @@ GET https://api.solapi.com/users/v1/accounts/:accountId/members
 
 ---
 
-#### Samples
+## Samples
 
-##### 목록 3개 불러오기
+### getAccountMembers.spec.js
 
 > **Sample Request**
 
@@ -55,8 +53,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 3",
             "email": "test3@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-19T02:49:29.681Z",
-            "dateUpdated": "2019-08-19T02:49:29.681Z"
+            "dateCreated": "2019-08-20T02:14:11.883Z",
+            "dateUpdated": "2019-08-20T02:14:11.883Z"
         },
         {
             "memberId": "18010100001002",
@@ -64,8 +62,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 2",
             "email": "test2@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-19T02:49:29.681Z",
-            "dateUpdated": "2019-08-19T02:49:29.681Z"
+            "dateCreated": "2019-08-20T02:14:11.883Z",
+            "dateUpdated": "2019-08-20T02:14:11.883Z"
         },
         {
             "memberId": "18010100001001",
@@ -73,8 +71,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 1",
             "email": "test1@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-19T02:49:29.681Z",
-            "dateUpdated": "2019-08-19T02:49:29.681Z"
+            "dateCreated": "2019-08-20T02:14:11.883Z",
+            "dateUpdated": "2019-08-20T02:14:11.883Z"
         },
         {
             "memberId": "18010100001000",
@@ -82,8 +80,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 0",
             "email": "test0@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-19T02:49:29.681Z",
-            "dateUpdated": "2019-08-19T02:49:29.681Z"
+            "dateCreated": "2019-08-20T02:14:11.883Z",
+            "dateUpdated": "2019-08-20T02:14:11.883Z"
         }
     ],
     "nextKey": null
@@ -289,4 +287,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

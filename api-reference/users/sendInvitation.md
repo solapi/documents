@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대장 발송
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/invitations
 ```
 
 관리자(OWNER)가 특정 이메일로 초대장을 발송합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "email": "email",
@@ -23,7 +21,7 @@ POST https://api.solapi.com/users/v1/invitations
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
@@ -32,9 +30,9 @@ POST https://api.solapi.com/users/v1/invitations
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### sendInvitation.spec.js
 
 > **Sample Request**
 
@@ -54,25 +52,25 @@ POST https://api.solapi.com/users/v1/invitations
             "newMail@test.net"
         ],
         "rejected": [],
-        "envelopeTime": 801,
-        "messageTime": 646,
+        "envelopeTime": 894,
+        "messageTime": 596,
         "messageSize": 477,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXVoOPnBtNSvI5mu-AAAeWmferP09sPswh1EjBokhwo0]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXVtXfIf74VUAf4ArAAAeZGFta7slsUakZzgLBOcKYpM]",
         "envelope": {
             "from": "support@coolsms.zendesk.com",
             "to": [
                 "newMail@test.net"
             ]
         },
-        "messageId": "<473fb8e5-60f9-bdc3-e40d-87924fb7e1f9@coolsms.zendesk.com>"
+        "messageId": "<6212c0e6-430f-d1d1-69be-6cc18b6f22bb@coolsms.zendesk.com>"
     },
     "invitation": {
-        "accountId": "19081942571281",
+        "accountId": "19082040456736",
         "email": "newMail@test.net",
-        "dateCreated": "2019-08-19T02:49:34.920Z",
-        "dateUpdated": "2019-08-19T02:49:34.920Z",
-        "invitationId": "B62J250YFiInEIaqVmFo-",
-        "memberId": "MEM6A4dd_fodKn",
+        "dateCreated": "2019-08-20T02:14:20.844Z",
+        "dateUpdated": "2019-08-20T02:14:20.844Z",
+        "invitationId": "BibiB_gHpj4UFKw6jatgn",
+        "memberId": "MEMu3rludA9tMm",
         "role": "DEVELOPER"
     }
 }
@@ -301,4 +299,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

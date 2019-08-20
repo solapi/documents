@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-19
-
 # 계정 정보 수정
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/accounts/:accountId
 ```
 
 관리자(OWNER)가 계정의 정보를 수정합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :accountId | 계정 고유 아이디 |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "name": "string"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | name | `string` |  | 이름 |
@@ -36,9 +34,9 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId
 
 ---
 
-#### Samples
+## Samples
 
-##### 어카운트 정보 수정 (오너)
+### updateAccount.spec.js
 
 > **Sample Request**
 
@@ -57,22 +55,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:38.759Z",
-            "dateUpdated": "2019-08-19T02:49:38.759Z",
+            "dateCreated": "2019-08-20T02:14:24.956Z",
+            "dateUpdated": "2019-08-20T02:14:24.956Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-08-19T02:49:38.759Z",
-            "dateUpdated": "2019-08-19T02:49:38.759Z",
+            "dateCreated": "2019-08-20T02:14:24.956Z",
+            "dateUpdated": "2019-08-20T02:14:24.956Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:38.760Z",
-    "dateUpdated": "2019-08-19T02:49:38.772Z"
+    "dateCreated": "2019-08-20T02:14:24.957Z",
+    "dateUpdated": "2019-08-20T02:14:24.973Z"
 }
 ```
 
@@ -296,4 +294,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,27 +1,25 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대장 목록 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/accounts/:accountId/invitations
 ```
 
 관리자(OWNER)가 자신이 속해있는 계정의 초대 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:read` | `role-accounts:read` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :accountId | 계정 고유 아이디 |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | memberId | `string` |  | eq | 회원 고유 아이디 |
@@ -32,9 +30,9 @@ GET https://api.solapi.com/users/v1/accounts/:accountId/invitations
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getInvitations.spec.js
 
 > **Sample Request**
 
@@ -50,8 +48,8 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
         "invitationId": "WPmPyDzXjOleECwgK3ER6",
         "email": "test1@test.com",
         "role": "MEMBER",
-        "dateCreated": "2019-08-29T02:49:29.394Z",
-        "dateUpdated": "2019-08-29T02:49:29.394Z",
+        "dateCreated": "2019-08-30T02:14:11.534Z",
+        "dateUpdated": "2019-08-30T02:14:11.534Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -67,23 +65,23 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-08-19T02:49:39.249Z",
-            "dateUpdated": "2019-08-19T02:49:39.249Z"
+            "dateCreated": "2019-08-20T02:14:25.606Z",
+            "dateUpdated": "2019-08-20T02:14:25.606Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-08-19T02:49:39.220Z",
-            "dateUpdated": "2019-08-19T02:49:39.220Z"
+            "dateCreated": "2019-08-20T02:14:25.573Z",
+            "dateUpdated": "2019-08-20T02:14:25.573Z"
         }
     },
     {
         "invitationId": "A_k48AZnpzaTCSH45gVOO",
         "email": "test2@test.com",
         "role": "DEVELOPER",
-        "dateUpdated": "2019-08-19T02:49:39.219Z",
-        "dateCreated": "2019-08-19T02:49:39.219Z",
+        "dateUpdated": "2019-08-20T02:14:25.571Z",
+        "dateCreated": "2019-08-20T02:14:25.571Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -99,15 +97,15 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-08-19T02:49:39.249Z",
-            "dateUpdated": "2019-08-19T02:49:39.249Z"
+            "dateCreated": "2019-08-20T02:14:25.606Z",
+            "dateUpdated": "2019-08-20T02:14:25.606Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-08-19T02:49:39.220Z",
-            "dateUpdated": "2019-08-19T02:49:39.220Z"
+            "dateCreated": "2019-08-20T02:14:25.573Z",
+            "dateUpdated": "2019-08-20T02:14:25.573Z"
         }
     }
 ]
@@ -310,4 +308,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

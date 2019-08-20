@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 내 초대 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/invitations
 ```
 
 내가 받은 초대 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/users/v1/invitations
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getMyInvitations.spec.js
 
 > **Sample Request**
 
@@ -35,52 +33,52 @@ http://api.solapi.com/users/v1/invitations
         "email": "testOrigin@test.net",
         "invitationId": "iqPkNRHy4atyQeepjeXDO",
         "role": "MEMBER",
-        "dateCreated": "2019-08-19T02:49:39.197Z",
-        "dateUpdated": "2019-08-19T02:49:39.197Z",
+        "dateCreated": "2019-08-20T02:14:25.548Z",
+        "dateUpdated": "2019-08-20T02:14:25.548Z",
         "owner": {
             "name": "test1",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19081942579453",
+            "selectedAccountId": "19082040465755",
             "isAdmin": false,
-            "memberId": "MEMRbBVWPq-OtE",
+            "memberId": "MEMjAbRwP2olM_",
             "email": "test1@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-08-19T02:49:39.182Z",
-            "dateUpdated": "2019-08-19T02:49:39.186Z"
+            "dateCreated": "2019-08-20T02:14:25.500Z",
+            "dateUpdated": "2019-08-20T02:14:25.504Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19081942579453",
+            "accountId": "19082040465755",
             "name": "test1님의 계정",
-            "dateCreated": "2019-08-19T02:49:39.188Z",
-            "dateUpdated": "2019-08-19T02:49:39.188Z"
+            "dateCreated": "2019-08-20T02:14:25.506Z",
+            "dateUpdated": "2019-08-20T02:14:25.506Z"
         }
     },
     {
         "email": "testOrigin@test.net",
         "invitationId": "UVyI3y01aLn_VU9FFSNEp",
         "role": "DEVELOPER",
-        "dateCreated": "2019-08-19T02:49:39.199Z",
-        "dateUpdated": "2019-08-19T02:49:39.199Z",
+        "dateCreated": "2019-08-20T02:14:25.549Z",
+        "dateUpdated": "2019-08-20T02:14:25.549Z",
         "owner": {
             "name": "test2",
             "phoneNumber": null,
             "status": "UNVERIFIED",
-            "selectedAccountId": "19081942579190",
+            "selectedAccountId": "19082040465060",
             "isAdmin": false,
-            "memberId": "MEMvjNbHGevICH",
+            "memberId": "MEMGbUxan5O6lx",
             "email": "test2@test.com",
             "loginSessions": [],
-            "dateCreated": "2019-08-19T02:49:39.184Z",
-            "dateUpdated": "2019-08-19T02:49:39.192Z"
+            "dateCreated": "2019-08-20T02:14:25.502Z",
+            "dateUpdated": "2019-08-20T02:14:25.523Z"
         },
         "account": {
             "status": "ACTIVE",
-            "accountId": "19081942579190",
+            "accountId": "19082040465060",
             "name": "test2님의 계정",
-            "dateCreated": "2019-08-19T02:49:39.194Z",
-            "dateUpdated": "2019-08-19T02:49:39.194Z"
+            "dateCreated": "2019-08-20T02:14:25.542Z",
+            "dateUpdated": "2019-08-20T02:14:25.542Z"
         }
     }
 ]
@@ -283,4 +281,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

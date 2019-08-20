@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 비밀번호 초기화
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 ```
 
 비밀번호를 초기화합니다.
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :hashId | 설명 없음 |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "password": "string",
@@ -23,7 +21,7 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | password | `string` | O | 비밀번호 |
@@ -32,9 +30,9 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### resetPassword.spec.js
 
 > **Sample Request**
 
@@ -53,11 +51,11 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMTmJ6K8LDRTk",
+    "memberId": "MEMfoKRInx0kJP",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-19T02:49:50.837Z",
-    "dateUpdated": "2019-08-19T02:49:50.846Z"
+    "dateCreated": "2019-08-20T02:14:37.325Z",
+    "dateUpdated": "2019-08-20T02:14:37.337Z"
 }
 ```
 
@@ -277,4 +275,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

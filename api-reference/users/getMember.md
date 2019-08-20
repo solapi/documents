@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 내 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/member
 ```
 
 내 사용자 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/users/v1/member
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getMember.spec.js
 
 > **Sample Request**
 
@@ -34,12 +32,12 @@ http://api.solapi.com/users/v1/member
     "name": "steven",
     "phoneNumber": null,
     "status": "UNVERIFIED",
-    "selectedAccountId": "19081942570218",
-    "memberId": "MEMSLQXDIGXEDW",
+    "selectedAccountId": "19082040455778",
+    "memberId": "MEMiN6k1d6-tB4",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-19T02:49:30.621Z",
-    "dateUpdated": "2019-08-19T02:49:30.623Z"
+    "dateCreated": "2019-08-20T02:14:15.497Z",
+    "dateUpdated": "2019-08-20T02:14:15.513Z"
 }
 ```
 
@@ -240,4 +238,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

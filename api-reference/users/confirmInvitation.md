@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대 수락(회원)
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
 이미 SOLAPI에 가입된 사용자가 다른 계정으로 부터 온 초대를 승락합니다.
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -17,9 +15,9 @@ POST https://api.solapi.com/users/v1/invitations/:invitationId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### confirmInvitation.spec.js
 
 > **Sample Request**
 
@@ -32,26 +30,26 @@ POST https://api.solapi.com/users/v1/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19081942578983",
+    "accountId": "19082040464105",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEMDDnX-UfVMLn",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMaFh69NOZoW9",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEMoSP-gUDnzv9",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMHgsIgnSl9p6",
             "name": "test2",
             "role": "MEMBER"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:38.714Z",
-    "dateUpdated": "2019-08-19T02:49:38.723Z"
+    "dateCreated": "2019-08-20T02:14:24.905Z",
+    "dateUpdated": "2019-08-20T02:14:24.919Z"
 }
 ```
 
@@ -234,4 +232,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

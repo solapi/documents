@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-19
-
 # 이메일 변경
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/member/email
 ```
 
 사용자의 이메일을 변경합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 |  |  |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "email": "email"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
@@ -36,9 +34,9 @@ PUT https://api.solapi.com/users/v1/member/email
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### updateMember.spec.js
 
 > **Sample Request**
 
@@ -56,11 +54,11 @@ PUT https://api.solapi.com/users/v1/member/email
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMywtMrPqSvqM",
+    "memberId": "MEMbEn6NhhjS_A",
     "email": "newMail@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-19T02:49:51.011Z",
-    "dateUpdated": "2019-08-19T02:49:51.016Z"
+    "dateCreated": "2019-08-20T02:14:37.532Z",
+    "dateUpdated": "2019-08-20T02:14:37.538Z"
 }
 ```
 
@@ -284,4 +282,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

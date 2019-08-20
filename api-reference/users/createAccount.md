@@ -1,28 +1,26 @@
-> 문서 생성일 : 2019-08-19
-
 # 계정 생성
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/accounts
 ```
 
 로그인한 상태의 회원이 새로운 계정을 하나 만듭니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` |  |  | `ACTIVE` |  |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "name": "string"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | name | `string` |  | 이름 |
@@ -30,9 +28,9 @@ POST https://api.solapi.com/users/v1/accounts
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### createAccount.spec.js
 
 > **Sample Request**
 
@@ -45,19 +43,19 @@ POST https://api.solapi.com/users/v1/accounts
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19081942570919",
+    "accountId": "19082040455237",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-08-19T02:49:29.030Z",
-            "dateUpdated": "2019-08-19T02:49:29.030Z",
-            "memberId": "MEMBRdiKAlIGOG",
+            "dateCreated": "2019-08-20T02:14:11.129Z",
+            "dateUpdated": "2019-08-20T02:14:11.129Z",
+            "memberId": "MEMwxsZ25iXKoN",
             "role": "OWNER",
             "name": "test1"
         }
     ],
-    "dateCreated": "2019-08-19T02:49:30.543Z",
-    "dateUpdated": "2019-08-19T02:49:30.543Z"
+    "dateCreated": "2019-08-20T02:14:15.272Z",
+    "dateUpdated": "2019-08-20T02:14:15.272Z"
 }
 ```
 
@@ -258,4 +256,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

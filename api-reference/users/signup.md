@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 회원가입
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/users/v1/signup
 ```
 
 ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "email": "email",
@@ -20,7 +18,7 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
@@ -32,9 +30,9 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 ---
 
-#### Samples
+## Samples
 
-##### 회원가입
+### signup.spec.js
 
 > **Sample Request**
 
@@ -53,30 +51,30 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 {
     "account": {
         "status": "ACTIVE",
-        "accountId": "19081942570148",
+        "accountId": "19082040453638",
         "name": "test1님의 계정",
         "members": [
             {
-                "dateCreated": "2019-08-19T02:49:29.030Z",
-                "dateUpdated": "2019-08-19T02:49:29.030Z",
-                "memberId": "MEMNX2nnGWzk3u",
+                "dateCreated": "2019-08-20T02:14:11.129Z",
+                "dateUpdated": "2019-08-20T02:14:11.129Z",
+                "memberId": "MEMJYX-FX0jGeo",
                 "role": "OWNER",
                 "name": "test1"
             }
         ],
-        "dateCreated": "2019-08-19T02:49:30.370Z",
-        "dateUpdated": "2019-08-19T02:49:30.370Z"
+        "dateCreated": "2019-08-20T02:14:13.982Z",
+        "dateUpdated": "2019-08-20T02:14:13.982Z"
     },
     "member": {
         "name": "test1",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19081942570148",
-        "memberId": "MEMNX2nnGWzk3u",
+        "selectedAccountId": "19082040453638",
+        "memberId": "MEMJYX-FX0jGeo",
         "email": "test1@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-08-19T02:49:30.362Z",
-        "dateUpdated": "2019-08-19T02:49:30.368Z"
+        "dateCreated": "2019-08-20T02:14:13.973Z",
+        "dateUpdated": "2019-08-20T02:14:13.979Z"
     }
 }
 ```
@@ -301,4 +299,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

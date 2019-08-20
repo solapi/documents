@@ -1,34 +1,32 @@
-> 문서 생성일 : 2019-08-19
-
 # 사용자 전화번호 수정
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/member/phone-number
 ```
 
 사용자의 전화번호를 수정합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
 | O |  |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "phoneNumber": "string"
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | phoneNumber | `string` | O | 핸드폰 번호 |
@@ -36,9 +34,9 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### updateMemberPhoneNumber.spec.js
 
 > **Sample Request**
 
@@ -58,8 +56,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-08-19T02:49:39.331Z",
-    "dateUpdated": "2019-08-19T02:49:39.336Z",
+    "dateCreated": "2019-08-20T02:14:25.700Z",
+    "dateUpdated": "2019-08-20T02:14:25.704Z",
     "loginSessions": []
 }
 ```
@@ -284,4 +282,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 내 회원 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/accounts/:accountId/me
 ```
 
 내가 소속된 특정 계정에 저장되어 있는 내 회원 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ GET https://api.solapi.com/users/v1/accounts/:accountId/me
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getAccountMemberAboutMe.spec.js
 
 > **Sample Request**
 
@@ -41,8 +39,8 @@ http://api.solapi.com/users/v1/accounts/12925149/me
     "role": "OWNER",
     "name": "toss 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-08-19T02:49:38.918Z",
-    "dateUpdated": "2019-08-19T02:49:38.918Z"
+    "dateCreated": "2019-08-20T02:14:25.248Z",
+    "dateUpdated": "2019-08-20T02:14:25.248Z"
 }
 ```
 
@@ -243,4 +241,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

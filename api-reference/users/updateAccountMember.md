@@ -1,28 +1,26 @@
-> 문서 생성일 : 2019-08-19
-
 # 회원 정보 수정
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 ```
 
 특정 회원의 정보를 해당 회원 혹은 관리자(OWNER)가 수정합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
 | :accountId | 계정 고유 아이디 |
 | :memberId | 회원 고유 아이디 |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "role": "string",
@@ -30,7 +28,7 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | role | `string` |  | 권한 (OWNER, DEVELOPER, MEMBER) |
@@ -39,9 +37,9 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 
 ---
 
-#### Samples
+## Samples
 
-##### 로그인한 사용자의 어카운트에 속한 내 멤버 정보 수정 (일반 멤버)
+### updateAccountMember.spec.js
 
 > **Sample Request**
 
@@ -55,8 +53,8 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 
 ```json
 {
-    "dateCreated": "2019-08-19T02:49:30.087Z",
-    "dateUpdated": "2019-08-19T02:49:30.109Z",
+    "dateCreated": "2019-08-20T02:14:13.141Z",
+    "dateUpdated": "2019-08-20T02:14:13.164Z",
     "memberId": "18010100001001",
     "role": "MEMBER",
     "name": "Member"
@@ -283,4 +281,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

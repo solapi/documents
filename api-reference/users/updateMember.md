@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 사용자 정보 수정
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/member
 ```
 
 사용자의 정보를 수정합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "email": "email",
@@ -24,7 +22,7 @@ PUT https://api.solapi.com/users/v1/member
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` |  | 이메일 |
@@ -34,9 +32,9 @@ PUT https://api.solapi.com/users/v1/member
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### updateMember.spec.js
 
 > **Sample Request**
 
@@ -54,11 +52,11 @@ PUT https://api.solapi.com/users/v1/member
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMxKmorOEo8cr",
+    "memberId": "MEMC8QiSSAEhYF",
     "email": "test1@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-19T02:49:30.636Z",
-    "dateUpdated": "2019-08-19T02:49:30.644Z"
+    "dateCreated": "2019-08-20T02:14:15.556Z",
+    "dateUpdated": "2019-08-20T02:14:15.581Z"
 }
 ```
 
@@ -282,4 +280,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

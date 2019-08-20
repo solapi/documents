@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-19
-
 # 휴면 회원 활성화
 
-#### Request
+## Request
 ```
 PUT https://api.solapi.com/users/v1/member/activate
 ```
 
 휴면 처리된 사용자를 활성화 합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `INACTIVE` |  |
 
-##### 2차 인증 필요
+### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
 | :---------: | :------: |
@@ -23,9 +21,9 @@ PUT https://api.solapi.com/users/v1/member/activate
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### activateMember.spec.js
 
 > **Sample Request**
 
@@ -41,11 +39,11 @@ PUT https://api.solapi.com/users/v1/member/activate
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMx1kDbSWOvJy",
+    "memberId": "MEM__m0NiaZdsk",
     "email": "test1@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-19T02:49:38.862Z",
-    "dateUpdated": "2019-08-19T02:49:38.868Z"
+    "dateCreated": "2019-08-20T02:14:25.192Z",
+    "dateUpdated": "2019-08-20T02:14:25.197Z"
 }
 ```
 
@@ -246,4 +244,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

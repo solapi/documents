@@ -1,15 +1,13 @@
-> 문서 생성일 : 2019-08-19
-
 # 초대 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
 초대장 정보를 조회합니다.
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -17,9 +15,9 @@ GET https://api.solapi.com/users/v1/invitations/:invitationId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getInvitation.spec.js
 
 > **Sample Request**
 
@@ -34,25 +32,25 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-08-19T02:49:50.901Z",
-    "dateUpdated": "2019-08-19T02:49:50.901Z",
+    "dateCreated": "2019-08-20T02:14:37.393Z",
+    "dateUpdated": "2019-08-20T02:14:37.393Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19081942590221",
+        "accountId": "19082040477495",
         "name": "test님의 계정",
-        "dateCreated": "2019-08-19T02:49:50.899Z",
-        "dateUpdated": "2019-08-19T02:49:50.899Z"
+        "dateCreated": "2019-08-20T02:14:37.391Z",
+        "dateUpdated": "2019-08-20T02:14:37.391Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19081942590221",
-        "memberId": "MEMZJYT3nd4-0N",
+        "selectedAccountId": "19082040477495",
+        "memberId": "MEMXkQrPrM9i5Z",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-08-19T02:49:50.895Z",
-        "dateUpdated": "2019-08-19T02:49:50.897Z"
+        "dateCreated": "2019-08-20T02:14:37.387Z",
+        "dateUpdated": "2019-08-20T02:14:37.389Z"
     }
 }
 ```
@@ -236,4 +234,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 
