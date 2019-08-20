@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 플러스 친구 추가
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/kakao/v1/plus-friends
 ```
 
 기존에 등록된 플러스 친구를 SOLAPI에 연동합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "searchId": "string",
@@ -25,7 +23,7 @@ POST https://api.solapi.com/kakao/v1/plus-friends
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | searchId | `string` | O | 플러스 친구 검색용 아이디 |
@@ -36,9 +34,9 @@ POST https://api.solapi.com/kakao/v1/plus-friends
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### putPlusFriend.spec.js
 
 > **Sample Request**
 
@@ -55,12 +53,12 @@ POST https://api.solapi.com/kakao/v1/plus-friends
 
 ```json
 {
-    "pfId": "KA01PF1908090530325601rObPqZ5USW",
+    "pfId": "KA01PF190820045544039N038L0FcnGv",
     "searchId": "NURIGO",
     "accountId": "19301859371938",
     "phoneNumber": "01055555555",
-    "dateCreated": "2019-08-09T04:30:32.563Z",
-    "dateUpdated": "2019-08-09T04:30:32.563Z"
+    "dateCreated": "2019-08-20T03:55:44.043Z",
+    "dateUpdated": "2019-08-20T03:55:44.043Z"
 }
 ```
 
@@ -293,4 +291,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

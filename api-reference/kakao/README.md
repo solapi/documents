@@ -1,6 +1,6 @@
 ---
 order:
-  - README.md: false
+  - README.md
   - requestPlusFriendToken.md
   - putPlusFriend.md
   - getPlusFriend.md

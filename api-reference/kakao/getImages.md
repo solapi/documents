@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 친구톡 이미지 목록 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/kakao/v1/images
 ```
 
 친구톡 이미지 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:read` | `role-kakao:read` |  |  |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | imageId | `string` |  | eq | 이미지 아이디 |
@@ -28,9 +26,9 @@ GET https://api.solapi.com/kakao/v1/images
 
 ---
 
-#### Samples
+## Samples
 
-##### 이미지 업로드
+### getImages.spec.js
 
 > **Sample Request**
 
@@ -42,13 +40,13 @@ http://api.solapi.com/kakao/v1/images
 
 ```json
 {
-    "imageId": "KA01IM190809053032311MyTsH4igQf1",
+    "imageId": "KA01IM190820045543719oHAITqXDgbm",
     "accountId": "19020720648888",
     "title": "012345678901234567890123456789012345678901234567890123456789",
     "link": "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234",
     "imageUrl": "http://mud-kage.kakao.com/dn/gtM0a/btqtfj5pQ92/meXjtBKhjbdKSh2aK8Wu3k/img_l.png",
-    "dateCreated": "2019-08-09T04:30:32.313Z",
-    "dateUpdated": "2019-08-09T04:30:32.313Z"
+    "dateCreated": "2019-08-20T03:55:43.722Z",
+    "dateUpdated": "2019-08-20T03:55:43.722Z"
 }
 ```
 
@@ -278,4 +276,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

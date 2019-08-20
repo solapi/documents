@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 템플릿 정보 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
 템플릿의 아이디로 템플릿 정보를 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:read` | `role-kakao:read` |  |  |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,14 +21,14 @@ GET https://api.solapi.com/kakao/v1/templates/:templateId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getTemplate.spec.js
 
 > **Sample Request**
 
 ```
-http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM
+http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h
 ```
 
 > **Sample Response**
@@ -39,12 +37,12 @@ http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM
 {
     "status": "APPROVED",
     "accountId": "12925149",
-    "templateId": "TP01ID190809053031903H5V8DglzCvM",
+    "templateId": "TP01ID19082004554327266L1YYOEB0h",
     "name": "A10",
-    "pfId": "PF01ID190809053031903gPcBLOYxwHl",
+    "pfId": "PF01ID190820045543272BAuppMYmFsR",
     "content": "testMessage",
-    "dateCreated": "2019-08-09T04:30:31.903Z",
-    "dateUpdated": "2019-08-09T04:30:31.903Z",
+    "dateCreated": "2019-08-20T03:55:43.272Z",
+    "dateUpdated": "2019-08-20T03:55:43.272Z",
     "buttons": [],
     "comments": []
 }
@@ -67,7 +65,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h'
 };
 
 request(options, function(error, response, body) {
@@ -88,7 +86,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h'
 };
 
 $.ajax(options).done(function(response) {
@@ -102,7 +100,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h";
 
 $options = array(
     'http' => array(
@@ -124,7 +122,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -142,7 +140,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM
+	http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h
 ```
 {% endtab %}
 
@@ -153,7 +151,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -181,7 +179,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -214,7 +212,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID190809053031903H5V8DglzCvM";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID19082004554327266L1YYOEB0h";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -249,4 +247,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

@@ -38,6 +38,7 @@
     * [예약 취소](api-reference/messages/groups/cancelScheduledGroupMessage.md)
   * [메시지 조회](api-reference/messages/getMessageList.md)
   * [통계 조회](api-reference/messages/getStatistics.md)
+* [카카오톡](api-reference/kakao/README.md)
   * [플러스 친구 연동 토큰 신청](api-reference/kakao/requestPlusFriendToken.md)
   * [플러스 친구 추가](api-reference/kakao/putPlusFriend.md)
   * [플러스 친구 조회](api-reference/kakao/getPlusFriend.md)

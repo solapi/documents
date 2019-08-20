@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 템플릿 추가
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/kakao/v1/templates
 ```
 
 템플릿을 추가합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "pfId": "string",
@@ -25,7 +23,7 @@ POST https://api.solapi.com/kakao/v1/templates
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | pfId | `string` | O | 플러스 친구 고유 아이디 |
@@ -48,15 +46,15 @@ POST https://api.solapi.com/kakao/v1/templates
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상 - 버튼없이
+### putTemplate.spec.js
 
 > **Sample Request**
 
 ```json
 {
-    "pfId": "PF01ID190809053031918QzIIoAUv8Fq",
+    "pfId": "PF01ID190820045543283Z0LGMnzmhm2",
     "name": "회원가입",
     "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
@@ -69,13 +67,13 @@ POST https://api.solapi.com/kakao/v1/templates
     "status": "PENDING",
     "accountId": "12925149",
     "name": "회원가입",
-    "pfId": "PF01ID190809053031918QzIIoAUv8Fq",
+    "pfId": "PF01ID190820045543283Z0LGMnzmhm2",
     "buttons": [],
     "comments": [],
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-08-09T04:30:32.782Z",
-    "dateUpdated": "2019-08-09T04:30:32.782Z",
-    "templateId": "KA01TP190809053032781hJNGN1VmTLq"
+    "dateCreated": "2019-08-20T03:55:44.327Z",
+    "dateUpdated": "2019-08-20T03:55:44.327Z",
+    "templateId": "KA01TP190820045544326C1F7HqwJkpa"
 }
 ```
 
@@ -95,7 +93,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID190809053031918QzIIoA...',
+    pfId: 'PF01ID190820045543283Z0LGMn...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
@@ -122,7 +120,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID190809053031918QzIIoA...',
+    pfId: 'PF01ID190820045543283Z0LGMn...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
@@ -142,7 +140,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/kakao/v1/templates";
-$data = '{"pfId":"PF01ID190809053031918QzIIoA...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
+$data = '{"pfId":"PF01ID190820045543283Z0LGMn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
     'http' => array(
@@ -170,7 +168,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"pfId":"PF01ID190809053031918QzIIoA...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
+data = '{"pfId":"PF01ID190820045543283Z0LGMn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -186,7 +184,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"pfId":"PF01ID190809053031918QzIIoA...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	-d '{"pfId":"PF01ID190820045543283Z0LGMn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
 	http://api.solapi.com/kakao/v1/templates
 ```
 {% endtab %}
@@ -205,7 +203,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "pfId": "PF01ID190809053031918QzIIoA...",
+  "pfId": "PF01ID190820045543283Z0LGMn...",
   "name": "회원가입",
   "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
@@ -234,7 +232,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/kakao/v1/templates"
-  data := strings.NewReader(`{"pfId":"PF01ID190809053031918QzIIoA...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
+  data := strings.NewReader(`{"pfId":"PF01ID190820045543283Z0LGMn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -269,7 +267,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/kakao/v1/templates";
-    String parameters = "{\"pfId\":\"PF01ID190809053031918QzIIoA...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
+    String parameters = "{\"pfId\":\"PF01ID190820045543283Z0LGMn...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -305,4 +303,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

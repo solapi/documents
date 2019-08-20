@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 플러스 친구 목록 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/kakao/v1/plus-friends
 ```
 
 플러스 친구의 목록을 조회합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:read` | `role-kakao:read` |  |  |  |
 
-##### Query Params
+### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | pfId | `string` |  | eq | 플러스 친구 고유 아이디 |
@@ -28,9 +26,9 @@ GET https://api.solapi.com/kakao/v1/plus-friends
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### getPlusFriends.spec.js
 
 > **Sample Request**
 
@@ -49,40 +47,40 @@ http://api.solapi.com/kakao/v1/plus-friends?
             "searchId": "COMPANY3",
             "accountId": "19301859371111",
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-08-09T04:30:32.370Z",
-            "dateUpdated": "2019-08-09T04:30:32.370Z"
+            "dateCreated": "2019-08-20T03:55:43.794Z",
+            "dateUpdated": "2019-08-20T03:55:43.794Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
             "searchId": "COMPANY5",
             "accountId": "19301859371111",
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-08-09T04:30:32.373Z",
-            "dateUpdated": "2019-08-09T04:30:32.373Z"
+            "dateCreated": "2019-08-20T03:55:43.798Z",
+            "dateUpdated": "2019-08-20T03:55:43.798Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
             "searchId": "COMPANY2",
             "accountId": "19301859371111",
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-08-09T04:30:32.369Z",
-            "dateUpdated": "2019-08-09T04:30:32.369Z"
+            "dateCreated": "2019-08-20T03:55:43.792Z",
+            "dateUpdated": "2019-08-20T03:55:43.792Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
             "searchId": "COMPANY1",
             "accountId": "19301859371111",
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-08-09T04:30:32.367Z",
-            "dateUpdated": "2019-08-09T04:30:32.367Z"
+            "dateCreated": "2019-08-20T03:55:43.790Z",
+            "dateUpdated": "2019-08-20T03:55:43.790Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
             "searchId": "COMPANY4",
             "accountId": "19301859371111",
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-08-09T04:30:32.372Z",
-            "dateUpdated": "2019-08-09T04:30:32.372Z"
+            "dateCreated": "2019-08-20T03:55:43.796Z",
+            "dateUpdated": "2019-08-20T03:55:43.796Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",
@@ -287,4 +285,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

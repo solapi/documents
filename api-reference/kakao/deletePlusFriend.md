@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 플러스 친구 삭제
 
-#### Request
+## Request
 ```
 DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
 ```
 
 SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 플러스 친구가 삭제되지는 않습니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI�
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### deletePlusFriend.spec.js
 
 > **Sample Request**
 
@@ -47,8 +45,8 @@ SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI�
             "key": "123456789"
         }
     ],
-    "dateCreated": "2019-08-09T04:30:32.116Z",
-    "dateUpdated": "2019-08-09T04:30:32.116Z"
+    "dateCreated": "2019-08-20T03:55:43.491Z",
+    "dateUpdated": "2019-08-20T03:55:43.491Z"
 }
 ```
 
@@ -251,4 +249,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

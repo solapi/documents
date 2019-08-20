@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 플러스 친구 조회
 
-#### Request
+## Request
 ```
 GET https://api.solapi.com/kakao/v1/plus-friends/:pfId
 ```
 
 플러스 친구의 아이디로 플러스 친구의 정보를 불러옵니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:read` | `role-kakao:read` |  |  |  |
 
-##### Path Parameters
+### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
@@ -23,9 +21,9 @@ GET https://api.solapi.com/kakao/v1/plus-friends/:pfId
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상1
+### getPlusFriend.spec.js
 
 > **Sample Request**
 
@@ -40,8 +38,8 @@ http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1
     "pfId": "KA01PF190227072057634pRBhbpAw1w1",
     "searchId": "NURIGO",
     "accountId": "19301859371111",
-    "dateCreated": "2019-08-09T04:30:32.346Z",
-    "dateUpdated": "2019-08-09T04:30:32.346Z"
+    "dateCreated": "2019-08-20T03:55:43.763Z",
+    "dateUpdated": "2019-08-20T03:55:43.763Z"
 }
 ```
 
@@ -244,4 +242,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 

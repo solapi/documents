@@ -1,21 +1,19 @@
-> 문서 생성일 : 2019-08-09
-
 # 플러스 친구 연동 토큰 신청
 
-#### Request
+## Request
 ```
 POST https://api.solapi.com/kakao/v1/plus-friends/token
 ```
 
 플러스 친구 연동을 위해 카카오톡으로 토큰을 발급 받을 수 있도록 요청합니다.
 
-##### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
 
-##### Request Structure
+### Request Structure
 ```json
 {
     "searchId": "string",
@@ -23,7 +21,7 @@ POST https://api.solapi.com/kakao/v1/plus-friends/token
 }
 ```
 
-##### Body Params
+### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | searchId | `string` | O | 플러스 친구 검색용 아이디 |
@@ -32,9 +30,9 @@ POST https://api.solapi.com/kakao/v1/plus-friends/token
 
 ---
 
-#### Samples
+## Samples
 
-##### 정상
+### requestPlusFriendToken.spec.js
 
 > **Sample Request**
 
@@ -276,4 +274,6 @@ public class Request {
 {% endtabs %}
 
 ---
+
+> 문서 생성일 : 2019-08-20
 
