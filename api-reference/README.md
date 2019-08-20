@@ -3,7 +3,7 @@ order:
   - README.md: false
   - overview.md
   - messages
-  - kakao  
+  - kakao
   - cash
   - images
   - senderid
