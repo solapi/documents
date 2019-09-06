@@ -69,6 +69,7 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "log": [],
             "replacement": false,
             "autoTypeDetect": true,
+            "routedQueue": null,
             "messageId": "M4V20180307110044DTYYJBBYLPQZIB1",
             "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
             "accountId": "12925149",
@@ -76,8 +77,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-08-20T03:08:00.469Z",
-            "dateUpdated": "2019-08-20T03:08:00.469Z",
+            "dateCreated": "2019-09-06T19:48:05.503Z",
+            "dateUpdated": "2019-09-06T19:48:05.503Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -285,5 +286,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

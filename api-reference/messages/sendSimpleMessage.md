@@ -99,13 +99,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20190820120808KMZLBPUMQ0XP4QW",
+    "groupId": "G4V20190907044811NZMTSBPUKQPJF9P",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20190820120808R4WC62KIIUPDCDF",
+    "messageId": "M4V20190907044811HMZY4LGIGDSFTBP",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -344,5 +344,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

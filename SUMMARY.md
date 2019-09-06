@@ -36,6 +36,7 @@
     * [발송 요청](api-reference/messages/groups/sendGroupMessage.md)
     * [발송 예약](api-reference/messages/groups/scheduleGroupMessage.md)
     * [예약 취소](api-reference/messages/groups/cancelScheduledGroupMessage.md)
+    * [실패한 그룹 재발송 요청](api-reference/messages/groups/resendGroupMessage.md)
   * [메시지 조회](api-reference/messages/getMessageList.md)
   * [통계 조회](api-reference/messages/getStatistics.md)
 * [카카오톡](api-reference/kakao/README.md)
