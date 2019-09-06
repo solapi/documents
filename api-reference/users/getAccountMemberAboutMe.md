@@ -39,8 +39,8 @@ http://api.solapi.com/users/v1/accounts/12925149/me
     "role": "OWNER",
     "name": "toss 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-08-20T02:14:25.248Z",
-    "dateUpdated": "2019-08-20T02:14:25.248Z"
+    "dateCreated": "2019-09-06T18:45:59.988Z",
+    "dateUpdated": "2019-09-06T18:45:59.988Z"
 }
 ```
 
@@ -242,5 +242,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

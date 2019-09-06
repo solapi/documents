@@ -29,7 +29,7 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 ### Body Params
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| phoneNumber | `string` | O | 핸드폰 번호 |
+| phoneNumber | `string` |  | 핸드폰 번호 |
 
 
 ---
@@ -56,8 +56,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-08-20T02:14:25.700Z",
-    "dateUpdated": "2019-08-20T02:14:25.704Z",
+    "dateCreated": "2019-09-06T18:46:00.594Z",
+    "dateUpdated": "2019-09-06T18:46:00.601Z",
     "loginSessions": []
 }
 ```
@@ -283,5 +283,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

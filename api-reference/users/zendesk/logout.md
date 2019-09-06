@@ -20,5 +20,5 @@ GET https://api.solapi.com/users/v1/zendesk/logout
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

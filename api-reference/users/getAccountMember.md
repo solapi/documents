@@ -40,8 +40,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000
     "role": "OWNER",
     "name": "testName 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-08-20T02:14:12.904Z",
-    "dateUpdated": "2019-08-20T02:14:12.904Z"
+    "dateCreated": "2019-09-06T18:45:50.341Z",
+    "dateUpdated": "2019-09-06T18:45:50.341Z"
 }
 ```
 
@@ -243,5 +243,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

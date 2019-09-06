@@ -51,11 +51,11 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMfoKRInx0kJP",
+    "memberId": "MEMwaVojRfLfzq",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-20T02:14:37.325Z",
-    "dateUpdated": "2019-08-20T02:14:37.337Z"
+    "dateCreated": "2019-09-06T18:46:12.721Z",
+    "dateUpdated": "2019-09-06T18:46:12.730Z"
 }
 ```
 
@@ -276,5 +276,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

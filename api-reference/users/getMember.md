@@ -32,12 +32,12 @@ http://api.solapi.com/users/v1/member
     "name": "steven",
     "phoneNumber": null,
     "status": "UNVERIFIED",
-    "selectedAccountId": "19082040455778",
-    "memberId": "MEMiN6k1d6-tB4",
+    "selectedAccountId": "19090713551848",
+    "memberId": "MEMKy82Be-exIM",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-08-20T02:14:15.497Z",
-    "dateUpdated": "2019-08-20T02:14:15.513Z"
+    "dateCreated": "2019-09-06T18:45:51.048Z",
+    "dateUpdated": "2019-09-06T18:45:51.050Z"
 }
 ```
 
@@ -239,5 +239,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

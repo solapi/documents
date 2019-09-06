@@ -36,7 +36,7 @@ PUT https://api.solapi.com/users/v1/member/email
 
 ## Samples
 
-### updateMember.spec.js
+### updateEmail.spec.js
 
 > **Sample Request**
 
@@ -54,11 +54,11 @@ PUT https://api.solapi.com/users/v1/member/email
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMbEn6NhhjS_A",
+    "memberId": "MEM13PawvPFovE",
     "email": "newMail@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-08-20T02:14:37.532Z",
-    "dateUpdated": "2019-08-20T02:14:37.538Z"
+    "dateCreated": "2019-09-06T18:46:12.923Z",
+    "dateUpdated": "2019-09-06T18:46:12.939Z"
 }
 ```
 
@@ -283,5 +283,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

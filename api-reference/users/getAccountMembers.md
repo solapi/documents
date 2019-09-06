@@ -53,8 +53,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 3",
             "email": "test3@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-20T02:14:11.883Z",
-            "dateUpdated": "2019-08-20T02:14:11.883Z"
+            "dateCreated": "2019-09-06T18:45:50.057Z",
+            "dateUpdated": "2019-09-06T18:45:50.057Z"
         },
         {
             "memberId": "18010100001002",
@@ -62,8 +62,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 2",
             "email": "test2@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-20T02:14:11.883Z",
-            "dateUpdated": "2019-08-20T02:14:11.883Z"
+            "dateCreated": "2019-09-06T18:45:50.057Z",
+            "dateUpdated": "2019-09-06T18:45:50.057Z"
         },
         {
             "memberId": "18010100001001",
@@ -71,8 +71,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 1",
             "email": "test1@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-20T02:14:11.883Z",
-            "dateUpdated": "2019-08-20T02:14:11.883Z"
+            "dateCreated": "2019-09-06T18:45:50.057Z",
+            "dateUpdated": "2019-09-06T18:45:50.057Z"
         },
         {
             "memberId": "18010100001000",
@@ -80,8 +80,8 @@ http://api.solapi.com/users/v1/accounts/12925149/members?startKey=18010100001003
             "name": "testName 0",
             "email": "test0@nurigo.net",
             "status": "ACTIVE",
-            "dateCreated": "2019-08-20T02:14:11.883Z",
-            "dateUpdated": "2019-08-20T02:14:11.883Z"
+            "dateCreated": "2019-09-06T18:45:50.057Z",
+            "dateUpdated": "2019-09-06T18:45:50.057Z"
         }
     ],
     "nextKey": null
@@ -288,5 +288,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 
