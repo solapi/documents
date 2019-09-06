@@ -11,7 +11,7 @@ PUT https://api.solapi.com/cash/v1/payment
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Request Structure
 ```json
@@ -42,8 +42,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "10765667499297307001566273410438",
-        "10761156068009948001566273410437"
+        "1545938029763094701567796912796",
+        "1550140979726918401567796912796"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -55,8 +55,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "10765667499297307001566273410438",
-        "10761156068009948001566273410437"
+        "1545938029763094701567796912796",
+        "1550140979726918401567796912796"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -79,7 +79,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '107656674992973070015662734...',
+    paymentIds: '154593802976309470156779691...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -106,7 +106,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '107656674992973070015662734...',
+    paymentIds: '154593802976309470156779691...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -126,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}';
+$data = '{"paymentIds":"154593802976309470156779691...","minimumCash":1000,"rechargeTo":100000}';
 
 $options = array(
     'http' => array(
@@ -154,7 +154,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"paymentIds":"154593802976309470156779691...","minimumCash":1000,"rechargeTo":100000}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
@@ -170,7 +170,7 @@ print(response.text)
 curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}' \
+	-d '{"paymentIds":"154593802976309470156779691...","minimumCash":1000,"rechargeTo":100000}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -189,7 +189,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "107656674992973070015662734...",
+  "paymentIds": "154593802976309470156779691...",
   "minimumCash": 1000,
   "rechargeTo": 100000
 }
@@ -218,7 +218,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"107656674992973070015662734...","minimumCash":1000,"rechargeTo":100000}`)
+  data := strings.NewReader(`{"paymentIds":"154593802976309470156779691...","minimumCash":1000,"rechargeTo":100000}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -253,7 +253,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"107656674992973070015662734...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String parameters = "{\"paymentIds\":\"154593802976309470156779691...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -290,5 +290,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

@@ -11,7 +11,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Request Structure
 ```json
@@ -79,7 +79,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "7844903563557645001566273412251"
+    "companyId": "15163501245459517001567796914665"
 }
 ```
 
@@ -340,5 +340,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

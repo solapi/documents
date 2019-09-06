@@ -11,7 +11,7 @@ PUT https://api.solapi.com/cash/v1/balance/alert/switch
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
@@ -276,5 +276,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

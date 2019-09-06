@@ -11,7 +11,7 @@ POST https://api.solapi.com/cash/v1/withdraw
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
@@ -63,10 +63,10 @@ POST https://api.solapi.com/cash/v1/withdraw
     "amount": 18500,
     "fee": 1500,
     "totalAmount": 20000,
-    "withdrawId": "1566273412861173254331279783500",
-    "dateConfirmed": "2019-08-20T03:56:52.000Z",
-    "dateCreated": "2019-08-20T03:56:52.861Z",
-    "dateUpdated": "2019-08-20T03:56:52.861Z"
+    "withdrawId": "1567796915169739507967041985900",
+    "dateConfirmed": "2019-09-06T19:08:35.000Z",
+    "dateCreated": "2019-09-06T19:08:35.170Z",
+    "dateUpdated": "2019-09-06T19:08:35.170Z"
 }
 ```
 
@@ -318,10 +318,10 @@ public class Request {
     "amount": 9000,
     "fee": 1000,
     "totalAmount": 10000,
-    "withdrawId": "1566273412909248652487346458200",
-    "dateConfirmed": "2019-08-20T03:56:52.000Z",
-    "dateCreated": "2019-08-20T03:56:52.909Z",
-    "dateUpdated": "2019-08-20T03:56:52.909Z"
+    "withdrawId": "1567796915200788245613530528300",
+    "dateConfirmed": "2019-09-06T19:08:35.000Z",
+    "dateCreated": "2019-09-06T19:08:35.201Z",
+    "dateUpdated": "2019-09-06T19:08:35.201Z"
 }
 ```
 
@@ -546,5 +546,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 

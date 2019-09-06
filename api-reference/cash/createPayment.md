@@ -11,7 +11,7 @@ POST https://api.solapi.com/cash/v1/payment
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `cash:write` | `role-cash:write` | `ACTIVE` |  | O |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
@@ -63,7 +63,7 @@ POST https://api.solapi.com/cash/v1/payment
 {
     "description": "[VISA] est1 01/19",
     "expDate": "2019/01",
-    "paymentId": "7251138262622190001566273410213"
+    "paymentId": "14391029108393393001567796912615"
 }
 ```
 
@@ -297,5 +297,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-09-06
 
