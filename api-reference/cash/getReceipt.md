@@ -27,7 +27,7 @@ GET https://api.solapi.com/cash/v1/receipt
 > **Sample Request**
 
 ```
-http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec
+http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded
 ```
 
 > **Sample Response**
@@ -53,7 +53,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec'
+    'http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded'
 };
 
 request(options, function(error, response, body) {
@@ -74,7 +74,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec'
+    'http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded'
 };
 
 $.ajax(options).done(function(response) {
@@ -88,7 +88,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec";
+$url = "http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded";
 
 $options = array(
     'http' => array(
@@ -110,7 +110,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec"
+url = "http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -128,7 +128,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec
+	http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded
 ```
 {% endtab %}
 
@@ -139,7 +139,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec")
+uri = URI.parse("http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec"
+  uri := "http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -200,7 +200,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/receipt?historyId=5d72aeb2ad3847685bd8efec";
+    String targetUrl = "http://api.solapi.com/cash/v1/receipt?historyId=5d72b1bb854caf57e5153ded";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

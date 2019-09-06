@@ -55,9 +55,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "2960263173653180598136622655504",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.276Z",
-            "dateUpdated": "2019-09-06T19:08:35.276Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.711Z",
+            "dateUpdated": "2019-09-06T19:21:31.711Z"
         },
         {
             "bankCode": "012",
@@ -74,9 +74,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "2960263173653180598136622655503",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.275Z",
-            "dateUpdated": "2019-09-06T19:08:35.275Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.710Z",
+            "dateUpdated": "2019-09-06T19:21:31.710Z"
         },
         {
             "bankCode": "012",
@@ -93,9 +93,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "2960263173653180598136622655502",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.273Z",
-            "dateUpdated": "2019-09-06T19:08:35.273Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.708Z",
+            "dateUpdated": "2019-09-06T19:21:31.708Z"
         },
         {
             "bankCode": "012",
@@ -112,9 +112,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "2960263173653180598136622655501",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.271Z",
-            "dateUpdated": "2019-09-06T19:08:35.271Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.707Z",
+            "dateUpdated": "2019-09-06T19:21:31.707Z"
         },
         {
             "bankCode": "012",
@@ -131,9 +131,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1940263173653180598136622655500",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.256Z",
-            "dateUpdated": "2019-09-06T19:08:35.256Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.696Z",
+            "dateUpdated": "2019-09-06T19:21:31.696Z"
         },
         {
             "bankCode": "012",
@@ -150,9 +150,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1840263173653180598136622655500",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.256Z",
-            "dateUpdated": "2019-09-06T19:08:35.256Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.696Z",
+            "dateUpdated": "2019-09-06T19:21:31.696Z"
         },
         {
             "bankCode": "012",
@@ -169,9 +169,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655529",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -188,9 +188,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655528",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -207,9 +207,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655527",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -226,9 +226,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655526",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -245,9 +245,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655525",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -264,9 +264,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655524",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -283,9 +283,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655523",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -302,9 +302,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655522",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -321,9 +321,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655521",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -340,9 +340,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655520",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -359,9 +359,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655519",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.258Z",
-            "dateUpdated": "2019-09-06T19:08:35.258Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -378,9 +378,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655518",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.257Z",
-            "dateUpdated": "2019-09-06T19:08:35.257Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.698Z",
+            "dateUpdated": "2019-09-06T19:21:31.698Z"
         },
         {
             "bankCode": "012",
@@ -397,9 +397,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655517",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.257Z",
-            "dateUpdated": "2019-09-06T19:08:35.257Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.697Z",
+            "dateUpdated": "2019-09-06T19:21:31.697Z"
         },
         {
             "bankCode": "012",
@@ -416,9 +416,9 @@ http://api.solapi.com/cash/v1/withdraw
             "fee": 1000,
             "totalAmount": 10000,
             "withdrawId": "1540263173653180598136622655516",
-            "dateConfirmed": "2019-09-06T19:08:35.000Z",
-            "dateCreated": "2019-09-06T19:08:35.257Z",
-            "dateUpdated": "2019-09-06T19:08:35.257Z"
+            "dateConfirmed": "2019-09-06T19:21:31.000Z",
+            "dateCreated": "2019-09-06T19:21:31.697Z",
+            "dateUpdated": "2019-09-06T19:21:31.697Z"
         }
     ],
     "nextKey": "1540263173653180598136622655515"
