@@ -42,7 +42,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
 
 ```json
 {
-    "scheduledDate": "2019-09-06T19:51:05.025Z"
+    "scheduledDate": "2019-09-11T07:04:55.769Z"
 }
 ```
 
@@ -90,22 +90,22 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-09-06T19:48:05.379Z"
+            "createAt": "2019-09-11T07:01:55.941Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-09-06T19:48:05.379Z"
+            "createAt": "2019-09-11T07:01:55.941Z"
         },
         {
-            "createAt": "2019-09-06T19:48:12.071Z",
+            "createAt": "2019-09-11T07:02:02.947Z",
             "message": "예약시간은 현재시간보다 늦게 설정 가능합니다."
         },
         {
-            "createAt": "2019-09-06T19:48:12.084Z",
+            "createAt": "2019-09-11T07:02:02.960Z",
             "message": "발송 예정일이 6개월을 초과하여 발송 예약에 실패하였습니다."
         },
         {
-            "createAt": "2019-09-06T19:48:12.100Z",
+            "createAt": "2019-09-11T07:02:02.976Z",
             "message": "메시지 예약이 성공적으로 접수됐습니다.",
             "messageCount": {
                 "total": 0,
@@ -121,7 +121,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
         }
     ],
     "status": "SCHEDULED",
-    "scheduledDate": "2019-09-06T19:51:05.025Z",
+    "scheduledDate": "2019-09-11T07:04:55.769Z",
     "dateSent": null,
     "dateCompleted": null,
     "isRefunded": false,
@@ -139,8 +139,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/schedule
         "cta": {}
     },
     "price": {},
-    "dateCreated": "2019-09-06T19:48:05.382Z",
-    "dateUpdated": "2019-09-06T19:48:12.100Z"
+    "dateCreated": "2019-09-11T07:01:55.944Z",
+    "dateUpdated": "2019-09-11T07:02:02.976Z"
 }
 ```
 
@@ -160,7 +160,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    scheduledDate: '2019-09-06T19:51:05.025Z'
+    scheduledDate: '2019-09-11T07:04:55.769Z'
   },
   method: 'POST',
   json: true,
@@ -186,7 +186,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    scheduledDate: '2019-09-06T19:51:05.025Z'
+    scheduledDate: '2019-09-11T07:04:55.769Z'
   },
   method: 'POST',
   url:
@@ -205,7 +205,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule";
-$data = '{"scheduledDate":"2019-09-06T19:51:05.025Z"}';
+$data = '{"scheduledDate":"2019-09-11T07:04:55.769Z"}';
 
 $options = array(
     'http' => array(
@@ -233,7 +233,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"scheduledDate":"2019-09-06T19:51:05.025Z"}'
+data = '{"scheduledDate":"2019-09-11T07:04:55.769Z"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -249,7 +249,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"scheduledDate":"2019-09-06T19:51:05.025Z"}' \
+	-d '{"scheduledDate":"2019-09-11T07:04:55.769Z"}' \
 	http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule
 ```
 {% endtab %}
@@ -268,7 +268,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "scheduledDate": "2019-09-06T19:51:05.025Z"
+  "scheduledDate": "2019-09-11T07:04:55.769Z"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -295,7 +295,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule"
-  data := strings.NewReader(`{"scheduledDate":"2019-09-06T19:51:05.025Z"}`)
+  data := strings.NewReader(`{"scheduledDate":"2019-09-11T07:04:55.769Z"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -330,7 +330,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937AAAAAASCHEDULED/schedule";
-    String parameters = "{\"scheduledDate\":\"2019-09-06T19:51:05.025Z\"}";
+    String parameters = "{\"scheduledDate\":\"2019-09-11T07:04:55.769Z\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -367,5 +367,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-11
 
