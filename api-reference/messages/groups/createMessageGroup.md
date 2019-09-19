@@ -91,7 +91,7 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-09-19T01:11:07.709Z",
+            "createAt": "2019-09-19T02:27:12.356Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -103,11 +103,11 @@ POST https://api.solapi.com/messages/v4/groups/
     "flagUpdated": false,
     "accountId": "12925149",
     "apiVersion": "4",
-    "groupId": "G4V20190919101107KPWQ2U6PONU7WSY",
+    "groupId": "G4V20190919112712BQIIFGKLQVHSGX8",
     "price": {},
-    "dateCreated": "2019-09-19T01:11:07.711Z",
-    "dateUpdated": "2019-09-19T01:11:07.711Z",
-    "_id": "G4V20190919101107KPWQ2U6PONU7WSY"
+    "dateCreated": "2019-09-19T02:27:12.358Z",
+    "dateUpdated": "2019-09-19T02:27:12.358Z",
+    "_id": "G4V20190919112712BQIIFGKLQVHSGX8"
 }
 ```
 
