@@ -57,33 +57,33 @@ POST https://api.solapi.com/senderid/v1/papers/duplicate/:phoneNumber
     "senderIds": [
         {
             "unlockDuplicate": {
-                "duplicateId": "DUP20190907040658H7KAZJGWKUZ6SA5",
+                "duplicateId": "DUP20190926152153H5MP723ARG0DOIC",
                 "reason": null,
                 "reasonForRequested": "부서에 따른 아이디 할당을 위해 필요",
                 "name": null,
                 "status": "PENDING",
-                "dateCreated": "2019-09-06T19:06:58.543Z",
-                "dateUpdated": "2019-09-06T19:06:58.543Z"
+                "dateCreated": "2019-09-26T06:21:53.095Z",
+                "dateUpdated": "2019-09-26T06:21:53.095Z"
             },
             "status": "PENDING",
             "expireAt": null,
             "method": null,
             "log": [
                 {
-                    "createAt": "2019-09-06T19:06:58.544Z",
+                    "createAt": "2019-09-26T06:21:53.096Z",
                     "message": "중복 해제 요청을 하였습니다.\n담당자명: undefined\n사유: 부서에 따른 아이디 할당을 위해 필요"
                 }
             ],
-            "dateCreated": "2019-09-06T19:06:58.537Z",
-            "dateUpdated": "2019-09-06T19:06:58.544Z",
+            "dateCreated": "2019-09-26T06:21:53.088Z",
+            "dateUpdated": "2019-09-26T06:21:53.096Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX2",
             "phoneNumber": "01000000000"
         }
     ],
     "limitationDocuments": [],
-    "dateCreated": "2019-09-06T19:06:58.537Z",
-    "dateUpdated": "2019-09-06T19:06:58.544Z"
+    "dateCreated": "2019-09-26T06:21:53.089Z",
+    "dateUpdated": "2019-09-26T06:21:53.096Z"
 }
 ```
 
@@ -308,5 +308,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

@@ -52,16 +52,16 @@ DELETE https://api.solapi.com/senderid/v1/numbers/:phoneNumber
             "expireAt": null,
             "method": null,
             "log": [],
-            "dateCreated": "2019-09-06T19:06:58.209Z",
-            "dateUpdated": "2019-09-06T19:06:58.209Z",
+            "dateCreated": "2019-09-26T06:21:52.842Z",
+            "dateUpdated": "2019-09-26T06:21:52.842Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX3",
             "phoneNumber": "01000000001"
         }
     ],
     "limitationDocuments": [],
-    "dateCreated": "2019-09-06T19:06:58.210Z",
-    "dateUpdated": "2019-09-06T19:06:58.227Z"
+    "dateCreated": "2019-09-26T06:21:52.843Z",
+    "dateUpdated": "2019-09-26T06:21:52.856Z"
 }
 ```
 
@@ -263,5 +263,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

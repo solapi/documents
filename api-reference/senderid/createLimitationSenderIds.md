@@ -67,8 +67,8 @@ POST https://api.solapi.com/senderid/v1/papers/limitation
             "expireAt": null,
             "method": null,
             "log": [],
-            "dateCreated": "2019-09-06T19:06:58.442Z",
-            "dateUpdated": "2019-09-06T19:06:58.442Z",
+            "dateCreated": "2019-09-26T06:21:53.023Z",
+            "dateUpdated": "2019-09-26T06:21:53.023Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX2",
             "phoneNumber": "01000000000"
@@ -81,15 +81,15 @@ POST https://api.solapi.com/senderid/v1/papers/limitation
             ],
             "reason": null,
             "status": "PENDING",
-            "dateCreated": "2019-09-06T19:06:58.469Z",
-            "dateUpdated": "2019-09-06T19:06:58.469Z",
-            "limitationId": "LID201909070406583XE7ZURXN81VDMT",
+            "dateCreated": "2019-09-26T06:21:53.044Z",
+            "dateUpdated": "2019-09-26T06:21:53.044Z",
+            "limitationId": "LID20190926152153WKMOP693VIX7FSL",
             "limitRequested": 10,
             "limitBeforeRequest": 2
         }
     ],
-    "dateCreated": "2019-09-06T19:06:58.443Z",
-    "dateUpdated": "2019-09-06T19:06:58.468Z"
+    "dateCreated": "2019-09-26T06:21:53.023Z",
+    "dateUpdated": "2019-09-26T06:21:53.043Z"
 }
 ```
 
@@ -317,5 +317,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

@@ -55,11 +55,11 @@ PUT https://api.solapi.com/senderid/v1/numbers/:phoneNumber/authenticate
                 "dateUpdated": null
             },
             "status": "PENDING",
-            "expireAt": "2019-09-18T19:06:57.395Z",
+            "expireAt": "2019-10-08T06:21:52.313Z",
             "method": null,
             "log": [],
-            "dateCreated": "2019-09-06T19:06:58.024Z",
-            "dateUpdated": "2019-09-06T19:06:58.024Z",
+            "dateCreated": "2019-09-26T06:21:52.715Z",
+            "dateUpdated": "2019-09-26T06:21:52.715Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX3",
             "phoneNumber": "01000000001"
@@ -75,24 +75,24 @@ PUT https://api.solapi.com/senderid/v1/numbers/:phoneNumber/authenticate
                 "dateUpdated": null
             },
             "status": "ACTIVE",
-            "expireAt": "2020-03-06T19:06:58.046Z",
+            "expireAt": "2020-03-26T06:21:52.730Z",
             "method": "ARS",
             "log": [
                 {
-                    "createAt": "2019-09-06T19:06:58.047Z",
+                    "createAt": "2019-09-26T06:21:52.731Z",
                     "message": "인증수단 'ARS'로 발신번호 인증이 완료되었습니다."
                 }
             ],
-            "dateCreated": "2019-09-06T19:06:58.024Z",
-            "dateUpdated": "2019-09-06T19:06:58.047Z",
+            "dateCreated": "2019-09-26T06:21:52.715Z",
+            "dateUpdated": "2019-09-26T06:21:52.731Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX2",
             "phoneNumber": "01000000000"
         }
     ],
     "limitationDocuments": [],
-    "dateCreated": "2019-09-06T19:06:58.027Z",
-    "dateUpdated": "2019-09-06T19:06:58.048Z"
+    "dateCreated": "2019-09-26T06:21:52.717Z",
+    "dateUpdated": "2019-09-26T06:21:52.731Z"
 }
 ```
 
@@ -294,5 +294,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

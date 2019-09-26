@@ -71,12 +71,12 @@ POST https://api.solapi.com/senderid/v1/papers/approval/:phoneNumber
             "method": null,
             "log": [
                 {
-                    "createAt": "2019-09-06T19:06:58.381Z",
+                    "createAt": "2019-09-26T06:21:52.966Z",
                     "message": "발신번호 증빙자료 요청을 하였습니다."
                 }
             ],
-            "dateCreated": "2019-09-06T19:06:58.352Z",
-            "dateUpdated": "2019-09-06T19:06:58.381Z",
+            "dateCreated": "2019-09-26T06:21:52.944Z",
+            "dateUpdated": "2019-09-26T06:21:52.966Z",
             "approvalDocuments": [
                 {
                     "documents": [
@@ -84,9 +84,9 @@ POST https://api.solapi.com/senderid/v1/papers/approval/:phoneNumber
                     ],
                     "status": "PENDING",
                     "reason": null,
-                    "dateCreated": "2019-09-06T19:06:58.381Z",
-                    "dateUpdated": "2019-09-06T19:06:58.382Z",
-                    "approvalId": "APD20190907040658KCYHUFDX6SUPPBI"
+                    "dateCreated": "2019-09-26T06:21:52.967Z",
+                    "dateUpdated": "2019-09-26T06:21:52.967Z",
+                    "approvalId": "APD20190926152152AASHIQSGAUEK2MP"
                 }
             ],
             "handleKey": "SED201810301056FFFFFFFFFFFFFFFFF",
@@ -94,8 +94,8 @@ POST https://api.solapi.com/senderid/v1/papers/approval/:phoneNumber
         }
     ],
     "limitationDocuments": [],
-    "dateCreated": "2019-09-06T19:06:58.352Z",
-    "dateUpdated": "2019-09-06T19:06:58.381Z"
+    "dateCreated": "2019-09-26T06:21:52.945Z",
+    "dateUpdated": "2019-09-26T06:21:52.966Z"
 }
 ```
 
@@ -320,5 +320,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

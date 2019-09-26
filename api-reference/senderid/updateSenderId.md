@@ -68,12 +68,12 @@ PUT https://api.solapi.com/senderid/v1/numbers/:phoneNumber
             "method": null,
             "log": [
                 {
-                    "createAt": "2019-09-06T19:06:58.140Z",
+                    "createAt": "2019-09-26T06:21:52.798Z",
                     "message": "발신번호 상태를 'INACTIVE'로 변경하였습니다."
                 }
             ],
-            "dateCreated": "2019-09-06T19:06:58.129Z",
-            "dateUpdated": "2019-09-06T19:06:58.140Z",
+            "dateCreated": "2019-09-26T06:21:52.780Z",
+            "dateUpdated": "2019-09-26T06:21:52.798Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX2",
             "phoneNumber": "01000000000"
@@ -92,16 +92,16 @@ PUT https://api.solapi.com/senderid/v1/numbers/:phoneNumber
             "expireAt": null,
             "method": null,
             "log": [],
-            "dateCreated": "2019-09-06T19:06:58.129Z",
-            "dateUpdated": "2019-09-06T19:06:58.129Z",
+            "dateCreated": "2019-09-26T06:21:52.780Z",
+            "dateUpdated": "2019-09-26T06:21:52.780Z",
             "approvalDocuments": [],
             "handleKey": "SED20181030105615MMXDST163SYMMX3",
             "phoneNumber": "01000000001"
         }
     ],
     "limitationDocuments": [],
-    "dateCreated": "2019-09-06T19:06:58.130Z",
-    "dateUpdated": "2019-09-06T19:06:58.140Z"
+    "dateCreated": "2019-09-26T06:21:52.781Z",
+    "dateUpdated": "2019-09-26T06:21:52.798Z"
 }
 ```
 
@@ -326,5 +326,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

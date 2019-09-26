@@ -42,7 +42,7 @@ http://api.solapi.com/senderid/v1/documents/DOC20181030105615MMXDST163SYMMX3
     "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
     "originalName": "image.jpg",
     "category": "SENDERID_APPROVAL",
-    "dateCreated": "2019-09-06T19:07:00.509Z"
+    "dateCreated": "2019-09-26T06:21:54.588Z"
 }
 ```
 
@@ -246,5 +246,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 

@@ -51,11 +51,11 @@ DELETE https://api.solapi.com/senderid/v1/documents
         "use": false,
         "documentId": "DOC20181030105615MMXDST163SYMMX3",
         "accountId": "12925149",
-        "name": "Ukc6ye4dqNeWz3O.png",
-        "url": "https://coolsms-files-test.s3.ap-northeast-2.amazonaws.com/senderId-approval/Ukc6ye4dqNeWz3O.png",
-        "originalName": "Ukc6ye4dqNeWz3O.png",
+        "name": "EEWITTXvLZGCWyQ.png",
+        "url": "https://coolsms-files-test.s3.ap-northeast-2.amazonaws.com/senderId-approval/EEWITTXvLZGCWyQ.png",
+        "originalName": "EEWITTXvLZGCWyQ.png",
         "category": "SENDERID_APPROVAL",
-        "dateCreated": "2019-09-06T19:06:59.998Z"
+        "dateCreated": "2019-09-26T06:21:54.247Z"
     }
 ]
 ```
@@ -281,5 +281,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-26
 
