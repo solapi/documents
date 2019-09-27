@@ -63,7 +63,7 @@ POST https://api.solapi.com/cash/v1/payment
 {
     "description": "[VISA] est1 01/19",
     "expDate": "2019/01",
-    "paymentId": "11339758757819767001569566268418"
+    "paymentId": "1628365565782152001569566935799"
 }
 ```
 

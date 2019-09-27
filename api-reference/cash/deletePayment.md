@@ -42,7 +42,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ```json
 {
-    "paymentId": "14676945697792182001569566268631"
+    "paymentId": "5636456426615467501569566936055"
 }
 ```
 
@@ -50,7 +50,7 @@ DELETE https://api.solapi.com/cash/v1/payment
 
 ```json
 {
-    "paymentId": "14676945697792182001569566268631",
+    "paymentId": "5636456426615467501569566936055",
     "message": "성공적으로 삭제되었습니다."
 }
 ```
@@ -71,7 +71,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '146769456977921820015695662...'
+    paymentId: '563645642661546750156956693...'
   },
   method: 'DELETE',
   json: true,
@@ -96,7 +96,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentId: '146769456977921820015695662...'
+    paymentId: '563645642661546750156956693...'
   },
   method: 'DELETE',
   url: 'http://api.solapi.com/cash/v1/payment'
@@ -114,7 +114,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentId":"146769456977921820015695662..."}';
+$data = '{"paymentId":"563645642661546750156956693..."}';
 
 $options = array(
     'http' => array(
@@ -142,7 +142,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentId":"146769456977921820015695662..."}'
+data = '{"paymentId":"563645642661546750156956693..."}'
 
 response = requests.delete(url, headers=headers, data=data)
 print(response.status_code)
@@ -158,7 +158,7 @@ print(response.text)
 curl -X DELETE \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentId":"146769456977921820015695662..."}' \
+	-d '{"paymentId":"563645642661546750156956693..."}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -177,7 +177,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentId": "146769456977921820015695662..."
+  "paymentId": "563645642661546750156956693..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Delete.new(uri.request_uri, headers)
@@ -204,7 +204,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentId":"146769456977921820015695662..."}`)
+  data := strings.NewReader(`{"paymentId":"563645642661546750156956693..."}`)
 
   req, err := http.NewRequest("DELETE", uri, data)
   if err != nil { panic(err) }
@@ -239,7 +239,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentId\":\"146769456977921820015695662...\"}";
+    String parameters = "{\"paymentId\":\"563645642661546750156956693...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
