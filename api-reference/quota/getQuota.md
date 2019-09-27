@@ -31,8 +31,8 @@ http://api.solapi.com/quota/v1/me
 {
     "quota": 10000,
     "accountId": "19203220192394",
-    "dateCreated": "2019-09-06T18:33:37.281Z",
-    "dateUpdated": "2019-09-06T18:33:37.281Z"
+    "dateCreated": "2019-09-27T01:14:37.047Z",
+    "dateUpdated": "2019-09-27T01:14:37.047Z"
 }
 ```
 
@@ -234,5 +234,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-27
 

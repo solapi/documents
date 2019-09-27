@@ -49,11 +49,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337403K1YHGoSUOLn",
+            "handleKey": "QT01IQ190927021437166DfiZHVVbJDM",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.404Z",
-            "dateUpdated": "2019-09-06T18:33:37.404Z"
+            "dateCreated": "2019-09-27T01:14:37.167Z",
+            "dateUpdated": "2019-09-27T01:14:37.167Z"
         },
         {
             "status": "PENDING",
@@ -63,11 +63,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337399WrE1T5liOdU",
+            "handleKey": "QT01IQ190927021437163zZYfptmSdNG",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.400Z",
-            "dateUpdated": "2019-09-06T18:33:37.400Z"
+            "dateCreated": "2019-09-27T01:14:37.163Z",
+            "dateUpdated": "2019-09-27T01:14:37.163Z"
         },
         {
             "status": "PENDING",
@@ -77,11 +77,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337395kVEr7J2dQyV",
+            "handleKey": "QT01IQ190927021437159HkvAIGcrpwv",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.396Z",
-            "dateUpdated": "2019-09-06T18:33:37.396Z"
+            "dateCreated": "2019-09-27T01:14:37.160Z",
+            "dateUpdated": "2019-09-27T01:14:37.160Z"
         },
         {
             "status": "PENDING",
@@ -91,11 +91,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337392OpWq6ulT7Vq",
+            "handleKey": "QT01IQ190927021437155lzcwomllk4t",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.392Z",
-            "dateUpdated": "2019-09-06T18:33:37.392Z"
+            "dateCreated": "2019-09-27T01:14:37.156Z",
+            "dateUpdated": "2019-09-27T01:14:37.156Z"
         },
         {
             "status": "PENDING",
@@ -105,11 +105,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337388xHndQb8IBuy",
+            "handleKey": "QT01IQ190927021437152ObSlaFR3fMh",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.389Z",
-            "dateUpdated": "2019-09-06T18:33:37.389Z"
+            "dateCreated": "2019-09-27T01:14:37.152Z",
+            "dateUpdated": "2019-09-27T01:14:37.152Z"
         },
         {
             "status": "PENDING",
@@ -119,11 +119,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337385rKMPWdYbyYj",
+            "handleKey": "QT01IQ190927021437148POLzulBH6Cj",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.386Z",
-            "dateUpdated": "2019-09-06T18:33:37.386Z"
+            "dateCreated": "2019-09-27T01:14:37.149Z",
+            "dateUpdated": "2019-09-27T01:14:37.149Z"
         },
         {
             "status": "PENDING",
@@ -133,11 +133,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337381MxHWCJxrVJE",
+            "handleKey": "QT01IQ1909270214371459La8teLBHsc",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.382Z",
-            "dateUpdated": "2019-09-06T18:33:37.382Z"
+            "dateCreated": "2019-09-27T01:14:37.146Z",
+            "dateUpdated": "2019-09-27T01:14:37.146Z"
         },
         {
             "status": "PENDING",
@@ -147,11 +147,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337378iXtmZq2UQUa",
+            "handleKey": "QT01IQ190927021437141bOLU0mf2CqA",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.379Z",
-            "dateUpdated": "2019-09-06T18:33:37.379Z"
+            "dateCreated": "2019-09-27T01:14:37.142Z",
+            "dateUpdated": "2019-09-27T01:14:37.142Z"
         },
         {
             "status": "PENDING",
@@ -161,11 +161,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337375SpH3GSwPh6q",
+            "handleKey": "QT01IQ190927021437138QelCqW9pwmy",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.375Z",
-            "dateUpdated": "2019-09-06T18:33:37.375Z"
+            "dateCreated": "2019-09-27T01:14:37.138Z",
+            "dateUpdated": "2019-09-27T01:14:37.138Z"
         },
         {
             "status": "PENDING",
@@ -175,11 +175,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ1909061933373718diRlJfZ6uV",
+            "handleKey": "QT01IQ190927021437134apeIP3vXCEm",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.372Z",
-            "dateUpdated": "2019-09-06T18:33:37.372Z"
+            "dateCreated": "2019-09-27T01:14:37.135Z",
+            "dateUpdated": "2019-09-27T01:14:37.135Z"
         },
         {
             "status": "PENDING",
@@ -189,11 +189,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337368pk8B9TB8cdN",
+            "handleKey": "QT01IQ190927021437130nilfuuEEzwC",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.368Z",
-            "dateUpdated": "2019-09-06T18:33:37.368Z"
+            "dateCreated": "2019-09-27T01:14:37.131Z",
+            "dateUpdated": "2019-09-27T01:14:37.131Z"
         },
         {
             "status": "PENDING",
@@ -203,11 +203,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337364d22kWh4dDlA",
+            "handleKey": "QT01IQ190927021437127Y0VInLOWe6A",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.365Z",
-            "dateUpdated": "2019-09-06T18:33:37.365Z"
+            "dateCreated": "2019-09-27T01:14:37.127Z",
+            "dateUpdated": "2019-09-27T01:14:37.127Z"
         },
         {
             "status": "PENDING",
@@ -217,11 +217,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ1909061933373611lCiVsufxxs",
+            "handleKey": "QT01IQ190927021437123VJpUQq4LQpK",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.361Z",
-            "dateUpdated": "2019-09-06T18:33:37.361Z"
+            "dateCreated": "2019-09-27T01:14:37.124Z",
+            "dateUpdated": "2019-09-27T01:14:37.124Z"
         },
         {
             "status": "PENDING",
@@ -231,11 +231,11 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337357Qjid9XhGpok",
+            "handleKey": "QT01IQ190927021437120h7GU12gKjn0",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.358Z",
-            "dateUpdated": "2019-09-06T18:33:37.358Z"
+            "dateCreated": "2019-09-27T01:14:37.120Z",
+            "dateUpdated": "2019-09-27T01:14:37.120Z"
         },
         {
             "status": "PENDING",
@@ -245,14 +245,14 @@ http://api.solapi.com/quota/v1/me/system?status=PENDING
             ],
             "reasonRequested": "오늘은 점심이 기대됩니다.",
             "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
-            "handleKey": "QT01IQ190906193337353uiclg0i0TTe",
+            "handleKey": "QT01IQ190927021437116q18LSbr0QX0",
             "accountId": "19205486948963",
             "requestedQuota": 2524242,
-            "dateCreated": "2019-09-06T18:33:37.354Z",
-            "dateUpdated": "2019-09-06T18:33:37.354Z"
+            "dateCreated": "2019-09-27T01:14:37.117Z",
+            "dateUpdated": "2019-09-27T01:14:37.117Z"
         }
     ],
-    "startKey": "QT01IQ190906193337403K1YHGoSUOLn",
+    "startKey": "QT01IQ190927021437166DfiZHVVbJDM",
     "nextKey": null
 }
 ```
@@ -455,5 +455,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-27
 
