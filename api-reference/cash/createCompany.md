@@ -77,7 +77,7 @@ POST https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "7325122535394701001569566938162"
+    "companyId": "14882312825983488001569573559644"
 }
 ```
 

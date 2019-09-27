@@ -63,10 +63,10 @@ POST https://api.solapi.com/cash/v1/withdraw
     "amount": 18500,
     "fee": 1500,
     "totalAmount": 20000,
-    "withdrawId": "1569566938819193617608802922340",
-    "dateConfirmed": "2019-09-27T06:48:58.000Z",
-    "dateCreated": "2019-09-27T06:48:58.819Z",
-    "dateUpdated": "2019-09-27T06:48:58.819Z"
+    "withdrawId": "1569573560770116728545328452110",
+    "dateConfirmed": "2019-09-27T08:39:20.000Z",
+    "dateCreated": "2019-09-27T08:39:20.770Z",
+    "dateUpdated": "2019-09-27T08:39:20.770Z"
 }
 ```
 
@@ -318,10 +318,10 @@ public class Request {
     "amount": 9000,
     "fee": 1000,
     "totalAmount": 10000,
-    "withdrawId": "1569566938857252929336615899940",
-    "dateConfirmed": "2019-09-27T06:48:58.000Z",
-    "dateCreated": "2019-09-27T06:48:58.857Z",
-    "dateUpdated": "2019-09-27T06:48:58.857Z"
+    "withdrawId": "1569573560820194742913691982370",
+    "dateConfirmed": "2019-09-27T08:39:20.000Z",
+    "dateCreated": "2019-09-27T08:39:20.820Z",
+    "dateUpdated": "2019-09-27T08:39:20.820Z"
 }
 ```
 

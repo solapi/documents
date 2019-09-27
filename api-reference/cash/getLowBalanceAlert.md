@@ -41,8 +41,8 @@ http://api.solapi.com/cash/v1/balance/alert
         "enabled": true
     },
     "_id": "19041920726336",
-    "dateCreated": "2019-09-27T06:48:57.785Z",
-    "dateUpdated": "2019-09-27T06:48:57.785Z"
+    "dateCreated": "2019-09-27T08:39:18.767Z",
+    "dateUpdated": "2019-09-27T08:39:18.767Z"
 }
 ```
 

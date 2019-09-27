@@ -42,8 +42,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "4495242828090651001569566935982",
-        "4499985776849140001569566935982"
+        "1541207011958198401569573553794",
+        "1545576500687398701569573553794"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -55,8 +55,8 @@ PUT https://api.solapi.com/cash/v1/payment
 ```json
 {
     "paymentIds": [
-        "4495242828090651001569566935982",
-        "4499985776849140001569566935982"
+        "1541207011958198401569573553794",
+        "1545576500687398701569573553794"
     ],
     "minimumCash": 1000,
     "rechargeTo": 100000
@@ -79,7 +79,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '449524282809065100156956693...',
+    paymentIds: '154120701195819840156957355...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -106,7 +106,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '449524282809065100156956693...',
+    paymentIds: '154120701195819840156957355...',
     minimumCash: 1000,
     rechargeTo: 100000
   },
@@ -126,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"449524282809065100156956693...","minimumCash":1000,"rechargeTo":100000}';
+$data = '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}';
 
 $options = array(
     'http' => array(
@@ -154,7 +154,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"449524282809065100156956693...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
@@ -170,7 +170,7 @@ print(response.text)
 curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"paymentIds":"449524282809065100156956693...","minimumCash":1000,"rechargeTo":100000}' \
+	-d '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}' \
 	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
@@ -189,7 +189,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "449524282809065100156956693...",
+  "paymentIds": "154120701195819840156957355...",
   "minimumCash": 1000,
   "rechargeTo": 100000
 }
@@ -218,7 +218,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"449524282809065100156956693...","minimumCash":1000,"rechargeTo":100000}`)
+  data := strings.NewReader(`{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -253,7 +253,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"449524282809065100156956693...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String parameters = "{\"paymentIds\":\"154120701195819840156957355...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

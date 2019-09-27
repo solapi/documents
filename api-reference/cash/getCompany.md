@@ -29,7 +29,7 @@ http://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "8340526728571650001569566938227"
+    "companyId": "2381567155203796201569573559847"
 }
 ```
 

@@ -79,7 +79,7 @@ PUT https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "9034631465955206001569566938271"
+    "companyId": "2759744697735912301569573559871"
 }
 ```
 
