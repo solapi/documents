@@ -31,8 +31,8 @@ http://api.solapi.com/quota/v1/me
 {
     "quota": 10000,
     "accountId": "19203220192394",
-    "dateCreated": "2019-09-27T05:08:36.074Z",
-    "dateUpdated": "2019-09-27T05:08:36.074Z"
+    "dateCreated": "2019-09-27T07:51:36.908Z",
+    "dateUpdated": "2019-09-27T07:51:36.908Z"
 }
 ```
 
