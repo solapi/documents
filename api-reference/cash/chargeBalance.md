@@ -45,7 +45,7 @@ POST https://api.solapi.com/cash/v1/balance
 ```json
 {
     "amount": 10000,
-    "paymentId": "2499101295297211201567797688857"
+    "paymentId": "10441095726930861001569566268361"
 }
 ```
 
@@ -61,7 +61,7 @@ POST https://api.solapi.com/cash/v1/balance
     "balanceAmount": 10000,
     "pointAmount": 0,
     "type": "RECHARGE",
-    "historyId": "5d72b1b8854caf57e5153dad"
+    "historyId": "5d8dae3cfa0c8a4a7543bfe7"
 }
 ```
 
@@ -82,7 +82,7 @@ var options = {
   },
   body: {
     amount: 10000,
-    paymentId: '249910129529721120156779768...'
+    paymentId: '104410957269308610015695662...'
   },
   method: 'POST',
   json: true,
@@ -108,7 +108,7 @@ var options = {
   },
   body: {
     amount: 10000,
-    paymentId: '249910129529721120156779768...'
+    paymentId: '104410957269308610015695662...'
   },
   method: 'POST',
   url: 'http://api.solapi.com/cash/v1/balance'
@@ -126,7 +126,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/balance";
-$data = '{"amount":10000,"paymentId":"249910129529721120156779768..."}';
+$data = '{"amount":10000,"paymentId":"104410957269308610015695662..."}';
 
 $options = array(
     'http' => array(
@@ -154,7 +154,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"amount":10000,"paymentId":"249910129529721120156779768..."}'
+data = '{"amount":10000,"paymentId":"104410957269308610015695662..."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -170,7 +170,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"amount":10000,"paymentId":"249910129529721120156779768..."}' \
+	-d '{"amount":10000,"paymentId":"104410957269308610015695662..."}' \
 	http://api.solapi.com/cash/v1/balance
 ```
 {% endtab %}
@@ -190,7 +190,7 @@ headers = {
 }
 data = {
   "amount": 10000,
-  "paymentId": "249910129529721120156779768..."
+  "paymentId": "104410957269308610015695662..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -217,7 +217,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/cash/v1/balance"
-  data := strings.NewReader(`{"amount":10000,"paymentId":"249910129529721120156779768..."}`)
+  data := strings.NewReader(`{"amount":10000,"paymentId":"104410957269308610015695662..."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -252,7 +252,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/cash/v1/balance";
-    String parameters = "{\"amount\":10000,\"paymentId\":\"249910129529721120156779768...\"}";
+    String parameters = "{\"amount\":10000,\"paymentId\":\"104410957269308610015695662...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -289,5 +289,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-27
 

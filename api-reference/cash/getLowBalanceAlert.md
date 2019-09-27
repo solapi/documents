@@ -41,8 +41,8 @@ http://api.solapi.com/cash/v1/balance/alert
         "enabled": true
     },
     "_id": "19041920726336",
-    "dateCreated": "2019-09-06T19:21:30.641Z",
-    "dateUpdated": "2019-09-06T19:21:30.641Z"
+    "dateCreated": "2019-09-27T06:37:50.076Z",
+    "dateUpdated": "2019-09-27T06:37:50.076Z"
 }
 ```
 
@@ -244,5 +244,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-06
+> 문서 생성일 : 2019-09-27
 
