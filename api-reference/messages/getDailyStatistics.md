@@ -51,7 +51,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-09-01T15:00:00.000Z",
+        "date": "2019-09-24T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -70,7 +70,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-31T15:00:00.000Z",
+        "date": "2019-09-23T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -89,7 +89,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-30T15:00:00.000Z",
+        "date": "2019-09-22T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -108,7 +108,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-29T15:00:00.000Z",
+        "date": "2019-09-21T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -127,7 +127,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-28T15:00:00.000Z",
+        "date": "2019-09-20T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -146,7 +146,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-27T15:00:00.000Z",
+        "date": "2019-09-19T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -165,7 +165,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-26T15:00:00.000Z",
+        "date": "2019-09-18T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -184,7 +184,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-25T15:00:00.000Z",
+        "date": "2019-09-17T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -203,7 +203,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-24T15:00:00.000Z",
+        "date": "2019-09-16T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -222,7 +222,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-23T15:00:00.000Z",
+        "date": "2019-09-15T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -241,7 +241,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-22T15:00:00.000Z",
+        "date": "2019-09-14T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -260,7 +260,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-21T15:00:00.000Z",
+        "date": "2019-09-13T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -279,7 +279,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-20T15:00:00.000Z",
+        "date": "2019-09-12T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -298,7 +298,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-19T15:00:00.000Z",
+        "date": "2019-09-11T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -317,7 +317,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-18T15:00:00.000Z",
+        "date": "2019-09-10T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -336,7 +336,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-17T15:00:00.000Z",
+        "date": "2019-09-09T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -355,7 +355,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-16T15:00:00.000Z",
+        "date": "2019-09-08T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -374,7 +374,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-15T15:00:00.000Z",
+        "date": "2019-09-07T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -393,7 +393,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-14T15:00:00.000Z",
+        "date": "2019-09-06T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -412,7 +412,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-08-13T15:00:00.000Z",
+        "date": "2019-09-05T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -620,5 +620,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-25
+> 문서 생성일 : 2019-10-16
 

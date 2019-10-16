@@ -1,95 +1,139 @@
-# 그룹 메시지 목록 조회
+# 실패한 그룹 재발송 요청
 
 ## Request
-
-```text
-GET https://api.solapi.com/messages/v4/groups/:groupId/messages
+```
+POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 ```
 
-그룹에 속한 메시지들을 조회합니다.
+실패된 그룹의 메시지 재발송을 요청합니다. Quota의 영향을 받지 않습니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| :- | :- | :- | :- | :-: |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+
+### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 설명 없음 |
 
-### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+---
 
 ## Samples
 
-### GET /messages/v4/groups/{groupId}/messages
+### resendGroupMessage
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "startKey": null,
-    "limit": 20,
-    "messageList": {
-        "M4V20180307110044DTYYJBBYLPQZIB1": {
-            "_id": "M4V20180307110044DTYYJBBYLPQZIB1",
-            "kakaoOptions": {
-                "senderKey": null,
-                "templateCode": null,
-                "buttonName": null,
-                "buttonUrl": null,
-                "pfId": null,
-                "templateId": null,
-                "imageId": null,
-                "disableSms": false,
-                "buttons": []
-            },
-            "type": null,
-            "country": "82",
-            "subject": null,
-            "imageId": null,
-            "dateProcessed": null,
-            "dateReported": null,
-            "dateReceived": null,
-            "statusCode": "TEST1000",
-            "networkCode": null,
-            "log": [],
-            "replacement": false,
-            "autoTypeDetect": true,
-            "routedQueue": null,
-            "messageId": "M4V20180307110044DTYYJBBYLPQZIB1",
-            "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
-            "accountId": "12925149",
-            "text": "text",
-            "from": "01000000000",
-            "to": "01000000000",
-            "customFields": {},
-            "dateCreated": "2019-09-25T02:15:40.018Z",
-            "dateUpdated": "2019-09-25T02:15:40.018Z",
-            "reason": null,
-            "networkName": "ETC"
+    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
+    "count": {
+        "total": 0,
+        "sentTotal": 0,
+        "sentFailed": 0,
+        "sentSuccess": 0,
+        "sentPending": 0,
+        "sentReplacement": 0,
+        "refund": 0,
+        "registeredFailed": 0,
+        "registeredSuccess": 1
+    },
+    "balance": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "point": {
+        "requested": 50,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "app": {
+        "profit": {
+            "sms": 0,
+            "lms": 0,
+            "mms": 0,
+            "ata": 0,
+            "cta": 0
+        },
+        "appId": null,
+        "version": null
+    },
+    "sdkVersion": null,
+    "osPlatform": null,
+    "log": [
+        {
+            "message": "메시지 그룹이 생성되었습니다.",
+            "createAt": "2019-10-16T18:15:37.492Z"
+        },
+        {
+            "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
+            "createAt": "2019-10-16T18:15:37.492Z"
+        },
+        {
+            "createAt": "2019-10-16T18:15:41.099Z",
+            "message": "메시지를 발송했습니다.",
+            "oldBalance": 100,
+            "newBalance": 100,
+            "oldPoint": 100,
+            "newPoint": 50,
+            "totalPrice": 20
         }
-    }
+    ],
+    "status": "SENDING",
+    "dateSent": "2019-10-16T18:15:41.099Z",
+    "dateCompleted": null,
+    "isRefunded": false,
+    "flagUpdated": false,
+    "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
+    "accountId": "12925149",
+    "apiVersion": "4",
+    "countForCharge": {
+        "sms": {
+            "82": 1
+        },
+        "lms": {},
+        "mms": {},
+        "ata": {},
+        "cta": {}
+    },
+    "price": {
+        "82": {
+            "sms": 20,
+            "lms": 50,
+            "mms": 200,
+            "ata": 19,
+            "cta": 13
+        }
+    },
+    "dateCreated": "2019-10-16T18:15:37.494Z",
+    "dateUpdated": "2019-10-16T18:15:41.100Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -98,46 +142,50 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'POST',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages'
+    'http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'POST',
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages'
+    'http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages";
+$url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'method'  => 'POST'
     )
 );
 
@@ -145,54 +193,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages"
+url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages
+curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -204,9 +259,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages"
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -220,10 +275,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -235,12 +292,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messages";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -263,9 +320,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-25
+---
+
+> 문서 생성일 : 2019-10-16
 
