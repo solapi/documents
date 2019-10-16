@@ -1,26 +1,28 @@
 # 잔액이전
 
 ## Request
-```
+
+```text
 POST https://api.solapi.com/cash/v1/transfer
 ```
 
 잔액을 다른 계정에 이전합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
+| :--- | :--- | :--- | :--- | :---: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---------: | :------: |
+| :---: | :---: |
 |  | O |
 
 ### Request Structure
-```json
+
+```javascript
 {
     "targetAccountId": "string",
     "amount": "number",
@@ -29,14 +31,12 @@ POST https://api.solapi.com/cash/v1/transfer
 ```
 
 ### Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
+| :--- | :---: | :---: | :--- |
 | targetAccountId | `string` | O | 잔액 이전을 받을 계정 ID |
 | amount | `number` | O | 합계 금액 |
 | accountId | `string` |  | 계정 고유 아이디 |
-
-
----
 
 ## Samples
 
@@ -44,7 +44,7 @@ POST https://api.solapi.com/cash/v1/transfer
 
 > **Sample Request**
 
-```json
+```javascript
 {
     "amount": 1000,
     "targetAccountId": "214727"
@@ -53,16 +53,14 @@ POST https://api.solapi.com/cash/v1/transfer
 
 > **Sample Response**
 
-```json
+```javascript
 "Success"
 ```
 
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -85,12 +83,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
-
 ```javascript
 var options = {
   headers: {
@@ -109,12 +105,10 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/transfer";
@@ -132,12 +126,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -151,24 +143,21 @@ data = '{"amount":1000,"targetAccountId":"214727"}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"amount":1000,"targetAccountId":"214727"}' \
-	http://api.solapi.com/cash/v1/transfer
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    -H 'Content-Type: application/json' \
+    -d '{"amount":1000,"targetAccountId":"214727"}' \
+    http://api.solapi.com/cash/v1/transfer
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -191,12 +180,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -226,12 +213,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -273,13 +258,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
 > 문서 생성일 : 2019-09-27
 
