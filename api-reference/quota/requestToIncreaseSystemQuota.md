@@ -1,22 +1,20 @@
 # 시스템 발송 한도 증가 요청
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/quota/v1/me/system
 ```
 
 시스템 발송 한도 증가 요청을 보냅니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `quota:write` | `role-quota:write` | `ACTIVE` |  | O |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "quota": "number",
     "reasonRequested": "string",
@@ -25,12 +23,15 @@ POST https://api.solapi.com/quota/v1/me/system
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | quota | `number` | O | 원하는 쿼터 목표값 |
 | reasonRequested | `string` |  | 요청 사유 |
 | fileIds | `array` | O | 증빙 자료 목록 |
+
+
+
+---
 
 ## Samples
 
@@ -38,7 +39,7 @@ POST https://api.solapi.com/quota/v1/me/system
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "quota": 10000,
     "fileIds": [
@@ -50,7 +51,7 @@ POST https://api.solapi.com/quota/v1/me/system
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "status": "PENDING",
     "fileIds": [
@@ -58,18 +59,20 @@ POST https://api.solapi.com/quota/v1/me/system
     ],
     "reasonRequested": "12312",
     "reasonRejected": null,
-    "handleKey": "QT01IQ191014200335658uXf5X2wx5HO",
+    "handleKey": "QT01IQ191017045237862YQdl7cTnj0k",
     "accountId": "19203248728392",
     "requestedQuota": 10000,
-    "dateCreated": "2019-10-14T19:03:35.659Z",
-    "dateUpdated": "2019-10-14T19:03:35.659Z"
+    "dateCreated": "2019-10-17T03:52:37.863Z",
+    "dateUpdated": "2019-10-17T03:52:37.863Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -93,10 +96,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -116,10 +121,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/quota/v1/me/system";
@@ -137,10 +144,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -154,21 +163,24 @@ data = '{"quota":10000,"fileIds":"ST01FE20dk20yk20vbodjaoekfo...","reasonRequest
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"quota":10000,"fileIds":"ST01FE20dk20yk20vbodjaoekfo...","reasonRequested":"12312"}' \
-    http://api.solapi.com/quota/v1/me/system
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"quota":10000,"fileIds":"ST01FE20dk20yk20vbodjaoekfo...","reasonRequested":"12312"}' \
+	http://api.solapi.com/quota/v1/me/system
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -192,10 +204,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -225,10 +239,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -270,9 +286,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-14
+---
+
+> 문서 생성일 : 2019-10-17
 

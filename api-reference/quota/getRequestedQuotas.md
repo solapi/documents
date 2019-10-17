@@ -1,23 +1,21 @@
 # 시스템 발송 한도 증가 요청 목록 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/quota/v1/me/system
 ```
 
 시스템 발송 한도 증가 요청 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `quota:read` | `role-quota:read` |  |  |  |
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 | status | `string` |  | eq | 상태값 |
@@ -25,19 +23,21 @@ GET https://api.solapi.com/quota/v1/me/system
 | dateCreated | `date` |  | gte, lte, gt, lt, eq | 최초 생성 날짜 |
 | dateUpdated | `date` |  | gte, lte, gt, lt, eq | 최초 생성 날짜 |
 
+---
+
 ## Samples
 
 ### 사용자 쿼터 증가 요청 목록 조회
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/quota/v1/me/system?status=APPROVED
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "limit": 20,
     "increaseQuotaList": [
@@ -49,11 +49,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ1910142003355025turM4N083C",
+            "handleKey": "QT01IQ191017045237769bBNDFww8NvT",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.503Z",
-            "dateUpdated": "2019-10-14T19:03:35.503Z"
+            "dateCreated": "2019-10-17T03:52:37.770Z",
+            "dateUpdated": "2019-10-17T03:52:37.770Z"
         },
         {
             "status": "APPROVED",
@@ -63,11 +63,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335481LtgX4GYGEEU",
+            "handleKey": "QT01IQ191017045237766lB9Ld8gBuvV",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.490Z",
-            "dateUpdated": "2019-10-14T19:03:35.490Z"
+            "dateCreated": "2019-10-17T03:52:37.767Z",
+            "dateUpdated": "2019-10-17T03:52:37.767Z"
         },
         {
             "status": "APPROVED",
@@ -77,11 +77,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335475y1ja4WtjG77",
+            "handleKey": "QT01IQ191017045237762UIMLiJePCes",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.476Z",
-            "dateUpdated": "2019-10-14T19:03:35.476Z"
+            "dateCreated": "2019-10-17T03:52:37.762Z",
+            "dateUpdated": "2019-10-17T03:52:37.762Z"
         },
         {
             "status": "APPROVED",
@@ -91,11 +91,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335460rNww6ys3PHl",
+            "handleKey": "QT01IQ1910170452377587XxCK1rnIjs",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.460Z",
-            "dateUpdated": "2019-10-14T19:03:35.460Z"
+            "dateCreated": "2019-10-17T03:52:37.759Z",
+            "dateUpdated": "2019-10-17T03:52:37.759Z"
         },
         {
             "status": "APPROVED",
@@ -105,11 +105,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335456Kyzg4LjisPm",
+            "handleKey": "QT01IQ19101704523775430VYZq0DdaW",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.457Z",
-            "dateUpdated": "2019-10-14T19:03:35.457Z"
+            "dateCreated": "2019-10-17T03:52:37.755Z",
+            "dateUpdated": "2019-10-17T03:52:37.755Z"
         },
         {
             "status": "APPROVED",
@@ -119,11 +119,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335451XYt1ozPR3Fa",
+            "handleKey": "QT01IQ191017045237751EjO8BnMvMhJ",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.452Z",
-            "dateUpdated": "2019-10-14T19:03:35.452Z"
+            "dateCreated": "2019-10-17T03:52:37.751Z",
+            "dateUpdated": "2019-10-17T03:52:37.751Z"
         },
         {
             "status": "APPROVED",
@@ -133,11 +133,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335445j3xs0bICWqh",
+            "handleKey": "QT01IQ191017045237747ShHWtn8JRcn",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.445Z",
-            "dateUpdated": "2019-10-14T19:03:35.445Z"
+            "dateCreated": "2019-10-17T03:52:37.748Z",
+            "dateUpdated": "2019-10-17T03:52:37.748Z"
         },
         {
             "status": "APPROVED",
@@ -147,11 +147,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335439exGdcvh3wMV",
+            "handleKey": "QT01IQ191017045237743rqLjUQ7AjmA",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.439Z",
-            "dateUpdated": "2019-10-14T19:03:35.439Z"
+            "dateCreated": "2019-10-17T03:52:37.744Z",
+            "dateUpdated": "2019-10-17T03:52:37.744Z"
         },
         {
             "status": "APPROVED",
@@ -161,11 +161,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335435HsZO8aeR8ZQ",
+            "handleKey": "QT01IQ191017045237740M26W136htMJ",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.435Z",
-            "dateUpdated": "2019-10-14T19:03:35.435Z"
+            "dateCreated": "2019-10-17T03:52:37.741Z",
+            "dateUpdated": "2019-10-17T03:52:37.741Z"
         },
         {
             "status": "APPROVED",
@@ -175,11 +175,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335428yMjI0bYW1Hl",
+            "handleKey": "QT01IQ191017045237736WBrig4ouLJg",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.429Z",
-            "dateUpdated": "2019-10-14T19:03:35.429Z"
+            "dateCreated": "2019-10-17T03:52:37.737Z",
+            "dateUpdated": "2019-10-17T03:52:37.737Z"
         },
         {
             "status": "APPROVED",
@@ -189,11 +189,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335421E6xytsg5tDS",
+            "handleKey": "QT01IQ1910170452377331ISJIFuD1de",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.422Z",
-            "dateUpdated": "2019-10-14T19:03:35.422Z"
+            "dateCreated": "2019-10-17T03:52:37.733Z",
+            "dateUpdated": "2019-10-17T03:52:37.733Z"
         },
         {
             "status": "APPROVED",
@@ -203,11 +203,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335413qFlzW4cOT86",
+            "handleKey": "QT01IQ191017045237729RNAxhwncyWf",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.414Z",
-            "dateUpdated": "2019-10-14T19:03:35.414Z"
+            "dateCreated": "2019-10-17T03:52:37.730Z",
+            "dateUpdated": "2019-10-17T03:52:37.730Z"
         },
         {
             "status": "APPROVED",
@@ -217,11 +217,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335404dR2Qzf08Hq2",
+            "handleKey": "QT01IQ191017045237725Rb3wYsUdcgg",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.405Z",
-            "dateUpdated": "2019-10-14T19:03:35.405Z"
+            "dateCreated": "2019-10-17T03:52:37.726Z",
+            "dateUpdated": "2019-10-17T03:52:37.726Z"
         },
         {
             "status": "APPROVED",
@@ -231,11 +231,11 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191014200335399hbUe9klJXk4",
+            "handleKey": "QT01IQ191017045237722iwRzkgrGmrQ",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.400Z",
-            "dateUpdated": "2019-10-14T19:03:35.400Z"
+            "dateCreated": "2019-10-17T03:52:37.722Z",
+            "dateUpdated": "2019-10-17T03:52:37.722Z"
         },
         {
             "status": "APPROVED",
@@ -245,14 +245,14 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
             ],
             "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
             "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ19101420033538807T1qw5spmk",
+            "handleKey": "QT01IQ191017045237711FjtqzHVDEXc",
             "accountId": "19205486948203",
             "requestedQuota": 100000,
-            "dateCreated": "2019-10-14T19:03:35.395Z",
-            "dateUpdated": "2019-10-14T19:03:35.395Z"
+            "dateCreated": "2019-10-17T03:52:37.718Z",
+            "dateUpdated": "2019-10-17T03:52:37.718Z"
         }
     ],
-    "startKey": "QT01IQ1910142003355025turM4N083C",
+    "startKey": "QT01IQ191017045237769bBNDFww8NvT",
     "nextKey": null
 }
 ```
@@ -260,7 +260,9 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -278,10 +280,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -295,10 +299,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/quota/v1/me/system?status=APPROVED";
@@ -314,10 +320,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -329,19 +337,22 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/quota/v1/me/system?status=APPROVED
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/quota/v1/me/system?status=APPROVED
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -358,10 +369,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -389,10 +402,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -432,9 +447,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-14
+---
+
+> 문서 생성일 : 2019-10-17
 
