@@ -1,24 +1,25 @@
 # 초대 취소
 
 ## Request
-
-```text
+```
 DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
-관리자\(OWNER\)가 자신의 계정의 초대를 취소합니다.
+관리자(OWNER)가 자신의 계정의 초대를 취소합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :invitationId | 설명 없음 |
+
+---
 
 ## Samples
 
@@ -26,28 +27,30 @@ DELETE https://api.solapi.com/users/v1/invitations/:invitationId
 
 > **Sample Request**
 
-```javascript
+```json
 {}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "invitationId": "CTbhz0F_j9_OWAVcrA3Gm",
-    "accountId": "19090713559754",
-    "memberId": "MEMzj70DaGNenZ",
+    "accountId": "19102113797678",
+    "memberId": "MEMhHpnPeQLR5f",
     "email": "test1@test.com",
     "role": "MEMBER",
-    "dateCreated": "2019-09-06T18:45:59.785Z",
-    "dateUpdated": "2019-09-06T18:45:59.785Z"
+    "dateCreated": "2019-10-20T18:49:57.884Z",
+    "dateUpdated": "2019-10-20T18:49:57.884Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -65,10 +68,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -82,10 +87,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm";
@@ -101,10 +108,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -116,19 +125,22 @@ headers = {
 response = requests.delete(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -145,10 +157,12 @@ request = Net::HTTP::Delete.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -176,10 +190,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -219,9 +235,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

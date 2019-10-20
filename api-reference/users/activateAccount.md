@@ -1,138 +1,125 @@
-# 계정 정보 수정
+# 휴면 계정 활성화
 
 ## Request
-
-```text
-PUT https://api.solapi.com/users/v1/accounts/:accountId
+```
+PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
 ```
 
-관리자\(OWNER\)가 계정의 정보를 수정합니다.
+휴면 처리된 계정을 활성화합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
+| :- | :- | :- | :- | :-: |
+| `accounts:write` | `role-accounts:write` | `INACTIVE` | `ACTIVE` |  |
+
+### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :accountId | 계정 고유 아이디 |
 
-### Request Structure
-
-```javascript
-{
-    "name": "string"
-}
-```
-
-### Body Params
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| name | `string` |  | 이름 |
+---
 
 ## Samples
 
-### updateAccount.spec.js
+### activateAccount.spec.js
 
 > **Sample Request**
 
-```javascript
-{
-    "name": "누리테스트2"
-}
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "status": "ACTIVE",
-    "accountId": "12925149",
+    "accountId": "214727",
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-09-06T18:45:59.802Z",
-            "dateUpdated": "2019-09-06T18:45:59.802Z",
+            "dateCreated": "2019-10-20T18:49:57.997Z",
+            "dateUpdated": "2019-10-20T18:49:57.997Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-09-06T18:45:59.802Z",
-            "dateUpdated": "2019-09-06T18:45:59.802Z",
+            "dateCreated": "2019-10-20T18:49:57.997Z",
+            "dateUpdated": "2019-10-20T18:49:57.997Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-09-06T18:45:59.803Z",
-    "dateUpdated": "2019-09-06T18:45:59.812Z"
+    "dateCreated": "2019-10-20T18:49:58.001Z",
+    "dateUpdated": "2019-10-20T18:49:58.042Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    name: '누리테스트2'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/12925149'
+  url: 'http://api.solapi.com/users/v1/accounts/214727/activate'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    name: '누리테스트2'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'PUT',
-  url: 'http://api.solapi.com/users/v1/accounts/12925149'
+  url: 'http://api.solapi.com/users/v1/accounts/214727/activate'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/12925149";
-$data = '{"name":"누리테스트2"}';
+$url = "http://api.solapi.com/users/v1/accounts/214727/activate";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
-        'content' => $data,
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'PUT'
     )
 );
@@ -141,63 +128,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/12925149"
+url = "http://api.solapi.com/users/v1/accounts/214727/activate"
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
-data = '{"name":"누리테스트2"}'
 
-response = requests.put(url, headers=headers, data=data)
+response = requests.put(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"name":"누리테스트2"}' \
-    http://api.solapi.com/users/v1/accounts/12925149
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/accounts/214727/activate
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/12925149")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/214727/activate")
 
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
-}
-data = {
-  "name": "누리테스트2"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Put.new(uri.request_uri, headers)
-request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -209,14 +194,12 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/12925149"
-  data := strings.NewReader(`{"name":"누리테스트2"}`)
+  uri := "http://api.solapi.com/users/v1/accounts/214727/activate"
 
-  req, err := http.NewRequest("PUT", uri, data)
+  req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
-  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -227,10 +210,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -242,8 +227,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/12925149";
-    String parameters = "{\"name\":\"누리테스트2\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/214727/activate";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -251,7 +235,6 @@ public class Request {
     con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
-    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -272,9 +255,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

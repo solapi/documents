@@ -1,8 +1,7 @@
 # 초대 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
@@ -11,8 +10,10 @@ GET https://api.solapi.com/users/v1/invitations/:invitationId
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :invitationId | 설명 없음 |
+
+---
 
 ## Samples
 
@@ -20,36 +21,36 @@ GET https://api.solapi.com/users/v1/invitations/:invitationId
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-09-06T18:46:12.784Z",
-    "dateUpdated": "2019-09-06T18:46:12.784Z",
+    "dateCreated": "2019-10-20T18:50:10.838Z",
+    "dateUpdated": "2019-10-20T18:50:10.838Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19090713572489",
+        "accountId": "19102113810998",
         "name": "test님의 계정",
-        "dateCreated": "2019-09-06T18:46:12.783Z",
-        "dateUpdated": "2019-09-06T18:46:12.783Z"
+        "dateCreated": "2019-10-20T18:50:10.836Z",
+        "dateUpdated": "2019-10-20T18:50:10.836Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19090713572489",
-        "memberId": "MEMJoir5HpVDny",
+        "selectedAccountId": "19102113810998",
+        "memberId": "MEMtRQzj0UgL0X",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-09-06T18:46:12.777Z",
-        "dateUpdated": "2019-09-06T18:46:12.780Z"
+        "dateCreated": "2019-10-20T18:50:10.831Z",
+        "dateUpdated": "2019-10-20T18:50:10.833Z"
     }
 }
 ```
@@ -57,7 +58,9 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -71,10 +74,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   method: 'GET',
@@ -84,10 +89,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe";
@@ -103,10 +110,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -115,18 +124,21 @@ url = "http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe"
 response = requests.get(url)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
+	http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -140,10 +152,12 @@ request = Net::HTTP::Get.new(uri.request_uri, )
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -169,10 +183,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -211,9 +227,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

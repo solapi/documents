@@ -1,25 +1,25 @@
 # 내 계정 목록
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/users/v1/accounts
 ```
 
 내가 소속된 계정들의 목록을 불러옵니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+
+---
 
 ## Samples
 
@@ -27,53 +27,55 @@ GET https://api.solapi.com/users/v1/accounts
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/users/v1/accounts?limit=3
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "limit": 3,
     "accountList": [
         {
             "status": "ACTIVE",
-            "accountId": "19090713551906",
+            "accountId": "19102113789875",
             "name": "test5님의 계정",
-            "dateCreated": "2019-09-06T18:45:51.188Z",
-            "dateUpdated": "2019-09-06T18:45:51.188Z",
+            "dateCreated": "2019-10-20T18:49:49.068Z",
+            "dateUpdated": "2019-10-20T18:49:49.068Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19090713551901",
+            "accountId": "19102113789846",
             "name": "test5님의 계정",
-            "dateCreated": "2019-09-06T18:45:51.177Z",
-            "dateUpdated": "2019-09-06T18:45:51.177Z",
+            "dateCreated": "2019-10-20T18:49:49.080Z",
+            "dateUpdated": "2019-10-20T18:49:49.080Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19090713551785",
+            "accountId": "19102113789829",
             "name": "test5님의 계정",
-            "dateCreated": "2019-09-06T18:45:51.195Z",
-            "dateUpdated": "2019-09-06T18:45:51.195Z",
+            "dateCreated": "2019-10-20T18:49:49.050Z",
+            "dateUpdated": "2019-10-20T18:49:49.050Z",
             "myRole": "OWNER",
             "myName": "test5"
         }
     ],
-    "startKey": "19090713551906",
-    "nextKey": "19090713551713"
+    "startKey": "19102113789875",
+    "nextKey": "19102113789784"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -91,10 +93,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -108,10 +112,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/accounts?limit=3";
@@ -127,10 +133,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -142,19 +150,22 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts?limit=3
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/accounts?limit=3
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -171,10 +182,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -202,10 +215,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -245,9 +260,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

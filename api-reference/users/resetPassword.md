@@ -1,8 +1,7 @@
 # 비밀번호 초기화
 
 ## Request
-
-```text
+```
 PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 ```
 
@@ -11,12 +10,11 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :hashId | 설명 없음 |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "password": "string",
     "passwordConfirmation": "string"
@@ -24,11 +22,13 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
+
+
+---
 
 ## Samples
 
@@ -36,7 +36,7 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "password": "asd456!",
     "passwordConfirmation": "asd456!"
@@ -45,24 +45,26 @@ PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "name": "steven",
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMwaVojRfLfzq",
+    "memberId": "MEMOXNv1P5F6uI",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-09-06T18:46:12.721Z",
-    "dateUpdated": "2019-09-06T18:46:12.730Z"
+    "dateCreated": "2019-10-20T18:50:10.773Z",
+    "dateUpdated": "2019-10-20T18:50:10.782Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -84,10 +86,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -105,10 +109,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl";
@@ -126,10 +132,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -142,20 +150,23 @@ data = '{"password":"asd456!","passwordConfirmation":"asd456!"}'
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Content-Type: application/json' \
-    -d '{"password":"asd456!","passwordConfirmation":"asd456!"}' \
-    http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl
+	-H 'Content-Type: application/json' \
+	-d '{"password":"asd456!","passwordConfirmation":"asd456!"}' \
+	http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -177,10 +188,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -209,10 +222,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -253,9 +268,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

@@ -1,82 +1,61 @@
-# 사용자 정보 수정
+# 내 정보 조회
 
 ## Request
-
-```text
-PUT https://api.solapi.com/users/v1/member
+```
+GET https://api.solapi.com/users/v1/member
 ```
 
-사용자의 정보를 수정합니다.
+내 사용자 정보를 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| :- | :- | :- | :- | :-: |
+| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
-### Request Structure
-
-```javascript
-{
-    "email": "email",
-    "name": "string",
-    "selectedAccountId": "string"
-}
-```
-
-### Body Params
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| email | `email` |  | 이메일 |
-| name | `string` |  | 이름 |
-| selectedAccountId | `string` |  | 설명 없음 |
+---
 
 ## Samples
 
-### updateMember.spec.js
+### getMember.spec.js
 
 > **Sample Request**
 
-```javascript
-{
-    "name": "aasdasd"
-}
+```
+http://api.solapi.com/users/v1/member
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "name": "aasdasd",
+    "name": "steven",
     "phoneNumber": null,
-    "status": "ACTIVE",
-    "selectedAccountId": null,
-    "memberId": "MEMLoj69PwRjgL",
-    "email": "test1@nurigo.net",
+    "status": "UNVERIFIED",
+    "selectedAccountId": "19102113788079",
+    "memberId": "MEMLs58Q-hVbL2",
+    "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-09-06T18:45:51.065Z",
-    "dateUpdated": "2019-09-06T18:45:51.072Z"
+    "dateCreated": "2019-10-20T18:49:48.948Z",
+    "dateUpdated": "2019-10-20T18:49:48.951Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  body: {
-    name: 'aasdasd'
-  },
-  method: 'PUT',
+  method: 'GET',
   json: true,
   url: 'http://api.solapi.com/users/v1/member'
 };
@@ -85,41 +64,39 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  body: {
-    name: 'aasdasd'
-  },
-  method: 'PUT',
+  method: 'GET',
   url: 'http://api.solapi.com/users/v1/member'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/member";
-$data = '{"name":"aasdasd"}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
-        'content' => $data,
-        'method'  => 'PUT'
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
+        'method'  => 'GET'
     )
 );
 
@@ -127,38 +104,39 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/users/v1/member"
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
-data = '{"name":"aasdasd"}'
 
-response = requests.put(url, headers=headers, data=data)
+response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"name":"aasdasd"}' \
-    http://api.solapi.com/users/v1/member
+curl -X GET \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/member
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -167,23 +145,20 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/users/v1/member")
 
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
-  "Content-Type": "application/json"
-}
-data = {
-  "name": "aasdasd"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Put.new(uri.request_uri, headers)
-request.body = data.to_json
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -196,13 +171,11 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/users/v1/member"
-  data := strings.NewReader(`{"name":"aasdasd"}`)
 
-  req, err := http.NewRequest("PUT", uri, data)
+  req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
-  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -213,10 +186,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -229,15 +204,13 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/users/v1/member";
-    String parameters = "{\"name\":\"aasdasd\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("PUT");
+    con.setRequestMethod("GET");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
-    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -258,9 +231,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 

@@ -1,49 +1,122 @@
-# 내 정보 조회
+# 초대장 목록 조회
 
 ## Request
-
-```text
-GET https://api.solapi.com/users/v1/member
+```
+GET https://api.solapi.com/users/v1/accounts/:accountId/invitations
 ```
 
-내 사용자 정보를 조회합니다.
+관리자(OWNER)가 자신이 속해있는 계정의 초대 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
+| :- | :- | :- | :- | :-: |
+| `accounts:read` | `role-accounts:read` | `ACTIVE` | `ACTIVE` | O |
+
+### Path Parameters
+
+| Name | Description |
+| :--: | :---------: |
+| :accountId | 계정 고유 아이디 |
+
+### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
+| memberId | `string` |  | eq | 회원 고유 아이디 |
+| email | `email` |  | eq | 이메일 |
+| role | `string` |  | eq | 권한 (OWNER, DEVELOPER, MEMBER) |
+| dateCreated | `date` |  | eq | 최초 생성 날짜 |
+| dateUpdated | `date` |  | eq | 최초 생성 날짜 |
+
+---
 
 ## Samples
 
-### getMember.spec.js
+### getInvitations.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/users/v1/member
+```
+http://api.solapi.com/users/v1/accounts/19020243371011/invitations
 ```
 
 > **Sample Response**
 
-```javascript
-{
-    "name": "steven",
-    "phoneNumber": null,
-    "status": "UNVERIFIED",
-    "selectedAccountId": "19090713551848",
-    "memberId": "MEMKy82Be-exIM",
-    "email": "steven@nurigo.net",
-    "loginSessions": [],
-    "dateCreated": "2019-09-06T18:45:51.048Z",
-    "dateUpdated": "2019-09-06T18:45:51.050Z"
-}
+```json
+[
+    {
+        "invitationId": "WPmPyDzXjOleECwgK3ER6",
+        "email": "test1@test.com",
+        "role": "MEMBER",
+        "dateCreated": "2019-10-30T18:49:47.482Z",
+        "dateUpdated": "2019-10-30T18:49:47.482Z",
+        "owner": {
+            "name": "toss 기본",
+            "phoneNumber": "01012345678",
+            "status": "ACTIVE",
+            "selectedAccountId": null,
+            "isAdmin": false,
+            "memberId": "18010100001000",
+            "email": "test0@nurigo.net",
+            "loginSessions": [
+                {
+                    "idAddress": "127.0.0.1",
+                    "device": "Desktop",
+                    "createdAt": "2018-12-17T03:22:56.000Z"
+                }
+            ],
+            "dateCreated": "2019-10-20T18:49:58.541Z",
+            "dateUpdated": "2019-10-20T18:49:58.541Z"
+        },
+        "account": {
+            "status": "ACTIVE",
+            "accountId": "19020243371011",
+            "name": "누리테스트",
+            "dateCreated": "2019-10-20T18:49:58.525Z",
+            "dateUpdated": "2019-10-20T18:49:58.525Z"
+        }
+    },
+    {
+        "invitationId": "A_k48AZnpzaTCSH45gVOO",
+        "email": "test2@test.com",
+        "role": "DEVELOPER",
+        "dateUpdated": "2019-10-20T18:49:58.523Z",
+        "dateCreated": "2019-10-20T18:49:58.523Z",
+        "owner": {
+            "name": "toss 기본",
+            "phoneNumber": "01012345678",
+            "status": "ACTIVE",
+            "selectedAccountId": null,
+            "isAdmin": false,
+            "memberId": "18010100001001",
+            "email": "test1@nurigo.net",
+            "loginSessions": [
+                {
+                    "idAddress": "127.0.0.1",
+                    "device": "Desktop",
+                    "createdAt": "2018-12-17T03:22:56.000Z"
+                }
+            ],
+            "dateCreated": "2019-10-20T18:49:58.541Z",
+            "dateUpdated": "2019-10-20T18:49:58.541Z"
+        },
+        "account": {
+            "status": "ACTIVE",
+            "accountId": "19020243371011",
+            "name": "누리테스트",
+            "dateCreated": "2019-10-20T18:49:58.525Z",
+            "dateUpdated": "2019-10-20T18:49:58.525Z"
+        }
+    }
+]
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -54,17 +127,19 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/member'
+  url: 'http://api.solapi.com/users/v1/accounts/19020243371011/invitations'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -72,19 +147,21 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/users/v1/member'
+  url: 'http://api.solapi.com/users/v1/accounts/19020243371011/invitations'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/member";
+$url = "http://api.solapi.com/users/v1/accounts/19020243371011/invitations";
 
 $options = array(
     'http' => array(
@@ -97,14 +174,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/member"
+url = "http://api.solapi.com/users/v1/accounts/19020243371011/invitations"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -112,25 +191,28 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/member
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/accounts/19020243371011/invitations
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/member")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/19020243371011/invitations")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -141,10 +223,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -156,7 +240,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/member"
+  uri := "http://api.solapi.com/users/v1/accounts/19020243371011/invitations"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -172,10 +256,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -187,7 +273,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/member";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/19020243371011/invitations";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -215,9 +301,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-06
+---
+
+> 문서 생성일 : 2019-10-20
 
