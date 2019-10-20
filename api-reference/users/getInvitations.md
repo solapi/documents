@@ -48,8 +48,8 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
         "invitationId": "WPmPyDzXjOleECwgK3ER6",
         "email": "test1@test.com",
         "role": "MEMBER",
-        "dateCreated": "2019-10-30T18:49:47.482Z",
-        "dateUpdated": "2019-10-30T18:49:47.482Z",
+        "dateCreated": "2019-10-30T19:34:57.986Z",
+        "dateUpdated": "2019-10-30T19:34:57.986Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -65,23 +65,23 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-10-20T18:49:58.541Z",
-            "dateUpdated": "2019-10-20T18:49:58.541Z"
+            "dateCreated": "2019-10-20T19:35:08.869Z",
+            "dateUpdated": "2019-10-20T19:35:08.869Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-10-20T18:49:58.525Z",
-            "dateUpdated": "2019-10-20T18:49:58.525Z"
+            "dateCreated": "2019-10-20T19:35:08.850Z",
+            "dateUpdated": "2019-10-20T19:35:08.850Z"
         }
     },
     {
         "invitationId": "A_k48AZnpzaTCSH45gVOO",
         "email": "test2@test.com",
         "role": "DEVELOPER",
-        "dateUpdated": "2019-10-20T18:49:58.523Z",
-        "dateCreated": "2019-10-20T18:49:58.523Z",
+        "dateUpdated": "2019-10-20T19:35:08.848Z",
+        "dateCreated": "2019-10-20T19:35:08.848Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -97,15 +97,15 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-10-20T18:49:58.541Z",
-            "dateUpdated": "2019-10-20T18:49:58.541Z"
+            "dateCreated": "2019-10-20T19:35:08.869Z",
+            "dateUpdated": "2019-10-20T19:35:08.869Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-10-20T18:49:58.525Z",
-            "dateUpdated": "2019-10-20T18:49:58.525Z"
+            "dateCreated": "2019-10-20T19:35:08.850Z",
+            "dateUpdated": "2019-10-20T19:35:08.850Z"
         }
     }
 ]

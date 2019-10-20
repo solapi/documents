@@ -32,12 +32,12 @@ http://api.solapi.com/users/v1/member
     "name": "steven",
     "phoneNumber": null,
     "status": "UNVERIFIED",
-    "selectedAccountId": "19102113788079",
-    "memberId": "MEMLs58Q-hVbL2",
+    "selectedAccountId": "19102116499283",
+    "memberId": "MEMugAJhR4N5l9",
     "email": "steven@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-10-20T18:49:48.948Z",
-    "dateUpdated": "2019-10-20T18:49:48.951Z"
+    "dateCreated": "2019-10-20T19:34:59.051Z",
+    "dateUpdated": "2019-10-20T19:34:59.053Z"
 }
 ```
 

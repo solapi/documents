@@ -46,22 +46,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-10-20T18:49:57.997Z",
-            "dateUpdated": "2019-10-20T18:49:57.997Z",
+            "dateCreated": "2019-10-20T19:35:07.809Z",
+            "dateUpdated": "2019-10-20T19:35:07.809Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-10-20T18:49:57.997Z",
-            "dateUpdated": "2019-10-20T18:49:57.997Z",
+            "dateCreated": "2019-10-20T19:35:07.809Z",
+            "dateUpdated": "2019-10-20T19:35:07.809Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-10-20T18:49:58.001Z",
-    "dateUpdated": "2019-10-20T18:49:58.042Z"
+    "dateCreated": "2019-10-20T19:35:07.817Z",
+    "dateUpdated": "2019-10-20T19:35:07.857Z"
 }
 ```
 

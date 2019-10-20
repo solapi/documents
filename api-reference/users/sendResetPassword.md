@@ -43,17 +43,17 @@ POST https://api.solapi.com/users/v1/member/password/reset
             "i@nter.net"
         ],
         "rejected": [],
-        "envelopeTime": 866,
-        "messageTime": 635,
+        "envelopeTime": 867,
+        "messageTime": 633,
         "messageSize": 924,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXaysWtdc9CwJefvHAAAfo-4EvDFQwku-JhFkZ7k1nrA]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXay28Ndc9CwJefyvAAAf0MWHiTtPj6vhiNcJPdjD3oI]",
         "envelope": {
             "from": "support@coolsms.zendesk.com",
             "to": [
                 "i@nter.net"
             ]
         },
-        "messageId": "<6657d453-ad0b-c982-4a44-97ba0d586b6d@coolsms.zendesk.com>"
+        "messageId": "<58f7c83d-28c7-ddad-d13f-6a5f2958cbf2@coolsms.zendesk.com>"
     }
 }
 ```

@@ -58,25 +58,25 @@ POST https://api.solapi.com/users/v1/invitations
             "newMail@test.net"
         ],
         "rejected": [],
-        "envelopeTime": 879,
-        "messageTime": 639,
+        "envelopeTime": 872,
+        "messageTime": 637,
         "messageSize": 474,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXaysUQzb8CwPg.mLAAAfoQPzJmSKK6etWOXLUN.QbO4]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXay25wzb8CwPg.pXAAAfzld..RBNuxkxDCo5mz60XoM]",
         "envelope": {
             "from": "support@coolsms.zendesk.com",
             "to": [
                 "newMail@test.net"
             ]
         },
-        "messageId": "<85b0fc85-de9e-6e13-a788-ad4b743fad1c@coolsms.zendesk.com>"
+        "messageId": "<e0d1fdc8-12bd-af05-10e9-52922648d315@coolsms.zendesk.com>"
     },
     "invitation": {
-        "accountId": "19102113789288",
+        "accountId": "19102116499947",
         "email": "newMail@test.net",
-        "dateCreated": "2019-10-20T18:49:53.661Z",
-        "dateUpdated": "2019-10-20T18:49:53.661Z",
-        "invitationId": "AM3aHoRcjD4BZMQgC--dE",
-        "memberId": "MEMokIvTG3ckIa",
+        "dateCreated": "2019-10-20T19:35:03.564Z",
+        "dateUpdated": "2019-10-20T19:35:03.564Z",
+        "invitationId": "fdgKoQ-tB4XvdMidJoOAh",
+        "memberId": "MEMQV3T0mfIf2f",
         "role": "DEVELOPER"
     }
 }

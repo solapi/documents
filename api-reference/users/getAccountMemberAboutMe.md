@@ -39,8 +39,8 @@ http://api.solapi.com/users/v1/accounts/12925149/me
     "role": "OWNER",
     "name": "toss 0",
     "email": "test0@nurigo.net",
-    "dateCreated": "2019-10-20T18:49:58.181Z",
-    "dateUpdated": "2019-10-20T18:49:58.181Z"
+    "dateCreated": "2019-10-20T19:35:08.283Z",
+    "dateUpdated": "2019-10-20T19:35:08.283Z"
 }
 ```
 

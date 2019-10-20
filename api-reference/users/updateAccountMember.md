@@ -53,8 +53,8 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 
 ```json
 {
-    "dateCreated": "2019-10-20T18:49:48.255Z",
-    "dateUpdated": "2019-10-20T18:49:48.277Z",
+    "dateCreated": "2019-10-20T19:34:58.514Z",
+    "dateUpdated": "2019-10-20T19:34:58.534Z",
     "memberId": "18010100001001",
     "role": "MEMBER",
     "name": "Member"

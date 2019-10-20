@@ -48,26 +48,26 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19102113788499",
+    "accountId": "19102116498349",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-10-20T18:49:47.062Z",
-            "dateUpdated": "2019-10-20T18:49:47.062Z",
-            "memberId": "MEMWppm8z_RI2z",
+            "dateCreated": "2019-10-20T19:34:57.087Z",
+            "dateUpdated": "2019-10-20T19:34:57.087Z",
+            "memberId": "MEMk_-vpxhTwrF",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-10-20T18:49:47.062Z",
-            "dateUpdated": "2019-10-20T18:49:47.062Z",
-            "memberId": "MEMMoY19Zp5TEM",
+            "dateCreated": "2019-10-20T19:34:57.087Z",
+            "dateUpdated": "2019-10-20T19:34:57.087Z",
+            "memberId": "MEMDsKsy2lyiMN",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-10-20T18:49:48.891Z",
-    "dateUpdated": "2019-10-20T18:49:48.906Z"
+    "dateCreated": "2019-10-20T19:34:59.002Z",
+    "dateUpdated": "2019-10-20T19:34:59.014Z"
 }
 ```
 
