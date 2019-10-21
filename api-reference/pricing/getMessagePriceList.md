@@ -1,34 +1,34 @@
 # 국가별 메시지 가격 리스트 가져오기
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/pricing/v1/messaging/countries
 ```
 
-로그인한 계정의 국가별 메시지 가격 리스트를 가져옵니다. \(로그인 안하면 기본 단가\)
+로그인한 계정의 국가별 메시지 가격 리스트를 가져옵니다. (로그인 안하면 기본 단가)
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/overview#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | countryId | `string` |  | eq | 국가 코드 |
 | offset | `number` |  | eq | 시작점 |
 | limit | `number` |  | eq | 조회할 개수 |
 
+---
+
 ## Samples
 
-### 로그인한 사용자 단가 리스트 가져오기
+### getMessagePriceList.spec.js
 
 > **Sample Request**
 
-```text
-{}
+```
+http://api.solapi.com/pricing/v1/messaging/countries
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 [
     {
         "countryName": "Korea, South",
@@ -38,8 +38,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
         "mms": 200,
         "ata": 19,
         "cta": 13,
-        "dateCreated": "2019-07-26T08:04:59.414Z",
-        "dateUpdated": "2019-07-26T08:04:59.414Z"
+        "cti": 20,
+        "dateCreated": "2019-10-21T17:09:06.343Z",
+        "dateUpdated": "2019-10-21T17:09:06.343Z"
     },
     {
         "countryName": "Lithuania",
@@ -49,8 +50,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
         "mms": 1000,
         "ata": 19,
         "cta": 13,
-        "dateCreated": "2019-07-26T08:04:59.413Z",
-        "dateUpdated": "2019-07-26T08:04:59.413Z"
+        "cti": 20,
+        "dateCreated": "2019-10-21T17:09:06.341Z",
+        "dateUpdated": "2019-10-21T17:09:06.341Z"
     },
     {
         "countryName": "Turkmenistan",
@@ -60,8 +62,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
         "mms": 1000,
         "ata": 19,
         "cta": 13,
-        "dateCreated": "2019-07-26T08:04:59.411Z",
-        "dateUpdated": "2019-07-26T08:04:59.411Z"
+        "cti": 20,
+        "dateCreated": "2019-10-21T17:09:06.339Z",
+        "dateUpdated": "2019-10-21T17:09:06.339Z"
     },
     {
         "countryName": "Sao Tome and Principe",
@@ -71,8 +74,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
         "mms": 1000,
         "ata": 19,
         "cta": 13,
-        "dateCreated": "2019-07-26T08:04:59.410Z",
-        "dateUpdated": "2019-07-26T08:04:59.410Z"
+        "cti": 20,
+        "dateCreated": "2019-10-21T17:09:06.337Z",
+        "dateUpdated": "2019-10-21T17:09:06.337Z"
     },
     {
         "countryName": "East Timor",
@@ -82,8 +86,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
         "mms": 1000,
         "ata": 19,
         "cta": 13,
-        "dateCreated": "2019-07-26T08:04:59.409Z",
-        "dateUpdated": "2019-07-26T08:04:59.409Z"
+        "cti": 20,
+        "dateCreated": "2019-10-21T17:09:06.331Z",
+        "dateUpdated": "2019-10-21T17:09:06.331Z"
     }
 ]
 ```
@@ -91,7 +96,9 @@ GET https://api.solapi.com/pricing/v1/messaging/countries
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -105,10 +112,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   method: 'GET',
@@ -118,10 +127,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/pricing/v1/messaging/countries";
@@ -137,10 +148,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -149,18 +162,21 @@ url = "http://api.solapi.com/pricing/v1/messaging/countries"
 response = requests.get(url)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    http://api.solapi.com/pricing/v1/messaging/countries
+	http://api.solapi.com/pricing/v1/messaging/countries
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -174,10 +190,12 @@ request = Net::HTTP::Get.new(uri.request_uri, )
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -203,10 +221,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -245,7 +265,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
+
+> 문서 생성일 : 2019-10-21
 
