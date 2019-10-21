@@ -55,8 +55,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-10-21T18:21:42.891Z",
-            "dateUpdated": "2019-10-21T18:21:42.891Z"
+            "dateCreated": "2019-10-21T21:13:40.359Z",
+            "dateUpdated": "2019-10-21T21:13:40.359Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
@@ -70,8 +70,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-10-21T18:21:42.895Z",
-            "dateUpdated": "2019-10-21T18:21:42.895Z"
+            "dateCreated": "2019-10-21T21:13:40.363Z",
+            "dateUpdated": "2019-10-21T21:13:40.363Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
@@ -85,8 +85,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-10-21T18:21:42.886Z",
-            "dateUpdated": "2019-10-21T18:21:42.886Z"
+            "dateCreated": "2019-10-21T21:13:40.357Z",
+            "dateUpdated": "2019-10-21T21:13:40.357Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
@@ -100,8 +100,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-10-21T18:21:42.884Z",
-            "dateUpdated": "2019-10-21T18:21:42.884Z"
+            "dateCreated": "2019-10-21T21:13:40.355Z",
+            "dateUpdated": "2019-10-21T21:13:40.355Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
@@ -115,8 +115,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-10-21T18:21:42.893Z",
-            "dateUpdated": "2019-10-21T18:21:42.893Z"
+            "dateCreated": "2019-10-21T21:13:40.361Z",
+            "dateUpdated": "2019-10-21T21:13:40.361Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",

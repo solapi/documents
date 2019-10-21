@@ -46,8 +46,8 @@ http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1
             "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-10-21T18:21:42.859Z",
-    "dateUpdated": "2019-10-21T18:21:42.859Z"
+    "dateCreated": "2019-10-21T21:13:40.333Z",
+    "dateUpdated": "2019-10-21T21:13:40.333Z"
 }
 ```
 
