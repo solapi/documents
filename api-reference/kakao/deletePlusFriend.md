@@ -1,23 +1,23 @@
-# 플러스 친구 삭제
+# 카카오톡채널 삭제
 
 ## Request
 ```
 DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
 ```
 
-SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 플러스 친구가 삭제되지는 않습니다.
+SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 카카오톡채널이 삭제되지는 않습니다.
 
 ### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
 | :--: | :---------: |
-| :pfId | 플러스 친구 고유 아이디 |
+| :pfId | 카카오톡채널 고유 아이디 |
 
 ---
 
@@ -42,11 +42,12 @@ SOLAPI와 연동된 플러스 친구를 SOLAPI에서만 삭제합니다. SOLAPI�
     "senderKeys": [
         {
             "service": "daou",
-            "key": "123456789"
+            "key": "123456789",
+            "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-08-20T03:55:43.491Z",
-    "dateUpdated": "2019-08-20T03:55:43.491Z"
+    "dateCreated": "2019-10-21T18:21:42.743Z",
+    "dateUpdated": "2019-10-21T18:21:42.743Z"
 }
 ```
 
@@ -250,5 +251,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-10-21
 

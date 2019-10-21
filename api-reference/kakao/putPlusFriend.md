@@ -1,52 +1,77 @@
-# 친구톡 이미지 목록 조회
+# 카카오톡채널 추가
 
 ## Request
 ```
-GET https://api.solapi.com/kakao/v1/images
+POST https://api.solapi.com/kakao/v1/plus-friends/:service
 ```
 
-친구톡 이미지 목록을 조회합니다.
+기존에 등록된 카카오톡채널을 SOLAPI에 연동합니다.
 
 ### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `kakao:read` | `role-kakao:read` |  |  |  |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Query Params
-| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :--: | :------: | :--------------: | :---------- |
-| imageId | `string` |  | eq | 이미지 아이디 |
-| imageUrl | `string` |  | eq | 이미지 주소 |
-| title | `string` |  | eq, ne, like | 제목 |
-| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
-| dateCreated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
-| dateUpdated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
+### Path Parameters
+
+| Name | Description |
+| :--: | :---------: |
+| :service | 카카오톡채널 연동처 |
+
+### Request Structure
+```json
+{
+    "searchId": "string",
+    "phoneNumber": "string",
+    "categoryCode": "string",
+    "token": "string"
+}
+```
+
+### Body Params
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| searchId | `string` | O | 카카오톡채널 검색용 아이디 |
+| phoneNumber | `string` | O | 핸드폰 번호 |
+| categoryCode | `string` | O | 카카오톡채널 카테고리 코드 |
+| token | `string` | O | 연동 시 카카오톡으로 사용자에게 오는 토큰 |
+
 
 ---
 
 ## Samples
 
-### getImages.spec.js
+### putPlusFriend.spec.js
 
 > **Sample Request**
 
-```
-http://api.solapi.com/kakao/v1/images
+```json
+{
+    "searchId": "NURIGO",
+    "phoneNumber": "01055555555",
+    "categoryCode": "02536589547",
+    "token": "123456789"
+}
 ```
 
 > **Sample Response**
 
 ```json
 {
-    "imageId": "KA01IM190820045543719oHAITqXDgbm",
-    "accountId": "19020720648888",
-    "title": "012345678901234567890123456789012345678901234567890123456789",
-    "link": "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234",
-    "imageUrl": "http://mud-kage.kakao.com/dn/gtM0a/btqtfj5pQ92/meXjtBKhjbdKSh2aK8Wu3k/img_l.png",
-    "dateCreated": "2019-08-20T03:55:43.722Z",
-    "dateUpdated": "2019-08-20T03:55:43.722Z"
+    "accountId": "19301859371938",
+    "phoneNumber": "01055555555",
+    "searchId": "NURIGO",
+    "dateCreated": "2019-10-21T18:21:43.245Z",
+    "dateUpdated": "2019-10-21T18:21:43.245Z",
+    "pfId": "KA01PF1910211921432487uJBOLOiEog",
+    "senderKeys": [
+        {
+            "service": "daou",
+            "key": "11646846a8ds4f6a84fs6a8sf4",
+            "categoryCode": "02536589547"
+        }
+    ]
 }
 ```
 
@@ -66,13 +91,14 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...',
-    title: '012345678901234567890123456...',
-    link: '012345678901234567890123456...'
+    searchId: 'NURIGO',
+    phoneNumber: '01055555555',
+    categoryCode: '02536589547',
+    token: '123456789'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/kakao/v1/images'
+  url: 'http://api.solapi.com/kakao/v1/plus-friends/daou'
 };
 
 request(options, function(error, response, body) {
@@ -93,12 +119,13 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...',
-    title: '012345678901234567890123456...',
-    link: '012345678901234567890123456...'
+    searchId: 'NURIGO',
+    phoneNumber: '01055555555',
+    categoryCode: '02536589547',
+    token: '123456789'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/kakao/v1/images'
+  url: 'http://api.solapi.com/kakao/v1/plus-friends/daou'
 };
 
 $.ajax(options).done(function(response) {
@@ -112,8 +139,8 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/images";
-$data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}';
+$url = "http://api.solapi.com/kakao/v1/plus-friends/daou";
+$data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}';
 
 $options = array(
     'http' => array(
@@ -136,12 +163,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/images"
+url = "http://api.solapi.com/kakao/v1/plus-friends/daou"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}'
+data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -157,8 +184,8 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}' \
-	http://api.solapi.com/kakao/v1/images
+	-d '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}' \
+	http://api.solapi.com/kakao/v1/plus-friends/daou
 ```
 {% endtab %}
 
@@ -169,16 +196,17 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/images")
+uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/daou")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "image": "iVBORw0KGgoAAAANSUhEUgAAAyA...",
-  "title": "012345678901234567890123456...",
-  "link": "012345678901234567890123456..."
+  "searchId": "NURIGO",
+  "phoneNumber": "01055555555",
+  "categoryCode": "02536589547",
+  "token": "123456789"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -204,8 +232,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/images"
-  data := strings.NewReader(`{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA...","title":"012345678901234567890123456...","link":"012345678901234567890123456..."}`)
+  uri := "http://api.solapi.com/kakao/v1/plus-friends/daou"
+  data := strings.NewReader(`{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -239,8 +267,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/images";
-    String parameters = "{\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAyA...\",\"title\":\"012345678901234567890123456...\",\"link\":\"012345678901234567890123456...\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/daou";
+    String parameters = "{\"searchId\":\"NURIGO\",\"phoneNumber\":\"01055555555\",\"categoryCode\":\"02536589547\",\"token\":\"123456789\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -277,5 +305,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-10-21
 

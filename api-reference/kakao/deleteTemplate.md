@@ -1,97 +1,72 @@
-# 플러스 친구 목록 조회
+# 템플릿을 삭제
 
 ## Request
-
-```text
-GET https://api.solapi.com/kakao/v1/plus-friends
+```
+DELETE https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
-플러스 친구의 목록을 조회합니다.
+템플릿을 삭제합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `kakao:read` | `role-kakao:read` |  |  |  |
+| :- | :- | :- | :- | :-: |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Query Params
+### Path Parameters
 
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| pfId | `string` |  | eq | 플러스 친구 고유 아이디 |
-| searchId | `string` |  | eq, ne, like | 플러스 친구 검색용 아이디 |
-| phoneNumber | `string` |  | eq, ne, like | 핸드폰 번호 |
-| dateCreated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
-| dateUpdated | `date` |  | eq, gte, lte, gt, lt | 최초 생성 날짜 |
-| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| Name | Description |
+| :--: | :---------: |
+| :templateId | 템플릿 고유 아이디 |
+
+---
 
 ## Samples
 
-### getPlusFriends.spec.js
+### deleteTemplate.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/kakao/v1/plus-friends?
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "limit": 20,
-    "friends": [
+    "accountId": "12925149",
+    "templateId": "KA01TP191021192142486RUjZVeueRIH",
+    "name": "A0",
+    "pfId": "PF01ID191021192142481PYCXHRRZVEw",
+    "content": "#{홍길동}님 회원가입을 환영 합니다.",
+    "dateCreated": "2019-10-21T18:21:42.782Z",
+    "dateUpdated": "2019-10-21T18:21:42.782Z",
+    "codes": [
         {
-            "pfId": "KA01PF190227072057634pRBhbpAweee",
-            "searchId": "COMPANY3",
-            "accountId": "19301859371111",
-            "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-08-20T03:55:43.794Z",
-            "dateUpdated": "2019-08-20T03:55:43.794Z"
+            "status": "PENDING",
+            "service": "biz",
+            "code": "bizp_20190312165039251028888880",
+            "comments": []
         },
         {
-            "pfId": "KA01PF190227072057634pRBhbpAwddd",
-            "searchId": "COMPANY5",
-            "accountId": "19301859371111",
-            "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-08-20T03:55:43.798Z",
-            "dateUpdated": "2019-08-20T03:55:43.798Z"
-        },
-        {
-            "pfId": "KA01PF190227072057634pRBhbpAwccc",
-            "searchId": "COMPANY2",
-            "accountId": "19301859371111",
-            "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-08-20T03:55:43.792Z",
-            "dateUpdated": "2019-08-20T03:55:43.792Z"
-        },
-        {
-            "pfId": "KA01PF190227072057634pRBhbpAwbbb",
-            "searchId": "COMPANY1",
-            "accountId": "19301859371111",
-            "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-08-20T03:55:43.790Z",
-            "dateUpdated": "2019-08-20T03:55:43.790Z"
-        },
-        {
-            "pfId": "KA01PF190227072057634pRBhbpAwaaa",
-            "searchId": "COMPANY4",
-            "accountId": "19301859371111",
-            "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-08-20T03:55:43.796Z",
-            "dateUpdated": "2019-08-20T03:55:43.796Z"
+            "status": "PENDING",
+            "service": "daou",
+            "code": "bizp_20190312165039251028888880",
+            "comments": []
         }
     ],
-    "startKey": "KA01PF190227072057634pRBhbpAweee",
-    "nextKey": null
+    "buttons": [],
+    "status": "DELETED"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -100,44 +75,50 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'DELETE',
   json: true,
-  url: 'http://api.solapi.com/kakao/v1/plus-friends?'
+  url:
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
-  url: 'http://api.solapi.com/kakao/v1/plus-friends?'
+  method: 'DELETE',
+  url:
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/plus-friends?";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'method'  => 'DELETE'
     )
 );
 
@@ -145,54 +126,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends?"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.delete(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/kakao/v1/plus-friends?
+curl -X DELETE \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends?")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Delete.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -204,9 +192,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends?"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH"
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -220,10 +208,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -235,12 +225,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends?";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142486RUjZVeueRIH";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("DELETE");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -263,9 +253,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+---
+
+> 문서 생성일 : 2019-10-21
 

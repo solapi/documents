@@ -1,79 +1,128 @@
-# 템플릿 댓글 추가
+# 템플릿 정보 수정
 
 ## Request
-
-```text
-POST https://api.solapi.com/kakao/v1/templates/:templateId/comment
+```
+PUT https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
-템플릿에 댓글을 추가합니다.
+템플릿의 정보를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `kakao:write` | `role-kakao:write` | `ACTIVE` |  | O |
+| :- | :- | :- | :- | :-: |
+| `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :templateId | 템플릿 고유 아이디 |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "comment": "string"
+    "name": "string",
+    "content": "string",
+    "buttons": "array"
 }
 ```
 
 ### Body Params
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| name | `string` |  | 이름 |
+| content | `string` |  | 템플릿 내용 |
+| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
+
+
+##### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| comment | `string` | O | 템플릿에 다는 댓글 |
+| :--- | :--: | :------: | :---------- |
+| buttonType | `string` | O | 설명 없음 |
+| buttonName | `string` | O | 설명 없음 |
+| linkMo | `string` |  | Mobile 주소 |
+| linkPc | `string` |  | PC 주소 |
+| linkAnd | `string` |  | Android 주소 |
+| linkIos | `string` |  | IOS 주소 |
+
+
+---
 
 ## Samples
 
-### putTemplateComment.spec.js
+### setTemplate.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "comment": "템플릿 등록 문의드립니다."
+    "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "status": "REJECTED",
-    "accountId": "12925149",
-    "templateId": "TP01ID1908200455432870NI1LH6Acqy",
-    "name": "A10",
-    "pfId": "PF01ID190820045543287MC1f95TR6dc",
-    "content": "testMessage",
-    "dateCreated": "2019-08-20T03:55:43.287Z",
-    "dateUpdated": "2019-08-20T03:55:44.488Z",
-    "buttons": [],
-    "comments": [
-        {
-            "isAdmin": false,
-            "dateCreated": "2019-08-20T03:55:44.489Z",
-            "memberId": "18010100001000",
-            "content": "템플릿 등록 문의드립니다."
-        }
-    ]
+    "daou": {
+        "accountId": "12925149",
+        "templateId": "KA01TP191021192142504VWEWz4hjS0T",
+        "name": "A0",
+        "pfId": "PF01ID191021192142504uLh5oTH4rlL",
+        "codes": [
+            {
+                "status": "PENDING",
+                "comments": [],
+                "code": "bizp_20190312165039251028888880",
+                "service": "daou"
+            },
+            {
+                "status": "PENDING",
+                "comments": [],
+                "code": "bizp_20190312165039251028888880",
+                "service": "biz"
+            }
+        ],
+        "content": "#{홍길동}님 회원가입을 환영 합니다.",
+        "dateCreated": "2019-10-21T18:21:43.913Z",
+        "dateUpdated": "2019-10-21T18:21:43.938Z",
+        "buttons": []
+    },
+    "biz": {
+        "accountId": "12925149",
+        "templateId": "KA01TP191021192142504VWEWz4hjS0T",
+        "name": "A0",
+        "pfId": "PF01ID191021192142504uLh5oTH4rlL",
+        "codes": [
+            {
+                "status": "PENDING",
+                "comments": [],
+                "code": "bizp_20190312165039251028888880",
+                "service": "daou"
+            },
+            {
+                "status": "PENDING",
+                "comments": [],
+                "code": "bizp_20190312165039251028888880",
+                "service": "biz"
+            }
+        ],
+        "content": "#{홍길동}님 회원가입을 환영 합니다.",
+        "dateCreated": "2019-10-21T18:21:43.913Z",
+        "dateUpdated": "2019-10-21T18:21:43.940Z",
+        "buttons": []
+    }
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -84,22 +133,24 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    comment: '템플릿 등록 문의드립니다.'
+    content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
-  method: 'POST',
+  method: 'PUT',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -108,30 +159,32 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    comment: '템플릿 등록 문의드립니다.'
+    content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
-  method: 'POST',
+  method: 'PUT',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment";
-$data = '{"comment":"템플릿 등록 문의드립니다."}';
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T";
+$data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'POST'
+        'method'  => 'PUT'
     )
 );
 
@@ -139,63 +192,70 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"comment":"템플릿 등록 문의드립니다."}'
+data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}'
 
-response = requests.post(url, headers=headers, data=data)
+response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"comment":"템플릿 등록 문의드립니다."}' \
-    http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment
+curl -X PUT \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "comment": "템플릿 등록 문의드립니다."
+  "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -207,10 +267,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment"
-  data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T"
+  data := strings.NewReader(`{"content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
-  req, err := http.NewRequest("POST", uri, data)
+  req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -225,10 +285,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -240,13 +302,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID1908200455432870NI1LH6Acqy/comment";
-    String parameters = "{\"comment\":\"템플릿 등록 문의드립니다.\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191021192142504VWEWz4hjS0T";
+    String parameters = "{\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
@@ -270,9 +332,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+---
+
+> 문서 생성일 : 2019-10-21
 
