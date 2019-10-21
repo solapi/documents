@@ -49,6 +49,7 @@ POST https://api.solapi.com/messages/v4/send
 | pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
+| imageId | `string` |  | 이미지 아이디 |
 | [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
 
@@ -99,13 +100,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20191017031540CCFJO4FEPJ1EVN2",
+    "groupId": "G4V20191022033302WB6VS16IRY70ADF",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20191017031540THBIN4CJOGGWRHV",
+    "messageId": "M4V20191022033302H4BI9N266DRPBSZ",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -344,5 +345,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-16
+> 문서 생성일 : 2019-10-21
 

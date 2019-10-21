@@ -55,7 +55,8 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
             "lms": "number",
             "mms": "number",
             "ata": "number",
-            "cta": "number"
+            "cta": "number",
+            "cti": "number"
         },
         "appId": "string",
         "version": "string"
@@ -90,6 +91,9 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
             "country": "number"
         },
         "cta": {
+            "country": "number"
+        },
+        "cti": {
             "country": "number"
         }
     },
@@ -173,6 +177,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | mms | `number` |  | MMS 사용 요금 |
 | ata | `number` |  | 알림톡 사용 요금 |
 | cta | `number` |  | 친구톡 사용 요금 |
+| cti | `number` |  | 친구톡 이미지 사용 요금 |
 
 
 ##### Response / log
@@ -191,6 +196,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | [mms](#response-countforcharge-mms) | `object` |  | MMS 차감 금액 |
 | [ata](#response-countforcharge-ata) | `object` |  | 알림톡 차감 금액 |
 | [cta](#response-countforcharge-cta) | `object` |  | 친구톡 차감 금액 |
+| [cti](#response-countforcharge-cti) | `object` |  | 친구톡 이미지 차감 금액 |
 
 ##### Response / countForCharge / sms
 
@@ -221,6 +227,12 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 친구톡 차감 금액 |
+
+##### Response / countForCharge / cti
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 친구톡 이미지 차감 금액 |
 
 ##### Response / price
 
@@ -273,7 +285,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
             "lms": 0,
             "mms": 0,
             "ata": 0,
-            "cta": 0
+            "cta": 0,
+            "cti": 0
         },
         "appId": null,
         "version": null
@@ -283,11 +296,11 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-10-16T18:15:37.435Z"
+            "createAt": "2019-10-21T18:32:56.795Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-10-16T18:15:37.435Z"
+            "createAt": "2019-10-21T18:32:56.795Z"
         }
     ],
     "status": "PENDING",
@@ -306,11 +319,12 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "lms": {},
         "mms": {},
         "ata": {},
-        "cta": {}
+        "cta": {},
+        "cti": {}
     },
     "price": {},
-    "dateCreated": "2019-10-16T18:15:37.437Z",
-    "dateUpdated": "2019-10-16T18:15:37.437Z"
+    "dateCreated": "2019-10-21T18:32:56.797Z",
+    "dateUpdated": "2019-10-21T18:32:56.797Z"
 }
 ```
 
@@ -514,5 +528,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-16
+> 문서 생성일 : 2019-10-21
 

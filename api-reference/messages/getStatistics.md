@@ -48,9 +48,9 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-10-16T18:15:40.988Z",
+                    "_id": "2019-10-21T18:33:02.824Z",
                     "month": "2019/10",
-                    "date": "2019/10/17",
+                    "date": "2019/10/22",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -72,7 +72,8 @@ http://api.solapi.com/messages/v4/statistics
                         "lms": 1,
                         "mms": 1,
                         "ata": 1,
-                        "cta": 1
+                        "cta": 1,
+                        "cti": 0
                     },
                     "successed": {
                         "total": 5,
@@ -80,7 +81,8 @@ http://api.solapi.com/messages/v4/statistics
                         "lms": 1,
                         "mms": 1,
                         "ata": 1,
-                        "cta": 1
+                        "cta": 1,
+                        "cti": 0
                     },
                     "failed": {
                         "total": 0,
@@ -88,7 +90,8 @@ http://api.solapi.com/messages/v4/statistics
                         "lms": 0,
                         "mms": 0,
                         "ata": 0,
-                        "cta": 0
+                        "cta": 0,
+                        "cti": 0
                     }
                 }
             ],
@@ -104,7 +107,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 1,
                 "mms": 1,
                 "ata": 1,
-                "cta": 1
+                "cta": 1,
+                "cti": 0
             },
             "successed": {
                 "total": 5,
@@ -112,7 +116,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 1,
                 "mms": 1,
                 "ata": 1,
-                "cta": 1
+                "cta": 1,
+                "cti": 0
             },
             "failed": {
                 "total": 0,
@@ -120,7 +125,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 0,
                 "mms": 0,
                 "ata": 0,
-                "cta": 0
+                "cta": 0,
+                "cti": 0
             }
         }
     ],
@@ -132,9 +138,9 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-10-16T18:15:40.988Z",
+            "_id": "2019-10-21T18:33:02.824Z",
             "month": "2019/10",
-            "date": "2019/10/17",
+            "date": "2019/10/22",
             "balance": 1,
             "point": 1,
             "statusCode": {
@@ -156,7 +162,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 1,
                 "mms": 1,
                 "ata": 1,
-                "cta": 1
+                "cta": 1,
+                "cti": 0
             },
             "successed": {
                 "total": 5,
@@ -164,7 +171,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 1,
                 "mms": 1,
                 "ata": 1,
-                "cta": 1
+                "cta": 1,
+                "cti": 0
             },
             "failed": {
                 "total": 0,
@@ -172,7 +180,8 @@ http://api.solapi.com/messages/v4/statistics
                 "lms": 0,
                 "mms": 0,
                 "ata": 0,
-                "cta": 0
+                "cta": 0,
+                "cti": 0
             }
         }
     ],
@@ -182,7 +191,8 @@ http://api.solapi.com/messages/v4/statistics
         "lms": 1,
         "mms": 1,
         "ata": 1,
-        "cta": 1
+        "cta": 1,
+        "cti": 0
     },
     "successed": {
         "total": 5,
@@ -190,7 +200,8 @@ http://api.solapi.com/messages/v4/statistics
         "lms": 1,
         "mms": 1,
         "ata": 1,
-        "cta": 1
+        "cta": 1,
+        "cti": 0
     },
     "failed": {
         "total": 0,
@@ -198,7 +209,8 @@ http://api.solapi.com/messages/v4/statistics
         "lms": 0,
         "mms": 0,
         "ata": 0,
-        "cta": 0
+        "cta": 0,
+        "cti": 0
     },
     "dailyBalanceAvg": 1,
     "dailyPointAvg": 1,
@@ -406,5 +418,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-16
+> 문서 생성일 : 2019-10-21
 

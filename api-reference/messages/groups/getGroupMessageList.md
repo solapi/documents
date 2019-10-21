@@ -77,8 +77,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-10-16T18:15:37.515Z",
-            "dateUpdated": "2019-10-16T18:15:37.515Z",
+            "dateCreated": "2019-10-21T18:32:56.888Z",
+            "dateUpdated": "2019-10-21T18:32:56.888Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -286,5 +286,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-16
+> 문서 생성일 : 2019-10-21
 
