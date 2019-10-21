@@ -42,8 +42,8 @@ http://api.solapi.com/pricing/v1/messaging
     "ata": 19,
     "cta": 13,
     "cti": 20,
-    "dateCreated": "2019-10-21T17:09:06.007Z",
-    "dateUpdated": "2019-10-21T17:09:06.007Z"
+    "dateCreated": "2019-10-21T17:32:44.470Z",
+    "dateUpdated": "2019-10-21T17:32:44.470Z"
 }
 ```
 

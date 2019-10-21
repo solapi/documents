@@ -39,8 +39,8 @@ http://api.solapi.com/pricing/v1/messaging/countries
         "ata": 19,
         "cta": 13,
         "cti": 20,
-        "dateCreated": "2019-10-21T17:09:06.343Z",
-        "dateUpdated": "2019-10-21T17:09:06.343Z"
+        "dateCreated": "2019-10-21T17:32:44.575Z",
+        "dateUpdated": "2019-10-21T17:32:44.575Z"
     },
     {
         "countryName": "Lithuania",
@@ -51,8 +51,8 @@ http://api.solapi.com/pricing/v1/messaging/countries
         "ata": 19,
         "cta": 13,
         "cti": 20,
-        "dateCreated": "2019-10-21T17:09:06.341Z",
-        "dateUpdated": "2019-10-21T17:09:06.341Z"
+        "dateCreated": "2019-10-21T17:32:44.573Z",
+        "dateUpdated": "2019-10-21T17:32:44.573Z"
     },
     {
         "countryName": "Turkmenistan",
@@ -63,8 +63,8 @@ http://api.solapi.com/pricing/v1/messaging/countries
         "ata": 19,
         "cta": 13,
         "cti": 20,
-        "dateCreated": "2019-10-21T17:09:06.339Z",
-        "dateUpdated": "2019-10-21T17:09:06.339Z"
+        "dateCreated": "2019-10-21T17:32:44.572Z",
+        "dateUpdated": "2019-10-21T17:32:44.572Z"
     },
     {
         "countryName": "Sao Tome and Principe",
@@ -75,8 +75,8 @@ http://api.solapi.com/pricing/v1/messaging/countries
         "ata": 19,
         "cta": 13,
         "cti": 20,
-        "dateCreated": "2019-10-21T17:09:06.337Z",
-        "dateUpdated": "2019-10-21T17:09:06.337Z"
+        "dateCreated": "2019-10-21T17:32:44.570Z",
+        "dateUpdated": "2019-10-21T17:32:44.570Z"
     },
     {
         "countryName": "East Timor",
@@ -87,8 +87,8 @@ http://api.solapi.com/pricing/v1/messaging/countries
         "ata": 19,
         "cta": 13,
         "cti": 20,
-        "dateCreated": "2019-10-21T17:09:06.331Z",
-        "dateUpdated": "2019-10-21T17:09:06.331Z"
+        "dateCreated": "2019-10-21T17:32:44.567Z",
+        "dateUpdated": "2019-10-21T17:32:44.567Z"
     }
 ]
 ```
