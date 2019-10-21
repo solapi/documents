@@ -136,6 +136,7 @@
     * [앱 정보/목록 조회](api-reference/appstore/me/getapps.md)
     * [앱 정보 업데이트](api-reference/appstore/me/updateapp.md)
     * [스테이지 LIVE로 변경](api-reference/appstore/me/updatestage.md)
+* [스토리지](api-reference/storage/README.md)
 * [Message Status Codes](api-reference/message-status-codes.md)
 * [Terminology](api-reference/terminology.md)
 * [quota](api-reference/quota/README.md)
