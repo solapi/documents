@@ -1,38 +1,38 @@
 # 잔액 소진 알림 on/off 설정
 
 ## Request
-
-```text
+```
 PUT https://api.solapi.com/cash/v1/balance/alert/switch
 ```
 
 잔액 소진 알림 on/off 설정을 합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
-|  | O |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "enabled": "boolean"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | enabled | `boolean` | O | 잔액 소진 알림 여부 |
+
+
+---
 
 ## Samples
 
@@ -40,7 +40,7 @@ PUT https://api.solapi.com/cash/v1/balance/alert/switch
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "enabled": false
 }
@@ -48,7 +48,7 @@ PUT https://api.solapi.com/cash/v1/balance/alert/switch
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "accountId": "19041920726336",
     "enabled": false
@@ -58,7 +58,9 @@ PUT https://api.solapi.com/cash/v1/balance/alert/switch
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -80,10 +82,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -101,10 +105,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/balance/alert/switch";
@@ -122,10 +128,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -139,21 +147,24 @@ data = '{"enabled":false}'
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"enabled":false}' \
-    http://api.solapi.com/cash/v1/balance/alert/switch
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"enabled":false}' \
+	http://api.solapi.com/cash/v1/balance/alert/switch
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -175,10 +186,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -208,10 +221,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -253,9 +268,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

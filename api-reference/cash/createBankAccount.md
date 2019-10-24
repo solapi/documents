@@ -1,70 +1,78 @@
-# 잔액 소진 알림 설정
+# 은행 계좌 등록
 
 ## Request
-
-```text
-PUT https://api.solapi.com/cash/v1/balance/alert
+```
+POST https://api.solapi.com/cash/v1/bank/accounts
 ```
 
-잔액 소진 알림을 설정합니다.
+수익금 및 잔액을 출금 받기 위한 계좌를 등록 합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
-|  | O |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "balances": "array",
-    "channels": "array"
+    "accountNumber": "number",
+    "authenticationCode": "string",
+    "bankCode": "string",
+    "holderName": "string",
+    "transactionId": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| balances | `array` | O | 잔액 소진 알림 기준 금액 |
-| channels | `array` | O | 잔액 소진 알림 받을 채널 |
+| :--- | :--: | :------: | :---------- |
+| accountNumber | `number` |  | 계좌번호 |
+| authenticationCode | `string` |  | 인증번호 |
+| bankCode | `string` |  | 은행코드 |
+| holderName | `string` |  | 예금주 |
+| transactionId | `string` |  | 트렌잭션 ID |
+
+
+---
 
 ## Samples
 
-### 잔액 소진 알림 설정
+### 성공하는 경우
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "balances": [
-        200
-    ],
-    "channels": [
-        "SMS"
-    ]
+    "accountNumber": "0235235235235235",
+    "bankCode": "01",
+    "holderName": "예금주"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "message": "성공적으로 등록되었습니다."
+    "accountNumber": "0235235235235235",
+    "bankCode": "01",
+    "holderName": "예금주",
+    "success": true
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -75,22 +83,25 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    balances: [200],
-    channels: ['SMS']
+    accountNumber: '0235235235235235',
+    bankCode: '01',
+    holderName: '예금주'
   },
-  method: 'PUT',
+  method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/balance/alert'
+  url: 'http://api.solapi.com/cash/v1/bank/accounts'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -99,30 +110,33 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    balances: [200],
-    channels: ['SMS']
+    accountNumber: '0235235235235235',
+    bankCode: '01',
+    holderName: '예금주'
   },
-  method: 'PUT',
-  url: 'http://api.solapi.com/cash/v1/balance/alert'
+  method: 'POST',
+  url: 'http://api.solapi.com/cash/v1/bank/accounts'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/balance/alert";
-$data = '{"balances":[200],"channels":["SMS"]}';
+$url = "http://api.solapi.com/cash/v1/bank/accounts";
+$data = '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}';
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'PUT'
+        'method'  => 'POST'
     )
 );
 
@@ -130,68 +144,72 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/balance/alert"
+url = "http://api.solapi.com/cash/v1/bank/accounts"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"balances":[200],"channels":["SMS"]}'
+data = '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}'
 
-response = requests.put(url, headers=headers, data=data)
+response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"balances":[200],"channels":["SMS"]}' \
-    http://api.solapi.com/cash/v1/balance/alert
+curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}' \
+	http://api.solapi.com/cash/v1/bank/accounts
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/balance/alert")
+uri = URI.parse("http://api.solapi.com/cash/v1/bank/accounts")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "balances": [
-    200
-  ],
-  "channels": [
-    "SMS"
-  ]
+  "accountNumber": "0235235235235235",
+  "bankCode": "01",
+  "holderName": "예금주"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Put.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -203,10 +221,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/balance/alert"
-  data := strings.NewReader(`{"balances":[200],"channels":["SMS"]}`)
+  uri := "http://api.solapi.com/cash/v1/bank/accounts"
+  data := strings.NewReader(`{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}`)
 
-  req, err := http.NewRequest("PUT", uri, data)
+  req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -221,10 +239,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -236,13 +256,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/balance/alert";
-    String parameters = "{\"balances\":[200],\"channels\":[\"SMS\"]}";
+    String targetUrl = "http://api.solapi.com/cash/v1/bank/accounts";
+    String parameters = "{\"accountNumber\":\"0235235235235235\",\"bankCode\":\"01\",\"holderName\":\"예금주\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("PUT");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
@@ -266,9 +286,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

@@ -1,45 +1,58 @@
-# 거래명세서 발급
+# 결제수단 목록 조회
 
 ## Request
-
-```text
-GET https://api.solapi.com/cash/v1/receipt
+```
+GET https://api.solapi.com/cash/v1/payment
 ```
 
-거래명세서를 발급 받습니다.
+결제수단 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
 
 ### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
+| accountId | `string` |  | eq | 계정 고유 아이디 |
+| offset | `number` |  | eq | 검색 시작 지점 |
+| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| historyId | `string` | O | eq | 충전/차감 내역 ID |
+---
 
 ## Samples
 
-### 거래명세서 발행
+### 결제 수단 목록
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba
+```
+http://api.solapi.com/cash/v1/payment
 ```
 
 > **Sample Response**
 
-```javascript
-{}
+```json
+{
+    "payments": [
+        {
+            "autoRecharge": 0,
+            "expDate": "2019/01",
+            "_id": "5613937775918097001571944307977",
+            "description": "h"
+        }
+    ]
+}
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -50,18 +63,19 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba'
+  url: 'http://api.solapi.com/cash/v1/payment'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -69,20 +83,21 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url:
-    'http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba'
+  url: 'http://api.solapi.com/cash/v1/payment'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba";
+$url = "http://api.solapi.com/cash/v1/payment";
 
 $options = array(
     'http' => array(
@@ -95,14 +110,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba"
+url = "http://api.solapi.com/cash/v1/payment"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -110,25 +127,28 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/cash/v1/payment
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba")
+uri = URI.parse("http://api.solapi.com/cash/v1/payment")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -139,10 +159,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -154,7 +176,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba"
+  uri := "http://api.solapi.com/cash/v1/payment"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -170,10 +192,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -185,7 +209,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/receipt?historyId=5d8dcab8717fe87fbd2dedba";
+    String targetUrl = "http://api.solapi.com/cash/v1/payment";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -213,9 +237,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

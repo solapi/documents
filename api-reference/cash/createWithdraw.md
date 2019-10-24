@@ -1,38 +1,38 @@
 # 출금 신청
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/cash/v1/withdraw
 ```
 
 출금 신청을 합니다. 출금 신청한 금액에서 5%가 수수료로 차감됩니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
-|  | O |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "amount": "number"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | amount | `number` | O | 합계 금액 |
+
+
+---
 
 ## Samples
 
@@ -40,7 +40,7 @@ POST https://api.solapi.com/cash/v1/withdraw
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "amount": 20000
 }
@@ -48,7 +48,7 @@ POST https://api.solapi.com/cash/v1/withdraw
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "bankCode": "01204012401",
     "accountNumber": "Hua5DumOn92+xQtRyHUGnw==",
@@ -63,17 +63,19 @@ POST https://api.solapi.com/cash/v1/withdraw
     "amount": 18500,
     "fee": 1500,
     "totalAmount": 20000,
-    "withdrawId": "1569573560770116728545328452110",
-    "dateConfirmed": "2019-09-27T08:39:20.000Z",
-    "dateCreated": "2019-09-27T08:39:20.770Z",
-    "dateUpdated": "2019-09-27T08:39:20.770Z"
+    "withdrawId": "15719443102781035380038314378900",
+    "dateConfirmed": "2019-10-24T19:11:50.000Z",
+    "dateCreated": "2019-10-24T19:11:50.279Z",
+    "dateUpdated": "2019-10-24T19:11:50.279Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -95,10 +97,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -116,10 +120,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/withdraw";
@@ -137,10 +143,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -154,21 +162,24 @@ data = '{"amount":20000}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"amount":20000}' \
-    http://api.solapi.com/cash/v1/withdraw
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"amount":20000}' \
+	http://api.solapi.com/cash/v1/withdraw
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -190,10 +201,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -223,10 +236,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -268,15 +283,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
 ### amount 를 변경하는 경우
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "amount": 10000
 }
@@ -284,7 +303,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "bankCode": "01204012401",
     "accountNumber": "Hua5DumOn92+xQtRyHUGnw==",
@@ -299,17 +318,19 @@ public class Request {
     "amount": 9000,
     "fee": 1000,
     "totalAmount": 10000,
-    "withdrawId": "1569573560820194742913691982370",
-    "dateConfirmed": "2019-09-27T08:39:20.000Z",
-    "dateCreated": "2019-09-27T08:39:20.820Z",
-    "dateUpdated": "2019-09-27T08:39:20.820Z"
+    "withdrawId": "15719443103091083220920011102300",
+    "dateConfirmed": "2019-10-24T19:11:50.000Z",
+    "dateCreated": "2019-10-24T19:11:50.309Z",
+    "dateUpdated": "2019-10-24T19:11:50.309Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -331,10 +352,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -352,10 +375,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/cash/v1/withdraw";
@@ -373,10 +398,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -390,21 +417,24 @@ data = '{"amount":10000}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"amount":10000}' \
-    http://api.solapi.com/cash/v1/withdraw
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"amount":10000}' \
+	http://api.solapi.com/cash/v1/withdraw
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -426,10 +456,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -459,10 +491,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -504,9 +538,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

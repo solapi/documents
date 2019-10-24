@@ -1,71 +1,74 @@
-# 등록된 결제수단의 우선순위를 변경
+# 잔액 소진 알림 설정
 
 ## Request
-
-```text
-PUT https://api.solapi.com/cash/v1/payment
+```
+PUT https://api.solapi.com/cash/v1/balance/alert
 ```
 
-등록된 결제수단의 우선순위를 변경합니다.
+잔액 소진 알림을 설정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Request Structure
+### 2차 인증 필요
 
-```javascript
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
+
+### Request Structure
+```json
 {
-    "paymentIds": "array",
-    "minimumCash": "number",
-    "rechargeTo": "number"
+    "balances": "array",
+    "channels": "array"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| paymentIds | `array` | O | 결제 ID |
-| minimumCash | `number` | O | 충전 기준 금액 |
-| rechargeTo | `number` | O | 충전 목표 금액 |
+| :--- | :--: | :------: | :---------- |
+| balances | `array` | O | 잔액 소진 알림 기준 금액 |
+| channels | `array` | O | 잔액 소진 알림 받을 채널 |
+
+
+
+
+---
 
 ## Samples
 
-### setAutoRecharge.spec.spec.js
+### 잔액 소진 알림 설정
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "paymentIds": [
-        "1541207011958198401569573553794",
-        "1545576500687398701569573553794"
+    "balances": [
+        200
     ],
-    "minimumCash": 1000,
-    "rechargeTo": 100000
+    "channels": [
+        "SMS"
+    ]
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "paymentIds": [
-        "1541207011958198401569573553794",
-        "1545576500687398701569573553794"
-    ],
-    "minimumCash": 1000,
-    "rechargeTo": 100000
+    "message": "성공적으로 등록되었습니다."
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -76,23 +79,24 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '154120701195819840156957355...',
-    minimumCash: 1000,
-    rechargeTo: 100000
+    balances: [200],
+    channels: ['SMS']
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/payment'
+  url: 'http://api.solapi.com/cash/v1/balance/alert'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -101,25 +105,26 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    paymentIds: '154120701195819840156957355...',
-    minimumCash: 1000,
-    rechargeTo: 100000
+    balances: [200],
+    channels: ['SMS']
   },
   method: 'PUT',
-  url: 'http://api.solapi.com/cash/v1/payment'
+  url: 'http://api.solapi.com/cash/v1/balance/alert'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/payment";
-$data = '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}';
+$url = "http://api.solapi.com/cash/v1/balance/alert";
+$data = '{"balances":[200],"channels":["SMS"]}';
 
 $options = array(
     'http' => array(
@@ -133,53 +138,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/payment"
+url = "http://api.solapi.com/cash/v1/balance/alert"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}'
+data = '{"balances":[200],"channels":["SMS"]}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}' \
-    http://api.solapi.com/cash/v1/payment
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"balances":[200],"channels":["SMS"]}' \
+	http://api.solapi.com/cash/v1/balance/alert
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/payment")
+uri = URI.parse("http://api.solapi.com/cash/v1/balance/alert")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "paymentIds": "154120701195819840156957355...",
-  "minimumCash": 1000,
-  "rechargeTo": 100000
+  "balances": [
+    200
+  ],
+  "channels": [
+    "SMS"
+  ]
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Put.new(uri.request_uri, headers)
@@ -188,10 +201,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -203,8 +218,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/payment"
-  data := strings.NewReader(`{"paymentIds":"154120701195819840156957355...","minimumCash":1000,"rechargeTo":100000}`)
+  uri := "http://api.solapi.com/cash/v1/balance/alert"
+  data := strings.NewReader(`{"balances":[200],"channels":["SMS"]}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -221,10 +236,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -236,8 +253,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/payment";
-    String parameters = "{\"paymentIds\":\"154120701195819840156957355...\",\"minimumCash\":1000,\"rechargeTo\":100000}";
+    String targetUrl = "http://api.solapi.com/cash/v1/balance/alert";
+    String parameters = "{\"balances\":[200],\"channels\":[\"SMS\"]}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -266,9 +283,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

@@ -77,7 +77,7 @@ POST https://api.solapi.com/cash/v1/company
 
 ```json
 {
-    "companyId": "14882312825983488001569573559644"
+    "companyId": "893706662815990201571944309677"
 }
 ```
 
@@ -338,5 +338,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-09-27
+> 문서 생성일 : 2019-10-24
 

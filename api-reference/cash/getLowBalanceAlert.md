@@ -1,32 +1,33 @@
-# 잔액조회
+# 알림 설정 조회
 
 ## Request
-
-```text
-GET https://api.solapi.com/cash/v1/balance
+```
+GET https://api.solapi.com/cash/v1/balance/alert
 ```
 
-남은 잔액을 조회합니다.
+잔액 소진 알림 설정 정보를 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:read` | `role-cash:read` |  |  |  |
+
+---
 
 ## Samples
 
-### getBalance.spec.js
+### 잔액 소진 알림 설정 가져오기
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/cash/v1/balance
+```
+http://api.solapi.com/cash/v1/balance/alert
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "lowBalanceAlert": {
         "notificationBalance": "0",
@@ -39,19 +40,18 @@ http://api.solapi.com/cash/v1/balance
         ],
         "enabled": true
     },
-    "point": 0,
-    "minimumCash": 0,
-    "rechargeTo": 0,
-    "autoRecharge": 0,
-    "accountId": "13628535",
-    "balance": 0
+    "_id": "19041920726336",
+    "dateCreated": "2019-10-24T19:11:49.437Z",
+    "dateUpdated": "2019-10-24T19:11:49.437Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -62,17 +62,19 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/balance'
+  url: 'http://api.solapi.com/cash/v1/balance/alert'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -80,19 +82,21 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/cash/v1/balance'
+  url: 'http://api.solapi.com/cash/v1/balance/alert'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/balance";
+$url = "http://api.solapi.com/cash/v1/balance/alert";
 
 $options = array(
     'http' => array(
@@ -105,14 +109,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/balance"
+url = "http://api.solapi.com/cash/v1/balance/alert"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -120,25 +126,28 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/cash/v1/balance
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/cash/v1/balance/alert
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/balance")
+uri = URI.parse("http://api.solapi.com/cash/v1/balance/alert")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -149,10 +158,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -164,7 +175,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/balance"
+  uri := "http://api.solapi.com/cash/v1/balance/alert"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -180,10 +191,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -195,7 +208,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/balance";
+    String targetUrl = "http://api.solapi.com/cash/v1/balance/alert";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -223,9 +236,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

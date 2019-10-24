@@ -1,56 +1,50 @@
-# 결제수단 목록 조회
+# 자동 충전 on/off
 
 ## Request
-
-```text
-GET https://api.solapi.com/cash/v1/payment
+```
+PUT https://api.solapi.com/cash/v1/recharge
 ```
 
-결제수단 목록을 조회합니다.
+자동 충전을 on/off 합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `cash:read` | `role-cash:read` |  |  |  |
+| :- | :- | :- | :- | :-: |
+| `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Query Params
+### 2차 인증 필요
 
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| accountId | `string` |  | eq | 계정 고유 아이디 |
-| offset | `number` |  | eq | 검색 시작 지점 |
-| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
+
+---
 
 ## Samples
 
-### 결제 수단 목록
+### toggleAutoRecharge.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/cash/v1/payment
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "payments": [
-        {
-            "autoRecharge": 0,
-            "expDate": "2019/01",
-            "_id": "13647396373657265001569573553565",
-            "description": "h"
-        }
-    ]
+    "autoRecharge": false
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -59,44 +53,48 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/payment'
+  url: 'http://api.solapi.com/cash/v1/recharge'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
-  url: 'http://api.solapi.com/cash/v1/payment'
+  method: 'PUT',
+  url: 'http://api.solapi.com/cash/v1/recharge'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/payment";
+$url = "http://api.solapi.com/cash/v1/recharge";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'method'  => 'PUT'
     )
 );
 
@@ -104,54 +102,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/payment"
+url = "http://api.solapi.com/cash/v1/recharge"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.put(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/cash/v1/payment
+curl -X PUT \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/cash/v1/recharge
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/payment")
+uri = URI.parse("http://api.solapi.com/cash/v1/recharge")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -163,9 +168,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/payment"
+  uri := "http://api.solapi.com/cash/v1/recharge"
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -179,10 +184,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -194,12 +201,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/payment";
+    String targetUrl = "http://api.solapi.com/cash/v1/recharge";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -222,9 +229,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 

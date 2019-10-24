@@ -1,76 +1,76 @@
-# 은행 계좌 등록
+# 사용자 충전
 
 ## Request
-
-```text
-POST https://api.solapi.com/cash/v1/bank/accounts
+```
+POST https://api.solapi.com/cash/v1/balance
 ```
 
-수익금 및 잔액을 출금 받기 위한 계좌를 등록 합니다.
+사용자가 결제를 해 충전을 합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `cash:write` | `role-cash:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
-|  | O |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "accountNumber": "number",
-    "authenticationCode": "string",
-    "bankCode": "string",
-    "holderName": "string",
-    "transactionId": "string"
+    "amount": "number",
+    "paymentId": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| accountNumber | `number` |  | 계좌번호 |
-| authenticationCode | `string` |  | 인증번호 |
-| bankCode | `string` |  | 은행코드 |
-| holderName | `string` |  | 예금주 |
-| transactionId | `string` |  | 트렌잭션 ID |
+| :--- | :--: | :------: | :---------- |
+| amount | `number` | O | 합계 금액 |
+| paymentId | `string` | O | 결제 ID |
+
+
+---
 
 ## Samples
 
-### 성공하는 경우
+### 일반 유저가 잔액을 충전하는 경우
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "accountNumber": "0235235235235235",
-    "bankCode": "01",
-    "holderName": "예금주"
+    "amount": 10000,
+    "paymentId": "4679830243122371001571944307917"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "accountNumber": "0235235235235235",
-    "bankCode": "01",
-    "holderName": "예금주",
-    "success": true
+    "accountId": "19041920726336",
+    "oldBalance": 10130,
+    "newBalance": 20130,
+    "oldPoint": 0,
+    "newPoint": 0,
+    "balanceAmount": 10000,
+    "pointAmount": 0,
+    "type": "RECHARGE",
+    "historyId": "5db1f773f1def52647e497a1"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -81,23 +81,24 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    accountNumber: '0235235235235235',
-    bankCode: '01',
-    holderName: '예금주'
+    amount: 10000,
+    paymentId: '467983024312237100157194430...'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/cash/v1/bank/accounts'
+  url: 'http://api.solapi.com/cash/v1/balance'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -106,25 +107,26 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    accountNumber: '0235235235235235',
-    bankCode: '01',
-    holderName: '예금주'
+    amount: 10000,
+    paymentId: '467983024312237100157194430...'
   },
   method: 'POST',
-  url: 'http://api.solapi.com/cash/v1/bank/accounts'
+  url: 'http://api.solapi.com/cash/v1/balance'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/cash/v1/bank/accounts";
-$data = '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}';
+$url = "http://api.solapi.com/cash/v1/balance";
+$data = '{"amount":10000,"paymentId":"467983024312237100157194430..."}';
 
 $options = array(
     'http' => array(
@@ -138,53 +140,57 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/cash/v1/bank/accounts"
+url = "http://api.solapi.com/cash/v1/balance"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}'
+data = '{"amount":10000,"paymentId":"467983024312237100157194430..."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}' \
-    http://api.solapi.com/cash/v1/bank/accounts
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"amount":10000,"paymentId":"467983024312237100157194430..."}' \
+	http://api.solapi.com/cash/v1/balance
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/cash/v1/bank/accounts")
+uri = URI.parse("http://api.solapi.com/cash/v1/balance")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "accountNumber": "0235235235235235",
-  "bankCode": "01",
-  "holderName": "예금주"
+  "amount": 10000,
+  "paymentId": "467983024312237100157194430..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -193,10 +199,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -208,8 +216,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/cash/v1/bank/accounts"
-  data := strings.NewReader(`{"accountNumber":"0235235235235235","bankCode":"01","holderName":"예금주"}`)
+  uri := "http://api.solapi.com/cash/v1/balance"
+  data := strings.NewReader(`{"amount":10000,"paymentId":"467983024312237100157194430..."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -226,10 +234,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -241,8 +251,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/cash/v1/bank/accounts";
-    String parameters = "{\"accountNumber\":\"0235235235235235\",\"bankCode\":\"01\",\"holderName\":\"예금주\"}";
+    String targetUrl = "http://api.solapi.com/cash/v1/balance";
+    String parameters = "{\"amount\":10000,\"paymentId\":\"467983024312237100157194430...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -271,9 +281,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-27
+---
+
+> 문서 생성일 : 2019-10-24
 
