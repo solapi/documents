@@ -63,7 +63,7 @@ POST https://api.solapi.com/cash/v1/payment
 {
     "description": "[VISA] est1 01/19",
     "expDate": "2019/01",
-    "paymentId": "5497698216192500001571944307969"
+    "paymentId": "4731372607893844001572284631920"
 }
 ```
 
@@ -297,5 +297,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-24
+> 문서 생성일 : 2019-10-28
 

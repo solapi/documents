@@ -40,7 +40,7 @@ http://api.solapi.com/cash/v1/payment
         {
             "autoRecharge": 0,
             "expDate": "2019/01",
-            "_id": "5613937775918097001571944307977",
+            "_id": "4855688201067874001572284631928",
             "description": "h"
         }
     ]
@@ -245,5 +245,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-24
+> 문서 생성일 : 2019-10-28
 

@@ -61,7 +61,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.796Z"
+        "dateUpdated": "2019-10-28T17:43:53.948Z"
     },
     {
         "taxType": "tax",
@@ -82,7 +82,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.796Z"
+        "dateUpdated": "2019-10-28T17:43:53.948Z"
     },
     {
         "taxType": "tax",
@@ -103,7 +103,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.797Z"
+        "dateUpdated": "2019-10-28T17:43:53.948Z"
     },
     {
         "taxType": "tax",
@@ -124,7 +124,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.948Z"
     },
     {
         "taxType": "tax",
@@ -145,7 +145,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-01-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.948Z"
     },
     {
         "taxType": "tax",
@@ -166,7 +166,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -187,7 +187,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -208,7 +208,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -229,7 +229,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.798Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -250,7 +250,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -271,7 +271,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -292,7 +292,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -313,7 +313,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -334,7 +334,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.949Z"
     },
     {
         "taxType": "tax",
@@ -355,7 +355,7 @@ http://api.solapi.com/cash/v1/taxinvoice
         "taxTotal": 1000,
         "totalAmount": 11000,
         "dateCreated": "2018-03-01T09:00:00.000Z",
-        "dateUpdated": "2019-10-24T19:11:49.799Z"
+        "dateUpdated": "2019-10-28T17:43:53.950Z"
     }
 ]
 ```
@@ -558,5 +558,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-24
+> 문서 생성일 : 2019-10-28
 
