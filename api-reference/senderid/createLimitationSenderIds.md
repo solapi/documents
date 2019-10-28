@@ -1,68 +1,104 @@
-# 문서 삭제
+# 발신번호 개수 증가 요청
 
 ## Request
-
-```text
-DELETE https://api.solapi.com/senderid/v1/documents
+```
+POST https://api.solapi.com/senderid/v1/papers/limitation
 ```
 
-발신번호 관련 문서를 삭제합니다.
+발신번호 개수를 더 사용할 수 있도록 관리자에게 요청합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `senderid:write` | `role-senderid:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "documents": "Array"
+    "documents": "Array",
+    "limit": "number"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | documents | `Array` | O | 문서 ID 목록 |
+| limit | `number` | O | 한 페이지에 불러옥 목록 개수 |
+
+
+
+---
 
 ## Samples
 
-### deleteDocuments.spec.js
+### createLimitationSenderIds.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "documents": [
         "DOC20181030105615MMXDST163SYMMX3"
-    ]
+    ],
+    "limit": 10
 }
 ```
 
 > **Sample Response**
 
-```javascript
-[
-    {
-        "use": false,
-        "documentId": "DOC20181030105615MMXDST163SYMMX3",
-        "accountId": "12925149",
-        "name": "EEWITTXvLZGCWyQ.png",
-        "url": "https://coolsms-files-test.s3.ap-northeast-2.amazonaws.com/senderId-approval/EEWITTXvLZGCWyQ.png",
-        "originalName": "EEWITTXvLZGCWyQ.png",
-        "category": "SENDERID_APPROVAL",
-        "dateCreated": "2019-09-26T06:21:54.247Z"
-    }
-]
+```json
+{
+    "limit": 2,
+    "accountId": "12925149",
+    "senderIds": [
+        {
+            "unlockDuplicate": {
+                "duplicateId": null,
+                "reason": null,
+                "reasonForRequested": null,
+                "name": null,
+                "status": null,
+                "dateCreated": null,
+                "dateUpdated": null
+            },
+            "status": "PENDING",
+            "expireAt": null,
+            "method": null,
+            "log": [],
+            "dateCreated": "2019-10-28T17:59:25.682Z",
+            "dateUpdated": "2019-10-28T17:59:25.682Z",
+            "approvalDocuments": [],
+            "handleKey": "SED20181030105615MMXDST163SYMMX2",
+            "phoneNumber": "01000000000"
+        }
+    ],
+    "limitationDocuments": [
+        {
+            "documents": [
+                "DOC20181030105615MMXDST163SYMMX3"
+            ],
+            "reason": null,
+            "status": "PENDING",
+            "dateCreated": "2019-10-28T17:59:25.701Z",
+            "dateUpdated": "2019-10-28T17:59:25.701Z",
+            "limitationId": "LID20191029025925R1LPZRRWTACLYPH",
+            "limitRequested": 10,
+            "limitBeforeRequest": 2
+        }
+    ],
+    "dateCreated": "2019-10-28T17:59:25.683Z",
+    "dateUpdated": "2019-10-28T17:59:25.701Z"
+}
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -73,21 +109,24 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    documents: 'DOC20181030105615MMXDST163S...'
+    documents: 'DOC20181030105615MMXDST163S...',
+    limit: 10
   },
-  method: 'DELETE',
+  method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/senderid/v1/documents'
+  url: 'http://api.solapi.com/senderid/v1/papers/limitation'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -96,29 +135,32 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    documents: 'DOC20181030105615MMXDST163S...'
+    documents: 'DOC20181030105615MMXDST163S...',
+    limit: 10
   },
-  method: 'DELETE',
-  url: 'http://api.solapi.com/senderid/v1/documents'
+  method: 'POST',
+  url: 'http://api.solapi.com/senderid/v1/papers/limitation'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/senderid/v1/documents";
-$data = '{"documents":"DOC20181030105615MMXDST163S..."}';
+$url = "http://api.solapi.com/senderid/v1/papers/limitation";
+$data = '{"documents":"DOC20181030105615MMXDST163S...","limit":10}';
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'DELETE'
+        'method'  => 'POST'
     )
 );
 
@@ -126,63 +168,71 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/senderid/v1/documents"
+url = "http://api.solapi.com/senderid/v1/papers/limitation"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"documents":"DOC20181030105615MMXDST163S..."}'
+data = '{"documents":"DOC20181030105615MMXDST163S...","limit":10}'
 
-response = requests.delete(url, headers=headers, data=data)
+response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"documents":"DOC20181030105615MMXDST163S..."}' \
-    http://api.solapi.com/senderid/v1/documents
+curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"documents":"DOC20181030105615MMXDST163S...","limit":10}' \
+	http://api.solapi.com/senderid/v1/papers/limitation
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/senderid/v1/documents")
+uri = URI.parse("http://api.solapi.com/senderid/v1/papers/limitation")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "documents": "DOC20181030105615MMXDST163S..."
+  "documents": "DOC20181030105615MMXDST163S...",
+  "limit": 10
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -194,10 +244,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/senderid/v1/documents"
-  data := strings.NewReader(`{"documents":"DOC20181030105615MMXDST163S..."}`)
+  uri := "http://api.solapi.com/senderid/v1/papers/limitation"
+  data := strings.NewReader(`{"documents":"DOC20181030105615MMXDST163S...","limit":10}`)
 
-  req, err := http.NewRequest("DELETE", uri, data)
+  req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -212,10 +262,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -227,13 +279,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/senderid/v1/documents";
-    String parameters = "{\"documents\":\"DOC20181030105615MMXDST163S...\"}";
+    String targetUrl = "http://api.solapi.com/senderid/v1/papers/limitation";
+    String parameters = "{\"documents\":\"DOC20181030105615MMXDST163S...\",\"limit\":10}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
@@ -257,9 +309,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-26
+---
+
+> 문서 생성일 : 2019-10-28
 

@@ -1,73 +1,45 @@
-# 발신번호 삭제
+# 활성화된 발신번호 목록 조회
 
 ## Request
-
-```text
-DELETE https://api.solapi.com/senderid/v1/numbers/:phoneNumber
+```
+GET https://api.solapi.com/senderid/v1/numbers/active
 ```
 
-'ACTIVE' 상태가 아닌 발신번호를 삭제합니다.
+사용할 수 있는 발신번호 목록을 가져옵니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `senderid:write` | `role-senderid:write` | `ACTIVE` | `ACTIVE` | O |
+| :- | :- | :- | :- | :-: |
+| `senderid:read` | `role-senderid:read` |  |  |  |
 
-### Path Parameters
-
-| Name | Description |
-| :---: | :---: |
-| :phoneNumber | 핸드폰 번호 |
+---
 
 ## Samples
 
-### deleteSenderId.spec.js
+### getActivatedSenderIds.spec.js
 
 > **Sample Request**
 
-```javascript
-{}
+```
+http://api.solapi.com/senderid/v1/numbers/active
 ```
 
 > **Sample Response**
 
-```javascript
-{
-    "limit": 2,
-    "accountId": "12925149",
-    "senderIds": [
-        {
-            "unlockDuplicate": {
-                "duplicateId": null,
-                "reason": null,
-                "reasonForRequested": null,
-                "name": null,
-                "status": null,
-                "dateCreated": null,
-                "dateUpdated": null
-            },
-            "status": "ACTIVE",
-            "expireAt": null,
-            "method": null,
-            "log": [],
-            "dateCreated": "2019-09-26T06:21:52.842Z",
-            "dateUpdated": "2019-09-26T06:21:52.842Z",
-            "approvalDocuments": [],
-            "handleKey": "SED20181030105615MMXDST163SYMMX3",
-            "phoneNumber": "01000000001"
-        }
-    ],
-    "limitationDocuments": [],
-    "dateCreated": "2019-09-26T06:21:52.843Z",
-    "dateUpdated": "2019-09-26T06:21:52.856Z"
-}
+```json
+[
+    "01000000001",
+    "01000000000"
+]
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -76,44 +48,48 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'DELETE',
+  method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/senderid/v1/numbers/01000000000'
+  url: 'http://api.solapi.com/senderid/v1/numbers/active'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'DELETE',
-  url: 'http://api.solapi.com/senderid/v1/numbers/01000000000'
+  method: 'GET',
+  url: 'http://api.solapi.com/senderid/v1/numbers/active'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/senderid/v1/numbers/01000000000";
+$url = "http://api.solapi.com/senderid/v1/numbers/active";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'DELETE'
+        'method'  => 'GET'
     )
 );
 
@@ -121,54 +97,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/senderid/v1/numbers/01000000000"
+url = "http://api.solapi.com/senderid/v1/numbers/active"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.delete(url, headers=headers)
+response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/senderid/v1/numbers/01000000000
+curl -X GET \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/senderid/v1/numbers/active
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/senderid/v1/numbers/01000000000")
+uri = URI.parse("http://api.solapi.com/senderid/v1/numbers/active")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -180,9 +163,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/senderid/v1/numbers/01000000000"
+  uri := "http://api.solapi.com/senderid/v1/numbers/active"
 
-  req, err := http.NewRequest("DELETE", uri, nil)
+  req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -196,10 +179,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -211,12 +196,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/senderid/v1/numbers/01000000000";
+    String targetUrl = "http://api.solapi.com/senderid/v1/numbers/active";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("GET");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -239,9 +224,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-26
+---
+
+> 문서 생성일 : 2019-10-28
 

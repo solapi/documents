@@ -1,23 +1,21 @@
 # 문서 목록 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/senderid/v1/documents
 ```
 
 문서 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `senderid:read` | `role-senderid:read` |  |  |  |
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | documentId | `string` |  | eq | 문서 ID |
 | startDate | `string` |  | eq | 검색 날짜 시작 범위 |
 | endDate | `string` |  | eq | 검색 날짜 끝 범위 |
@@ -26,19 +24,21 @@ GET https://api.solapi.com/senderid/v1/documents
 | category | `string` |  | eq | 문서 카테고리 |
 | use | `boolean` |  | eq | 문서 사용 여부 |
 
+---
+
 ## Samples
 
 ### getDocumentList.spec.js
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/senderid/v1/documents
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "data": [
         {
@@ -49,7 +49,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -59,7 +59,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -69,7 +69,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -79,7 +79,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -89,7 +89,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -99,7 +99,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.528Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -109,7 +109,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.527Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -119,7 +119,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.527Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -129,7 +129,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.527Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -139,7 +139,7 @@ http://api.solapi.com/senderid/v1/documents
             "url": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/ymotD9u4eYMr/thumbnails/LL8nsWzZEEX5e0B.png",
             "originalName": "image.jpg",
             "category": "SENDERID_APPROVAL",
-            "dateCreated": "2019-09-26T06:21:54.527Z"
+            "dateCreated": "2019-10-28T17:59:27.221Z"
         },
         {
             "use": false,
@@ -249,7 +249,9 @@ http://api.solapi.com/senderid/v1/documents
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -267,10 +269,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
@@ -284,10 +288,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/senderid/v1/documents";
@@ -303,10 +309,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -318,19 +326,22 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/senderid/v1/documents
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/senderid/v1/documents
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -347,10 +358,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -378,10 +391,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -421,9 +436,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-09-26
+---
+
+> 문서 생성일 : 2019-10-28
 
