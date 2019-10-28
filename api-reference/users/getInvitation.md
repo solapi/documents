@@ -32,25 +32,25 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-10-20T19:35:21.156Z",
-    "dateUpdated": "2019-10-20T19:35:21.156Z",
+    "dateCreated": "2019-10-28T18:10:54.578Z",
+    "dateUpdated": "2019-10-28T18:10:54.578Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19102116521620",
+        "accountId": "19102911454267",
         "name": "test님의 계정",
-        "dateCreated": "2019-10-20T19:35:21.151Z",
-        "dateUpdated": "2019-10-20T19:35:21.151Z"
+        "dateCreated": "2019-10-28T18:10:54.576Z",
+        "dateUpdated": "2019-10-28T18:10:54.576Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19102116521620",
-        "memberId": "MEMQHKLxJ1NSmv",
+        "selectedAccountId": "19102911454267",
+        "memberId": "MEMEowHYO2_tgo",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-10-20T19:35:21.146Z",
-        "dateUpdated": "2019-10-20T19:35:21.149Z"
+        "dateCreated": "2019-10-28T18:10:54.570Z",
+        "dateUpdated": "2019-10-28T18:10:54.572Z"
     }
 }
 ```
@@ -235,5 +235,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

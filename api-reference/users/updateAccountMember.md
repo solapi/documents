@@ -53,8 +53,8 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 
 ```json
 {
-    "dateCreated": "2019-10-20T19:34:58.514Z",
-    "dateUpdated": "2019-10-20T19:34:58.534Z",
+    "dateCreated": "2019-10-28T18:10:31.633Z",
+    "dateUpdated": "2019-10-28T18:10:31.657Z",
     "memberId": "18010100001001",
     "role": "MEMBER",
     "name": "Member"
@@ -282,5 +282,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

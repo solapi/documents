@@ -51,30 +51,30 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 {
     "account": {
         "status": "ACTIVE",
-        "accountId": "19102116498610",
+        "accountId": "19102911431010",
         "name": "test1님의 계정",
         "members": [
             {
-                "dateCreated": "2019-10-20T19:34:57.087Z",
-                "dateUpdated": "2019-10-20T19:34:57.087Z",
-                "memberId": "MEMHI-BkXT3prh",
+                "dateCreated": "2019-10-28T18:10:30.406Z",
+                "dateUpdated": "2019-10-28T18:10:30.406Z",
+                "memberId": "MEMGxoBaH28jwx",
                 "role": "OWNER",
                 "name": "test1"
             }
         ],
-        "dateCreated": "2019-10-20T19:34:58.787Z",
-        "dateUpdated": "2019-10-20T19:34:58.787Z"
+        "dateCreated": "2019-10-28T18:10:31.970Z",
+        "dateUpdated": "2019-10-28T18:10:31.970Z"
     },
     "member": {
         "name": "test1",
         "phoneNumber": null,
         "status": "UNVERIFIED",
-        "selectedAccountId": "19102116498610",
-        "memberId": "MEMHI-BkXT3prh",
+        "selectedAccountId": "19102911431010",
+        "memberId": "MEMGxoBaH28jwx",
         "email": "test1@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-10-20T19:34:58.774Z",
-        "dateUpdated": "2019-10-20T19:34:58.780Z"
+        "dateCreated": "2019-10-28T18:10:31.956Z",
+        "dateUpdated": "2019-10-28T18:10:31.963Z"
     }
 }
 ```
@@ -300,5 +300,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

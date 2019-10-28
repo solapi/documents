@@ -28,7 +28,7 @@ GET https://api.solapi.com/users/v1/accounts/:accountId
 > **Sample Request**
 
 ```
-http://api.solapi.com/users/v1/accounts/19102116499556
+http://api.solapi.com/users/v1/accounts/19102911432295
 ```
 
 > **Sample Response**
@@ -36,19 +36,19 @@ http://api.solapi.com/users/v1/accounts/19102116499556
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19102116499556",
+    "accountId": "19102911432295",
     "name": "steven님의 계정",
     "members": [
         {
-            "dateCreated": "2019-10-20T19:34:57.087Z",
-            "dateUpdated": "2019-10-20T19:34:57.087Z",
-            "memberId": "MEMO2Xb424Wjpi",
+            "dateCreated": "2019-10-28T18:10:30.406Z",
+            "dateUpdated": "2019-10-28T18:10:30.406Z",
+            "memberId": "MEMwKbcP7t5vPo",
             "role": "OWNER",
             "name": "steven"
         }
     ],
-    "dateCreated": "2019-10-20T19:34:59.463Z",
-    "dateUpdated": "2019-10-20T19:34:59.463Z"
+    "dateCreated": "2019-10-28T18:10:32.812Z",
+    "dateUpdated": "2019-10-28T18:10:32.812Z"
 }
 ```
 
@@ -68,7 +68,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19102116499556'
+  url: 'http://api.solapi.com/users/v1/accounts/19102911432295'
 };
 
 request(options, function(error, response, body) {
@@ -88,7 +88,7 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/users/v1/accounts/19102116499556'
+  url: 'http://api.solapi.com/users/v1/accounts/19102911432295'
 };
 
 $.ajax(options).done(function(response) {
@@ -102,7 +102,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19102116499556";
+$url = "http://api.solapi.com/users/v1/accounts/19102911432295";
 
 $options = array(
     'http' => array(
@@ -124,7 +124,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19102116499556"
+url = "http://api.solapi.com/users/v1/accounts/19102911432295"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -142,7 +142,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/users/v1/accounts/19102116499556
+	http://api.solapi.com/users/v1/accounts/19102911432295
 ```
 {% endtab %}
 
@@ -153,7 +153,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19102116499556")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/19102911432295")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -181,7 +181,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19102116499556"
+  uri := "http://api.solapi.com/users/v1/accounts/19102911432295"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -214,7 +214,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19102116499556";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/19102911432295";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -250,5 +250,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

@@ -54,11 +54,11 @@ PUT https://api.solapi.com/users/v1/member/email
     "phoneNumber": null,
     "status": "UNVERIFIED",
     "selectedAccountId": null,
-    "memberId": "MEMIe7CPGqntoU",
+    "memberId": "MEM3yoF3NX-I6G",
     "email": "newMail@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-10-20T19:35:21.274Z",
-    "dateUpdated": "2019-10-20T19:35:21.279Z"
+    "dateCreated": "2019-10-28T18:10:54.775Z",
+    "dateUpdated": "2019-10-28T18:10:54.782Z"
 }
 ```
 
@@ -283,5 +283,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

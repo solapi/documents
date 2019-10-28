@@ -19,5 +19,5 @@ GET https://api.solapi.com/users/v1/zendesk/login
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

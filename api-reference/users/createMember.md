@@ -48,26 +48,26 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19102116498349",
+    "accountId": "19102911432298",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-10-20T19:34:57.087Z",
-            "dateUpdated": "2019-10-20T19:34:57.087Z",
-            "memberId": "MEMk_-vpxhTwrF",
+            "dateCreated": "2019-10-28T18:10:30.406Z",
+            "dateUpdated": "2019-10-28T18:10:30.406Z",
+            "memberId": "MEMkw-_OdOaQ5B",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-10-20T19:34:57.087Z",
-            "dateUpdated": "2019-10-20T19:34:57.087Z",
-            "memberId": "MEMDsKsy2lyiMN",
+            "dateCreated": "2019-10-28T18:10:30.406Z",
+            "dateUpdated": "2019-10-28T18:10:30.406Z",
+            "memberId": "MEMyPFncORhOzj",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-10-20T19:34:59.002Z",
-    "dateUpdated": "2019-10-20T19:34:59.014Z"
+    "dateCreated": "2019-10-28T18:10:32.229Z",
+    "dateUpdated": "2019-10-28T18:10:32.245Z"
 }
 ```
 
@@ -286,5 +286,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

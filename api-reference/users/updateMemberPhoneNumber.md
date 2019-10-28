@@ -56,8 +56,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-10-20T19:35:08.976Z",
-    "dateUpdated": "2019-10-20T19:35:08.981Z",
+    "dateCreated": "2019-10-28T18:10:42.295Z",
+    "dateUpdated": "2019-10-28T18:10:42.302Z",
     "loginSessions": []
 }
 ```
@@ -283,5 +283,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 

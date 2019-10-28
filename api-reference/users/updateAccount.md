@@ -55,22 +55,22 @@ PUT https://api.solapi.com/users/v1/accounts/:accountId
     "name": "누리테스트2",
     "members": [
         {
-            "dateCreated": "2019-10-20T19:35:07.740Z",
-            "dateUpdated": "2019-10-20T19:35:07.740Z",
+            "dateCreated": "2019-10-28T18:10:41.653Z",
+            "dateUpdated": "2019-10-28T18:10:41.653Z",
             "memberId": "18010100001000",
             "role": "OWNER",
             "name": "toss 0"
         },
         {
-            "dateCreated": "2019-10-20T19:35:07.740Z",
-            "dateUpdated": "2019-10-20T19:35:07.740Z",
+            "dateCreated": "2019-10-28T18:10:41.653Z",
+            "dateUpdated": "2019-10-28T18:10:41.653Z",
             "memberId": "18010100001001",
             "role": "MEMBER",
             "name": "toss 1"
         }
     ],
-    "dateCreated": "2019-10-20T19:35:07.742Z",
-    "dateUpdated": "2019-10-20T19:35:07.756Z"
+    "dateCreated": "2019-10-28T18:10:41.654Z",
+    "dateUpdated": "2019-10-28T18:10:41.675Z"
 }
 ```
 
@@ -295,5 +295,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-20
+> 문서 생성일 : 2019-10-28
 
