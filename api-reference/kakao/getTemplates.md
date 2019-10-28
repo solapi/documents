@@ -45,99 +45,9 @@ http://api.solapi.com/kakao/v1/templates
     "templateList": [
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340416RvJYW0xGcR8",
-            "name": "A33",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.416Z",
-            "dateUpdated": "2019-10-21T21:13:40.416Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340416AWcZFUkkOWW",
-            "name": "A34",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.416Z",
-            "dateUpdated": "2019-10-21T21:13:40.416Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415xDIrdXeNnHv",
-            "name": "A19",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415vfHP8KyWNWA",
-            "name": "A28",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415vJSBaImv8OS",
-            "name": "A31",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415qCw2iTjeDav",
+            "templateId": "TP01ID191028182813587xfUjrXkfbMU",
             "name": "A32",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -147,105 +57,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.416Z",
-            "dateUpdated": "2019-10-21T21:13:40.416Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340415opwRLYf9doG",
-            "name": "A30",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415VwgGhQZeMgs",
-            "name": "A24",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415NqFPwcuwDAG",
-            "name": "A21",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415NG0BGrppOrh",
-            "name": "A25",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415LTEftyRNqrj",
-            "name": "A29",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191021221340415EgWQvgtFa2T",
+            "templateId": "TP01ID191028182813587uR0M4v1RrPH",
             "name": "A27",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -255,15 +75,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340415B2kgyjOPeg4",
-            "name": "A23",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "templateId": "TP01ID191028182813587tqy5Eph6N8o",
+            "name": "A31",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -273,15 +93,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID1910212213404156EabJ62Zecp",
-            "name": "A20",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "templateId": "TP01ID191028182813587fP6yNeeQ1WU",
+            "name": "A30",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -291,15 +111,69 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID1910212213404155U2iJBJtt1i",
+            "templateId": "TP01ID191028182813587deF82k21xaF",
+            "name": "A28",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813587cYAWD6xzmOo",
+            "name": "A29",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813587b9GYCDmTTwM",
+            "name": "A33",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813587NElX29jGOWo",
             "name": "A26",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -309,15 +183,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID1910212213404150RoDtK2Vc4f",
-            "name": "A22",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "templateId": "TP01ID191028182813587NDFtNGR9EsF",
+            "name": "A24",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -327,15 +201,51 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340414xgTB5UVcsEJ",
-            "name": "A3",
-            "pfId": "PF01ID1910212213400642OezJeSgsNc",
+            "templateId": "TP01ID1910281828135879H6wK3o6DWH",
+            "name": "A34",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID1910281828135876DlEdw3wknn",
+            "name": "A25",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586vpSdlCWLfDd",
+            "name": "A10",
+            "pfId": "PF01ID191028182813130cthc083cctP",
             "codes": [
                 {
                     "status": "INSPECTING",
@@ -345,15 +255,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-31T21:13:40.064Z",
-            "dateUpdated": "2019-10-31T21:13:40.064Z",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340414uWInUXM3c5k",
-            "name": "A7",
-            "pfId": "PF01ID1910212213400642OezJeSgsNc",
+            "templateId": "TP01ID191028182813586uPNhXgjmMzh",
+            "name": "A12",
+            "pfId": "PF01ID191028182813130cthc083cctP",
             "codes": [
                 {
                     "status": "INSPECTING",
@@ -363,15 +273,33 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-31T21:13:40.064Z",
-            "dateUpdated": "2019-10-31T21:13:40.064Z",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340414oqfEbhNEwgr",
+            "templateId": "TP01ID191028182813586s2Zb6uk3AA6",
+            "name": "A8",
+            "pfId": "PF01ID191028182813130cthc083cctP",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586nnrbf7JpioK",
             "name": "A18",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -381,15 +309,51 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.415Z",
-            "dateUpdated": "2019-10-21T21:13:40.415Z",
+            "dateCreated": "2019-10-28T18:28:13.586Z",
+            "dateUpdated": "2019-10-28T18:28:13.586Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191021221340414hNOT00HMjIv",
-            "name": "A17",
-            "pfId": "PF01ID191021221340064IWOVYQbaI7W",
+            "templateId": "TP01ID191028182813586mRI9lgUmglP",
+            "name": "A14",
+            "pfId": "PF01ID191028182813130cthc083cctP",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586jBTi86tI9U1",
+            "name": "A11",
+            "pfId": "PF01ID191028182813130cthc083cctP",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586idp6ZiIaMM6",
+            "name": "A23",
+            "pfId": "PF01ID191028182813130YdOFzi3Ar5U",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -399,13 +363,49 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-10-21T21:13:40.414Z",
-            "dateUpdated": "2019-10-21T21:13:40.414Z",
+            "dateCreated": "2019-10-28T18:28:13.587Z",
+            "dateUpdated": "2019-10-28T18:28:13.587Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586dVA8chUsooF",
+            "name": "A7",
+            "pfId": "PF01ID191028182813130cthc083cctP",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191028182813586WBv6idWHtwz",
+            "name": "A13",
+            "pfId": "PF01ID191028182813130cthc083cctP",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T18:28:13.130Z",
+            "dateUpdated": "2019-11-07T18:28:13.130Z",
             "buttons": []
         }
     ],
-    "startKey": "TP01ID191021221340416RvJYW0xGcR8",
-    "nextKey": "TP01ID191021221340414cfS4ErGoavw"
+    "startKey": "TP01ID191028182813587xfUjrXkfbMU",
+    "nextKey": "TP01ID191028182813586T2MhYuXXiSg"
 }
 ```
 
@@ -607,5 +607,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-21
+> 문서 생성일 : 2019-10-28
 
