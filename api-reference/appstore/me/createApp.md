@@ -1,40 +1,28 @@
 # 앱 생성
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/appstore/v2/me/apps
 ```
 
 자신의 앱을 생성합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `appstore:write` | `role-appstore:write` | `ACTIVE` |  | O |
+| :- | :- | :- | :- | :-: |
+| `appstore:write` | `role-appstore:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "appName": "string",
     "appVersion": "string",
     "thumbnail": "string",
-    "screenshots": [
-        "string"
-    ],
+    "screenshots": "array",
     "homepage": "string",
-    "profit": {
-        "sms": "number",
-        "lms": "number",
-        "mms": "number",
-        "ata": "number",
-        "cta": "number"
-    },
-    "categories": [
-        "string"
-    ],
+    "profit": "object",
+    "categories": "array",
     "intro": "string",
     "description": "string",
     "email": "email"
@@ -42,37 +30,41 @@ POST https://api.solapi.com/appstore/v2/me/apps
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | appName | `string` | O | 앱 이름 |
 | appVersion | `string` |  | 앱 버전 |
-| thumbnail | `string` |  | 미리보기 사진 \(썸네일\) |
+| thumbnail | `string` |  | 미리보기 사진 (썸네일) |
 | screenshots | `array` |  | 컨텐츠 이미지 |
-| homepage | `string` |  | 홈페이지 주소\(링크\) |
-| [profit](createapp.md#body-profit) | `object` |  | 수익 |
+| homepage | `string` |  | 홈페이지 주소(링크) |
+| [profit](#body-profit) | `object` |  | 수익 |
 | categories | `array` |  | 카테고리 |
 | intro | `string` |  | 앱 소개 |
 | description | `string` |  | 앱 설명 |
 | email | `email` |  | 이메일 |
 
-### Body / profit
+
+##### Body / profit
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | sms | `number` | O | 단문 메시지 |
 | lms | `number` | O | 장문 메시지 |
 | mms | `number` | O | 이미지 + 장문 메시지 |
 | ata | `number` | O | 알림톡 |
 | cta | `number` | O | 친구톡 |
 
+
+
+---
+
 ## Samples
 
-### \(성공\) appName 만 입력
+### (User) 앱 생성
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "appName": "App Name"
 }
@@ -80,7 +72,7 @@ POST https://api.solapi.com/appstore/v2/me/apps
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "clientSecret": "ZHEACK3CQSQD1KEQLIESNO4T2COFIWBW",
     "thumbnail": {
@@ -109,22 +101,25 @@ POST https://api.solapi.com/appstore/v2/me/apps
     "accountId": "12925149",
     "clientId": "CIDCRXFULDIG2YRZ",
     "appName": "App Name",
-    "appId": "vPZ9Wuth5rz4",
-    "dateCreated": "2019-07-26T07:14:45.604Z",
-    "dateUpdated": "2019-07-26T07:14:45.604Z"
+    "appId": "v5sHQi2IqGCX",
+    "dateCreated": "2019-10-28T18:35:42.119Z",
+    "dateUpdated": "2019-10-28T18:35:42.119Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -139,14 +134,17 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...',
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
@@ -159,10 +157,12 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/appstore/v2/me/apps";
@@ -170,7 +170,7 @@ $data = '{"appName":"App Name"}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n" . "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'POST'
     )
@@ -180,16 +180,18 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/appstore/v2/me/apps"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = '{"appName":"App Name"}'
@@ -197,21 +199,24 @@ data = '{"appName":"App Name"}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    -H 'Content-Type: application/json' \
-    -d '{"appName":"App Name"}' \
-    http://api.solapi.com/appstore/v2/me/apps
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"appName":"App Name"}' \
+	http://api.solapi.com/appstore/v2/me/apps
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -220,7 +225,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI...",
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
@@ -233,10 +238,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -254,7 +261,7 @@ func main() {
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -266,10 +273,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -289,7 +298,7 @@ public class Request {
 
     con.setRequestMethod("POST");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
@@ -311,7 +320,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
+
+> 문서 생성일 : 2019-10-28
 

@@ -1,57 +1,57 @@
 # 앱 정산내역 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/appstore/v2/profits
 ```
 
 자기가 만든 앱들의 정산내역을 조회할 수 있습니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `appstore:read` | `role-appstore:read` |  |  |  |
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/overview#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | startDate | `string` | O | eq | 검색 날짜 시작 범위 |
 | endDate | `string` | O | eq | 검색 날짜 끝 범위 |
 | appId | `string` |  | eq | 앱 아이디 |
 | offset | `number` |  | eq | 검색 시작 지점 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
+---
+
 ## Samples
 
-### \(성공\) 모든앱 조회
+### getProfitHistory.spec
 
 > **Sample Request**
 
-```text
-{}
+```
+http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "expectedProfit": 3,
     "completed": [
         {
             "accountId": "12925149",
             "appId": "ABCDE2345678",
-            "dateCreated": "2019-07-26T07:14:45.499Z",
-            "dateUpdated": "2019-07-26T07:14:45.499Z",
+            "dateCreated": "2019-10-28T18:35:42.012Z",
+            "dateUpdated": "2019-10-28T18:35:42.012Z",
             "appName": "2345678"
         },
         {
             "accountId": "12925149",
             "appId": "ABCDE1234567",
-            "dateCreated": "2019-07-26T07:14:45.498Z",
-            "dateUpdated": "2019-07-26T07:14:45.498Z",
+            "dateCreated": "2019-10-28T18:35:42.011Z",
+            "dateUpdated": "2019-10-28T18:35:42.011Z",
             "appName": "1234567"
         }
     ]
@@ -61,13 +61,16 @@ GET https://api.solapi.com/appstore/v2/profits
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   json: true,
@@ -79,14 +82,17 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
   headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
   url:
@@ -96,17 +102,19 @@ var options = {
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
         'method'  => 'GET'
     )
 );
@@ -115,34 +123,39 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
 url = "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -151,7 +164,7 @@ require 'json'
 uri = URI.parse("http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59")
 
 headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri, headers)
@@ -159,10 +172,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -179,7 +194,7 @@ func main() {
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -190,10 +205,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -212,7 +229,7 @@ public class Request {
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -233,7 +250,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
+
+> 문서 생성일 : 2019-10-28
 

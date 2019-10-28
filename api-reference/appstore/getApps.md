@@ -1,42 +1,37 @@
 # 앱 정보/목록 조회
 
 ## Request
-
-```text
-GET https://api.solapi.com/appstore/v2/me/apps
+```
+GET https://api.solapi.com/appstore/v2/apps
 ```
 
-내가 등록한 앱의 정보/목록을 조회 할 수 있습니다.
-
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview)
-
-| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `appstore:read` | `role-appstore:read` |  |  |  |
+로그인 하지 않은 사용자도 앱 정보/목록을 조회 할 수 있습니다.
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/overview#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
+| offset | `number` |  | eq | 검색 시작 지점 |
+| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| accountId | `string` |  | eq | 계정 고유 아이디 |
 | appId | `string` |  | eq | 앱 아이디 |
 | appName | `string` |  | eq | 앱 이름 |
 | categories | `array` |  | eq | 카테고리 |
-| status | `string` |  | eq | 상태값 |
-| dateSort | `string` |  | eq | 날짜 정렬 |
+
+---
 
 ## Samples
 
-### \(성공\) 전체 목록 조회
+### (Public) 앱 정보 및 목록 조회
 
 > **Sample Request**
 
-```text
-{}
+```
+http://api.solapi.com/appstore/v2/apps
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 [
     {
         "thumbnail": {
@@ -77,9 +72,9 @@ GET https://api.solapi.com/appstore/v2/me/apps
         "appName": "Test App 0",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "L2s5cPqw04fG",
-        "dateCreated": "2019-07-26T07:14:47.178Z",
-        "dateUpdated": "2019-07-26T07:14:47.178Z",
+        "appId": "6Got74RD01Pj",
+        "dateCreated": "2019-10-28T18:35:43.695Z",
+        "dateUpdated": "2019-10-28T18:35:43.695Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -125,9 +120,9 @@ GET https://api.solapi.com/appstore/v2/me/apps
         "appName": "Test App 1",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "ytofW933Tbp3",
-        "dateCreated": "2019-07-26T07:14:47.181Z",
-        "dateUpdated": "2019-07-26T07:14:47.181Z",
+        "appId": "jH2X4zZW8aCa",
+        "dateCreated": "2019-10-28T18:35:43.699Z",
+        "dateUpdated": "2019-10-28T18:35:43.699Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -173,9 +168,9 @@ GET https://api.solapi.com/appstore/v2/me/apps
         "appName": "Test App 2",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "vGflrhkmIvix",
-        "dateCreated": "2019-07-26T07:14:47.183Z",
-        "dateUpdated": "2019-07-26T07:14:47.183Z",
+        "appId": "ZUm545l76Wti",
+        "dateCreated": "2019-10-28T18:35:43.702Z",
+        "dateUpdated": "2019-10-28T18:35:43.702Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -221,9 +216,9 @@ GET https://api.solapi.com/appstore/v2/me/apps
         "appName": "Test App 3",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "1EjzqPsfFZlu",
-        "dateCreated": "2019-07-26T07:14:47.186Z",
-        "dateUpdated": "2019-07-26T07:14:47.186Z",
+        "appId": "e7rSIe2iArsO",
+        "dateCreated": "2019-10-28T18:35:43.705Z",
+        "dateUpdated": "2019-10-28T18:35:43.705Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -269,9 +264,249 @@ GET https://api.solapi.com/appstore/v2/me/apps
         "appName": "Test App 4",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "H8ItSAQAO0T4",
-        "dateCreated": "2019-07-26T07:14:47.188Z",
-        "dateUpdated": "2019-07-26T07:14:47.188Z",
+        "appId": "yw3xEdWUAtML",
+        "dateCreated": "2019-10-28T18:35:43.708Z",
+        "dateUpdated": "2019-10-28T18:35:43.708Z",
+        "redirectUri": "http://get.ms.coolsms.co.kr",
+        "scope": [
+            "message:read",
+            "message:write"
+        ]
+    },
+    {
+        "thumbnail": {
+            "name": "2BTZ6HLmal6x1Ao.png",
+            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
+            "originalName": null
+        },
+        "profit": {
+            "sms": 1,
+            "lms": 1,
+            "mms": 1,
+            "ata": 1,
+            "cta": 1
+        },
+        "appVersion": "1.0.1",
+        "screenshots": [
+            {
+                "name": "57PKHgfBolSgvN7.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            },
+            {
+                "name": "RaAB8w6tlC0hYow.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            }
+        ],
+        "homepage": "http://developer.example.com",
+        "categories": [
+            "BUSINESS",
+            "ENTER"
+        ],
+        "intro": "Test App",
+        "description": "Description Of App",
+        "stage": "LIVE",
+        "status": "ACTIVE",
+        "reasonBlocked": null,
+        "email": "test@testemail.com",
+        "log": [],
+        "appName": "Test App 0",
+        "accountId": "487",
+        "clientId": "CIDNURIGOCOOLSMS",
+        "appId": "98UzG2FxgGm3",
+        "dateCreated": "2019-10-28T18:35:43.713Z",
+        "dateUpdated": "2019-10-28T18:35:43.713Z",
+        "redirectUri": "http://get.ms.coolsms.co.kr",
+        "scope": [
+            "message:read",
+            "message:write"
+        ]
+    },
+    {
+        "thumbnail": {
+            "name": "2BTZ6HLmal6x1Ao.png",
+            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
+            "originalName": null
+        },
+        "profit": {
+            "sms": 1,
+            "lms": 1,
+            "mms": 1,
+            "ata": 1,
+            "cta": 1
+        },
+        "appVersion": "1.0.1",
+        "screenshots": [
+            {
+                "name": "57PKHgfBolSgvN7.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            },
+            {
+                "name": "RaAB8w6tlC0hYow.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            }
+        ],
+        "homepage": "http://developer.example.com",
+        "categories": [
+            "BUSINESS",
+            "ENTER"
+        ],
+        "intro": "Test App",
+        "description": "Description Of App",
+        "stage": "LIVE",
+        "status": "ACTIVE",
+        "reasonBlocked": null,
+        "email": "test@testemail.com",
+        "log": [],
+        "appName": "Test App 1",
+        "accountId": "487",
+        "clientId": "CIDNURIGOCOOLSMS",
+        "appId": "mVsmsflx6ghQ",
+        "dateCreated": "2019-10-28T18:35:43.716Z",
+        "dateUpdated": "2019-10-28T18:35:43.716Z",
+        "redirectUri": "http://get.ms.coolsms.co.kr",
+        "scope": [
+            "message:read",
+            "message:write"
+        ]
+    },
+    {
+        "thumbnail": {
+            "name": "2BTZ6HLmal6x1Ao.png",
+            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
+            "originalName": null
+        },
+        "profit": {
+            "sms": 1,
+            "lms": 1,
+            "mms": 1,
+            "ata": 1,
+            "cta": 1
+        },
+        "appVersion": "1.0.1",
+        "screenshots": [
+            {
+                "name": "57PKHgfBolSgvN7.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            },
+            {
+                "name": "RaAB8w6tlC0hYow.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            }
+        ],
+        "homepage": "http://developer.example.com",
+        "categories": [
+            "BUSINESS",
+            "ENTER"
+        ],
+        "intro": "Test App",
+        "description": "Description Of App",
+        "stage": "LIVE",
+        "status": "ACTIVE",
+        "reasonBlocked": null,
+        "email": "test@testemail.com",
+        "log": [],
+        "appName": "Test App 2",
+        "accountId": "487",
+        "clientId": "CIDNURIGOCOOLSMS",
+        "appId": "6SmVwccYfBR9",
+        "dateCreated": "2019-10-28T18:35:43.719Z",
+        "dateUpdated": "2019-10-28T18:35:43.719Z",
+        "redirectUri": "http://get.ms.coolsms.co.kr",
+        "scope": [
+            "message:read",
+            "message:write"
+        ]
+    },
+    {
+        "thumbnail": {
+            "name": "2BTZ6HLmal6x1Ao.png",
+            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
+            "originalName": null
+        },
+        "profit": {
+            "sms": 1,
+            "lms": 1,
+            "mms": 1,
+            "ata": 1,
+            "cta": 1
+        },
+        "appVersion": "1.0.1",
+        "screenshots": [
+            {
+                "name": "57PKHgfBolSgvN7.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            },
+            {
+                "name": "RaAB8w6tlC0hYow.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            }
+        ],
+        "homepage": "http://developer.example.com",
+        "categories": [
+            "BUSINESS",
+            "ENTER"
+        ],
+        "intro": "Test App",
+        "description": "Description Of App",
+        "stage": "LIVE",
+        "status": "ACTIVE",
+        "reasonBlocked": null,
+        "email": "test@testemail.com",
+        "log": [],
+        "appName": "Test App 3",
+        "accountId": "487",
+        "clientId": "CIDNURIGOCOOLSMS",
+        "appId": "cUxwqYNkPQWu",
+        "dateCreated": "2019-10-28T18:35:43.722Z",
+        "dateUpdated": "2019-10-28T18:35:43.722Z",
+        "redirectUri": "http://get.ms.coolsms.co.kr",
+        "scope": [
+            "message:read",
+            "message:write"
+        ]
+    },
+    {
+        "thumbnail": {
+            "name": "2BTZ6HLmal6x1Ao.png",
+            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
+            "originalName": null
+        },
+        "profit": {
+            "sms": 1,
+            "lms": 1,
+            "mms": 1,
+            "ata": 1,
+            "cta": 1
+        },
+        "appVersion": "1.0.1",
+        "screenshots": [
+            {
+                "name": "57PKHgfBolSgvN7.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            },
+            {
+                "name": "RaAB8w6tlC0hYow.png",
+                "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            }
+        ],
+        "homepage": "http://developer.example.com",
+        "categories": [
+            "BUSINESS",
+            "ENTER"
+        ],
+        "intro": "Test App",
+        "description": "Description Of App",
+        "stage": "LIVE",
+        "status": "ACTIVE",
+        "reasonBlocked": null,
+        "email": "test@testemail.com",
+        "log": [],
+        "appName": "Test App 4",
+        "accountId": "487",
+        "clientId": "CIDNURIGOCOOLSMS",
+        "appId": "LcEjT8p6VuDD",
+        "dateCreated": "2019-10-28T18:35:43.730Z",
+        "dateUpdated": "2019-10-28T18:35:43.730Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -284,50 +519,50 @@ GET https://api.solapi.com/appstore/v2/me/apps
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
 var options = {
-  headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
-  },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/appstore/v2/me/apps'
+  url: 'http://api.solapi.com/appstore/v2/apps'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="JQUERY" %}
+
 ```javascript
 var options = {
-  headers: {
-    Authorization: 'Bearer eyJhbGciOiJI...'
-  },
   method: 'GET',
-  url: 'http://api.solapi.com/appstore/v2/me/apps'
+  url: 'http://api.solapi.com/appstore/v2/apps'
 };
 
 $.ajax(options).done(function(response) {
   console.log(response);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/me/apps";
+$url = "http://api.solapi.com/appstore/v2/apps";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Bearer eyJhbGciOiJI...\r\n",
+        'header'  => ,
         'method'  => 'GET'
     )
 );
@@ -336,54 +571,54 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/me/apps"
-headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
-}
+url = "http://api.solapi.com/appstore/v2/apps"
 
-response = requests.get(url, headers=headers)
+response = requests.get(url)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: Bearer eyJhbGciOiJI...' \
-    http://api.solapi.com/appstore/v2/me/apps
+	http://api.solapi.com/appstore/v2/apps
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps")
+uri = URI.parse("http://api.solapi.com/appstore/v2/apps")
 
-headers = {
-  "Authorization": "Bearer eyJhbGciOiJI..."
-}
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, )
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -395,12 +630,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/me/apps"
+  uri := "http://api.solapi.com/appstore/v2/apps"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
-
-  req.Header.Set("Authorization", "Bearer eyJhbGciOiJI...")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -411,10 +644,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -426,14 +661,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps";
+    String targetUrl = "http://api.solapi.com/appstore/v2/apps";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("GET");
 
-    con.setRequestProperty("Authorization", "Bearer eyJhbGciOiJI...");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -454,7 +688,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
+
+> 문서 생성일 : 2019-10-28
 
