@@ -42,8 +42,8 @@ http://api.solapi.com/pricing/v1/messaging
     "ata": 19,
     "cta": 13,
     "cti": 20,
-    "dateCreated": "2019-10-21T17:32:44.470Z",
-    "dateUpdated": "2019-10-21T17:32:44.470Z"
+    "dateCreated": "2019-10-28T18:03:40.659Z",
+    "dateUpdated": "2019-10-28T18:03:40.659Z"
 }
 ```
 
@@ -245,5 +245,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-21
+> 문서 생성일 : 2019-10-28
 
