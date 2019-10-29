@@ -93,7 +93,7 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2019-10-26T19:56:33.387Z",
+            "createAt": "2019-10-29T19:12:01.250Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -104,11 +104,11 @@ POST https://api.solapi.com/messages/v4/groups/
     "flagUpdated": false,
     "accountId": "12925149",
     "apiVersion": "4",
-    "groupId": "G4V20191027045633TNCHPBDBWVFQWUV",
+    "groupId": "G4V20191030041201LHAOD01W0KKU5Q6",
     "price": {},
-    "dateCreated": "2019-10-26T19:56:33.389Z",
-    "dateUpdated": "2019-10-26T19:56:33.389Z",
-    "_id": "G4V20191027045633TNCHPBDBWVFQWUV"
+    "dateCreated": "2019-10-29T19:12:01.258Z",
+    "dateUpdated": "2019-10-29T19:12:01.258Z",
+    "_id": "G4V20191030041201LHAOD01W0KKU5Q6"
 }
 ```
 
@@ -310,5 +310,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-26
+> 문서 생성일 : 2019-10-29
 

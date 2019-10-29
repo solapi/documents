@@ -48,9 +48,9 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-10-26T19:56:36.256Z",
+                    "_id": "2019-10-29T19:12:05.355Z",
                     "month": "2019/10",
-                    "date": "2019/10/27",
+                    "date": "2019/10/30",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -138,9 +138,9 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-10-26T19:56:36.256Z",
+            "_id": "2019-10-29T19:12:05.355Z",
             "month": "2019/10",
-            "date": "2019/10/27",
+            "date": "2019/10/30",
             "balance": 1,
             "point": 1,
             "statusCode": {
@@ -418,5 +418,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-26
+> 문서 생성일 : 2019-10-29
 
