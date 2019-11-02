@@ -43,19 +43,19 @@ POST https://api.solapi.com/users/v1/accounts
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19102911432134",
+    "accountId": "19110304435578",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-10-28T18:10:30.406Z",
-            "dateUpdated": "2019-10-28T18:10:30.406Z",
-            "memberId": "MEMAJGRQbG_aWG",
+            "dateCreated": "2019-11-02T16:13:53.634Z",
+            "dateUpdated": "2019-11-02T16:13:53.634Z",
+            "memberId": "MEMNBwY4uNpmx1",
             "role": "OWNER",
             "name": "test1"
         }
     ],
-    "dateCreated": "2019-10-28T18:10:32.197Z",
-    "dateUpdated": "2019-10-28T18:10:32.197Z"
+    "dateCreated": "2019-11-02T16:13:55.424Z",
+    "dateUpdated": "2019-11-02T16:13:55.424Z"
 }
 ```
 
@@ -257,5 +257,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-02
 

@@ -48,8 +48,8 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
         "invitationId": "WPmPyDzXjOleECwgK3ER6",
         "email": "test1@test.com",
         "role": "MEMBER",
-        "dateCreated": "2019-11-07T18:10:30.838Z",
-        "dateUpdated": "2019-11-07T18:10:30.838Z",
+        "dateCreated": "2019-11-12T16:13:54.495Z",
+        "dateUpdated": "2019-11-12T16:13:54.495Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -65,23 +65,23 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-10-28T18:10:42.211Z",
-            "dateUpdated": "2019-10-28T18:10:42.211Z"
+            "dateCreated": "2019-11-02T16:14:04.758Z",
+            "dateUpdated": "2019-11-02T16:14:04.758Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-10-28T18:10:42.186Z",
-            "dateUpdated": "2019-10-28T18:10:42.186Z"
+            "dateCreated": "2019-11-02T16:14:04.739Z",
+            "dateUpdated": "2019-11-02T16:14:04.739Z"
         }
     },
     {
         "invitationId": "A_k48AZnpzaTCSH45gVOO",
         "email": "test2@test.com",
         "role": "DEVELOPER",
-        "dateUpdated": "2019-10-28T18:10:42.173Z",
-        "dateCreated": "2019-10-28T18:10:42.173Z",
+        "dateUpdated": "2019-11-02T16:14:04.738Z",
+        "dateCreated": "2019-11-02T16:14:04.738Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
@@ -97,15 +97,15 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-10-28T18:10:42.211Z",
-            "dateUpdated": "2019-10-28T18:10:42.211Z"
+            "dateCreated": "2019-11-02T16:14:04.758Z",
+            "dateUpdated": "2019-11-02T16:14:04.758Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-10-28T18:10:42.186Z",
-            "dateUpdated": "2019-10-28T18:10:42.186Z"
+            "dateCreated": "2019-11-02T16:14:04.739Z",
+            "dateUpdated": "2019-11-02T16:14:04.739Z"
         }
     }
 ]
@@ -309,5 +309,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-02
 

@@ -58,25 +58,25 @@ POST https://api.solapi.com/users/v1/invitations
             "newMail@test.net"
         ],
         "rejected": [],
-        "envelopeTime": 885,
-        "messageTime": 656,
-        "messageSize": 474,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXbcvHU0IfiwO8VQQAAAf0.pA2MZuF7nR-lETnNGTjwQ]",
+        "envelopeTime": 863,
+        "messageTime": 626,
+        "messageSize": 451,
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXb2rR9dc9CwJspGQAAAgKPwISGt3O-rdnf32ExhgpK8]",
         "envelope": {
-            "from": "support@coolsms.zendesk.com",
+            "from": "support@solapi.zendesk.com",
             "to": [
                 "newMail@test.net"
             ]
         },
-        "messageId": "<6b6c2a98-5a48-cda3-fc09-5b7fc9036207@coolsms.zendesk.com>"
+        "messageId": "<dcd70fbc-f429-8e33-fa33-10c5026a7243@solapi.zendesk.com>"
     },
     "invitation": {
-        "accountId": "19102911432451",
+        "accountId": "19110304435444",
         "email": "newMail@test.net",
-        "dateCreated": "2019-10-28T18:10:37.331Z",
-        "dateUpdated": "2019-10-28T18:10:37.331Z",
-        "invitationId": "a2XxHic4IYHXQBFrOaumw",
-        "memberId": "MEMI_Ffla0kkzG",
+        "dateCreated": "2019-11-02T16:13:59.869Z",
+        "dateUpdated": "2019-11-02T16:13:59.869Z",
+        "invitationId": "X2Ok8nWcHJr7nJRYitCWV",
+        "memberId": "MEM8ujCHl-3Kkk",
         "role": "DEVELOPER"
     }
 }
@@ -306,5 +306,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-02
 

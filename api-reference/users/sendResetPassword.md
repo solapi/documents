@@ -43,17 +43,17 @@ POST https://api.solapi.com/users/v1/member/password/reset
             "i@nter.net"
         ],
         "rejected": [],
-        "envelopeTime": 882,
-        "messageTime": 658,
-        "messageSize": 924,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXbcvJtdc9CwJlfgyAAAf1THlCb20IagDhvPTL6JKU4M]",
+        "envelopeTime": 862,
+        "messageTime": 651,
+        "messageSize": 885,
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXb2rUAzb8CwPvAhKAAAgKni6r06rOu8lUwRWSexssOc]",
         "envelope": {
-            "from": "support@coolsms.zendesk.com",
+            "from": "support@solapi.zendesk.com",
             "to": [
                 "i@nter.net"
             ]
         },
-        "messageId": "<9b172912-9bca-430f-61b3-d937537d0694@coolsms.zendesk.com>"
+        "messageId": "<b36c65e0-177a-ec07-d05d-6c6380647625@solapi.zendesk.com>"
     }
 }
 ```
@@ -270,5 +270,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-02
 
