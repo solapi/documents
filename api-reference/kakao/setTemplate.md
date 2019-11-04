@@ -68,9 +68,9 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 {
     "daou": {
         "accountId": "12925149",
-        "templateId": "KA01TP1910281828131449AYrU3uAIsj",
+        "templateId": "KA01TP191104175359717DfxWtKebsX3",
         "name": "A0",
-        "pfId": "PF01ID191028182813144GJd49q7GqrG",
+        "pfId": "PF01ID1911041753597179Tl8IDZmn4q",
         "codes": [
             {
                 "status": "PENDING",
@@ -86,15 +86,15 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
             }
         ],
         "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2019-10-28T18:28:14.703Z",
-        "dateUpdated": "2019-10-28T18:28:14.716Z",
+        "dateCreated": "2019-11-04T17:54:01.047Z",
+        "dateUpdated": "2019-11-04T17:54:01.077Z",
         "buttons": []
     },
     "biz": {
         "accountId": "12925149",
-        "templateId": "KA01TP1910281828131449AYrU3uAIsj",
+        "templateId": "KA01TP191104175359717DfxWtKebsX3",
         "name": "A0",
-        "pfId": "PF01ID191028182813144GJd49q7GqrG",
+        "pfId": "PF01ID1911041753597179Tl8IDZmn4q",
         "codes": [
             {
                 "status": "PENDING",
@@ -110,8 +110,8 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
             }
         ],
         "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2019-10-28T18:28:14.703Z",
-        "dateUpdated": "2019-10-28T18:28:14.718Z",
+        "dateCreated": "2019-11-04T17:54:01.047Z",
+        "dateUpdated": "2019-11-04T17:54:01.081Z",
         "buttons": []
     }
 }
@@ -138,7 +138,7 @@ var options = {
   method: 'PUT',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3'
 };
 
 request(options, function(error, response, body) {
@@ -163,7 +163,7 @@ var options = {
   },
   method: 'PUT',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3'
 };
 
 $.ajax(options).done(function(response) {
@@ -177,7 +177,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3";
 $data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
@@ -201,7 +201,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -223,7 +223,7 @@ curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"content":"#{홍길동}님 회원가입을 환영 합니다."}' \
-	http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj
+	http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3
 ```
 {% endtab %}
 
@@ -234,7 +234,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -267,7 +267,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3"
   data := strings.NewReader(`{"content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("PUT", uri, data)
@@ -302,7 +302,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131449AYrU3uAIsj";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359717DfxWtKebsX3";
     String parameters = "{\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
@@ -340,5 +340,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-04
 

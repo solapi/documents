@@ -36,12 +36,12 @@ DELETE https://api.solapi.com/kakao/v1/templates/:templateId
 ```json
 {
     "accountId": "12925149",
-    "templateId": "KA01TP1910281828131217XZVhKelwBi",
+    "templateId": "KA01TP191104175359688bPmHhZG2YIp",
     "name": "A0",
-    "pfId": "PF01ID191028182813118OgwyLM08wzp",
+    "pfId": "PF01ID191104175359684ABkr2Loy46A",
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-10-28T18:28:13.414Z",
-    "dateUpdated": "2019-10-28T18:28:13.414Z",
+    "dateCreated": "2019-11-04T17:53:59.912Z",
+    "dateUpdated": "2019-11-04T17:53:59.912Z",
     "codes": [
         {
             "status": "PENDING",
@@ -78,7 +78,7 @@ var options = {
   method: 'DELETE',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp'
 };
 
 request(options, function(error, response, body) {
@@ -99,7 +99,7 @@ var options = {
   },
   method: 'DELETE',
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp'
 };
 
 $.ajax(options).done(function(response) {
@@ -113,7 +113,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp";
 
 $options = array(
     'http' => array(
@@ -135,7 +135,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -153,7 +153,7 @@ print(response.text)
 #!/bin/bash
 curl -X DELETE \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi
+	http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp
 ```
 {% endtab %}
 
@@ -164,7 +164,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -192,7 +192,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp"
 
   req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
@@ -225,7 +225,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP1910281828131217XZVhKelwBi";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191104175359688bPmHhZG2YIp";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -261,5 +261,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-04
 
