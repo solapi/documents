@@ -28,7 +28,7 @@ GET https://api.solapi.com/kakao/v1/templates/:templateId
 > **Sample Request**
 
 ```
-http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm
+http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP
 ```
 
 > **Sample Response**
@@ -36,9 +36,9 @@ http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm
 ```json
 {
     "accountId": "12925149",
-    "templateId": "TP01ID1911041753597006ZXbk9eciVm",
+    "templateId": "TP01ID191105201456587KXECUDlQlhP",
     "name": "A10",
-    "pfId": "PF01ID1911041753597002HuvI54LIZH",
+    "pfId": "PF01ID1911052014565878oPLzK2Jonf",
     "content": "testMessage",
     "codes": [
         {
@@ -48,8 +48,8 @@ http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm
             "service": "biz"
         }
     ],
-    "dateCreated": "2019-11-04T17:53:59.700Z",
-    "dateUpdated": "2019-11-04T17:53:59.700Z",
+    "dateCreated": "2019-11-05T20:14:56.587Z",
+    "dateUpdated": "2019-11-05T20:14:56.587Z",
     "buttons": []
 }
 ```
@@ -71,7 +71,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP'
 };
 
 request(options, function(error, response, body) {
@@ -92,7 +92,7 @@ var options = {
   },
   method: 'GET',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP'
 };
 
 $.ajax(options).done(function(response) {
@@ -106,7 +106,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP";
 
 $options = array(
     'http' => array(
@@ -128,7 +128,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -146,7 +146,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm
+	http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP
 ```
 {% endtab %}
 
@@ -157,7 +157,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -185,7 +185,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -218,7 +218,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID1911041753597006ZXbk9eciVm";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191105201456587KXECUDlQlhP";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -254,5 +254,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-04
+> 문서 생성일 : 2019-11-05
 
