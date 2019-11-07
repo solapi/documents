@@ -45,135 +45,9 @@ http://api.solapi.com/kakao/v1/templates
     "templateList": [
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191105201456972zDotpBNvFTN",
-            "name": "A27",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972wSZAB6rzLkj",
-            "name": "A26",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972sOd3Eh5lLqZ",
-            "name": "A32",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972kVhPlKOFjUK",
-            "name": "A33",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972QrDsCDux1aj",
-            "name": "A30",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972PpyC5IrEYSs",
-            "name": "A29",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972H1tdhNLPe8R",
-            "name": "A31",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456972E1wF9GL12Zi",
+            "templateId": "TP01ID191107223454604essnGe86Az1",
             "name": "A34",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -183,15 +57,105 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191105201456972BsPtKzyy1D5",
+            "templateId": "TP01ID191107223454604eC1swYP5qNz",
+            "name": "A29",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454604a42QHGcEpOY",
+            "name": "A31",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454604X3KguIYWjYf",
+            "name": "A30",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454604WlRSw0hfUiy",
+            "name": "A27",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454604VnCw3hniNSH",
+            "name": "A33",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454604RPiTiCSQyjr",
             "name": "A28",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -201,15 +165,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.972Z",
-            "dateUpdated": "2019-11-05T20:14:56.972Z",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191105201456971zz9nxRnzdvf",
-            "name": "A22",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
+            "templateId": "TP01ID191107223454604OF3FzBenIls",
+            "name": "A32",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
             "codes": [
                 {
                     "status": "APPROVED",
@@ -219,177 +183,15 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
+            "dateCreated": "2019-11-07T22:34:54.604Z",
+            "dateUpdated": "2019-11-07T22:34:54.604Z",
             "buttons": []
         },
         {
             "accountId": "12925149",
-            "templateId": "TP01ID191105201456971zPwW7Qa3JcK",
-            "name": "A25",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971xttFKRohWYI",
-            "name": "A15",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971xtEHUuKC0M2",
-            "name": "A9",
-            "pfId": "PF01ID191105201456590ZwF29fHmL71",
-            "codes": [
-                {
-                    "status": "INSPECTING",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-15T20:14:56.589Z",
-            "dateUpdated": "2019-11-15T20:14:56.589Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971x50N8ylcLrQ",
-            "name": "A16",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971x3REK0WRiDM",
-            "name": "A17",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971jTckmtvPu3T",
-            "name": "A11",
-            "pfId": "PF01ID191105201456590ZwF29fHmL71",
-            "codes": [
-                {
-                    "status": "INSPECTING",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-15T20:14:56.589Z",
-            "dateUpdated": "2019-11-15T20:14:56.589Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971gmlG7YhVIgu",
-            "name": "A23",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971bKHFkY7jjCh",
-            "name": "A24",
-            "pfId": "PF01ID191105201456590QCQs0N0N4Xy",
-            "codes": [
-                {
-                    "status": "APPROVED",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-05T20:14:56.971Z",
-            "dateUpdated": "2019-11-05T20:14:56.971Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971ZFf4P0nn4Ew",
-            "name": "A14",
-            "pfId": "PF01ID191105201456590ZwF29fHmL71",
-            "codes": [
-                {
-                    "status": "INSPECTING",
-                    "comments": [],
-                    "service": "biz",
-                    "code": "123123"
-                }
-            ],
-            "content": "testMessage",
-            "dateCreated": "2019-11-15T20:14:56.589Z",
-            "dateUpdated": "2019-11-15T20:14:56.589Z",
-            "buttons": []
-        },
-        {
-            "accountId": "12925149",
-            "templateId": "TP01ID191105201456971ZERXR7lNdBT",
+            "templateId": "TP01ID191107223454603xoWwBaWw1ad",
             "name": "A10",
-            "pfId": "PF01ID191105201456590ZwF29fHmL71",
+            "pfId": "PF01ID191107223454236zlxzX1wWrhF",
             "codes": [
                 {
                     "status": "INSPECTING",
@@ -399,13 +201,211 @@ http://api.solapi.com/kakao/v1/templates
                 }
             ],
             "content": "testMessage",
-            "dateCreated": "2019-11-15T20:14:56.589Z",
-            "dateUpdated": "2019-11-15T20:14:56.589Z",
+            "dateCreated": "2019-11-17T22:34:54.235Z",
+            "dateUpdated": "2019-11-17T22:34:54.235Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603vHGNAKE433Q",
+            "name": "A11",
+            "pfId": "PF01ID191107223454236zlxzX1wWrhF",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-17T22:34:54.235Z",
+            "dateUpdated": "2019-11-17T22:34:54.235Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603tusdfcmqyC0",
+            "name": "A22",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603reg1jgEXdsX",
+            "name": "A16",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603nb8z9gn5TwY",
+            "name": "A18",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603kPicN0rxqst",
+            "name": "A25",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603TTPtxR9KwB6",
+            "name": "A17",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603TE4xyJvgwJq",
+            "name": "A21",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603SpxJMltf8ad",
+            "name": "A13",
+            "pfId": "PF01ID191107223454236zlxzX1wWrhF",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-17T22:34:54.235Z",
+            "dateUpdated": "2019-11-17T22:34:54.235Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603QSDnVydtKWX",
+            "name": "A23",
+            "pfId": "PF01ID191107223454236eHcLghKnL5T",
+            "codes": [
+                {
+                    "status": "APPROVED",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-07T22:34:54.603Z",
+            "dateUpdated": "2019-11-07T22:34:54.603Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603QOzGrtFEdNK",
+            "name": "A14",
+            "pfId": "PF01ID191107223454236zlxzX1wWrhF",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-17T22:34:54.235Z",
+            "dateUpdated": "2019-11-17T22:34:54.235Z",
+            "buttons": []
+        },
+        {
+            "accountId": "12925149",
+            "templateId": "TP01ID191107223454603M7faXs9J0oY",
+            "name": "A12",
+            "pfId": "PF01ID191107223454236zlxzX1wWrhF",
+            "codes": [
+                {
+                    "status": "INSPECTING",
+                    "comments": [],
+                    "service": "biz",
+                    "code": "123123"
+                }
+            ],
+            "content": "testMessage",
+            "dateCreated": "2019-11-17T22:34:54.235Z",
+            "dateUpdated": "2019-11-17T22:34:54.235Z",
             "buttons": []
         }
     ],
-    "startKey": "TP01ID191105201456972zDotpBNvFTN",
-    "nextKey": "TP01ID191105201456971RduQofGl4c7"
+    "startKey": "TP01ID191107223454604essnGe86Az1",
+    "nextKey": "TP01ID191107223454603GaWfEnmytW5"
 }
 ```
 
@@ -607,5 +607,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-05
+> 문서 생성일 : 2019-11-07
 

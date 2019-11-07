@@ -60,7 +60,7 @@ POST https://api.solapi.com/kakao/v1/templates/:service
 
 ```json
 {
-    "pfId": "PF01ID191105201456599GiZM5ByaZqx",
+    "pfId": "PF01ID191107223454249H7HVLnrSo0I",
     "name": "회원가입",
     "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
@@ -71,7 +71,7 @@ POST https://api.solapi.com/kakao/v1/templates/:service
 ```json
 {
     "name": "회원가입",
-    "pfId": "PF01ID191105201456599GiZM5ByaZqx",
+    "pfId": "PF01ID191107223454249H7HVLnrSo0I",
     "accountId": "12925149",
     "buttons": [],
     "codes": [
@@ -82,9 +82,9 @@ POST https://api.solapi.com/kakao/v1/templates/:service
         }
     ],
     "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2019-11-05T20:14:57.441Z",
-    "dateUpdated": "2019-11-05T20:14:57.441Z",
-    "templateId": "KA01TP191105201457442ZI96va1rh3j"
+    "dateCreated": "2019-11-07T22:34:55.153Z",
+    "dateUpdated": "2019-11-07T22:34:55.153Z",
+    "templateId": "KA01TP191107223455154YNwKPRWDRke"
 }
 ```
 
@@ -104,7 +104,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID191105201456599GiZM5B...',
+    pfId: 'PF01ID191107223454249H7HVLn...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
@@ -131,7 +131,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    pfId: 'PF01ID191105201456599GiZM5B...',
+    pfId: 'PF01ID191107223454249H7HVLn...',
     name: '회원가입',
     content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
@@ -151,7 +151,7 @@ $.ajax(options).done(function(response) {
 ```php
 <?php
 $url = "http://api.solapi.com/kakao/v1/templates/daou";
-$data = '{"pfId":"PF01ID191105201456599GiZM5B...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
+$data = '{"pfId":"PF01ID191107223454249H7HVLn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
     'http' => array(
@@ -179,7 +179,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"pfId":"PF01ID191105201456599GiZM5B...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
+data = '{"pfId":"PF01ID191107223454249H7HVLn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -195,7 +195,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"pfId":"PF01ID191105201456599GiZM5B...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	-d '{"pfId":"PF01ID191107223454249H7HVLn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
 	http://api.solapi.com/kakao/v1/templates/daou
 ```
 {% endtab %}
@@ -214,7 +214,7 @@ headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "pfId": "PF01ID191105201456599GiZM5B...",
+  "pfId": "PF01ID191107223454249H7HVLn...",
   "name": "회원가입",
   "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
@@ -243,7 +243,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/kakao/v1/templates/daou"
-  data := strings.NewReader(`{"pfId":"PF01ID191105201456599GiZM5B...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
+  data := strings.NewReader(`{"pfId":"PF01ID191107223454249H7HVLn...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -278,7 +278,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/kakao/v1/templates/daou";
-    String parameters = "{\"pfId\":\"PF01ID191105201456599GiZM5B...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
+    String parameters = "{\"pfId\":\"PF01ID191107223454249H7HVLn...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -315,5 +315,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-05
+> 문서 생성일 : 2019-11-07
 
