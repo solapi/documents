@@ -48,9 +48,9 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2019-11-13T00:40:49.711Z",
+                    "_id": "2019-11-13T22:48:58.066Z",
                     "month": "2019/11",
-                    "date": "2019/11/13",
+                    "date": "2019/11/14",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -138,9 +138,9 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2019-11-13T00:40:49.711Z",
+            "_id": "2019-11-13T22:48:58.066Z",
             "month": "2019/11",
-            "date": "2019/11/13",
+            "date": "2019/11/14",
             "balance": 1,
             "point": 1,
             "statusCode": {

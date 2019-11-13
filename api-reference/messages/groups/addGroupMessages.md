@@ -153,7 +153,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094046KWDWE5JFXMFYACT",
+            "messageId": "M4V20191114074855CS3QDJZQEA1JZL4",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -435,7 +435,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094046EBBPHBHX6L4MBX5",
+            "messageId": "M4V20191114074855JRROVLPCUKLPYOA",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -721,7 +721,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047ZBHTYEL45PX0BLJ",
+            "messageId": "M4V20191114074855LJKVRIDOBROBL7V",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1037,7 +1037,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047H5WVH3QKVSOLPMC",
+            "messageId": "M4V20191114074855GXEVJQRMCJUTMG8",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1410,7 +1410,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047QLG2DFXDYJY2CUO",
+            "messageId": "M4V20191114074855EG3LEOSIEGHBGAM",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1708,7 +1708,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047PAGE3IUY4AS1CO8",
+            "messageId": "M4V20191114074855RAU3LKLL6TEMAZM",
             "statusCode": "2000",
             "accountId": "12925149",
             "customFields": {
@@ -2018,7 +2018,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047O5VW5VNAHY0W8QF",
+            "messageId": "M4V20191114074855TM5HTCNXKEAAHTL",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2302,7 +2302,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047W4JG7W7UNMABY7T",
+            "messageId": "M4V20191114074856X26XFPPGDWV1O4S",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2312,7 +2312,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094047DL3OHYL9G8SPOEF",
+            "messageId": "M4V20191114074856FKDN6HRKAQ8DVBL",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2605,7 +2605,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094048M1ABGKFKP8ZKAJB",
+            "messageId": "M4V201911140748561UXCMHURVO8E7ZH",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2615,7 +2615,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191113094048SS8LQSZ4ZLXCUUX",
+            "messageId": "M4V20191114074856BG3FKBAXBVF263A",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2625,7 +2625,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V201911130940481GPTAALVYNE2ASU",
+            "messageId": "M4V20191114074856YJNLFWMYJBHEMFR",
             "statusCode": "1026",
             "accountId": "12925149"
         }
