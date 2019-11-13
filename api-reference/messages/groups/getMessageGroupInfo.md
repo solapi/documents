@@ -296,11 +296,11 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-11-12T23:34:27.431Z"
+            "createAt": "2019-11-13T00:40:46.157Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-11-12T23:34:27.431Z"
+            "createAt": "2019-11-13T00:40:46.157Z"
         }
     ],
     "status": "PENDING",
@@ -323,8 +323,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "cti": {}
     },
     "price": {},
-    "dateCreated": "2019-11-12T23:34:27.433Z",
-    "dateUpdated": "2019-11-12T23:34:27.433Z"
+    "dateCreated": "2019-11-13T00:40:46.160Z",
+    "dateUpdated": "2019-11-13T00:40:46.160Z"
 }
 ```
 
@@ -528,5 +528,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-12
+> 문서 생성일 : 2019-11-13
 
