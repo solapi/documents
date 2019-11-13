@@ -55,15 +55,15 @@ POST https://api.solapi.com/storage/v1/files
         "biztalk": null
     },
     "type": "DOCUMENT",
-    "originalName": "Am-Ul.png",
+    "originalName": "wipQP.png",
     "link": null,
-    "name": "Am-Ul.png",
-    "url": "https://coolsms-storage-test.s3.ap-northeast-2.amazonaws.com/53901839183913/Am-Ul.png",
+    "fileId": "ST01FP191113003354665ETOLPo9JRcK",
+    "name": "wipQP.png",
+    "url": "https://coolsms-storage-test.s3.ap-northeast-2.amazonaws.com/53901839183913/ST01FP191113003354665ETOLPo9JRcK",
     "accountId": "53901839183913",
     "references": [],
-    "fileId": "ST01FE1910281825145910kNX70Da8x5",
-    "dateCreated": "2019-10-28T18:25:14.591Z",
-    "dateUpdated": "2019-10-28T18:25:14.591Z"
+    "dateCreated": "2019-11-13T00:33:54.782Z",
+    "dateUpdated": "2019-11-13T00:33:54.782Z"
 }
 ```
 
@@ -288,5 +288,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-13
 

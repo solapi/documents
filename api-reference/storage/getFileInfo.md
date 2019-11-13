@@ -28,7 +28,7 @@ GET https://api.solapi.com/storage/v1/files/:fileId
 > **Sample Request**
 
 ```
-http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD
+http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl
 ```
 
 > **Sample Response**
@@ -42,19 +42,19 @@ http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD
     "type": "DOCUMENT",
     "originalName": "파일 원본 이름",
     "link": null,
-    "fileId": "FILEID191028182513252ZWUNPo8qDGD",
+    "fileId": "FILEID191113003354156UvCuw3tubTl",
     "accountId": "19013037529548",
     "name": "파일 이름",
     "url": "https://coolsms.co.kr/godori",
     "references": [
         {
-            "handleKey": "REFERE191028182513252RELJ2J6xKtV",
+            "handleKey": "REFERE191113003354156PWqLIebBcbs",
             "category": "SENDERID_APPROVAL",
-            "refId": "REFID5191028182513252eFSX2KW1KXN"
+            "refId": "REFID5191113003354156tZrKSDFFRen"
         }
     ],
-    "dateCreated": "2019-10-28T18:25:13.253Z",
-    "dateUpdated": "2019-10-28T18:25:13.253Z"
+    "dateCreated": "2019-11-13T00:33:54.158Z",
+    "dateUpdated": "2019-11-13T00:33:54.158Z"
 }
 ```
 
@@ -74,7 +74,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD'
+  url: 'http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl'
 };
 
 request(options, function(error, response, body) {
@@ -94,7 +94,7 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD'
+  url: 'http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl'
 };
 
 $.ajax(options).done(function(response) {
@@ -108,7 +108,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD";
+$url = "http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl";
 
 $options = array(
     'http' => array(
@@ -130,7 +130,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD"
+url = "http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -148,7 +148,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD
+	http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl
 ```
 {% endtab %}
 
@@ -159,7 +159,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD")
+uri = URI.parse("http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -187,7 +187,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD"
+  uri := "http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -220,7 +220,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/storage/v1/files/FILEID191028182513252ZWUNPo8qDGD";
+    String targetUrl = "http://api.solapi.com/storage/v1/files/FILEID191113003354156UvCuw3tubTl";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -256,5 +256,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-13
 

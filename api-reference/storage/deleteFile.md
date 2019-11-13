@@ -40,15 +40,15 @@ DELETE https://api.solapi.com/storage/v1/files/:fileId
         "biztalk": null
     },
     "type": "DOCUMENT",
-    "originalName": "-_0Pv.png",
+    "originalName": "VMJvk.png",
     "link": null,
     "fileId": "ST01FE190131163307869k130jGVVa01",
     "accountId": "50192038501729",
-    "name": "-_0Pv.png",
-    "url": "https://coolsms-storage-test.s3.ap-northeast-2.amazonaws.com/50192038501729/-_0Pv.png",
+    "name": "VMJvk.png",
+    "url": "https://coolsms-storage-test.s3.ap-northeast-2.amazonaws.com/50192038501729/ST01FE190131163307869k130jGVVa01",
     "references": [],
-    "dateCreated": "2019-10-28T18:25:17.165Z",
-    "dateUpdated": "2019-10-28T18:25:17.165Z"
+    "dateCreated": "2019-11-13T00:33:56.425Z",
+    "dateUpdated": "2019-11-13T00:33:56.425Z"
 }
 ```
 
@@ -250,5 +250,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-28
+> 문서 생성일 : 2019-11-13
 
