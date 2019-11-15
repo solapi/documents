@@ -46,8 +46,8 @@ http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAw1w1
             "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-11-07T22:34:54.519Z",
-    "dateUpdated": "2019-11-07T22:34:54.519Z"
+    "dateCreated": "2019-11-15T03:39:15.085Z",
+    "dateUpdated": "2019-11-15T03:39:15.085Z"
 }
 ```
 
@@ -251,5 +251,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-07
+> 문서 생성일 : 2019-11-15
 
