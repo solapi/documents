@@ -32,7 +32,7 @@ GET https://api.solapi.com/quota/v1/me/system
 > **Sample Request**
 
 ```
-http://api.solapi.com/quota/v1/me/system?status=APPROVED
+http://api.solapi.com/quota/v1/me/system?status=PENDING
 ```
 
 > **Sample Response**
@@ -42,217 +42,217 @@ http://api.solapi.com/quota/v1/me/system?status=APPROVED
     "limit": 20,
     "increaseQuotaList": [
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237769bBNDFww8NvT",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.770Z",
-            "dateUpdated": "2019-10-17T03:52:37.770Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242114pI0l4JXJftp",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.114Z",
+            "dateUpdated": "2019-11-16T18:12:42.114Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237766lB9Ld8gBuvV",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.767Z",
-            "dateUpdated": "2019-10-17T03:52:37.767Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242109y07cTit2A0n",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.110Z",
+            "dateUpdated": "2019-11-16T18:12:42.110Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237762UIMLiJePCes",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.762Z",
-            "dateUpdated": "2019-10-17T03:52:37.762Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242103wp6DPEUdxni",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.105Z",
+            "dateUpdated": "2019-11-16T18:12:42.105Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ1910170452377587XxCK1rnIjs",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.759Z",
-            "dateUpdated": "2019-10-17T03:52:37.759Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242099K5R7TizCFog",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.100Z",
+            "dateUpdated": "2019-11-16T18:12:42.100Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ19101704523775430VYZq0DdaW",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.755Z",
-            "dateUpdated": "2019-10-17T03:52:37.755Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242095TtAZ2ExjnZc",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.096Z",
+            "dateUpdated": "2019-11-16T18:12:42.096Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237751EjO8BnMvMhJ",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.751Z",
-            "dateUpdated": "2019-10-17T03:52:37.751Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242091z9VAREvNWlY",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.092Z",
+            "dateUpdated": "2019-11-16T18:12:42.092Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237747ShHWtn8JRcn",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.748Z",
-            "dateUpdated": "2019-10-17T03:52:37.748Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242087pU7AXgon6wI",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.088Z",
+            "dateUpdated": "2019-11-16T18:12:42.088Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237743rqLjUQ7AjmA",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.744Z",
-            "dateUpdated": "2019-10-17T03:52:37.744Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242083gejkgcX6LbG",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.084Z",
+            "dateUpdated": "2019-11-16T18:12:42.084Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237740M26W136htMJ",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.741Z",
-            "dateUpdated": "2019-10-17T03:52:37.741Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242078iR5ma0XeuX4",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.080Z",
+            "dateUpdated": "2019-11-16T18:12:42.080Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237736WBrig4ouLJg",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.737Z",
-            "dateUpdated": "2019-10-17T03:52:37.737Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242074tLH7usUPCFr",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.075Z",
+            "dateUpdated": "2019-11-16T18:12:42.075Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ1910170452377331ISJIFuD1de",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.733Z",
-            "dateUpdated": "2019-10-17T03:52:37.733Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242071nKSXdHbHgxi",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.072Z",
+            "dateUpdated": "2019-11-16T18:12:42.072Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237729RNAxhwncyWf",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.730Z",
-            "dateUpdated": "2019-10-17T03:52:37.730Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ1911161812420640Shv1qPVrPp",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.066Z",
+            "dateUpdated": "2019-11-16T18:12:42.066Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237725Rb3wYsUdcgg",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.726Z",
-            "dateUpdated": "2019-10-17T03:52:37.726Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242060K1GOcnU3zLv",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.061Z",
+            "dateUpdated": "2019-11-16T18:12:42.061Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237722iwRzkgrGmrQ",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.722Z",
-            "dateUpdated": "2019-10-17T03:52:37.722Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ191116181242056hMriAO6znGK",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.056Z",
+            "dateUpdated": "2019-11-16T18:12:42.056Z"
         },
         {
-            "status": "APPROVED",
+            "status": "PENDING",
             "fileIds": [
-                "ST01FE190429073419477NoBqiP9u111",
-                "ST01FE190429073419477NoBqiP9u112"
+                "ST01FE190429073419477NoBqiP9u211",
+                "ST01FE190429073419477NoBqiP9u212"
             ],
-            "reasonRequested": "오늘은 날씨가 정말 좋습니다.",
-            "reasonRejected": "오늘은 날씨가 정말 안 좋습니다.",
-            "handleKey": "QT01IQ191017045237711FjtqzHVDEXc",
-            "accountId": "19205486948203",
-            "requestedQuota": 100000,
-            "dateCreated": "2019-10-17T03:52:37.718Z",
-            "dateUpdated": "2019-10-17T03:52:37.718Z"
+            "reasonRequested": "오늘은 점심이 기대됩니다.",
+            "reasonRejected": "오늘은 점심이 기대가 되지 않습니다.",
+            "handleKey": "QT01IQ1911161812420452qyIaV9nSF6",
+            "accountId": "19205486948963",
+            "requestedQuota": 2524242,
+            "dateCreated": "2019-11-16T18:12:42.051Z",
+            "dateUpdated": "2019-11-16T18:12:42.051Z"
         }
     ],
-    "startKey": "QT01IQ191017045237769bBNDFww8NvT",
+    "startKey": "QT01IQ191116181242114pI0l4JXJftp",
     "nextKey": null
 }
 ```
@@ -273,7 +273,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/quota/v1/me/system?status=APPROVED'
+  url: 'http://api.solapi.com/quota/v1/me/system?status=PENDING'
 };
 
 request(options, function(error, response, body) {
@@ -293,7 +293,7 @@ var options = {
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
   method: 'GET',
-  url: 'http://api.solapi.com/quota/v1/me/system?status=APPROVED'
+  url: 'http://api.solapi.com/quota/v1/me/system?status=PENDING'
 };
 
 $.ajax(options).done(function(response) {
@@ -307,7 +307,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/quota/v1/me/system?status=APPROVED";
+$url = "http://api.solapi.com/quota/v1/me/system?status=PENDING";
 
 $options = array(
     'http' => array(
@@ -329,7 +329,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/quota/v1/me/system?status=APPROVED"
+url = "http://api.solapi.com/quota/v1/me/system?status=PENDING"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -347,7 +347,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/quota/v1/me/system?status=APPROVED
+	http://api.solapi.com/quota/v1/me/system?status=PENDING
 ```
 {% endtab %}
 
@@ -358,7 +358,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/quota/v1/me/system?status=APPROVED")
+uri = URI.parse("http://api.solapi.com/quota/v1/me/system?status=PENDING")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -386,7 +386,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/quota/v1/me/system?status=APPROVED"
+  uri := "http://api.solapi.com/quota/v1/me/system?status=PENDING"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -419,7 +419,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/quota/v1/me/system?status=APPROVED";
+    String targetUrl = "http://api.solapi.com/quota/v1/me/system?status=PENDING";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -455,5 +455,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-17
+> 문서 생성일 : 2019-11-16
 

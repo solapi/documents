@@ -59,11 +59,11 @@ POST https://api.solapi.com/quota/v1/me/system
     ],
     "reasonRequested": "12312",
     "reasonRejected": null,
-    "handleKey": "QT01IQ191017045237862YQdl7cTnj0k",
+    "handleKey": "QT01IQ191116181242220Ns0Qp12KJi3",
     "accountId": "19203248728392",
     "requestedQuota": 10000,
-    "dateCreated": "2019-10-17T03:52:37.863Z",
-    "dateUpdated": "2019-10-17T03:52:37.863Z"
+    "dateCreated": "2019-11-16T18:12:42.224Z",
+    "dateUpdated": "2019-11-16T18:12:42.224Z"
 }
 ```
 
@@ -294,5 +294,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-17
+> 문서 생성일 : 2019-11-16
 

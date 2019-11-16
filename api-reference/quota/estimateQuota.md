@@ -30,7 +30,7 @@ http://api.solapi.com/quota/v1/estimate
 ```json
 {
     "accountId": "19020720648888",
-    "willExecuteAt": 1571889157890,
+    "willExecuteAt": 1574532762266,
     "total": {
         "maxCount": 149,
         "useRate": 1
@@ -242,5 +242,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-10-17
+> 문서 생성일 : 2019-11-16
 
