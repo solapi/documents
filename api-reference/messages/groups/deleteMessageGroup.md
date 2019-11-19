@@ -75,14 +75,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-11-18T22:36:19.211Z"
+            "createAt": "2019-11-19T22:53:37.195Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-11-18T22:36:19.211Z"
+            "createAt": "2019-11-19T22:53:37.195Z"
         },
         {
-            "createAt": "2019-11-18T22:36:23.409Z",
+            "createAt": "2019-11-19T22:53:40.551Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -92,11 +92,11 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-11-18T22:36:23.612Z"
+            "createAt": "2019-11-19T22:53:40.745Z"
         }
     ],
     "status": "DELETED",
-    "dateSent": "2019-11-18T22:36:23.409Z",
+    "dateSent": "2019-11-19T22:53:40.551Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -123,8 +123,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-11-18T22:36:19.214Z",
-    "dateUpdated": "2019-11-18T22:36:23.616Z"
+    "dateCreated": "2019-11-19T22:53:37.197Z",
+    "dateUpdated": "2019-11-19T22:53:40.749Z"
 }
 ```
 
@@ -328,5 +328,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-18
+> 문서 생성일 : 2019-11-19
 
