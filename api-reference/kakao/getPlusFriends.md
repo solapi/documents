@@ -55,8 +55,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-3333-3333",
-            "dateCreated": "2019-11-15T03:39:15.129Z",
-            "dateUpdated": "2019-11-15T03:39:15.129Z"
+            "dateCreated": "2019-11-27T22:12:42.350Z",
+            "dateUpdated": "2019-11-27T22:12:42.350Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwddd",
@@ -70,8 +70,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-5555-5555",
-            "dateCreated": "2019-11-15T03:39:15.133Z",
-            "dateUpdated": "2019-11-15T03:39:15.133Z"
+            "dateCreated": "2019-11-27T22:12:42.354Z",
+            "dateUpdated": "2019-11-27T22:12:42.354Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwccc",
@@ -85,8 +85,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-2222-2222",
-            "dateCreated": "2019-11-15T03:39:15.127Z",
-            "dateUpdated": "2019-11-15T03:39:15.127Z"
+            "dateCreated": "2019-11-27T22:12:42.348Z",
+            "dateUpdated": "2019-11-27T22:12:42.348Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwbbb",
@@ -100,8 +100,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-1111-1111",
-            "dateCreated": "2019-11-15T03:39:15.124Z",
-            "dateUpdated": "2019-11-15T03:39:15.124Z"
+            "dateCreated": "2019-11-27T22:12:42.345Z",
+            "dateUpdated": "2019-11-27T22:12:42.345Z"
         },
         {
             "pfId": "KA01PF190227072057634pRBhbpAwaaa",
@@ -115,8 +115,8 @@ http://api.solapi.com/kakao/v1/plus-friends?
                 }
             ],
             "phoneNumber": "010-4444-4444",
-            "dateCreated": "2019-11-15T03:39:15.131Z",
-            "dateUpdated": "2019-11-15T03:39:15.131Z"
+            "dateCreated": "2019-11-27T22:12:42.352Z",
+            "dateUpdated": "2019-11-27T22:12:42.352Z"
         }
     ],
     "startKey": "KA01PF190227072057634pRBhbpAweee",
@@ -322,5 +322,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-15
+> 문서 생성일 : 2019-11-27
 

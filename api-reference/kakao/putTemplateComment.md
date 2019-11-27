@@ -52,16 +52,16 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
 ```json
 {
     "accountId": "12925149",
-    "templateId": "TP01ID191115033914685QKTBlr44b7n",
+    "templateId": "TP01ID191127221241999J9sSVE8jru7",
     "name": "A10",
-    "pfId": "PF01ID191115033914685yNer7FL46pa",
+    "pfId": "PF01ID191127221241999XEBAlvhcRzz",
     "codes": [
         {
             "status": "REJECTED",
             "comments": [
                 {
                     "isAdmin": false,
-                    "dateCreated": "2019-11-15T03:39:16.061Z",
+                    "dateCreated": "2019-11-27T22:12:43.246Z",
                     "memberId": "18010100001000",
                     "content": "템플릿 등록 문의드립니다."
                 }
@@ -77,8 +77,8 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
         }
     ],
     "content": "testMessage",
-    "dateCreated": "2019-11-15T03:39:14.685Z",
-    "dateUpdated": "2019-11-15T03:39:16.060Z",
+    "dateCreated": "2019-11-27T22:12:41.999Z",
+    "dateUpdated": "2019-11-27T22:12:43.245Z",
     "buttons": []
 }
 ```
@@ -104,7 +104,7 @@ var options = {
   method: 'POST',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment'
 };
 
 request(options, function(error, response, body) {
@@ -129,7 +129,7 @@ var options = {
   },
   method: 'POST',
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment'
 };
 
 $.ajax(options).done(function(response) {
@@ -143,7 +143,7 @@ $.ajax(options).done(function(response) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment";
 $data = '{"comment":"템플릿 등록 문의드립니다."}';
 
 $options = array(
@@ -167,7 +167,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -189,7 +189,7 @@ curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"comment":"템플릿 등록 문의드립니다."}' \
-	http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment
+	http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment
 ```
 {% endtab %}
 
@@ -200,7 +200,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -233,7 +233,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment"
   data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
@@ -268,7 +268,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191115033914685QKTBlr44b7n/daou/comment";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191127221241999J9sSVE8jru7/daou/comment";
     String parameters = "{\"comment\":\"템플릿 등록 문의드립니다.\"}";
 
     URL url = new URL(targetUrl);
@@ -306,5 +306,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-15
+> 문서 생성일 : 2019-11-27
 

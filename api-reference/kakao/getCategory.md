@@ -15,5 +15,5 @@ GET https://api.solapi.com/kakao/v1/categories
 
 ---
 
-> 문서 생성일 : 2019-11-15
+> 문서 생성일 : 2019-11-27
 
