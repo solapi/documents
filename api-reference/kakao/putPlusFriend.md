@@ -62,9 +62,9 @@ POST https://api.solapi.com/kakao/v1/plus-friends/:service
     "accountId": "19301859371938",
     "phoneNumber": "01055555555",
     "searchId": "NURIGO",
-    "dateCreated": "2019-11-27T22:12:42.643Z",
-    "dateUpdated": "2019-11-27T22:12:42.643Z",
-    "pfId": "KA01PF191127221242647i5s24akVzwT",
+    "dateCreated": "2019-11-29T02:32:30.827Z",
+    "dateUpdated": "2019-11-29T02:32:30.827Z",
+    "pfId": "KA01PF1911290232308314kMBPk4bKTh",
     "senderKeys": [
         {
             "service": "daou",
@@ -305,5 +305,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-27
+> 문서 생성일 : 2019-11-29
 

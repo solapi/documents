@@ -46,8 +46,8 @@ SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAP
             "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-11-27T22:12:42.205Z",
-    "dateUpdated": "2019-11-27T22:12:42.205Z"
+    "dateCreated": "2019-11-29T02:32:30.401Z",
+    "dateUpdated": "2019-11-29T02:32:30.401Z"
 }
 ```
 
@@ -251,5 +251,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-27
+> 문서 생성일 : 2019-11-29
 
