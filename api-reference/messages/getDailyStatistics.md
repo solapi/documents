@@ -51,6 +51,196 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
+        "date": "2019-11-07T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-06T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-05T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-04T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-03T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-02T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-11-01T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-10-31T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-10-30T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
+        "date": "2019-10-29T15:00:00.000Z",
+        "count": {
+            "4000": {
+                "sms": 10
+            }
+        }
+    },
+    {
+        "refund": {
+            "balance": 0,
+            "point": 0
+        },
+        "appId": null,
+        "balance": 10,
+        "point": 100,
+        "taxIssued": false,
+        "profitSettlement": false,
+        "profit": 0,
+        "accountId": "12925149",
         "date": "2019-10-28T15:00:00.000Z",
         "count": {
             "4000": {
@@ -219,200 +409,10 @@ http://api.solapi.com/messages/v4/statistics/daily
         "balance": 10,
         "point": 100,
         "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-19T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-18T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-17T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-16T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-15T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-14T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-13T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-12T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-11T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
-        "profitSettlement": false,
-        "profit": 0,
-        "accountId": "12925149",
-        "date": "2019-10-10T15:00:00.000Z",
-        "count": {
-            "4000": {
-                "sms": 10
-            }
-        }
-    },
-    {
-        "refund": {
-            "balance": 0,
-            "point": 0
-        },
-        "appId": null,
-        "balance": 10,
-        "point": 100,
-        "taxIssued": false,
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-10-09T15:00:00.000Z",
+        "date": "2019-10-19T15:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -620,5 +620,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-19
+> 문서 생성일 : 2019-11-29
 
