@@ -141,7 +141,7 @@
   * [파일 조회](api-reference/storage/getFileInfo.md)
   * [파일 목록 조회](api-reference/storage/getFileList.md)
   * [파일 업로드](api-reference/storage/uploadFile.md)
-* [Message Status Codes](api-reference/message-status-codes.md)
+* [솔라피 메세지 상태 코드](api-reference/message-status-codes.md)
 * [Terminology](api-reference/terminology.md)
 * [quota](api-reference/quota/README.md)
   * [계정 쿼터 변경 추정](api-reference/quota/estimateQuota.md)
