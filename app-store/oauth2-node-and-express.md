@@ -52,15 +52,13 @@ $ sudo npm i -g nodemon
 
 npm init을 통해 생성된 package.json에서 npm start 명령을 설정하고
 
-{% code-tabs %}
-{% code-tabs-item title="package.json" %}
+{% code title="package.json" %}
 ```javascript
 "scripts": {
   "start": "nodemon index.js"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 터미널에서 실행해봅니다.
 
