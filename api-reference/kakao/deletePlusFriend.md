@@ -7,7 +7,7 @@ DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
 
 SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 카카오톡채널이 삭제되지는 않습니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -46,8 +46,8 @@ SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAP
             "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-11-29T02:32:30.401Z",
-    "dateUpdated": "2019-11-29T02:32:30.401Z"
+    "dateCreated": "2019-12-17T22:29:35.833Z",
+    "dateUpdated": "2019-12-17T22:29:35.833Z"
 }
 ```
 
@@ -74,26 +74,6 @@ var options = {
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
-});
-
-```
-{% endtab %}
-
-{% tab title="JQUERY" %}
-
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'DELETE',
-  url:
-    'http://api.solapi.com/kakao/v1/plus-friends/KA01PF190227072057634pRBhbpAE93j'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
 });
 
 ```
@@ -251,5 +231,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-11-29
+> 문서 생성일 : 2019-12-17
 

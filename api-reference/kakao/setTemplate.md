@@ -1,28 +1,26 @@
 # 템플릿 정보 수정
 
 ## Request
-
-```text
+```
 PUT https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
 템플릿의 정보를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :templateId | 템플릿 고유 아이디 |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "name": "string",
     "content": "string",
@@ -31,17 +29,17 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | name | `string` |  | 이름 |
 | content | `string` |  | 템플릿 내용 |
-| [buttons](settemplate.md#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
+| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
 
-#### Body / buttons
+
+##### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | buttonType | `string` | O | 설명 없음 |
 | buttonName | `string` | O | 설명 없음 |
 | linkMo | `string` |  | Mobile 주소 |
@@ -49,13 +47,16 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 | linkAnd | `string` |  | Android 주소 |
 | linkIos | `string` |  | IOS 주소 |
 
+
+---
+
 ## Samples
 
 ### setTemplate.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
@@ -63,13 +64,13 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "daou": {
         "accountId": "12925149",
-        "templateId": "KA01TP191129023230210tcerSoxrvtV",
+        "templateId": "KA01TP191217222935648lhEQ1PsvWYr",
         "name": "A0",
-        "pfId": "PF01ID191129023230210nSaaJxVDbNb",
+        "pfId": "PF01ID191217222935648HdCMgyxKeSi",
         "codes": [
             {
                 "status": "PENDING",
@@ -85,15 +86,15 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
             }
         ],
         "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2019-11-29T02:32:31.489Z",
-        "dateUpdated": "2019-11-29T02:32:31.503Z",
+        "dateCreated": "2019-12-17T22:29:36.884Z",
+        "dateUpdated": "2019-12-17T22:29:36.897Z",
         "buttons": []
     },
     "biz": {
         "accountId": "12925149",
-        "templateId": "KA01TP191129023230210tcerSoxrvtV",
+        "templateId": "KA01TP191217222935648lhEQ1PsvWYr",
         "name": "A0",
-        "pfId": "PF01ID191129023230210nSaaJxVDbNb",
+        "pfId": "PF01ID191217222935648HdCMgyxKeSi",
         "codes": [
             {
                 "status": "PENDING",
@@ -109,8 +110,8 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
             }
         ],
         "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2019-11-29T02:32:31.489Z",
-        "dateUpdated": "2019-11-29T02:32:31.505Z",
+        "dateCreated": "2019-12-17T22:29:36.884Z",
+        "dateUpdated": "2019-12-17T22:29:36.899Z",
         "buttons": []
     }
 }
@@ -119,7 +120,9 @@ PUT https://api.solapi.com/kakao/v1/templates/:templateId
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -135,42 +138,22 @@ var options = {
   method: 'PUT',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    content: '#{홍길동}님 회원가입을 환영 합니다.'
-  },
-  method: 'PUT',
-  url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV";
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr";
 $data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
@@ -185,14 +168,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -202,27 +187,30 @@ data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}'
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"content":"#{홍길동}님 회원가입을 환영 합니다."}' \
-    http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -238,10 +226,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -253,7 +243,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV"
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr"
   data := strings.NewReader(`{"content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("PUT", uri, data)
@@ -271,10 +261,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -286,7 +278,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191129023230210tcerSoxrvtV";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP191217222935648lhEQ1PsvWYr";
     String parameters = "{\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
@@ -316,9 +308,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-29
+---
+
+> 문서 생성일 : 2019-12-17
 

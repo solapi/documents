@@ -1,39 +1,39 @@
 # 템플릿 댓글 추가
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
 ```
 
 템플릿에 댓글을 추가합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :templateId | 템플릿 고유 아이디 |
 | :service | 카카오톡채널 연동처 |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "comment": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | comment | `string` | O | 템플릿에 다는 댓글 |
+
+
+---
 
 ## Samples
 
@@ -41,7 +41,7 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "comment": "템플릿 등록 문의드립니다."
 }
@@ -49,19 +49,19 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "accountId": "12925149",
-    "templateId": "TP01ID191129023230205lGGONBzwHNM",
+    "templateId": "TP01ID191217222935645YH5VHM6Jnhn",
     "name": "A10",
-    "pfId": "PF01ID191129023230205zyFuhzUqyaZ",
+    "pfId": "PF01ID191217222935645wB6z8BGzJva",
     "codes": [
         {
             "status": "REJECTED",
             "comments": [
                 {
                     "isAdmin": false,
-                    "dateCreated": "2019-11-29T02:32:31.405Z",
+                    "dateCreated": "2019-12-17T22:29:36.808Z",
                     "memberId": "18010100001000",
                     "content": "템플릿 등록 문의드립니다."
                 }
@@ -77,8 +77,8 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
         }
     ],
     "content": "testMessage",
-    "dateCreated": "2019-11-29T02:32:30.206Z",
-    "dateUpdated": "2019-11-29T02:32:31.404Z",
+    "dateCreated": "2019-12-17T22:29:35.645Z",
+    "dateUpdated": "2019-12-17T22:29:36.806Z",
     "buttons": []
 }
 ```
@@ -86,7 +86,9 @@ POST https://api.solapi.com/kakao/v1/templates/:templateId/:service/comment
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -102,42 +104,22 @@ var options = {
   method: 'POST',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment'
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    comment: '템플릿 등록 문의드립니다.'
-  },
-  method: 'POST',
-  url:
-    'http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment";
 $data = '{"comment":"템플릿 등록 문의드립니다."}';
 
 $options = array(
@@ -152,14 +134,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -169,27 +153,30 @@ data = '{"comment":"템플릿 등록 문의드립니다."}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"comment":"템플릿 등록 문의드립니다."}' \
-    http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"comment":"템플릿 등록 문의드립니다."}' \
+	http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -205,10 +192,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -220,7 +209,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment"
   data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
@@ -238,10 +227,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -253,7 +244,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191129023230205lGGONBzwHNM/daou/comment";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935645YH5VHM6Jnhn/daou/comment";
     String parameters = "{\"comment\":\"템플릿 등록 문의드립니다.\"}";
 
     URL url = new URL(targetUrl);
@@ -283,9 +274,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-29
+---
+
+> 문서 생성일 : 2019-12-17
 
