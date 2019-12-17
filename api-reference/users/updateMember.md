@@ -1,22 +1,20 @@
 # 사용자 정보 수정
 
 ## Request
-
-```text
+```
 PUT https://api.solapi.com/users/v1/member
 ```
 
 사용자의 정보를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "email": "email",
     "name": "string",
@@ -25,12 +23,14 @@ PUT https://api.solapi.com/users/v1/member
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | email | `email` |  | 이메일 |
 | name | `string` |  | 이름 |
 | selectedAccountId | `string` |  | 설명 없음 |
+
+
+---
 
 ## Samples
 
@@ -38,7 +38,7 @@ PUT https://api.solapi.com/users/v1/member
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "name": "aasdasd"
 }
@@ -46,24 +46,26 @@ PUT https://api.solapi.com/users/v1/member
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "name": "aasdasd",
     "phoneNumber": null,
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMOnQNu7G7uhK",
+    "memberId": "MEMyzL4f_Q6Me3",
     "email": "test1@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-11-02T16:13:55.504Z",
-    "dateUpdated": "2019-11-02T16:13:55.511Z"
+    "dateCreated": "2019-12-17T22:36:07.923Z",
+    "dateUpdated": "2019-12-17T22:36:07.931Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -85,31 +87,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    name: 'aasdasd'
-  },
-  method: 'PUT',
-  url: 'http://api.solapi.com/users/v1/member'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/member";
@@ -127,10 +110,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -144,21 +129,24 @@ data = '{"name":"aasdasd"}'
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"name":"aasdasd"}' \
-    http://api.solapi.com/users/v1/member
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"name":"aasdasd"}' \
+	http://api.solapi.com/users/v1/member
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -180,10 +168,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -213,10 +203,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -258,9 +250,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 

@@ -1,8 +1,7 @@
-# 초대 수락\(비회원\)
+# 초대 수락(비회원)
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
@@ -11,12 +10,11 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :invitationId | 설명 없음 |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "password": "string",
     "passwordConfirmation": "string"
@@ -24,11 +22,13 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
+
+
+---
 
 ## Samples
 
@@ -36,7 +36,7 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "password": "asd123!",
     "passwordConfirmation": "asd123!"
@@ -45,36 +45,38 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "status": "ACTIVE",
-    "accountId": "19110304435806",
+    "accountId": "19121827367310",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-11-02T16:13:53.634Z",
-            "dateUpdated": "2019-11-02T16:13:53.634Z",
-            "memberId": "MEMQhRhkuII3X4",
+            "dateCreated": "2019-12-17T22:36:05.711Z",
+            "dateUpdated": "2019-12-17T22:36:05.711Z",
+            "memberId": "MEMPCmlpy2rxWz",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-11-02T16:13:53.634Z",
-            "dateUpdated": "2019-11-02T16:13:53.634Z",
-            "memberId": "MEMkJgvZBnHtoX",
+            "dateCreated": "2019-12-17T22:36:05.711Z",
+            "dateUpdated": "2019-12-17T22:36:05.711Z",
+            "memberId": "MEM1K6Mni6_s2i",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-11-02T16:13:55.445Z",
-    "dateUpdated": "2019-11-02T16:13:55.455Z"
+    "dateCreated": "2019-12-17T22:36:07.805Z",
+    "dateUpdated": "2019-12-17T22:36:07.838Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -95,30 +97,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: {
-    password: 'asd123!',
-    passwordConfirmation: 'asd123!'
-  },
-  method: 'POST',
-  url: 'http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
@@ -136,10 +120,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -152,20 +138,23 @@ data = '{"password":"asd123!","passwordConfirmation":"asd123!"}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Content-Type: application/json' \
-    -d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
-    http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
+	-H 'Content-Type: application/json' \
+	-d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
+	http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -187,10 +176,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -219,10 +210,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -263,9 +256,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 

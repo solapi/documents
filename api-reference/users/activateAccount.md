@@ -1,79 +1,76 @@
-# 내 계정 목록
+# 휴면 계정 활성화
 
 ## Request
-
-```text
-GET https://api.solapi.com/users/v1/accounts
+```
+PUT https://api.solapi.com/users/v1/accounts/:accountId/activate
 ```
 
-내가 소속된 계정들의 목록을 불러옵니다.
+휴면 처리된 계정을 활성화합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
+| :- | :- | :- | :- | :-: |
+| `accounts:write` | `role-accounts:write` | `INACTIVE` | `ACTIVE` |  |
 
-### Query Params
+### 2차 인증 필요
 
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
-| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
+
+### Path Parameters
+
+| Name | Description |
+| :--: | :---------: |
+| :accountId | 계정 고유 아이디 |
+
+---
 
 ## Samples
 
-### getAccountList.spec.js
+### activateAccount.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/users/v1/accounts?limit=3
+```json
+{}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "limit": 3,
-    "accountList": [
+    "status": "ACTIVE",
+    "accountId": "214727",
+    "name": "누리테스트2",
+    "members": [
         {
-            "status": "ACTIVE",
-            "accountId": "19110304435814",
-            "name": "test5님의 계정",
-            "dateCreated": "2019-11-02T16:13:55.566Z",
-            "dateUpdated": "2019-11-02T16:13:55.566Z",
-            "myRole": "OWNER",
-            "myName": "test5"
+            "dateCreated": "2019-12-17T22:36:16.825Z",
+            "dateUpdated": "2019-12-17T22:36:16.825Z",
+            "memberId": "18010100001000",
+            "role": "OWNER",
+            "name": "toss 0"
         },
         {
-            "status": "ACTIVE",
-            "accountId": "19110304435772",
-            "name": "test5님의 계정",
-            "dateCreated": "2019-11-02T16:13:55.586Z",
-            "dateUpdated": "2019-11-02T16:13:55.586Z",
-            "myRole": "OWNER",
-            "myName": "test5"
-        },
-        {
-            "status": "ACTIVE",
-            "accountId": "19110304435519",
-            "name": "test5님의 계정",
-            "dateCreated": "2019-11-02T16:13:55.571Z",
-            "dateUpdated": "2019-11-02T16:13:55.571Z",
-            "myRole": "OWNER",
-            "myName": "test5"
+            "dateCreated": "2019-12-17T22:36:16.825Z",
+            "dateUpdated": "2019-12-17T22:36:16.825Z",
+            "memberId": "18010100001001",
+            "role": "MEMBER",
+            "name": "toss 1"
         }
     ],
-    "startKey": "19110304435814",
-    "nextKey": "19110304435512"
+    "dateCreated": "2019-12-17T22:36:16.841Z",
+    "dateUpdated": "2019-12-17T22:36:16.912Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -82,44 +79,29 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts?limit=3'
+  url: 'http://api.solapi.com/users/v1/accounts/214727/activate'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/users/v1/accounts?limit=3'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts?limit=3";
+$url = "http://api.solapi.com/users/v1/accounts/214727/activate";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'method'  => 'PUT'
     )
 );
 
@@ -127,54 +109,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts?limit=3"
+url = "http://api.solapi.com/users/v1/accounts/214727/activate"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.put(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts?limit=3
+curl -X PUT \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/accounts/214727/activate
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts?limit=3")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/214727/activate")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -186,9 +175,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts?limit=3"
+  uri := "http://api.solapi.com/users/v1/accounts/214727/activate"
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -202,10 +191,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -217,12 +208,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts?limit=3";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/214727/activate";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -245,9 +236,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 

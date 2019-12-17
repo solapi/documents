@@ -1,68 +1,69 @@
-# 비밀번호 초기화
+# 비밀번호 초기화 요청
 
 ## Request
-
-```text
-PUT https://api.solapi.com/users/v1/member/password/reset/:hashId
+```
+POST https://api.solapi.com/users/v1/member/password/reset
 ```
 
-비밀번호를 초기화합니다.
-
-### Path Parameters
-
-| Name | Description |
-| :---: | :---: |
-| :hashId | 설명 없음 |
+비밀번호 초기화 요청 메일을 보냅니다.
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "password": "string",
-    "passwordConfirmation": "string"
+    "email": "email"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| password | `string` | O | 비밀번호 |
-| passwordConfirmation | `string` | O | 비밀번호 확인 |
+| :--- | :--: | :------: | :---------- |
+| email | `email` | O | 이메일 |
+
+
+---
 
 ## Samples
 
-### resetPassword.spec.js
+### sendResetPassword.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "password": "asd456!",
-    "passwordConfirmation": "asd456!"
+    "email": "i@nter.net"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "name": "steven",
-    "phoneNumber": null,
-    "status": "UNVERIFIED",
-    "selectedAccountId": null,
-    "memberId": "MEMag_UIQroNOD",
-    "email": "steven@nurigo.net",
-    "loginSessions": [],
-    "dateCreated": "2019-11-02T16:14:16.820Z",
-    "dateUpdated": "2019-11-02T16:14:16.828Z"
+    "mail": {
+        "accepted": [
+            "i@nter.net"
+        ],
+        "rejected": [],
+        "envelopeTime": 858,
+        "messageTime": 633,
+        "messageSize": 885,
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXflYZci6JAyqpmqoAAAhiCRZ4bUK-mei.t3jGUw-fRQ]",
+        "envelope": {
+            "from": "support@solapi.zendesk.com",
+            "to": [
+                "i@nter.net"
+            ]
+        },
+        "messageId": "<0189bd3f-92fd-0022-cb5a-52e6e1554013@solapi.zendesk.com>"
+    }
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -71,54 +72,33 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    password: 'asd456!',
-    passwordConfirmation: 'asd456!'
+    email: 'i@nter.net'
   },
-  method: 'PUT',
+  method: 'POST',
   json: true,
-  url:
-    'http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl'
+  url: 'http://api.solapi.com/users/v1/member/password/reset'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: {
-    password: 'asd456!',
-    passwordConfirmation: 'asd456!'
-  },
-  method: 'PUT',
-  url:
-    'http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl";
-$data = '{"password":"asd456!","passwordConfirmation":"asd456!"}';
+$url = "http://api.solapi.com/users/v1/member/password/reset";
+$data = '{"email":"i@nter.net"}';
 
 $options = array(
     'http' => array(
         'header'  => "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'PUT'
+        'method'  => 'POST'
     )
 );
 
@@ -126,61 +106,67 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl"
+url = "http://api.solapi.com/users/v1/member/password/reset"
 headers = {
   "Content-Type": "application/json"
 }
-data = '{"password":"asd456!","passwordConfirmation":"asd456!"}'
+data = '{"email":"i@nter.net"}'
 
-response = requests.put(url, headers=headers, data=data)
+response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X PUT \
-    -H 'Content-Type: application/json' \
-    -d '{"password":"asd456!","passwordConfirmation":"asd456!"}' \
-    http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl
+curl -X POST \
+	-H 'Content-Type: application/json' \
+	-d '{"email":"i@nter.net"}' \
+	http://api.solapi.com/users/v1/member/password/reset
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl")
+uri = URI.parse("http://api.solapi.com/users/v1/member/password/reset")
 
 headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "password": "asd456!",
-  "passwordConfirmation": "asd456!"
+  "email": "i@nter.net"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Put.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -192,10 +178,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl"
-  data := strings.NewReader(`{"password":"asd456!","passwordConfirmation":"asd456!"}`)
+  uri := "http://api.solapi.com/users/v1/member/password/reset"
+  data := strings.NewReader(`{"email":"i@nter.net"}`)
 
-  req, err := http.NewRequest("PUT", uri, data)
+  req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Content-Type", "application/json")
@@ -209,10 +195,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -224,13 +212,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/member/password/reset/W4MPzsVpGy9KBOjvF1xRl";
-    String parameters = "{\"password\":\"asd456!\",\"passwordConfirmation\":\"asd456!\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/member/password/reset";
+    String parameters = "{\"email\":\"i@nter.net\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("PUT");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Content-Type", "application/json");
 
@@ -253,9 +241,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 

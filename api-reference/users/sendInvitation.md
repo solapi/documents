@@ -1,28 +1,26 @@
 # 초대장 발송
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/users/v1/invitations
 ```
 
-관리자\(OWNER\)가 특정 이메일로 초대장을 발송합니다.
+관리자(OWNER)가 특정 이메일로 초대장을 발송합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
+| :---------: | :------: |
 |  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "email": "email",
     "role": "string"
@@ -30,11 +28,13 @@ POST https://api.solapi.com/users/v1/invitations
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
-| role | `string` | O | 권한 \(OWNER, DEVELOPER, MEMBER\) |
+| role | `string` | O | 권한 (OWNER, DEVELOPER, MEMBER) |
+
+
+---
 
 ## Samples
 
@@ -42,7 +42,7 @@ POST https://api.solapi.com/users/v1/invitations
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "email": "newMail@test.net",
     "role": "DEVELOPER"
@@ -51,32 +51,32 @@ POST https://api.solapi.com/users/v1/invitations
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "mail": {
         "accepted": [
             "newMail@test.net"
         ],
         "rejected": [],
-        "envelopeTime": 863,
-        "messageTime": 626,
+        "envelopeTime": 874,
+        "messageTime": 631,
         "messageSize": 451,
-        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXb2rR9dc9CwJspGQAAAgKPwISGt3O-rdnf32ExhgpK8]",
+        "response": "250 Accepted [STATUS=new MSGID=XCm9j2EZlw0y9P3eXflYXCwGigypzywjAAAhht3Rhwz-5zTwB9O2sLY0GoI]",
         "envelope": {
             "from": "support@solapi.zendesk.com",
             "to": [
                 "newMail@test.net"
             ]
         },
-        "messageId": "<dcd70fbc-f429-8e33-fa33-10c5026a7243@solapi.zendesk.com>"
+        "messageId": "<d7cadbb1-5626-1399-6dce-18d1fce14c94@solapi.zendesk.com>"
     },
     "invitation": {
-        "accountId": "19110304435444",
+        "accountId": "19121827368038",
         "email": "newMail@test.net",
-        "dateCreated": "2019-11-02T16:13:59.869Z",
-        "dateUpdated": "2019-11-02T16:13:59.869Z",
-        "invitationId": "X2Ok8nWcHJr7nJRYitCWV",
-        "memberId": "MEM8ujCHl-3Kkk",
+        "dateCreated": "2019-12-17T22:36:12.439Z",
+        "dateUpdated": "2019-12-17T22:36:12.439Z",
+        "invitationId": "I_uPNkTALYrUuzhPJauix",
+        "memberId": "MEMKn-3pdZGqqc",
         "role": "DEVELOPER"
     }
 }
@@ -85,7 +85,9 @@ POST https://api.solapi.com/users/v1/invitations
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -108,32 +110,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    email: 'newMail@test.net',
-    role: 'DEVELOPER'
-  },
-  method: 'POST',
-  url: 'http://api.solapi.com/users/v1/invitations'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/invitations";
@@ -151,10 +133,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -168,21 +152,24 @@ data = '{"email":"newMail@test.net","role":"DEVELOPER"}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"email":"newMail@test.net","role":"DEVELOPER"}' \
-    http://api.solapi.com/users/v1/invitations
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"email":"newMail@test.net","role":"DEVELOPER"}' \
+	http://api.solapi.com/users/v1/invitations
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -205,10 +192,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -238,10 +227,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -283,9 +274,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 

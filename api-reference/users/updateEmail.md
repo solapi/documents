@@ -1,83 +1,73 @@
-# 계정 정보 수정
+# 이메일 변경
 
 ## Request
-
-```text
-PUT https://api.solapi.com/users/v1/accounts/:accountId
+```
+PUT https://api.solapi.com/users/v1/member/email
 ```
 
-관리자\(OWNER\)가 계정의 정보를 수정합니다.
+사용자의 이메일을 변경합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
+| :- | :- | :- | :- | :-: |
+| `users:write` |  |  | `ACTIVE` |  |
 
-### Path Parameters
+### 2차 인증 필요
 
-| Name | Description |
-| :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "name": "string"
+    "email": "email"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| name | `string` |  | 이름 |
+| :--- | :--: | :------: | :---------- |
+| email | `email` | O | 이메일 |
+
+
+---
 
 ## Samples
 
-### updateAccount.spec.js
+### updateEmail.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "name": "누리테스트2"
+    "email": "newMail@test.com"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
+    "name": "test1",
+    "phoneNumber": null,
     "status": "ACTIVE",
-    "accountId": "12925149",
-    "name": "누리테스트2",
-    "members": [
-        {
-            "dateCreated": "2019-11-02T16:14:04.138Z",
-            "dateUpdated": "2019-11-02T16:14:04.138Z",
-            "memberId": "18010100001000",
-            "role": "OWNER",
-            "name": "toss 0"
-        },
-        {
-            "dateCreated": "2019-11-02T16:14:04.138Z",
-            "dateUpdated": "2019-11-02T16:14:04.138Z",
-            "memberId": "18010100001001",
-            "role": "MEMBER",
-            "name": "toss 1"
-        }
-    ],
-    "dateCreated": "2019-11-02T16:14:04.139Z",
-    "dateUpdated": "2019-11-02T16:14:04.150Z"
+    "selectedAccountId": null,
+    "memberId": "MEMqSx1hczG8sc",
+    "email": "newMail@test.com",
+    "loginSessions": [],
+    "dateCreated": "2019-12-17T22:36:29.457Z",
+    "dateUpdated": "2019-12-17T22:36:29.462Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -88,46 +78,27 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    name: '누리테스트2'
+    email: 'newMail@test.com'
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/12925149'
+  url: 'http://api.solapi.com/users/v1/member/email'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    name: '누리테스트2'
-  },
-  method: 'PUT',
-  url: 'http://api.solapi.com/users/v1/accounts/12925149'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/12925149";
-$data = '{"name":"누리테스트2"}';
+$url = "http://api.solapi.com/users/v1/member/email";
+$data = '{"email":"newMail@test.com"}';
 
 $options = array(
     'http' => array(
@@ -141,51 +112,56 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/12925149"
+url = "http://api.solapi.com/users/v1/member/email"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"name":"누리테스트2"}'
+data = '{"email":"newMail@test.com"}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"name":"누리테스트2"}' \
-    http://api.solapi.com/users/v1/accounts/12925149
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"email":"newMail@test.com"}' \
+	http://api.solapi.com/users/v1/member/email
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/12925149")
+uri = URI.parse("http://api.solapi.com/users/v1/member/email")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "name": "누리테스트2"
+  "email": "newMail@test.com"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Put.new(uri.request_uri, headers)
@@ -194,10 +170,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -209,8 +187,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/12925149"
-  data := strings.NewReader(`{"name":"누리테스트2"}`)
+  uri := "http://api.solapi.com/users/v1/member/email"
+  data := strings.NewReader(`{"email":"newMail@test.com"}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -227,10 +205,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -242,8 +222,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/12925149";
-    String parameters = "{\"name\":\"누리테스트2\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/member/email";
+    String parameters = "{\"email\":\"newMail@test.com\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -272,9 +252,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-02
+---
+
+> 문서 생성일 : 2019-12-17
 
