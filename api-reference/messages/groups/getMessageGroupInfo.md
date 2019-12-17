@@ -1,30 +1,30 @@
 # 그룹 정보 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
 메시지 그룹의 정보를 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 설명 없음 |
+
+---
 
 ## Response
 
 ### Response Structure
-
-```javascript
+```json
 {
     "count": {
         "total": "number",
@@ -104,19 +104,18 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
 ### Response Description
-
-#### Response /
+##### Response / 
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
-| [count](getmessagegroupinfo.md#response-count) | `object` |  | 카운트 |
-| [balance](getmessagegroupinfo.md#response-balance) | `number` |  | 잔액 |
-| [point](getmessagegroupinfo.md#response-point) | `number` |  | 포인트 |
-| [app](getmessagegroupinfo.md#response-app) | `object` |  | 앱 정보 |
+| :--- | :--: | :-----------: | :---------- |
+| [count](#response-count) | `object` |  | 카운트 |
+| [balance](#response-balance) | `number` |  | 잔액 |
+| [point](#response-point) | `number` |  | 포인트 |
+| [app](#response-app) | `object` |  | 앱 정보 |
 | sdkVersion | `string` |  | SDK 버전 |
 | osPlatform | `string` |  | OS / Platform |
-| [log](getmessagegroupinfo.md#response-log) | `Array` |  | 로그 |
-| status | `string` |  | 그룹 상태 PENDING - 대기중 SENDING - 이미 발송 요청된 그룹 DELETED - 삭제 처리된 그룹 FAILED - 실패 처리된 그룹 COMPLETE - 발송 완료된 그룹 |
+| [log](#response-log) | `Array` |  | 로그 |
+| status | `string` |  | 그룹 상태<br>PENDING - 대기중<br>SENDING - 이미 발송 요청된 그룹<br>DELETED - 삭제 처리된 그룹<br>FAILED - 실패 처리된 그룹<br>COMPLETE - 발송 완료된 그룹 |
 | dateSent | `date` |  | 발송 일시 |
 | dateCompleted | `date` |  | 완료 일시 |
 | isRefunded | `boolean` |  | 환급 여부 |
@@ -124,15 +123,15 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | groupId | `string` |  | 그룹 아이디 |
 | accountId | `string` |  | 계정 고유 번호 |
 | apiVersion | `string` |  | API 버전 |
-| [countForCharge](getmessagegroupinfo.md#response-countforcharge) | `object` |  | 차감 카운트 |
-| [price](getmessagegroupinfo.md#response-price) | `object` |  | 단가 |
+| [countForCharge](#response-countforcharge) | `object` |  | 차감 카운트 |
+| [price](#response-price) | `object` |  | 단가 |
 | dateCreated | `date` |  | 생성 일시 |
 | dateUpdated | `date` |  | 업데이트 일시 |
 
-#### Response / count
+##### Response / count
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | total | `number` |  | 토탈 |
 | sentTotal | `number` |  | 전체 발송 건수 |
 | sentFailed | `number` |  | 발송 실패 건수 |
@@ -143,36 +142,36 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | registeredFailed | `number` |  | 접수 실패 건수 |
 | registeredSuccess | `number` |  | 접수 성공 건수 |
 
-#### Response / balance
+##### Response / balance
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | requested | `number` |  | 차감 금액 |
 | replacement | `number` |  | 대체 발송 금액 |
 | refund | `number` |  | 환급 금액 |
 | sum | `number` |  | 합계 금액 |
 
-#### Response / point
+##### Response / point
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | requested | `number` |  | 차감 포인트 |
 | replacement | `number` |  | 대체 발송 포인트 |
 | refund | `number` |  | 환급 포인트 |
 | sum | `number` |  | 합계 포인트 |
 
-#### Response / app
+##### Response / app
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
-| [profit](getmessagegroupinfo.md#response-app-profit) | `object` |  | 앱 사용 요금 |
+| :--- | :--: | :-----------: | :---------- |
+| [profit](#response-app-profit) | `object` |  | 앱 사용 요금 |
 | appId | `string` |  | 앱 아이디 |
 | version | `string` |  | 설명 없음 |
 
-#### Response / app / profit
+##### Response / app / profit
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | sms | `number` |  | SMS 사용 요금 |
 | lms | `number` |  | LMS 사용 요금 |
 | mms | `number` |  | MMS 사용 요금 |
@@ -180,65 +179,68 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 | cta | `number` |  | 친구톡 사용 요금 |
 | cti | `number` |  | 친구톡 이미지 사용 요금 |
 
-#### Response / log
+
+##### Response / log
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | message | `object` |  | 로그 메시지 |
 | createAt | `date` |  | 로그 기록 일시 |
 
-#### Response / countForCharge
+##### Response / countForCharge
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
-| [sms](getmessagegroupinfo.md#response-countforcharge-sms) | `object` |  | SMS 차감 금액 |
-| [lms](getmessagegroupinfo.md#response-countforcharge-lms) | `object` |  | LMS 차감 금액 |
-| [mms](getmessagegroupinfo.md#response-countforcharge-mms) | `object` |  | MMS 차감 금액 |
-| [ata](getmessagegroupinfo.md#response-countforcharge-ata) | `object` |  | 알림톡 차감 금액 |
-| [cta](getmessagegroupinfo.md#response-countforcharge-cta) | `object` |  | 친구톡 차감 금액 |
-| [cti](getmessagegroupinfo.md#response-countforcharge-cti) | `object` |  | 친구톡 이미지 차감 금액 |
+| :--- | :--: | :-----------: | :---------- |
+| [sms](#response-countforcharge-sms) | `object` |  | SMS 차감 금액 |
+| [lms](#response-countforcharge-lms) | `object` |  | LMS 차감 금액 |
+| [mms](#response-countforcharge-mms) | `object` |  | MMS 차감 금액 |
+| [ata](#response-countforcharge-ata) | `object` |  | 알림톡 차감 금액 |
+| [cta](#response-countforcharge-cta) | `object` |  | 친구톡 차감 금액 |
+| [cti](#response-countforcharge-cti) | `object` |  | 친구톡 이미지 차감 금액 |
 
-#### Response / countForCharge / sms
+##### Response / countForCharge / sms
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 SMS 차감 금액 |
 
-#### Response / countForCharge / lms
+##### Response / countForCharge / lms
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 LMS 차감 금액 |
 
-#### Response / countForCharge / mms
+##### Response / countForCharge / mms
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 MMS 차감 금액 |
 
-#### Response / countForCharge / ata
+##### Response / countForCharge / ata
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 알림톡 차감 금액 |
 
-#### Response / countForCharge / cta
+##### Response / countForCharge / cta
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 친구톡 차감 금액 |
 
-#### Response / countForCharge / cti
+##### Response / countForCharge / cti
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | country | `number` |  | 국가별 친구톡 이미지 차감 금액 |
 
-#### Response / price
+##### Response / price
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 
+
+---
 
 ## Samples
 
@@ -246,13 +248,13 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 0,
@@ -294,11 +296,11 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-11-29T17:08:37.556Z"
+            "createAt": "2019-12-17T22:11:39.447Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-11-29T17:08:37.556Z"
+            "createAt": "2019-12-17T22:11:39.447Z"
         }
     ],
     "status": "PENDING",
@@ -321,15 +323,17 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "cti": {}
     },
     "price": {},
-    "dateCreated": "2019-11-29T17:08:37.558Z",
-    "dateUpdated": "2019-11-29T17:08:37.558Z"
+    "dateCreated": "2019-12-17T22:11:39.450Z",
+    "dateUpdated": "2019-12-17T22:11:39.450Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -348,28 +352,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO";
@@ -385,10 +373,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -400,19 +390,22 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -429,10 +422,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -460,10 +455,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -503,9 +500,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-11-29
+---
+
+> 문서 생성일 : 2019-12-17
 
