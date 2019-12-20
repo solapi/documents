@@ -1,60 +1,56 @@
-# 이미지 리스트 조회
-
-{% hint style="danger" %}
-더 이상 지원하지 않는 API입니다. 스토리지 API를 사용해주세요.
-{% endhint %}
+# 템플릿 정보 조회
 
 ## Request
 
 ```text
-GET https://api.solapi.com/images/v4/images
+GET https://api.solapi.com/kakao/v1/templates/:templateId
 ```
 
-계정의 이미지 리스트를 조회합니다.
+템플릿의 아이디로 템플릿 정보를 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `images:read` | `role-images:read` |  |  |  |
+| `kakao:read` | `role-kakao:read` |  |  |  |
+
+### Path Parameters
+
+| Name | Description |
+| :---: | :---: |
+| :templateId | 템플릿 고유 아이디 |
 
 ## Samples
 
-### getImageInfo.spec.js
+### getTemplate.spec.js
 
 > **Sample Request**
 
 ```text
-http://api.solapi.com/images/v4/images
+http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ
 ```
 
 > **Sample Response**
 
 ```javascript
-[
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "TEST",
-            "size": 10
-        },
-        "dateCreated": "2019-08-20T03:09:02.675Z",
-        "dateUpdated": "2019-08-20T03:09:02.675Z",
-        "imageId": "M4V20190820120902KRQJPKUVEWEZGPG"
-    },
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "Untitled",
-            "size": 10426
-        },
-        "dateCreated": "2019-08-20T03:09:02.244Z",
-        "dateUpdated": "2019-08-20T03:09:02.244Z",
-        "imageId": "M4V20190820120902EVYH2H4DNG8VRYN"
-    }
-]
+{
+    "accountId": "12925149",
+    "templateId": "TP01ID191217222935632bqZ8pRWVRdJ",
+    "name": "A10",
+    "pfId": "PF01ID191217222935632XiScyKD7uOA",
+    "content": "testMessage",
+    "codes": [
+        {
+            "status": "APPROVED",
+            "comments": [],
+            "code": "63igj39d3",
+            "service": "biz"
+        }
+    ],
+    "dateCreated": "2019-12-17T22:29:35.632Z",
+    "dateUpdated": "2019-12-17T22:29:35.632Z",
+    "buttons": []
+}
 ```
 
 > **Sample Code**
@@ -71,7 +67,8 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/images/v4/images'
+  url:
+    'http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ'
 };
 
 request(options, function(error, response, body) {
@@ -81,27 +78,10 @@ request(options, function(error, response, body) {
 ```
 {% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/images/v4/images'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
-```
-{% endtab %}
-
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/images/v4/images";
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ";
 
 $options = array(
     'http' => array(
@@ -121,7 +101,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/images/v4/images"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -137,7 +117,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/images/v4/images
+    http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ
 ```
 {% endtab %}
 
@@ -147,7 +127,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/images/v4/images")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -173,7 +153,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/images/v4/images"
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -204,7 +184,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/images/v4/images";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID191217222935632bqZ8pRWVRdJ";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -236,5 +216,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-12-17
 

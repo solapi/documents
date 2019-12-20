@@ -1,5 +1,9 @@
 # 이미지 정보 조회
 
+{% hint style="danger" %}
+더 이상 지원하지 않는 API입니다. 스토리지 API를 사용해주세요.
+{% endhint %}
+
 ## Request
 
 ```text

@@ -1,60 +1,63 @@
-# 이미지 리스트 조회
-
-{% hint style="danger" %}
-더 이상 지원하지 않는 API입니다. 스토리지 API를 사용해주세요.
-{% endhint %}
+# 사용자 정보 수정
 
 ## Request
 
 ```text
-GET https://api.solapi.com/images/v4/images
+PUT https://api.solapi.com/users/v1/member
 ```
 
-계정의 이미지 리스트를 조회합니다.
+사용자의 정보를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `images:read` | `role-images:read` |  |  |  |
+| `users:write` |  |  | `ACTIVE` |  |
+
+### Request Structure
+
+```javascript
+{
+    "email": "email",
+    "name": "string",
+    "selectedAccountId": "string"
+}
+```
+
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| email | `email` |  | 이메일 |
+| name | `string` |  | 이름 |
+| selectedAccountId | `string` |  | 설명 없음 |
 
 ## Samples
 
-### getImageInfo.spec.js
+### updateMember.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/images/v4/images
+```javascript
+{
+    "name": "aasdasd"
+}
 ```
 
 > **Sample Response**
 
 ```javascript
-[
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "TEST",
-            "size": 10
-        },
-        "dateCreated": "2019-08-20T03:09:02.675Z",
-        "dateUpdated": "2019-08-20T03:09:02.675Z",
-        "imageId": "M4V20190820120902KRQJPKUVEWEZGPG"
-    },
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "Untitled",
-            "size": 10426
-        },
-        "dateCreated": "2019-08-20T03:09:02.244Z",
-        "dateUpdated": "2019-08-20T03:09:02.244Z",
-        "imageId": "M4V20190820120902EVYH2H4DNG8VRYN"
-    }
-]
+{
+    "name": "aasdasd",
+    "phoneNumber": null,
+    "status": "ACTIVE",
+    "selectedAccountId": null,
+    "memberId": "MEMyzL4f_Q6Me3",
+    "email": "test1@nurigo.net",
+    "loginSessions": [],
+    "dateCreated": "2019-12-17T22:36:07.923Z",
+    "dateUpdated": "2019-12-17T22:36:07.931Z"
+}
 ```
 
 > **Sample Code**
@@ -67,11 +70,15 @@ var request = require('request');
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
+    'Content-Type': 'application/json'
   },
-  method: 'GET',
+  body: {
+    name: 'aasdasd'
+  },
+  method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/images/v4/images'
+  url: 'http://api.solapi.com/users/v1/member'
 };
 
 request(options, function(error, response, body) {
@@ -81,32 +88,17 @@ request(options, function(error, response, body) {
 ```
 {% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/images/v4/images'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
-```
-{% endtab %}
-
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/images/v4/images";
+$url = "http://api.solapi.com/users/v1/member";
+$data = '{"name":"aasdasd"}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
+        'method'  => 'PUT'
     )
 );
 
@@ -121,12 +113,14 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/images/v4/images"
+url = "http://api.solapi.com/users/v1/member"
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
 }
+data = '{"name":"aasdasd"}'
 
-response = requests.get(url, headers=headers)
+response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
 ```
@@ -135,9 +129,11 @@ print(response.text)
 {% tab title="CURL" %}
 ```text
 #!/bin/bash
-curl -X GET \
+curl -X PUT \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/images/v4/images
+    -H 'Content-Type: application/json' \
+    -d '{"name":"aasdasd"}' \
+    http://api.solapi.com/users/v1/member
 ```
 {% endtab %}
 
@@ -147,13 +143,18 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/images/v4/images")
+uri = URI.parse("http://api.solapi.com/users/v1/member")
 
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = {
+  "name": "aasdasd"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
+request.body = data.to_json
 
 response = http.request(request)
 puts response.code
@@ -173,12 +174,14 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/images/v4/images"
+  uri := "http://api.solapi.com/users/v1/member"
+  data := strings.NewReader(`{"name":"aasdasd"}`)
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
+  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -204,14 +207,16 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/images/v4/images";
+    String targetUrl = "http://api.solapi.com/users/v1/member";
+    String parameters = "{\"name\":\"aasdasd\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
+    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -236,5 +241,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-12-17
 

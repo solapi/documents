@@ -1,60 +1,130 @@
-# 이미지 리스트 조회
-
-{% hint style="danger" %}
-더 이상 지원하지 않는 API입니다. 스토리지 API를 사용해주세요.
-{% endhint %}
+# 그룹 삭제
 
 ## Request
 
 ```text
-GET https://api.solapi.com/images/v4/images
+DELETE https://api.solapi.com/messages/v4/groups/:groupId
 ```
 
-계정의 이미지 리스트를 조회합니다.
+메시지 그룹을 삭제합니다. 삭제 후 발송 및 복구가 불가합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `images:read` | `role-images:read` |  |  |  |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+
+### Path Parameters
+
+| Name | Description |
+| :---: | :---: |
+| :groupId | 설명 없음 |
 
 ## Samples
 
-### getImageInfo.spec.js
+### 메시지 그룹 삭제 DELETE /messages/v4/groups
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/images/v4/images
+```javascript
+{}
 ```
 
 > **Sample Response**
 
 ```javascript
-[
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "TEST",
-            "size": 10
-        },
-        "dateCreated": "2019-08-20T03:09:02.675Z",
-        "dateUpdated": "2019-08-20T03:09:02.675Z",
-        "imageId": "M4V20190820120902KRQJPKUVEWEZGPG"
+{
+    "count": {
+        "total": 0,
+        "sentTotal": 0,
+        "sentFailed": 0,
+        "sentSuccess": 0,
+        "sentPending": 0,
+        "sentReplacement": 0,
+        "refund": 0,
+        "registeredFailed": 0,
+        "registeredSuccess": 1
     },
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "Untitled",
-            "size": 10426
+    "balance": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "point": {
+        "requested": 50,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "app": {
+        "profit": {
+            "sms": 0,
+            "lms": 0,
+            "mms": 0,
+            "ata": 0,
+            "cta": 0,
+            "cti": 0
         },
-        "dateCreated": "2019-08-20T03:09:02.244Z",
-        "dateUpdated": "2019-08-20T03:09:02.244Z",
-        "imageId": "M4V20190820120902EVYH2H4DNG8VRYN"
-    }
-]
+        "appId": null,
+        "version": null
+    },
+    "sdkVersion": null,
+    "osPlatform": null,
+    "log": [
+        {
+            "message": "메시지 그룹이 생성되었습니다.",
+            "createAt": "2019-12-17T22:11:39.447Z"
+        },
+        {
+            "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
+            "createAt": "2019-12-17T22:11:39.447Z"
+        },
+        {
+            "createAt": "2019-12-17T22:11:42.651Z",
+            "message": "메시지를 발송했습니다.",
+            "oldBalance": 100,
+            "newBalance": 100,
+            "oldPoint": 100,
+            "newPoint": 50,
+            "totalPrice": 20
+        },
+        {
+            "message": "메시지 그룹이 삭제되었습니다.",
+            "createAt": "2019-12-17T22:11:42.831Z"
+        }
+    ],
+    "status": "DELETED",
+    "dateSent": "2019-12-17T22:11:42.651Z",
+    "dateCompleted": null,
+    "isRefunded": false,
+    "flagUpdated": false,
+    "_id": "G4V20180307105937H3PTASXMNJG2JIO",
+    "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
+    "accountId": "12925149",
+    "apiVersion": "4",
+    "countForCharge": {
+        "sms": {
+            "82": 1
+        },
+        "lms": {},
+        "mms": {},
+        "ata": {},
+        "cta": {},
+        "cti": {}
+    },
+    "price": {
+        "82": {
+            "sms": 20,
+            "lms": 50,
+            "mms": 200,
+            "ata": 19,
+            "cta": 13
+        }
+    },
+    "dateCreated": "2019-12-17T22:11:39.450Z",
+    "dateUpdated": "2019-12-17T22:11:42.835Z"
+}
 ```
 
 > **Sample Code**
@@ -69,9 +139,10 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'GET',
+  method: 'DELETE',
   json: true,
-  url: 'http://api.solapi.com/images/v4/images'
+  url:
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO'
 };
 
 request(options, function(error, response, body) {
@@ -81,32 +152,15 @@ request(options, function(error, response, body) {
 ```
 {% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/images/v4/images'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
-```
-{% endtab %}
-
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/images/v4/images";
+$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'GET'
+        'method'  => 'DELETE'
     )
 );
 
@@ -121,12 +175,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/images/v4/images"
+url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.get(url, headers=headers)
+response = requests.delete(url, headers=headers)
 print(response.status_code)
 print(response.text)
 ```
@@ -135,9 +189,9 @@ print(response.text)
 {% tab title="CURL" %}
 ```text
 #!/bin/bash
-curl -X GET \
+curl -X DELETE \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/images/v4/images
+    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
 ```
 {% endtab %}
 
@@ -147,13 +201,13 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/images/v4/images")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri, headers)
+request = Net::HTTP::Delete.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
@@ -173,9 +227,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/images/v4/images"
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO"
 
-  req, err := http.NewRequest("GET", uri, nil)
+  req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -204,12 +258,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/images/v4/images";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("GET");
+    con.setRequestMethod("DELETE");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -236,5 +290,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-12-17
 

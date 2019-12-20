@@ -1,60 +1,73 @@
-# 이미지 리스트 조회
-
-{% hint style="danger" %}
-더 이상 지원하지 않는 API입니다. 스토리지 API를 사용해주세요.
-{% endhint %}
+# 내 계정 목록
 
 ## Request
 
 ```text
-GET https://api.solapi.com/images/v4/images
+GET https://api.solapi.com/users/v1/accounts
 ```
 
-계정의 이미지 리스트를 조회합니다.
+내가 소속된 계정들의 목록을 불러옵니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `images:read` | `role-images:read` |  |  |  |
+| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
+
+### Query Params
+
+| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/overview#operator) | Description |
+| :--- | :---: | :---: | :---: | :--- |
+| startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
+| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 
 ## Samples
 
-### getImageInfo.spec.js
+### getAccountList.spec.js
 
 > **Sample Request**
 
 ```text
-http://api.solapi.com/images/v4/images
+http://api.solapi.com/users/v1/accounts?limit=3
 ```
 
 > **Sample Response**
 
 ```javascript
-[
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "TEST",
-            "size": 10
+{
+    "limit": 3,
+    "accountList": [
+        {
+            "status": "ACTIVE",
+            "accountId": "19121827368739",
+            "name": "test5님의 계정",
+            "dateCreated": "2019-12-17T22:36:08.015Z",
+            "dateUpdated": "2019-12-17T22:36:08.015Z",
+            "myRole": "OWNER",
+            "myName": "test5"
         },
-        "dateCreated": "2019-08-20T03:09:02.675Z",
-        "dateUpdated": "2019-08-20T03:09:02.675Z",
-        "imageId": "M4V20190820120902KRQJPKUVEWEZGPG"
-    },
-    {
-        "delflag": false,
-        "accountId": "12925149",
-        "file": {
-            "name": "Untitled",
-            "size": 10426
+        {
+            "status": "ACTIVE",
+            "accountId": "19121827368318",
+            "name": "test5님의 계정",
+            "dateCreated": "2019-12-17T22:36:08.023Z",
+            "dateUpdated": "2019-12-17T22:36:08.023Z",
+            "myRole": "OWNER",
+            "myName": "test5"
         },
-        "dateCreated": "2019-08-20T03:09:02.244Z",
-        "dateUpdated": "2019-08-20T03:09:02.244Z",
-        "imageId": "M4V20190820120902EVYH2H4DNG8VRYN"
-    }
-]
+        {
+            "status": "ACTIVE",
+            "accountId": "19121827368313",
+            "name": "test5님의 계정",
+            "dateCreated": "2019-12-17T22:36:08.007Z",
+            "dateUpdated": "2019-12-17T22:36:08.007Z",
+            "myRole": "OWNER",
+            "myName": "test5"
+        }
+    ],
+    "startKey": "19121827368739",
+    "nextKey": "19121827368311"
+}
 ```
 
 > **Sample Code**
@@ -71,7 +84,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/images/v4/images'
+  url: 'http://api.solapi.com/users/v1/accounts?limit=3'
 };
 
 request(options, function(error, response, body) {
@@ -81,27 +94,10 @@ request(options, function(error, response, body) {
 ```
 {% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/images/v4/images'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
-```
-{% endtab %}
-
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/images/v4/images";
+$url = "http://api.solapi.com/users/v1/accounts?limit=3";
 
 $options = array(
     'http' => array(
@@ -121,7 +117,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/images/v4/images"
+url = "http://api.solapi.com/users/v1/accounts?limit=3"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -137,7 +133,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/images/v4/images
+    http://api.solapi.com/users/v1/accounts?limit=3
 ```
 {% endtab %}
 
@@ -147,7 +143,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/images/v4/images")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts?limit=3")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -173,7 +169,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/images/v4/images"
+  uri := "http://api.solapi.com/users/v1/accounts?limit=3"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -204,7 +200,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/images/v4/images";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts?limit=3";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -236,5 +232,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2019-08-20
+> 문서 생성일 : 2019-12-17
 
