@@ -1,39 +1,47 @@
-# 그룹 삭제
+# 실패한 그룹 재발송 요청
 
 ## Request
-
-```text
-DELETE https://api.solapi.com/messages/v4/groups/:groupId
+```
+POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 ```
 
-메시지 그룹을 삭제합니다. 삭제 후 발송 및 복구가 불가합니다.
+실패된 그룹의 메시지 재발송을 요청합니다. Quota의 영향을 받지 않습니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+
+### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 설명 없음 |
+
+---
 
 ## Samples
 
-### 메시지 그룹 삭제 DELETE /messages/v4/groups
+### resendGroupMessage
 
 > **Sample Request**
 
-```javascript
+```json
 {}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
+    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "count": {
         "total": 0,
         "sentTotal": 0,
@@ -74,33 +82,29 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2019-12-17T22:11:39.447Z"
+            "createAt": "2019-12-24T15:53:37.637Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2019-12-17T22:11:39.447Z"
+            "createAt": "2019-12-24T15:53:37.637Z"
         },
         {
-            "createAt": "2019-12-17T22:11:42.651Z",
+            "createAt": "2019-12-24T15:53:41.114Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
             "oldPoint": 100,
             "newPoint": 50,
             "totalPrice": 20
-        },
-        {
-            "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2019-12-17T22:11:42.831Z"
         }
     ],
-    "status": "DELETED",
-    "dateSent": "2019-12-17T22:11:42.651Z",
+    "status": "SENDING",
+    "dateSent": "2019-12-24T15:53:41.114Z",
+    "scheduledDate": null,
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
-    "_id": "G4V20180307105937H3PTASXMNJG2JIO",
-    "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
+    "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "accountId": "12925149",
     "apiVersion": "4",
     "countForCharge": {
@@ -122,15 +126,17 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
             "cta": 13
         }
     },
-    "dateCreated": "2019-12-17T22:11:39.450Z",
-    "dateUpdated": "2019-12-17T22:11:42.835Z"
+    "dateCreated": "2019-12-24T15:53:37.639Z",
+    "dateUpdated": "2019-12-24T15:53:41.114Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -139,28 +145,30 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'DELETE',
+  method: 'POST',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO'
+    'http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO";
+$url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'DELETE'
+        'method'  => 'POST'
     )
 );
 
@@ -168,54 +176,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO"
+url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.delete(url, headers=headers)
+response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
+curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -227,9 +242,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO"
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
 
-  req, err := http.NewRequest("DELETE", uri, nil)
+  req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -243,10 +258,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -258,12 +275,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -286,9 +303,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2019-12-24
 
