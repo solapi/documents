@@ -1,38 +1,38 @@
 # 사용자 전화번호 수정
 
 ## Request
-
-```text
+```
 PUT https://api.solapi.com/users/v1/member/phone-number
 ```
 
 사용자의 전화번호를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
+| :---------: | :------: |
 |  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "phoneNumber": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | phoneNumber | `string` |  | 핸드폰 번호 |
+
+
+---
 
 ## Samples
 
@@ -40,7 +40,7 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "phoneNumber": "01000000000"
 }
@@ -48,7 +48,7 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "name": "nickName",
     "phoneNumber": "01000000000",
@@ -56,8 +56,8 @@ PUT https://api.solapi.com/users/v1/member/phone-number
     "selectedAccountId": null,
     "memberId": "18010100001000",
     "email": "contact@nurigo.net",
-    "dateCreated": "2019-12-17T22:36:17.396Z",
-    "dateUpdated": "2019-12-17T22:36:17.400Z",
+    "dateCreated": "2019-12-30T21:54:37.732Z",
+    "dateUpdated": "2019-12-30T21:54:37.736Z",
     "loginSessions": []
 }
 ```
@@ -65,7 +65,9 @@ PUT https://api.solapi.com/users/v1/member/phone-number
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -87,10 +89,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/member/phone-number";
@@ -108,10 +112,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -125,21 +131,24 @@ data = '{"phoneNumber":"01000000000"}'
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"phoneNumber":"01000000000"}' \
-    http://api.solapi.com/users/v1/member/phone-number
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"phoneNumber":"01000000000"}' \
+	http://api.solapi.com/users/v1/member/phone-number
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -161,10 +170,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -194,10 +205,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -239,9 +252,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2019-12-30
 

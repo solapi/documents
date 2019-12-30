@@ -1,80 +1,57 @@
-# 초대 수락\(비회원\)
+# 비밀번호 초기화 요청
 
 ## Request
-
-```text
-POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
+```
+POST https://api.solapi.com/users/v1/member/password/reset
 ```
 
-기존에 SOLAPI를 사용하지 않았던 사용자가 초대로 인해 SOLAPI에 가입되고 초대된 계정에 들어가게 됩니다.
-
-### Path Parameters
-
-| Name | Description |
-| :---: | :---: |
-| :invitationId | 설명 없음 |
+비밀번호 초기화 요청 메일을 보냅니다.
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "password": "string",
-    "passwordConfirmation": "string"
+    "email": "email"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| password | `string` | O | 비밀번호 |
-| passwordConfirmation | `string` | O | 비밀번호 확인 |
+| :--- | :--: | :------: | :---------- |
+| email | `email` | O | 이메일 |
+
+
+---
 
 ## Samples
 
-### createMember.spec.js
+### sendResetPassword.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "password": "asd123!",
-    "passwordConfirmation": "asd123!"
+    "email": "i@nter.net"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "status": "ACTIVE",
-    "accountId": "19121827367310",
-    "name": "test1님의 계정",
-    "members": [
-        {
-            "dateCreated": "2019-12-17T22:36:05.711Z",
-            "dateUpdated": "2019-12-17T22:36:05.711Z",
-            "memberId": "MEMPCmlpy2rxWz",
-            "role": "OWNER",
-            "name": "test1"
-        },
-        {
-            "dateCreated": "2019-12-17T22:36:05.711Z",
-            "dateUpdated": "2019-12-17T22:36:05.711Z",
-            "memberId": "MEM1K6Mni6_s2i",
-            "name": "newMember",
-            "role": "DEVELOPER"
-        }
-    ],
-    "dateCreated": "2019-12-17T22:36:07.805Z",
-    "dateUpdated": "2019-12-17T22:36:07.838Z"
+    "_id": "5e0a721d47c7acc34afe304b",
+    "email": "i@nter.net",
+    "dateCreated": "2019-12-30T21:54:37.915Z",
+    "dateUpdated": "2019-12-30T21:54:37.915Z",
+    "hashId": "Q_NrW4f644AMgLGHQeneY"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -83,26 +60,27 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    password: 'asd123!',
-    passwordConfirmation: 'asd123!'
+    email: 'i@nter.net'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm'
+  url: 'http://api.solapi.com/users/v1/member/password/reset'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
-$data = '{"password":"asd123!","passwordConfirmation":"asd123!"}';
+$url = "http://api.solapi.com/users/v1/member/password/reset";
+$data = '{"email":"i@nter.net"}';
 
 $options = array(
     'http' => array(
@@ -116,49 +94,53 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm"
+url = "http://api.solapi.com/users/v1/member/password/reset"
 headers = {
   "Content-Type": "application/json"
 }
-data = '{"password":"asd123!","passwordConfirmation":"asd123!"}'
+data = '{"email":"i@nter.net"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Content-Type: application/json' \
-    -d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
-    http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
+	-H 'Content-Type: application/json' \
+	-d '{"email":"i@nter.net"}' \
+	http://api.solapi.com/users/v1/member/password/reset
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm")
+uri = URI.parse("http://api.solapi.com/users/v1/member/password/reset")
 
 headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "password": "asd123!",
-  "passwordConfirmation": "asd123!"
+  "email": "i@nter.net"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -167,10 +149,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -182,8 +166,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm"
-  data := strings.NewReader(`{"password":"asd123!","passwordConfirmation":"asd123!"}`)
+  uri := "http://api.solapi.com/users/v1/member/password/reset"
+  data := strings.NewReader(`{"email":"i@nter.net"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -199,10 +183,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -214,8 +200,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
-    String parameters = "{\"password\":\"asd123!\",\"passwordConfirmation\":\"asd123!\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/member/password/reset";
+    String parameters = "{\"email\":\"i@nter.net\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -243,9 +229,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2019-12-30
 

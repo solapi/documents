@@ -1,60 +1,95 @@
-# 내 계정 정보
+# 내 초대 조회
 
 ## Request
-
-```text
-GET https://api.solapi.com/users/v1/accounts/:accountId
+```
+GET https://api.solapi.com/users/v1/invitations
 ```
 
-내가 소속된 특정 계정에 대한 정보를 얻습니다.
+내가 받은 초대 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
-### Path Parameters
-
-| Name | Description |
-| :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+---
 
 ## Samples
 
-### getAccount.spec.js
+### getMyInvitations.spec.js
 
 > **Sample Request**
 
-```text
-http://api.solapi.com/users/v1/accounts/19121827368188
+```
+http://api.solapi.com/users/v1/invitations
 ```
 
 > **Sample Response**
 
-```javascript
-{
-    "status": "ACTIVE",
-    "accountId": "19121827368188",
-    "name": "steven님의 계정",
-    "members": [
-        {
-            "dateCreated": "2019-12-17T22:36:05.711Z",
-            "dateUpdated": "2019-12-17T22:36:05.711Z",
-            "memberId": "MEMI-QfwoHTbF_",
-            "role": "OWNER",
-            "name": "steven"
+```json
+[
+    {
+        "email": "testOrigin@test.net",
+        "invitationId": "iqPkNRHy4atyQeepjeXDO",
+        "role": "MEMBER",
+        "dateCreated": "2019-12-30T21:54:38.414Z",
+        "dateUpdated": "2019-12-30T21:54:38.414Z",
+        "owner": {
+            "name": "test1",
+            "phoneNumber": null,
+            "status": "UNVERIFIED",
+            "selectedAccountId": "19123124878564",
+            "isAdmin": false,
+            "memberId": "MEMvt0ZepTNmxn",
+            "email": "test1@test.com",
+            "loginSessions": [],
+            "dateCreated": "2019-12-30T21:54:38.402Z",
+            "dateUpdated": "2019-12-30T21:54:38.405Z"
+        },
+        "account": {
+            "status": "ACTIVE",
+            "accountId": "19123124878564",
+            "name": "test1님의 계정",
+            "dateCreated": "2019-12-30T21:54:38.407Z",
+            "dateUpdated": "2019-12-30T21:54:38.407Z"
         }
-    ],
-    "dateCreated": "2019-12-17T22:36:08.375Z",
-    "dateUpdated": "2019-12-17T22:36:08.375Z"
-}
+    },
+    {
+        "email": "testOrigin@test.net",
+        "invitationId": "UVyI3y01aLn_VU9FFSNEp",
+        "role": "DEVELOPER",
+        "dateCreated": "2019-12-30T21:54:38.416Z",
+        "dateUpdated": "2019-12-30T21:54:38.416Z",
+        "owner": {
+            "name": "test2",
+            "phoneNumber": null,
+            "status": "UNVERIFIED",
+            "selectedAccountId": "19123124878040",
+            "isAdmin": false,
+            "memberId": "MEMDZ1tMWeb3zZ",
+            "email": "test2@test.com",
+            "loginSessions": [],
+            "dateCreated": "2019-12-30T21:54:38.403Z",
+            "dateUpdated": "2019-12-30T21:54:38.409Z"
+        },
+        "account": {
+            "status": "ACTIVE",
+            "accountId": "19123124878040",
+            "name": "test2님의 계정",
+            "dateCreated": "2019-12-30T21:54:38.412Z",
+            "dateUpdated": "2019-12-30T21:54:38.412Z"
+        }
+    }
+]
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -65,20 +100,22 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19121827368188'
+  url: 'http://api.solapi.com/users/v1/invitations'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19121827368188";
+$url = "http://api.solapi.com/users/v1/invitations";
 
 $options = array(
     'http' => array(
@@ -91,14 +128,16 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19121827368188"
+url = "http://api.solapi.com/users/v1/invitations"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -106,25 +145,28 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19121827368188
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/invitations
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19121827368188")
+uri = URI.parse("http://api.solapi.com/users/v1/invitations")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -135,10 +177,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -150,7 +194,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19121827368188"
+  uri := "http://api.solapi.com/users/v1/invitations"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -166,10 +210,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -181,7 +227,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19121827368188";
+    String targetUrl = "http://api.solapi.com/users/v1/invitations";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -209,9 +255,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2019-12-30
 

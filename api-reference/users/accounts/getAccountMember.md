@@ -1,53 +1,56 @@
-# 초대 취소
+# 회원 정보 조회
 
 ## Request
-
-```text
-DELETE https://api.solapi.com/users/v1/invitations/:invitationId
+```
+GET https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 ```
 
-관리자\(OWNER\)가 자신의 계정의 초대를 취소합니다.
+내가 소속된 특정 계정에 저장되어 있는 특정 맴버 정보를 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` |  |
+| :- | :- | :- | :- | :-: |
+| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
-| :invitationId | 설명 없음 |
+| :--: | :---------: |
+| :accountId | 계정 고유 아이디 |
+| :memberId | 회원 고유 아이디 |
+
+---
 
 ## Samples
 
-### cancelInvitation.spec.js
+### getAccountMember.spec.js
 
 > **Sample Request**
 
-```javascript
-{}
+```
+http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "invitationId": "CTbhz0F_j9_OWAVcrA3Gm",
-    "accountId": "19121827376055",
-    "memberId": "MEMW-he1CEbB0g",
-    "email": "test1@test.com",
-    "role": "MEMBER",
-    "dateCreated": "2019-12-17T22:36:16.569Z",
-    "dateUpdated": "2019-12-17T22:36:16.569Z"
+    "memberId": "18010100001000",
+    "role": "OWNER",
+    "name": "testName 0",
+    "email": "test0@nurigo.net",
+    "dateCreated": "2019-12-30T21:54:35.617Z",
+    "dateUpdated": "2019-12-30T21:54:35.617Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -56,27 +59,29 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'DELETE',
+  method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm'
+  url: 'http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm";
+$url = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'DELETE'
+        'method'  => 'GET'
     )
 );
 
@@ -84,54 +89,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm"
+url = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.delete(url, headers=headers)
+response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm
+curl -X GET \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -143,9 +155,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm"
+  uri := "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000"
 
-  req, err := http.NewRequest("DELETE", uri, nil)
+  req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -159,10 +171,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -174,12 +188,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/invitations/CTbhz0F_j9_OWAVcrA3Gm";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("GET");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -202,9 +216,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2019-12-30
 

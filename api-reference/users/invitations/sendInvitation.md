@@ -1,21 +1,29 @@
-# 회원가입
+# 초대장 발송
 
 ## Request
 ```
-POST https://api.solapi.com/users/v1/signup
+POST https://api.solapi.com/users/v1/invitations
 ```
 
-ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
+관리자(OWNER)가 특정 이메일로 초대장을 발송합니다.
+
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+
+| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
+| :- | :- | :- | :- | :-: |
+| `accounts:write` | `role-accounts:write` | `ACTIVE` | `ACTIVE` | O |
+
+### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---------: | :------: |
+|  |  |
 
 ### Request Structure
 ```json
 {
     "email": "email",
-    "password": "string",
-    "passwordConfirmation": "string",
-    "captcha": "string",
-    "marketerAccountId": "string",
-    "name": "string"
+    "role": "string"
 }
 ```
 
@@ -23,27 +31,21 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | email | `email` | O | 이메일 |
-| password | `string` | O | 비밀번호 |
-| passwordConfirmation | `string` | O | 비밀번호 확인 |
-| captcha | `string` | O | ReCAPTCHA 인증 코드 |
-| marketerAccountId | `string` |  | 설명 없음 |
-| name | `string` |  | 이름 |
+| role | `string` | O | 권한 (OWNER, DEVELOPER, MEMBER) |
 
 
 ---
 
 ## Samples
 
-### signup.spec.js
+### sendInvitation.spec.js
 
 > **Sample Request**
 
 ```json
 {
-    "email": "test1@nurigo.net",
-    "password": "asd123!",
-    "passwordConfirmation": "asd123!",
-    "captcha": "DUMMY"
+    "email": "newMail@test.net",
+    "role": "DEVELOPER"
 }
 ```
 
@@ -51,33 +53,13 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 ```json
 {
-    "account": {
-        "status": "ACTIVE",
-        "accountId": "19123124878626",
-        "name": "test1님의 계정",
-        "members": [
-            {
-                "dateCreated": "2019-12-30T21:54:34.962Z",
-                "dateUpdated": "2019-12-30T21:54:34.962Z",
-                "memberId": "MEM09bYBYz8zcn",
-                "role": "OWNER",
-                "name": "test1"
-            }
-        ],
-        "dateCreated": "2019-12-30T21:54:38.530Z",
-        "dateUpdated": "2019-12-30T21:54:38.530Z"
-    },
-    "member": {
-        "name": "test1",
-        "phoneNumber": null,
-        "status": "UNVERIFIED",
-        "selectedAccountId": "19123124878626",
-        "memberId": "MEM09bYBYz8zcn",
-        "email": "test1@nurigo.net",
-        "loginSessions": [],
-        "dateCreated": "2019-12-30T21:54:38.525Z",
-        "dateUpdated": "2019-12-30T21:54:38.527Z"
-    }
+    "accountId": "19123124878901",
+    "email": "newMail@test.net",
+    "dateCreated": "2019-12-30T21:54:38.244Z",
+    "dateUpdated": "2019-12-30T21:54:38.244Z",
+    "invitationId": "blBJU361zEjpGS0oyeHWt",
+    "memberId": "MEM-c4sJh0dVyf",
+    "role": "DEVELOPER"
 }
 ```
 
@@ -92,17 +74,17 @@ var request = require('request');
 
 var options = {
   headers: {
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
     'Content-Type': 'application/json'
   },
   body: {
-    email: 'test1@nurigo.net',
-    password: 'asd123!',
-    passwordConfirmation: 'asd123!',
-    captcha: 'DUMMY'
+    email: 'newMail@test.net',
+    role: 'DEVELOPER'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/signup'
+  url: 'http://api.solapi.com/users/v1/invitations'
 };
 
 request(options, function(error, response, body) {
@@ -117,12 +99,12 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/signup";
-$data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}';
+$url = "http://api.solapi.com/users/v1/invitations";
+$data = '{"email":"newMail@test.net","role":"DEVELOPER"}';
 
 $options = array(
     'http' => array(
-        'header'  => "Content-Type: application/json\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
         'method'  => 'POST'
     )
@@ -141,11 +123,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/signup"
+url = "http://api.solapi.com/users/v1/invitations"
 headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}'
+data = '{"email":"newMail@test.net","role":"DEVELOPER"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -159,9 +142,10 @@ print(response.text)
 ```curl
 #!/bin/bash
 curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
-	http://api.solapi.com/users/v1/signup
+	-d '{"email":"newMail@test.net","role":"DEVELOPER"}' \
+	http://api.solapi.com/users/v1/invitations
 ```
 {% endtab %}
 
@@ -172,16 +156,15 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/signup")
+uri = URI.parse("http://api.solapi.com/users/v1/invitations")
 
 headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "email": "test1@nurigo.net",
-  "password": "asd123!",
-  "passwordConfirmation": "asd123!",
-  "captcha": "DUMMY"
+  "email": "newMail@test.net",
+  "role": "DEVELOPER"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -207,12 +190,13 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/signup"
-  data := strings.NewReader(`{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}`)
+  uri := "http://api.solapi.com/users/v1/invitations"
+  data := strings.NewReader(`{"email":"newMail@test.net","role":"DEVELOPER"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
   req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
@@ -241,14 +225,15 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/signup";
-    String parameters = "{\"email\":\"test1@nurigo.net\",\"password\":\"asd123!\",\"passwordConfirmation\":\"asd123!\",\"captcha\":\"DUMMY\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/invitations";
+    String parameters = "{\"email\":\"newMail@test.net\",\"role\":\"DEVELOPER\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
     con.setRequestMethod("POST");
 
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
