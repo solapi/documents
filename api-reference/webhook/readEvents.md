@@ -1,28 +1,28 @@
 # 이벤트 목록 조회
 
 ## Request
-
-```text
+```
 GET https://api.solapi.com/webhook/v1/events
 ```
 
 등록된 이벤트 목록을 조회합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `webhook:read` | `role-webhook:read` |  |  |  |
 
 ### Query Params
-
-| Name | Type | Required | Allowed Operator [\[?\]](https://docs.solapi.com/api-reference/api-reference#operator) | Description |
-| :--- | :---: | :---: | :---: | :--- |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | eventId | `string` |  | eq | 설명 없음 |
 | name | `string` |  | eq | 이름 |
 | dateCreated | `date` |  | gte, lte, gt, lt, eq | 최초 생성 날짜 |
-| dateUpdated | `date` |  | gte, lte, gt, lt, eq | 최초 생성 날짜 |
+| dateUpdated | `date` |  | gte, lte, gt, lt, eq | 최근 수정 날짜 |
+
+---
 
 ## Samples
 
@@ -30,166 +30,168 @@ GET https://api.solapi.com/webhook/v1/events
 
 > **Sample Request**
 
-```text
+```
 http://api.solapi.com/webhook/v1/events?
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "limit": 20,
     "eventList": [
         {
             "description": null,
-            "eventId": "WH01ET191031095607673x4KPmKzmvyI",
+            "eventId": "WH01ET191230002851650zyiotTHQnAX",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673sNa2FPUk7rz",
+            "eventId": "WH01ET191230002851650we54CuSEyrZ",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673osvtjyPWoIm",
+            "eventId": "WH01ET191230002851650wKciJhiO2Bf",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
+            "dateCreated": "2019-12-30T00:28:51.658Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673oUgJuUhvJjy",
+            "eventId": "WH01ET191230002851650ve9viyd1bu3",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673nwvsXzx70uM",
+            "eventId": "WH01ET191230002851650uYavsHiWjx1",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673n2G7sQocHPW",
+            "eventId": "WH01ET191230002851650uQylG7BRkvn",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673kOd3GdiZrOC",
+            "eventId": "WH01ET191230002851650tqwGBls5vk8",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673hoiGYItBwFR",
-            "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
-        },
-        {
-            "description": null,
-            "eventId": "WH01ET191031095607673eiN8uAfRATB",
-            "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
-        },
-        {
-            "description": null,
-            "eventId": "WH01ET191031095607673cP2LMhEtCsi",
-            "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
-        },
-        {
-            "description": null,
-            "eventId": "WH01ET191031095607673WgNLvtKYKZj",
+            "eventId": "WH01ET191230002851650tQkrqkNttvR",
             "name": "CashReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673WHfB8byubGL",
+            "eventId": "WH01ET191230002851650s2Mzqi1DRsm",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673UrGhFfR5IQT",
+            "eventId": "WH01ET191230002851650lbT6WuIIKeN",
             "name": "CashReport",
-            "dateCreated": "2019-10-31T09:56:07.701Z",
-            "dateUpdated": "2019-10-31T09:56:07.701Z"
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673SNrevqPphJ8",
+            "eventId": "WH01ET191230002851650kXzxaS8KB7U",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
+            "dateCreated": "2019-12-30T00:28:51.658Z",
+            "dateUpdated": "2019-12-30T00:28:51.658Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673P86fsnFGTpq",
+            "eventId": "WH01ET191230002851650iMikLyy8P2X",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673NOALoPzx0Um",
+            "eventId": "WH01ET191230002851650gXSiEL5tnDi",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.700Z",
-            "dateUpdated": "2019-10-31T09:56:07.700Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673NEsqpelFgRM",
-            "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
+            "eventId": "WH01ET191230002851650eCeZ6fA4UBz",
+            "name": "CashReport",
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673Mqz1xmPb1MF",
+            "eventId": "WH01ET191230002851650QPzROM6FZ28",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673MjFQa1fGomb",
+            "eventId": "WH01ET191230002851650Q4pplOpSEMk",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.685Z",
-            "dateUpdated": "2019-10-31T09:56:07.685Z"
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
         },
         {
             "description": null,
-            "eventId": "WH01ET191031095607673M6toswBP4Nu",
+            "eventId": "WH01ET191230002851650Kc3hAPkHtgS",
             "name": "MessageReport",
-            "dateCreated": "2019-10-31T09:56:07.686Z",
-            "dateUpdated": "2019-10-31T09:56:07.686Z"
+            "dateCreated": "2019-12-30T00:28:51.658Z",
+            "dateUpdated": "2019-12-30T00:28:51.658Z"
+        },
+        {
+            "description": null,
+            "eventId": "WH01ET191230002851650GXDJoE7pIuU",
+            "name": "CashReport",
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
+        },
+        {
+            "description": null,
+            "eventId": "WH01ET191230002851650FDC4GPbjDhy",
+            "name": "MessageReport",
+            "dateCreated": "2019-12-30T00:28:51.659Z",
+            "dateUpdated": "2019-12-30T00:28:51.659Z"
+        },
+        {
+            "description": null,
+            "eventId": "WH01ET1912300028516507P3PIDi6k5a",
+            "name": "CashReport",
+            "dateCreated": "2019-12-30T00:28:51.660Z",
+            "dateUpdated": "2019-12-30T00:28:51.660Z"
         }
     ],
-    "startKey": "WH01ET191031095607673x4KPmKzmvyI",
-    "nextKey": "WH01ET191031095607673G8QZrG4Wnsf"
+    "startKey": "WH01ET191230002851650zyiotTHQnAX",
+    "nextKey": "WH01ET1912300028516504c3aLJ4B43H"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -207,27 +209,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'GET',
-  url: 'http://api.solapi.com/webhook/v1/events?'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/webhook/v1/events?";
@@ -243,10 +230,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -258,19 +247,22 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X GET \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/webhook/v1/events?
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/webhook/v1/events?
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -287,10 +279,12 @@ request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -318,10 +312,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -361,9 +357,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-31
+---
+
+> 문서 생성일 : 2019-12-30
 

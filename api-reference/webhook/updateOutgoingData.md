@@ -1,76 +1,88 @@
-# 웹훅 추가
+# 웹훅 수정
 
 ## Request
-
-```text
-POST https://api.solapi.com/webhook/v1/outgoing
+```
+PUT https://api.solapi.com/webhook/v1/outgoing/:webhookId
 ```
 
-사용할 이벤트, URL과 함께 웹훅을 추가합니다.
+등록된 웹훅을 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `webhook:write` | `role-webhook:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
+| :---------: | :------: |
 |  |  |
 
-### Request Structure
+### Path Parameters
 
-```javascript
+| Name | Description |
+| :--: | :---------: |
+| :webhookId | 설명 없음 |
+
+### Request Structure
+```json
 {
     "eventId": "string",
     "url": "string",
-    "secret": "string"
+    "secret": "string",
+    "status": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| eventId | `string` | O | 설명 없음 |
-| url | `string` | O | 설명 없음 |
+| :--- | :--: | :------: | :---------- |
+| eventId | `string` |  | 설명 없음 |
+| url | `string` |  | 설명 없음 |
 | secret | `string` |  | 설명 없음 |
+| status | `string` |  | 상태값 |
+
+
+---
 
 ## Samples
 
-### createOutgoingData.spec.js
+### updateOutgoingData.spec.js
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "eventId": "WH01ET1910310956066282e5gopbRjpq",
-    "url": "https://solapi.com/report"
+    "eventId": "WH01ET191230002851190wQcCSqNEIMz",
+    "url": "https://solapi.com/report1",
+    "secret": "secretKey",
+    "status": "INACTIVE"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "secret": null,
-    "status": "ACTIVE",
+    "secret": "ee1b507610b2d8c366ece22a8d89c6487c710db5",
+    "status": "INACTIVE",
     "failCount": 0,
     "accountId": "12925149",
-    "eventId": "WH01ET1910310956066282e5gopbRjpq",
-    "url": "https://solapi.com/report",
-    "webhookId": "WH01WH1910310956073659qoipGq2S7Z",
-    "dateCreated": "2019-10-31T09:56:07.377Z",
-    "dateUpdated": "2019-10-31T09:56:07.377Z"
+    "webhookId": "WH01WH191230002851190nhxjcDhWZJE",
+    "eventId": "WH01ET191230002851190wQcCSqNEIMz",
+    "url": "https://solapi.com/report1",
+    "dateCreated": "2019-12-30T00:28:51.614Z",
+    "dateUpdated": "2019-12-30T00:28:51.621Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -81,54 +93,37 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    eventId: 'WH01ET1910310956066282e5gop...',
-    url: 'https://solapi.com/report'
+    eventId: 'WH01ET191230002851190wQcCSq...',
+    url: 'https://solapi.com/report1',
+    secret: 'secretKey',
+    status: 'INACTIVE'
   },
-  method: 'POST',
+  method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/webhook/v1/outgoing'
+  url:
+    'http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    eventId: 'WH01ET1910310956066282e5gop...',
-    url: 'https://solapi.com/report'
-  },
-  method: 'POST',
-  url: 'http://api.solapi.com/webhook/v1/outgoing'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/webhook/v1/outgoing";
-$data = '{"eventId":"WH01ET1910310956066282e5gop...","url":"https://solapi.com/report"}';
+$url = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE";
+$data = '{"eventId":"WH01ET191230002851190wQcCSq...","url":"https://solapi.com/report1","secret":"secretKey","status":"INACTIVE"}';
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'POST'
+        'method'  => 'PUT'
     )
 );
 
@@ -136,64 +131,73 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/webhook/v1/outgoing"
+url = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"eventId":"WH01ET1910310956066282e5gop...","url":"https://solapi.com/report"}'
+data = '{"eventId":"WH01ET191230002851190wQcCSq...","url":"https://solapi.com/report1","secret":"secretKey","status":"INACTIVE"}'
 
-response = requests.post(url, headers=headers, data=data)
+response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"eventId":"WH01ET1910310956066282e5gop...","url":"https://solapi.com/report"}' \
-    http://api.solapi.com/webhook/v1/outgoing
+curl -X PUT \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"eventId":"WH01ET191230002851190wQcCSq...","url":"https://solapi.com/report1","secret":"secretKey","status":"INACTIVE"}' \
+	http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/webhook/v1/outgoing")
+uri = URI.parse("http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "eventId": "WH01ET1910310956066282e5gop...",
-  "url": "https://solapi.com/report"
+  "eventId": "WH01ET191230002851190wQcCSq...",
+  "url": "https://solapi.com/report1",
+  "secret": "secretKey",
+  "status": "INACTIVE"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -205,10 +209,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/webhook/v1/outgoing"
-  data := strings.NewReader(`{"eventId":"WH01ET1910310956066282e5gop...","url":"https://solapi.com/report"}`)
+  uri := "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE"
+  data := strings.NewReader(`{"eventId":"WH01ET191230002851190wQcCSq...","url":"https://solapi.com/report1","secret":"secretKey","status":"INACTIVE"}`)
 
-  req, err := http.NewRequest("POST", uri, data)
+  req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -223,10 +227,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -238,13 +244,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/webhook/v1/outgoing";
-    String parameters = "{\"eventId\":\"WH01ET1910310956066282e5gop...\",\"url\":\"https://solapi.com/report\"}";
+    String targetUrl = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851190nhxjcDhWZJE";
+    String parameters = "{\"eventId\":\"WH01ET191230002851190wQcCSq...\",\"url\":\"https://solapi.com/report1\",\"secret\":\"secretKey\",\"status\":\"INACTIVE\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("PUT");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
@@ -268,9 +274,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-31
+---
+
+> 문서 생성일 : 2019-12-30
 
