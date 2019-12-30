@@ -5,7 +5,18 @@
 PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
-그룹에 메시지를 추가합니다. 접수 실패건은 저장되지만 발송은 되지 않습니다.<br>그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.<br>- 하나의 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.<br>- 하나의 요청에 수신번호는 10,000 개를 넘을 수 없습니다.<br>- 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 제한입니다.
+그룹에 메시지를 추가합니다. 접수 실패건은 저장되지만 발송은 되지 않습니다.
+
+그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.
+- 하나의 요청의 총 데이터 크기는 15MB를 넘을 수 없습니다.
+- 하나의 요청에 수신번호는 10,000 개를 넘을 수 없습니다.
+- 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 제한입니다.
+
+솔라피 홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
+
+전송 내역(메시지 그룹, 메시지 목록)의 보관기간은 생성일 기준 6개월 입니다.
+6개월이 지난 내역은 조회가 불가능합니다.
+
 
 ### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
@@ -17,7 +28,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 | Name | Description |
 | :--: | :---------: |
-| :groupId | 설명 없음 |
+| :groupId | 메시지 그룹 아이디 |
 
 ### Request Structure
 ```json
@@ -42,8 +53,8 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 | type | `string` |  | 메시지 타입 |
 | country | `string` |  | 국가번호 (현재 미지원) |
 | subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
-| imageId | `string` |  | 이미지 아이디 |
-| [kakaoOptions](#body-messages-kakaooptions) | `object` |  | 설명 없음 |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
+| [kakaoOptions](#body-messages-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
 | [customFields](#body-messages-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
 | autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
 
@@ -54,6 +65,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
 | pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
 | [buttons](#body-messages-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
 
@@ -153,7 +165,7 @@ PUT https://api.solapi.com/messages/v4/groups/:groupId/messages
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338QB0NBWOMPMC8P2D",
+            "messageId": "M4V20191231065946A2XNU0TENTXDRDU",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -404,7 +416,7 @@ public class Request {
             "type": "LMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338PLQWWWFYCFRGYOC",
+            "messageId": "M4V20191231065946OCMFDFWLFX75R68",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -658,7 +670,7 @@ public class Request {
             "type": "MMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338VCSALUUYPSY8F3V",
+            "messageId": "M4V20191231065946W8JE3P4UHBF92AD",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -941,7 +953,7 @@ public class Request {
             "type": "ATA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338IU8RTQOCU3J4GO4",
+            "messageId": "M4V201912310659463C4TVAGSBJKTY6E",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1253,7 +1265,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338YDZ3NDGPJ4X2KAN",
+            "messageId": "M4V201912310659464URJOX497ERYPCO",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -1480,6 +1492,268 @@ public class Request {
 
 ---
 
+### 친구톡 이미지 (CTI) 추가
+
+> **Sample Request**
+
+```json
+{
+    "messages": [
+        {
+            "to": "01000000004",
+            "from": "029302266",
+            "text": "cta test message",
+            "type": "CTI",
+            "kakaoOptions": {
+                "pfId": "KA01PF190227072057634pRBhbpAw1w1",
+                "imageId": "FILEID191113003354156UvCuw3tubTl"
+            }
+        }
+    ]
+}
+```
+
+> **Sample Response**
+
+```json
+{
+    "errorCount": 0,
+    "resultList": [
+        {
+            "to": "01000000004",
+            "from": "029302266",
+            "type": "CTI",
+            "statusMessage": "정상 접수(이통사로 접수 예정) ",
+            "country": "82",
+            "messageId": "M4V20191231065946IK7MKVBSVKDLPDA",
+            "statusCode": "2000",
+            "accountId": "12925149"
+        }
+    ]
+}
+```
+
+> **Sample Code**
+
+{% tabs %}
+
+{% tab title="NODE" %}
+
+```javascript
+var request = require('request');
+
+var options = {
+  headers: {
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
+    'Content-Type': 'application/json'
+  },
+  body: {
+    messages: [
+      {
+        to: '01000000004',
+        from: '029302266',
+        text: 'cta test message',
+        type: 'CTI',
+        kakaoOptions: {
+          pfId: 'KA01PF190227072057634pRBhbpAw1w1',
+          imageId: 'FILEID191113003354156UvCuw3tubTl'
+        }
+      }
+    ]
+  },
+  method: 'PUT',
+  json: true,
+  url:
+    'http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages'
+};
+
+request(options, function(error, response, body) {
+  if (error) throw error;
+  console.log('result :', body);
+});
+
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+<?php
+$url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages";
+$data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}';
+
+$options = array(
+    'http' => array(
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
+        'method'  => 'PUT'
+    )
+);
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+var_dump($result);
+
+```
+{% endtab %}
+
+{% tab title="PYTHON" %}
+
+```python
+import requests
+
+url = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
+headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}'
+
+response = requests.put(url, headers=headers, data=data)
+print(response.status_code)
+print(response.text)
+
+```
+{% endtab %}
+
+{% tab title="CURL" %}
+
+```curl
+#!/bin/bash
+curl -X PUT \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}' \
+	http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages
+```
+{% endtab %}
+
+{% tab title="RUBY" %}
+
+```ruby
+require 'net/http'
+require 'uri'
+require 'json'
+
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages")
+
+headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = {
+  "messages": [
+    {
+      "to": "01000000004",
+      "from": "029302266",
+      "text": "cta test message",
+      "type": "CTI",
+      "kakaoOptions": {
+        "pfId": "KA01PF190227072057634pRBhbpAw1w1",
+        "imageId": "FILEID191113003354156UvCuw3tubTl"
+      }
+    }
+  ]
+}
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Put.new(uri.request_uri, headers)
+request.body = data.to_json
+
+response = http.request(request)
+puts response.code
+puts response.body
+
+```
+{% endtab %}
+
+{% tab title="GO" %}
+
+```go
+package main
+
+import (
+  "fmt"
+  "io/ioutil"
+  "net/http"
+  "strings"
+)
+
+func main() {
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages"
+  data := strings.NewReader(`{"messages":[{"to":"01000000004","from":"029302266","text":"cta test message","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}`)
+
+  req, err := http.NewRequest("PUT", uri, data)
+  if err != nil { panic(err) }
+
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
+  req.Header.Set("Content-Type", "application/json")
+
+  client := &http.Client{}
+  resp, err := client.Do(req)
+  if err != nil { panic(err) }
+  defer resp.Body.Close()
+
+  bytes, _ := ioutil.ReadAll(resp.Body)
+  str := string(bytes)
+  fmt.Println(str)
+}
+
+```
+{% endtab %}
+
+{% tab title="JAVA" %}
+
+```java
+package solapi;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Request {
+  public static void main(String[] args) throws Exception {
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190607105937H3PFASXMNJG2JID/messages";
+    String parameters = "{\"messages\":[{\"to\":\"01000000004\",\"from\":\"029302266\",\"text\":\"cta test message\",\"type\":\"CTI\",\"kakaoOptions\":{\"pfId\":\"KA01PF190227072057634pRBhbpAw1w1\",\"imageId\":\"FILEID191113003354156UvCuw3tubTl\"}}]}";
+
+    URL url = new URL(targetUrl);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+    con.setRequestMethod("PUT");
+
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
+    con.setRequestProperty("Content-Type", "application/json");
+
+    con.setDoOutput(true);
+    DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+    wr.writeBytes(parameters);
+    wr.flush();
+    wr.close();
+
+    int responseCode = con.getResponseCode();
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String line;
+    StringBuffer response = new StringBuffer();
+    while ((line = in.readLine()) != null) {
+      response.append(line);
+    }
+    in.close();
+
+    System.out.println("HTTP response code : " + responseCode);
+    System.out.println("HTTP body : " + response.toString());
+  }
+}
+
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
 ### 커스텀 필드 사용
 
 > **Sample Request**
@@ -1517,7 +1791,7 @@ public class Request {
             "type": "CTA",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338LK6I81FCEKHINK7",
+            "messageId": "M4V20191231065946MKDKMJFTSQNH4AU",
             "statusCode": "2000",
             "accountId": "12925149",
             "customFields": {
@@ -1788,7 +2062,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V201912250053383YC37V7TP37UICN",
+            "messageId": "M4V20191231065946YJWWNLJZ7JWCSD9",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2041,7 +2315,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338MXZTUK3OXMMM3IF",
+            "messageId": "M4V201912310659479NXGFLLRXRV6P9B",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2051,7 +2325,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005338ZPSS84KHZLWFCKH",
+            "messageId": "M4V20191231065947Z5IRNG4LQUDVXMX",
             "statusCode": "2000",
             "accountId": "12925149"
         }
@@ -2313,7 +2587,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005339SWY3UEJRGTBLWWI",
+            "messageId": "M4V20191231065947YCFFPUGAKBFAHLL",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2323,7 +2597,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "정상 접수(이통사로 접수 예정) ",
             "country": "82",
-            "messageId": "M4V20191225005339ZKOPA1VREBFIZKE",
+            "messageId": "M4V20191231065947DSUFP16TIC2CHGL",
             "statusCode": "2000",
             "accountId": "12925149"
         },
@@ -2333,7 +2607,7 @@ public class Request {
             "type": "SMS",
             "statusMessage": "중복 수신번호",
             "country": "82",
-            "messageId": "M4V20191225005339T6UMQHPBO45NXGB",
+            "messageId": "M4V20191231065947KCHEUZMPRVO344C",
             "statusCode": "1026",
             "accountId": "12925149"
         }
@@ -2540,5 +2814,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-24
+> 문서 생성일 : 2019-12-30
 

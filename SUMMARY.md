@@ -37,6 +37,8 @@
     * [실패한 그룹 재발송 요청](api-reference/messages/groups/resendGroupMessage.md)
   * [메시지 조회](api-reference/messages/getMessageList.md)
   * [통계 조회](api-reference/messages/getStatistics.md)
+  * [overseas](api-reference/messages/overseas/README.md)
+    * [해외 문자 리포트 처리](api-reference/messages/overseas/report.md)
 * [카카오톡](api-reference/kakao/README.md)
   * [템플릿 검수 요청](api-reference/kakao/templateinspection.md)
   * [카테고리 정보 조회](api-reference/kakao/getcategory.md)

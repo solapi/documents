@@ -17,7 +17,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 | Name | Description |
 | :--: | :---------: |
-| :groupId | 설명 없음 |
+| :groupId | 메시지 그룹 아이디 |
 
 ### Request Structure
 ```json
@@ -263,5 +263,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-24
+> 문서 생성일 : 2019-12-30
 
