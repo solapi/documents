@@ -95,8 +95,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "to": "01000000000",
     "customFields": {},
     "hint": {},
-    "dateCreated": "2019-12-30T21:59:51.170Z",
-    "dateUpdated": "2019-12-30T21:59:51.183Z"
+    "dateCreated": "2020-01-02T00:39:42.431Z",
+    "dateUpdated": "2020-01-02T00:39:42.441Z"
 }
 ```
 
@@ -307,5 +307,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-01-02
 

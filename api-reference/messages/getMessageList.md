@@ -74,8 +74,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2019-12-30T21:59:46.030Z",
-            "dateUpdated": "2019-12-30T21:59:46.030Z",
+            "dateCreated": "2020-01-02T00:39:36.912Z",
+            "dateUpdated": "2020-01-02T00:39:36.912Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -263,5 +263,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-01-02
 
