@@ -62,7 +62,9 @@ GET https://api.solapi.com/oauth2/v1/authorize
         &#xAD6C;&#xBD84;&#xC9D3;&#xB294; &#xAD6C;&#xBCC4; &#xD0A4;</td>
     </tr>
   </tbody>
-</table>```text
+</table>
+
+```text
 // rseponse_type이 code일 경우
 {
     code: 'ADFKVJCK19JDFKL2KFJLS3388',
@@ -164,7 +166,9 @@ POST https://api.solapi.com/oauth2/v1/access_token
       </td>
     </tr>
   </tbody>
-</table>또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
+</table>
+
+또한 발급받은 액세스 토큰의 경우 24시간 사용이 가능하며, Refresh Token을 통해 좀 더 간단하게 재발급이 가능합니다.  
 Refresh Token의 경우 만료기한이 없으며, **가장 처음 엑세스 토큰을 발급받을 때만 볼 수 있으니 이 점 유의 부탁드립니다.**
 
 ## Step 3. 엑세스 토큰을 사용하여 API 접근하기

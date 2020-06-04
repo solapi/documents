@@ -1,14 +1,16 @@
 # 회원가입
 
 ## Request
-```
+
+```text
 POST https://api.solapi.com/users/v1/signup
 ```
 
 ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 ### Request Structure
-```json
+
+```javascript
 {
     "email": "email",
     "password": "string",
@@ -20,8 +22,9 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 ```
 
 ### Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
+| :--- | :---: | :---: | :--- |
 | email | `email` | O | 이메일 |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
@@ -29,16 +32,13 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 | marketerAccountId | `string` |  | 설명 없음 |
 | name | `string` |  | 이름 |
 
-
----
-
 ## Samples
 
 ### signup.spec.js
 
 > **Sample Request**
 
-```json
+```javascript
 {
     "email": "test1@nurigo.net",
     "password": "asd123!",
@@ -49,7 +49,7 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 > **Sample Response**
 
-```json
+```javascript
 {
     "account": {
         "status": "ACTIVE",
@@ -84,9 +84,7 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -109,12 +107,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 $url = "http://api.solapi.com/users/v1/signup";
@@ -132,12 +128,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -150,23 +144,20 @@ data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X POST \
-	-H 'Content-Type: application/json' \
-	-d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
-	http://api.solapi.com/users/v1/signup
+    -H 'Content-Type: application/json' \
+    -d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
+    http://api.solapi.com/users/v1/signup
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -190,12 +181,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -224,12 +213,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -270,13 +257,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
 > 문서 생성일 : 2019-12-30
 
