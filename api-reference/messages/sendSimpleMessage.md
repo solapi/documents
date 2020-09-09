@@ -7,7 +7,7 @@ POST https://api.solapi.com/messages/v4/send
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-홈페이지의 [문자발송 내역](https://solapi.net/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
+홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
 
 전송 내역(메시지 그룹, 메시지 목록)의 보관기간은 생성일 기준 6개월 입니다.
 6개월이 지난 내역은 조회가 불가능합니다.
@@ -143,13 +143,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20200909132022LFKUISLTYYG3QQJ",
+    "groupId": "G4V20200909140920SIAOXNY53NII2QH",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022AZS90QSB6AYB2LQ",
+    "messageId": "M4V20200909140920L6CSANRNZEMSIAF",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -380,13 +380,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909132022EF5FGXPZSVQIKGT",
+    "groupId": "G4V20200909140920LGJS4O1BMNC89EX",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022KNWNNTGZT7Y9PCD",
+    "messageId": "M4V20200909140920LSPBKFSVMNLMACR",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -620,13 +620,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909132022RZL5AEXTUQPGMQD",
+    "groupId": "G4V20200909140920MASUMBLACJW6W20",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022OUSNWGSGHUQHHGM",
+    "messageId": "M4V20200909140920ZI9GL6QTMOB4L80",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -864,13 +864,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909132022NJN7YTZL1OTBQEM",
+    "groupId": "G4V20200909140920FMCSHCVXGFUTCN9",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022XL7IQTKTLDP1D56",
+    "messageId": "M4V20200909140920OVBXCIYYTKK6QG3",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1118,13 +1118,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V2020090913202204GOCXY3LPMWGZJ",
+    "groupId": "G4V20200909140920UDCBEDQKZRCFIS6",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022XXO4YUHM19R7EJ8",
+    "messageId": "M4V20200909140920WWJOPCVKBPZINPA",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1383,13 +1383,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909132022ZPNVQHRYSWXWERB",
+    "groupId": "G4V20200909140920IWAP3LQEV4EFBBN",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022WGLVAZA2WH3TMQG",
+    "messageId": "M4V20200909140920DDB5KY23GWA5XMI",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1632,13 +1632,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909132022CE79KZZ8YW3PNH8",
+    "groupId": "G4V202009091409208KA9RNKNWNBWWRR",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909132022HHOZUNTVNB1ERFK",
+    "messageId": "M4V20200909140920P85SVEZSHFP90Z1",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1880,13 +1880,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202009091320215EIFLECNTHELRI5",
+    "groupId": "G4V20200909140920NGELDMOQFVLZU1M",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V202009091320218ACBCOECEN2AE9M",
+    "messageId": "M4V20200909140920YSAQMMBU6GDYEWB",
     "statusCode": "2000",
     "accountId": "12925149"
 }
