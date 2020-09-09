@@ -11,7 +11,7 @@ GET https://api.solapi.com/messages/v4/statistics
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` |  |
 
 ### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
@@ -41,16 +41,16 @@ http://api.solapi.com/messages/v4/statistics
     "monthlyPointAvg": 1,
     "monthPeriod": [
         {
-            "date": "2020/01",
+            "date": "2020/09",
             "balance": 1,
             "balanceAvg": 1,
             "point": 1,
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2020-01-02T00:39:41.077Z",
-                    "month": "2020/01",
-                    "date": "2020/01/02",
+                    "_id": "2020-09-09T03:58:49.183Z",
+                    "month": "2020/09",
+                    "date": "2020/09/09",
                     "balance": 1,
                     "point": 1,
                     "statusCode": {
@@ -138,9 +138,9 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2020-01-02T00:39:41.077Z",
-            "month": "2020/01",
-            "date": "2020/01/02",
+            "_id": "2020-09-09T03:58:49.183Z",
+            "month": "2020/09",
+            "date": "2020/09/09",
             "balance": 1,
             "point": 1,
             "statusCode": {
@@ -399,5 +399,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

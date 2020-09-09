@@ -11,7 +11,7 @@ GET https://api.solapi.com/messages/v4/list
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` |  |
 
 ### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
@@ -21,6 +21,9 @@ GET https://api.solapi.com/messages/v4/list
 | value | `string` |  | eq | 검색 값<br>criteria , cond 값에 대응하는 value 입니다.<br>criteria='messageId,statusCode'<br>cond='eq,eq'<br>일 경우 groupId 에 대응하는 value 값을 찾고 status 에 대응하는 값을 찾는 조건 입니다.<br>e.g - value='메시지아이디,2000' |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| dateType | `string` |  | eq | 설명 없음 |
+| startDate | `date` |  | eq | 검색 시작 날짜 |
+| endDate | `date` |  | eq | 검색 끝 날짜 |
 
 ---
 
@@ -74,8 +77,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2020-01-02T00:39:36.912Z",
-            "dateUpdated": "2020-01-02T00:39:36.912Z",
+            "dateCreated": "2020-09-09T03:58:43.133Z",
+            "dateUpdated": "2020-09-09T03:58:43.133Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -263,5 +266,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

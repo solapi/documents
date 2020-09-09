@@ -11,7 +11,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
@@ -263,5 +263,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

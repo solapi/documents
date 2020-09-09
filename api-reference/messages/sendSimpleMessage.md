@@ -7,7 +7,7 @@ POST https://api.solapi.com/messages/v4/send
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-솔라피 홈페이지의 [문자발송 내역](https://api.solapi.net/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
+홈페이지의 [문자발송 내역](https://solapi.net/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
 
 전송 내역(메시지 그룹, 메시지 목록)의 보관기간은 생성일 기준 6개월 입니다.
 6개월이 지난 내역은 조회가 불가능합니다.
@@ -17,12 +17,13 @@ POST https://api.solapi.com/messages/v4/send
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Request Structure
 ```json
 {
     "message": "object",
+    "strict": "boolean",
     "agent": "object"
 }
 ```
@@ -31,6 +32,7 @@ POST https://api.solapi.com/messages/v4/send
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | [message](#body-message) | `object` | O | 메시지에 대한 정보 |
+| strict | `boolean` |  | 설명 없음 |
 | [agent](#body-agent) | `object` |  | 에이전트 |
 
 ##### Body / message
@@ -43,7 +45,7 @@ POST https://api.solapi.com/messages/v4/send
 | type | `string` |  | 메시지 타입 |
 | country | `string` |  | 국가번호 (현재 미지원) |
 | subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
-| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.net/api-reference/storage) |
 | [kakaoOptions](#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
 | [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
 | autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
@@ -52,10 +54,10 @@ POST https://api.solapi.com/messages/v4/send
 
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
-| pfId | `string` |  | SOLAPI와 연동된 플러스 친구 고유 아이디 |
+| pfId | `string` |  | 테스트에서 발급된 카카오톡 채널의 연동 아이디 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
-| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.net/api-reference/storage) |
 | [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
 
@@ -111,8 +113,8 @@ POST https://api.solapi.com/messages/v4/send
 | groupId | `string` | O | 그룹 아이디 |
 | messageId | `string` | O | 메시지 아이디 |
 | accountId | `string` | O | 계정 고유 번호 |
-| statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
-| statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
+| statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.net/api-reference/message-status-codes) |
+| statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.net/api-reference/message-status-codes) |
 | to | `string` | O | 수신번호 |
 | from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
 | type | `string` | O | 메시지 타입 |
@@ -141,13 +143,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V202001020939392SKXTZT3SAPVUGU",
+    "groupId": "G4V20200909125846OQ9AQHPR0VYCUSY",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093939RARYPLKXJGOQNCU",
+    "messageId": "M4V202009091258461AKLFRPJLT80NMU",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -378,13 +380,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200102093939SIL99JW4VEUXYLA",
+    "groupId": "G4V20200909125846FSR88R8HRJ6QSHY",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093939G5F7DFCBRDCUY1K",
+    "messageId": "M4V20200909125846EO2DUWXBCTYXW5Z",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -618,13 +620,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200102093939RPPRGAVKXP9A7HJ",
+    "groupId": "G4V20200909125846JHMTOIO0FTLQ58X",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093939XDYVBHMFTX8TTXR",
+    "messageId": "M4V20200909125846RLUOSD3PGMMNHBT",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -862,13 +864,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200102093939DLKKQUQB0Y7JVY6",
+    "groupId": "G4V20200909125846DMNXT3MFILMGDZO",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093939XE3ULSJDH66QDQK",
+    "messageId": "M4V20200909125846QCB44OX0SRQFYKT",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1116,13 +1118,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202001020939396XDUYMOGPD2IXZK",
+    "groupId": "G4V20200909125846WIQYKIGRZ1R4AFZ",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093939JOPIOWDUOMZLFLS",
+    "messageId": "M4V20200909125846SQSOT8THUUS0EIJ",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1381,13 +1383,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200102093939U1Y6S3V6XOJLS3W",
+    "groupId": "G4V20200909125847XF3RHVTFQ93YGV2",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093940QM99GHUR3MYNK6M",
+    "messageId": "M4V20200909125847GZTLPAHG7BJUFQ2",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1630,13 +1632,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200102093940HOWSVQI1G9DGWBF",
+    "groupId": "G4V20200909125847HEL34CNRBD1800E",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200102093940US2INUHIMMGZWKT",
+    "messageId": "M4V20200909125847P3YJ4NP9WK7DUZA",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1858,5 +1860,247 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+### sendSimpleMessage
+
+> **Sample Request**
+
+```json
+{
+    "strict": false,
+    "message": {
+        "to": "01000000001",
+        "from": "029302266",
+        "text": "뷁뒑뤩궭훩홊",
+        "type": "SMS"
+    }
+}
+```
+
+> **Sample Response**
+
+```json
+{
+    "groupId": "G4V20200909125846S10GEO96QIIFYXU",
+    "to": "01000000001",
+    "from": "029302266",
+    "type": "SMS",
+    "statusMessage": "정상 접수(이통사로 접수 예정) ",
+    "country": "82",
+    "messageId": "M4V20200909125846GOJUSTFGXAIAXB1",
+    "statusCode": "2000",
+    "accountId": "12925149"
+}
+```
+
+> **Sample Code**
+
+{% tabs %}
+
+{% tab title="NODE" %}
+
+```javascript
+var request = require('request');
+
+var options = {
+  headers: {
+    Authorization:
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
+    'Content-Type': 'application/json'
+  },
+  body: {
+    strict: false,
+    message: {
+      to: '01000000001',
+      from: '029302266',
+      text: '뷁뒑뤩궭훩홊',
+      type: 'SMS'
+    }
+  },
+  method: 'POST',
+  json: true,
+  url: 'http://api.solapi.com/messages/v4/send'
+};
+
+request(options, function(error, response, body) {
+  if (error) throw error;
+  console.log('result :', body);
+});
+
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+<?php
+$url = "http://api.solapi.com/messages/v4/send";
+$data = '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}';
+
+$options = array(
+    'http' => array(
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
+        'method'  => 'POST'
+    )
+);
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+var_dump($result);
+
+```
+{% endtab %}
+
+{% tab title="PYTHON" %}
+
+```python
+import requests
+
+url = "http://api.solapi.com/messages/v4/send"
+headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}'
+
+response = requests.post(url, headers=headers, data=data)
+print(response.status_code)
+print(response.text)
+
+```
+{% endtab %}
+
+{% tab title="CURL" %}
+
+```curl
+#!/bin/bash
+curl -X POST \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}' \
+	http://api.solapi.com/messages/v4/send
+```
+{% endtab %}
+
+{% tab title="RUBY" %}
+
+```ruby
+require 'net/http'
+require 'uri'
+require 'json'
+
+uri = URI.parse("http://api.solapi.com/messages/v4/send")
+
+headers = {
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = {
+  "strict": false,
+  "message": {
+    "to": "01000000001",
+    "from": "029302266",
+    "text": "뷁뒑뤩궭훩홊",
+    "type": "SMS"
+  }
+}
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
+request.body = data.to_json
+
+response = http.request(request)
+puts response.code
+puts response.body
+
+```
+{% endtab %}
+
+{% tab title="GO" %}
+
+```go
+package main
+
+import (
+  "fmt"
+  "io/ioutil"
+  "net/http"
+  "strings"
+)
+
+func main() {
+  uri := "http://api.solapi.com/messages/v4/send"
+  data := strings.NewReader(`{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}`)
+
+  req, err := http.NewRequest("POST", uri, data)
+  if err != nil { panic(err) }
+
+  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
+  req.Header.Set("Content-Type", "application/json")
+
+  client := &http.Client{}
+  resp, err := client.Do(req)
+  if err != nil { panic(err) }
+  defer resp.Body.Close()
+
+  bytes, _ := ioutil.ReadAll(resp.Body)
+  str := string(bytes)
+  fmt.Println(str)
+}
+
+```
+{% endtab %}
+
+{% tab title="JAVA" %}
+
+```java
+package solapi;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Request {
+  public static void main(String[] args) throws Exception {
+    String targetUrl = "http://api.solapi.com/messages/v4/send";
+    String parameters = "{\"strict\":false,\"message\":{\"to\":\"01000000001\",\"from\":\"029302266\",\"text\":\"뷁뒑뤩궭훩홊\",\"type\":\"SMS\"}}";
+
+    URL url = new URL(targetUrl);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+    con.setRequestMethod("POST");
+
+    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
+    con.setRequestProperty("Content-Type", "application/json");
+
+    con.setDoOutput(true);
+    DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+    wr.writeBytes(parameters);
+    wr.flush();
+    wr.close();
+
+    int responseCode = con.getResponseCode();
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String line;
+    StringBuffer response = new StringBuffer();
+    while ((line = in.readLine()) != null) {
+      response.append(line);
+    }
+    in.close();
+
+    System.out.println("HTTP response code : " + responseCode);
+    System.out.println("HTTP body : " + response.toString());
+  }
+}
+
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+> 문서 생성일 : 2020-09-09
 

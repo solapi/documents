@@ -11,14 +11,17 @@ POST https://api.solapi.com/messages/v4/groups/
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` | O |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Request Structure
 ```json
 {
     "appId": "string",
+    "strict": "boolean",
     "sdkVersion": "string",
-    "osPlatform": "string"
+    "osPlatform": "string",
+    "customFields": "object",
+    "hint": "object"
 }
 ```
 
@@ -26,8 +29,21 @@ POST https://api.solapi.com/messages/v4/groups/
 | Name | Type | Required | Description |
 | :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
+| strict | `boolean` |  | 설명 없음 |
 | sdkVersion | `string` |  | SDK 버전 |
 | osPlatform | `string` |  | OS 플렛폼 |
+| [customFields](#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [hint](#body-hint) | `object` |  | 설명 없음 |
+
+##### Body / customFields
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+
+##### Body / hint
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
 
 
 ---
@@ -89,11 +105,12 @@ POST https://api.solapi.com/messages/v4/groups/
         "appId": null,
         "version": null
     },
+    "serviceMethod": "MT",
     "sdkVersion": null,
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2020-01-02T00:39:37.162Z",
+            "createAt": "2020-09-09T03:58:43.463Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -102,13 +119,17 @@ POST https://api.solapi.com/messages/v4/groups/
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
+    "prepaid": true,
+    "strict": false,
     "accountId": "12925149",
     "apiVersion": "4",
-    "groupId": "G4V20200102093937MYZXDHFNK4VEK7X",
+    "customFields": {},
+    "hint": null,
+    "groupId": "G4V202009091258437XQR2EQ7EWCWRXJ",
     "price": {},
-    "dateCreated": "2020-01-02T00:39:37.164Z",
-    "dateUpdated": "2020-01-02T00:39:37.164Z",
-    "_id": "G4V20200102093937MYZXDHFNK4VEK7X"
+    "dateCreated": "2020-09-09T03:58:43.466Z",
+    "dateUpdated": "2020-09-09T03:58:43.466Z",
+    "_id": "G4V202009091258437XQR2EQ7EWCWRXJ"
 }
 ```
 
@@ -291,5 +312,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

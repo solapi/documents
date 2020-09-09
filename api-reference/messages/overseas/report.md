@@ -18,6 +18,7 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "scts": "any",
     "network-code": "any",
     "err-code": "any",
+    "api-key": "string",
     "message-timestamp": "any"
 }
 ```
@@ -33,6 +34,7 @@ POST https://api.solapi.com/messages/v4/overseas/report
 | scts | `any` |  | 설명 없음 |
 | network-code | `any` |  | 설명 없음 |
 | err-code | `any` |  | 설명 없음 |
+| api-key | `string` |  | 설명 없음 |
 | message-timestamp | `any` |  | 설명 없음 |
 
 
@@ -95,8 +97,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "to": "01000000000",
     "customFields": {},
     "hint": {},
-    "dateCreated": "2020-01-02T00:39:42.431Z",
-    "dateUpdated": "2020-01-02T00:39:42.441Z"
+    "dateCreated": "2020-09-09T03:58:51.587Z",
+    "dateUpdated": "2020-09-09T03:58:51.595Z"
 }
 ```
 
@@ -307,5 +309,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

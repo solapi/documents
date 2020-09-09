@@ -11,7 +11,7 @@ GET https://api.solapi.com/messages/v4/statistics/daily
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` |  |
 
 ### Query Params
 | Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
@@ -20,6 +20,7 @@ GET https://api.solapi.com/messages/v4/statistics/daily
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
 | taxIssued | `boolean` |  | eq | 세금 계산서 발행 여부 |
 | profitSettlement | `boolean` |  | eq | 수익 정산 여부 |
+| prepaid | `boolean` |  | eq | 설명 없음 |
 | startDate | `date` |  | eq | 검색 시작 날짜 |
 | endDate | `date` |  | eq | 검색 끝 날짜 |
 
@@ -45,13 +46,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-11T00:00:00.000Z",
+        "date": "2020-08-16T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -64,13 +66,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-10T00:00:00.000Z",
+        "date": "2020-08-15T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -83,13 +86,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-09T00:00:00.000Z",
+        "date": "2020-08-14T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -102,13 +106,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-08T00:00:00.000Z",
+        "date": "2020-08-13T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -121,13 +126,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-07T00:00:00.000Z",
+        "date": "2020-08-12T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -140,13 +146,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-06T00:00:00.000Z",
+        "date": "2020-08-11T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -159,13 +166,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-05T00:00:00.000Z",
+        "date": "2020-08-10T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -178,13 +186,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-04T00:00:00.000Z",
+        "date": "2020-08-09T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -197,13 +206,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-03T00:00:00.000Z",
+        "date": "2020-08-08T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -216,13 +226,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-02T00:00:00.000Z",
+        "date": "2020-08-07T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -235,13 +246,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-12-01T00:00:00.000Z",
+        "date": "2020-08-06T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -254,13 +266,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-30T00:00:00.000Z",
+        "date": "2020-08-05T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -273,13 +286,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-29T00:00:00.000Z",
+        "date": "2020-08-04T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -292,13 +306,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-28T00:00:00.000Z",
+        "date": "2020-08-03T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -311,13 +326,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-27T00:00:00.000Z",
+        "date": "2020-08-02T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -330,13 +346,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-26T00:00:00.000Z",
+        "date": "2020-08-01T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -349,13 +366,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-25T00:00:00.000Z",
+        "date": "2020-07-31T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -368,13 +386,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-24T00:00:00.000Z",
+        "date": "2020-07-30T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -387,13 +406,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": true,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": false,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-23T00:00:00.000Z",
+        "date": "2020-07-29T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -406,13 +426,14 @@ http://api.solapi.com/messages/v4/statistics/daily
             "point": 0
         },
         "appId": null,
+        "prepaid": false,
         "balance": 10,
         "point": 100,
         "taxIssued": false,
         "profitSettlement": true,
         "profit": 0,
         "accountId": "12925149",
-        "date": "2019-11-22T00:00:00.000Z",
+        "date": "2020-07-28T23:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -601,5 +622,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

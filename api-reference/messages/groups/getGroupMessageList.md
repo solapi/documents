@@ -11,7 +11,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
@@ -77,8 +77,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2020-01-02T00:39:36.912Z",
-            "dateUpdated": "2020-01-02T00:39:36.912Z",
+            "dateCreated": "2020-09-09T03:58:43.133Z",
+            "dateUpdated": "2020-09-09T03:58:43.133Z",
             "reason": null,
             "networkName": "ETC"
         }
@@ -266,5 +266,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 

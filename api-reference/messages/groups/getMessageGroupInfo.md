@@ -11,7 +11,7 @@ GET https://api.solapi.com/messages/v4/groups/:groupId
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
-| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` | O |
+| `message:read` | `role-message:read` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
@@ -293,16 +293,17 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "appId": null,
         "version": null
     },
+    "serviceMethod": "MT",
     "sdkVersion": null,
     "osPlatform": null,
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2020-01-02T00:39:36.829Z"
+            "createAt": "2020-09-09T03:58:43.024Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2020-01-02T00:39:36.829Z"
+            "createAt": "2020-09-09T03:58:43.024Z"
         }
     ],
     "status": "PENDING",
@@ -310,6 +311,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
+    "prepaid": true,
+    "strict": true,
     "_id": "G4V20180307105937H3PTASXMNJG2JIO",
     "groupId": "G4V20180307105937H3PTASXMNJG2JIO",
     "accountId": "12925149",
@@ -325,8 +328,10 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO
         "cti": {}
     },
     "price": {},
-    "dateCreated": "2020-01-02T00:39:36.831Z",
-    "dateUpdated": "2020-01-02T00:39:36.831Z"
+    "customFields": {},
+    "hint": {},
+    "dateCreated": "2020-09-09T03:58:43.026Z",
+    "dateUpdated": "2020-09-09T03:58:43.026Z"
 }
 ```
 
@@ -510,5 +515,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-02
+> 문서 생성일 : 2020-09-09
 
