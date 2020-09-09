@@ -77,8 +77,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2020-09-09T05:09:16.937Z",
-            "dateUpdated": "2020-09-09T05:09:16.937Z",
+            "dateCreated": "2020-09-09T05:18:30.995Z",
+            "dateUpdated": "2020-09-09T05:18:30.995Z",
             "reason": null,
             "networkName": "ETC"
         }
