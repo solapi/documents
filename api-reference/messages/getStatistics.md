@@ -48,7 +48,7 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2020-09-09T04:09:44.887Z",
+                    "_id": "2020-09-09T04:20:24.568Z",
                     "month": "2020/09",
                     "date": "2020/09/09",
                     "balance": 1,
@@ -138,7 +138,7 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2020-09-09T04:09:44.887Z",
+            "_id": "2020-09-09T04:20:24.568Z",
             "month": "2020/09",
             "date": "2020/09/09",
             "balance": 1,

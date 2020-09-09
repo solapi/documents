@@ -143,13 +143,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20200909130942JS4EVTYRTRN1NMX",
+    "groupId": "G4V20200909132022LFKUISLTYYG3QQJ",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942IEUAMP87HTALFPM",
+    "messageId": "M4V20200909132022AZS90QSB6AYB2LQ",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -380,13 +380,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909130942XLRFYVOJSWF9AWM",
+    "groupId": "G4V20200909132022EF5FGXPZSVQIKGT",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942RE8UEQLPO2HJAT7",
+    "messageId": "M4V20200909132022KNWNNTGZT7Y9PCD",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -620,13 +620,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202009091309420Q42D9UPSCWUTSW",
+    "groupId": "G4V20200909132022RZL5AEXTUQPGMQD",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V202009091309424I01NCKMP9GE8AP",
+    "messageId": "M4V20200909132022OUSNWGSGHUQHHGM",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -864,13 +864,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202009091309427NKGNVJNRVKGEFF",
+    "groupId": "G4V20200909132022NJN7YTZL1OTBQEM",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942LLTMM5URT6XNGAE",
+    "messageId": "M4V20200909132022XL7IQTKTLDP1D56",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1106,7 +1106,7 @@ public class Request {
                 {
                     "buttonType": "WL",
                     "buttonName": "1:1문의",
-                    "linkMo": "https://www.coolsms.co.kr"
+                    "linkMo": "https://www.example.com"
                 }
             ]
         }
@@ -1118,13 +1118,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909130942N7K3S8BTRWGJDHP",
+    "groupId": "G4V2020090913202204GOCXY3LPMWGZJ",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942NNPBHBCKJZROBHY",
+    "messageId": "M4V20200909132022XXO4YUHM19R7EJ8",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1159,7 +1159,7 @@ var options = {
           {
             buttonType: 'WL',
             buttonName: '1:1문의',
-            linkMo: 'https://www.coolsms.co.kr'
+            linkMo: 'https://www.example.com'
           }
         ]
       }
@@ -1183,7 +1183,7 @@ request(options, function(error, response, body) {
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
-$data = '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.coolsms.co.kr"}]}}}';
+$data = '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}';
 
 $options = array(
     'http' => array(
@@ -1211,7 +1211,7 @@ headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.coolsms.co.kr"}]}}}'
+data = '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -1227,7 +1227,7 @@ print(response.text)
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
-	-d '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.coolsms.co.kr"}]}}}' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}' \
 	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
@@ -1258,7 +1258,7 @@ data = {
         {
           "buttonType": "WL",
           "buttonName": "1:1문의",
-          "linkMo": "https://www.coolsms.co.kr"
+          "linkMo": "https://www.example.com"
         }
       ]
     }
@@ -1289,7 +1289,7 @@ import (
 
 func main() {
   uri := "http://api.solapi.com/messages/v4/send"
-  data := strings.NewReader(`{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.coolsms.co.kr"}]}}}`)
+  data := strings.NewReader(`{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -1324,7 +1324,7 @@ import java.net.URL;
 public class Request {
   public static void main(String[] args) throws Exception {
     String targetUrl = "http://api.solapi.com/messages/v4/send";
-    String parameters = "{\"message\":{\"to\":\"01000000001\",\"from\":\"029302266\",\"text\":\"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.\",\"type\":\"ATA\",\"kakaoOptions\":{\"pfId\":\"KA01PF190227072057634pRBhbpAw1w1\",\"templateId\":\"test_2019030716320324334488000\",\"buttons\":[{\"buttonType\":\"WL\",\"buttonName\":\"1:1문의\",\"linkMo\":\"https://www.coolsms.co.kr\"}]}}}";
+    String parameters = "{\"message\":{\"to\":\"01000000001\",\"from\":\"029302266\",\"text\":\"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.\",\"type\":\"ATA\",\"kakaoOptions\":{\"pfId\":\"KA01PF190227072057634pRBhbpAw1w1\",\"templateId\":\"test_2019030716320324334488000\",\"buttons\":[{\"buttonType\":\"WL\",\"buttonName\":\"1:1문의\",\"linkMo\":\"https://www.example.com\"}]}}}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -1383,13 +1383,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909130942UUF8JDF3G4XGYBJ",
+    "groupId": "G4V20200909132022ZPNVQHRYSWXWERB",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942PAODDH8PASVJBW9",
+    "messageId": "M4V20200909132022WGLVAZA2WH3TMQG",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1632,13 +1632,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20200909130942UVKXAD5GDNI9BGZ",
+    "groupId": "G4V20200909132022CE79KZZ8YW3PNH8",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V2020090913094258IZQQKVGRIYTBB",
+    "messageId": "M4V20200909132022HHOZUNTVNB1ERFK",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1880,13 +1880,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202009091309426HVEXYOY6MZUCVO",
+    "groupId": "G4V202009091320215EIFLECNTHELRI5",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909130942PZ9AHGQ9B8WEJE2",
+    "messageId": "M4V202009091320218ACBCOECEN2AE9M",
     "statusCode": "2000",
     "accountId": "12925149"
 }

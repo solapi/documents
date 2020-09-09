@@ -29,7 +29,7 @@ GET https://api.solapi.com/messages/v4/list
 
 ## Samples
 
-### https://rest.coolsms.co.kr/messages/v4/list (메시지 조회)
+### /messages/v4/list (메시지 조회)
 
 > **Sample Request**
 
@@ -77,8 +77,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2020-09-09T04:09:39.210Z",
-            "dateUpdated": "2020-09-09T04:09:39.210Z",
+            "dateCreated": "2020-09-09T04:20:18.735Z",
+            "dateUpdated": "2020-09-09T04:20:18.735Z",
             "reason": null,
             "networkName": "ETC"
         }
