@@ -11,6 +11,7 @@ order:
   - scheduleGroupMessage.md
   - cancelScheduledGroupMessage.md
   - getGroupListExcel.md: false
+  - resendGroupMessage.md: false
 ---
 
 # 그룹 메시지

@@ -36,7 +36,6 @@
     * [그룹 메시지 추가](api-reference/messages/groups/addGroupMessages.md)
     * [그룹 메시지 목록 조회](api-reference/messages/groups/getGroupMessageList.md)
     * [발송 요청](api-reference/messages/groups/sendGroupMessage.md)
-    * [실패한 그룹 재발송 요청](api-reference/messages/groups/resendGroupMessage.md)
   * [메시지 조회](api-reference/messages/getMessageList.md)
   * [통계 조회](api-reference/messages/getStatistics.md)
 * [카카오톡](api-reference/kakao/README.md)

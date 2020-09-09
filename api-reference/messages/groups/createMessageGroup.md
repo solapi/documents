@@ -110,7 +110,7 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2020-09-09T05:18:31.267Z",
+            "createAt": "2020-09-09T05:23:20.967Z",
             "message": "메시지 그룹이 생성되었습니다."
         }
     ],
@@ -125,11 +125,11 @@ POST https://api.solapi.com/messages/v4/groups/
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V202009091418316KFIXFAGAD4DY0Z",
+    "groupId": "G4V20200909142320GUW5FVSOIHQFQPH",
     "price": {},
-    "dateCreated": "2020-09-09T05:18:31.269Z",
-    "dateUpdated": "2020-09-09T05:18:31.269Z",
-    "_id": "G4V202009091418316KFIXFAGAD4DY0Z"
+    "dateCreated": "2020-09-09T05:23:20.969Z",
+    "dateUpdated": "2020-09-09T05:23:20.969Z",
+    "_id": "G4V20200909142320GUW5FVSOIHQFQPH"
 }
 ```
 
