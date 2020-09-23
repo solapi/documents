@@ -2,12 +2,12 @@
 
 ## Request
 ```
-POST https://api.solapi/appstore/v2/me/apps
+POST https://api.solapi.com/appstore/v2/me/apps
 ```
 
 자신의 앱을 생성합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -55,7 +55,7 @@ POST https://api.solapi/appstore/v2/me/apps
 | mms | `number` | O | 이미지 + 장문 메시지 |
 | ata | `number` | O | 알림톡 |
 | cta | `number` | O | 친구톡 |
-| cti | `number` | O | 설명 없음 |
+| cti | `number` | O | 친구톡 이미지 |
 
 
 
@@ -114,9 +114,9 @@ POST https://api.solapi/appstore/v2/me/apps
     "accountId": "12925149",
     "clientId": "CIDCRXFULDIG2YRZ",
     "appName": "App Name",
-    "appId": "2b8UAu659LOs",
-    "dateCreated": "2020-09-23T02:15:13.423Z",
-    "dateUpdated": "2020-09-23T02:15:13.423Z"
+    "appId": "YlhwsPSWZRaw",
+    "dateCreated": "2020-09-23T02:22:45.966Z",
+    "dateUpdated": "2020-09-23T02:22:45.966Z"
 }
 ```
 
@@ -140,7 +140,7 @@ var options = {
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi/appstore/v2/me/apps'
+  url: 'http://api.solapi.com/appstore/v2/me/apps'
 };
 
 request(options, function(error, response, body) {
@@ -155,7 +155,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi/appstore/v2/me/apps";
+$url = "http://api.solapi.com/appstore/v2/me/apps";
 $data = '{"appName":"App Name"}';
 
 $options = array(
@@ -179,7 +179,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi/appstore/v2/me/apps"
+url = "http://api.solapi.com/appstore/v2/me/apps"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -201,7 +201,7 @@ curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"appName":"App Name"}' \
-	http://api.solapi/appstore/v2/me/apps
+	http://api.solapi.com/appstore/v2/me/apps
 ```
 {% endtab %}
 
@@ -212,7 +212,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi/appstore/v2/me/apps")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -245,7 +245,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi/appstore/v2/me/apps"
+  uri := "http://api.solapi.com/appstore/v2/me/apps"
   data := strings.NewReader(`{"appName":"App Name"}`)
 
   req, err := http.NewRequest("POST", uri, data)
@@ -280,7 +280,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi/appstore/v2/me/apps";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps";
     String parameters = "{\"appName\":\"App Name\"}";
 
     URL url = new URL(targetUrl);

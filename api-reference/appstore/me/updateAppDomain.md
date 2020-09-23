@@ -2,12 +2,12 @@
 
 ## Request
 ```
-PUT https://api.solapi/appstore/v2/me/apps/:appId/apphome
+PUT https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
 ```
 
 앱홈 서비스를 이용하기 위한 도메인을 변경합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -62,7 +62,7 @@ PUT https://api.solapi/appstore/v2/me/apps/:appId/apphome
 
 ```json
 {
-    "_id": "5f6aafb427b3885a4a67c9c5",
+    "_id": "5f6ab179ad8b4b7c5ca82b7b",
     "thumbnail": {
         "name": null,
         "url": null,
@@ -100,8 +100,8 @@ PUT https://api.solapi/appstore/v2/me/apps/:appId/apphome
     "appName": "A-APP",
     "appId": "ACMn6vXrElA",
     "clientId": "CIDL39VZZN8HO8UA",
-    "dateCreated": "2020-09-23T02:15:16.879Z",
-    "dateUpdated": "2020-09-23T02:15:16.888Z",
+    "dateCreated": "2020-09-23T02:22:49.906Z",
+    "dateUpdated": "2020-09-23T02:22:49.920Z",
     "CNAME": "hosting.solapi.net"
 }
 ```
@@ -128,7 +128,7 @@ var options = {
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome'
+  url: 'http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome'
 };
 
 request(options, function(error, response, body) {
@@ -143,7 +143,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome";
+$url = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome";
 $data = '{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}';
 
 $options = array(
@@ -167,7 +167,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome"
+url = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -189,7 +189,7 @@ curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}' \
-	http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome
+	http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome
 ```
 {% endtab %}
 
@@ -200,7 +200,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -235,7 +235,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome"
+  uri := "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome"
   data := strings.NewReader(`{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}`)
 
   req, err := http.NewRequest("PUT", uri, data)
@@ -270,7 +270,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi/appstore/v2/me/apps/ACMn6vXrElA/apphome";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome";
     String parameters = "{\"domainPrefix\":\"4989\",\"primaryColor\":\"#fff\",\"slogan\":false}";
 
     URL url = new URL(targetUrl);

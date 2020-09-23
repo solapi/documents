@@ -2,19 +2,19 @@
 
 ## Request
 ```
-GET https://api.solapi/appstore/v2/profits
+GET https://api.solapi.com/appstore/v2/profits
 ```
 
 자기가 만든 앱들의 정산내역을 조회할 수 있습니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `appstore:read` | `role-appstore:read` |  |  |  |
 
 ### Query Params
-| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi/api-reference/overview#operator) | Description |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | startDate | `string` | O | eq | 검색 날짜 시작 범위 |
 | endDate | `string` | O | eq | 검색 날짜 끝 범위 |
@@ -32,7 +32,7 @@ GET https://api.solapi/appstore/v2/profits
 > **Sample Request**
 
 ```
-http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
+http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 
 > **Sample Response**
@@ -44,15 +44,15 @@ http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&l
         {
             "accountId": "12925149",
             "appId": "ABCDE1234567",
-            "dateCreated": "2020-09-23T02:15:13.277Z",
-            "dateUpdated": "2020-09-23T02:15:13.277Z",
+            "dateCreated": "2020-09-23T02:22:45.744Z",
+            "dateUpdated": "2020-09-23T02:22:45.744Z",
             "appName": "1234567"
         },
         {
             "accountId": "12925149",
             "appId": "ABCDE2345678",
-            "dateCreated": "2020-09-23T02:15:13.278Z",
-            "dateUpdated": "2020-09-23T02:15:13.278Z",
+            "dateCreated": "2020-09-23T02:22:45.746Z",
+            "dateUpdated": "2020-09-23T02:22:45.746Z",
             "appName": "2345678"
         }
     ]
@@ -76,7 +76,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59'
+    'http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59'
 };
 
 request(options, function(error, response, body) {
@@ -91,7 +91,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
+$url = "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
 
 $options = array(
     'http' => array(
@@ -113,7 +113,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
+url = "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -131,7 +131,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
+	http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 {% endtab %}
 
@@ -142,7 +142,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59")
+uri = URI.parse("http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -170,7 +170,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
+  uri := "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -203,7 +203,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
+    String targetUrl = "http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

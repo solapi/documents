@@ -2,12 +2,12 @@
 
 ## Request
 ```
-PUT https://api.solapi/appstore/v2/me/apps/:appId
+PUT https://api.solapi.com/appstore/v2/me/apps/:appId
 ```
 
 앱 정보를 업데이트 합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
@@ -65,7 +65,7 @@ PUT https://api.solapi/appstore/v2/me/apps/:appId
 | mms | `number` | O | 이미지 + 장문 메시지 |
 | ata | `number` | O | 알림톡 |
 | cta | `number` | O | 친구톡 |
-| cti | `number` | O | 설명 없음 |
+| cti | `number` | O | 친구톡 이미지 |
 
 
 
@@ -140,9 +140,9 @@ PUT https://api.solapi/appstore/v2/me/apps/:appId
     "appName": "수정된 앱 이름",
     "accountId": "12925149",
     "clientId": "CIDNURIGOCOOLSMS",
-    "appId": "feVhBzjR7NBc",
-    "dateCreated": "2020-09-23T02:15:13.509Z",
-    "dateUpdated": "2020-09-23T02:15:13.527Z"
+    "appId": "SpWUdjenLibX",
+    "dateCreated": "2020-09-23T02:22:46.076Z",
+    "dateUpdated": "2020-09-23T02:22:46.100Z"
 }
 ```
 
@@ -166,7 +166,7 @@ var options = {
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc'
+  url: 'http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX'
 };
 
 request(options, function(error, response, body) {
@@ -181,7 +181,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc";
+$url = "http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX";
 $data = '{"appName":"수정된 앱 이름"}';
 
 $options = array(
@@ -205,7 +205,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc"
+url = "http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
@@ -227,7 +227,7 @@ curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
 	-H 'Content-Type: application/json' \
 	-d '{"appName":"수정된 앱 이름"}' \
-	http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc
+	http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX
 ```
 {% endtab %}
 
@@ -238,7 +238,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
@@ -271,7 +271,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc"
+  uri := "http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX"
   data := strings.NewReader(`{"appName":"수정된 앱 이름"}`)
 
   req, err := http.NewRequest("PUT", uri, data)
@@ -306,7 +306,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi/appstore/v2/me/apps/feVhBzjR7NBc";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/SpWUdjenLibX";
     String parameters = "{\"appName\":\"수정된 앱 이름\"}";
 
     URL url = new URL(targetUrl);

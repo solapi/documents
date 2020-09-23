@@ -2,19 +2,19 @@
 
 ## Request
 ```
-GET https://api.solapi/appstore/v2/me/apps
+GET https://api.solapi.com/appstore/v2/me/apps
 ```
 
 내가 등록한 앱의 정보/목록을 조회 할 수 있습니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :- | :- | :- | :- | :-: |
 | `appstore:read` | `role-appstore:read` |  |  |  |
 
 ### Query Params
-| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi/api-reference/overview#operator) | Description |
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi.com/api-reference/overview#operator) | Description |
 | :--- | :--: | :------: | :--------------: | :---------- |
 | appId | `string` |  | eq | 앱 아이디 |
 | appName | `string` |  | eq | 앱 이름 |
@@ -32,7 +32,7 @@ GET https://api.solapi/appstore/v2/me/apps
 > **Sample Request**
 
 ```
-http://api.solapi/appstore/v2/me/apps
+http://api.solapi.com/appstore/v2/me/apps
 ```
 
 > **Sample Response**
@@ -88,9 +88,9 @@ http://api.solapi/appstore/v2/me/apps
         "appName": "Test App 0",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "Us9F27hghJbz",
-        "dateCreated": "2020-09-23T02:15:15.321Z",
-        "dateUpdated": "2020-09-23T02:15:15.321Z",
+        "appId": "WHYQoPmN7l1d",
+        "dateCreated": "2020-09-23T02:22:48.184Z",
+        "dateUpdated": "2020-09-23T02:22:48.184Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -146,9 +146,9 @@ http://api.solapi/appstore/v2/me/apps
         "appName": "Test App 1",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "Bqka7yD9gIcq",
-        "dateCreated": "2020-09-23T02:15:15.324Z",
-        "dateUpdated": "2020-09-23T02:15:15.324Z",
+        "appId": "ECl9yI7dwIdh",
+        "dateCreated": "2020-09-23T02:22:48.187Z",
+        "dateUpdated": "2020-09-23T02:22:48.187Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -204,9 +204,9 @@ http://api.solapi/appstore/v2/me/apps
         "appName": "Test App 2",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "jDNzzbIrQYss",
-        "dateCreated": "2020-09-23T02:15:15.327Z",
-        "dateUpdated": "2020-09-23T02:15:15.327Z",
+        "appId": "X4213dlvIXDt",
+        "dateCreated": "2020-09-23T02:22:48.189Z",
+        "dateUpdated": "2020-09-23T02:22:48.189Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -262,9 +262,9 @@ http://api.solapi/appstore/v2/me/apps
         "appName": "Test App 3",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "apXOOfXmLsUF",
-        "dateCreated": "2020-09-23T02:15:15.329Z",
-        "dateUpdated": "2020-09-23T02:15:15.329Z",
+        "appId": "FWc1xaKJeOIf",
+        "dateCreated": "2020-09-23T02:22:48.192Z",
+        "dateUpdated": "2020-09-23T02:22:48.192Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -320,9 +320,9 @@ http://api.solapi/appstore/v2/me/apps
         "appName": "Test App 4",
         "accountId": "12925149",
         "clientId": "CIDNURIGOCOOLSMS",
-        "appId": "rkdRHrjcfB2d",
-        "dateCreated": "2020-09-23T02:15:15.332Z",
-        "dateUpdated": "2020-09-23T02:15:15.332Z",
+        "appId": "tiXFrdNtRNzt",
+        "dateCreated": "2020-09-23T02:22:48.195Z",
+        "dateUpdated": "2020-09-23T02:22:48.195Z",
         "redirectUri": "http://get.ms.coolsms.co.kr",
         "scope": [
             "message:read",
@@ -348,7 +348,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi/appstore/v2/me/apps'
+  url: 'http://api.solapi.com/appstore/v2/me/apps'
 };
 
 request(options, function(error, response, body) {
@@ -363,7 +363,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi/appstore/v2/me/apps";
+$url = "http://api.solapi.com/appstore/v2/me/apps";
 
 $options = array(
     'http' => array(
@@ -385,7 +385,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi/appstore/v2/me/apps"
+url = "http://api.solapi.com/appstore/v2/me/apps"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -403,7 +403,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi/appstore/v2/me/apps
+	http://api.solapi.com/appstore/v2/me/apps
 ```
 {% endtab %}
 
@@ -414,7 +414,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi/appstore/v2/me/apps")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi/appstore/v2/me/apps"
+  uri := "http://api.solapi.com/appstore/v2/me/apps"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -475,7 +475,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi/appstore/v2/me/apps";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
