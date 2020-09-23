@@ -1,114 +1,70 @@
-# 앱 생성
+# 컨텐츠 이미지 업로드
 
 ## Request
-
-```text
-POST https://api.solapi.com/appstore/v2/me/apps
+```
+POST https://api.solapi/appstore/v2/me/apps/:appId/images/screenshots
 ```
 
-자신의 앱을 생성합니다.
+800x600 사이즈의 PNG, JPG, GIF 포맷의 컨텐츠 이미지 업로드
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `appstore:write` | `role-appstore:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Request Structure
+### Path Parameters
 
-```javascript
+| Name | Description |
+| :--: | :---------: |
+| :appId | 앱 아이디 |
+
+### Request Structure
+```json
 {
-    "appName": "string",
-    "appVersion": "string",
-    "thumbnail": "string",
-    "screenshots": "array",
-    "homepage": "string",
-    "profit": "object",
-    "categories": "array",
-    "intro": "string",
-    "description": "string",
-    "email": "email"
+    "image": "string",
+    "name": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| appName | `string` | O | 앱 이름 |
-| appVersion | `string` |  | 앱 버전 |
-| thumbnail | `string` |  | 미리보기 사진 \(썸네일\) |
-| screenshots | `array` |  | 컨텐츠 이미지 |
-| homepage | `string` |  | 홈페이지 주소\(링크\) |
-| [profit](createapp.md#body-profit) | `object` |  | 수익 |
-| categories | `array` |  | 카테고리 |
-| intro | `string` |  | 앱 소개 |
-| description | `string` |  | 앱 설명 |
-| email | `email` |  | 이메일 |
+| :--- | :--: | :------: | :---------- |
+| image | `string` | O | 800x600 사이즈의 PNG, JPG, GIF 포맷의 컨텐츠 이미지 |
+| name | `string` |  | 사진 이름 |
 
-#### Body / profit
 
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| sms | `number` | O | 단문 메시지 |
-| lms | `number` | O | 장문 메시지 |
-| mms | `number` | O | 이미지 + 장문 메시지 |
-| ata | `number` | O | 알림톡 |
-| cta | `number` | O | 친구톡 |
+---
 
 ## Samples
 
-### \(User\) 앱 생성
+### (Private) 컨텐츠 이미지 업로드
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "appName": "App Name"
+    "image": "iVBORw0KGgoAAAANSUhEUgAAAyA..."
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "clientSecret": "ZHEACK3CQSQD1KEQLIESNO4T2COFIWBW",
-    "thumbnail": {
-        "name": null,
-        "url": null,
-        "originalName": null
-    },
-    "profit": {
-        "sms": 0,
-        "lms": 0,
-        "mms": 0,
-        "ata": 0,
-        "cta": 0
-    },
-    "appVersion": null,
-    "screenshots": [],
-    "homepage": null,
-    "categories": [],
-    "intro": null,
-    "description": null,
-    "stage": "DEVELOP",
-    "status": "ACTIVE",
-    "reasonBlocked": null,
-    "email": null,
-    "log": [],
-    "accountId": "12925149",
-    "clientId": "CIDCRXFULDIG2YRZ",
-    "appName": "App Name",
-    "appId": "v5sHQi2IqGCX",
-    "dateCreated": "2019-10-28T18:35:42.119Z",
-    "dateUpdated": "2019-10-28T18:35:42.119Z"
+    "appId": "0bFQMZI6zKPz",
+    "imageName": "vApnM9lvKhq0XIU.png",
+    "imageUrl": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/0bFQMZI6zKPz/screenshots/vApnM9lvKhq0XIU.png",
+    "originalName": "vApnM9lvKhq0XIU.png"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -119,46 +75,27 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    appName: 'App Name'
+    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/appstore/v2/me/apps'
+  url: 'http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    appName: 'App Name'
-  },
-  method: 'POST',
-  url: 'http://api.solapi.com/appstore/v2/me/apps'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/me/apps";
-$data = '{"appName":"App Name"}';
+$url = "http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots";
+$data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}';
 
 $options = array(
     'http' => array(
@@ -172,51 +109,56 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/me/apps"
+url = "http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"appName":"App Name"}'
+data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"appName":"App Name"}' \
-    http://api.solapi.com/appstore/v2/me/apps
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}' \
+	http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps")
+uri = URI.parse("http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "appName": "App Name"
+  "image": "iVBORw0KGgoAAAANSUhEUgAAAyA..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -225,10 +167,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -240,8 +184,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/me/apps"
-  data := strings.NewReader(`{"appName":"App Name"}`)
+  uri := "http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots"
+  data := strings.NewReader(`{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -258,10 +202,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -273,8 +219,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps";
-    String parameters = "{\"appName\":\"App Name\"}";
+    String targetUrl = "http://api.solapi/appstore/v2/me/apps/0bFQMZI6zKPz/images/screenshots";
+    String parameters = "{\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAyA...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -303,9 +249,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-28
+---
+
+> 문서 생성일 : 2020-09-23
 

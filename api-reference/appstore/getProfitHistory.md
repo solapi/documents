@@ -1,86 +1,70 @@
-# 스테이지 LIVE로 변경
+# 앱 정산내역 조회
 
 ## Request
-
-```text
-PUT https://api.solapi.com/appstore/v2/me/apps/:appId/stage
+```
+GET https://api.solapi/appstore/v2/profits
 ```
 
-사용자의 요청에 의해 자신의 앱 스테이지를 LIVE로 변경
+자기가 만든 앱들의 정산내역을 조회할 수 있습니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication)
+### Authorization 인증 필요 [[?]](https://docs.solapi/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
-| `appstore:write` | `role-appstore:write` | `ACTIVE` | `ACTIVE` | O |
+| :- | :- | :- | :- | :-: |
+| `appstore:read` | `role-appstore:read` |  |  |  |
 
-### Path Parameters
+### Query Params
+| Name | Type | Required | Allowed Operator [[?]](https://docs.solapi/api-reference/overview#operator) | Description |
+| :--- | :--: | :------: | :--------------: | :---------- |
+| startDate | `string` | O | eq | 검색 날짜 시작 범위 |
+| endDate | `string` | O | eq | 검색 날짜 끝 범위 |
+| appId | `string` |  | eq | 앱 아이디 |
+| offset | `number` |  | eq | 검색 시작 지점 |
+| limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
+| type | `string` |  | eq | 설명 없음 |
 
-| Name | Description |
-| :---: | :---: |
-| :appId | 앱 아이디 |
+---
 
 ## Samples
 
-### 라이브 Stage 로 변경
+### getProfitHistory.spec
 
 > **Sample Request**
 
-```javascript
-{}
+```
+http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "thumbnail": {
-        "name": "2BTZ6HLmal6x1Ao.png",
-        "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0AkOPXsfoC/thumbnails/2BTZ6HLmal6x1Ao.png",
-        "originalName": null
-    },
-    "profit": {
-        "sms": 1,
-        "lms": 1,
-        "mms": 1,
-        "ata": 1,
-        "cta": 1
-    },
-    "appVersion": "1.0.1",
-    "screenshots": [
+    "expectedProfit": 3,
+    "completed": [
         {
-            "name": "57PKHgfBolSgvN7.png",
-            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/0s_jELg_bR/screenshots/57PKHgfBolSgvN7.png"
+            "accountId": "12925149",
+            "appId": "ABCDE1234567",
+            "dateCreated": "2020-09-23T02:15:13.277Z",
+            "dateUpdated": "2020-09-23T02:15:13.277Z",
+            "appName": "1234567"
         },
         {
-            "name": "RaAB8w6tlC0hYow.png",
-            "url": "https://coolsms-apps-images.s3.ap-northeast-2.amazonaws.com/IIZUEoZg0n/screenshots/RaAB8w6tlC0hYow.png"
+            "accountId": "12925149",
+            "appId": "ABCDE2345678",
+            "dateCreated": "2020-09-23T02:15:13.278Z",
+            "dateUpdated": "2020-09-23T02:15:13.278Z",
+            "appName": "2345678"
         }
-    ],
-    "homepage": "http://developer.example.com",
-    "categories": [
-        "ETC"
-    ],
-    "intro": "Test App",
-    "description": "Description Of App",
-    "stage": "LIVE",
-    "status": "ACTIVE",
-    "reasonBlocked": null,
-    "email": "email@emailtest.com",
-    "log": [],
-    "appName": "Test App",
-    "accountId": "12925149",
-    "clientId": "CIDNURIGOCOOLSMS",
-    "appId": "ioyO4EOfn973",
-    "dateCreated": "2019-10-28T18:35:44.854Z",
-    "dateUpdated": "2019-10-28T18:35:44.860Z"
+    ]
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -89,44 +73,30 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'PUT',
+  method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage'
+  url:
+    'http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-```
-{% endtab %}
 
-{% tab title="JQUERY" %}
-```javascript
-var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'PUT',
-  url: 'http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage'
-};
-
-$.ajax(options).done(function(response) {
-  console.log(response);
-});
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage";
+$url = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'PUT'
+        'method'  => 'GET'
     )
 );
 
@@ -134,54 +104,61 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage"
+url = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.put(url, headers=headers)
+response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
-curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage
+curl -X GET \
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage")
+uri = URI.parse("http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Put.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -193,9 +170,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage"
+  uri := "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59"
 
-  req, err := http.NewRequest("PUT", uri, nil)
+  req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -209,10 +186,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -224,12 +203,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/ioyO4EOfn973/stage";
+    String targetUrl = "http://api.solapi/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset=0&limit=2&endDate=2020-12-31%2023:59:59";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("PUT");
+    con.setRequestMethod("GET");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -252,9 +231,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-10-28
+---
+
+> 문서 생성일 : 2020-09-23
 
