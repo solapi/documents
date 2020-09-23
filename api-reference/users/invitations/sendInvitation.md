@@ -53,12 +53,13 @@ POST https://api.solapi.com/users/v1/invitations
 
 ```json
 {
-    "accountId": "19123124878901",
+    "appId": null,
+    "accountId": "20092345616392",
     "email": "newMail@test.net",
-    "dateCreated": "2019-12-30T21:54:38.244Z",
-    "dateUpdated": "2019-12-30T21:54:38.244Z",
-    "invitationId": "blBJU361zEjpGS0oyeHWt",
-    "memberId": "MEM-c4sJh0dVyf",
+    "dateCreated": "2020-09-23T03:40:16.687Z",
+    "dateUpdated": "2020-09-23T03:40:16.687Z",
+    "invitationId": "CldHvwEXdAu_S9XNmcuu9",
+    "memberId": "MEMLTiDZoL2L1H",
     "role": "DEVELOPER"
 }
 ```
@@ -263,5 +264,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

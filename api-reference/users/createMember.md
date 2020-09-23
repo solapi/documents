@@ -5,7 +5,7 @@
 POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
-기존에 SOLAPI를 사용하지 않았던 사용자가 초대로 인해 SOLAPI에 가입되고 초대된 계정에 들어가게 됩니다.
+기존에 사용하지 않았던 사용자가 초대로 인해 가입되고 초대된 계정에 들어가게 됩니다.
 
 ### Path Parameters
 
@@ -48,26 +48,26 @@ POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19123124878056",
+    "accountId": "20092345616992",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-12-30T21:54:34.962Z",
-            "dateUpdated": "2019-12-30T21:54:34.962Z",
-            "memberId": "MEMSpSzysWrIZi",
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMTnxmOZhI-fA",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-12-30T21:54:34.962Z",
-            "dateUpdated": "2019-12-30T21:54:34.962Z",
-            "memberId": "MEMD5hyQ-Q4xF2",
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMucCkZyujRAV",
             "name": "newMember",
             "role": "DEVELOPER"
         }
     ],
-    "dateCreated": "2019-12-30T21:54:38.473Z",
-    "dateUpdated": "2019-12-30T21:54:38.482Z"
+    "dateCreated": "2020-09-23T03:40:16.942Z",
+    "dateUpdated": "2020-09-23T03:40:16.952Z"
 }
 ```
 
@@ -264,5 +264,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

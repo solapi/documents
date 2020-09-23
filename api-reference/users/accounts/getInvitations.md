@@ -48,14 +48,17 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
         "invitationId": "WPmPyDzXjOleECwgK3ER6",
         "email": "test1@test.com",
         "role": "MEMBER",
-        "dateCreated": "2020-01-09T21:54:35.418Z",
-        "dateUpdated": "2020-01-09T21:54:35.418Z",
+        "dateCreated": "2020-10-03T03:40:14.151Z",
+        "dateUpdated": "2020-10-03T03:40:14.151Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
+            "extraPhoneNumbers": [],
             "status": "ACTIVE",
             "selectedAccountId": null,
             "isAdmin": false,
+            "betaMicroservices": null,
+            "appId": null,
             "memberId": "18010100001000",
             "email": "test0@nurigo.net",
             "loginSessions": [
@@ -65,29 +68,32 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-12-30T21:54:37.347Z",
-            "dateUpdated": "2019-12-30T21:54:37.347Z"
+            "dateCreated": "2020-09-23T03:40:15.913Z",
+            "dateUpdated": "2020-09-23T03:40:15.913Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-12-30T21:54:37.323Z",
-            "dateUpdated": "2019-12-30T21:54:37.323Z"
+            "dateCreated": "2020-09-23T03:40:15.890Z",
+            "dateUpdated": "2020-09-23T03:40:15.890Z"
         }
     },
     {
         "invitationId": "A_k48AZnpzaTCSH45gVOO",
         "email": "test2@test.com",
         "role": "DEVELOPER",
-        "dateUpdated": "2019-12-30T21:54:37.321Z",
-        "dateCreated": "2019-12-30T21:54:37.321Z",
+        "dateUpdated": "2020-09-23T03:40:15.889Z",
+        "dateCreated": "2020-09-23T03:40:15.889Z",
         "owner": {
             "name": "toss 기본",
             "phoneNumber": "01012345678",
+            "extraPhoneNumbers": [],
             "status": "ACTIVE",
             "selectedAccountId": null,
             "isAdmin": false,
+            "betaMicroservices": null,
+            "appId": null,
             "memberId": "18010100001001",
             "email": "test1@nurigo.net",
             "loginSessions": [
@@ -97,15 +103,15 @@ http://api.solapi.com/users/v1/accounts/19020243371011/invitations
                     "createdAt": "2018-12-17T03:22:56.000Z"
                 }
             ],
-            "dateCreated": "2019-12-30T21:54:37.347Z",
-            "dateUpdated": "2019-12-30T21:54:37.347Z"
+            "dateCreated": "2020-09-23T03:40:15.913Z",
+            "dateUpdated": "2020-09-23T03:40:15.913Z"
         },
         "account": {
             "status": "ACTIVE",
             "accountId": "19020243371011",
             "name": "누리테스트",
-            "dateCreated": "2019-12-30T21:54:37.323Z",
-            "dateUpdated": "2019-12-30T21:54:37.323Z"
+            "dateCreated": "2020-09-23T03:40:15.890Z",
+            "dateUpdated": "2020-09-23T03:40:15.890Z"
         }
     }
 ]
@@ -290,5 +296,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

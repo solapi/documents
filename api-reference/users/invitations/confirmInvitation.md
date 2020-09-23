@@ -5,7 +5,7 @@
 POST https://api.solapi.com/users/v1/invitations/:invitationId
 ```
 
-이미 SOLAPI에 가입된 사용자가 다른 계정으로 부터 온 초대를 승락합니다.
+이미 가입된 사용자가 다른 계정으로 부터 온 초대를 승락합니다.
 
 ### Path Parameters
 
@@ -30,26 +30,26 @@ POST https://api.solapi.com/users/v1/invitations/:invitationId
 ```json
 {
     "status": "ACTIVE",
-    "accountId": "19123124878303",
+    "accountId": "20092345616243",
     "name": "test1님의 계정",
     "members": [
         {
-            "dateCreated": "2019-12-30T21:54:34.962Z",
-            "dateUpdated": "2019-12-30T21:54:34.962Z",
-            "memberId": "MEMLYwuz6DSew2",
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEM65PDxEVP-ym",
             "role": "OWNER",
             "name": "test1"
         },
         {
-            "dateCreated": "2019-12-30T21:54:34.962Z",
-            "dateUpdated": "2019-12-30T21:54:34.962Z",
-            "memberId": "MEM4Gefl_pMDHC",
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMoWvfsimyaiE",
             "name": "test2",
             "role": "MEMBER"
         }
     ],
-    "dateCreated": "2019-12-30T21:54:38.355Z",
-    "dateUpdated": "2019-12-30T21:54:38.363Z"
+    "dateCreated": "2020-09-23T03:40:16.801Z",
+    "dateUpdated": "2020-09-23T03:40:16.810Z"
 }
 ```
 
@@ -218,5 +218,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

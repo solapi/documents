@@ -50,13 +50,16 @@ PUT https://api.solapi.com/users/v1/member
 {
     "name": "aasdasd",
     "phoneNumber": null,
+    "extraPhoneNumbers": [],
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEM09kylS_s1yP",
+    "betaMicroservices": null,
+    "appId": null,
+    "memberId": "MEM-DwJrgdMM3I",
     "email": "test1@nurigo.net",
     "loginSessions": [],
-    "dateCreated": "2019-12-30T21:54:37.622Z",
-    "dateUpdated": "2019-12-30T21:54:37.629Z"
+    "dateCreated": "2020-09-23T03:40:16.143Z",
+    "dateUpdated": "2020-09-23T03:40:16.149Z"
 }
 ```
 
@@ -258,5 +261,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

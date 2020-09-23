@@ -39,34 +39,34 @@ http://api.solapi.com/users/v1/accounts?limit=3
     "accountList": [
         {
             "status": "ACTIVE",
-            "accountId": "19123124876940",
+            "accountId": "20092345615983",
             "name": "test5님의 계정",
-            "dateCreated": "2019-12-30T21:54:36.371Z",
-            "dateUpdated": "2019-12-30T21:54:36.371Z",
+            "dateCreated": "2020-09-23T03:40:15.286Z",
+            "dateUpdated": "2020-09-23T03:40:15.286Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19123124876687",
+            "accountId": "20092345615902",
             "name": "test5님의 계정",
-            "dateCreated": "2019-12-30T21:54:36.377Z",
-            "dateUpdated": "2019-12-30T21:54:36.377Z",
+            "dateCreated": "2020-09-23T03:40:15.297Z",
+            "dateUpdated": "2020-09-23T03:40:15.297Z",
             "myRole": "OWNER",
             "myName": "test5"
         },
         {
             "status": "ACTIVE",
-            "accountId": "19123124876685",
+            "accountId": "20092345615877",
             "name": "test5님의 계정",
-            "dateCreated": "2019-12-30T21:54:36.367Z",
-            "dateUpdated": "2019-12-30T21:54:36.367Z",
+            "dateCreated": "2020-09-23T03:40:15.308Z",
+            "dateUpdated": "2020-09-23T03:40:15.308Z",
             "myRole": "OWNER",
             "myName": "test5"
         }
     ],
-    "startKey": "19123124876940",
-    "nextKey": "19123124876678"
+    "startKey": "20092345615983",
+    "nextKey": "20092345615775"
 }
 ```
 
@@ -249,5 +249,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

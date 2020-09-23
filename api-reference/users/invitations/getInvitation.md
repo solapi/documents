@@ -29,28 +29,32 @@ http://api.solapi.com/users/v1/invitations/BoMnjbF4JMaoeRlWX3fDe
 
 ```json
 {
+    "appId": null,
     "invitationId": "BoMnjbF4JMaoeRlWX3fDe",
     "role": "DEVELOPER",
     "email": "test33@nurigo.net",
-    "dateCreated": "2019-12-30T21:54:38.065Z",
-    "dateUpdated": "2019-12-30T21:54:38.065Z",
+    "dateCreated": "2020-09-23T03:40:16.498Z",
+    "dateUpdated": "2020-09-23T03:40:16.498Z",
     "account": {
         "status": "ACTIVE",
-        "accountId": "19123124878206",
+        "accountId": "20092345616429",
         "name": "test님의 계정",
-        "dateCreated": "2019-12-30T21:54:38.055Z",
-        "dateUpdated": "2019-12-30T21:54:38.055Z"
+        "dateCreated": "2020-09-23T03:40:16.496Z",
+        "dateUpdated": "2020-09-23T03:40:16.496Z"
     },
     "owner": {
         "name": "test",
         "phoneNumber": null,
+        "extraPhoneNumbers": [],
         "status": "UNVERIFIED",
-        "selectedAccountId": "19123124878206",
-        "memberId": "MEMr0pdGIA1mea",
+        "selectedAccountId": "20092345616429",
+        "betaMicroservices": null,
+        "appId": null,
+        "memberId": "MEMDhoF-Q9g0x8",
         "email": "test@nurigo.net",
         "loginSessions": [],
-        "dateCreated": "2019-12-30T21:54:38.050Z",
-        "dateUpdated": "2019-12-30T21:54:38.052Z"
+        "dateCreated": "2020-09-23T03:40:16.491Z",
+        "dateUpdated": "2020-09-23T03:40:16.494Z"
     }
 }
 ```
@@ -220,5 +224,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

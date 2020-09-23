@@ -1,71 +1,76 @@
-# 이메일 변경
+# 사용자 전화번호 수정
 
 ## Request
-
-```text
-PUT https://api.solapi.com/users/v1/member/email
+```
+PUT https://api.solapi.com/users/v1/member/phone-number/
 ```
 
-사용자의 이메일을 변경합니다.
+사용자의 전화번호를 수정합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `users:write` |  |  | `ACTIVE` |  |
 
 ### 2차 인증 필요
 
 | ARS 전화 인증 | 이메일 OTP |
-| :---: | :---: |
+| :---------: | :------: |
 |  |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
-    "email": "email"
+    "phoneNumber": "string"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| email | `email` | O | 이메일 |
+| :--- | :--: | :------: | :---------- |
+| phoneNumber | `string` | O | 핸드폰 번호 |
+
+
+---
 
 ## Samples
 
-### updateEmail.spec.js
+### 전화번호 변경
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "email": "newMail@test.com"
+    "phoneNumber": "01000000000"
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "name": "test1",
-    "phoneNumber": null,
+    "name": "nickName",
+    "phoneNumber": "01000000000",
+    "extraPhoneNumbers": [],
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEM9VZ6g8bic_m",
-    "email": "newMail@test.com",
-    "loginSessions": [],
-    "dateCreated": "2019-12-30T21:54:37.997Z",
-    "dateUpdated": "2019-12-30T21:54:38.003Z"
+    "betaMicroservices": null,
+    "appId": null,
+    "memberId": "18010100001000",
+    "email": "contact@nurigo.net",
+    "dateCreated": "2020-09-23T03:40:16.412Z",
+    "dateUpdated": "2020-09-23T03:40:16.416Z",
+    "loginSessions": []
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -76,25 +81,27 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    email: 'newMail@test.com'
+    phoneNumber: '01000000000'
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/users/v1/member/email'
+  url: 'http://api.solapi.com/users/v1/member/phone-number'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/member/email";
-$data = '{"email":"newMail@test.com"}';
+$url = "http://api.solapi.com/users/v1/member/phone-number";
+$data = '{"phoneNumber":"01000000000"}';
 
 $options = array(
     'http' => array(
@@ -108,51 +115,56 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/member/email"
+url = "http://api.solapi.com/users/v1/member/phone-number"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"email":"newMail@test.com"}'
+data = '{"phoneNumber":"01000000000"}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X PUT \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"email":"newMail@test.com"}' \
-    http://api.solapi.com/users/v1/member/email
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"phoneNumber":"01000000000"}' \
+	http://api.solapi.com/users/v1/member/phone-number
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/member/email")
+uri = URI.parse("http://api.solapi.com/users/v1/member/phone-number")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "email": "newMail@test.com"
+  "phoneNumber": "01000000000"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Put.new(uri.request_uri, headers)
@@ -161,10 +173,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -176,8 +190,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/member/email"
-  data := strings.NewReader(`{"email":"newMail@test.com"}`)
+  uri := "http://api.solapi.com/users/v1/member/phone-number"
+  data := strings.NewReader(`{"phoneNumber":"01000000000"}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -194,10 +208,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -209,8 +225,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/member/email";
-    String parameters = "{\"email\":\"newMail@test.com\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/member/phone-number";
+    String parameters = "{\"phoneNumber\":\"01000000000\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -239,9 +255,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-30
+---
+
+> 문서 생성일 : 2020-09-23
 

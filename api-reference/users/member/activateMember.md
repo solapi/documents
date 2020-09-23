@@ -37,13 +37,16 @@ PUT https://api.solapi.com/users/v1/member/activate
 {
     "name": "test1",
     "phoneNumber": null,
+    "extraPhoneNumbers": [],
     "status": "ACTIVE",
     "selectedAccountId": null,
-    "memberId": "MEMAYEjZTWlDds",
+    "betaMicroservices": null,
+    "appId": null,
+    "memberId": "MEMVZOkn1irEFR",
     "email": "test1@test.com",
     "loginSessions": [],
-    "dateCreated": "2019-12-30T21:54:37.691Z",
-    "dateUpdated": "2019-12-30T21:54:37.695Z"
+    "dateCreated": "2020-09-23T03:40:16.185Z",
+    "dateUpdated": "2020-09-23T03:40:16.189Z"
 }
 ```
 
@@ -226,5 +229,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 

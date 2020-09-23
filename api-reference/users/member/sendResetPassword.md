@@ -38,11 +38,11 @@ POST https://api.solapi.com/users/v1/member/password/reset
 
 ```json
 {
-    "_id": "5e0a721d47c7acc34afe304b",
+    "_id": "5f6ac3a047c7acc34a009660",
     "email": "i@nter.net",
-    "dateCreated": "2019-12-30T21:54:37.915Z",
-    "dateUpdated": "2019-12-30T21:54:37.915Z",
-    "hashId": "Q_NrW4f644AMgLGHQeneY"
+    "dateCreated": "2020-09-23T03:40:16.331Z",
+    "dateUpdated": "2020-09-23T03:40:16.331Z",
+    "hashId": "7vYsmf2xafu3pVf_WNHZJ"
 }
 ```
 
@@ -237,5 +237,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-30
+> 문서 생성일 : 2020-09-23
 
