@@ -40,15 +40,18 @@ DELETE https://api.solapi.com/storage/v1/files/:fileId
         "biztalk": null
     },
     "type": "DOCUMENT",
-    "originalName": "mcVwi.png",
+    "originalName": "DmlKo.png",
     "link": null,
+    "width": null,
+    "height": null,
+    "fileSize": null,
     "fileId": "ST01FE190131163307869k130jGVVa01",
     "accountId": "50192038501729",
-    "name": "mcVwi.png",
+    "name": "DmlKo.png",
     "url": "https://coolsms-storage-test.s3.ap-northeast-2.amazonaws.com/50192038501729/ST01FE190131163307869k130jGVVa01",
     "references": [],
-    "dateCreated": "2020-01-15T23:00:13.223Z",
-    "dateUpdated": "2020-01-15T23:00:13.223Z"
+    "dateCreated": "2020-09-23T03:27:42.557Z",
+    "dateUpdated": "2020-09-23T03:27:42.557Z"
 }
 ```
 
@@ -231,5 +234,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-15
+> 문서 생성일 : 2020-09-23
 

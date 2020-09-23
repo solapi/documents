@@ -4,8 +4,6 @@
 
 타입별 제한 사이즈
 
-* KAKAO : 500KB
-* MMS : 60KB
-* DOCUMENT : 2MB
-* COOLSMS-MMS : 300KB
-
+- KAKAO : 500KB
+- MMS : 60KB
+- DOCUMENT : 2MB

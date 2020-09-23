@@ -28,7 +28,7 @@ GET https://api.solapi.com/storage/v1/files/:fileId
 > **Sample Request**
 
 ```
-http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD
+http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN
 ```
 
 > **Sample Response**
@@ -42,19 +42,22 @@ http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD
     "type": "DOCUMENT",
     "originalName": "파일 원본 이름",
     "link": null,
-    "fileId": "FILEID200115230010041Gm46m4i59nD",
+    "width": null,
+    "height": null,
+    "fileSize": null,
+    "fileId": "FILEID200923042739997Cap4LSbZXlN",
     "accountId": "19013037529548",
     "name": "파일 이름",
     "url": "https://coolsms.co.kr/godori",
     "references": [
         {
-            "handleKey": "REFERE200115230010041ouHmyw1yDVQ",
+            "handleKey": "REFERE200923042739997VnoE8FbaaQS",
             "category": "SENDERID_APPROVAL",
-            "refId": "REFID5200115230010041zwGsa6M6jyv"
+            "refId": "REFID5200923042739997abcKVUeabQY"
         }
     ],
-    "dateCreated": "2020-01-15T23:00:10.043Z",
-    "dateUpdated": "2020-01-15T23:00:10.043Z"
+    "dateCreated": "2020-09-23T03:27:39.999Z",
+    "dateUpdated": "2020-09-23T03:27:39.999Z"
 }
 ```
 
@@ -74,7 +77,7 @@ var options = {
   },
   method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD'
+  url: 'http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN'
 };
 
 request(options, function(error, response, body) {
@@ -89,7 +92,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD";
+$url = "http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN";
 
 $options = array(
     'http' => array(
@@ -111,7 +114,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD"
+url = "http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -129,7 +132,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD
+	http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN
 ```
 {% endtab %}
 
@@ -140,7 +143,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD")
+uri = URI.parse("http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -168,7 +171,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD"
+  uri := "http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -201,7 +204,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/storage/v1/files/FILEID200115230010041Gm46m4i59nD";
+    String targetUrl = "http://api.solapi.com/storage/v1/files/FILEID200923042739997Cap4LSbZXlN";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -237,5 +240,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-15
+> 문서 생성일 : 2020-09-23
 

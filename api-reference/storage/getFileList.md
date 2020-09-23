@@ -27,7 +27,7 @@ GET https://api.solapi.com/storage/v1/files
 | dateUpdated | `date` |  | eq | 최근 수정 날짜 |
 | startKey | `string` |  | eq | 현재 목록을 불러올 기준이 되는 키 |
 | limit | `number` |  | eq | 한 페이지에 불러옥 목록 개수 |
-| type | `string` |  | eq | 문서 타입(DOCUMENT, KAKAO, MMS, COOLSMS-MMS) |
+| type | `string` |  | eq | 문서 타입(DOCUMENT, KAKAO, MMS) |
 | useDaou | `boolean` |  | eq | [카카오 채널] 다우기술 이미지 연동 여부 |
 | useBiztalk | `boolean` |  | eq | [카카오 채널] 비즈톡 이미지 연동 여부 |
 
@@ -56,19 +56,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름34",
             "link": null,
-            "fileId": "FILEID2001152300102443ssAkJndmnl",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740209Jlb5GjGYvQj",
             "accountId": "19013037529548",
             "name": "파일 이름34",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010244sNdjpdAL1k0",
+                    "handleKey": "REFERE200923042740209Kpaf8l4t3hr",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010244qIIm0HCCvLX"
+                    "refId": "REFID5200923042740209wmLyuyO4n6U"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.245Z",
-            "dateUpdated": "2020-01-15T23:00:10.245Z"
+            "dateCreated": "2020-09-23T03:27:40.210Z",
+            "dateUpdated": "2020-09-23T03:27:40.210Z"
         },
         {
             "kakao": {
@@ -78,19 +81,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름33",
             "link": null,
-            "fileId": "FILEID200115230010240gBHYm89FPf1",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427402049266iGXmwgm",
             "accountId": "19013037529548",
             "name": "파일 이름33",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE2001152300102403DlGs99lmsc",
+                    "handleKey": "REFERE200923042740204HSAqdb4jeyO",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010240pbkpwbRaJZO"
+                    "refId": "REFID5200923042740204xyYoWSC1zco"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.241Z",
-            "dateUpdated": "2020-01-15T23:00:10.241Z"
+            "dateCreated": "2020-09-23T03:27:40.205Z",
+            "dateUpdated": "2020-09-23T03:27:40.205Z"
         },
         {
             "kakao": {
@@ -100,19 +106,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름32",
             "link": null,
-            "fileId": "FILEID200115230010236XVJflD3p22H",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740199shmXEHRKhuN",
             "accountId": "19013037529548",
             "name": "파일 이름32",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010236NZXpcKij1U9",
+                    "handleKey": "REFERE2009230427401997nXwBsejVxo",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010236FbnnE7dpydd"
+                    "refId": "REFID5200923042740199grzhRslzXZ2"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.237Z",
-            "dateUpdated": "2020-01-15T23:00:10.237Z"
+            "dateCreated": "2020-09-23T03:27:40.200Z",
+            "dateUpdated": "2020-09-23T03:27:40.200Z"
         },
         {
             "kakao": {
@@ -122,19 +131,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름31",
             "link": null,
-            "fileId": "FILEID200115230010232YaXVUBH7maC",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740194IijQSQWq1yo",
             "accountId": "19013037529548",
             "name": "파일 이름31",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010232QjFMBTufFs1",
+                    "handleKey": "REFERE200923042740195p5C9j862Brx",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010232spfttg9Mpzb"
+                    "refId": "REFID5200923042740195BjVRoU01gWd"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.232Z",
-            "dateUpdated": "2020-01-15T23:00:10.232Z"
+            "dateCreated": "2020-09-23T03:27:40.195Z",
+            "dateUpdated": "2020-09-23T03:27:40.195Z"
         },
         {
             "kakao": {
@@ -144,19 +156,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름30",
             "link": null,
-            "fileId": "FILEID200115230010227Vczb6GtniN9",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427401901qweMvniIEr",
             "accountId": "19013037529548",
             "name": "파일 이름30",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010228wyQL1U09esb",
+                    "handleKey": "REFERE200923042740190hCTRLOZClnQ",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID52001152300102285Fcb8kksimh"
+                    "refId": "REFID5200923042740190RKS4gTdOxY3"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.228Z",
-            "dateUpdated": "2020-01-15T23:00:10.228Z"
+            "dateCreated": "2020-09-23T03:27:40.191Z",
+            "dateUpdated": "2020-09-23T03:27:40.191Z"
         },
         {
             "kakao": {
@@ -166,19 +181,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름29",
             "link": null,
-            "fileId": "FILEID200115230010223unrOLdESrmF",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427401854RyuuslKtBv",
             "accountId": "19013037529548",
             "name": "파일 이름29",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010223pfB3of78Am4",
+                    "handleKey": "REFERE200923042740185BxSzGz3YgUb",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010223DNbpDRK3zV6"
+                    "refId": "REFID52009230427401852TnZiVLhqt3"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.224Z",
-            "dateUpdated": "2020-01-15T23:00:10.224Z"
+            "dateCreated": "2020-09-23T03:27:40.186Z",
+            "dateUpdated": "2020-09-23T03:27:40.186Z"
         },
         {
             "kakao": {
@@ -188,19 +206,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름28",
             "link": null,
-            "fileId": "FILEID200115230010217YSWQOUBjeJh",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740181lHEWumwfZms",
             "accountId": "19013037529548",
             "name": "파일 이름28",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010217VmQQjQdxXk3",
+                    "handleKey": "REFERE2009230427401810k172m8GSVB",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID52001152300102174tz0vbpvKGO"
+                    "refId": "REFID5200923042740181R1K5bDgynlE"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.220Z",
-            "dateUpdated": "2020-01-15T23:00:10.220Z"
+            "dateCreated": "2020-09-23T03:27:40.182Z",
+            "dateUpdated": "2020-09-23T03:27:40.182Z"
         },
         {
             "kakao": {
@@ -210,19 +231,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름27",
             "link": null,
-            "fileId": "FILEID200115230010213KuVN1pLmNTE",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427401761HssPCyvaEJ",
             "accountId": "19013037529548",
             "name": "파일 이름27",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010213qZwUIDAVkMv",
+                    "handleKey": "REFERE200923042740176qk5YZgKFlFz",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010213pY6Obj3oHJo"
+                    "refId": "REFID5200923042740176xhFf3EKHZ33"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.214Z",
-            "dateUpdated": "2020-01-15T23:00:10.214Z"
+            "dateCreated": "2020-09-23T03:27:40.177Z",
+            "dateUpdated": "2020-09-23T03:27:40.177Z"
         },
         {
             "kakao": {
@@ -232,19 +256,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름26",
             "link": null,
-            "fileId": "FILEID200115230010209py0OhxeoNBO",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740171ECeETCzDNE7",
             "accountId": "19013037529548",
             "name": "파일 이름26",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010209NiLmoonnraG",
+                    "handleKey": "REFERE200923042740172DtIF6g0Pxsl",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010209vLoXS0qrk8X"
+                    "refId": "REFID5200923042740172VCXWFPhUXOT"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.210Z",
-            "dateUpdated": "2020-01-15T23:00:10.210Z"
+            "dateCreated": "2020-09-23T03:27:40.173Z",
+            "dateUpdated": "2020-09-23T03:27:40.173Z"
         },
         {
             "kakao": {
@@ -254,19 +281,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름25",
             "link": null,
-            "fileId": "FILEID200115230010205mw8gJiO9e6X",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427401675IPYTUwZl7l",
             "accountId": "19013037529548",
             "name": "파일 이름25",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010205teJQg32UIZA",
+                    "handleKey": "REFERE200923042740167o43le7U75kv",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010205xsL8DZXA2zq"
+                    "refId": "REFID5200923042740167sR3Ea4HXKs9"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.206Z",
-            "dateUpdated": "2020-01-15T23:00:10.206Z"
+            "dateCreated": "2020-09-23T03:27:40.168Z",
+            "dateUpdated": "2020-09-23T03:27:40.168Z"
         },
         {
             "kakao": {
@@ -276,19 +306,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름24",
             "link": null,
-            "fileId": "FILEID200115230010199lrszPOdqLzH",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740162NNW03UrFqmf",
             "accountId": "19013037529548",
             "name": "파일 이름24",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010199z9dIqOIbtnI",
+                    "handleKey": "REFERE200923042740163g36uVEpTcnm",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010199E3HHenGMXbT"
+                    "refId": "REFID5200923042740163dvcGc8YHdnf"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.201Z",
-            "dateUpdated": "2020-01-15T23:00:10.201Z"
+            "dateCreated": "2020-09-23T03:27:40.164Z",
+            "dateUpdated": "2020-09-23T03:27:40.164Z"
         },
         {
             "kakao": {
@@ -298,19 +331,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름23",
             "link": null,
-            "fileId": "FILEID200115230010195QqkjRZN18rp",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740156Qk8vCuRBBTj",
             "accountId": "19013037529548",
             "name": "파일 이름23",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010195fJFwQ4ujTg4",
+                    "handleKey": "REFERE200923042740156R0YYV6bV5I2",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010195FFiwocyTNSd"
+                    "refId": "REFID5200923042740156jh45BgvP68L"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.196Z",
-            "dateUpdated": "2020-01-15T23:00:10.196Z"
+            "dateCreated": "2020-09-23T03:27:40.157Z",
+            "dateUpdated": "2020-09-23T03:27:40.157Z"
         },
         {
             "kakao": {
@@ -320,19 +356,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름22",
             "link": null,
-            "fileId": "FILEID200115230010190j7xk9tXh2cx",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740151IBG3RyOAwFM",
             "accountId": "19013037529548",
             "name": "파일 이름22",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010190gw7FZ3afWt5",
+                    "handleKey": "REFERE2009230427401513kXQDUIhtEo",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010190Jj0tBmqXVbW"
+                    "refId": "REFID5200923042740151WDe8QDvbKr8"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.191Z",
-            "dateUpdated": "2020-01-15T23:00:10.191Z"
+            "dateCreated": "2020-09-23T03:27:40.152Z",
+            "dateUpdated": "2020-09-23T03:27:40.152Z"
         },
         {
             "kakao": {
@@ -342,19 +381,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름21",
             "link": null,
-            "fileId": "FILEID200115230010185jMg2HDd490C",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740146Qc9e2ZJ3hjn",
             "accountId": "19013037529548",
             "name": "파일 이름21",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010185u0sqfJc7PEj",
+                    "handleKey": "REFERE200923042740146zx8Qxj0txaM",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010185QpJXW6RQ6Su"
+                    "refId": "REFID52009230427401467Vz6eNoAlZm"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.187Z",
-            "dateUpdated": "2020-01-15T23:00:10.187Z"
+            "dateCreated": "2020-09-23T03:27:40.147Z",
+            "dateUpdated": "2020-09-23T03:27:40.147Z"
         },
         {
             "kakao": {
@@ -364,19 +406,22 @@ http://api.solapi.com/storage/v1/files
             "type": "DOCUMENT",
             "originalName": "파일 원본 이름20",
             "link": null,
-            "fileId": "FILEID200115230010181q8TdSMf1obm",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740139eRXGV5ej4La",
             "accountId": "19013037529548",
             "name": "파일 이름20",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010181GpqegXZErUs",
+                    "handleKey": "REFERE2009230427401397DDaEdiGZXe",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010181HaPpi5txhio"
+                    "refId": "REFID5200923042740139FYDC94vuZc3"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.182Z",
-            "dateUpdated": "2020-01-15T23:00:10.182Z"
+            "dateCreated": "2020-09-23T03:27:40.141Z",
+            "dateUpdated": "2020-09-23T03:27:40.141Z"
         },
         {
             "kakao": {
@@ -386,19 +431,22 @@ http://api.solapi.com/storage/v1/files
             "type": "KAKAO",
             "originalName": "파일 원본 이름19",
             "link": null,
-            "fileId": "FILEID200115230010176S3GI3o9kMZk",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID2009230427401349dHOz0Ijhlw",
             "accountId": "19013037529548",
             "name": "파일 이름19",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010176kJD3xNgzlHn",
+                    "handleKey": "REFERE200923042740134eeZlrhR2Gmz",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010176QHp76oUgYrW"
+                    "refId": "REFID5200923042740135f6jdezZ33kd"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.177Z",
-            "dateUpdated": "2020-01-15T23:00:10.177Z"
+            "dateCreated": "2020-09-23T03:27:40.136Z",
+            "dateUpdated": "2020-09-23T03:27:40.136Z"
         },
         {
             "kakao": {
@@ -408,19 +456,22 @@ http://api.solapi.com/storage/v1/files
             "type": "KAKAO",
             "originalName": "파일 원본 이름18",
             "link": null,
-            "fileId": "FILEID200115230010171G8y563Gb2Wk",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740129DqYbEDfj9QY",
             "accountId": "19013037529548",
             "name": "파일 이름18",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010171jBghKLmlHqF",
+                    "handleKey": "REFERE200923042740129lmrdTcOydI6",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010171vaYt8P6we5N"
+                    "refId": "REFID520092304274012947URFgEL6Iu"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.172Z",
-            "dateUpdated": "2020-01-15T23:00:10.172Z"
+            "dateCreated": "2020-09-23T03:27:40.131Z",
+            "dateUpdated": "2020-09-23T03:27:40.131Z"
         },
         {
             "kakao": {
@@ -430,19 +481,22 @@ http://api.solapi.com/storage/v1/files
             "type": "KAKAO",
             "originalName": "파일 원본 이름17",
             "link": null,
-            "fileId": "FILEID20011523001016698ERxsh4nBm",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740125qraqqlTHij3",
             "accountId": "19013037529548",
             "name": "파일 이름17",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010166Peupo8Wkw67",
+                    "handleKey": "REFERE200923042740125S2xKGOPNASw",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010167Apfyf2EwRl2"
+                    "refId": "REFID5200923042740125IE40qjoY8NW"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.168Z",
-            "dateUpdated": "2020-01-15T23:00:10.168Z"
+            "dateCreated": "2020-09-23T03:27:40.126Z",
+            "dateUpdated": "2020-09-23T03:27:40.126Z"
         },
         {
             "kakao": {
@@ -452,19 +506,22 @@ http://api.solapi.com/storage/v1/files
             "type": "KAKAO",
             "originalName": "파일 원본 이름16",
             "link": null,
-            "fileId": "FILEID200115230010161cQ6tvmEhVri",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740120JPSJ8gNOc2h",
             "accountId": "19013037529548",
             "name": "파일 이름16",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010161qbCkOoKtW91",
+                    "handleKey": "REFERE200923042740120CPXJg58Fwg3",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID52001152300101616K4smJZfWpZ"
+                    "refId": "REFID52009230427401200BSbaqSlFfi"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.162Z",
-            "dateUpdated": "2020-01-15T23:00:10.162Z"
+            "dateCreated": "2020-09-23T03:27:40.121Z",
+            "dateUpdated": "2020-09-23T03:27:40.121Z"
         },
         {
             "kakao": {
@@ -474,23 +531,26 @@ http://api.solapi.com/storage/v1/files
             "type": "KAKAO",
             "originalName": "파일 원본 이름15",
             "link": null,
-            "fileId": "FILEID200115230010157O0vTn2ewluw",
+            "width": null,
+            "height": null,
+            "fileSize": null,
+            "fileId": "FILEID200923042740114g9l4ZC03OPS",
             "accountId": "19013037529548",
             "name": "파일 이름15",
             "url": "https://coolsms.co.kr/godori",
             "references": [
                 {
-                    "handleKey": "REFERE200115230010157fX1p7Drlhyj",
+                    "handleKey": "REFERE200923042740114MEKLUadAAIo",
                     "category": "SENDERID_APPROVAL",
-                    "refId": "REFID5200115230010157ub1GzfsJ9p9"
+                    "refId": "REFID5200923042740114vELDr2yy0Uw"
                 }
             ],
-            "dateCreated": "2020-01-15T23:00:10.158Z",
-            "dateUpdated": "2020-01-15T23:00:10.158Z"
+            "dateCreated": "2020-09-23T03:27:40.116Z",
+            "dateUpdated": "2020-09-23T03:27:40.116Z"
         }
     ],
     "startKey": null,
-    "nextKey": "FILEID200115230010152Zz2ufziaMr2"
+    "nextKey": "FILEID200923042740109qd0lHHD2l09"
 }
 ```
 
@@ -673,5 +733,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-01-15
+> 문서 생성일 : 2020-09-23
 
