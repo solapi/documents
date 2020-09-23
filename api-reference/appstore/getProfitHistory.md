@@ -44,15 +44,15 @@ http://api.solapi.com/appstore/v2/profits?startDate=2010-01-10%2001:01:01&offset
         {
             "accountId": "12925149",
             "appId": "ABCDE1234567",
-            "dateCreated": "2020-09-23T02:22:45.744Z",
-            "dateUpdated": "2020-09-23T02:22:45.744Z",
+            "dateCreated": "2020-09-23T02:34:50.962Z",
+            "dateUpdated": "2020-09-23T02:34:50.962Z",
             "appName": "1234567"
         },
         {
             "accountId": "12925149",
             "appId": "ABCDE2345678",
-            "dateCreated": "2020-09-23T02:22:45.746Z",
-            "dateUpdated": "2020-09-23T02:22:45.746Z",
+            "dateCreated": "2020-09-23T02:34:50.963Z",
+            "dateUpdated": "2020-09-23T02:34:50.963Z",
             "appName": "2345678"
         }
     ]

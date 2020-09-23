@@ -114,9 +114,9 @@ POST https://api.solapi.com/appstore/v2/me/apps
     "accountId": "12925149",
     "clientId": "CIDCRXFULDIG2YRZ",
     "appName": "App Name",
-    "appId": "YlhwsPSWZRaw",
-    "dateCreated": "2020-09-23T02:22:45.966Z",
-    "dateUpdated": "2020-09-23T02:22:45.966Z"
+    "appId": "XqANobnyOkvm",
+    "dateCreated": "2020-09-23T02:34:51.079Z",
+    "dateUpdated": "2020-09-23T02:34:51.079Z"
 }
 ```
 

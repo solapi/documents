@@ -62,7 +62,7 @@ POST https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
 
 ```json
 {
-    "_id": "5f6ab179ad8b4b7c5ca82b78",
+    "_id": "5f6ab44eb992b12976c9c180",
     "thumbnail": {
         "name": null,
         "url": null,
@@ -100,8 +100,8 @@ POST https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
     "appName": "A-APP",
     "appId": "ACMn6vXrElA",
     "clientId": "CIDL39VZZN8HO8UA",
-    "dateCreated": "2020-09-23T02:22:49.862Z",
-    "dateUpdated": "2020-09-23T02:22:49.875Z",
+    "dateCreated": "2020-09-23T02:34:54.106Z",
+    "dateUpdated": "2020-09-23T02:34:54.118Z",
     "CNAME": "hosting.solapi.net"
 }
 ```

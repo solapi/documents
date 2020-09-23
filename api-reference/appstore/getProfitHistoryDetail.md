@@ -32,7 +32,7 @@ GET https://api.solapi.com/appstore/v2/profits/daily/detail
 > **Sample Request**
 
 ```
-http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z
+http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z
 ```
 
 > **Sample Response**
@@ -73,7 +73,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z'
+    'http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z'
 };
 
 request(options, function(error, response, body) {
@@ -88,7 +88,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z";
+$url = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z";
 
 $options = array(
     'http' => array(
@@ -110,7 +110,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z"
+url = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -128,7 +128,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z
+	http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z
 ```
 {% endtab %}
 
@@ -139,7 +139,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z")
+uri = URI.parse("http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z"
+  uri := "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -200,7 +200,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:22:49.748Z";
+    String targetUrl = "http://api.solapi.com/appstore/v2/profits/daily/detail?startDate=2010-01-10%2001:01:01&endDate=2020-09-23T02:34:53.979Z";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

@@ -62,7 +62,7 @@ PUT https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
 
 ```json
 {
-    "_id": "5f6ab179ad8b4b7c5ca82b7b",
+    "_id": "5f6ab44eb992b12976c9c183",
     "thumbnail": {
         "name": null,
         "url": null,
@@ -100,8 +100,8 @@ PUT https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
     "appName": "A-APP",
     "appId": "ACMn6vXrElA",
     "clientId": "CIDL39VZZN8HO8UA",
-    "dateCreated": "2020-09-23T02:22:49.906Z",
-    "dateUpdated": "2020-09-23T02:22:49.920Z",
+    "dateCreated": "2020-09-23T02:34:54.140Z",
+    "dateUpdated": "2020-09-23T02:34:54.149Z",
     "CNAME": "hosting.solapi.net"
 }
 ```

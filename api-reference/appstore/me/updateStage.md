@@ -82,9 +82,9 @@ PUT https://api.solapi.com/appstore/v2/me/apps/:appId/stage
     "appName": "Test App",
     "accountId": "12925149",
     "clientId": "CIDNURIGOCOOLSMS",
-    "appId": "qMM4Rt68voqs",
-    "dateCreated": "2020-09-23T02:22:49.339Z",
-    "dateUpdated": "2020-09-23T02:22:49.349Z"
+    "appId": "mFkeKurX5nUs",
+    "dateCreated": "2020-09-23T02:34:53.754Z",
+    "dateUpdated": "2020-09-23T02:34:53.760Z"
 }
 ```
 
@@ -104,7 +104,7 @@ var options = {
   },
   method: 'PUT',
   json: true,
-  url: 'http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage'
+  url: 'http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage'
 };
 
 request(options, function(error, response, body) {
@@ -119,7 +119,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage";
+$url = "http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage";
 
 $options = array(
     'http' => array(
@@ -141,7 +141,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage"
+url = "http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -159,7 +159,7 @@ print(response.text)
 #!/bin/bash
 curl -X PUT \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage
+	http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage
 ```
 {% endtab %}
 
@@ -170,7 +170,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -198,7 +198,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage"
+  uri := "http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage"
 
   req, err := http.NewRequest("PUT", uri, nil)
   if err != nil { panic(err) }
@@ -231,7 +231,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/qMM4Rt68voqs/stage";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/mFkeKurX5nUs/stage";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
