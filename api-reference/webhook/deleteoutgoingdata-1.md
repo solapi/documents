@@ -1,28 +1,34 @@
-# 계정 전환
+# 웹훅 삭제
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/accounts/:accountId/switch
+DELETE https://api.solapi.com/webhook/v1/outgoing/:webhookId
 ```
 
-계정 전환합니다.
+등록된 웹훅을 삭제합니다.
 
 ### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| `webhook:write` | `role-webhook:write` | `ACTIVE` | `ACTIVE` | O |
+
+### 2차 인증 필요
+
+| ARS 전화 인증 | 이메일 OTP |
+| :---: | :---: |
+|  |  |
 
 ### Path Parameters
 
 | Name | Description |
 | :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+| :webhookId | 설명 없음 |
 
 ## Samples
 
-### signup.spec.js
+### deleteOutgoingData.spec.js
 
 > **Sample Request**
 
@@ -34,7 +40,15 @@ POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 
 ```javascript
 {
-    "success": true
+    "secret": null,
+    "status": "ACTIVE",
+    "failCount": 0,
+    "accountId": "12925149",
+    "webhookId": "WH01WH191230002851188QQvgmytwzVx",
+    "eventId": "WH01ET1912300028511881r0YvPYV8kC",
+    "url": "https://solapi.com/report",
+    "dateCreated": "2019-12-30T00:28:51.583Z",
+    "dateUpdated": "2019-12-30T00:28:51.583Z"
 }
 ```
 
@@ -50,9 +64,10 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'POST',
+  method: 'DELETE',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19021254859648/switch'
+  url:
+    'http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx'
 };
 
 request(options, function(error, response, body) {
@@ -65,12 +80,12 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+$url = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'POST'
+        'method'  => 'DELETE'
     )
 );
 
@@ -85,12 +100,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+url = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.post(url, headers=headers)
+response = requests.delete(url, headers=headers)
 print(response.status_code)
 print(response.text)
 ```
@@ -99,9 +114,9 @@ print(response.text)
 {% tab title="CURL" %}
 ```text
 #!/bin/bash
-curl -X POST \
+curl -X DELETE \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx
 ```
 {% endtab %}
 
@@ -111,13 +126,13 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19021254859648/switch")
+uri = URI.parse("http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Delete.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
@@ -137,9 +152,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+  uri := "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx"
 
-  req, err := http.NewRequest("POST", uri, nil)
+  req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -168,12 +183,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+    String targetUrl = "http://api.solapi.com/webhook/v1/outgoing/WH01WH191230002851188QQvgmytwzVx";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("DELETE");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -200,5 +215,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2020-09-23
+> 문서 생성일 : 2019-12-30
 

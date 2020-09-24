@@ -1,28 +1,36 @@
-# 계정 전환
+# 계정 생성
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/accounts/:accountId/switch
+POST https://api.solapi.com/users/v1/accounts
 ```
 
-계정 전환합니다.
+로그인한 상태의 회원이 새로운 계정을 하나 만듭니다.
 
 ### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| `accounts:write` |  |  | `ACTIVE` |  |
 
-### Path Parameters
+### Request Structure
 
-| Name | Description |
-| :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+```javascript
+{
+    "name": "string"
+}
+```
+
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| name | `string` |  | 이름 |
 
 ## Samples
 
-### signup.spec.js
+### createAccount.spec.js
 
 > **Sample Request**
 
@@ -34,7 +42,20 @@ POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 
 ```javascript
 {
-    "success": true
+    "status": "ACTIVE",
+    "accountId": "20092345614138",
+    "name": "test1님의 계정",
+    "members": [
+        {
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMUu6vToBpsye",
+            "role": "OWNER",
+            "name": "test1"
+        }
+    ],
+    "dateCreated": "2020-09-23T03:40:14.971Z",
+    "dateUpdated": "2020-09-23T03:40:14.971Z"
 }
 ```
 
@@ -52,7 +73,7 @@ var options = {
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19021254859648/switch'
+  url: 'http://api.solapi.com/users/v1/accounts'
 };
 
 request(options, function(error, response, body) {
@@ -65,7 +86,7 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+$url = "http://api.solapi.com/users/v1/accounts";
 
 $options = array(
     'http' => array(
@@ -85,7 +106,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+url = "http://api.solapi.com/users/v1/accounts"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -101,7 +122,7 @@ print(response.text)
 #!/bin/bash
 curl -X POST \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    http://api.solapi.com/users/v1/accounts
 ```
 {% endtab %}
 
@@ -111,7 +132,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19021254859648/switch")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -137,7 +158,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+  uri := "http://api.solapi.com/users/v1/accounts"
 
   req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
@@ -168,7 +189,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

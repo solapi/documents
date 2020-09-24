@@ -1,40 +1,46 @@
-# 계정 전환
+# 회원 정보 조회
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/accounts/:accountId/switch
+GET https://api.solapi.com/users/v1/accounts/:accountId/members/:memberId
 ```
 
-계정 전환합니다.
+내가 소속된 특정 계정에 저장되어 있는 특정 맴버 정보를 조회합니다.
 
 ### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| `users:read` |  |  | `ACTIVE` `UNVERIFIED` |  |
 
 ### Path Parameters
 
 | Name | Description |
 | :---: | :---: |
 | :accountId | 계정 고유 아이디 |
+| :memberId | 회원 고유 아이디 |
 
 ## Samples
 
-### signup.spec.js
+### getAccountMember.spec.js
 
 > **Sample Request**
 
-```javascript
-{}
+```text
+http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000
 ```
 
 > **Sample Response**
 
 ```javascript
 {
-    "success": true
+    "memberId": "18010100001000",
+    "role": "OWNER",
+    "name": "testName 0",
+    "email": "test0@nurigo.net",
+    "dateCreated": "2020-09-23T03:40:14.570Z",
+    "dateUpdated": "2020-09-23T03:40:14.570Z"
 }
 ```
 
@@ -50,9 +56,9 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'POST',
+  method: 'GET',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19021254859648/switch'
+  url: 'http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000'
 };
 
 request(options, function(error, response, body) {
@@ -65,12 +71,12 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+$url = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'POST'
+        'method'  => 'GET'
     )
 );
 
@@ -85,12 +91,12 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+url = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.post(url, headers=headers)
+response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
 ```
@@ -99,9 +105,9 @@ print(response.text)
 {% tab title="CURL" %}
 ```text
 #!/bin/bash
-curl -X POST \
+curl -X GET \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000
 ```
 {% endtab %}
 
@@ -111,13 +117,13 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19021254859648/switch")
+uri = URI.parse("http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
@@ -137,9 +143,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+  uri := "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000"
 
-  req, err := http.NewRequest("POST", uri, nil)
+  req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -168,12 +174,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+    String targetUrl = "http://api.solapi.com/users/v1/accounts/12925149/members/18010100001000";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("GET");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 

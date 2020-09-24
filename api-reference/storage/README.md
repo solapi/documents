@@ -4,6 +4,7 @@
 
 타입별 제한 사이즈
 
-- KAKAO : 500KB
-- MMS : 60KB
-- DOCUMENT : 2MB
+* KAKAO : 500KB
+* MMS : 60KB
+* DOCUMENT : 2MB
+

@@ -1,23 +1,25 @@
-# 회원가입
+# 초대 수락\(비회원\)
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/signup
+POST https://api.solapi.com/users/v1/signup/invitations/:invitationId
 ```
 
-ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
+기존에 사용하지 않았던 사용자가 초대로 인해 가입되고 초대된 계정에 들어가게 됩니다.
+
+### Path Parameters
+
+| Name | Description |
+| :---: | :---: |
+| :invitationId | 설명 없음 |
 
 ### Request Structure
 
 ```javascript
 {
-    "email": "email",
     "password": "string",
-    "passwordConfirmation": "string",
-    "captcha": "string",
-    "marketerAccountId": "string",
-    "name": "string"
+    "passwordConfirmation": "string"
 }
 ```
 
@@ -25,25 +27,19 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 | Name | Type | Required | Description |
 | :--- | :---: | :---: | :--- |
-| email | `email` | O | 이메일 |
 | password | `string` | O | 비밀번호 |
 | passwordConfirmation | `string` | O | 비밀번호 확인 |
-| captcha | `string` | O | ReCAPTCHA 인증 코드 |
-| marketerAccountId | `string` |  | 설명 없음 |
-| name | `string` |  | 이름 |
 
 ## Samples
 
-### signup.spec.js
+### createMember.spec.js
 
 > **Sample Request**
 
 ```javascript
 {
-    "email": "test1@nurigo.net",
     "password": "asd123!",
-    "passwordConfirmation": "asd123!",
-    "captcha": "DUMMY"
+    "passwordConfirmation": "asd123!"
 }
 ```
 
@@ -51,36 +47,27 @@ ReCAPTCHA 인증을 포함한 회원가입 절차입니다.
 
 ```javascript
 {
-    "account": {
-        "status": "ACTIVE",
-        "accountId": "20092345616387",
-        "name": "test1님의 계정",
-        "members": [
-            {
-                "dateCreated": "2020-09-23T03:40:13.791Z",
-                "dateUpdated": "2020-09-23T03:40:13.791Z",
-                "memberId": "MEMZRUxs5r_g5v",
-                "role": "OWNER",
-                "name": "test1"
-            }
-        ],
-        "dateCreated": "2020-09-23T03:40:16.992Z",
-        "dateUpdated": "2020-09-23T03:40:16.992Z"
-    },
-    "member": {
-        "name": "test1",
-        "phoneNumber": null,
-        "extraPhoneNumbers": [],
-        "status": "UNVERIFIED",
-        "selectedAccountId": "20092345616387",
-        "betaMicroservices": null,
-        "appId": null,
-        "memberId": "MEMZRUxs5r_g5v",
-        "email": "test1@nurigo.net",
-        "loginSessions": [],
-        "dateCreated": "2020-09-23T03:40:16.987Z",
-        "dateUpdated": "2020-09-23T03:40:16.989Z"
-    }
+    "status": "ACTIVE",
+    "accountId": "20092345616992",
+    "name": "test1님의 계정",
+    "members": [
+        {
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMTnxmOZhI-fA",
+            "role": "OWNER",
+            "name": "test1"
+        },
+        {
+            "dateCreated": "2020-09-23T03:40:13.791Z",
+            "dateUpdated": "2020-09-23T03:40:13.791Z",
+            "memberId": "MEMucCkZyujRAV",
+            "name": "newMember",
+            "role": "DEVELOPER"
+        }
+    ],
+    "dateCreated": "2020-09-23T03:40:16.942Z",
+    "dateUpdated": "2020-09-23T03:40:16.952Z"
 }
 ```
 
@@ -96,14 +83,12 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    email: 'test1@nurigo.net',
     password: 'asd123!',
-    passwordConfirmation: 'asd123!',
-    captcha: 'DUMMY'
+    passwordConfirmation: 'asd123!'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/signup'
+  url: 'http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm'
 };
 
 request(options, function(error, response, body) {
@@ -116,8 +101,8 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/signup";
-$data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}';
+$url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
+$data = '{"password":"asd123!","passwordConfirmation":"asd123!"}';
 
 $options = array(
     'http' => array(
@@ -138,11 +123,11 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/signup"
+url = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm"
 headers = {
   "Content-Type": "application/json"
 }
-data = '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}'
+data = '{"password":"asd123!","passwordConfirmation":"asd123!"}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
@@ -155,8 +140,8 @@ print(response.text)
 #!/bin/bash
 curl -X POST \
     -H 'Content-Type: application/json' \
-    -d '{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}' \
-    http://api.solapi.com/users/v1/signup
+    -d '{"password":"asd123!","passwordConfirmation":"asd123!"}' \
+    http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm
 ```
 {% endtab %}
 
@@ -166,16 +151,14 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/signup")
+uri = URI.parse("http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm")
 
 headers = {
   "Content-Type": "application/json"
 }
 data = {
-  "email": "test1@nurigo.net",
   "password": "asd123!",
-  "passwordConfirmation": "asd123!",
-  "captcha": "DUMMY"
+  "passwordConfirmation": "asd123!"
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -199,8 +182,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/signup"
-  data := strings.NewReader(`{"email":"test1@nurigo.net","password":"asd123!","passwordConfirmation":"asd123!","captcha":"DUMMY"}`)
+  uri := "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm"
+  data := strings.NewReader(`{"password":"asd123!","passwordConfirmation":"asd123!"}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -231,8 +214,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/signup";
-    String parameters = "{\"email\":\"test1@nurigo.net\",\"password\":\"asd123!\",\"passwordConfirmation\":\"asd123!\",\"captcha\":\"DUMMY\"}";
+    String targetUrl = "http://api.solapi.com/users/v1/signup/invitations/CTbhz0F_j9_OWAVcrA3Gm";
+    String parameters = "{\"password\":\"asd123!\",\"passwordConfirmation\":\"asd123!\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

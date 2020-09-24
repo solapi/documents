@@ -1,40 +1,61 @@
-# 계정 전환
+# 컨텐츠 이미지 업로드
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/accounts/:accountId/switch
+POST https://api.solapi.com/appstore/v2/me/apps/:appId/images/screenshots
 ```
 
-계정 전환합니다.
+800x600 사이즈의 PNG, JPG, GIF 포맷의 컨텐츠 이미지 업로드
 
 ### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| `appstore:write` | `role-appstore:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
 | :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+| :appId | 앱 아이디 |
+
+### Request Structure
+
+```javascript
+{
+    "image": "string",
+    "name": "string"
+}
+```
+
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| image | `string` | O | 800x600 사이즈의 PNG, JPG, GIF 포맷의 컨텐츠 이미지 |
+| name | `string` |  | 사진 이름 |
 
 ## Samples
 
-### signup.spec.js
+### \(Private\) 컨텐츠 이미지 업로드
 
 > **Sample Request**
 
 ```javascript
-{}
+{
+    "image": "iVBORw0KGgoAAAANSUhEUgAAAyA..."
+}
 ```
 
 > **Sample Response**
 
 ```javascript
 {
-    "success": true
+    "appId": "9yTOqSvp0Avk",
+    "imageName": "Dv1KAcW1W9Vnt4J.png",
+    "imageUrl": "https://coolsms-apps-test.s3.ap-northeast-2.amazonaws.com/9yTOqSvp0Avk/screenshots/Dv1KAcW1W9Vnt4J.png",
+    "originalName": "Dv1KAcW1W9Vnt4J.png"
 }
 ```
 
@@ -48,11 +69,16 @@ var request = require('request');
 var options = {
   headers: {
     Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
+      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4',
+    'Content-Type': 'application/json'
+  },
+  body: {
+    image: 'iVBORw0KGgoAAAANSUhEUgAAAyA...'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19021254859648/switch'
+  url:
+    'http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots'
 };
 
 request(options, function(error, response, body) {
@@ -65,11 +91,13 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+$url = "http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots";
+$data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}';
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
+        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
+        'content' => $data,
         'method'  => 'POST'
     )
 );
@@ -85,12 +113,14 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+url = "http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots"
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
 }
+data = '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}'
 
-response = requests.post(url, headers=headers)
+response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
 ```
@@ -101,7 +131,9 @@ print(response.text)
 #!/bin/bash
 curl -X POST \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    -H 'Content-Type: application/json' \
+    -d '{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}' \
+    http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots
 ```
 {% endtab %}
 
@@ -111,13 +143,18 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19021254859648/switch")
+uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots")
 
 headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
+  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
+  "Content-Type": "application/json"
+}
+data = {
+  "image": "iVBORw0KGgoAAAANSUhEUgAAAyA..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
+request.body = data.to_json
 
 response = http.request(request)
 puts response.code
@@ -137,12 +174,14 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+  uri := "http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots"
+  data := strings.NewReader(`{"image":"iVBORw0KGgoAAAANSUhEUgAAAyA..."}`)
 
-  req, err := http.NewRequest("POST", uri, nil)
+  req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
+  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -168,7 +207,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/9yTOqSvp0Avk/images/screenshots";
+    String parameters = "{\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAyA...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -176,6 +216,7 @@ public class Request {
     con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
+    con.setRequestProperty("Content-Type", "application/json");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

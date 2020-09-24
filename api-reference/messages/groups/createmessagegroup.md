@@ -1,28 +1,58 @@
-# 계정 전환
+# 그룹 생성
 
 ## Request
 
 ```text
-POST https://api.solapi.com/users/v1/accounts/:accountId/switch
+POST https://api.solapi.com/messages/v4/groups/
 ```
 
-계정 전환합니다.
+메시지 그룹을 생성합니다.
 
 ### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
 | :--- | :--- | :--- | :--- | :---: |
-| `users:write` |  |  | `ACTIVE` |  |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
-### Path Parameters
+### Request Structure
 
-| Name | Description |
-| :---: | :---: |
-| :accountId | 계정 고유 아이디 |
+```javascript
+{
+    "appId": "string",
+    "strict": "boolean",
+    "sdkVersion": "string",
+    "osPlatform": "string",
+    "customFields": "object",
+    "hint": "object"
+}
+```
+
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| appId | `string` |  | 앱 아이디 |
+| strict | `boolean` |  | 설명 없음 |
+| sdkVersion | `string` |  | SDK 버전 |
+| osPlatform | `string` |  | OS 플렛폼 |
+| [customFields](createmessagegroup.md#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [hint](createmessagegroup.md#body-hint) | `object` |  | 설명 없음 |
+
+#### Body / customFields
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+
+
+#### Body / hint
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+
 
 ## Samples
 
-### signup.spec.js
+### 메시지 그룹 생성 POST /messages/v4/groups
 
 > **Sample Request**
 
@@ -34,7 +64,74 @@ POST https://api.solapi.com/users/v1/accounts/:accountId/switch
 
 ```javascript
 {
-    "success": true
+    "count": {
+        "total": 0,
+        "sentTotal": 0,
+        "sentFailed": 0,
+        "sentSuccess": 0,
+        "sentPending": 0,
+        "sentReplacement": 0,
+        "refund": 0,
+        "registeredFailed": 0,
+        "registeredSuccess": 0
+    },
+    "countForCharge": {
+        "sms": {},
+        "lms": {},
+        "mms": {},
+        "ata": {},
+        "cta": {},
+        "cti": {}
+    },
+    "balance": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "point": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "app": {
+        "profit": {
+            "sms": 0,
+            "lms": 0,
+            "mms": 0,
+            "ata": 0,
+            "cta": 0,
+            "cti": 0
+        },
+        "appId": null,
+        "version": null
+    },
+    "serviceMethod": "MT",
+    "sdkVersion": null,
+    "osPlatform": null,
+    "log": [
+        {
+            "createAt": "2020-09-09T05:23:20.967Z",
+            "message": "메시지 그룹이 생성되었습니다."
+        }
+    ],
+    "status": "PENDING",
+    "dateSent": null,
+    "dateCompleted": null,
+    "isRefunded": false,
+    "flagUpdated": false,
+    "prepaid": true,
+    "strict": false,
+    "accountId": "12925149",
+    "apiVersion": "4",
+    "customFields": {},
+    "hint": null,
+    "groupId": "G4V20200909142320GUW5FVSOIHQFQPH",
+    "price": {},
+    "dateCreated": "2020-09-09T05:23:20.969Z",
+    "dateUpdated": "2020-09-09T05:23:20.969Z",
+    "_id": "G4V20200909142320GUW5FVSOIHQFQPH"
 }
 ```
 
@@ -52,7 +149,7 @@ var options = {
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/users/v1/accounts/19021254859648/switch'
+  url: 'http://api.solapi.com/messages/v4/groups'
 };
 
 request(options, function(error, response, body) {
@@ -65,7 +162,7 @@ request(options, function(error, response, body) {
 {% tab title="PHP" %}
 ```php
 <?php
-$url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+$url = "http://api.solapi.com/messages/v4/groups";
 
 $options = array(
     'http' => array(
@@ -85,7 +182,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+url = "http://api.solapi.com/messages/v4/groups"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -101,7 +198,7 @@ print(response.text)
 #!/bin/bash
 curl -X POST \
     -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/users/v1/accounts/19021254859648/switch
+    http://api.solapi.com/messages/v4/groups
 ```
 {% endtab %}
 
@@ -111,7 +208,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/users/v1/accounts/19021254859648/switch")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -137,7 +234,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/users/v1/accounts/19021254859648/switch"
+  uri := "http://api.solapi.com/messages/v4/groups"
 
   req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
@@ -168,7 +265,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/users/v1/accounts/19021254859648/switch";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -200,5 +297,5 @@ public class Request {
 {% endtab %}
 {% endtabs %}
 
-> 문서 생성일 : 2020-09-23
+> 문서 생성일 : 2020-09-09
 
