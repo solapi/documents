@@ -16,6 +16,7 @@
 * [Go](development-kits/go.md)
 * [Node JS](development-kits/nodejs.md)
 * [PHP](development-kits/php.md)
+* [Agent](development-kits/agent.md)
 * [Others](development-kits/others.md)
 
 ## APP-STORE
