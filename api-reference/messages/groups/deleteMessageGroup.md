@@ -76,14 +76,14 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2020-11-27T02:28:43.038Z"
+            "createAt": "2020-11-27T21:58:13.586Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2020-11-27T02:28:43.038Z"
+            "createAt": "2020-11-27T21:58:13.586Z"
         },
         {
-            "createAt": "2020-11-27T02:28:49.018Z",
+            "createAt": "2020-11-27T21:58:20.490Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -93,19 +93,19 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
         },
         {
             "message": "일일 발송량을 초과하여 발송에 실패하였습니다.",
-            "createAt": "2020-11-27T02:28:49.055Z"
+            "createAt": "2020-11-27T21:58:20.522Z"
         },
         {
             "message": "일일 발송량을 초과하여 발송에 실패하였습니다.",
-            "createAt": "2020-11-27T02:28:49.073Z"
+            "createAt": "2020-11-27T21:58:20.539Z"
         },
         {
             "message": "메시지 그룹이 삭제되었습니다.",
-            "createAt": "2020-11-27T02:28:49.257Z"
+            "createAt": "2020-11-27T21:58:20.736Z"
         }
     ],
     "status": "DELETED",
-    "dateSent": "2020-11-27T02:28:49.018Z",
+    "dateSent": "2020-11-27T21:58:20.490Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -137,8 +137,8 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId
     },
     "customFields": {},
     "hint": {},
-    "dateCreated": "2020-11-27T02:28:43.040Z",
-    "dateUpdated": "2020-11-27T02:28:49.262Z"
+    "dateCreated": "2020-11-27T21:58:13.589Z",
+    "dateUpdated": "2020-11-27T21:58:20.741Z"
 }
 ```
 

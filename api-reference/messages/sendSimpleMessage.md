@@ -143,13 +143,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20201127112846JDFPQ4PMWDOSLPM",
+    "groupId": "G4V20201128065818SRC9SIGEOITFJID",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112846JFOXBXOOQ4MJ6GH",
+    "messageId": "M4V20201128065818L6ILOVHF9QS34RI",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -380,13 +380,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202011271128465Y3QIWUGKGD4ICM",
+    "groupId": "G4V20201128065818BBOZI7RIRVXHODS",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112846D7UBRAYGXIK8KD7",
+    "messageId": "M4V20201128065818FSV9HTMICI8DUQI",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -620,13 +620,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20201127112847ZQ06LCHC2FJEPOK",
+    "groupId": "G4V20201128065818OHORLLSW6J5U8KD",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112847G4NSXKD1XLUVPSS",
+    "messageId": "M4V20201128065818N6VMFAS7U8NG4AT",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -864,13 +864,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20201127112847N2FZPHOPFO6EQLD",
+    "groupId": "G4V2020112806581819HI2CZFNF3QMMY",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112847YWPTQYDJVT2LKEN",
+    "messageId": "M4V20201128065818ITQJJLQUCT6ST4D",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1118,13 +1118,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20201127112847JYKXUVNQDKIKMUA",
+    "groupId": "G4V20201128065818YJ78XT8XCOGISNE",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112847KWVALNUVDZP4GAM",
+    "messageId": "M4V20201128065818G4GGJA0DKWSP0JT",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1383,13 +1383,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20201127112847GMW2YT7BXZNQYQH",
+    "groupId": "G4V20201128065818DDLFQVQPKIJKLUQ",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112847XJQEY1KH6QABHNH",
+    "messageId": "M4V20201128065818FMRCZKLVAJQNGSM",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1632,13 +1632,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202011271128470JOW7PIZNWGFC7S",
+    "groupId": "G4V20201128065818HR3C1UNCXBXFH7E",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112847Q0CF4WA64KT0YJY",
+    "messageId": "M4V20201128065818IZLRANHWMTKPUMV",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1880,13 +1880,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20201127112846HQWL2XKC9WEY8G3",
+    "groupId": "G4V20201128065818R2XZDRZGSJGXW03",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20201127112846ABF7LPVJ80DWOOM",
+    "messageId": "M4V20201128065818DUNRIIARHKBC8NM",
     "statusCode": "2000",
     "accountId": "12925149"
 }

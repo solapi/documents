@@ -29,7 +29,7 @@ GET https://api.solapi.com/messages/v4/list
 | groupId | `string` |  | eq | 메시지 그룹 아이디 |
 | to | `string` |  | eq | 수신번호 |
 | from | `string` |  | eq | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
-| type | `string` |  | eq | 메시지 타입 |
+| type | `string` |  | eq, in | 메시지 타입 |
 | statusCode | `string` |  | eq, in | 상태 코드 [참고](https://docs.solapi.net/api-reference/message-status-codes) |
 | dateCreated | `date` |  | eq | 최초 생성 날짜 |
 | dateUpdated | `date` |  | eq | 최근 수정 날짜 |
@@ -88,8 +88,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "from": "01000000000",
             "to": "01000000000",
             "customFields": {},
-            "dateCreated": "2020-11-27T02:28:43.142Z",
-            "dateUpdated": "2020-11-27T02:28:43.142Z",
+            "dateCreated": "2020-11-27T21:58:13.713Z",
+            "dateUpdated": "2020-11-27T21:58:13.713Z",
             "reason": null,
             "networkName": "ETC"
         }

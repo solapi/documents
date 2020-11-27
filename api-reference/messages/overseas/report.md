@@ -99,8 +99,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "to": "01000000000",
     "customFields": {},
     "hint": {},
-    "dateCreated": "2020-11-27T02:28:51.895Z",
-    "dateUpdated": "2020-11-27T02:28:51.903Z"
+    "dateCreated": "2020-11-27T21:58:23.399Z",
+    "dateUpdated": "2020-11-27T21:58:23.407Z"
 }
 ```
 
