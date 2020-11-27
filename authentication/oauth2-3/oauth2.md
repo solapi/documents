@@ -12,7 +12,7 @@ OAuth 2는 개발자가 새롭게 만든 어플리케이션 이나 웹 사이트
 
 ## 인증 흐름 알아보기
 
-![](../../.gitbook/assets/flow1-1.jpg)
+![](../../.gitbook/assets/flow1.jpg)
 
 ## Step 1. 사용자 인증하기
 

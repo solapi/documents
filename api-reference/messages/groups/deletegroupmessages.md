@@ -1,117 +1,72 @@
-# 앱에 앱홈 도메인 생성
+# 그룹 메시지 삭제
 
 ## Request
-```
-POST https://api.solapi.com/appstore/v2/me/apps/:appId/apphome
+
+```text
+DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
-앱홈 서비스를 이용하기 위한 도메인을 생성합니다.
+그룹에 속한 메시지 일부분을 삭제합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
-| `appstore:write` | `role-appstore:write` | `ACTIVE` | `ACTIVE` | O |
+| :--- | :--- | :--- | :--- | :---: |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :--: | :---------: |
-| :appId | 앱 아이디 |
+| :---: | :---: |
+| :groupId | 메시지 그룹 아이디 |
 
 ### Request Structure
-```json
+
+```javascript
 {
-    "domainPrefix": "string",
-    "customDomain": "string",
-    "primaryColor": "string",
-    "secondaryColor": "string",
-    "sideMenu": "boolean",
-    "slogan": "boolean"
+    "messageIds": "array"
 }
 ```
 
 ### Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| domainPrefix | `string` | O | 설명 없음 |
-| customDomain | `string` |  | 설명 없음 |
-| primaryColor | `string` |  | 설명 없음 |
-| secondaryColor | `string` |  | 설명 없음 |
-| sideMenu | `boolean` |  | 설명 없음 |
-| slogan | `boolean` |  | 설명 없음 |
-
-
----
+| :--- | :---: | :---: | :--- |
+| messageIds | `array` | O | 메시지 아이디 목록 |
 
 ## Samples
 
-### 앱홈 도메인 생성
+### DELETE /messages/v4/groups/{groupId}/messages
 
 > **Sample Request**
 
-```json
+```javascript
 {
-    "domainPrefix": "4989",
-    "primaryColor": "#fff",
-    "slogan": false
+    "messageIds": [
+        "M4V20200308120044DTYYJBBYLPQZIB1"
+    ]
 }
 ```
 
 > **Sample Response**
 
-```json
+```javascript
 {
-    "_id": "5f6ab44eb992b12976c9c180",
-    "thumbnail": {
-        "name": null,
-        "url": null,
-        "originalName": null
-    },
-    "profit": {
-        "sms": 0,
-        "lms": 0,
-        "mms": 0,
-        "ata": 0,
-        "cta": 0,
-        "cti": 0
-    },
-    "apphomeConfig": {
-        "primaryColor": "#fff",
-        "secondaryColor": null,
-        "sideMenu": true,
-        "slogan": false
-    },
-    "appVersion": null,
-    "screenshots": [],
-    "homepage": null,
-    "categories": [],
-    "intro": null,
-    "description": null,
-    "stage": "LIVE",
-    "status": "ACTIVE",
-    "reasonBlocked": null,
-    "email": null,
-    "log": [],
-    "appDomain": "4989.solapi.net",
-    "customDomain": null,
-    "type": "SITE",
-    "accountId": "12925149",
-    "appName": "A-APP",
-    "appId": "ACMn6vXrElA",
-    "clientId": "CIDL39VZZN8HO8UA",
-    "dateCreated": "2020-09-23T02:34:54.106Z",
-    "dateUpdated": "2020-09-23T02:34:54.118Z",
-    "CNAME": "hosting.solapi.net"
+    "groupId": "G4V20180307105937H3PTASXMNJG2JIB",
+    "errorCount": 0,
+    "resultList": [
+        {
+            "messageId": "M4V20200308120044DTYYJBBYLPQZIB1",
+            "resultCode": "Success"
+        }
+    ]
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -122,35 +77,32 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    domainPrefix: '4989',
-    primaryColor: '#fff',
-    slogan: false
+    messageIds: 'M4V20200308120044DTYYJBBYLP...'
   },
-  method: 'POST',
+  method: 'DELETE',
   json: true,
-  url: 'http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome'
+  url:
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
-$url = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome";
-$data = '{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}';
+$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages";
+$data = '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}';
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n" . "Content-Type: application/json\r\n",
         'content' => $data,
-        'method'  => 'POST'
+        'method'  => 'DELETE'
     )
 );
 
@@ -158,72 +110,63 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome"
+url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}'
+data = '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}'
 
-response = requests.post(url, headers=headers, data=data)
+response = requests.delete(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
-curl -X POST \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}' \
-	http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome
+curl -X DELETE \
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    -H 'Content-Type: application/json' \
+    -d '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}' \
+    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "domainPrefix": "4989",
-  "primaryColor": "#fff",
-  "slogan": false
+  "messageIds": "M4V20200308120044DTYYJBBYLP..."
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Delete.new(uri.request_uri, headers)
 request.body = data.to_json
 
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -235,10 +178,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome"
-  data := strings.NewReader(`{"domainPrefix":"4989","primaryColor":"#fff","slogan":false}`)
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages"
+  data := strings.NewReader(`{"messageIds":"M4V20200308120044DTYYJBBYLP..."}`)
 
-  req, err := http.NewRequest("POST", uri, data)
+  req, err := http.NewRequest("DELETE", uri, data)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -253,12 +196,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -270,13 +211,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/appstore/v2/me/apps/ACMn6vXrElA/apphome";
-    String parameters = "{\"domainPrefix\":\"4989\",\"primaryColor\":\"#fff\",\"slogan\":false}";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages";
+    String parameters = "{\"messageIds\":\"M4V20200308120044DTYYJBBYLP...\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("DELETE");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
     con.setRequestProperty("Content-Type", "application/json");
@@ -300,13 +241,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
 
----
-
-> 문서 생성일 : 2020-09-23
+> 문서 생성일 : 2020-11-27
 
