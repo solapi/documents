@@ -1,22 +1,20 @@
 # 그룹 생성
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/messages/v4/groups/
 ```
 
 메시지 그룹을 생성합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "appId": "string",
     "strict": "boolean",
@@ -28,27 +26,27 @@ POST https://api.solapi.com/messages/v4/groups/
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
 | strict | `boolean` |  | 설명 없음 |
 | sdkVersion | `string` |  | SDK 버전 |
 | osPlatform | `string` |  | OS 플렛폼 |
-| [customFields](createmessagegroup.md#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
-| [hint](createmessagegroup.md#body-hint) | `object` |  | 설명 없음 |
+| [customFields](#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [hint](#body-hint) | `object` |  | 설명 없음 |
 
-#### Body / customFields
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-
-
-#### Body / hint
+##### Body / customFields
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 
+##### Body / hint
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+
+
+---
 
 ## Samples
 
@@ -56,13 +54,13 @@ POST https://api.solapi.com/messages/v4/groups/
 
 > **Sample Request**
 
-```javascript
+```json
 {}
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 0,
@@ -112,8 +110,8 @@ POST https://api.solapi.com/messages/v4/groups/
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2020-09-09T05:23:20.967Z",
-            "message": "메시지 그룹이 생성되었습니다."
+            "createAt": "2020-11-27T02:28:43.538Z",
+            "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         }
     ],
     "status": "PENDING",
@@ -123,22 +121,25 @@ POST https://api.solapi.com/messages/v4/groups/
     "flagUpdated": false,
     "prepaid": true,
     "strict": false,
+    "masterAccountId": null,
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20200909142320GUW5FVSOIHQFQPH",
+    "groupId": "G4V20201127112843HSMHWY6EQDPU3K7",
     "price": {},
-    "dateCreated": "2020-09-09T05:23:20.969Z",
-    "dateUpdated": "2020-09-09T05:23:20.969Z",
-    "_id": "G4V20200909142320GUW5FVSOIHQFQPH"
+    "dateCreated": "2020-11-27T02:28:43.541Z",
+    "dateUpdated": "2020-11-27T02:28:43.541Z",
+    "_id": "G4V20201127112843HSMHWY6EQDPU3K7"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -156,10 +157,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/groups";
@@ -175,10 +178,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -190,19 +195,22 @@ headers = {
 response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    http://api.solapi.com/messages/v4/groups
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	http://api.solapi.com/messages/v4/groups
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -219,10 +227,12 @@ request = Net::HTTP::Post.new(uri.request_uri, headers)
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -250,10 +260,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -293,9 +305,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2020-09-09
+---
+
+> 문서 생성일 : 2020-11-27
 

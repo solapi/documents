@@ -1,26 +1,26 @@
 # 단일 메시지
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/messages/v4/send
 ```
 
 하나의 메시지를 발송합니다. 2개 이상의 메시지는 그룹 메시지를 사용하세요.
 
-홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. \(로그인 필요\)
+홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
 
-전송 내역\(메시지 그룹, 메시지 목록\)의 보관기간은 생성일 기준 6개월 입니다. 6개월이 지난 내역은 조회가 불가능합니다.
+전송 내역(메시지 그룹, 메시지 목록)의 보관기간은 생성일 기준 6개월 입니다.
+6개월이 지난 내역은 조회가 불가능합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "message": "object",
     "strict": "boolean",
@@ -29,68 +29,69 @@ POST https://api.solapi.com/messages/v4/send
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| [message](sendsimplemessage.md#body-message) | `object` | O | 메시지에 대한 정보 |
+| :--- | :--: | :------: | :---------- |
+| [message](#body-message) | `object` | O | 메시지에 대한 정보 |
 | strict | `boolean` |  | 설명 없음 |
-| [agent](sendsimplemessage.md#body-agent) | `object` |  | 에이전트 |
+| [agent](#body-agent) | `object` |  | 에이전트 |
 
-#### Body / message
+##### Body / message
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 사전 등록된 전화번호만 사용 가능 |
-| text | `string` | O | 메시지 내용 한글 1,000자, 영문 2,000자 제한 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
+| text | `string` | O | 메시지 내용<br>한글 1,000자, 영문 2,000자 제한 |
 | type | `string` |  | 메시지 타입 |
-| country | `string` |  | 국가번호 \(현재 미지원\) |
-| subject | `string` |  | 메시지 제목 한글 20자, 영문 40자 제한 |
+| country | `string` |  | 국가번호 (기본: 82, 미국(캐나다):1, 중국: 86, 일본: 81) |
+| subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
 | imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.net/api-reference/storage) |
-| [kakaoOptions](sendsimplemessage.md#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
-| [customFields](sendsimplemessage.md#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [kakaoOptions](#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
+| [customFields](#body-message-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
 | autoTypeDetect | `boolean` |  | 타입 설정이 없을 경우 자동으로 설정함. 기본 값은 true |
 
-#### Body / message / kakaoOptions
+##### Body / message / kakaoOptions
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | pfId | `string` |  | 테스트에서 발급된 카카오톡 채널의 연동 아이디 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
 | imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.net/api-reference/storage) |
-| [buttons](sendsimplemessage.md#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
+| [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
-#### Body / message / kakaoOptions / buttons
+
+##### Body / message / kakaoOptions / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | buttonName | `string` | O | 버튼 이름 |
-| buttonType | `string` | O | 버튼 종류\(AL: 앱링크, WL: 웹링크, DS: 배송조회, BK: 키워드, MD: 전달 |
-| linkMo | `string` |  | 모바일 링크\(WL 웹링크\) |
-| linkPc | `string` |  | 웹 링크\(WL 웹링크\) |
-| linkAnd | `string` |  | 안드로이드 링크\(AL 앱링크\) |
-| linkIos | `string` |  | IOS 링크\(AL 앱링크\) |
+| buttonType | `string` | O | 버튼 종류(AL: 앱링크, WL: 웹링크, DS: 배송조회, BK: 키워드, MD: 전달 |
+| linkMo | `string` |  | 모바일 링크(WL 웹링크) |
+| linkPc | `string` |  | 웹 링크(WL 웹링크) |
+| linkAnd | `string` |  | 안드로이드 링크(AL 앱링크) |
+| linkIos | `string` |  | IOS 링크(AL 앱링크) |
 
-#### Body / message / customFields
-
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-
-
-#### Body / agent
+##### Body / message / customFields
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
+
+##### Body / agent
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
 | osPlatform | `string` |  | OS 플렛폼 |
 | sdkVersion | `string` |  | SDK 버전 |
 
+
+---
+
 ## Response
 
 ### Response Structure
-
-```javascript
+```json
 {
     "groupId": "string",
     "messageId": "string",
@@ -105,28 +106,30 @@ POST https://api.solapi.com/messages/v4/send
 ```
 
 ### Response Description
-
-#### Response /
+##### Response / 
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | groupId | `string` | O | 그룹 아이디 |
 | messageId | `string` | O | 메시지 아이디 |
 | accountId | `string` | O | 계정 고유 번호 |
 | statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.net/api-reference/message-status-codes) |
 | statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.net/api-reference/message-status-codes) |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 사전 등록된 전화번호만 사용 가능 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
 | type | `string` | O | 메시지 타입 |
-| country | `string` | O | 국가번호 \(현재 미지원\) |
+| country | `string` | O | 국가번호 (기본: 82, 미국(캐나다):1, 중국: 86, 일본: 81) |
+
+
+---
 
 ## Samples
 
-### 메시지 발송 \(type: Auto Detect\)
+### 메시지 발송 (type: Auto Detect)
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -138,15 +141,15 @@ POST https://api.solapi.com/messages/v4/send
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V202009091423236IK8I5YYTFB09VE",
+    "groupId": "G4V20201127112846JDFPQ4PMWDOSLPM",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142323TVYRX0MQPPPXD3W",
+    "messageId": "M4V20201127112846JFOXBXOOQ4MJ6GH",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -155,7 +158,9 @@ POST https://api.solapi.com/messages/v4/send
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -181,10 +186,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -202,10 +209,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -219,21 +228,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"내용"}}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"내용"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"내용"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -259,10 +271,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -292,10 +306,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -337,15 +353,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 단문문자\(SMS\) 발송
+---
+
+### 단문문자(SMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -358,15 +378,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20200909142323YCYNARPEI60NHQW",
+    "groupId": "G4V202011271128465Y3QIWUGKGD4ICM",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142323EXWXP4U8YPSZRBB",
+    "messageId": "M4V20201127112846D7UBRAYGXIK8KD7",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -375,7 +395,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -402,10 +424,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -423,10 +447,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -440,21 +466,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"내용","type"
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"SMS"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"SMS"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -481,10 +510,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -514,10 +545,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -559,15 +592,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 장문문자\(LMS\) 발송
+---
+
+### 장문문자(LMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -581,15 +618,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20200909142324VRX1HQO0FJEEWYK",
+    "groupId": "G4V20201127112847ZQ06LCHC2FJEPOK",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142324HTXOO0LVR9KNJBS",
+    "messageId": "M4V20201127112847G4NSXKD1XLUVPSS",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -598,7 +635,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -627,10 +666,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -648,10 +689,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -665,21 +708,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","subject":"별 헤는 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","subject":"별 헤는 밤","text":"봄이 어머니, 패, 한 부끄러운 이웃 별 옥 계집애들의 계십니다. 내린 아무 아름다운 나는 이름을 있습니다. 위에도 하나에 못 북간도에 새워 강아지, 말 비둘기, 헤는 듯합니다. 가을로 했던 위에도 이름자를 봅니다. 아무 새겨지는 별 너무나 토끼, 듯합니다. 청춘이 헤는 토끼, 계절이 많은 듯합니다. 아름다운 못 내 그리고 아직 청춘이 라이너 버리었습니다. 벌레는 까닭이요, 어머니 봅니다. 속의 아이들의 나는 프랑시스 있습니다. 밤이 강아지, 하나 계십니다. 잔디가 이름과 별 프랑시스 하나에 하나 계십니다.","type":"LMS"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","subject":"별 헤는 밤","text":"봄이 어머니, 패, 한 부끄러운 이웃 별 옥 계집애들의 계십니다. 내린 아무 아름다운 나는 이름을 있습니다. 위에도 하나에 못 북간도에 새워 강아지, 말 비둘기, 헤는 듯합니다. 가을로 했던 위에도 이름자를 봅니다. 아무 새겨지는 별 너무나 토끼, 듯합니다. 청춘이 헤는 토끼, 계절이 많은 듯합니다. 아름다운 못 내 그리고 아직 청춘이 라이너 버리었습니다. 벌레는 까닭이요, 어머니 봅니다. 속의 아이들의 나는 프랑시스 있습니다. 밤이 강아지, 하나 계십니다. 잔디가 이름과 별 프랑시스 하나에 하나 계십니다.","type":"LMS"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -707,10 +753,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -740,10 +788,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -785,15 +835,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 사진문자\(MMS\) 발송
+---
+
+### 사진문자(MMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -808,15 +862,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V202009091423242RDDNK5MQSD8MGA",
+    "groupId": "G4V20201127112847N2FZPHOPFO6EQLD",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142324SVGONWTYHIZ5JZQ",
+    "messageId": "M4V20201127112847YWPTQYDJVT2LKEN",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -825,7 +879,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -854,10 +910,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -875,10 +933,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -892,21 +952,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","subject":"제목","te
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","subject":"제목","text":"내용","type":"MMS","imageId":"FILEID191113003354156UvCuw3tubTl"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","subject":"제목","text":"내용","type":"MMS","imageId":"FILEID191113003354156UvCuw3tubTl"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -935,10 +998,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -968,10 +1033,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1013,15 +1080,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 알림톡\(ATA\) 발송
+---
+
+### 알림톡(ATA) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -1045,15 +1116,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20200909142324OVPXAS6MYGTXY1H",
+    "groupId": "G4V20201127112847JYKXUVNQDKIKMUA",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142324FOPUTZXXJBV1LBH",
+    "messageId": "M4V20201127112847KWVALNUVDZP4GAM",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1062,7 +1133,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1101,10 +1174,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -1122,10 +1197,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1139,21 +1216,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}�
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1191,10 +1271,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1224,10 +1306,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1269,15 +1353,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 친구톡\(CTA\) 발송
+---
+
+### 친구톡(CTA) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -1293,15 +1381,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V202009091423246ZDDZPFQG7ERZ9I",
+    "groupId": "G4V20201127112847GMW2YT7BXZNQYQH",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20200909142324SRFQGRTRSAU3TNF",
+    "messageId": "M4V20201127112847XJQEY1KH6QABHNH",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1310,7 +1398,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1340,10 +1430,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -1361,10 +1453,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1378,21 +1472,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"내용","type"
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1422,10 +1519,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1455,10 +1554,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1500,15 +1601,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 친구톡 사진\(CTI\) 발송
+---
+
+### 친구톡 사진(CTI) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "message": {
         "to": "01000000001",
@@ -1525,15 +1630,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20200909142324HO6F0MALOFLSL9D",
+    "groupId": "G4V202011271128470JOW7PIZNWGFC7S",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V202009091423249UDUNO5ERAJTGUE",
+    "messageId": "M4V20201127112847Q0CF4WA64KT0YJY",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1542,7 +1647,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1573,10 +1680,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -1594,10 +1703,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1611,21 +1722,24 @@ data = '{"message":{"to":"01000000001","from":"029302266","text":"내용","type"
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"message":{"to":"01000000001","from":"029302266","text":"내용","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1656,10 +1770,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1689,10 +1805,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1734,15 +1852,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
 ### sendSimpleMessage
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "strict": false,
     "message": {
@@ -1756,15 +1878,15 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "groupId": "G4V20200909142323IQGMCTRP2CGRC8S",
+    "groupId": "G4V20201127112846HQWL2XKC9WEY8G3",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V202009091423234SUVBK0GEKGPCMB",
+    "messageId": "M4V20201127112846ABF7LPVJ80DWOOM",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1773,7 +1895,9 @@ public class Request {
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1801,10 +1925,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send";
@@ -1822,10 +1948,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1839,21 +1967,24 @@ data = '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}' \
-    http://api.solapi.com/messages/v4/send
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"strict":false,"message":{"to":"01000000001","from":"029302266","text":"뷁뒑뤩궭훩홊","type":"SMS"}}' \
+	http://api.solapi.com/messages/v4/send
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1881,10 +2012,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1914,10 +2047,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1959,9 +2094,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2020-09-09
+---
+
+> 문서 생성일 : 2020-11-27
 
