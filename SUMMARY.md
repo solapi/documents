@@ -13,14 +13,14 @@
 
 ## DEVELOPMENT-KITS
 
-* [Agent](development-kits/agent.md)
-* [Go](development-kits/go.md)
-* [Java](development-kits/java.md)
 * [Node JS](development-kits/nodejs.md)
-* [Others](development-kits/others.md)
 * [PHP](development-kits/php.md)
 * [Python](development-kits/python.md)
 * [Ruby](development-kits/ruby.md)
+* [Go](development-kits/go.md)
+* [Java](development-kits/java.md)
+* [DB연동 Agent](development-kits/agent.md)
+* [Others](development-kits/others.md)
 
 ## APP-STORE
 

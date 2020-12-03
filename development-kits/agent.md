@@ -1,4 +1,4 @@
-# Agent
+# DB연동 Agent
 
 DB연동형 에이전트
 
