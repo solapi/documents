@@ -19,6 +19,7 @@
 * [Ruby](development-kits/ruby.md)
 * [Go](development-kits/go.md)
 * [Java](development-kits/java.md)
+* [Visual Basic .NET](development-kits/visual-basic-.net.md)
 * [DB연동 Agent](development-kits/agent.md)
 * [Others](development-kits/others.md)
 
