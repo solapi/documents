@@ -20,6 +20,7 @@
 * [Go](development-kits/go.md)
 * [Java](development-kits/java.md)
 * [Visual Basic .NET](development-kits/visual-basic-.net.md)
+* [Visual Basic 6](development-kits/visual-basic-6.md)
 * [DB연동 Agent](development-kits/agent.md)
 * [Others](development-kits/others.md)
 
