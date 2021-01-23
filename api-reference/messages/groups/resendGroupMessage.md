@@ -41,7 +41,6 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 
 ```json
 {
-    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "count": {
         "total": 0,
         "sentTotal": 0,
@@ -52,6 +51,16 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "refund": 0,
         "registeredFailed": 0,
         "registeredSuccess": 1
+    },
+    "countForCharge": {
+        "sms": {
+            "82": 1
+        },
+        "lms": {},
+        "mms": {},
+        "ata": {},
+        "cta": {},
+        "cti": {}
     },
     "balance": {
         "requested": 0,
@@ -83,14 +92,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2020-11-27T21:58:13.672Z"
+            "createAt": "2021-01-23T10:41:06.871Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2020-11-27T21:58:13.672Z"
+            "createAt": "2021-01-23T10:41:06.871Z"
         },
         {
-            "createAt": "2020-11-27T21:58:21.021Z",
+            "createAt": "2021-01-23T10:41:13.373Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -100,27 +109,17 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         }
     ],
     "status": "SENDING",
-    "dateSent": "2020-11-27T21:58:21.021Z",
-    "scheduledDate": null,
+    "dateSent": "2021-01-23T10:41:13.373Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
     "prepaid": true,
     "strict": true,
     "masterAccountId": null,
+    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "accountId": "12925149",
     "apiVersion": "4",
-    "countForCharge": {
-        "sms": {
-            "82": 1
-        },
-        "lms": {},
-        "mms": {},
-        "ata": {},
-        "cta": {},
-        "cti": {}
-    },
     "price": {
         "82": {
             "sms": 20,
@@ -132,8 +131,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     },
     "customFields": {},
     "hint": {},
-    "dateCreated": "2020-11-27T21:58:13.676Z",
-    "dateUpdated": "2020-11-27T21:58:21.021Z"
+    "dateCreated": "2021-01-23T10:41:06.889Z",
+    "dateUpdated": "2021-01-23T10:41:13.374Z"
 }
 ```
 
@@ -317,5 +316,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-11-27
+> 문서 생성일 : 2021-01-23
 

@@ -54,7 +54,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-11-05T00:00:00.000Z",
+        "date": "2021-01-01T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -75,7 +75,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-11-04T00:00:00.000Z",
+        "date": "2020-12-31T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -96,7 +96,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-11-03T00:00:00.000Z",
+        "date": "2020-12-30T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -117,7 +117,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-11-02T00:00:00.000Z",
+        "date": "2020-12-29T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -138,7 +138,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-11-01T00:00:00.000Z",
+        "date": "2020-12-28T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -159,7 +159,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-31T00:00:00.000Z",
+        "date": "2020-12-27T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -180,7 +180,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-30T00:00:00.000Z",
+        "date": "2020-12-26T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -201,7 +201,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-29T00:00:00.000Z",
+        "date": "2020-12-25T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -222,7 +222,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-28T00:00:00.000Z",
+        "date": "2020-12-24T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -243,7 +243,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-27T00:00:00.000Z",
+        "date": "2020-12-23T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -264,7 +264,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-26T00:00:00.000Z",
+        "date": "2020-12-22T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -285,7 +285,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-24T23:00:00.000Z",
+        "date": "2020-12-21T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -306,7 +306,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-23T23:00:00.000Z",
+        "date": "2020-12-20T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -327,7 +327,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-22T23:00:00.000Z",
+        "date": "2020-12-19T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -348,7 +348,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-21T23:00:00.000Z",
+        "date": "2020-12-18T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -369,7 +369,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-20T23:00:00.000Z",
+        "date": "2020-12-17T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -390,7 +390,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-19T23:00:00.000Z",
+        "date": "2020-12-16T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -411,7 +411,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-18T23:00:00.000Z",
+        "date": "2020-12-15T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -432,7 +432,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-17T23:00:00.000Z",
+        "date": "2020-12-14T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -453,7 +453,7 @@ http://api.solapi.com/messages/v4/statistics/daily
         "profit": 0,
         "masterAccountId": null,
         "accountId": "12925149",
-        "date": "2020-10-16T23:00:00.000Z",
+        "date": "2020-12-13T00:00:00.000Z",
         "count": {
             "4000": {
                 "sms": 10
@@ -642,5 +642,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-11-27
+> 문서 생성일 : 2021-01-23
 

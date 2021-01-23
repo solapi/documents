@@ -64,7 +64,6 @@ POST https://api.solapi.com/messages/v4/overseas/report
 
 ```json
 {
-    "_id": "M4V201FFFFFFFFFAAAAAAAAAAAAAZIB0",
     "kakaoOptions": {
         "senderKey": null,
         "templateCode": null,
@@ -91,6 +90,7 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "routedQueue": null,
     "resendCount": 0,
     "usedQueue": [],
+    "_id": "M4V201FFFFFFFFFAAAAAAAAAAAAAZIB0",
     "messageId": "M4V201FFFFFFFFFAAAAAAAAAAAAAZIB0",
     "groupId": "G4V20180307TTTTTTTTAAATTTTTTTTTT",
     "accountId": "12925149",
@@ -99,8 +99,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "to": "01000000000",
     "customFields": {},
     "hint": {},
-    "dateCreated": "2020-11-27T21:58:23.399Z",
-    "dateUpdated": "2020-11-27T21:58:23.407Z"
+    "dateCreated": "2021-01-23T10:41:15.943Z",
+    "dateUpdated": "2021-01-23T10:41:15.954Z"
 }
 ```
 
@@ -311,5 +311,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2020-11-27
+> 문서 생성일 : 2021-01-23
 
