@@ -5,7 +5,7 @@
 DELETE https://api.solapi.com/kakao/v1/plus-friends/:pfId
 ```
 
-SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAPI와의 연동만 끊길 뿐 카카오톡채널이 삭제되지는 않습니다.
+연동된 카카오톡채널을 삭제합니다. 연동만 끊길 뿐 카카오톡채널이 삭제되지는 않습니다.
 
 ### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
@@ -46,8 +46,8 @@ SOLAPI와 연동된 카카오톡채널을 SOLAPI에서만 삭제합니다. SOLAP
             "categoryCode": "11111111111"
         }
     ],
-    "dateCreated": "2019-12-17T22:29:35.833Z",
-    "dateUpdated": "2019-12-17T22:29:35.833Z"
+    "dateCreated": "2021-01-29T01:27:40.369Z",
+    "dateUpdated": "2021-01-29T01:27:40.369Z"
 }
 ```
 
@@ -231,5 +231,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2019-12-17
+> 문서 생성일 : 2021-01-29
 

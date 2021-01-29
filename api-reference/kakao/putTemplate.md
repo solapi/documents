@@ -1,84 +1,94 @@
-# 카카오톡채널 추가
+# 템플릿 추가
 
 ## Request
-
-```text
-POST https://api.solapi.com/kakao/v1/plus-friends/:service
+```
+POST https://api.solapi.com/kakao/v1/templates
 ```
 
-기존에 등록된 카카오톡채널을 SOLAPI에 연동합니다.
+템플릿을 새롭게 등록합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
-### Path Parameters
-
-| Name | Description |
-| :---: | :---: |
-| :service | 카카오톡채널 연동처 |
-
 ### Request Structure
-
-```javascript
+```json
 {
-    "searchId": "string",
-    "phoneNumber": "string",
-    "categoryCode": "string",
-    "token": "string"
+    "pfId": "string",
+    "name": "string",
+    "content": "string",
+    "buttons": "array"
 }
 ```
 
 ### Body Params
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| pfId | `string` | O | 카카오톡채널 고유 아이디 |
+| name | `string` | O | 이름 |
+| content | `string` | O | 템플릿 내용 |
+| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
+
+
+##### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| searchId | `string` | O | 카카오톡채널 검색용 아이디 |
-| phoneNumber | `string` | O | 핸드폰 번호 |
-| categoryCode | `string` | O | 카카오톡채널 카테고리 코드 |
-| token | `string` | O | 연동 시 카카오톡으로 사용자에게 오는 토큰 |
+| :--- | :--: | :------: | :---------- |
+| buttonType | `string` | O | 설명 없음 |
+| buttonName | `string` | O | 설명 없음 |
+| linkMo | `string` |  | Mobile 주소 |
+| linkPc | `string` |  | PC 주소 |
+| linkAnd | `string` |  | Android 주소 |
+| linkIos | `string` |  | IOS 주소 |
+
+
+---
 
 ## Samples
 
-### putPlusFriend.spec.js
+### 템플릿 등록
 
 > **Sample Request**
 
-```javascript
+```json
 {
-    "searchId": "NURIGO",
-    "phoneNumber": "01055555555",
-    "categoryCode": "02536589547",
-    "token": "123456789"
+    "pfId": "PF01ID210129012740066MttFs1...",
+    "name": "회원가입",
+    "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
 ```
 
 > **Sample Response**
 
-```javascript
+```json
 {
-    "accountId": "19301859371938",
-    "phoneNumber": "01055555555",
-    "searchId": "NURIGO",
-    "dateCreated": "2019-12-17T22:29:36.246Z",
-    "dateUpdated": "2019-12-17T22:29:36.246Z",
-    "pfId": "KA01PF191217222936250AUOMQeD9edz",
-    "senderKeys": [
+    "isHidden": false,
+    "name": "회원가입",
+    "pfId": "PF01ID210129012740066MttFs1xEMPv",
+    "accountId": "12925149",
+    "buttons": [],
+    "codes": [
         {
-            "service": "daou",
-            "key": "11646846a8ds4f6a84fs6a8sf4",
-            "categoryCode": "02536589547"
+            "status": "PENDING",
+            "service": "biz",
+            "comments": []
         }
-    ]
+    ],
+    "content": "#{홍길동}님 회원가입을 환영 합니다.",
+    "dateCreated": "2021-01-29T01:27:41.128Z",
+    "dateUpdated": "2021-01-29T01:27:41.128Z",
+    "templateId": "KA01TP210129012741140ADezVtwJN2n"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -89,28 +99,29 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    searchId: 'NURIGO',
-    phoneNumber: '01055555555',
-    categoryCode: '02536589547',
-    token: '123456789'
+    pfId: 'PF01ID210129012740066MttFs1...',
+    name: '회원가입',
+    content: '#{홍길동}님 회원가입을 환영 합니다.'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/kakao/v1/plus-friends/daou'
+  url: 'http://api.solapi.com/kakao/v1/templates'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/plus-friends/daou";
-$data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}';
+$url = "http://api.solapi.com/kakao/v1/templates";
+$data = '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}';
 
 $options = array(
     'http' => array(
@@ -124,54 +135,58 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends/daou"
+url = "http://api.solapi.com/kakao/v1/templates"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}'
+data = '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}' \
-    http://api.solapi.com/kakao/v1/plus-friends/daou
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+	http://api.solapi.com/kakao/v1/templates
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends/daou")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "searchId": "NURIGO",
-  "phoneNumber": "01055555555",
-  "categoryCode": "02536589547",
-  "token": "123456789"
+  "pfId": "PF01ID210129012740066MttFs1...",
+  "name": "회원가입",
+  "content": "#{홍길동}님 회원가입을 환영 합니다."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -180,10 +195,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -195,8 +212,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends/daou"
-  data := strings.NewReader(`{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}`)
+  uri := "http://api.solapi.com/kakao/v1/templates"
+  data := strings.NewReader(`{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -213,10 +230,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -228,8 +247,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends/daou";
-    String parameters = "{\"searchId\":\"NURIGO\",\"phoneNumber\":\"01055555555\",\"categoryCode\":\"02536589547\",\"token\":\"123456789\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates";
+    String parameters = "{\"pfId\":\"PF01ID210129012740066MttFs1...\",\"name\":\"회원가입\",\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -258,9 +277,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2019-12-17
+---
+
+> 문서 생성일 : 2021-01-29
 
