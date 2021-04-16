@@ -1,20 +1,22 @@
 # 템플릿 추가
 
 ## Request
-```
+
+```text
 POST https://api.solapi.com/kakao/v1/templates
 ```
 
 템플릿을 새롭게 등록합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
+| :--- | :--- | :--- | :--- | :---: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Request Structure
-```json
+
+```javascript
 {
     "pfId": "string",
     "name": "string",
@@ -24,18 +26,18 @@ POST https://api.solapi.com/kakao/v1/templates
 ```
 
 ### Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
+| :--- | :---: | :---: | :--- |
 | pfId | `string` | O | 카카오톡채널 고유 아이디 |
 | name | `string` | O | 이름 |
 | content | `string` | O | 템플릿 내용 |
-| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
+| [buttons](puttemplate.md#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
 
-
-##### Body / buttons
+#### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
+| :--- | :---: | :---: | :--- |
 | buttonType | `string` | O | 설명 없음 |
 | buttonName | `string` | O | 설명 없음 |
 | linkMo | `string` |  | Mobile 주소 |
@@ -43,16 +45,13 @@ POST https://api.solapi.com/kakao/v1/templates
 | linkAnd | `string` |  | Android 주소 |
 | linkIos | `string` |  | IOS 주소 |
 
-
----
-
 ## Samples
 
 ### 템플릿 등록
 
 > **Sample Request**
 
-```json
+```javascript
 {
     "pfId": "PF01ID210129012740066MttFs1...",
     "name": "회원가입",
@@ -62,7 +61,7 @@ POST https://api.solapi.com/kakao/v1/templates
 
 > **Sample Response**
 
-```json
+```javascript
 {
     "isHidden": false,
     "name": "회원가입",
@@ -86,9 +85,7 @@ POST https://api.solapi.com/kakao/v1/templates
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -112,12 +109,10 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 $url = "http://api.solapi.com/kakao/v1/templates";
@@ -135,12 +130,10 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
@@ -154,24 +147,21 @@ data = '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content"
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
-	http://api.solapi.com/kakao/v1/templates
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    -H 'Content-Type: application/json' \
+    -d '{"pfId":"PF01ID210129012740066MttFs1...","name":"회원가입","content":"#{홍길동}님 회원가입을 환영 합니다."}' \
+    http://api.solapi.com/kakao/v1/templates
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -195,12 +185,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -230,12 +218,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -277,13 +263,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
 > 문서 생성일 : 2021-01-29
 

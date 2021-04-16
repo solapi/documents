@@ -1,130 +1,85 @@
-# 템플릿 정보 수정
+# 템플릿 숨김 설정
 
 ## Request
-```
-PUT https://api.solapi.com/kakao/v1/templates/:templateId
+
+```text
+PUT https://api.solapi.com/kakao/v1/templates/:templateId/hide
 ```
 
-템플릿의 정보를 수정합니다.
+템플릿의 숨김 여부를 설정합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
+| :--- | :--- | :--- | :--- | :---: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
 ### Path Parameters
 
 | Name | Description |
-| :--: | :---------: |
+| :---: | :---: |
 | :templateId | 템플릿 고유 아이디 |
 
 ### Request Structure
-```json
+
+```javascript
 {
-    "name": "string",
-    "content": "string",
-    "buttons": "array"
+    "isHidden": "boolean"
 }
 ```
 
 ### Body Params
-| Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| name | `string` |  | 이름 |
-| content | `string` |  | 템플릿 내용 |
-| [buttons](#body-buttons) | `array` |  | 템플릿에 들어가는 버튼들 |
-
-
-##### Body / buttons
 
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| buttonType | `string` | O | 설명 없음 |
-| buttonName | `string` | O | 설명 없음 |
-| linkMo | `string` |  | Mobile 주소 |
-| linkPc | `string` |  | PC 주소 |
-| linkAnd | `string` |  | Android 주소 |
-| linkIos | `string` |  | IOS 주소 |
-
-
----
+| :--- | :---: | :---: | :--- |
+| isHidden | `boolean` | O | 설명 없음 |
 
 ## Samples
 
-### setTemplate.spec.js
+### hidTemplate.spec.js
 
 > **Sample Request**
 
-```json
+```javascript
 {
-    "content": "#{홍길동}님 회원가입을 환영 합니다."
+    "isHidden": true
 }
 ```
 
 > **Sample Response**
 
-```json
+```javascript
 {
-    "daou": {
-        "isHidden": false,
-        "accountId": "12925149",
-        "templateId": "KA01TP210129012740072eaerYNippBy",
-        "name": "A0",
-        "pfId": "PF01ID210129012740072j7tblOVPyaA",
-        "codes": [
-            {
-                "status": "PENDING",
-                "code": "bizp_20190312165039251028888880",
-                "service": "daou",
-                "comments": []
-            },
-            {
-                "status": "PENDING",
-                "code": "bizp_20190312165039251028888880",
-                "service": "biz",
-                "comments": []
-            }
-        ],
-        "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2021-01-29T01:27:41.329Z",
-        "dateUpdated": "2021-01-29T01:27:41.344Z",
-        "buttons": []
-    },
-    "biz": {
-        "isHidden": false,
-        "accountId": "12925149",
-        "templateId": "KA01TP210129012740072eaerYNippBy",
-        "name": "A0",
-        "pfId": "PF01ID210129012740072j7tblOVPyaA",
-        "codes": [
-            {
-                "status": "PENDING",
-                "code": "bizp_20190312165039251028888880",
-                "service": "daou",
-                "comments": []
-            },
-            {
-                "status": "PENDING",
-                "code": "bizp_20190312165039251028888880",
-                "service": "biz",
-                "comments": []
-            }
-        ],
-        "content": "#{홍길동}님 회원가입을 환영 합니다.",
-        "dateCreated": "2021-01-29T01:27:41.329Z",
-        "dateUpdated": "2021-01-29T01:27:41.347Z",
-        "buttons": []
-    }
+    "isHidden": true,
+    "accountId": "12925149",
+    "templateId": "KA01TP200923054509625rpI2FXLASpp",
+    "name": "THISISNAME",
+    "pfId": "KA01PF06981701923709182736123232",
+    "codes": [
+        {
+            "status": "PENDING",
+            "code": "bizp_201903121650392510222222",
+            "service": "daou",
+            "comments": []
+        },
+        {
+            "status": "APPROVED",
+            "comments": [],
+            "code": "bizp_201903121650392510211111",
+            "service": "biz"
+        }
+    ],
+    "content": "#{홍길동}님 회원가입을 환영 합니다.",
+    "dateCreated": "2021-01-29T01:27:41.247Z",
+    "dateUpdated": "2021-01-29T01:27:41.253Z",
+    "buttons": []
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -135,28 +90,26 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    content: '#{홍길동}님 회원가입을 환영 합니다.'
+    isHidden: true
   },
   method: 'PUT',
   json: true,
   url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy'
+    'http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy";
-$data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}';
+$url = "http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide";
+$data = '{"isHidden":true}';
 
 $options = array(
     'http' => array(
@@ -170,56 +123,51 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy"
+url = "http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"content":"#{홍길동}님 회원가입을 환영 합니다."}'
+data = '{"isHidden":true}'
 
 response = requests.put(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X PUT \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"content":"#{홍길동}님 회원가입을 환영 합니다."}' \
-	http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    -H 'Content-Type: application/json' \
+    -d '{"isHidden":true}' \
+    http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "content": "#{홍길동}님 회원가입을 환영 합니다."
+  "isHidden": true
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Put.new(uri.request_uri, headers)
@@ -228,12 +176,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -245,8 +191,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy"
-  data := strings.NewReader(`{"content":"#{홍길동}님 회원가입을 환영 합니다."}`)
+  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide"
+  data := strings.NewReader(`{"isHidden":true}`)
 
   req, err := http.NewRequest("PUT", uri, data)
   if err != nil { panic(err) }
@@ -263,12 +209,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -280,8 +224,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740072eaerYNippBy";
-    String parameters = "{\"content\":\"#{홍길동}님 회원가입을 환영 합니다.\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP200923054509625rpI2FXLASpp/hide";
+    String parameters = "{\"isHidden\":true}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -310,13 +254,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
 > 문서 생성일 : 2021-01-29
 

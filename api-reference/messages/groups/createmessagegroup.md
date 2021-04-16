@@ -1,73 +1,145 @@
-# 템플릿을 삭제
+# 그룹 생성
 
 ## Request
-```
-DELETE https://api.solapi.com/kakao/v1/templates/:templateId
+
+```text
+POST https://api.solapi.com/messages/v4/groups/
 ```
 
-템플릿을 삭제합니다.
+메시지 그룹을 생성합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
-| `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
+| :--- | :--- | :--- | :--- | :---: |
+| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
-### Path Parameters
+### Request Structure
 
-| Name | Description |
-| :--: | :---------: |
-| :templateId | 템플릿 고유 아이디 |
+```javascript
+{
+    "appId": "string",
+    "strict": "boolean",
+    "sdkVersion": "string",
+    "osPlatform": "string",
+    "customFields": "object",
+    "hint": "object"
+}
+```
 
----
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| appId | `string` |  | 앱 아이디 |
+| strict | `boolean` |  | 설명 없음 |
+| sdkVersion | `string` |  | SDK 버전 |
+| osPlatform | `string` |  | OS 플렛폼 |
+| [customFields](createmessagegroup.md#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [hint](createmessagegroup.md#body-hint) | `object` |  | 설명 없음 |
+
+#### Body / customFields
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+
+
+#### Body / hint
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+
 
 ## Samples
 
-### deleteTemplate.spec.js
+### 메시지 그룹 생성 POST /messages/v4/groups
 
 > **Sample Request**
 
-```json
+```javascript
 {}
 ```
 
 > **Sample Response**
 
-```json
+```javascript
 {
-    "isHidden": false,
-    "accountId": "12925149",
-    "templateId": "KA01TP210129012740053ATI51TEvmcC",
-    "name": "A0",
-    "pfId": "PF01ID210129012740049mdQMkS6veIw",
-    "content": "#{홍길동}님 회원가입을 환영 합니다.",
-    "dateCreated": "2021-01-29T01:27:40.416Z",
-    "dateUpdated": "2021-01-29T01:27:40.416Z",
-    "codes": [
-        {
-            "status": "PENDING",
-            "service": "biz",
-            "code": "bizp_20190312165039251028888880",
-            "comments": []
+    "count": {
+        "total": 0,
+        "sentTotal": 0,
+        "sentFailed": 0,
+        "sentSuccess": 0,
+        "sentPending": 0,
+        "sentReplacement": 0,
+        "refund": 0,
+        "registeredFailed": 0,
+        "registeredSuccess": 0
+    },
+    "countForCharge": {
+        "sms": {},
+        "lms": {},
+        "mms": {},
+        "ata": {},
+        "cta": {},
+        "cti": {}
+    },
+    "balance": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "point": {
+        "requested": 0,
+        "replacement": 0,
+        "refund": 0,
+        "sum": 0
+    },
+    "app": {
+        "profit": {
+            "sms": 0,
+            "lms": 0,
+            "mms": 0,
+            "ata": 0,
+            "cta": 0,
+            "cti": 0
         },
+        "appId": null,
+        "version": null
+    },
+    "serviceMethod": "MT",
+    "sdkVersion": null,
+    "osPlatform": null,
+    "log": [
         {
-            "status": "PENDING",
-            "service": "daou",
-            "code": "bizp_20190312165039251028888880",
-            "comments": []
+            "createAt": "2021-01-23T10:41:07.390Z",
+            "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         }
     ],
-    "buttons": [],
-    "status": "DELETED"
+    "status": "PENDING",
+    "dateSent": null,
+    "dateCompleted": null,
+    "isRefunded": false,
+    "flagUpdated": false,
+    "prepaid": true,
+    "strict": false,
+    "masterAccountId": null,
+    "accountId": "12925149",
+    "apiVersion": "4",
+    "customFields": {},
+    "hint": null,
+    "groupId": "G4V20210123194107UP2POEHUJV29RD1",
+    "price": {},
+    "dateCreated": "2021-01-23T10:41:07.393Z",
+    "dateUpdated": "2021-01-23T10:41:07.393Z",
+    "_id": "G4V20210123194107UP2POEHUJV29RD1"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -76,30 +148,27 @@ var options = {
     Authorization:
       'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
   },
-  method: 'DELETE',
+  method: 'POST',
   json: true,
-  url:
-    'http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC'
+  url: 'http://api.solapi.com/messages/v4/groups'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC";
+$url = "http://api.solapi.com/messages/v4/groups";
 
 $options = array(
     'http' => array(
         'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'DELETE'
+        'method'  => 'POST'
     )
 );
 
@@ -107,61 +176,54 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC"
+url = "http://api.solapi.com/messages/v4/groups"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 
-response = requests.delete(url, headers=headers)
+response = requests.post(url, headers=headers)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
-curl -X DELETE \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC
+curl -X POST \
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    http://api.solapi.com/messages/v4/groups
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Delete.new(uri.request_uri, headers)
+request = Net::HTTP::Post.new(uri.request_uri, headers)
 
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -173,9 +235,9 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC"
+  uri := "http://api.solapi.com/messages/v4/groups"
 
-  req, err := http.NewRequest("DELETE", uri, nil)
+  req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
 
   req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
@@ -189,12 +251,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -206,12 +266,12 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/templates/KA01TP210129012740053ATI51TEvmcC";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("DELETE");
+    con.setRequestMethod("POST");
 
     con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
@@ -234,13 +294,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
 
----
-
-> 문서 생성일 : 2021-01-29
+> 문서 생성일 : 2021-01-23
 

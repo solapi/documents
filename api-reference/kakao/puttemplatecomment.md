@@ -1,80 +1,92 @@
-# 카카오톡채널 추가
+# 템플릿 댓글 추가
 
 ## Request
-```
-POST https://api.solapi.com/kakao/v1/plus-friends
+
+```text
+POST https://api.solapi.com/kakao/v1/templates/:templateId/comment
 ```
 
-카카오톡채널을 연동합니다.
+템플릿에 댓글을 추가합니다.
 
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
+| :--- | :--- | :--- | :--- | :---: |
 | `kakao:write` | `role-kakao:write` | `ACTIVE` | `ACTIVE` | O |
 
+### Path Parameters
+
+| Name | Description |
+| :---: | :---: |
+| :templateId | 템플릿 고유 아이디 |
+
 ### Request Structure
-```json
+
+```javascript
 {
-    "searchId": "string",
-    "phoneNumber": "string",
-    "categoryCode": "string",
-    "token": "string"
+    "comment": "string"
 }
 ```
 
 ### Body Params
+
 | Name | Type | Required | Description |
-| :--- | :--: | :------: | :---------- |
-| searchId | `string` | O | 카카오톡채널 검색용 아이디 |
-| phoneNumber | `string` | O | 핸드폰 번호 |
-| categoryCode | `string` | O | 카카오톡채널 카테고리 코드 |
-| token | `string` | O | 연동 시 카카오톡으로 사용자에게 오는 토큰 |
-
-
----
+| :--- | :---: | :---: | :--- |
+| comment | `string` | O | 템플릿에 다는 댓글 |
 
 ## Samples
 
-### putPlusFriend.spec.js
+### putTemplateComment.spec.js
 
 > **Sample Request**
 
-```json
+```javascript
 {
-    "searchId": "NURIGO",
-    "phoneNumber": "01055555555",
-    "categoryCode": "02536589547",
-    "token": "123456789"
+    "comment": "템플릿 등록 문의드립니다."
 }
 ```
 
 > **Sample Response**
 
-```json
+```javascript
 {
-    "accountId": "19301859371938",
-    "phoneNumber": "01055555555",
-    "searchId": "NURIGO",
-    "dateCreated": "2021-01-29T01:27:40.851Z",
-    "dateUpdated": "2021-01-29T01:27:40.851Z",
-    "pfId": "KA01PF210129012740855UEDAMcckNxA",
-    "senderKeys": [
+    "isHidden": false,
+    "accountId": "12925149",
+    "templateId": "TP01ID210129012740069ckvyOLbUVFF",
+    "name": "A10",
+    "pfId": "PF01ID210129012740069j4TlZZ74soX",
+    "codes": [
         {
+            "status": "REJECTED",
+            "service": "daou",
+            "code": "bizp_2019031216503925102888888",
+            "comments": []
+        },
+        {
+            "status": "REJECTED",
             "service": "biz",
-            "key": "12646846a8ds4f6a84fs6a8sf4",
-            "categoryCode": "02536589547"
+            "code": "bizp_2019031216503925102888888",
+            "comments": [
+                {
+                    "isAdmin": false,
+                    "memberId": "18010100001000",
+                    "content": "템플릿 등록 문의드립니다.",
+                    "dateCreated": "2021-01-29T01:27:41.294Z"
+                }
+            ]
         }
-    ]
+    ],
+    "content": "testMessage",
+    "dateCreated": "2021-01-29T01:27:40.070Z",
+    "dateUpdated": "2021-01-29T01:27:41.292Z",
+    "buttons": []
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
-
 {% tab title="NODE" %}
-
 ```javascript
 var request = require('request');
 
@@ -85,30 +97,26 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: {
-    searchId: 'NURIGO',
-    phoneNumber: '01055555555',
-    categoryCode: '02536589547',
-    token: '123456789'
+    comment: '템플릿 등록 문의드립니다.'
   },
   method: 'POST',
   json: true,
-  url: 'http://api.solapi.com/kakao/v1/plus-friends'
+  url:
+    'http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment'
 };
 
 request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
-
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
-$url = "http://api.solapi.com/kakao/v1/plus-friends";
-$data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}';
+$url = "http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment";
+$data = '{"comment":"템플릿 등록 문의드립니다."}';
 
 $options = array(
     'http' => array(
@@ -122,59 +130,51 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
-
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
-
 ```python
 import requests
 
-url = "http://api.solapi.com/kakao/v1/plus-friends"
+url = "http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
-data = '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}'
+data = '{"comment":"템플릿 등록 문의드립니다."}'
 
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
-
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-
-```curl
+```text
 #!/bin/bash
 curl -X POST \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	-H 'Content-Type: application/json' \
-	-d '{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}' \
-	http://api.solapi.com/kakao/v1/plus-friends
+    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+    -H 'Content-Type: application/json' \
+    -d '{"comment":"템플릿 등록 문의드립니다."}' \
+    http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
-
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/kakao/v1/plus-friends")
+uri = URI.parse("http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4",
   "Content-Type": "application/json"
 }
 data = {
-  "searchId": "NURIGO",
-  "phoneNumber": "01055555555",
-  "categoryCode": "02536589547",
-  "token": "123456789"
+  "comment": "템플릿 등록 문의드립니다."
 }
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -183,12 +183,10 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
-
 ```
 {% endtab %}
 
 {% tab title="GO" %}
-
 ```go
 package main
 
@@ -200,8 +198,8 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/kakao/v1/plus-friends"
-  data := strings.NewReader(`{"searchId":"NURIGO","phoneNumber":"01055555555","categoryCode":"02536589547","token":"123456789"}`)
+  uri := "http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment"
+  data := strings.NewReader(`{"comment":"템플릿 등록 문의드립니다."}`)
 
   req, err := http.NewRequest("POST", uri, data)
   if err != nil { panic(err) }
@@ -218,12 +216,10 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
-
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
-
 ```java
 package solapi;
 
@@ -235,8 +231,8 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/kakao/v1/plus-friends";
-    String parameters = "{\"searchId\":\"NURIGO\",\"phoneNumber\":\"01055555555\",\"categoryCode\":\"02536589547\",\"token\":\"123456789\"}";
+    String targetUrl = "http://api.solapi.com/kakao/v1/templates/TP01ID210129012740069ckvyOLbUVFF/comment";
+    String parameters = "{\"comment\":\"템플릿 등록 문의드립니다.\"}";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -265,13 +261,9 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
-
 ```
 {% endtab %}
-
 {% endtabs %}
-
----
 
 > 문서 생성일 : 2021-01-29
 
