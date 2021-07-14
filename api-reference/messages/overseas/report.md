@@ -118,8 +118,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "customFields": {},
     "queues": [],
     "hint": {},
-    "dateCreated": "2021-07-14T06:58:25.021Z",
-    "dateUpdated": "2021-07-14T06:58:25.031Z"
+    "dateCreated": "2021-07-14T07:11:13.445Z",
+    "dateUpdated": "2021-07-14T07:11:13.455Z"
 }
 ```
 

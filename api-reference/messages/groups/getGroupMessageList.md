@@ -98,8 +98,8 @@ http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIO/messag
             "to": "01000000000",
             "customFields": {},
             "queues": [],
-            "dateCreated": "2021-07-14T06:58:15.288Z",
-            "dateUpdated": "2021-07-14T06:58:15.288Z",
+            "dateCreated": "2021-07-14T07:10:59.528Z",
+            "dateUpdated": "2021-07-14T07:10:59.528Z",
             "reason": null,
             "networkName": "ETC"
         }

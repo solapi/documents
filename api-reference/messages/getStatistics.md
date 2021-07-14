@@ -49,7 +49,7 @@ http://api.solapi.com/messages/v4/statistics
             "pointAvg": 1,
             "dayPeriod": [
                 {
-                    "_id": "2021-07-14T06:58:22.136Z",
+                    "_id": "2021-07-14T07:11:10.485Z",
                     "month": "2021/07",
                     "date": "2021/07/14",
                     "balance": 1,
@@ -173,7 +173,7 @@ http://api.solapi.com/messages/v4/statistics
     },
     "dayPeriod": [
         {
-            "_id": "2021-07-14T06:58:22.136Z",
+            "_id": "2021-07-14T07:11:10.485Z",
             "month": "2021/07",
             "date": "2021/07/14",
             "balance": 1,

@@ -339,7 +339,7 @@ GET https://api.solapi.com/messages/v4/groups/excel
 > **Sample Request**
 
 ```
-http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25
+http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25
 ```
 
 > **Sample Response**
@@ -365,7 +365,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25'
+    'http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25'
 };
 
 request(options, function(error, response, body) {
@@ -380,7 +380,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25";
+$url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25";
 
 $options = array(
     'http' => array(
@@ -402,7 +402,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25"
+url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -420,7 +420,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25
+	http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25
 ```
 {% endtab %}
 
@@ -431,7 +431,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -459,7 +459,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25"
+  uri := "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -492,7 +492,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2016:11:01&cond=lt&limit=25";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

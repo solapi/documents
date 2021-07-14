@@ -30,7 +30,7 @@ GET https://api.solapi.com/messages/v4/list
 | to | `string` |  | eq | 수신번호 |
 | from | `string` |  | eq | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
 | type | `string` |  | eq, in | 메시지 타입 |
-| statusCode | `string` |  | eq, in | 상태 코드 [참고](docs.solapi.com/api-reference/message-status-codes) |
+| statusCode | `string` |  | eq, in | 상태 코드 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
 | dateCreated | `date` |  | eq | 최초 생성 날짜 |
 | dateUpdated | `date` |  | eq | 최근 수정 날짜 |
 
@@ -107,8 +107,8 @@ http://api.solapi.com/messages/v4/list?criteria=messageId&value=M4V2018030711004
             "to": "01000000000",
             "customFields": {},
             "queues": [],
-            "dateCreated": "2021-07-14T06:58:15.288Z",
-            "dateUpdated": "2021-07-14T06:58:15.288Z",
+            "dateCreated": "2021-07-14T07:10:59.528Z",
+            "dateUpdated": "2021-07-14T07:10:59.528Z",
             "reason": null,
             "networkName": "ETC"
         }

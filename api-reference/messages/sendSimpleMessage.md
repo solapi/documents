@@ -45,7 +45,7 @@ POST https://api.solapi.com/messages/v4/send
 | type | `string` |  | 메시지 타입 |
 | country | `string` |  | 국가번호 (기본: 82, 미국(캐나다):1, 중국: 86, 일본: 81) |
 | subject | `string` |  | 메시지 제목<br>한글 20자, 영문 40자 제한 |
-| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](docs.solapi.com/api-reference/storage) |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
 | [kakaoOptions](#body-message-kakaooptions) | `object` |  | 친구톡, 알림톡을 보내기 위한 옵션 |
 | [naverOptions](#body-message-naveroptions) | `object` |  | 네이버 스마트 알림을 보내기 위한 옵션 |
 | [rcsOptions](#body-message-rcsoptions) | `object` |  | 설명 없음 |
@@ -62,7 +62,7 @@ POST https://api.solapi.com/messages/v4/send
 | adFlag | `boolean` |  | 설명 없음 |
 | templateId | `string` |  | 알림톡 템플릿 아이디 |
 | disableSms | `boolean` |  | 대체 발송 여부 |
-| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](docs.solapi.com/api-reference/storage) |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
 | [variables](#body-message-kakaooptions-variables) | `object` |  | 설명 없음 |
 | [buttons](#body-message-kakaooptions-buttons) | `array` |  | 알림톡 템플릿 버튼 목록 |
 
@@ -135,7 +135,7 @@ POST https://api.solapi.com/messages/v4/send
 | :--- | :--: | :------: | :---------- |
 | title | `string` | O | 설명 없음 |
 | description | `string` | O | 설명 없음 |
-| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](docs.solapi.com/api-reference/storage) |
+| imageId | `string` |  | Storage API에 등록된 이미지 아이디 [참고](https://docs.solapi.com/api-reference/storage) |
 | [buttons](#body-message-rcsoptions-additionalbody-buttons) | `array` |  | 설명 없음 |
 
 
@@ -213,8 +213,8 @@ POST https://api.solapi.com/messages/v4/send
 | groupId | `string` | O | 그룹 아이디 |
 | messageId | `string` | O | 메시지 아이디 |
 | accountId | `string` | O | 계정 고유 번호 |
-| statusMessage | `string` | O | 상태 메시지 [참고](docs.solapi.com/api-reference/message-status-codes) |
-| statusCode | `string` | O | 상태 코드 [참고](docs.solapi.com/api-reference/message-status-codes) |
+| statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
+| statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
 | to | `string` | O | 수신번호 |
 | from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
 | type | `string` | O | 메시지 타입 |
@@ -243,13 +243,13 @@ POST https://api.solapi.com/messages/v4/send
 
 ```json
 {
-    "groupId": "G4V20210714155819RJWD9QKHGBZO4YI",
+    "groupId": "G4V20210714161107ZU2UWNAVLCHEAIG",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819K8H8BT8VLGWB51B",
+    "messageId": "M4V20210714161107SQ9LNAVTSNEECXK",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -480,13 +480,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819KLKLTVEN4ZIZV7M",
+    "groupId": "G4V20210714161107XWZ1P0GS7GRYATK",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819GXBNXNFUP63ZO1Y",
+    "messageId": "M4V20210714161107TG4KCZ0U4WZX0CG",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -720,13 +720,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819ACJ1F5UIT4W2BNH",
+    "groupId": "G4V20210714161107UYJ3LCJVAYQGZ6R",
     "to": "01000000001",
     "from": "029302266",
     "type": "LMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819IG9H8A8BERNWUPB",
+    "messageId": "M4V202107141611076MDYNQMZJAT4ETS",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -964,13 +964,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V202107141558190W2ERGPQLBKYOLX",
+    "groupId": "G4V20210714161108ZL9TZM3X7EKDML2",
     "to": "01000000001",
     "from": "029302266",
     "type": "MMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819WBTJJOJ2DXHOOYV",
+    "messageId": "M4V20210714161108KZKWAZS3H6GQCG7",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1218,13 +1218,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819FDPT1ICDLS39VQX",
+    "groupId": "G4V20210714161108T2QO0WWDMEXVOLI",
     "to": "01000000001",
     "from": "029302266",
     "type": "ATA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819TKF65GJLQ6QBV0Z",
+    "messageId": "M4V20210714161108BZ1SDNK0A5HQTUS",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1483,13 +1483,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819SGULCPF7HMNRFVT",
+    "groupId": "G4V20210714161108HFY0BLBNYZZWYIV",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTA",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819QUE73JX74N0ZVW1",
+    "messageId": "M4V20210714161108IXQEZTH8CG0PQHU",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1732,13 +1732,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819X26OH7HGHYJAGLT",
+    "groupId": "G4V20210714161108TRAKPAINVX3UIBU",
     "to": "01000000001",
     "from": "029302266",
     "type": "CTI",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155820FZXO0IQC3AWBT09",
+    "messageId": "M4V20210714161108CITMXGAGYQNCMF7",
     "statusCode": "2000",
     "accountId": "12925149"
 }
@@ -1980,13 +1980,13 @@ public class Request {
 
 ```json
 {
-    "groupId": "G4V20210714155819JKZNY40ZMB1AN3B",
+    "groupId": "G4V20210714161107G75AXIYZFBDVQTK",
     "to": "01000000001",
     "from": "029302266",
     "type": "SMS",
     "statusMessage": "정상 접수(이통사로 접수 예정) ",
     "country": "82",
-    "messageId": "M4V20210714155819JTY8WTYBFOQZTSS",
+    "messageId": "M4V20210714161107N8XPMGA3JR1XKYN",
     "statusCode": "2000",
     "accountId": "12925149"
 }
