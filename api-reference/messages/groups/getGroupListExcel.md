@@ -67,7 +67,12 @@ GET https://api.solapi.com/messages/v4/groups/excel
                     "mms": "number",
                     "ata": "number",
                     "cta": "number",
-                    "cti": "number"
+                    "cti": "number",
+                    "nsa": "number",
+                    "rcs_sms": "number",
+                    "rcs_lms": "number",
+                    "rcs_mms": "number",
+                    "rcs_tpl": "number"
                 },
                 "appId": "string",
                 "version": "string"
@@ -106,6 +111,21 @@ GET https://api.solapi.com/messages/v4/groups/excel
                     "country": "number"
                 },
                 "cti": {
+                    "country": "number"
+                },
+                "nsa": {
+                    "country": "number"
+                },
+                "rcs_sms": {
+                    "country": "number"
+                },
+                "rcs_lms": {
+                    "country": "number"
+                },
+                "rcs_mms": {
+                    "country": "number"
+                },
+                "rcs_tpl": {
                     "country": "number"
                 }
             },
@@ -208,6 +228,11 @@ GET https://api.solapi.com/messages/v4/groups/excel
 | ata | `number` |  | 알림톡 사용 요금 |
 | cta | `number` |  | 친구톡 사용 요금 |
 | cti | `number` |  | 친구톡 이미지 사용 요금 |
+| nsa | `number` |  | 네이버 스마트 알림 사용 요금 |
+| rcs_sms | `number` |  | RCS SMS 사용 요금 |
+| rcs_lms | `number` |  | RCS LMS 사용 요금 |
+| rcs_mms | `number` |  | RCS MMS 사용 요금 |
+| rcs_tpl | `number` |  | RCS 템플릿 사용 요금 |
 
 
 ##### Response / groupList / groupId / log
@@ -221,48 +246,83 @@ GET https://api.solapi.com/messages/v4/groups/excel
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| [sms](#response-grouplist-groupid-countforcharge-sms) | `object` |  | SMS 차감 금액 |
-| [lms](#response-grouplist-groupid-countforcharge-lms) | `object` |  | LMS 차감 금액 |
-| [mms](#response-grouplist-groupid-countforcharge-mms) | `object` |  | MMS 차감 금액 |
-| [ata](#response-grouplist-groupid-countforcharge-ata) | `object` |  | 알림톡 차감 금액 |
-| [cta](#response-grouplist-groupid-countforcharge-cta) | `object` |  | 친구톡 차감 금액 |
-| [cti](#response-grouplist-groupid-countforcharge-cti) | `object` |  | 친구톡 이미지 차감 금액 |
+| [sms](#response-grouplist-groupid-countforcharge-sms) | `object` |  | SMS 차감 건수 |
+| [lms](#response-grouplist-groupid-countforcharge-lms) | `object` |  | LMS 차감 건수 |
+| [mms](#response-grouplist-groupid-countforcharge-mms) | `object` |  | MMS 차감 건수 |
+| [ata](#response-grouplist-groupid-countforcharge-ata) | `object` |  | 알림톡 차감 건수 |
+| [cta](#response-grouplist-groupid-countforcharge-cta) | `object` |  | 친구톡 차감 건수 |
+| [cti](#response-grouplist-groupid-countforcharge-cti) | `object` |  | 친구톡 이미지 차감 건수 |
+| [nsa](#response-grouplist-groupid-countforcharge-nsa) | `object` |  | 네이버 스마트 알림 차감 건수 |
+| [rcs_sms](#response-grouplist-groupid-countforcharge-rcs_sms) | `object` |  | RCS SMS 차감 건수 |
+| [rcs_lms](#response-grouplist-groupid-countforcharge-rcs_lms) | `object` |  | RCS LMS 차감 건수 |
+| [rcs_mms](#response-grouplist-groupid-countforcharge-rcs_mms) | `object` |  | RCS MMS 차감 건수 |
+| [rcs_tpl](#response-grouplist-groupid-countforcharge-rcs_tpl) | `object` |  | RCS 템플릿 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / sms
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 SMS 차감 금액 |
+| country | `number` |  | 국가별 SMS 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / lms
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 LMS 차감 금액 |
+| country | `number` |  | 국가별 LMS 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / mms
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 MMS 차감 금액 |
+| country | `number` |  | 국가별 MMS 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / ata
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 알림톡 차감 금액 |
+| country | `number` |  | 국가별 알림톡 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / cta
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 친구톡 차감 금액 |
+| country | `number` |  | 국가별 친구톡 차감 건수 |
 
 ##### Response / groupList / groupId / countForCharge / cti
 
 | Name | Type | Should Return | Description |
 | :--- | :--: | :-----------: | :---------- |
-| country | `number` |  | 국가별 친구톡 이미지 차감 금액 |
+| country | `number` |  | 국가별 친구톡 이미지 차감 건수 |
+
+##### Response / groupList / groupId / countForCharge / nsa
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 네이버 스마트 알림 차감 건수 |
+
+##### Response / groupList / groupId / countForCharge / rcs_sms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 RCS SMS 차감 건수 |
+
+##### Response / groupList / groupId / countForCharge / rcs_lms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 RCS LMS 차감 건수 |
+
+##### Response / groupList / groupId / countForCharge / rcs_mms
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 RCS MMS 차감 건수 |
+
+##### Response / groupList / groupId / countForCharge / rcs_tpl
+
+| Name | Type | Should Return | Description |
+| :--- | :--: | :-----------: | :---------- |
+| country | `number` |  | 국가별 RCS 템플릿 차감 건수 |
 
 ##### Response / groupList / groupId / price
 
@@ -279,7 +339,7 @@ GET https://api.solapi.com/messages/v4/groups/excel
 > **Sample Request**
 
 ```
-http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25
+http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25
 ```
 
 > **Sample Response**
@@ -305,7 +365,7 @@ var options = {
   method: 'GET',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25'
+    'http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25'
 };
 
 request(options, function(error, response, body) {
@@ -320,7 +380,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25";
+$url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25";
 
 $options = array(
     'http' => array(
@@ -342,7 +402,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25"
+url = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -360,7 +420,7 @@ print(response.text)
 #!/bin/bash
 curl -X GET \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25
+	http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25
 ```
 {% endtab %}
 
@@ -371,7 +431,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -399,7 +459,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25"
+  uri := "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25"
 
   req, err := http.NewRequest("GET", uri, nil)
   if err != nil { panic(err) }
@@ -432,7 +492,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-01-23%2019:41:08&cond=lt&limit=25";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/excel?criteria=dateCreated&value=2021-07-14%2015:58:16&cond=lt&limit=25";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -468,5 +528,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2021-01-23
+> 문서 생성일 : 2021-07-14
 

@@ -73,12 +73,31 @@ POST https://api.solapi.com/messages/v4/overseas/report
         "templateId": null,
         "imageId": null,
         "disableSms": false,
+        "title": null,
+        "adFlag": false,
+        "buttons": []
+    },
+    "naverOptions": {
+        "talkId": null,
+        "templateId": null,
+        "disableSms": false,
+        "buttons": []
+    },
+    "rcsOptions": {
+        "brandId": null,
+        "templateId": null,
+        "copyAllowed": true,
+        "commercialType": false,
+        "mmsType": null,
+        "disableSms": false,
+        "additionalBody": [],
         "buttons": []
     },
     "type": null,
     "country": "82",
     "subject": null,
     "imageId": null,
+    "currentQueue": null,
     "dateProcessed": null,
     "dateReported": null,
     "dateReceived": null,
@@ -87,9 +106,8 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "log": [],
     "replacement": false,
     "autoTypeDetect": true,
-    "routedQueue": null,
     "resendCount": 0,
-    "usedQueue": [],
+    "status": "PENDING",
     "_id": "M4V201FFFFFFFFFAAAAAAAAAAAAAZIB0",
     "messageId": "M4V201FFFFFFFFFAAAAAAAAAAAAAZIB0",
     "groupId": "G4V20180307TTTTTTTTAAATTTTTTTTTT",
@@ -98,9 +116,10 @@ POST https://api.solapi.com/messages/v4/overseas/report
     "from": "01000000000",
     "to": "01000000000",
     "customFields": {},
+    "queues": [],
     "hint": {},
-    "dateCreated": "2021-01-23T10:41:15.943Z",
-    "dateUpdated": "2021-01-23T10:41:15.954Z"
+    "dateCreated": "2021-07-14T06:58:25.021Z",
+    "dateUpdated": "2021-07-14T06:58:25.031Z"
 }
 ```
 
@@ -311,5 +330,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2021-01-23
+> 문서 생성일 : 2021-07-14
 

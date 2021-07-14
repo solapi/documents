@@ -60,7 +60,12 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "mms": {},
         "ata": {},
         "cta": {},
-        "cti": {}
+        "cti": {},
+        "nsa": {},
+        "rcs_sms": {},
+        "rcs_lms": {},
+        "rcs_mms": {},
+        "rcs_tpl": {}
     },
     "balance": {
         "requested": 0,
@@ -81,7 +86,12 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
             "mms": 0,
             "ata": 0,
             "cta": 0,
-            "cti": 0
+            "cti": 0,
+            "nsa": 0,
+            "rcs_sms": 0,
+            "rcs_lms": 0,
+            "rcs_mms": 0,
+            "rcs_tpl": 0
         },
         "appId": null,
         "version": null
@@ -92,14 +102,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     "log": [
         {
             "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2021-01-23T10:41:06.871Z"
+            "createAt": "2021-07-14T06:58:15.252Z"
         },
         {
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2021-01-23T10:41:06.871Z"
+            "createAt": "2021-07-14T06:58:15.252Z"
         },
         {
-            "createAt": "2021-01-23T10:41:13.373Z",
+            "createAt": "2021-07-14T06:58:22.326Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -109,13 +119,14 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-01-23T10:41:13.373Z",
+    "dateSent": "2021-07-14T06:58:22.326Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
     "prepaid": true,
     "strict": true,
     "masterAccountId": null,
+    "allowDuplicates": false,
     "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "accountId": "12925149",
@@ -131,8 +142,8 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     },
     "customFields": {},
     "hint": {},
-    "dateCreated": "2021-01-23T10:41:06.889Z",
-    "dateUpdated": "2021-01-23T10:41:13.374Z"
+    "dateCreated": "2021-07-14T06:58:15.255Z",
+    "dateUpdated": "2021-07-14T06:58:22.326Z"
 }
 ```
 
@@ -316,5 +327,5 @@ public class Request {
 
 ---
 
-> 문서 생성일 : 2021-01-23
+> 문서 생성일 : 2021-07-14
 
