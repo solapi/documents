@@ -6,6 +6,7 @@
 
 * [Overview](authentication/overview.md)
 * [API Key 인증 방식](authentication/api-key.md)
+* [SSO 인증 방식](authentication/sso.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
   * [권한\(Scope\) 목록](authentication/oauth2-3/scope.md)
@@ -182,6 +183,15 @@
   * [테스트 이벤트 데이터 전송](api-reference/webhook/sendtestoutgoingdata.md)
   * [웹훅 수정](api-reference/webhook/updateoutgoingdata-1.md)
   * [웹훅 수정](api-reference/webhook/updateoutgoingdata.md)
+* [SSO](api-reference/untitled/README.md)
+  * [SSO 토큰 발급](api-reference/untitled/sso.md)
+  * [홈페이지 토큰 발급](api-reference/untitled/undefined.md)
+  * [사이트에 홈페이지 토큰 설정](api-reference/untitled/undefined-1.md)
+  * [SSO 토큰 조회](api-reference/untitled/sso-1.md)
 * [메시지 상태 코드](api-reference/message-status-codes.md)
 * [Terminology](api-reference/terminology.md)
+
+## SSO\(Single Sign-On\)
+
+* [시작하기](sso-single-sign-on/undefined.md)
 

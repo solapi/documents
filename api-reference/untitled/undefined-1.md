@@ -1,0 +1,67 @@
+# 사이트에 홈페이지 토큰 설정
+
+## Request
+
+```text
+POST https://api.solapi.com/appstore/v2/sso/connect-homepage
+```
+
+사이트에 홈페이지 토큰을 설정하기 위한 API입니다.   
+API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 이용이 가능합니다.  
+기존 인증 방식으론 사용할 수 없으며, SSO 인증을 통해 사용 가능합니다.  
+앱 관리자에 의해 허용된 IP로만 접근 가능합니다.
+
+### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+
+### Request Structure
+
+```javascript
+{
+    "homepageToken": "string"
+}
+```
+
+### Body Params
+
+| Name | Type | Required | Description |
+| :--- | :---: | :---: | :--- |
+| homepageToken | `string` | true | 홈페이지 토큰 |
+
+## Response
+
+### Response Structure
+
+```javascript
+{
+    "message": "success"
+}
+```
+
+### Response Description
+
+#### Response /
+
+| Name | Type | Should Return | Description |
+| :--- | :---: | :---: | :--- |
+| message | `string` | O | 결과 메시 |
+
+## Samples
+
+### 사이트에 홈페이지 토큰 설정
+
+> **Sample Request**
+
+```javascript
+{
+    "homepageToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6Ik1FTVV3Z19HdkhFTXI0IiwiYWNjb3VudElkIjoiMjEwNzIyMTk2NTM4NjciLCJjbGllbnRJZCI6IkNJRE5VUklHT0NPT0xTTVMiLCJzY29wZSI6IioiLCJkb21haW4iOiJteXNpdGV0ZXN0MC5zb2xhcGkubmV0IiwiaXNXaGl0ZSI6ZmFsc2UsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MjcyMzIwNjYsImV4cCI6MTYyNzMxODQ2Nn0.f8U1VkTEWmE95-y7t2ynqxQw2omYhFKI4Zb5ZVjoFFF"     
+}
+```
+
+> **Sample Response**
+
+```javascript
+{
+    "message": "success"
+}
+```
+
