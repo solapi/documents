@@ -11,7 +11,7 @@ API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 
 기존 인증 방식으론 사용할 수 없으며, SSO 인증을 통해 사용 가능합니다.  
 앱 관리자에 의해 허용된 IP로만 접근 가능합니다.
 
-### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication-sso)
 
 ### Request Structure
 

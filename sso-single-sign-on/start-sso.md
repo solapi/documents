@@ -10,12 +10,12 @@
 
 각각 SSO API 관련 설명은 아래 링크를 참고해주세요.
 
-**SSO API Reference**  
-  
+\*\*\*\*[**SSO API Reference**](https://docs.solapi.com/api-reference/api-sso)  
+****  
 SSO 토큰, 홈페이지 토큰 모두 개별적으로 API 이용이 가능하며, 토큰을 이용하여 API접근 방식은 아래 링크를 참고해주세요.  
   
-**SSO 토큰 인증 방식**  
-[**홈페이지 토큰 인증 방식**](https://docs.solapi.com/authentication/oauth2-3/oauth2#step-3-api)  
+[**SSO 토큰 인증 방식**](https://docs.solapi.com/authentication/authentication-sso)  
+****[**홈페이지 토큰 인증 방식**](https://docs.solapi.com/authentication/oauth2-3/oauth2#step-3-api)  
   
 기타 문의 사항은 [**1:1문의**](https://support.solapi.com/hc/ko/requests/new)로 남겨주시면 감사하겠습니다.
 

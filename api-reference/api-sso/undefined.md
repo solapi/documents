@@ -11,7 +11,7 @@ GET https://api.solapi.com/appstore/v2/sso/issue-hompage-token
 앱 관리자에 의해 허용된 IP로만 접근 가능합니다.  
 발급된 홈페이지 토큰은 다른 API 접근을 위해 사용될 수 있으며, 따로 사이트에 토큰 설정을 하기 위해 사용될 수 있습니다.
 
-### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication-sso)
 
 ### Request Structure
 
