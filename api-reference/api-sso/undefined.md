@@ -7,11 +7,11 @@ GET https://api.solapi.com/appstore/v2/sso/issue-oauth2-token
 ```
 
 OAuth2 토큰 발급을 위한 API입니다.   
-기존 인증 방식으론 사용할 수 없으며, [**SSO 인증 방식**](https://docs.solapi.com/authentication/authentication-sso)을 통해 사용 가능합니다.  
+기존 인증 방식으론 사용할 수 없으며, [**SSO 인증 방식**](https://docs.solapi.com/authentication/authentication-sso/sso-api)을 통해 사용 가능합니다.  
 앱 관리자에 의해 허용된 IP로만 접근 가능합니다.  
 발급된 OAuth2 토큰은 다른 API 접근을 위해 사용될 수 있으며, 따로 사이트에 토큰 설정을 하기 위해 사용될 수 있습니다.
 
-### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication-sso)
+### SSO Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/authentication-sso/sso-api)
 
 ### Request Structure
 

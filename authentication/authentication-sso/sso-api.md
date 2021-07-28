@@ -16,5 +16,5 @@ curl -X GET https://api.solapi.com/users/v1/member
 ```
 
 정상적으로 결과가 온다면 해당 멤버 정보 데이터를 가져 왔을 것 입니다.  
-[API Documents](https://docs.solapi.com/rest-api-reference/overview) 를 통해 사용 가능한 API 를 확인할 수 있습니다.
+[**API Documents**](https://docs.solapi.com/rest-api-reference/overview) ****를 통해 사용 가능한 API 를 확인할 수 있습니다.
 
