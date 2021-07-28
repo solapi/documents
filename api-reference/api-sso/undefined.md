@@ -3,7 +3,7 @@
 ## Request
 
 ```text
-GET https://api.solapi.com/appstore/v2/sso/issue-hompage-token
+GET https://api.solapi.com/appstore/v2/sso/issue-oauth2-token
 ```
 
 OAuth2 토큰 발급을 위한 API입니다.   
