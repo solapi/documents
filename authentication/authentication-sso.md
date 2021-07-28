@@ -14,7 +14,7 @@
 ****  
 SSO 토큰, 홈페이지 토큰 모두 개별적으로 API 이용이 가능하며, 토큰을 이용하여 API접근 방식은 아래 링크를 참고해주세요.  
   
-[**SSO 토큰 인증 방식**](https://docs.solapi.com/authentication/authentication-sso)  
+[**SSO 토큰 인증 방식**](https://docs.solapi.com/authentication/authentication-sso#sso-api)  
 ****[**홈페이지 토큰 인증 방식**](https://docs.solapi.com/authentication/oauth2-3/oauth2#step-3-api)  
   
 기타 문의 사항은 [**1:1문의**](https://support.solapi.com/hc/ko/requests/new)로 남겨주시면 감사하겠습니다.  
@@ -23,6 +23,8 @@ REST API를 요청\(Request\)할 때 HTTP 헤더에 SSO Authorization 정보를 
   
 SSO 인증을 이용할 시 [**SSO 전용 토큰을 발급**](https://docs.solapi.com/api-reference/api-sso) 받아야 하며,  
 앱 관리자가 허용한 IP에서만 해당 인증방식을 사용 가능합니다.
+
+
 
 ## SSO 토큰을 사용하여 API 접근하기
 
