@@ -3,7 +3,7 @@
 ## Request
 
 ```text
-GET https://api.solapi.com/appstore/v2/sso/apps/:appId/customer-key/:customerKey
+GET https://api.solapi.com/appstore/v2/sso/apps/:appId/customer-keys/:customerKey
 ```
 
 발급된 SSO Token을 앱 아이디와 사용자 구분 키로 조회합니다.
