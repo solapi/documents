@@ -6,7 +6,9 @@
 
 * [Overview](authentication/overview.md)
 * [API Key 인증 방식](authentication/api-key.md)
-* [SSO 인증 방식](authentication/authentication-sso.md)
+* [SSO 인증 방식](authentication/authentication-sso/README.md)
+  * [SSO란?](authentication/authentication-sso/start-sso.md)
+  * [SSO 토큰으로 API 접근하기](authentication/authentication-sso/sso-api.md)
 * [OAuth2 인증 방식](authentication/oauth2-3/README.md)
   * [적용하기](authentication/oauth2-3/oauth2.md)
   * [권한\(Scope\) 목록](authentication/oauth2-3/scope.md)
@@ -192,6 +194,4 @@
 * [Terminology](api-reference/terminology.md)
 
 ## SSO\(Single Sign-On\)
-
-* [시작하기](sso-single-sign-on/start-sso.md)
 
