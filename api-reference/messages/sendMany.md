@@ -1,54 +1,57 @@
 # 여러건 발송
 
 ## Request
-
-```text
+```
 POST https://api.solapi.com/messages/v4/send-many
 ```
 
 하나 이상의 메시지를 발송합니다. 대량 발송은 그룹 메시지를 사용하세요.
 
-홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. \(로그인 필요\)
+홈페이지의 [문자발송 내역](https://solapi.com/message-log/detail)에서 전송결과 내역을 확인하실 수 있습니다. (로그인 필요)
 
-전송 내역\(메시지 그룹, 메시지 목록\)의 보관기간은 생성일 기준 6개월 입니다. 6개월이 지난 내역은 조회가 불가능합니다.
+전송 내역(메시지 그룹, 메시지 목록)의 보관기간은 생성일 기준 6개월 입니다.
+6개월이 지난 내역은 조회가 불가능합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "messages": "Array",
     "strict": "boolean",
-    "agent": "object"
+    "agent": "object",
+    "allowDuplicates": "boolean"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | messages | `Array` | O | 발송할 메시지 내용 |
 | strict | `boolean` |  | 설명 없음 |
-| [agent](sendmany.md#body-agent) | `object` |  | 에이전트 |
+| [agent](#body-agent) | `object` |  | 에이전트 |
+| allowDuplicates | `boolean` |  | 설명 없음 |
 
-#### Body / agent
+##### Body / agent
 
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | appId | `string` |  | 앱 아이디 |
 | osPlatform | `string` |  | OS 플렛폼 |
 | sdkVersion | `string` |  | SDK 버전 |
 
+
+---
+
 ## Response
 
 ### Response Structure
-
-```javascript
+```json
 {
     "groupId": "string",
     "messageId": "string",
@@ -63,28 +66,30 @@ POST https://api.solapi.com/messages/v4/send-many
 ```
 
 ### Response Description
-
-#### Response /
+##### Response / 
 
 | Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :-----------: | :---------- |
 | groupId | `string` | O | 그룹 아이디 |
 | messageId | `string` | O | 메시지 아이디 |
 | accountId | `string` | O | 계정 고유 번호 |
 | statusMessage | `string` | O | 상태 메시지 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
 | statusCode | `string` | O | 상태 코드 [참고](https://docs.solapi.com/api-reference/message-status-codes) |
 | to | `string` | O | 수신번호 |
-| from | `string` | O | 발신번호 사전 등록된 전화번호만 사용 가능 |
+| from | `string` | O | 발신번호<br>사전 등록된 전화번호만 사용 가능 |
 | type | `string` | O | 메시지 타입 |
-| country | `string` | O | 국가번호 \(기본: 82, 미국\(캐나다\):1, 중국: 86, 일본: 81\) |
+| country | `string` | O | 국가번호 (기본: 82, 미국(캐나다):1, 중국: 86, 일본: 81) |
+
+
+---
 
 ## Samples
 
-### 메시지 발송 \(type: Auto Detect\)
+### 메시지 발송 (type: Auto Detect)
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -98,7 +103,7 @@ POST https://api.solapi.com/messages/v4/send-many
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -160,15 +165,15 @@ POST https://api.solapi.com/messages/v4/send-many
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:13.834Z",
+            "createAt": "2021-11-16T05:09:50.838Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.856Z",
+            "createAt": "2021-11-16T05:09:50.864Z",
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.873Z",
+            "createAt": "2021-11-16T05:09:50.889Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -178,7 +183,7 @@ POST https://api.solapi.com/messages/v4/send-many
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:13.873Z",
+    "dateSent": "2021-11-16T05:09:50.889Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -186,24 +191,26 @@ POST https://api.solapi.com/messages/v4/send-many
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161113WYZRR7WZDLTRW2V",
+    "_id": "G4V20211116140950FNBDVHMD64V2SO0",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161113WYZRR7WZDLTRW2V",
+    "groupId": "G4V20211116140950FNBDVHMD64V2SO0",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:13.836Z",
-    "dateUpdated": "2021-07-14T07:11:13.873Z"
+    "dateCreated": "2021-11-16T05:09:50.841Z",
+    "dateUpdated": "2021-11-16T05:09:50.889Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -231,10 +238,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -252,10 +261,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -269,21 +280,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","text":"내용"}]}'
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용"}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용"}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -311,10 +325,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -344,10 +360,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -389,15 +407,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 단문문자\(SMS\) 발송
+---
+
+### 단문문자(SMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -412,7 +434,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -474,15 +496,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:13.931Z",
+            "createAt": "2021-11-16T05:09:50.950Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.954Z",
+            "createAt": "2021-11-16T05:09:50.980Z",
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.973Z",
+            "createAt": "2021-11-16T05:09:51.005Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -492,7 +514,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:13.973Z",
+    "dateSent": "2021-11-16T05:09:51.005Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -500,24 +522,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V202107141611130ELOCOONTZVXF3Q",
+    "_id": "G4V202111161409508Q0CC8O5TWOQU3D",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V202107141611130ELOCOONTZVXF3Q",
+    "groupId": "G4V202111161409508Q0CC8O5TWOQU3D",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:13.934Z",
-    "dateUpdated": "2021-07-14T07:11:13.974Z"
+    "dateCreated": "2021-11-16T05:09:50.953Z",
+    "dateUpdated": "2021-11-16T05:09:51.005Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -546,10 +570,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -567,10 +593,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -584,21 +612,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","typ
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"SMS"}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"SMS"}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -627,10 +658,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -660,10 +693,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -705,15 +740,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 장문문자\(LMS\) 발송
+---
+
+### 장문문자(LMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -729,7 +768,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -791,15 +830,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:14.035Z",
+            "createAt": "2021-11-16T05:09:51.071Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.058Z",
+            "createAt": "2021-11-16T05:09:51.097Z",
             "message": "국가코드(82)의 장문문자(LMS) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.077Z",
+            "createAt": "2021-11-16T05:09:51.129Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -809,7 +848,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:14.077Z",
+    "dateSent": "2021-11-16T05:09:51.129Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -817,24 +856,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161114AMNS5GDI0UOTNXV",
+    "_id": "G4V20211116140951SKDYVTDYPNFU4NQ",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161114AMNS5GDI0UOTNXV",
+    "groupId": "G4V20211116140951SKDYVTDYPNFU4NQ",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:14.038Z",
-    "dateUpdated": "2021-07-14T07:11:14.077Z"
+    "dateCreated": "2021-11-16T05:09:51.073Z",
+    "dateUpdated": "2021-11-16T05:09:51.129Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -865,10 +906,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -886,10 +929,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -903,21 +948,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","subject":"별 헤�
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","subject":"별 헤는 밤","text":"봄이 어머니, 패, 한 부끄러운 이웃 별 옥 계집애들의 계십니다. 내린 아무 아름다운 나는 이름을 있습니다. 위에도 하나에 못 북간도에 새워 강아지, 말 비둘기, 헤는 듯합니다. 가을로 했던 위에도 이름자를 봅니다. 아무 새겨지는 별 너무나 토끼, 듯합니다. 청춘이 헤는 토끼, 계절이 많은 듯합니다. 아름다운 못 내 그리고 아직 청춘이 라이너 버리었습니다. 벌레는 까닭이요, 어머니 봅니다. 속의 아이들의 나는 프랑시스 있습니다. 밤이 강아지, 하나 계십니다. 잔디가 이름과 별 프랑시스 하나에 하나 계십니다.","type":"LMS"}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","subject":"별 헤는 밤","text":"봄이 어머니, 패, 한 부끄러운 이웃 별 옥 계집애들의 계십니다. 내린 아무 아름다운 나는 이름을 있습니다. 위에도 하나에 못 북간도에 새워 강아지, 말 비둘기, 헤는 듯합니다. 가을로 했던 위에도 이름자를 봅니다. 아무 새겨지는 별 너무나 토끼, 듯합니다. 청춘이 헤는 토끼, 계절이 많은 듯합니다. 아름다운 못 내 그리고 아직 청춘이 라이너 버리었습니다. 벌레는 까닭이요, 어머니 봅니다. 속의 아이들의 나는 프랑시스 있습니다. 밤이 강아지, 하나 계십니다. 잔디가 이름과 별 프랑시스 하나에 하나 계십니다.","type":"LMS"}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -947,10 +995,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -980,10 +1030,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1025,15 +1077,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 사진문자\(MMS\) 발송
+---
+
+### 사진문자(MMS) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -1050,7 +1106,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -1112,15 +1168,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:14.139Z",
+            "createAt": "2021-11-16T05:09:51.186Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.167Z",
+            "createAt": "2021-11-16T05:09:51.222Z",
             "message": "국가코드(82)의 포토문자(MMS) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.184Z",
+            "createAt": "2021-11-16T05:09:51.246Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -1130,7 +1186,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:14.184Z",
+    "dateSent": "2021-11-16T05:09:51.246Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -1138,24 +1194,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161114VT9EWXDPGAHEHGL",
+    "_id": "G4V20211116140951UQAISDJ0JIHWZZP",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161114VT9EWXDPGAHEHGL",
+    "groupId": "G4V20211116140951UQAISDJ0JIHWZZP",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:14.142Z",
-    "dateUpdated": "2021-07-14T07:11:14.185Z"
+    "dateCreated": "2021-11-16T05:09:51.189Z",
+    "dateUpdated": "2021-11-16T05:09:51.246Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1186,10 +1244,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -1207,10 +1267,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1224,21 +1286,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","subject":"제목","
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","subject":"제목","text":"내용","type":"MMS","imageId":"FILEID191113003354156UvCuw3tubTl"}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","subject":"제목","text":"내용","type":"MMS","imageId":"FILEID191113003354156UvCuw3tubTl"}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1269,10 +1334,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1302,10 +1369,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1347,15 +1416,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 알림톡\(ATA\) 발송
+---
+
+### 알림톡(ATA) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -1381,7 +1454,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -1443,15 +1516,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:14.244Z",
+            "createAt": "2021-11-16T05:09:51.308Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.272Z",
+            "createAt": "2021-11-16T05:09:51.338Z",
             "message": "국가코드(82)의 알림톡(ATA) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.292Z",
+            "createAt": "2021-11-16T05:09:51.363Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -1461,7 +1534,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:14.292Z",
+    "dateSent": "2021-11-16T05:09:51.363Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -1469,24 +1542,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161114GGU6ZMNSRTHEALV",
+    "_id": "G4V20211116140951LIGVKSAMJSPGJJX",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161114GGU6ZMNSRTHEALV",
+    "groupId": "G4V20211116140951LIGVKSAMJSPGJJX",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:14.246Z",
-    "dateUpdated": "2021-07-14T07:11:14.292Z"
+    "dateCreated": "2021-11-16T05:09:51.311Z",
+    "dateUpdated": "2021-11-16T05:09:51.364Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1527,10 +1602,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -1548,10 +1625,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1565,21 +1644,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","text":"#{홍길동}
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"#{홍길동}님이 요청하신 출금 요청 처리가 완료되어 아래 정보로 입금 처리되었습니다. #{입금정보} 관련하여 문의 있으시다면'1:1문의하기'를이용부탁드립니다. 감사합니다.","type":"ATA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","templateId":"test_2019030716320324334488000","buttons":[{"buttonType":"WL","buttonName":"1:1문의","linkMo":"https://www.example.com"}]}}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1619,10 +1701,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1652,10 +1736,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -1697,15 +1783,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 친구톡\(CTA\) 발송
+---
+
+### 친구톡(CTA) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -1723,7 +1813,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -1785,15 +1875,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:14.352Z",
+            "createAt": "2021-11-16T05:09:51.424Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.377Z",
+            "createAt": "2021-11-16T05:09:51.464Z",
             "message": "국가코드(82)의 친구톡(CTA) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.401Z",
+            "createAt": "2021-11-16T05:09:51.491Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -1803,7 +1893,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:14.401Z",
+    "dateSent": "2021-11-16T05:09:51.491Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -1811,24 +1901,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161114GNSLMKTHFCEYSBV",
+    "_id": "G4V20211116140951AZFHEKXMWLUUHAL",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161114GNSLMKTHFCEYSBV",
+    "groupId": "G4V20211116140951AZFHEKXMWLUUHAL",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:14.355Z",
-    "dateUpdated": "2021-07-14T07:11:14.402Z"
+    "dateCreated": "2021-11-16T05:09:51.426Z",
+    "dateUpdated": "2021-11-16T05:09:51.491Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -1860,10 +1952,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -1881,10 +1975,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -1898,21 +1994,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","typ
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"CTA","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1"}}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -1944,10 +2043,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -1977,10 +2078,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -2022,15 +2125,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-### 친구톡 사진\(CTI\) 발송
+---
+
+### 친구톡 사진(CTI) 발송
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -2049,7 +2156,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 1,
@@ -2111,15 +2218,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:14.453Z",
+            "createAt": "2021-11-16T05:09:51.556Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.485Z",
+            "createAt": "2021-11-16T05:09:51.590Z",
             "message": "국가코드(82)의 친구톡 이미지(CTI) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:14.503Z",
+            "createAt": "2021-11-16T05:09:51.622Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -2129,7 +2236,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:14.503Z",
+    "dateSent": "2021-11-16T05:09:51.622Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -2137,24 +2244,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161114QUTKZ1IZG4YTZR5",
+    "_id": "G4V20211116140951EJWUFKL7EZQ7WYF",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161114QUTKZ1IZG4YTZR5",
+    "groupId": "G4V20211116140951EJWUFKL7EZQ7WYF",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:14.456Z",
-    "dateUpdated": "2021-07-14T07:11:14.503Z"
+    "dateCreated": "2021-11-16T05:09:51.558Z",
+    "dateUpdated": "2021-11-16T05:09:51.622Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -2187,10 +2296,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -2208,10 +2319,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -2225,21 +2338,24 @@ data = '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","typ
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":"01000000001","from":"029302266","text":"내용","type":"CTI","kakaoOptions":{"pfId":"KA01PF190227072057634pRBhbpAw1w1","imageId":"FILEID191113003354156UvCuw3tubTl"}}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -2272,10 +2388,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -2305,10 +2423,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -2350,15 +2470,19 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
+
+---
 
 ### sendMany
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messages": [
         {
@@ -2376,7 +2500,7 @@ public class Request {
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "count": {
         "total": 2,
@@ -2438,15 +2562,15 @@ public class Request {
     "osPlatform": null,
     "log": [
         {
-            "createAt": "2021-07-14T07:11:13.549Z",
+            "createAt": "2021-11-16T05:09:50.499Z",
             "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.572Z",
+            "createAt": "2021-11-16T05:09:50.525Z",
             "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다."
         },
         {
-            "createAt": "2021-07-14T07:11:13.597Z",
+            "createAt": "2021-11-16T05:09:50.548Z",
             "message": "메시지를 발송했습니다.",
             "oldBalance": 100,
             "newBalance": 100,
@@ -2456,7 +2580,7 @@ public class Request {
         }
     ],
     "status": "SENDING",
-    "dateSent": "2021-07-14T07:11:13.597Z",
+    "dateSent": "2021-11-16T05:09:50.548Z",
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -2464,24 +2588,26 @@ public class Request {
     "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20210714161113L5CW2GTMMUUJQRH",
+    "_id": "G4V20211116140950WPRYM1RZL43EIFE",
     "accountId": "12925149",
     "apiVersion": "4",
     "customFields": {},
     "hint": null,
-    "groupId": "G4V20210714161113L5CW2GTMMUUJQRH",
+    "groupId": "G4V20211116140950WPRYM1RZL43EIFE",
     "price": {
         "82": []
     },
-    "dateCreated": "2021-07-14T07:11:13.551Z",
-    "dateUpdated": "2021-07-14T07:11:13.597Z"
+    "dateCreated": "2021-11-16T05:09:50.501Z",
+    "dateUpdated": "2021-11-16T05:09:50.549Z"
 }
 ```
 
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -2510,10 +2636,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/send-many";
@@ -2531,10 +2659,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -2548,21 +2678,24 @@ data = '{"messages":[{"to":["01000000001","01000000001"],"from":"029302266","tex
 response = requests.post(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X POST \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messages":[{"to":["01000000001","01000000001"],"from":"029302266","text":"내용","autoTypeDetect":true}]}' \
-    http://api.solapi.com/messages/v4/send-many
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messages":[{"to":["01000000001","01000000001"],"from":"029302266","text":"내용","autoTypeDetect":true}]}' \
+	http://api.solapi.com/messages/v4/send-many
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -2594,10 +2727,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -2627,10 +2762,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -2672,9 +2809,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2021-07-14
+---
+
+> 문서 생성일 : 2021-11-16
 

@@ -1,23 +1,11 @@
-# 실패한 그룹 재발송 요청
+# 메시지 예약 취소
 
 ## Request
 ```
-POST https://api.solapi.com/messages/v4/groups/:groupId/resend
+DELETE https://api.solapi.com/messages/v4/groups/:groupId/schedule
 ```
 
-실패된 그룹의 메시지 재발송을 요청합니다. Quota의 영향을 받지 않습니다.
-
-### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
-
-| 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :- | :- | :- | :- | :-: |
-| `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
-
-### 2차 인증 필요
-
-| ARS 전화 인증 | 이메일 OTP |
-| :---------: | :------: |
-|  |  |
+예약된 메시지를 취소 처리하고 그룹을 'FAILED'상태로 변경합니다.
 
 ### Path Parameters
 
@@ -29,7 +17,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 
 ## Samples
 
-### resendGroupMessage
+### groups/cancelScheduledGroupMessage
 
 > **Sample Request**
 
@@ -50,12 +38,10 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "sentReplacement": 0,
         "refund": 0,
         "registeredFailed": 0,
-        "registeredSuccess": 1
+        "registeredSuccess": 0
     },
     "countForCharge": {
-        "sms": {
-            "82": 1
-        },
+        "sms": {},
         "lms": {},
         "mms": {},
         "ata": {},
@@ -74,7 +60,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "sum": 0
     },
     "point": {
-        "requested": 50,
+        "requested": 0,
         "replacement": 0,
         "refund": 0,
         "sum": 0
@@ -101,25 +87,16 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     "osPlatform": null,
     "log": [
         {
-            "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2021-11-16T05:09:39.803Z"
+            "createAt": "2021-11-16T05:09:39.814Z",
+            "message": "메시지 그룹이 생성되었습니다."
         },
         {
-            "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2021-11-16T05:09:39.803Z"
-        },
-        {
-            "createAt": "2021-11-16T05:09:47.411Z",
-            "message": "메시지를 발송했습니다.",
-            "oldBalance": 100,
-            "newBalance": 100,
-            "oldPoint": 100,
-            "newPoint": 50,
-            "totalPrice": 20
+            "createAt": "2021-11-16T05:09:47.680Z",
+            "message": "메시지 예약이 성공적으로 취소됐습니다."
         }
     ],
-    "status": "SENDING",
-    "dateSent": "2021-11-16T05:09:47.411Z",
+    "status": "FAILED",
+    "dateSent": null,
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
@@ -127,23 +104,15 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     "strict": true,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
-    "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
+    "_id": "G4V20180307105937CANCELSCHEDULED",
+    "groupId": "G4V20180307105937CANCELSCHEDULED",
     "accountId": "12925149",
     "apiVersion": "4",
-    "price": {
-        "82": {
-            "sms": 20,
-            "lms": 50,
-            "mms": 200,
-            "ata": 19,
-            "cta": 13
-        }
-    },
+    "price": {},
     "customFields": {},
     "hint": {},
-    "dateCreated": "2021-11-16T05:09:39.805Z",
-    "dateUpdated": "2021-11-16T05:09:47.412Z"
+    "dateCreated": "2021-11-16T05:09:39.816Z",
+    "dateUpdated": "2021-11-16T05:09:47.681Z"
 }
 ```
 
@@ -157,14 +126,10 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 var request = require('request');
 
 var options = {
-  headers: {
-    Authorization:
-      'HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4'
-  },
-  method: 'POST',
+  method: 'DELETE',
   json: true,
   url:
-    'http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend'
+    'http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule'
 };
 
 request(options, function(error, response, body) {
@@ -179,12 +144,12 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
+$url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule";
 
 $options = array(
     'http' => array(
-        'header'  => "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4\r\n",
-        'method'  => 'POST'
+        'header'  => ,
+        'method'  => 'DELETE'
     )
 );
 
@@ -201,12 +166,9 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
-headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
-}
+url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule"
 
-response = requests.post(url, headers=headers)
+response = requests.delete(url)
 print(response.status_code)
 print(response.text)
 
@@ -217,9 +179,8 @@ print(response.text)
 
 ```curl
 #!/bin/bash
-curl -X POST \
-	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend
+curl -X DELETE \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule
 ```
 {% endtab %}
 
@@ -230,13 +191,10 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule")
 
-headers = {
-  "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
-}
 http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, headers)
+request = Net::HTTP::Delete.new(uri.request_uri, )
 
 response = http.request(request)
 puts response.code
@@ -258,12 +216,10 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
+  uri := "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule"
 
-  req, err := http.NewRequest("POST", uri, nil)
+  req, err := http.NewRequest("DELETE", uri, nil)
   if err != nil { panic(err) }
-
-  req.Header.Set("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4")
 
   client := &http.Client{}
   resp, err := client.Do(req)
@@ -291,14 +247,13 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20180307105937CANCELSCHEDULED/schedule";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-    con.setRequestMethod("POST");
+    con.setRequestMethod("DELETE");
 
-    con.setRequestProperty("Authorization", "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4");
 
     con.setDoOutput(true);
     DataOutputStream wr = new DataOutputStream(con.getOutputStream());

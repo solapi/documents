@@ -1,11 +1,11 @@
-# 실패한 그룹 재발송 요청
+# 그룹 생성
 
 ## Request
 ```
-POST https://api.solapi.com/messages/v4/groups/:groupId/resend
+POST https://api.solapi.com/messages/v4/groups/
 ```
 
-실패된 그룹의 메시지 재발송을 요청합니다. Quota의 영향을 받지 않습니다.
+메시지 그룹을 생성합니다.
 
 ### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
@@ -13,23 +13,46 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
 | :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
-### 2차 인증 필요
+### Request Structure
+```json
+{
+    "appId": "string",
+    "strict": "boolean",
+    "sdkVersion": "string",
+    "osPlatform": "string",
+    "customFields": "object",
+    "hint": "object",
+    "allowDuplicates": "boolean"
+}
+```
 
-| ARS 전화 인증 | 이메일 OTP |
-| :---------: | :------: |
-|  |  |
+### Body Params
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+| appId | `string` |  | 앱 아이디 |
+| strict | `boolean` |  | 설명 없음 |
+| sdkVersion | `string` |  | SDK 버전 |
+| osPlatform | `string` |  | OS 플렛폼 |
+| [customFields](#body-customfields) | `object` |  | 확장 필드로 사용. 키는 30자, 값은 100자 제한 |
+| [hint](#body-hint) | `object` |  | 설명 없음 |
+| allowDuplicates | `boolean` |  | 설명 없음 |
 
-### Path Parameters
+##### Body / customFields
 
-| Name | Description |
-| :--: | :---------: |
-| :groupId | 메시지 그룹 아이디 |
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+
+##### Body / hint
+
+| Name | Type | Required | Description |
+| :--- | :--: | :------: | :---------- |
+
 
 ---
 
 ## Samples
 
-### resendGroupMessage
+### 메시지 그룹 생성 POST /messages/v4/groups
 
 > **Sample Request**
 
@@ -50,12 +73,10 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "sentReplacement": 0,
         "refund": 0,
         "registeredFailed": 0,
-        "registeredSuccess": 1
+        "registeredSuccess": 0
     },
     "countForCharge": {
-        "sms": {
-            "82": 1
-        },
+        "sms": {},
         "lms": {},
         "mms": {},
         "ata": {},
@@ -74,7 +95,7 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
         "sum": 0
     },
     "point": {
-        "requested": 50,
+        "requested": 0,
         "replacement": 0,
         "refund": 0,
         "sum": 0
@@ -101,49 +122,28 @@ POST https://api.solapi.com/messages/v4/groups/:groupId/resend
     "osPlatform": null,
     "log": [
         {
-            "message": "메시지 그룹이 생성되었습니다.",
-            "createAt": "2021-11-16T05:09:39.803Z"
-        },
-        {
-            "message": "국가코드(82)의 단문문자(SMS) 1 건이 추가되었습니다.",
-            "createAt": "2021-11-16T05:09:39.803Z"
-        },
-        {
-            "createAt": "2021-11-16T05:09:47.411Z",
-            "message": "메시지를 발송했습니다.",
-            "oldBalance": 100,
-            "newBalance": 100,
-            "oldPoint": 100,
-            "newPoint": 50,
-            "totalPrice": 20
+            "createAt": "2021-11-16T05:09:40.150Z",
+            "message": "[::ffff:127.0.0.1] 메시지 그룹이 생성되었습니다."
         }
     ],
-    "status": "SENDING",
-    "dateSent": "2021-11-16T05:09:47.411Z",
+    "status": "PENDING",
+    "dateSent": null,
     "dateCompleted": null,
     "isRefunded": false,
     "flagUpdated": false,
     "prepaid": true,
-    "strict": true,
+    "strict": false,
     "masterAccountId": null,
     "allowDuplicates": false,
-    "_id": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
-    "groupId": "G4V20190FFFFFFFFFH3PTASXMNJG2JIO",
     "accountId": "12925149",
     "apiVersion": "4",
-    "price": {
-        "82": {
-            "sms": 20,
-            "lms": 50,
-            "mms": 200,
-            "ata": 19,
-            "cta": 13
-        }
-    },
     "customFields": {},
-    "hint": {},
-    "dateCreated": "2021-11-16T05:09:39.805Z",
-    "dateUpdated": "2021-11-16T05:09:47.412Z"
+    "hint": null,
+    "groupId": "G4V202111161409408U7A6SEI9YC6VNO",
+    "price": {},
+    "dateCreated": "2021-11-16T05:09:40.153Z",
+    "dateUpdated": "2021-11-16T05:09:40.153Z",
+    "_id": "G4V202111161409408U7A6SEI9YC6VNO"
 }
 ```
 
@@ -163,8 +163,7 @@ var options = {
   },
   method: 'POST',
   json: true,
-  url:
-    'http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend'
+  url: 'http://api.solapi.com/messages/v4/groups'
 };
 
 request(options, function(error, response, body) {
@@ -179,7 +178,7 @@ request(options, function(error, response, body) {
 
 ```php
 <?php
-$url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
+$url = "http://api.solapi.com/messages/v4/groups";
 
 $options = array(
     'http' => array(
@@ -201,7 +200,7 @@ var_dump($result);
 ```python
 import requests
 
-url = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
+url = "http://api.solapi.com/messages/v4/groups"
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
 }
@@ -219,7 +218,7 @@ print(response.text)
 #!/bin/bash
 curl -X POST \
 	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-	http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend
+	http://api.solapi.com/messages/v4/groups
 ```
 {% endtab %}
 
@@ -230,7 +229,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend")
+uri = URI.parse("http://api.solapi.com/messages/v4/groups")
 
 headers = {
   "Authorization": "HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
@@ -258,7 +257,7 @@ import (
 )
 
 func main() {
-  uri := "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend"
+  uri := "http://api.solapi.com/messages/v4/groups"
 
   req, err := http.NewRequest("POST", uri, nil)
   if err != nil { panic(err) }
@@ -291,7 +290,7 @@ import java.net.URL;
 
 public class Request {
   public static void main(String[] args) throws Exception {
-    String targetUrl = "http://api.solapi.com/messages/v4/groups/G4V20190FFFFFFFFFH3PTASXMNJG2JIO/resend";
+    String targetUrl = "http://api.solapi.com/messages/v4/groups";
 
     URL url = new URL(targetUrl);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();

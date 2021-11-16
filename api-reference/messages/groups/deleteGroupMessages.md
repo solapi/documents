@@ -1,38 +1,39 @@
 # 그룹 메시지 삭제
 
 ## Request
-
-```text
+```
 DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 ```
 
 그룹에 속한 메시지 일부분을 삭제합니다.
 
-### Authorization 인증 필요 [\[?\]](https://docs.solapi.com/authentication/overview#authorization)
+### Authorization 인증 필요 [[?]](https://docs.solapi.com/authentication/overview#authorization)
 
 | 계정 권한 | 회원 권한 | 계정 상태 | 회원 상태 | 계정 인증 |
-| :--- | :--- | :--- | :--- | :---: |
+| :- | :- | :- | :- | :-: |
 | `message:write` | `role-message:write` | `ACTIVE` | `ACTIVE` |  |
 
 ### Path Parameters
 
 | Name | Description |
-| :---: | :---: |
+| :--: | :---------: |
 | :groupId | 메시지 그룹 아이디 |
 
 ### Request Structure
-
-```javascript
+```json
 {
     "messageIds": "array"
 }
 ```
 
 ### Body Params
-
 | Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
+| :--- | :--: | :------: | :---------- |
 | messageIds | `array` | O | 메시지 아이디 목록 |
+
+
+
+---
 
 ## Samples
 
@@ -40,7 +41,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 > **Sample Request**
 
-```javascript
+```json
 {
     "messageIds": [
         "M4V20200308120044DTYYJBBYLPQZIB1"
@@ -50,7 +51,7 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 
 > **Sample Response**
 
-```javascript
+```json
 {
     "groupId": "G4V20180307105937H3PTASXMNJG2JIB",
     "errorCount": 0,
@@ -66,7 +67,9 @@ DELETE https://api.solapi.com/messages/v4/groups/:groupId/messages
 > **Sample Code**
 
 {% tabs %}
+
 {% tab title="NODE" %}
+
 ```javascript
 var request = require('request');
 
@@ -89,10 +92,12 @@ request(options, function(error, response, body) {
   if (error) throw error;
   console.log('result :', body);
 });
+
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $url = "http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages";
@@ -110,10 +115,12 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 
 var_dump($result);
+
 ```
 {% endtab %}
 
 {% tab title="PYTHON" %}
+
 ```python
 import requests
 
@@ -127,21 +134,24 @@ data = '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}'
 response = requests.delete(url, headers=headers, data=data)
 print(response.status_code)
 print(response.text)
+
 ```
 {% endtab %}
 
 {% tab title="CURL" %}
-```text
+
+```curl
 #!/bin/bash
 curl -X DELETE \
-    -H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
-    -H 'Content-Type: application/json' \
-    -d '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}' \
-    http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages
+	-H 'Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4' \
+	-H 'Content-Type: application/json' \
+	-d '{"messageIds":"M4V20200308120044DTYYJBBYLP..."}' \
+	http://api.solapi.com/messages/v4/groups/G4V20180307105937H3PTASXMNJG2JIB/messages
 ```
 {% endtab %}
 
 {% tab title="RUBY" %}
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -163,10 +173,12 @@ request.body = data.to_json
 response = http.request(request)
 puts response.code
 puts response.body
+
 ```
 {% endtab %}
 
 {% tab title="GO" %}
+
 ```go
 package main
 
@@ -196,10 +208,12 @@ func main() {
   str := string(bytes)
   fmt.Println(str)
 }
+
 ```
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 package solapi;
 
@@ -241,9 +255,13 @@ public class Request {
     System.out.println("HTTP body : " + response.toString());
   }
 }
+
 ```
 {% endtab %}
+
 {% endtabs %}
 
-> 문서 생성일 : 2021-07-14
+---
+
+> 문서 생성일 : 2021-11-16
 
