@@ -2,11 +2,11 @@
 
 ## Request
 
-```text
+```
 POST https://api.solapi.com/appstore/v2/sso/connect-homepage
 ```
 
-사이트에 OAuth2 토큰을 설정하기 위한 API입니다.   
+사이트에 OAuth2 토큰을 설정하기 위한 API입니다. \
 API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 이용이 가능합니다.
 
 ### Request Structure
@@ -19,10 +19,10 @@ API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 
 
 ### Body Params
 
-| Name | Type | Required | Description |
-| :--- | :---: | :---: | :--- |
-| accessToken | `string` | true | OAuth2 엑세스 토큰 |
-| returnUrl | `string` | optional | 해당 값이 있으면 작업이 끝난 후 해당 URL로 리다이렉트 됩니다. |
+| Name        |   Type   | Required | Description                                     |
+| ----------- | :------: | :------: | ----------------------------------------------- |
+| accessToken | `string` |   true   | OAuth2 엑세스 토큰                                   |
+| returnUrl   | `string` | optional | <p>해당 값이 있으면 작업이 끝난 후<br>해당 URL로 리다이렉트 됩니다.</p> |
 
 ## Response
 
@@ -38,9 +38,9 @@ API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 
 
 #### Response /
 
-| Name | Type | Should Return | Description |
-| :--- | :---: | :---: | :--- |
-| message | `string` | O | 결과 메시 |
+| Name    |   Type   | Should Return | Description |
+| ------- | :------: | :-----------: | ----------- |
+| message | `string` |       O       | 결과 메시       |
 
 ## Samples
 
@@ -61,4 +61,3 @@ API가 성공적으로 호출되었다면, 별도의 로그인 없이 사이트 
     "message": "success"
 }
 ```
-
