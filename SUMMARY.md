@@ -102,7 +102,3 @@
   * [SSO 토큰 발급](api-reference/api-sso/sso.md)
   * [사이트에 OAuth2 토큰 설정](api-reference/api-sso/undefined-1.md)
   * [OAuth2 토큰 발급](api-reference/api-sso/undefined.md)
-
-## SSO-SINGLE-SIGN-ON
-
-* [시작하기](sso-single-sign-on/start-sso.md)
